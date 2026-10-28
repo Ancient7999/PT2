@@ -1,0 +1,438 @@
+/* Study notes view — copied from medphysics-pt1 css/app.css (commit 75cf785):
+ * "Study page" block (study-app, study-header, .btn), folded chapter accordion,
+ * .md typography, .phase-diagram, and the html.study-page header/button rules.
+ * ADAPT (portal): scoped to #studyView; PT1's fixed "Quantum Vault" colours are
+ * replaced by the mood accents (--accent-N from js/quiz-accent-bridge.js on
+ * .pt1q) so every mood theme recolours the notes. Page background, cursor and
+ * fonts stay the portal's own. */
+#studyView {
+  --col-text-main: var(--text);
+  --col-text-muted: var(--text-dim);
+  --col-gold: var(--gold);
+  --border: rgba(var(--accent-0-rgb), 0.28);
+  --border-strong: rgba(var(--accent-0-rgb), 0.55);
+  --col-bg-card-rgb: 10, 14, 22;
+}
+
+/* —— Study page —— */
+#studyView .study-app {
+  position: relative; z-index: 5;
+  max-width: 960px; margin: 0 auto;
+  padding: 36px 24px 72px;
+}
+#studyView .study-header {
+  display: flex; flex-wrap: wrap; align-items: flex-end;
+  justify-content: space-between; gap: 16px; margin-bottom: 28px;
+}
+#studyView .study-header h1 {
+  font-family: var(--head); font-style: normal; font-weight: 700;
+  letter-spacing: -0.035em;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  color: transparent;
+  background: linear-gradient(120deg, var(--text) 0%, var(--accent-0) 35%, var(--accent-5) 65%, var(--accent-1) 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  animation: study-sheen 8s ease-in-out infinite;
+}
+@keyframes study-sheen {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+#studyView .study-header .sub {
+  color: var(--col-text-muted); font-family: var(--mono);
+  font-size: 0.85rem; margin-top: 6px; letter-spacing: 0.04em;
+}
+#studyView .study-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+#studyView .btn {
+  font-family: var(--mono); font-size: 0.82rem;
+  color: var(--accent-0); border: 1px solid var(--border-strong);
+  padding: 10px 18px; border-radius: 999px;
+  background: rgba(var(--accent-0-rgb), 0.08);
+  transition: all 0.2s; letter-spacing: 0.03em;
+  text-decoration: none; display: inline-flex; align-items: center;
+}
+#studyView .btn:hover {
+  background: rgba(var(--accent-0-rgb), 0.18);
+  border-color: var(--accent-0);
+  box-shadow: 0 0 20px rgba(var(--accent-0-rgb), 0.3);
+}
+#studyView .btn.primary {
+  color: #05080f; font-family: var(--head); font-weight: 700; letter-spacing: 0.02em;
+  background: linear-gradient(135deg, var(--text), var(--accent-0) 40%, var(--accent-5) 75%, var(--accent-1));
+  border: none;
+  box-shadow: 0 16px 44px rgba(var(--accent-0-rgb), 0.28), 0 0 0 1px rgba(var(--accent-0-rgb), 0.4);
+}
+#studyView .btn.primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 22px 54px rgba(var(--accent-0-rgb), 0.4), 0 0 0 1px rgba(var(--accent-0-rgb), 0.6);
+}
+
+/* Folded chapter accordion */
+#studyView .chapter-list { display: flex; flex-direction: column; gap: 12px; }
+#studyView .chapter-card {
+  border: 1px solid var(--border);
+  border-left: 4px solid rgba(var(--accent-0-rgb), 0.4);
+  border-radius: 8px;
+  background: rgba(var(--col-bg-card-rgb), 0.85);
+  backdrop-filter: blur(14px) saturate(1.05);
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+#studyView .chapter-card.open {
+  border-left-color: var(--accent-0);
+  box-shadow: 0 0 24px rgba(var(--accent-0-rgb), 0.18);
+}
+#studyView .chapter-toggle {
+  width: 100%; text-align: left;
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 18px;
+  background: transparent; border: none;
+  color: var(--col-text-main);
+  font-family: var(--body); font-size: 1.05rem; font-weight: 600;
+  letter-spacing: 0.02em;
+}
+#studyView .chapter-toggle:hover { background: rgba(var(--accent-0-rgb), 0.06); }
+#studyView .chapter-toggle .chev {
+  color: var(--accent-0); font-family: var(--mono);
+  transition: transform 0.25s; flex-shrink: 0;
+}
+#studyView .chapter-card.open .chapter-toggle .chev { transform: rotate(90deg); }
+#studyView .chapter-toggle .meta {
+  margin-left: auto; font-family: var(--mono);
+  font-size: 0.72rem; color: var(--col-text-muted); font-weight: 400;
+}
+#studyView .chapter-body {
+  display: none;
+  padding: 0 20px 24px;
+  border-top: 1px solid rgba(var(--accent-0-rgb), 0.12);
+}
+#studyView .chapter-card.open .chapter-body { display: block; }
+
+#studyView .md { line-height: 1.68; font-size: 1.05rem; animation: studyFadeIn 0.35s ease; }
+@keyframes studyFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+#studyView .md h1, #studyView .md h2, #studyView .md h3, #studyView .md h4 {
+  font-family: var(--head); font-weight: 400; line-height: 1.25;
+  margin: 1.35em 0 0.55em;
+}
+#studyView .md h1 { font-size: 1.85rem; margin-top: 0.6em; color: var(--accent-0); }
+#studyView .md h2 { font-size: 1.4rem; color: var(--accent-0); }
+#studyView .md h3 { font-size: 1.18rem; color: var(--accent-1); font-style: italic; }
+#studyView .md h4 { font-size: 1.05rem; color: var(--col-gold); }
+#studyView .md p, #studyView .md li { color: var(--col-text-main); }
+#studyView .md ul, #studyView .md ol { margin: 8px 0 8px 22px; }
+#studyView .md li { margin-bottom: 5px; }
+#studyView .md a { color: var(--accent-1); }
+#studyView .md strong { color: var(--accent-0); font-weight: 600; }
+#studyView .md em { color: var(--accent-1); font-style: italic; }
+#studyView .md code, #studyView .md pre { font-family: var(--mono); font-size: 0.9em; }
+#studyView .md code {
+  background: rgba(0,0,0,0.45); border: 1px solid var(--border);
+  border-radius: 4px; padding: 0.12em 0.4em; color: var(--accent-0);
+}
+#studyView .md pre {
+  background: rgba(0,0,0,0.45); border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-0); border-radius: 0 4px 4px 0;
+  padding: 14px 20px; overflow-x: auto; white-space: pre-wrap;
+  margin: 14px 0; color: var(--accent-0); line-height: 1.7;
+}
+#studyView .md pre code { background: none; border: none; padding: 0; color: inherit; }
+#studyView .md table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 0.95rem; display: block; overflow-x: auto; }
+#studyView .md th, #studyView .md td { border: 1px solid var(--border); padding: 9px 12px; text-align: left; vertical-align: top; }
+#studyView .md th {
+  font-family: var(--mono); font-size: 0.78rem; color: var(--accent-0);
+  background: rgba(0,0,0,0.35); letter-spacing: 0.04em;
+}
+#studyView .md blockquote {
+  margin: 1em 0; padding: 0.35em 0 0.35em 1em;
+  border-left: 3px solid var(--accent-0); color: var(--col-text-muted);
+  background: linear-gradient(90deg, rgba(var(--accent-0-rgb), 0.06), transparent);
+}
+#studyView .md hr { border: none; border-top: 1px solid rgba(var(--accent-0-rgb), 0.22); margin: 1.6em 0; }
+
+#studyView .phase-diagram {
+  margin: 1.2em 0; padding: 12px;
+  border: 1px solid var(--border); border-radius: 10px;
+  background: rgba(var(--accent-0-rgb), 0.04);
+  overflow-x: auto;
+}
+#studyView .phase-diagram svg { display: block; min-width: 520px; max-width: 100%; }
+
+@media (max-width: 640px) {
+  #studyView .study-app { padding: 24px 14px 72px; }
+  #studyView .chapter-toggle .meta { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #studyView .study-header h1, #studyView .md { animation: none; }
+}
+
+/* —— portal entry points —— */
+.portal-card-wrap { position: relative; display: flex; }
+.portal-card-wrap > .portal-card { flex: 1; padding-bottom: 58px; }
+.portal-card-wrap .study-chip {
+  position: absolute; right: 18px; bottom: 18px; z-index: 2;
+  font-family: var(--mono); font-size: 0.8rem; color: var(--cyan-bright);
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 7px 14px; background: rgba(255,255,255,0.04);
+  transition: background .2s, border-color .2s, box-shadow .2s, transform .2s;
+}
+.portal-card-wrap .study-chip:hover { border-color: var(--cyan-bright); box-shadow: 0 0 18px var(--mood-glow); transform: translateY(-2px); }
+.portal-card-wrap .study-chip:focus-visible { outline: 2px solid var(--cyan-bright); outline-offset: 3px; }
+.pt1q .sets-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.pt1q .sets-tools .quiz-settings-wrap { margin: 0; }
+.pt1q .sets-tools { margin: 0 0 18px; }
+#studyNotesBtn[hidden]{display:none!important}
+
+/* —— PICTURE STUDY (Medical Terminology PT2) —— */
+#studyView .draft-badge{display:inline-flex;align-items:center;vertical-align:middle;margin-left:10px;font-family:var(--mono);font-size:.62rem;font-weight:700;letter-spacing:.02em;text-transform:none;padding:3px 9px;border-radius:999px;border:1px solid color-mix(in srgb,var(--gold,#e0b84f) 55%,transparent);color:var(--gold,#e0b84f);background:color-mix(in srgb,var(--gold,#e0b84f) 12%,transparent);line-height:1.3;-webkit-text-fill-color:currentColor}
+#studyView .study-summary{display:flex;align-items:center;gap:12px;margin:-12px 0 20px;font-family:var(--mono);font-size:.8rem;color:var(--col-text-muted)}
+#studyView .study-summary[hidden]{display:none}
+#studyView .ss-track,#studyView .chapter-progress{flex:1;height:6px;border-radius:999px;background:rgba(var(--accent-0-rgb),.12);overflow:hidden}
+#studyView .ss-fill,#studyView .cp-fill{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent-0),var(--accent-5,var(--accent-0)));border-radius:inherit;transition:width .35s}
+#studyView .chapter-progress{display:block;flex:none;height:3px;border-radius:0;margin:0 18px}
+#studyView .simg-chapter-card .chapter-toggle .title{min-width:0}
+#studyView .simg-loading{color:var(--col-text-muted);font-family:var(--mono)}
+#studyView .simg-chapter{padding-top:14px}
+#studyView .simg-index{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px}
+#studyView .simg-index-chip{display:inline-flex;gap:6px;align-items:center;font-family:var(--mono);font-size:.72rem;padding:5px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(var(--accent-0-rgb),.06);color:var(--col-text-main);cursor:pointer}
+#studyView .simg-index-chip:hover{border-color:var(--accent-0)}
+#studyView .simg-index-chip .sic-count{color:var(--col-text-muted)}
+#studyView .simg-index-chip.done{border-color:var(--success);color:var(--success)}
+#studyView .simg-index-chip.done .sic-count{color:var(--success)}
+#studyView .simg-list{display:flex;flex-direction:column;gap:26px}
+#studyView .simg-card{border:1px solid var(--border);border-radius:14px;padding:14px;background:rgba(var(--accent-0-rgb),.03);scroll-margin-top:16px;min-width:0}
+#studyView .simg-card.correct-pulse{box-shadow:0 0 0 2px var(--success),0 0 26px color-mix(in srgb,var(--success) 45%,transparent)}
+#studyView .simg-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+#studyView .simg-title{margin:0;font-family:var(--head);font-size:1.15rem;font-weight:600;flex:1;min-width:0;color:var(--col-text-main)}
+#studyView .simg-count{font-family:var(--mono);font-size:.78rem;color:var(--col-text-muted);padding:3px 8px;border-radius:999px;border:1px solid var(--border)}
+#studyView .simg-frame{position:relative}
+#studyView .simg-figure.single{min-width:0;max-width:calc(440px * var(--lz,1));margin:0 auto;flex:0 0 auto}
+#studyView .simg-stage.single{display:flex;justify-content:safe center}
+#studyView .simg-img{background:#fff}
+#studyView .simg-restart{position:static;display:inline-flex;align-self:flex-end;margin:10px 8px 0 auto;z-index:auto;font-family:var(--mono);font-size:.75rem;padding:6px 12px;border-radius:999px;border:1px solid var(--accent-0);background:color-mix(in srgb,var(--col-bg-card,#111827) 88%,transparent);color:var(--accent-0);cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+#studyView .simg-restart[hidden]{display:none}
+#studyView .simg-restart:hover{background:rgba(var(--accent-0-rgb),.2)}
+#studyView .simg-answer{margin:10px 0 0;text-align:center;font-family:var(--head);font-size:1.1rem;font-weight:700;color:var(--success)}
+#studyView .simg-name{margin-top:12px}
+#studyView .simg-name-label{display:block;font-family:var(--mono);font-size:.78rem;color:var(--col-text-muted);margin-bottom:6px}
+#studyView .simg-name.done{display:flex;align-items:center;gap:10px}
+#studyView .simg-name.done .simg-name-label{margin:0}
+#studyView .simg-name-locked{font-weight:700;color:var(--success);font-size:1.05rem}
+#studyView .simg-name.just-locked{animation:labelPop .45s ease}
+#studyView .simg-fb{min-height:1.4em;margin:8px 0 0}
+#studyView .simg-caption{margin:8px 0 6px;line-height:1.6;color:var(--col-text-main)}
+#studyView .simg-credit{margin:0;font-size:.72rem;color:var(--col-text-muted)}
+#studyView .simg-credit a{color:var(--accent-0)}
+/* picture study modes: 🧩 word bank · ⌨ type · 👁 labels */
+#studyView .simg-modes{display:inline-flex;gap:0;border:1px solid var(--border-strong,var(--border));border-radius:999px;overflow:hidden}
+#studyView .simg-mode{font-family:var(--mono);font-size:.74rem;padding:6px 11px;border:0;border-right:1px solid var(--border);background:rgba(var(--accent-0-rgb),.05);color:var(--col-text-main);cursor:pointer;white-space:nowrap}
+#studyView .simg-mode:last-child{border-right:0}
+#studyView .simg-mode:hover{background:rgba(var(--accent-0-rgb),.14)}
+#studyView .simg-mode[aria-pressed="true"]{background:rgba(var(--accent-0-rgb),.26);color:var(--accent-0);font-weight:700}
+#studyView .simg-mode:focus-visible{outline:2px solid var(--accent-0);outline-offset:-2px}
+#studyView .simg-figure .label-slot{z-index:2}
+#studyView .simg-regions{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:visible}
+#studyView .simg-chyme{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:visible}
+#studyView .simg-chyme-blob{fill:#92400e;stroke:#fef3c7;stroke-width:3px;filter:drop-shadow(0 0 4px rgba(0,0,0,.6))}
+#studyView .simg-reg-poly{fill:transparent;stroke:transparent;pointer-events:all;transition:fill .15s,stroke .15s}
+#studyView .simg-leader-hit{fill:none;stroke-linejoin:round;stroke:transparent;stroke-width:16px;vector-effect:non-scaling-stroke;pointer-events:stroke}
+#studyView .simg-reg.hl .simg-reg-poly{fill:rgba(var(--accent-0-rgb),.42);stroke:var(--accent-0);stroke-width:3px;vector-effect:non-scaling-stroke}
+#studyView .simg-reg.hl .simg-leader-hit{stroke:rgba(var(--accent-0-rgb),.35);stroke-width:6px}
+#studyView .simg-leader-hit{transition:stroke .18s ease,stroke-width .18s ease}
+#studyView .simg-reg.drop-lit .simg-leader-hit,#studyView .simg-reg.focus-lit .simg-leader-hit{stroke:var(--accent-0);stroke-width:3px;filter:drop-shadow(0 0 3px var(--accent-0)) drop-shadow(0 0 6px rgba(var(--accent-0-rgb),.7))}
+/* the glowing line ends in a dot on the spot it points at */
+#studyView .simg-leader-dot{fill:none;stroke:transparent;stroke-width:0;stroke-linecap:round;vector-effect:non-scaling-stroke;pointer-events:none;transition:stroke .18s ease,stroke-width .18s ease}
+#studyView .simg-reg.drop-lit .simg-leader-dot,#studyView .simg-reg.focus-lit .simg-leader-dot{stroke:var(--accent-0);stroke-width:9px;filter:drop-shadow(0 0 4px rgba(var(--accent-0-rgb),.8))}
+@media (prefers-reduced-motion:reduce){#studyView .simg-leader-hit,#studyView .simg-leader-dot{transition:none}}
+#studyView .label-slot.open.drop-over{border-style:solid;border-color:var(--accent-0);box-shadow:0 0 0 4px rgba(var(--accent-0-rgb),.35),0 0 16px 4px rgba(var(--accent-0-rgb),.55);z-index:3}
+#studyView .label-slot.hl,#studyView .simg-hot.hl{outline:3px solid var(--accent-0);outline-offset:1px}
+#studyView .simg-hot{position:absolute;z-index:2;border-radius:6px;cursor:help}
+#studyView .label-slot.slot-picked{outline:3px dashed var(--accent-0);outline-offset:1px}
+#studyView .simg-slot-hint{font-size:clamp(8px,1.05cqw,12px);font-style:italic;color:#475569;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;padding:0 2px}
+#studyView .label-slot.typing .label-input::placeholder{font-style:italic;color:#64748b;opacity:1}
+#studyView .simg-bank{margin-top:10px}
+#studyView .simg-name-slot{position:relative;left:auto;top:auto;min-height:44px;width:100%;max-width:440px;margin:0 auto;font-size:.9rem;color:var(--col-text-muted)}
+#studyView .simg-name .simg-name-label{text-align:center}
+#studyView .simg-page-no{font-family:var(--mono);font-size:.78rem;font-weight:400;color:var(--col-text-muted);margin-left:6px}
+#studyView .simg-pager-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}
+#studyView .simg-page{font-family:var(--mono);font-size:.8rem;color:var(--col-text-muted)}
+#studyView .simg-index-chip.extra{border-style:dashed}
+#studyView .simg-title .note-badge{vertical-align:middle;margin-left:6px}
+@media (max-width:480px){#studyView .simg-mode{padding:6px 8px;font-size:.7rem}#studyView .simg-modes{width:100%}#studyView .simg-mode{flex:1}}
+/* lecture cards in the PT2 sets: card + its own 📖 Study button */
+.card-study-wrap{position:relative;display:flex}
+.card-study-wrap>.card{flex:1;padding-bottom:52px}
+.card-study-chip{position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:.74rem;padding:6px 12px;border-radius:999px;border:1px solid var(--border);background:rgba(var(--accent-0-rgb),.1);color:var(--accent-0);cursor:pointer;z-index:2}
+.card-study-chip:hover{border-color:var(--accent-0);box-shadow:0 0 14px rgba(var(--accent-0-rgb),.35)}
+.card-study-chip:focus-visible{outline:2px solid var(--accent-0);outline-offset:2px}
+@media (max-width:480px){#studyView .simg-card{padding:10px}#studyView .simg-head{gap:6px}#studyView .simg-title{flex-basis:100%}}
+@media (prefers-reduced-motion:reduce){#studyView .simg-name.just-locked{animation:none}}
+
+/* —— Symbol and term tooltips (js/study-symbols.js) —— */
+#studyView .md .sym {
+  cursor: help;
+  border-bottom: 1px dotted rgba(var(--accent-0-rgb), 0.75);
+  border-radius: 2px;
+  outline: none;
+  transition: background-color .15s ease;
+}
+#studyView .md .sym.term { border-bottom-style: dotted; }
+#studyView .md .sym:hover,
+#studyView .md .sym:focus-visible,
+#studyView .md .sym.sym-on {
+  background: rgba(var(--accent-0-rgb), 0.16);
+  border-bottom-color: var(--accent-0);
+}
+#studyView .md .sym:focus-visible { box-shadow: 0 0 0 2px rgba(var(--accent-0-rgb), 0.55); }
+#studyView .sym-tip {
+  position: fixed; z-index: 2000; left: 0; top: 0;
+  max-width: 320px;
+  padding: 8px 12px;
+  font: 500 0.88rem/1.45 var(--body, system-ui), system-ui, sans-serif;
+  letter-spacing: 0; white-space: normal; text-align: left;
+  color: var(--text);
+  background: var(--bg2, #0a0e16);
+  background-image: linear-gradient(rgba(var(--accent-0-rgb), 0.10), rgba(var(--accent-0-rgb), 0.10));
+  border: 1px solid rgba(var(--accent-0-rgb), 0.45);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  pointer-events: auto;
+}
+#studyView .sym-tip[hidden] { display: none; }
+
+/* label-hint categories: readable hint text in the empty box + matching chip tint (light & dark) */
+#studyView .label-slot[data-cat],#studyView .label-chip[data-cat]{--cat:#475569;--cat-bg:rgba(71,85,105,.12)}
+#studyView .label-slot[data-cat="dir"],#studyView .label-chip[data-cat="dir"]{--cat:#1d4ed8;--cat-bg:rgba(37,99,235,.14)}
+#studyView .label-slot[data-cat="muscle"],#studyView .label-chip[data-cat="muscle"]{--cat:#b91c1c;--cat-bg:rgba(220,38,38,.13)}
+#studyView .label-slot[data-cat="bone"],#studyView .label-chip[data-cat="bone"]{--cat:#047857;--cat-bg:rgba(5,150,105,.14)}
+#studyView .label-slot[data-cat="division"],#studyView .label-chip[data-cat="division"]{--cat:#7e22ce;--cat-bg:rgba(147,51,234,.13)}
+#studyView .label-slot.open[data-cat] .simg-slot-hint{color:var(--cat);font-weight:600;opacity:1}
+#studyView .label-slot.open[data-cat],#studyView .label-slot.typing[data-cat]{border-color:var(--cat)}
+#studyView .label-slot.typing[data-cat] .label-input::placeholder{color:var(--cat);font-weight:600}
+#studyView .simg-bank .label-chip[data-cat]{border-color:var(--cat);box-shadow:inset 3px 0 0 var(--cat);background-image:linear-gradient(var(--cat-bg),var(--cat-bg))}
+/* chips sit on the dark/light page: same hue, brighter shade so the border reads in either context */
+#studyView .simg-bank .label-chip[data-cat="dir"]{--chip-cat:#60a5fa}
+#studyView .simg-bank .label-chip[data-cat="muscle"]{--chip-cat:#f87171}
+#studyView .simg-bank .label-chip[data-cat="bone"]{--chip-cat:#34d399}
+#studyView .simg-bank .label-chip[data-cat="division"]{--chip-cat:#c084fc}
+#studyView .simg-bank .label-chip[data-cat="other"]{--chip-cat:#94a3b8}
+#studyView .simg-bank .label-chip[data-cat]{border-color:var(--chip-cat);box-shadow:inset 4px 0 0 var(--chip-cat)}
+/* fit the whole picture on screen: cap the fitted height to the viewport minus the word bank (labels are % based, so they follow) */
+#studyView .simg-figure:not(.single)[style*="--ar"]{width:calc(min(100%, (100vh - var(--simg-bank-h, 150px) - 90px) * var(--ar)) * var(--lz,1));width:calc(min(100%, (100dvh - var(--simg-bank-h, 150px) - 90px) * var(--ar)) * var(--lz,1));margin-inline:auto}
+#studyView .simg-stage.lz-zoomed .simg-figure{margin-inline:0}
+/* word bank sticks to the bottom of the viewport while its exercise is on screen */
+#studyView .simg-bank{position:sticky;bottom:0;z-index:6;background:var(--bg1,#0a1420);border:1px solid var(--border);border-radius:12px;padding:8px;max-height:min(30vh,220px);overflow-y:auto;overscroll-behavior:contain;box-shadow:0 -6px 16px rgba(0,0,0,.35)}
+/* bone auto-advance countdown (formula-practice bar) */
+#studyView .simg-advance{display:block;margin:10px 0 4px}
+#studyView .simg-advance-row{display:flex;align-items:center;gap:8px;margin-top:6px}
+#studyView .simg-advance-row .formula-advance-label{margin:0;flex:1;font-family:var(--mono);font-size:.68rem;color:var(--text-dim)}
+#studyView .simg-advance-row .nav-btn{padding:4px 10px;font-size:.74rem}
+#studyView .simg-advance .formula-advance-track{position:relative;height:8px;border-radius:999px;overflow:hidden;background:rgba(var(--accent-0-rgb),.12);border:1px solid rgba(var(--accent-0-rgb),.28)}
+#studyView .simg-advance .formula-advance-fill{position:absolute;inset:0;border-radius:inherit;background:linear-gradient(90deg,var(--accent-0),var(--accent-1));transform-origin:left center;transform:scaleX(1)}
+#studyView .simg-advance.paused .formula-advance-fill{opacity:.5}
+#studyView .chapter-card.simg-chapter-card{overflow:clip}
+#studyView .simg-case-fix{color:var(--accent-0);font-weight:800;text-decoration:underline;text-underline-offset:2px}#studyView .simg-fb .simg-proper-note{opacity:.85;font-size:.9em}
+/* no native text/HTML drag on the word bank, chips or picture; inputs stay selectable */
+#studyView .simg-bank,#studyView .simg-bank .label-chip,#studyView .simg-stage,#studyView .simg-figure,#studyView .simg-figure img{-webkit-user-select:none;user-select:none;-webkit-user-drag:none}
+#studyView .simg-stage input,#studyView .simg-name-input{-webkit-user-select:text;user-select:text}
+/* filled label boxes show the whole word (no ellipsis); grown boxes sit above neighbours */
+#studyView .label-figure .label-slot.locked .label-slot-text{overflow:visible;text-overflow:clip;white-space:nowrap;max-width:none}
+#studyView .label-figure .label-slot.locked.grown{z-index:3}
+#studyView .label-figure .label-slot.locked.wrapped .label-slot-text{white-space:normal;overflow-wrap:anywhere;line-height:1.1}
+
+/* —— formula cards (study notes) —— */
+#studyView .md .fx-box{display:flex;flex-direction:column;gap:10px;margin:18px auto;padding:16px;max-width:760px;border:1px solid rgba(var(--accent-0-rgb),.32);border-radius:16px;background:linear-gradient(160deg,rgba(var(--accent-0-rgb),.08),rgba(0,0,0,.35));box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#studyView .md .fx-row{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 14px;border-radius:12px;background:rgba(0,0,0,.28);border:1px solid rgba(var(--accent-0-rgb),.14);text-align:center;min-width:0}
+#studyView .md .fx-row.fx-text{background:transparent;border-style:dashed;padding:8px 12px}
+#studyView .md .fx-title{font:600 .78rem/1.2 var(--body,system-ui),system-ui,sans-serif;letter-spacing:.02em;color:var(--accent-1);text-transform:none;opacity:.95}
+#studyView .md .fx-formula{font-family:"Cambria Math","STIX Two Math","STIX Two Text","Latin Modern Math","Cambria",Georgia,"Times New Roman",serif;font-size:1.3em;line-height:1.5;letter-spacing:normal;font-weight:400;color:var(--text);max-width:100%;overflow-x:auto;overflow-y:hidden;padding:2px 6px;border-radius:8px;cursor:help;display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:0 .15em;border-bottom:0}
+#studyView .md .fx-formula i,#studyView .md .fx-inline i{font-style:italic}
+#studyView .md .fx-op{padding:0 .25em;color:var(--accent-0)}
+#studyView .md .fx-frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 .15em;line-height:1.25}
+#studyView .md .fx-num{padding:0 .3em .08em;border-bottom:1.5px solid currentColor}
+#studyView .md .fx-den{padding:.08em .3em 0}
+#studyView .md .fx-plain{font:400 .95rem/1.5 var(--body,system-ui),system-ui,sans-serif;color:var(--text-dim,var(--text));letter-spacing:normal}
+#studyView .md .fx-note{font:400 .84rem/1.4 var(--body,system-ui),system-ui,sans-serif;color:var(--text-dim,var(--text));letter-spacing:normal}
+#studyView .md .fx-note::before{content:"→ ";color:var(--accent-0)}
+#studyView .md .fx-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:2px}
+#studyView .md .fx-chip{font:400 .8rem/1.3 var(--body,system-ui),system-ui,sans-serif;letter-spacing:normal;padding:4px 10px;border-radius:999px;border:1px solid rgba(var(--accent-0-rgb),.28);background:rgba(var(--accent-0-rgb),.08);color:var(--text)}
+#studyView .md .fx-chip-sym{font-family:"Cambria Math","STIX Two Math",Cambria,Georgia,serif;font-size:1.05em;color:var(--accent-0)}
+#studyView .md .fx-example{display:flex;flex-direction:column;gap:4px;margin:-6px auto 18px;padding:12px 16px 14px;max-width:760px;border-radius:0 0 14px 14px;border:1px solid rgba(var(--accent-0-rgb),.22);border-top:0;background:rgba(var(--accent-0-rgb),.05);font:400 .95rem/1.55 var(--body,system-ui),system-ui,sans-serif;letter-spacing:normal;color:var(--text)}
+#studyView .md .fx-example-head{font:700 .72rem/1 var(--body,system-ui),sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-0);margin-bottom:4px}
+#studyView .md .fx-ex-line{overflow-wrap:anywhere}
+#studyView .md .fx-ex-line:last-child{font-weight:600;color:var(--accent-1)}
+/* whole-formula tooltips: no dotted underline on letters */
+#studyView .md .sym.fx-formula,#studyView .md .sym.fx-inline{border-bottom:0}
+#studyView .md .sym.fx-inline{padding:0 2px;border-radius:4px}
+#studyView .md .fx-formula:hover,#studyView .md .fx-formula.sym-on,#studyView .md .fx-formula:focus-visible{background:rgba(var(--accent-0-rgb),.12)}
+#studyView .sym-tip .tip-f{font-family:"Cambria Math","STIX Two Math",Cambria,Georgia,serif;font-size:1.05rem;color:var(--accent-0);margin-bottom:2px}
+#studyView .sym-tip .tip-m{font-weight:600;margin-bottom:4px}
+#studyView .sym-tip .tip-syms{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:2px;font-size:.84rem;color:var(--text-dim,var(--text))}
+@media (max-width:480px){#studyView .md .fx-box{padding:10px;border-radius:12px}#studyView .md .fx-row{padding:10px 8px}#studyView .md .fx-formula{font-size:1.15em}}
+.simg-figure .label-slot.typing:focus-within{z-index:6}
+
+/* Anatomy view stacks: view buttons, live leader lines, cut slider on the right */
+#studyView .simg-views{display:flex;flex-wrap:wrap;gap:0;margin:0 0 8px;border:1px solid var(--border);border-radius:10px;overflow:hidden;width:max-content;max-width:100%}
+#studyView .simg-view{flex:1 1 auto;border:0;border-right:1px solid var(--border);background:transparent;color:inherit;font:inherit;font-size:.85rem;padding:5px 12px;cursor:pointer;min-height:32px}
+#studyView .simg-view:last-child{border-right:0}
+#studyView .simg-view[aria-pressed="true"]{background:rgba(var(--accent-0-rgb),.26);color:var(--accent-0);font-weight:700}
+#studyView .simg-view:focus-visible{outline:2px solid var(--accent-0);outline-offset:-2px}
+#studyView .simg-live .label-stage{background:#14171d}
+#studyView .simg-live [data-off]{display:none !important}
+#studyView .simg-live .simg-reg.simg-off{display:none}
+#studyView .simg-leader-line{fill:none;stroke:rgba(241,245,249,.9);stroke-width:1.5px;vector-effect:non-scaling-stroke;pointer-events:none}
+#studyView .simg-live .simg-leader-dot{stroke:#f1f5f9;stroke-width:6px}
+#studyView .simg-live .simg-hot{background:rgba(42,48,60,.94);border:1.5px solid #f1f5f9;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2px;overflow:hidden}
+#studyView .simg-hot-text{font-size:clamp(7px,1.45cqw,14px);font-weight:700;line-height:1.05}
+#studyView .simg-frame.has-slider{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:stretch;column-gap:6px}
+#studyView .simg-frame.has-slider>:not(.label-stage):not(.simg-slider){grid-column:1/-1}
+#studyView .simg-frame.has-slider>.label-stage{grid-column:1;min-width:0}
+#studyView .simg-frame.has-slider>.simg-slider{grid-column:2}
+#studyView .simg-slider{width:34px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px 0;border:1px solid var(--border);border-radius:10px;touch-action:none;cursor:ns-resize;user-select:none;-webkit-user-select:none;font-size:.68rem;line-height:1}
+#studyView .simg-slider:focus-visible{outline:2px solid var(--accent-0);outline-offset:1px}
+#studyView .simg-sl-track{position:relative;flex:1 1 auto;width:6px;min-height:80px;border-radius:3px;background:rgba(var(--accent-0-rgb),.25);margin:6px 0}
+#studyView .simg-sl-thumb{position:absolute;left:50%;width:20px;height:20px;border-radius:50%;background:var(--accent-0);transform:translate(-50%,-50%);box-shadow:0 0 0 3px rgba(var(--accent-0-rgb),.25)}
+#studyView .simg-slider.dragging .simg-sl-thumb{box-shadow:0 0 0 6px rgba(var(--accent-0-rgb),.3)}
+#studyView .simg-sl-end{opacity:.75}
+#studyView .simg-sl-pos{font-weight:700;font-variant-numeric:tabular-nums}
+@media (max-width:480px){#studyView .simg-slider{width:30px}#studyView .simg-view{padding:5px 8px;font-size:.8rem}}
+
+/* picture variants: labels a picture does not name stay hidden on it */
+#studyView .simg-has-var [data-off]{display:none !important}
+#studyView .simg-has-var .simg-reg.simg-off{display:none}
+/* Shuffle / Reset (always shown in Word bank and Type), labels shown filled in */
+#studyView .simg-restart{font-weight:700;letter-spacing:.02em;transition:background .15s,box-shadow .15s,transform .15s}
+#studyView .simg-restart:active{transform:scale(.97)}
+#studyView .simg-restart:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(var(--accent-0-rgb),.45),0 0 16px rgba(var(--accent-0-rgb),.55)}
+#studyView .label-figure .label-slot.locked.given{border:1px solid #9ca3af;background:#f3f4f6;color:#374151;-webkit-text-fill-color:#374151;font-weight:600;cursor:default}
+
+/* Drop on the object: the structure under a dragged word glows in the accent / mood colour */
+#studyView .simg-objglow{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:visible;opacity:0;transition:opacity .14s ease}
+#studyView .simg-objglow.on{opacity:1}
+#studyView .simg-objglow polygon{fill:rgba(var(--accent-0-rgb),.30);stroke:var(--accent-0);stroke-width:2.5px;stroke-linejoin:round;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 4px var(--accent-0)) drop-shadow(0 0 10px rgba(var(--accent-0-rgb),.75))}
+@media (prefers-reduced-motion:reduce){#studyView .simg-objglow{transition:none}}
+
+/* Empty label boxes stand out on light and dark parts of a picture: a mostly opaque light fill tinted
+   by the accent / mood colour, a clear dashed accent border and a soft shadow */
+#studyView .simg-figure .label-slot.open{background:color-mix(in srgb,color-mix(in srgb,#fff 84%,var(--accent-0)) 88%,transparent);border:2px dashed var(--accent-0);box-shadow:0 1px 3px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.45)}
+#studyView .simg-figure.picking .label-slot.open{background:color-mix(in srgb,color-mix(in srgb,#fff 74%,var(--accent-0)) 90%,transparent)}
+#studyView .simg-figure .label-slot.open.drop-over{border-style:solid;border-color:var(--accent-0);box-shadow:0 0 0 4px rgba(var(--accent-0-rgb),.35),0 0 16px 4px rgba(var(--accent-0-rgb),.55)}
+
+/* ↺ Reset in the picture header, next to Word bank / Type / Labels, in the same segmented style */
+#studyView .simg-head .simg-head-reset{align-self:center;margin:0;font-family:var(--mono);font-size:.74rem;font-weight:400;letter-spacing:0;padding:6px 12px;border-radius:999px;border:1px solid var(--border-strong,var(--border));background:rgba(var(--accent-0-rgb),.05);color:var(--col-text-main);cursor:pointer;white-space:nowrap;box-shadow:none}
+#studyView .simg-head .simg-head-reset:hover{background:rgba(var(--accent-0-rgb),.14);border-color:var(--accent-0)}
+#studyView .simg-head .simg-head-reset:focus-visible{outline:2px solid var(--accent-0);outline-offset:-2px;box-shadow:none}
+#studyView .simg-head .simg-head-reset[hidden]{display:none}
+@media (max-width:480px){#studyView .simg-head .simg-head-reset{padding:6px 10px;font-size:.7rem}}
+
+/* Boxes placed over names printed on the picture hide that text completely, in every state */
+#studyView .simg-figure .label-slot.open.covers{background:color-mix(in srgb,#fff 86%,var(--accent-0))}
+#studyView .simg-figure.picking .label-slot.open.covers{background:color-mix(in srgb,#fff 76%,var(--accent-0))}
+#studyView .simg-figure .label-slot.covers.given{background:#fff;color:#1b2233}
+/* Labels mode: names that are not printed on the labelled picture are shown in their boxes */
+#studyView .simg-hot.simg-hot-drawn{background:#fff;border:1.5px solid #334155;color:#111827;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2px;overflow:hidden;border-radius:4px}

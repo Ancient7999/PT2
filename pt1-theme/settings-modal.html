@@ -1,0 +1,269 @@
+<div class="settings-wrapper" id="settings-wrapper">
+  <button class="settings-btn" id="settings-btn" aria-label="Open theme settings">
+<svg class="settings-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
+fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="3"/>
+<path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+</svg>
+  </button>
+</div>
+
+<div id="settings-modal" class="settings-modal">
+  <div class="settings-modal-content">
+    <div class="settings-modal-header">
+      <h2>Settings</h2>
+      <button class="settings-close-modal" id="settings-close-btn" aria-label="Close">×</button>
+    </div>
+    <div class="settings-body">
+      <div class="settings-nav">
+        <button class="settings-nav-btn active" data-panel="general" onclick="openSettingsPanel('general')">Theme</button>
+        <button class="settings-nav-btn" data-panel="quiz" onclick="openSettingsPanel('quiz')">Quiz</button>
+      </div>
+      <div class="settings-panels">
+        <div class="settings-panel active" id="settings-panel-general">
+          <div class="settings-panel-title">Theme</div>
+<div class="setting-item" style="padding-top:20px; position:relative;">
+<div style="font-size:0.75em; font-weight:bold; color:var(--col-text-muted); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; opacity:0.6;">Theme</div>
+<button title="Reset Theme to Defaults" onclick="resetThemeToDefaults()" style="position:absolute; top:20px; right:0; background:transparent; border:1px solid var(--col-error); color:var(--col-error); border-radius:6px; padding:3px 8px; font-size:0.8em; ">↺</button>
+<span class="setting-item-label">Accent Color</span>
+<div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+<div class="preset-swatches" style="margin:0; flex-shrink:0;">
+<button class="preset-swatch active-preset" data-hex="#330000" style="background:#330000;" title="Maroon" onclick="applyPreset('#330000', false, 90)"></button>
+<button class="preset-swatch" data-hex="#4EA121" style="background:#4EA121;" title="Leaf" onclick="applyPreset('#4EA121', false)"></button>
+<button class="preset-swatch" data-hex="#8833ff" style="background:#8833ff;" title="Violet" onclick="applyPreset('#8833ff', false, 32)"></button>
+<button class="preset-swatch" data-hex="#000000" style="background:#000000;" title="Obsidian" onclick="applyPreset('#000000', false, 90)"></button>
+<button class="preset-swatch" data-hex="#ff8800" style="background:#ff8800;" title="Amber" onclick="applyPreset('#ff8800', false)"></button>
+<button class="preset-swatch" data-hex="#ff0000" style="background:#ff0000;" title="Red" onclick="applyPreset('#ff0000', false, 43)"></button>
+<button class="preset-swatch" data-hex="#0008FF" style="background:#0008FF;" title="Blue" onclick="applyPreset('#0008FF', false, 26)"></button>
+</div>
+<div id="custom-presets-area" style="display:flex;gap:6px;align-items:center;"></div>
+<div id="theme-lock-colorPicker" style="display:flex; gap:8px; align-items:center; margin-left:auto;">
+<input type="color" id="accent-color-picker" value="#330000" style="width:40px;height:40px;border:none;border-radius:8px;flex-shrink:0;">
+<input type="text" id="accent-hex-input" value="#330000" maxlength="7" class="number-input" style="width:100px; font-family:monospace; font-size:0.85em;">
+</div>
+</div>
+</div>
+<div class="setting-item" id="theme-lock-colorStrength" style="border-top:1px solid var(--col-border-light); padding-top:20px;">
+<span class="setting-item-label">Color Strength: <span id="strength-value-display" style="color:var(--accent-0);">90</span></span>
+<div style="display:flex; gap:10px; align-items:center;">
+<span style="font-size:0.82em; color:var(--col-text-muted);">Subtle</span>
+<input type="range" id="accent-strength-slider" min="0" max="100" value="90" style="flex:1; ">
+<span style="font-size:0.82em; color:var(--col-text-muted);">Vibrant</span>
+</div>
+</div>
+<div class="setting-item" style="border-top:1px solid var(--col-border-light); padding-top:20px; display:none;">
+<span class="setting-item-label">Reset Theme</span>
+<button class="btn btn-secondary" style="border-color:var(--col-error); color:var(--col-error);" onclick="resetThemeToDefaults()">Reset Theme to Defaults</button>
+<p class="setting-item-desc">Resets accent color, hue shift, and dark mode.</p>
+</div>
+<div class="setting-item" id="theme-font-picker" style="border-top:1px solid var(--col-border-light); padding-top:20px;">
+<span class="setting-item-label">Change Fonts</span>
+<p class="setting-item-desc" style="margin:0 0 12px;">Pick a font per UI role. Defaults match the current Quiz look (Outfit / Instrument Serif / Space Mono).</p>
+<div class="font-role-row" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
+<label for="font-family-ui" class="setting-item-desc" style="margin:0; min-width:7.5rem; flex-shrink:0;">Body / UI</label>
+<select id="font-family-ui" class="font-family-select number-input" data-font-role="ui" title="General UI and body text" style="flex:1; min-width:140px; max-width:220px; text-align:left; font-size:0.9em; padding:8px 10px;">
+<option value="Instrument Serif" style="font-family:'Instrument Serif', Georgia, serif;">Instrument</option>
+<option value="Fraunces" style="font-family:'Fraunces', Georgia, serif;">Fraunces</option>
+<option value="Space Mono" style="font-family:'Space Mono', ui-monospace, monospace;">Space Mono</option>
+<option value="IBM Plex Mono" style="font-family:'IBM Plex Mono', ui-monospace, monospace;">IBM Plex Mono</option>
+<option value="Nunito" style="font-family:'Nunito', system-ui, sans-serif;">Nunito</option>
+<option value="Outfit" style="font-family:'Outfit', system-ui, sans-serif;">Outfit</option>
+<option value="Montserrat" style="font-family:'Montserrat', system-ui, sans-serif;">Montserrat</option>
+<option value="Roboto" style="font-family:'Roboto', system-ui, sans-serif;">Roboto</option>
+<option value="Oswald" style="font-family:'Oswald', system-ui, sans-serif;">Oswald</option>
+<option value="Playfair Display" style="font-family:'Playfair Display', Georgia, serif;">Playfair</option>
+<option value="Bebas Neue" style="font-family:'Bebas Neue', Impact, sans-serif;">Bebas</option>
+<option value="Permanent Marker" style="font-family:'Permanent Marker', cursive;">Marker</option>
+<option value="Pacifico" style="font-family:'Pacifico', cursive;">Pacifico</option>
+<option value="Indie Flower" style="font-family:'Indie Flower', cursive;">Indie Flower</option>
+<option value="Comic Neue" selected style="font-family:'Comic Neue', Comic Sans MS, cursive;">Comic Neue</option>
+<option value="Press Start 2P" style="font-family:'Press Start 2P', monospace;">Pixel</option>
+<option value="Georgia" style="font-family:Georgia, 'Times New Roman', serif;">Georgia</option>
+<option value="Times New Roman" style="font-family:'Times New Roman', Times, serif;">Times</option>
+<option value="Arial" style="font-family:Arial, Helvetica, sans-serif;">Arial</option>
+<option value="Verdana" style="font-family:Verdana, Geneva, sans-serif;">Verdana</option>
+<option value="Trebuchet MS" style="font-family:'Trebuchet MS', Helvetica, sans-serif;">Trebuchet</option>
+<option value="Impact" style="font-family:Impact, Haettenschweiler, sans-serif;">Impact</option>
+</select>
+</div><div class="font-role-row" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
+<label for="font-family-head" class="setting-item-desc" style="margin:0; min-width:7.5rem; flex-shrink:0;">Headings</label>
+<select id="font-family-head" class="font-family-select number-input" data-font-role="head" title="Titles and card headings" style="flex:1; min-width:140px; max-width:220px; text-align:left; font-size:0.9em; padding:8px 10px;">
+<option value="Instrument Serif" style="font-family:'Instrument Serif', Georgia, serif;">Instrument</option>
+<option value="Fraunces" style="font-family:'Fraunces', Georgia, serif;">Fraunces</option>
+<option value="Space Mono" style="font-family:'Space Mono', ui-monospace, monospace;">Space Mono</option>
+<option value="IBM Plex Mono" style="font-family:'IBM Plex Mono', ui-monospace, monospace;">IBM Plex Mono</option>
+<option value="Nunito" style="font-family:'Nunito', system-ui, sans-serif;">Nunito</option>
+<option value="Outfit" style="font-family:'Outfit', system-ui, sans-serif;">Outfit</option>
+<option value="Montserrat" style="font-family:'Montserrat', system-ui, sans-serif;">Montserrat</option>
+<option value="Roboto" style="font-family:'Roboto', system-ui, sans-serif;">Roboto</option>
+<option value="Oswald" style="font-family:'Oswald', system-ui, sans-serif;">Oswald</option>
+<option value="Playfair Display" style="font-family:'Playfair Display', Georgia, serif;">Playfair</option>
+<option value="Bebas Neue" style="font-family:'Bebas Neue', Impact, sans-serif;">Bebas</option>
+<option value="Permanent Marker" style="font-family:'Permanent Marker', cursive;">Marker</option>
+<option value="Pacifico" selected style="font-family:'Pacifico', cursive;">Pacifico</option>
+<option value="Indie Flower" style="font-family:'Indie Flower', cursive;">Indie Flower</option>
+<option value="Comic Neue" style="font-family:'Comic Neue', Comic Sans MS, cursive;">Comic Neue</option>
+<option value="Press Start 2P" style="font-family:'Press Start 2P', monospace;">Pixel</option>
+<option value="Georgia" style="font-family:Georgia, 'Times New Roman', serif;">Georgia</option>
+<option value="Times New Roman" style="font-family:'Times New Roman', Times, serif;">Times</option>
+<option value="Arial" style="font-family:Arial, Helvetica, sans-serif;">Arial</option>
+<option value="Verdana" style="font-family:Verdana, Geneva, sans-serif;">Verdana</option>
+<option value="Trebuchet MS" style="font-family:'Trebuchet MS', Helvetica, sans-serif;">Trebuchet</option>
+<option value="Impact" style="font-family:Impact, Haettenschweiler, sans-serif;">Impact</option>
+</select>
+</div><div class="font-role-row" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
+<label for="font-family-question" class="setting-item-desc" style="margin:0; min-width:7.5rem; flex-shrink:0;">Question stem</label>
+<select id="font-family-question" class="font-family-select number-input" data-font-role="question" title="Quiz question text" style="flex:1; min-width:140px; max-width:220px; text-align:left; font-size:0.9em; padding:8px 10px;">
+<option value="Instrument Serif" style="font-family:'Instrument Serif', Georgia, serif;">Instrument</option>
+<option value="Fraunces" style="font-family:'Fraunces', Georgia, serif;">Fraunces</option>
+<option value="Space Mono" selected style="font-family:'Space Mono', ui-monospace, monospace;">Space Mono</option>
+<option value="IBM Plex Mono" style="font-family:'IBM Plex Mono', ui-monospace, monospace;">IBM Plex Mono</option>
+<option value="Nunito" style="font-family:'Nunito', system-ui, sans-serif;">Nunito</option>
+<option value="Outfit" style="font-family:'Outfit', system-ui, sans-serif;">Outfit</option>
+<option value="Montserrat" style="font-family:'Montserrat', system-ui, sans-serif;">Montserrat</option>
+<option value="Roboto" style="font-family:'Roboto', system-ui, sans-serif;">Roboto</option>
+<option value="Oswald" style="font-family:'Oswald', system-ui, sans-serif;">Oswald</option>
+<option value="Playfair Display" style="font-family:'Playfair Display', Georgia, serif;">Playfair</option>
+<option value="Bebas Neue" style="font-family:'Bebas Neue', Impact, sans-serif;">Bebas</option>
+<option value="Permanent Marker" style="font-family:'Permanent Marker', cursive;">Marker</option>
+<option value="Pacifico" style="font-family:'Pacifico', cursive;">Pacifico</option>
+<option value="Indie Flower" style="font-family:'Indie Flower', cursive;">Indie Flower</option>
+<option value="Comic Neue" style="font-family:'Comic Neue', Comic Sans MS, cursive;">Comic Neue</option>
+<option value="Press Start 2P" style="font-family:'Press Start 2P', monospace;">Pixel</option>
+<option value="Georgia" style="font-family:Georgia, 'Times New Roman', serif;">Georgia</option>
+<option value="Times New Roman" style="font-family:'Times New Roman', Times, serif;">Times</option>
+<option value="Arial" style="font-family:Arial, Helvetica, sans-serif;">Arial</option>
+<option value="Verdana" style="font-family:Verdana, Geneva, sans-serif;">Verdana</option>
+<option value="Trebuchet MS" style="font-family:'Trebuchet MS', Helvetica, sans-serif;">Trebuchet</option>
+<option value="Impact" style="font-family:Impact, Haettenschweiler, sans-serif;">Impact</option>
+</select>
+</div><div class="font-role-row" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
+<label for="font-family-choice" class="setting-item-desc" style="margin:0; min-width:7.5rem; flex-shrink:0;">Choices</label>
+<select id="font-family-choice" class="font-family-select number-input" data-font-role="choice" title="Answer option cards" style="flex:1; min-width:140px; max-width:220px; text-align:left; font-size:0.9em; padding:8px 10px;">
+<option value="Instrument Serif" style="font-family:'Instrument Serif', Georgia, serif;">Instrument</option>
+<option value="Fraunces" style="font-family:'Fraunces', Georgia, serif;">Fraunces</option>
+<option value="Space Mono" selected style="font-family:'Space Mono', ui-monospace, monospace;">Space Mono</option>
+<option value="IBM Plex Mono" style="font-family:'IBM Plex Mono', ui-monospace, monospace;">IBM Plex Mono</option>
+<option value="Nunito" style="font-family:'Nunito', system-ui, sans-serif;">Nunito</option>
+<option value="Outfit" style="font-family:'Outfit', system-ui, sans-serif;">Outfit</option>
+<option value="Montserrat" style="font-family:'Montserrat', system-ui, sans-serif;">Montserrat</option>
+<option value="Roboto" style="font-family:'Roboto', system-ui, sans-serif;">Roboto</option>
+<option value="Oswald" style="font-family:'Oswald', system-ui, sans-serif;">Oswald</option>
+<option value="Playfair Display" style="font-family:'Playfair Display', Georgia, serif;">Playfair</option>
+<option value="Bebas Neue" style="font-family:'Bebas Neue', Impact, sans-serif;">Bebas</option>
+<option value="Permanent Marker" style="font-family:'Permanent Marker', cursive;">Marker</option>
+<option value="Pacifico" style="font-family:'Pacifico', cursive;">Pacifico</option>
+<option value="Indie Flower" style="font-family:'Indie Flower', cursive;">Indie Flower</option>
+<option value="Comic Neue" style="font-family:'Comic Neue', Comic Sans MS, cursive;">Comic Neue</option>
+<option value="Press Start 2P" style="font-family:'Press Start 2P', monospace;">Pixel</option>
+<option value="Georgia" style="font-family:Georgia, 'Times New Roman', serif;">Georgia</option>
+<option value="Times New Roman" style="font-family:'Times New Roman', Times, serif;">Times</option>
+<option value="Arial" style="font-family:Arial, Helvetica, sans-serif;">Arial</option>
+<option value="Verdana" style="font-family:Verdana, Geneva, sans-serif;">Verdana</option>
+<option value="Trebuchet MS" style="font-family:'Trebuchet MS', Helvetica, sans-serif;">Trebuchet</option>
+<option value="Impact" style="font-family:Impact, Haettenschweiler, sans-serif;">Impact</option>
+</select>
+</div><div class="font-role-row" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
+<label for="font-family-nav" class="setting-item-desc" style="margin:0; min-width:7.5rem; flex-shrink:0;">Buttons / Nav</label>
+<select id="font-family-nav" class="font-family-select number-input" data-font-role="nav" title="Navigator and action buttons" style="flex:1; min-width:140px; max-width:220px; text-align:left; font-size:0.9em; padding:8px 10px;">
+<option value="Instrument Serif" style="font-family:'Instrument Serif', Georgia, serif;">Instrument</option>
+<option value="Fraunces" style="font-family:'Fraunces', Georgia, serif;">Fraunces</option>
+<option value="Space Mono" style="font-family:'Space Mono', ui-monospace, monospace;">Space Mono</option>
+<option value="IBM Plex Mono" style="font-family:'IBM Plex Mono', ui-monospace, monospace;">IBM Plex Mono</option>
+<option value="Nunito" style="font-family:'Nunito', system-ui, sans-serif;">Nunito</option>
+<option value="Outfit" style="font-family:'Outfit', system-ui, sans-serif;">Outfit</option>
+<option value="Montserrat" selected style="font-family:'Montserrat', system-ui, sans-serif;">Montserrat</option>
+<option value="Roboto" style="font-family:'Roboto', system-ui, sans-serif;">Roboto</option>
+<option value="Oswald" style="font-family:'Oswald', system-ui, sans-serif;">Oswald</option>
+<option value="Playfair Display" style="font-family:'Playfair Display', Georgia, serif;">Playfair</option>
+<option value="Bebas Neue" style="font-family:'Bebas Neue', Impact, sans-serif;">Bebas</option>
+<option value="Permanent Marker" style="font-family:'Permanent Marker', cursive;">Marker</option>
+<option value="Pacifico" style="font-family:'Pacifico', cursive;">Pacifico</option>
+<option value="Indie Flower" style="font-family:'Indie Flower', cursive;">Indie Flower</option>
+<option value="Comic Neue" style="font-family:'Comic Neue', Comic Sans MS, cursive;">Comic Neue</option>
+<option value="Press Start 2P" style="font-family:'Press Start 2P', monospace;">Pixel</option>
+<option value="Georgia" style="font-family:Georgia, 'Times New Roman', serif;">Georgia</option>
+<option value="Times New Roman" style="font-family:'Times New Roman', Times, serif;">Times</option>
+<option value="Arial" style="font-family:Arial, Helvetica, sans-serif;">Arial</option>
+<option value="Verdana" style="font-family:Verdana, Geneva, sans-serif;">Verdana</option>
+<option value="Trebuchet MS" style="font-family:'Trebuchet MS', Helvetica, sans-serif;">Trebuchet</option>
+<option value="Impact" style="font-family:Impact, Haettenschweiler, sans-serif;">Impact</option>
+</select>
+</div><div class="font-role-row" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
+<label for="font-family-mono" class="setting-item-desc" style="margin:0; min-width:7.5rem; flex-shrink:0;">Mono / labels</label>
+<select id="font-family-mono" class="font-family-select number-input" data-font-role="mono" title="Status, timers, chrome labels" style="flex:1; min-width:140px; max-width:220px; text-align:left; font-size:0.9em; padding:8px 10px;">
+<option value="Instrument Serif" style="font-family:'Instrument Serif', Georgia, serif;">Instrument</option>
+<option value="Fraunces" style="font-family:'Fraunces', Georgia, serif;">Fraunces</option>
+<option value="Space Mono" style="font-family:'Space Mono', ui-monospace, monospace;">Space Mono</option>
+<option value="IBM Plex Mono" style="font-family:'IBM Plex Mono', ui-monospace, monospace;">IBM Plex Mono</option>
+<option value="Nunito" style="font-family:'Nunito', system-ui, sans-serif;">Nunito</option>
+<option value="Outfit" style="font-family:'Outfit', system-ui, sans-serif;">Outfit</option>
+<option value="Montserrat" style="font-family:'Montserrat', system-ui, sans-serif;">Montserrat</option>
+<option value="Roboto" style="font-family:'Roboto', system-ui, sans-serif;">Roboto</option>
+<option value="Oswald" selected style="font-family:'Oswald', system-ui, sans-serif;">Oswald</option>
+<option value="Playfair Display" style="font-family:'Playfair Display', Georgia, serif;">Playfair</option>
+<option value="Bebas Neue" style="font-family:'Bebas Neue', Impact, sans-serif;">Bebas</option>
+<option value="Permanent Marker" style="font-family:'Permanent Marker', cursive;">Marker</option>
+<option value="Pacifico" style="font-family:'Pacifico', cursive;">Pacifico</option>
+<option value="Indie Flower" style="font-family:'Indie Flower', cursive;">Indie Flower</option>
+<option value="Comic Neue" style="font-family:'Comic Neue', Comic Sans MS, cursive;">Comic Neue</option>
+<option value="Press Start 2P" style="font-family:'Press Start 2P', monospace;">Pixel</option>
+<option value="Georgia" style="font-family:Georgia, 'Times New Roman', serif;">Georgia</option>
+<option value="Times New Roman" style="font-family:'Times New Roman', Times, serif;">Times</option>
+<option value="Arial" style="font-family:Arial, Helvetica, sans-serif;">Arial</option>
+<option value="Verdana" style="font-family:Verdana, Geneva, sans-serif;">Verdana</option>
+<option value="Trebuchet MS" style="font-family:'Trebuchet MS', Helvetica, sans-serif;">Trebuchet</option>
+<option value="Impact" style="font-family:Impact, Haettenschweiler, sans-serif;">Impact</option>
+</select>
+</div>
+</div>
+<div class="setting-item" id="theme-cursor-picker" style="border-top:1px solid var(--col-border-light); padding-top:20px;">
+<span class="setting-item-label">Custom Cursor</span>
+<p class="setting-item-desc" style="margin:0 0 12px;">Toggle custom cursors, then pick a skin. Theme accent recolors the live cursor. System is a styled OS-like pointer.</p>
+<div class="toggle-container" style="margin:0 0 14px; justify-content:flex-start;">
+<span class="toggle-label">Off</span>
+<label class="toggle-switch" title="Custom cursors on/off">
+<input type="checkbox" id="custom-cursor-toggle" checked>
+<span class="toggle-slider"></span>
+</label>
+<span class="toggle-label">On</span>
+</div>
+<div class="cursor-skin-grid" id="cursor-skin-grid" role="listbox" aria-label="Cursor style">
+<button type="button" class="cursor-skin-opt" data-cursor-skin="ring-screen" title="Ring Screen"><span class="cursor-skin-preview preview-ring-screen"></span><span class="cursor-skin-name">Ring</span></button>
+<button type="button" class="cursor-skin-opt" data-cursor-skin="ring-tight" title="Ring Tight"><span class="cursor-skin-preview preview-ring-tight"></span><span class="cursor-skin-name">Tight</span></button>
+<button type="button" class="cursor-skin-opt" data-cursor-skin="ring-gold" title="Ring Accent"><span class="cursor-skin-preview preview-ring-gold"></span><span class="cursor-skin-name">Accent</span></button>
+<button type="button" class="cursor-skin-opt" data-cursor-skin="pill" title="Pill"><span class="cursor-skin-preview preview-pill"></span><span class="cursor-skin-name">Pill</span></button>
+<button type="button" class="cursor-skin-opt" data-cursor-skin="beam-v" title="Beam Vertical"><span class="cursor-skin-preview preview-beam-v"></span><span class="cursor-skin-name">Beam V</span></button>
+<button type="button" class="cursor-skin-opt" data-cursor-skin="beam-h" title="Beam Horizontal"><span class="cursor-skin-preview preview-beam-h"></span><span class="cursor-skin-name">Beam H</span></button>
+<button type="button" class="cursor-skin-opt" data-cursor-skin="diamond" title="Diamond"><span class="cursor-skin-preview preview-diamond"></span><span class="cursor-skin-name">Diamond</span></button>
+<button type="button" class="cursor-skin-opt" data-cursor-skin="comma" title="Comma"><span class="cursor-skin-preview preview-comma"></span><span class="cursor-skin-name">Comma</span></button>
+<button type="button" class="cursor-skin-opt" data-cursor-skin="system" title="System-style pointer"><span class="cursor-skin-preview preview-system"></span><span class="cursor-skin-name">System</span></button>
+</div>
+</div>
+<div class="setting-item" style="display: none;">
+<span class="setting-item-label">Appearance</span>
+<div class="toggle-container" style="margin:0; justify-content:flex-start;">
+<span class="toggle-label">Dark</span>
+<label class="toggle-switch">
+<input type="checkbox" id="light-mode-toggle">
+<span class="toggle-slider"></span>
+</label>
+<span class="toggle-label">Light</span>
+</div>
+</div>
+        </div>
+        <div class="settings-panel" id="settings-panel-quiz">
+          <div class="settings-panel-title">Quiz</div>
+          <div class="setting-item" style="padding-top:8px;">
+            <span class="setting-item-label">Shuffle &amp; order</span>
+            <div class="pref-row" style="margin-top:10px;">
+              <label><input type="checkbox" id="prefShuffleQ" checked> Shuffle questions</label>
+              <label><input type="checkbox" id="prefShuffleC" checked> Shuffle choices</label>
+              <label><input type="checkbox" id="prefLinkFirst" checked> Insert linking questions randomly</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

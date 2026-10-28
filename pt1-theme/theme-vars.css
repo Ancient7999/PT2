@@ -1,0 +1,96 @@
+/* Quantifier-30 theme CSS variables — override these in consumer repos to retheme */
+:root {
+--accent-0: #ffc583;
+--accent-0-rgb: 255, 197, 131;
+--accent-1: #ffb968;
+--accent-1-rgb: 255, 185, 104;
+--accent-2: #ffad4e;
+--accent-2-rgb: 255, 173, 78;
+--accent-3: #ff9f31;
+--accent-3-rgb: 255, 159, 49;
+--accent-4: #ff9010;
+--accent-4-rgb: 255, 144, 16;
+--accent-5: #e57a00;
+--accent-5-rgb: 229, 122, 0;
+--accent-6: #ffb662;
+--accent-6-rgb: 255, 182, 98;
+--accent-7: #ff9a27;
+--accent-7-rgb: 255, 154, 39;
+--accent-8: #ffc079;
+--accent-8-rgb: 255, 192, 121;
+--accent-9: #f88500;
+--accent-9-rgb: 248, 133, 0;
+--col-primary: var(--accent-0);
+--col-text-main: #ccc;
+--col-text-muted: #888;
+--col-bg-main: #0d0d0d;
+--col-bg-card: #1a1a1a;
+--col-bg-card-rgb: 26, 26, 26;
+--col-bg-btn: #222;
+--col-bg-btn-rgb: 34, 34, 34;
+--col-bg-input: #111;
+--col-bg-input-rgb: 17, 17, 17;
+--col-bg-selected: #2a2a2a;
+--col-bg-tab-inactive: #181818;
+--col-border: #444;
+--col-border-light: #333;
+--col-border-tab: #555;
+--col-success: #00ff88;
+--col-error: #ff4444;
+--col-error-light: #ff8888;
+--col-gold: #ffd700;
+--font-bold: bold;
+--font-size-xs: 0.75em;
+--font-size-sm: 0.85em;
+--font-size-md: 1.1em;
+--font-size-lg: 1.2em;
+--font-size-xl: 1.35em;
+--margin-heading: 30px;
+--margin-section: 40px;
+--margin-element: 15px;
+--margin-card-desc: 4px;
+--padding-tab: 16px 40px;
+--radius-sm: 6px;
+--radius-md: 8px;
+--radius-lg: 10px;
+--radius-xl: 12px;
+--radius-box: 16px;
+--radius-tab: 10px;
+--col-result-correct-bg: rgba(0, 255, 136, 0.1);
+--col-result-correct-border: var(--col-success);
+--col-result-wrong-bg: rgba(255, 68, 68, 0.1);
+--col-result-wrong-border: var(--col-error);
+--col-result-neutral-bg: var(--col-bg-card);
+--col-result-neutral-border: var(--col-border-light);
+--accent-deep: #8f4c00;
+--accent-deep-rgb: 143, 76, 0;
+--bg-tint-color: rgba(0,0,0,0);
+--bg-tint-color-high: rgba(0,0,0,0);
+}
+
+--label-y: #FFD700; /* used by calculator reset 2nd-label; undefined in source, gold default */
+:root.light-mode {
+  --col-bg-main: #d4d8db;
+  --col-bg-card: #a8aeb4;
+  --col-bg-card-rgb:168, 174, 180;
+  --col-bg-btn:  #969da4;
+  --col-bg-btn-rgb: 150, 157, 164;
+  --col-bg-input:#b4b9be;
+  --col-bg-input-rgb:  180, 185, 190;
+  --col-bg-selected:#7a8a9a;
+  --col-bg-tab-inactive:  #9ea5ac;
+  --col-text-main:  #111418;
+  --col-text-muted: #444c55;
+  --col-border:  #8a9198;
+  --col-border-light:  #a8b0b8;
+  --col-border-tab: #8a9198;
+  --col-primary: var(--accent-4);
+  --col-primary-text:  var(--accent-deep);
+  --col-error-light:#bb1e00;
+  --col-success: #006b35;
+  --col-gold: #a07800;
+  --col-result-correct-bg:  rgba(0, 107, 53, 0.10);
+  --col-result-wrong-bg: rgba(180, 20, 20, 0.10);
+  --col-result-neutral-bg:  var(--col-bg-card);
+}
+

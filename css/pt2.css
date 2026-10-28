@@ -1,0 +1,209 @@
+/* PT2: timer box settings */
+html.pt2-hide-dock #timerDock{display:none!important}
+html.pt2-hide-quotes #globalTimerMode,html.pt2-hide-quotes #globalTimerAuthor{display:none!important}
+html.pt2-hide-emojis #liveMoodBtn,html.pt2-hide-emojis #moodTray{display:none!important}
+html.pt2-pomo-off #globalTimerDisplay{display:none!important}
+#portalView .online-panel,#portalView .portal-tabs,#portalView #materialsLabel{display:none!important}
+.pt2-menu-link{display:inline-block;margin:0 0 14px;font-size:.85rem;color:var(--cyan-bright,#67e8f9);text-decoration:none}
+.pt2-menu-link:hover{text-decoration:underline}
+
+/* —— t305u fixes —— */
+/* the custom cursor stays above every overlay (settings, pop-ups, confirms, tips) */
+#cursor{z-index:2147483646 !important}
+#cursor.core{z-index:2147483647 !important}
+/* one font dropdown per role: the styled picker; the native select stays only as the value holder */
+.font-family-select-native{display:none !important}
+/* default fonts: Body / UI and Headings follow the font roles */
+body{font-family:var(--font-ui,'Outfit',system-ui,sans-serif)}
+#portalView h1,#setsView h1,#studyView h1,.settings-modal h2,.settings-panel-title{font-family:var(--font-head,'Roboto',system-ui,sans-serif)}
+/* Settings → Quiz: one option per row, same toggles as the Theme panel */
+.pt2-opt-list{display:flex;flex-direction:column;gap:2px;margin-top:10px}
+.pt2-opt{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:9px 2px;border-bottom:1px solid var(--col-border-light)}
+.pt2-opt:last-child{border-bottom:0}
+.pt2-opt-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.pt2-opt-name{font-size:.95rem}
+.pt2-opt-hint{font-size:.78rem;opacity:.7}
+.pt2-opt .toggle-switch{flex:0 0 auto}
+html.pt2-pomo-off .pt2-opt[data-needs-timer]{opacity:.45}
+
+/* Lock emoji button in the emoji dropdown */
+.mood-lock-btn:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+
+/* System cursor: no custom overlay at all (the system pencil takes over while linking) */
+html[data-custom-cursor="off"] #cursor,html[data-custom-cursor="off"] .brushCursor{display:none!important}
+
+/* Background grid off (Settings → Theme) */
+html.pt2-no-grid{--skin-pattern:none!important;--skin-pattern-opacity:0!important;--grid-tint:transparent!important}
+html.pt2-no-grid #el-arquitecto-bg-layer{display:none!important}
+
+/* Picture Study title: the sheen moves through shades and tints of the active colour only */
+#studyView .study-header h1{background:linear-gradient(120deg,color-mix(in srgb,var(--accent-0) 45%,#fff) 0%,var(--accent-0) 35%,color-mix(in srgb,var(--accent-0) 62%,#000) 65%,color-mix(in srgb,var(--accent-0) 70%,#fff) 100%)!important;background-size:220% 100%!important;-webkit-background-clip:text!important;background-clip:text!important}
+/* Practice title: same rule, no fixed second hue */
+.sets-wrap h1{background:linear-gradient(120deg,var(--cyan-bright) 0%,var(--cyan) 40%,color-mix(in srgb,var(--cyan) 65%,#000) 75%,var(--cyan-bright) 100%)!important;-webkit-background-clip:text!important;background-clip:text!important}
+
+/* t325u: Lock emoji is a checkbox-style control, left of the Change cursor button */
+.mood-tray-tools .pt2-tools-row{display:flex;align-items:center;justify-content:center;gap:.6rem}
+.mood-lock-btn{display:inline-flex;align-items:center;gap:7px;padding:5px 10px 5px 7px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text-dim,inherit);font:inherit;font-family:var(--body,inherit);font-size:.78rem;line-height:1.2;cursor:pointer}
+.mood-lock-btn:hover{border-color:var(--cyan);color:inherit}
+.mood-lock-box{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:4px;border:1.5px solid var(--cyan);font-size:11px;font-weight:800;line-height:1;color:#05070c;background:transparent}
+.mood-lock-btn[aria-checked="true"]{border-color:var(--cyan);color:var(--cyan-bright,inherit)}
+.mood-lock-btn[aria-checked="true"] .mood-lock-box{background:var(--cyan)}
+
+/* t327u: Week sections on the home menu */
+#materialCards.pt2-weeks{display:block}
+.pt2-week{margin:0 0 26px}
+.pt2-week-h{margin:0 0 12px;font-family:var(--font-head,var(--head,'Roboto')),'Roboto',system-ui,sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:.04em;color:var(--accent);-webkit-text-fill-color:var(--accent);display:flex;align-items:center;gap:10px}
+.pt2-week-h::after{content:"";flex:1;height:1px;background:color-mix(in srgb,var(--accent) 35%,transparent)}
+.pt2-week-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+@media (max-width:640px){.pt2-week-cards{grid-template-columns:1fr}}
+/* t326u: Draft / Coming Soon cards dimmed like PT2's locked cards; they still open the confirm */
+.portal-card.pt2-dim{opacity:.6;filter:saturate(.6)}
+.portal-card.pt2-dim:hover,.portal-card.pt2-dim:focus-visible{opacity:.8}
+/* t326u: draft confirm card (its rules lived in lobby.css, which PT2 does not ship) */
+.study-confirm{--sc-bg2:var(--bg2,#080c14);--sc-bg:var(--bg,#05070c);--sc-text:var(--text,#e5e7eb);--sc-acc:var(--accent,#22d3ee);
+  position:fixed;z-index:100002;top:max(14px,env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);width:min(440px,calc(100vw - 24px));pointer-events:none;animation:scIn .2s cubic-bezier(.2,.8,.2,1);
+  font-family:var(--font-ui,var(--body,'Outfit')),'Outfit',system-ui,sans-serif}
+.study-confirm.leaving{animation:scOut .16s ease-in forwards}
+.study-confirm-card{pointer-events:auto;display:grid;grid-template-columns:auto 1fr;grid-template-areas:"ico body" "act act";gap:4px 12px;align-items:start;padding:12px 14px;border-radius:16px;
+  background:color-mix(in srgb,var(--sc-bg2) 94%,transparent);border:1px solid color-mix(in srgb,var(--sc-acc) 35%,transparent);
+  box-shadow:0 18px 46px color-mix(in srgb,var(--sc-bg) 80%,transparent),inset 0 1px 0 color-mix(in srgb,var(--sc-text) 10%,transparent);backdrop-filter:blur(18px) saturate(1.2);color:var(--sc-text);text-align:left}
+.study-confirm .sc-ico{grid-area:ico;width:32px;height:32px;border-radius:10px;display:grid;place-items:center;color:var(--sc-acc);background:color-mix(in srgb,var(--sc-acc) 14%,transparent)}
+.study-confirm .sc-body{grid-area:body;min-width:0;padding-top:1px}
+.study-confirm-card h3{margin:0;font-family:var(--font-head,var(--head,'Roboto')),'Roboto',system-ui,sans-serif;font-size:.95rem;font-weight:700;line-height:1.3;color:var(--sc-text);-webkit-text-fill-color:var(--sc-text);background:none}
+.study-confirm-text{margin:2px 0 0;font-size:.82rem;line-height:1.45;color:var(--text-dim,#9ca3af)}
+.study-confirm-text[hidden]{display:none}
+.study-confirm .sc-actions{grid-area:act;display:flex;justify-content:flex-end;gap:8px;margin-top:10px}
+.study-confirm .sc-btn{min-width:72px;height:32px;padding:0 14px;border-radius:10px;border:1px solid color-mix(in srgb,var(--sc-text) 14%,transparent);background:color-mix(in srgb,var(--sc-text) 5%,transparent);color:var(--sc-text);-webkit-text-fill-color:currentColor;
+  font:700 .78rem var(--font-ui,var(--body,'Outfit')),'Outfit',system-ui,sans-serif;cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .15s,background .15s;-webkit-appearance:none;appearance:none}
+.study-confirm .sc-btn:hover{border-color:color-mix(in srgb,var(--sc-acc) 60%,transparent);box-shadow:0 0 14px var(--mood-glow,transparent)}
+.study-confirm .sc-btn:active{transform:scale(.97)}
+.study-confirm .sc-btn:focus-visible{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--sc-acc) 40%,transparent);border-color:var(--sc-acc)}
+.study-confirm .sc-btn.sc-primary{border-color:transparent;color:var(--sc-bg);-webkit-text-fill-color:var(--sc-bg);background:linear-gradient(135deg,var(--sc-acc),var(--accent-2,var(--sc-acc)))}
+.study-confirm .sc-btn.sc-danger{border-color:color-mix(in srgb,var(--error,#ef4444) 55%,transparent);background:color-mix(in srgb,var(--error,#ef4444) 22%,transparent)}
+@keyframes scIn{from{opacity:0;transform:translate(-50%,-14px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes scOut{to{opacity:0;transform:translate(-50%,-10px)}}
+@media (max-width:520px){.study-confirm{width:calc(100vw - 16px);top:max(8px,env(safe-area-inset-top,0px))}.study-confirm .sc-btn{flex:1;height:40px}}
+@media (prefers-reduced-motion:reduce){.study-confirm,.study-confirm.leaving{animation:none}}
+
+/* t336u + S: Anatomy is a lesser card (about 84% size) that branches off Medical Terminology: it sits lower than the
+   English / Medical Terminology row and a connector (drawn by pt2-offline.js) joins the two cards */
+.pt2-week-cards.pt2-has-lesser{position:relative;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.84fr);align-items:start}
+.pt2-week-cards > .pt2-lesser{zoom:.84;align-self:start;margin-top:calc(104px / .84);margin-left:calc(22px / .84)}
+/* medium widths: two columns, Anatomy under Medical Terminology in its column, indented */
+@media (max-width:900px){
+  .pt2-week-cards.pt2-has-lesser{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pt2-week-cards.pt2-has-lesser > .pt2-lesser{grid-column:2;justify-self:end;width:84%;margin-top:calc(14px / .84);margin-left:0}
+}
+/* phones: one column, Anatomy right under Medical Terminology, indented so it reads as attached */
+@media (max-width:640px){
+  .pt2-week-cards.pt2-has-lesser{grid-template-columns:1fr}
+  .pt2-week-cards.pt2-has-lesser > .pt2-lesser{grid-column:1;justify-self:end;width:86%;margin-top:calc(14px / .84);margin-left:0}
+}
+.pt2-branch{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:3}
+.pt2-branch path{fill:none;stroke:var(--accent-0);stroke-width:2;stroke-dasharray:5 5;stroke-linecap:round;opacity:.85}
+.pt2-branch circle{fill:var(--accent-0)}
+.pt2-branch{filter:drop-shadow(0 0 4px rgba(var(--accent-0-rgb),.7))}
+@media (prefers-reduced-motion:no-preference){.pt2-branch path{animation:pt2-branch-flow 1.6s linear infinite}}
+@keyframes pt2-branch-flow{to{stroke-dashoffset:-20}}
+/* the section description under a view title (Human Atlas credit for Anatomy) */
+.pt2-view-intro{margin:6px 0 10px}
+#studyView .pt2-view-intro{margin:6px 0 0}
+
+/* steer C: the 'System' cursor is the custom-drawn arrow from Medphys-pt1 (quiz/index.html), accent coloured.
+   It keeps the custom cursor z-index above (settings, pop-ups, confirms, tips). */
+html[data-cursor="system"]{--cur-w:18px;--cur-h:26px;--cur-border:none;--cur-radius:0;--cur-bg:var(--accent-0);--cur-blend:normal;--cur-shadow:none;--cur-core-w:0px;--cur-core-h:0px;--cur-core-bg:transparent;--cur-active-w:20px;--cur-active-h:28px;--cur-active-bg:var(--accent-1);--cur-active-border:transparent}
+html[data-cursor="system"] #cursor,
+html[data-cursor="system"] #cursor.active{
+  border:none!important;border-radius:0!important;
+  background:var(--accent-0)!important;
+  clip-path:polygon(0% 0%,0% 100%,34% 70%,48% 100%,60% 95%,42% 62%,78% 62%);
+  transform:translate(0,0)!important;
+  mix-blend-mode:normal!important;
+  /* fill + outline both accent (clip-path ignores box-shadow; use drop-shadow) */
+  filter:drop-shadow(0 0 0.6px var(--accent-0)) drop-shadow(0 0 0.6px var(--accent-0)) drop-shadow(1px 2px 3px rgba(0,0,0,.45))!important;
+  box-shadow:none!important;
+}
+html[data-cursor="system"] #cursor.active{
+  background:var(--accent-1)!important;
+  filter:drop-shadow(0 0 0.6px var(--accent-1)) drop-shadow(0 0 0.6px var(--accent-1)) drop-shadow(1px 2px 3px rgba(0,0,0,.45))!important;
+}
+html[data-cursor="system"] #cursor.core,
+html[data-cursor="system"] #cursor.core.active{display:none!important;opacity:0!important;width:0!important;height:0!important}
+html[data-cursor="system"] #cursor{z-index:2147483646!important}
+
+/* steer B: 'Automatic' in the cursor picker */
+.cursor-skin-opt.cursor-skin-auto .preview-auto{display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--accent-0)}
+
+/* steer D: Settings is a text button like the other header buttons (Fullscreen), in the accent colour */
+#settings-wrapper #settings-btn.pt2-settings-text{
+  width:auto!important;height:auto!important;min-width:0!important;
+  font-family:var(--font-nav,var(--mono))!important;font-size:.85rem!important;line-height:1.2!important;font-weight:500!important;letter-spacing:.02em;
+  color:var(--accent-0)!important;-webkit-text-fill-color:var(--accent-0)!important;
+  border:1px solid rgba(var(--accent-0-rgb),.28)!important;border-radius:999px!important;
+  background:rgba(var(--accent-0-rgb),.08)!important;padding:10px 16px!important;box-shadow:none!important;
+  pointer-events:auto!important;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s!important;
+}
+#settings-wrapper #settings-btn.pt2-settings-text:hover{background:rgba(var(--accent-0-rgb),.14)!important;border-color:rgba(var(--accent-0-rgb),.55)!important;box-shadow:0 0 18px rgba(var(--accent-0-rgb),.28)!important}
+#settings-wrapper #settings-btn.pt2-settings-text:active{transform:scale(.97)!important}
+#settings-wrapper #settings-btn.pt2-settings-text:focus-visible{outline:2px solid var(--accent-1)!important;outline-offset:3px!important}
+/* the top-right Fullscreen buttons make room for it */
+.pt1q [data-fs]{margin-right:var(--pt2-settings-room,104px)}
+
+/* steer G: hovering the 'Show background grid' row (or focusing its switch) makes the grid glow in the accent
+   colour with thicker lines; if the grid is off it shows as a preview while hovered */
+#pt2GridGlow{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .35s ease;
+  background-image:linear-gradient(rgba(var(--accent-0-rgb),.55) 2px,transparent 2px),linear-gradient(90deg,rgba(var(--accent-0-rgb),.55) 2px,transparent 2px);
+  background-size:var(--pt2-grid-size,60px) var(--pt2-grid-size,60px);
+  filter:drop-shadow(0 0 3px rgba(var(--accent-0-rgb),.9)) drop-shadow(0 0 8px rgba(var(--accent-0-rgb),.45));
+  mask-image:radial-gradient(ellipse at 50% 42%,black 32%,transparent 92%);-webkit-mask-image:radial-gradient(ellipse at 50% 42%,black 32%,transparent 92%)}
+html[data-skin="grid-haze"]{--pt2-grid-size:64px}
+.settings-modal{transition:background-color .35s ease}
+html.pt2-grid-hover #pt2GridGlow,
+html:has(.pt2-opt:hover #pt2ShowGrid) #pt2GridGlow,
+html:has(#pt2ShowGrid:focus-visible) #pt2GridGlow{opacity:1}
+html.pt2-grid-hover .settings-modal,
+html:has(.pt2-opt:hover #pt2ShowGrid) .settings-modal,
+html:has(#pt2ShowGrid:focus-visible) .settings-modal{background-color:rgba(8,10,16,.4)!important}
+.pt2-opt:has(#pt2ShowGrid){border-radius:10px;transition:background .25s ease,box-shadow .25s ease}
+.pt2-opt:has(#pt2ShowGrid):hover,html.pt2-grid-hover .pt2-opt:has(#pt2ShowGrid){background:rgba(var(--accent-0-rgb),.08);box-shadow:inset 0 0 0 1px rgba(var(--accent-0-rgb),.35)}
+
+/* M: Peek button on the dimmed Coming Soon cards (outside the card, so not dimmed) */
+.pt2-peek-wrap{position:relative;display:flex}
+.pt2-peek-wrap > .portal-card{flex:1;min-width:0}
+.pt2-peek-wrap .portal-card .pt2-soon{right:58px}
+.pt2-peek{position:absolute;top:10px;right:12px;z-index:3;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;padding:0;
+  color:var(--accent-0);background:rgba(var(--accent-0-rgb),.12);border:1px solid rgba(var(--accent-0-rgb),.55);opacity:1;filter:none;
+  box-shadow:0 0 12px rgba(var(--accent-0-rgb),.25);transition:transform .2s,background .2s,box-shadow .2s}
+.pt2-peek:hover{background:rgba(var(--accent-0-rgb),.22);box-shadow:0 0 18px rgba(var(--accent-0-rgb),.5);transform:translateY(-1px)}
+.pt2-peek:active{transform:scale(.94)}
+.pt2-peek:focus-visible{outline:2px solid var(--accent-1);outline-offset:3px}
+.pt2-peek svg{pointer-events:none}
+#setsSub[hidden]{display:none!important}
+
+/* V: emoji unlocks: the unlock pop-up (PT2's achievement pop-up look and slide-in, in the accent colour) */
+@keyframes pt2UnlockIn{from{opacity:0;transform:translateX(80px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pt2UnlockOut{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(40px)}}
+#pt2-unlock-popup{position:fixed;top:80px;right:20px;z-index:2147483000;max-width:320px;padding:14px 18px;border-radius:12px;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--accent-0) 92%,transparent),color-mix(in srgb,var(--accent-1,var(--accent-0)) 88%,transparent));
+  border:2px solid var(--accent-0);box-shadow:0 8px 32px rgba(0,0,0,.6),0 0 24px rgba(var(--accent-0-rgb),.45);color:#14110a;
+  animation:pt2UnlockIn .4s ease-out,pt2UnlockOut .5s ease-in 3.9s forwards}
+#pt2-unlock-popup .achievement-popup-content{display:flex;align-items:center;gap:12px}
+#pt2-unlock-popup .achievement-popup-icon{font-size:2em;text-shadow:0 2px 8px rgba(0,0,0,.35)}
+#pt2-unlock-popup .achievement-popup-title{font-size:.7em;text-transform:uppercase;letter-spacing:1px;opacity:.85;margin-bottom:2px;font-family:var(--mono)}
+#pt2-unlock-popup .achievement-popup-name{font-size:1.05em;font-weight:800;margin-bottom:2px}
+#pt2-unlock-popup .achievement-popup-desc{font-size:.8em;opacity:.92}
+@media (prefers-reduced-motion:reduce){#pt2-unlock-popup{animation:none}}
+
+/* W: emoji picker paging (20 per page); the pager only exists visually with 21+ emojis */
+#moodTray .mood-pick.pt2-pg-off{display:none!important}
+#moodTray .pt2-mood-pager[hidden]{display:none!important}
+#moodTray .pt2-mood-pager{display:flex;align-items:center;justify-content:center;gap:.45rem;margin-top:-.15rem}
+#moodTray .pt2-pg-btn{width:1.6rem;height:1.6rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;padding:0;
+  color:var(--cyan-bright);background:rgba(255,255,255,.05);border:1px solid var(--border);cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,opacity .15s}
+#moodTray .pt2-pg-btn:hover:not(:disabled){background:var(--mood-glow);border-color:var(--cyan);box-shadow:0 0 12px var(--mood-glow);transform:scale(1.08)}
+#moodTray .pt2-pg-btn:active:not(:disabled){transform:scale(.92)}
+#moodTray .pt2-pg-btn:focus-visible{outline:2px solid var(--cyan-bright);outline-offset:2px}
+#moodTray .pt2-pg-btn:disabled{opacity:.35;cursor:default}
+#moodTray .pt2-pg-ind{font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;color:var(--muted,var(--text));min-width:2.6rem;text-align:center}
+/* narrow cards: the peek eye pushes 'Coming Soon' into the title / Draft badge, so it moves to the bottom-right corner */
+@media (max-width:560px){ .pt2-peek-wrap .portal-card .pt2-soon{top:auto!important;bottom:16px;right:18px} }

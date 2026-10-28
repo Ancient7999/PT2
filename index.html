@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Periodic Test 2</title>
+<link rel="stylesheet" href="menu/css/theme-vars.css">
+<link rel="stylesheet" href="menu/css/colorizer.css">
+<link rel="stylesheet" href="menu/css/app.css">
+<link rel="stylesheet" href="css/local-fonts.css">
+<style>html[data-cursor="system"] .brushCursor{width:18px;height:26px;border-radius:0;background:var(--accent-0);clip-path:polygon(0% 0%,0% 100%,34% 70%,48% 100%,60% 95%,42% 62%,78% 62%);transform:translate(0,0);outline:none;box-shadow:none;filter:drop-shadow(0 0 0.6px var(--accent-0)) drop-shadow(0 0 0.6px var(--accent-0)) drop-shadow(1px 2px 3px rgba(0,0,0,.45))}html[data-cursor="system"] .brushCursor .aura{display:none}html.pt2-no-grid #el-arquitecto-bg-layer{display:none!important}html.pt2-no-grid{--skin-pattern:none!important}</style>
+<script>(function(){try{var c=localStorage.getItem("pt1_custom_cursor"),k=localStorage.getItem("pt1_cursor_skin");document.documentElement.setAttribute("data-custom-cursor",(c==="0"||c==="false"||c==="off"||k==="off")?"off":"on");if(k&&localStorage.getItem("sp_cursor_lock")==="settings")document.documentElement.setAttribute("data-cursor",k);if(localStorage.getItem("pt2_show_grid")==="0")document.documentElement.classList.add("pt2-no-grid");}catch(e){}})();</script>
+</head>
+<body>
+<div id="ps2-home" class="ps2-screen">
+  <h1 class="ps2-title">Periodic Test 2</h1>
+  <div class="ps2-menu" role="menu">
+    <button type="button" class="ps2-menu-item hero" id="menuQuiz" role="menuitem">
+      <span class="ps2-icon">⚔</span>
+      <span class="ps2-label">Quiz Interface
+        <span class="ps2-sub">Question banks · Medical Terminology, Anatomy, English, Medical Physics, Study Skills</span>
+      </span>
+    </button>
+    <button type="button" class="ps2-menu-item quiet" id="menuStudy" role="menuitem">
+      <span class="ps2-icon">📖</span>
+      <span class="ps2-label">Picture Study
+        <span class="ps2-sub">Medical Terminology pictures · name the structures</span>
+      </span>
+    </button>
+    <button type="button" class="ps2-menu-item neutral" id="menuAbout" role="menuitem" aria-label="Info: how to use, scope and tips">
+      <span class="ps2-icon">ℹ</span>
+      <span class="ps2-label">Info
+        <span class="ps2-sub">How to use · scope · tips</span>
+      </span>
+    </button>
+  </div>
+</div>
+
+<div id="ps2-about" class="ps2-screen" style="display:none; justify-content:flex-start; padding-top:48px;">
+  <button type="button" class="ps2-back-btn" id="aboutBack">← Back</button>
+  <h2 class="ps2-title" style="font-size:clamp(1.4rem,3vw,2rem); margin:0 0 22px; animation:none;">Info · How to use</h2>
+  <div class="about-panel">
+    <section>
+      <h3>Scope</h3>
+      <p>Theoretical question banks for Periodic Test 2. Practical content is not included.</p>
+    </section>
+    <section>
+      <h3>Quiz Interface</h3>
+      <ul>
+        <li><strong>Medical Terminology</strong> — combining forms, the musculoskeletal, cardiovascular, blood and lymphatic, respiratory and nervous systems</li>
+        <li><strong>Anatomy</strong> — bone identification: 32 bones in 128 questions</li>
+        <li><strong>English</strong> — Grammar Units 3-5, English for Medicine Unit 3 and writing skills</li>
+        <li><strong>Medical Physics</strong> — Chapters 3-7 with formula practice · draft</li>
+        <li><strong>Study Skills</strong> — Lectures 5-10 · draft</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Picture Study</h3>
+      <p>Medical Terminology pictures where every label is a blank. Drag words from the bank onto the boxes or onto the structures themselves, type the names, or show the labels. ↺ Reset starts a picture again.</p>
+      <p>Anatomy has its own Picture Study, opened from the Anatomy card: 3D views and axial, sagittal and coronal sections with a slider.</p>
+    </section>
+    <section>
+      <h3>Tips</h3>
+      <ul>
+        <li>Keyboard on the main menu: ↑↓ move · Enter open</li>
+        <li>Choice questions: press 1–9 (number row or numpad with Num Lock on) or ↑ ↓ to highlight an option, then the same number again or Enter to choose</li>
+        <li>Multiple-answer questions: 1–9 tick or untick options · Enter checks</li>
+        <li>In a quiz run: ← → move between questions · Enter next · F fullscreen</li>
+        <li>Settings hold the theme, fonts, cursor, quiz order and the Timer box choices</li>
+        <li>Progress is saved in this browser on this device</li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<script src="menu/js/particles.js?v=20261003h"></script>
+<script src="menu/js/colorizer-theme.js?v=20261003j"></script>
+<script>
+(function(){
+  var home = document.getElementById('ps2-home');
+  var about = document.getElementById('ps2-about');
+  var items = Array.prototype.slice.call(document.querySelectorAll('#ps2-home .ps2-menu-item'));
+  var focusIdx = 0;
+
+  function showHome(){
+    home.style.display = 'flex';
+    about.style.display = 'none';
+    var aboutBtn = document.getElementById('menuAbout');
+    /* Click focuses About and mouseenter leaves .focused. The menu is hidden
+       while About is open, so that glow is still on the button when we return. */
+    if(aboutBtn){
+      if(document.activeElement === aboutBtn) aboutBtn.blur();
+      aboutBtn.classList.remove('focused');
+      aboutBtn.classList.add('glow-cleared');
+      if(items[focusIdx] === aboutBtn) focusIdx = 0;
+      if(aboutBtn._glowRelease){
+        window.removeEventListener('pointermove', aboutBtn._glowRelease);
+        window.removeEventListener('keydown', aboutBtn._glowRelease);
+      }
+      aboutBtn._glowRelease = function(e){
+        if(e && e.type === 'pointermove' && (e.target === aboutBtn || aboutBtn.contains(e.target))) return;
+        aboutBtn.classList.remove('glow-cleared');
+        window.removeEventListener('pointermove', aboutBtn._glowRelease);
+        window.removeEventListener('keydown', aboutBtn._glowRelease);
+        aboutBtn._glowRelease = null;
+      };
+      window.addEventListener('pointermove', aboutBtn._glowRelease);
+      window.addEventListener('keydown', aboutBtn._glowRelease);
+    }
+    updateFocus();
+  }
+  function showAbout(){
+    home.style.display = 'none';
+    about.style.display = 'flex';
+  }
+  function updateFocus(){
+    items.forEach(function(el, i){
+      el.classList.toggle('focused', i === focusIdx);
+    });
+  }
+
+  document.getElementById('menuQuiz').addEventListener('click', function(){
+    window.location.href = 'quiz.html';
+  });
+  document.getElementById('menuStudy').addEventListener('click', function(){
+    window.location.href = 'quiz.html#pictures';
+  });
+  document.getElementById('menuAbout').addEventListener('click', showAbout);
+  document.getElementById('aboutBack').addEventListener('click', showHome);
+
+  /* window (not document): cursor-idle hideCursor runs on document first and clears .focused; ATC Math restores via window */
+  window.addEventListener('keydown', function(e){
+    if(about.style.display !== 'none' && about.style.display !== ''){
+      if(e.key === 'Escape' || e.key === 'Backspace'){ e.preventDefault(); showHome(); }
+      return;
+    }
+    if(e.key === 'ArrowDown' || e.key === 'ArrowRight'){
+      e.preventDefault(); focusIdx = (focusIdx + 1) % items.length; updateFocus();
+    } else if(e.key === 'ArrowUp' || e.key === 'ArrowLeft'){
+      e.preventDefault(); focusIdx = (focusIdx - 1 + items.length) % items.length; updateFocus();
+    } else if(e.key === 'Enter'){
+      e.preventDefault(); if(items[focusIdx]) items[focusIdx].click();
+    }
+  });
+
+  items.forEach(function(el, i){
+    el.addEventListener('mouseenter', function(){ focusIdx = i; updateFocus(); });
+  });
+  window.__ps2SetFocusIdx = function(i){ focusIdx = i; updateFocus(); };
+  updateFocus();
+  document.body.style.opacity = '1';
+})();
+</script>
+
+<script src="menu/js/cursor-idle.js?v=20261003i"></script>
+</body>
+</html>
