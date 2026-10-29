@@ -88,8 +88,15 @@
   function decorate0() {
     var got = unlocked();
     FEATURES.forEach(function (f) { document.documentElement.classList.toggle(f.cls, !!got[f.key]); });
-    var row = document.querySelector('#moodTray .mood-tray-row'); if (!row) return;
-    UNLOCKS.forEach(function (u) {
+    // the results screen (the end-of-set "how did that set feel?" stamp row) and the answer review screen offer an
+    // unlockable emoji only once it is unlocked; stamps already saved on cards are not touched and still show
+    document.querySelectorAll('#finalScreen [data-mood], #reviewScreen [data-mood]').forEach(function (btn) {
+      var u = byEmoji(btn.dataset.mood); if (!u) return;
+      var off = !got[u.emoji]; btn.style.display = off ? 'none' : ''; btn.hidden = off;
+      if (off) btn.setAttribute('aria-hidden', 'true'); else btn.removeAttribute('aria-hidden');
+    });
+    var row = document.querySelector('#moodTray .mood-tray-row');
+    if (row) UNLOCKS.forEach(function (u) {
       var b = row.querySelector('.mood-pick[data-mood="' + u.emoji + '"]');
       if (!got[u.emoji]) {
         if (b) { if (!(u.emoji in SLOT)) { var nx = b.nextElementSibling; while (nx && byEmoji(nx.dataset.mood) && !got[nx.dataset.mood]) nx = nx.nextElementSibling; SLOT[u.emoji] = nx ? nx.dataset.mood || null : null; } b.remove(); }
@@ -101,10 +108,6 @@
         if (at) row.insertBefore(b, at); else row.appendChild(b);
         if (typeof currentMoodEmoji !== 'undefined' && currentMoodEmoji === u.emoji) b.classList.add('active');
       }
-    });
-    // the end-of-set stamp row offers the same emoji only once it is unlocked
-    document.querySelectorAll('#moodContainer .mood-btn').forEach(function (btn) {
-      var u = byEmoji(btn.dataset.mood); if (u) btn.style.display = got[u.emoji] ? '' : 'none';
     });
     // locked emojis are never chosen automatically either
     try {
