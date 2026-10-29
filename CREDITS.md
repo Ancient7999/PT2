@@ -4,7 +4,7 @@ Periodic Test 2 is a study site for Medical Terminology, English, Anatomy, Medic
 
 ## Anatomy (3D renders)
 
-The Anatomy Picture Study renders (heart, air passages, larynx, brain, digestive organs, intestines, urinary organs; 3D views and Axial / Sagittal / Coronal sections) are rendered from [Human Atlas by ashemag](https://github.com/ashemag/human-atlas) (MIT License), which is built on **BodyParts3D 4.0 © The Database Center for Life Science (DBCLS)**, licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Changes: chosen structures recoloured, cut with section planes and rendered to images with leader lines and label boxes. The Anatomy bone pictures come from Wikimedia Commons (BodyParts3D / Anatomography renders); each picture names its source.
+The Anatomy Picture Study renders (heart, air passages, larynx, brain, digestive organs, intestines, urinary organs; 3D views and Axial / Sagittal / Coronal sections) are rendered from [Human Atlas by ashemag](https://github.com/ashemag/human-atlas) (MIT License), which is built on **BodyParts3D 4.0 © The Database Center for Life Science (DBCLS)**, licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Changes: chosen structures recoloured, cut with section planes and rendered to images with leader lines and label boxes. The Anatomy bone pictures come from Wikimedia Commons (BodyParts3D / Anatomography renders); each picture names its source. The Bone Identification quiz pictures, including the pectoral girdle and pelvic girdle views, are rendered from the same Human Atlas / BodyParts3D models (CC BY 4.0); the chosen bones are recoloured orange.
 
 ## Medical Terminology Picture Study
 
