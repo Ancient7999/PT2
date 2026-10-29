@@ -3693,18 +3693,6 @@ function runKeysActive(){
     !document.getElementById('cardResetModal').classList.contains('show') &&
     !leaveRunOpen();
 }
-window.addEventListener('keydown', e=>{
-  if(e.key!=='Escape') return;
-  if(document.getElementById('cardResetModal').classList.contains('show')) return; // the dialog closes itself
-  if(leaveRunOpen()) return; // the confirmation handles its own keys
-  if(!document.getElementById('quizView').classList.contains('active')) return;
-  if(typeof moodWrap!=='undefined' && moodWrap && moodWrap.classList.contains('open')){ if(typeof openMoodTray==='function') openMoodTray(false); return; }
-  if(kbLink && kbLink.pick){ e.preventDefault(); e.stopImmediatePropagation(); kbLinkDropPick(); if(kbLink) kbLinkPaint(); return; }
-  if(kbLink) kbLinkClear();
-  if(kbAdv){ e.preventDefault(); e.stopImmediatePropagation(); if(kbAdvArmed()) clearKbAdvance(); return; }
-  e.preventDefault(); e.stopImmediatePropagation();
-  askLeaveRun();
-}, true);
 /* after a correct answer (keys, click or tap): the formula-practice depleting bar, then auto-advance (skipped when the form is complete) */
 let kbAdv=null;
 function clearKbAdvance(){ if(!kbAdv) return; const k=kbAdv; kbAdv=null; cancelAnimationFrame(k.raf); clearTimeout(k.timer); if(k.wrap.isConnected) k.wrap.remove(); }
