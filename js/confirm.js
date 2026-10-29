@@ -50,9 +50,9 @@
       const onKey = (e) => {
         if (e.key === 'Escape') { e.preventDefault(); e.stopImmediatePropagation(); finish(false); return; }
         if (e.key === 'Enter') {
-          // Enter confirms only on the confirm button; on cancel it cancels; anywhere else it does nothing
+          // Enter activates whichever button is focused
           e.preventDefault(); e.stopImmediatePropagation();
-          if (o.enterConfirms || document.activeElement === yes) finish(true);
+          if (document.activeElement === yes) finish(true);
           else if (document.activeElement === no) finish(false);
           return;
         }
@@ -63,7 +63,11 @@
           return;
         }
         if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-          if (document.activeElement === yes || document.activeElement === no) { e.preventDefault(); (document.activeElement === no ? yes : no).focus(); }
+          if (document.activeElement !== yes && document.activeElement !== no) return;
+          e.preventDefault();
+          // Stay is left (no), Leave is right (yes). No wrap.
+          if (e.key === 'ArrowLeft' && document.activeElement === yes) no.focus();
+          else if (e.key === 'ArrowRight' && document.activeElement === no) yes.focus();
         }
       };
       const onOutside = (e) => { if (!ov.contains(e.target)) finish(false); };
