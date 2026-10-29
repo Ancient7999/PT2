@@ -33,6 +33,11 @@
       { emoji: '🧘', all: true, label: 'Zen', fam: 'mood-calm', cls: 'mood-zen' }
     ] }
   ];
+  // options that follow the overall tally rather than one week
+  var EXTRAS = [
+    { key: 'look:a', icon: '\u26A1', label: 'Golden theme', title: 'New theme unlocked', desc: '1000 questions solved', cls: 'pt2-la-open', ok: function (t) { return t.n >= 1000; } },
+    { key: 'look:b', icon: '\uD83C\uDF08', label: 'Multicolour Accents', title: 'New setting unlocked', desc: 'Every question solved', cls: 'pt2-lb-open', ok: function (t) { return t.all; } }
+  ];
   var UNLOCKS = [], FEATURES = [];
   WEEKS.forEach(function (w) { w.banks = (Q.weeks && Q.weeks[w.week]) || []; w.ledger = 'pt2_solved_ever_v1:' + w.week; w.unlocks.forEach(function (u) { u.w = w; UNLOCKS.push(u); }); (w.features || []).forEach(function (f) { f.w = w; FEATURES.push(f); }); });
   function lsGet(k) { try { return global.localStorage.getItem(k); } catch (e) { return null; } }
@@ -59,6 +64,21 @@
     if (!w.banks.length) return false;
     return w.banks.every(function (bk) { return (Q.banks[bk] || []).length && Q.banks[bk].every(function (id) { return L[bk + '|' + id]; }); });
   }
+  /* distinct questions solved across every week: the week ledgers plus ids kept from sets that were reset */
+  function tally() {
+    var seen = {};
+    WEEKS.forEach(function (w) {
+      var L = sync(w);
+      Object.keys(L).forEach(function (k) { if (k.indexOf('pic|') !== 0) seen[k] = 1; });
+      w.banks.forEach(function (bk) {
+        if (!known[bk]) return;
+        var st = readJSON(PREFIX + bk, null); if (!st || !st.resets || typeof st.resets !== 'object') return;
+        Object.keys(st.resets).forEach(function (c) { var r = st.resets[c]; if (r && Array.isArray(r.ids)) r.ids.forEach(function (id) { if (known[bk][id]) seen[bk + '|' + id] = 1; }); });
+      });
+    });
+    var all = Object.keys(Q.banks).length > 0 && Object.keys(Q.banks).every(function (bk) { return Q.banks[bk].every(function (id) { return seen[bk + '|' + id]; }); });
+    return { n: Object.keys(seen).length, all: all };
+  }
   function isOpen(u, L, n) { return u.all ? allDone(u.w, L) : n >= u.at; }
   function unlocked() { return readJSON(GOT, {}); }
   function byEmoji(e) { for (var i = 0; i < UNLOCKS.length; i++) if (UNLOCKS[i].emoji === e) return UNLOCKS[i]; return null; }
@@ -76,10 +96,11 @@
     p.innerHTML = '<div class="achievement-popup-content"><div class="achievement-popup-icon"></div><div class="achievement-popup-text">'
       + '<div class="achievement-popup-title">New emoji unlocked</div><div class="achievement-popup-name"></div><div class="achievement-popup-desc"></div></div></div>';
     p.querySelector('.achievement-popup-icon').textContent = u.icon || u.emoji;
-    if (u.icon) p.querySelector('.achievement-popup-title').textContent = 'New option unlocked';
+    if (u.icon) p.querySelector('.achievement-popup-title').textContent = u.title || 'New option unlocked';
     p.querySelector('.achievement-popup-name').textContent = u.icon ? u.label : u.emoji + ' ' + u.label;
-    p.querySelector('.achievement-popup-desc').textContent = u.all ? u.w.done : u.at + ' questions solved';
+    p.querySelector('.achievement-popup-desc').textContent = u.desc || (u.all ? u.w.done : u.at + ' questions solved');
     document.body.appendChild(p);
+    if (u.key) { try { document.dispatchEvent(new CustomEvent('pt2-popup', { detail: u.key })); } catch (e) {} }
     setTimeout(function () { if (p.parentNode) p.remove(); next(); }, 4500);
   }
 
@@ -87,7 +108,7 @@
   function decorate() { decorate0(); paginate(false); }
   function decorate0() {
     var got = unlocked();
-    FEATURES.forEach(function (f) { document.documentElement.classList.toggle(f.cls, !!got[f.key]); });
+    FEATURES.concat(EXTRAS).forEach(function (f) { document.documentElement.classList.toggle(f.cls, !!got[f.key]); });
     // the results screen (the end-of-set "how did that set feel?" stamp row) and the answer review screen offer an
     // unlockable emoji only once it is unlocked; stamps already saved on cards are not touched and still show
     document.querySelectorAll('#finalScreen [data-mood], #reviewScreen [data-mood]').forEach(function (btn) {
@@ -128,9 +149,12 @@
       w.unlocks.forEach(function (u) { if (!got[u.emoji] && isOpen(u, L, n)) { got[u.emoji] = Date.now(); fresh.push(u); } });
       (w.features || []).forEach(function (f) { if (!got[f.key] && n >= f.at) { got[f.key] = Date.now(); fresh.push(f); } });
     });
+    var t = tally();
+    EXTRAS.forEach(function (f) { if (!got[f.key] && f.ok(t)) { got[f.key] = Date.now(); fresh.push(f); } });
     if (fresh.length) { lsSet(GOT, JSON.stringify(got)); if (!quiet) fresh.forEach(popup); }
     decorate();
-    return { solved: counts, fresh: fresh.map(function (u) { return u.emoji || u.key; }) };
+    if (fresh.length) { try { document.dispatchEvent(new CustomEvent('pt2-unlocked', { detail: fresh.map(function (u) { return u.emoji || u.key; }) })); } catch (e) {} }
+    return { total: t.n, solved: counts, fresh: fresh.map(function (u) { return u.emoji || u.key; }) };
   }
   // the new emojis need a mood entry so choosing them works like any other emoji
   /* W: emoji picker paging, 20 per page. With 20 or fewer selectable emojis the pager is display:none (no space kept). */
@@ -189,5 +213,5 @@
     var L = readJSON(w.ledger, {}); if (L['pic|' + id]) return;
     L['pic|' + id] = 1; lsSet(w.ledger, JSON.stringify(L)); check(false);
   }
-  global.PT2Unlocks = { check: check, pictureSolved: pictureSolved, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? Object.keys(sync(w)).length : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
+  global.PT2Unlocks = { has: function (k) { return !!unlocked()[k]; }, tally: tally, check: check, pictureSolved: pictureSolved, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? Object.keys(sync(w)).length : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
 })(window);

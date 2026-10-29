@@ -170,7 +170,11 @@
     moodLocked: function () { return get('pt2_mood_lock'); } };
   /* Lock emoji control shows only once unlocked (js/pt2-unlocks.js, feature:moodLock); set here so it never flashes.
      A lock already switched on keeps working while the control is hidden. */
-  try { var gotU = JSON.parse(localStorage.getItem('pt2_emoji_unlocked_v1') || '{}') || {}; root.classList.toggle('pt2-lock-open', !!gotU['feature:moodLock']); } catch (e) {}
+  try { var gotU = JSON.parse(localStorage.getItem('pt2_emoji_unlocked_v1') || '{}') || {}; root.classList.toggle('pt2-lock-open', !!gotU['feature:moodLock']);
+    root.classList.toggle('pt2-la-open', !!gotU['look:a']); root.classList.toggle('pt2-lb-open', !!gotU['look:b']);
+    var lk = JSON.parse(localStorage.getItem('pt2_look_v1') || '{}') || {};
+    if (gotU['look:a'] && lk.e) { root.classList.add('pt2-electric'); root.setAttribute('data-cursor', 'intro'); }
+    if (gotU['look:b'] && lk.mc && lk.mc.on) root.classList.add('pt2-mc', 'pt2-mc-' + (lk.mc.mode || 'gradient')); } catch (e) {}
   /* Lock emoji (in the emoji dropdown): keeps the chosen emoji; unlocking restores automatic changes */
   function syncLock() {
     var on = get('pt2_mood_lock'), b = document.getElementById('pt2MoodLock');

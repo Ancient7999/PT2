@@ -14,6 +14,14 @@
   if (!customCursorOn()) return;
 
   var IDLE_MS = 1500;
+  /* the golden theme keeps the cursor on screen (no idle hide) */
+  function keepCursor() {
+    try {
+      var g = JSON.parse(localStorage.getItem('pt2_emoji_unlocked_v1') || '{}') || {}, l = JSON.parse(localStorage.getItem('pt2_look_v1') || '{}') || {};
+      return !!(g['look:a'] && l.e);
+    } catch (e) { return false; }
+  }
+  var KEEP = keepCursor();
   var HOVER_SEL = '.ps2-menu-item,.ps2-back-btn,.option-card,.variant-pill,.mode-btn,.btn,.opt,.card,.chapter-toggle,.nav-btn,.fs-btn,.portal-card,.settings-nav-btn,.settings-btn';
 
   /* Inject brush + idle helpers (Main Menu). Study/Quiz do not load this script. */
@@ -96,6 +104,7 @@
         releaseForTouch();
         return;
       }
+      if (KEEP) return;
       clearTimeout(idleTimer);
       brush.classList.add('hidden');
       hoverBlocker.style.pointerEvents = 'auto';
@@ -115,7 +124,7 @@
       keyActive = false;
       updateBackBtn();
       clearTimeout(idleTimer);
-      idleTimer = setTimeout(hideCursor, IDLE_MS);
+      if (!KEEP) idleTimer = setTimeout(hideCursor, IDLE_MS);
       var item = window.mouseHoveredItem;
       if (item && item.classList && item.classList.contains('ps2-menu-item')) {
         var items = Array.prototype.slice.call(

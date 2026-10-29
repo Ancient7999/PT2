@@ -209,6 +209,7 @@ function pt1CursorOn(){ var root=document.documentElement; return (typeof custom
   function releaseIdle(){ clearTimeout(idleTimer); idleTimer=null; document.body.classList.remove('cursor-idle'); }
   function hideCursor(){
     if(touchMode()){ releaseIdle(); return; }
+    if(document.documentElement.classList.contains('pt2-electric')){ releaseIdle(); return; }
     clearTimeout(idleTimer);
     cursors().forEach(function(el){ el.classList.add('hidden'); });
     document.body.classList.add('cursor-idle');
@@ -2601,10 +2602,13 @@ function boardPoint(layer,ev){
 }
 function strokePoly(wctx,pts){
   if(!wctx||!pts||pts.length<2) return;
+  const g=(window.PT2Look&&PT2Look.wireStroke)?PT2Look.wireStroke(wctx,pts):null;
+  if(g){ wctx.save(); wctx.strokeStyle=g; wctx.fillStyle=g; }
   wctx.beginPath();
   wctx.moveTo(pts[0].x,pts[0].y);
   for(let i=1;i<pts.length;i++) wctx.lineTo(pts[i].x,pts[i].y);
   wctx.stroke();
+  if(g) wctx.restore();
 }
 function setLinkDrawing(on){
   document.documentElement.classList.toggle('link-drawing',!!on);

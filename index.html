@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="menu/css/app.css">
 <link rel="stylesheet" href="css/local-fonts.css">
 <style>html[data-cursor="system"] .brushCursor{width:18px;height:26px;border-radius:0;background:var(--accent-0);clip-path:polygon(0% 0%,0% 100%,34% 70%,48% 100%,60% 95%,42% 62%,78% 62%);transform:translate(0,0);outline:none;box-shadow:none;filter:drop-shadow(0 0 0.6px var(--accent-0)) drop-shadow(0 0 0.6px var(--accent-0)) drop-shadow(1px 2px 3px rgba(0,0,0,.45))}html[data-cursor="system"] .brushCursor .aura{display:none}html.pt2-no-grid #el-arquitecto-bg-layer{display:none!important}html.pt2-no-grid{--skin-pattern:none!important}</style>
-<script>(function(){try{var c=localStorage.getItem("pt1_custom_cursor"),k=localStorage.getItem("pt1_cursor_skin");document.documentElement.setAttribute("data-custom-cursor",(c==="0"||c==="false"||c==="off"||k==="off")?"off":"on");if(k&&localStorage.getItem("sp_cursor_lock")==="settings")document.documentElement.setAttribute("data-cursor",k);if(localStorage.getItem("pt2_show_grid")==="0")document.documentElement.classList.add("pt2-no-grid");}catch(e){}})();</script>
+<script>(function(){try{var c=localStorage.getItem("pt1_custom_cursor"),k=localStorage.getItem("pt1_cursor_skin");document.documentElement.setAttribute("data-custom-cursor",(c==="0"||c==="false"||c==="off"||k==="off")?"off":"on");var G=JSON.parse(localStorage.getItem("pt2_emoji_unlocked_v1")||"{}")||{},L=JSON.parse(localStorage.getItem("pt2_look_v1")||"{}")||{};if(k&&localStorage.getItem("sp_cursor_lock")==="settings"&&!(G["look:a"]&&L.e))document.documentElement.setAttribute("data-cursor",k);if(localStorage.getItem("pt2_show_grid")==="0")document.documentElement.classList.add("pt2-no-grid");}catch(e){}})();</script>
 </head>
 <body>
 <div id="ps2-home" class="ps2-screen">
@@ -152,6 +152,6 @@
 })();
 </script>
 
-<script src="menu/js/cursor-idle.js?v=20261003i"></script>
+<script src="menu/js/cursor-idle.js?v=20261029a"></script>
 </body>
 </html>

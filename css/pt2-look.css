@@ -1,0 +1,157 @@
+/* Look options: theme palette, hover sheen, accent modes. Everything here is inert until its html class is set. */
+@property --pt2-ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+
+/* —— hover sheen shared by every menu (one overlay that follows the hovered control) —— */
+#pt2Glass{position:fixed;left:0;top:0;width:0;height:0;pointer-events:none;z-index:2147483000;opacity:0;overflow:hidden;
+  transition:opacity .18s ease;
+  background:linear-gradient(180deg,rgba(255,255,255,.11) 0%,rgba(255,255,255,.035) 42%,rgba(255,255,255,0) 62%),
+             linear-gradient(90deg,rgba(var(--accent-0-rgb,255,197,131),.13) 0%,rgba(var(--accent-0-rgb,255,197,131),.03) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22),inset 0 0 16px rgba(var(--accent-0-rgb,255,197,131),.15),0 0 22px rgba(var(--accent-0-rgb,255,197,131),.26)}
+#pt2Glass.on{opacity:1}
+#pt2Glass::after{content:'';position:absolute;top:0;left:-60%;width:45%;height:100%;opacity:0;transform:skewX(-18deg);
+  background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.08) 40%,rgba(255,255,255,.30) 50%,rgba(255,255,255,.08) 60%,transparent 100%)}
+#pt2Glass.sweep::after{opacity:1;animation:pt2Sweep .85s ease forwards}
+@keyframes pt2Sweep{from{left:-60%}to{left:120%}}
+html.light-mode #pt2Glass{box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 0 14px rgba(var(--accent-4-rgb),.22)}
+@media (prefers-reduced-motion:reduce){#pt2Glass.sweep::after{animation:none;opacity:0}}
+
+/* —— locked controls (dimmed, not usable) —— */
+.pt2-locked-dim{opacity:.38!important;filter:grayscale(.7)!important;cursor:not-allowed!important}
+.pt2-locked-dim input{pointer-events:none}
+#cursorRandomBtn.pt2-locked-dim:hover{transform:none;box-shadow:none;background:rgba(255,255,255,.05)}
+.pt2-tip{position:fixed;z-index:2147483100;pointer-events:none;padding:7px 11px;border-radius:9px;font:600 .74rem/1.3 var(--mono,monospace);
+  color:#1a1206;background:linear-gradient(135deg,#ffe3b0,#ffc583 55%,#ffad4e);box-shadow:0 8px 22px rgba(0,0,0,.45),0 0 14px rgba(255,197,131,.35);
+  transform:translate(-50%,calc(-100% - 10px));opacity:0;transition:opacity .16s ease;white-space:nowrap}
+.pt2-tip.on{opacity:1}
+.pt2-tip::after{content:'';position:absolute;left:50%;bottom:-5px;width:10px;height:10px;transform:translateX(-50%) rotate(45deg);background:#ffc583}
+.pt2-cur-note{display:none;margin:0 0 10px;font-size:.78em;color:var(--accent-0)}
+#theme-cursor-picker.pt2-cur-themed .pt2-cur-note{display:block}
+#theme-cursor-picker.pt2-cur-themed .cursor-skin-grid{opacity:.38;filter:grayscale(.7);cursor:not-allowed}
+
+/* —— golden swatch —— */
+.preset-swatch.pt2-gold-swatch{display:none;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#fff1c9 0%,#ffd56a 22%,#ffc583 40%,#ff9f31 62%,#ffd700 82%,#fff4c8 100%)!important;
+  box-shadow:0 0 10px rgba(255,200,80,.55),0 2px 8px rgba(0,0,0,.4)!important}
+html.pt2-la-open .preset-swatch.pt2-gold-swatch{display:inline-block}
+.pt2-gold-swatch::before{content:'';position:absolute;inset:0;border-radius:50%;
+  background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.75) 48%,transparent 62%);background-size:250% 100%;animation:pt2GoldSheen 2.8s ease-in-out infinite}
+.pt2-gold-swatch::after{content:'';position:absolute;width:7px;height:7px;left:62%;top:18%;
+  background:radial-gradient(circle,#fff 0 18%,rgba(255,255,255,0) 60%),linear-gradient(#fff,#fff) center/1px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 1px no-repeat;
+  filter:drop-shadow(0 0 2px #fff);animation:pt2Twinkle 2.2s ease-in-out infinite}
+@keyframes pt2GoldSheen{0%,100%{background-position:110% 0}50%{background-position:-10% 0}}
+@keyframes pt2Twinkle{0%,55%,100%{opacity:0;transform:scale(.4) rotate(0)}70%{opacity:1;transform:scale(1) rotate(45deg)}85%{opacity:.2;transform:scale(.6) rotate(90deg)}}
+@media (prefers-reduced-motion:reduce){.pt2-gold-swatch::before,.pt2-gold-swatch::after{animation:none}.pt2-gold-swatch::after{opacity:1}}
+
+/* —— Golden theme: the main menu palette, with a little electricity —— */
+html.pt2-electric{
+  --accent-0:#ffc583!important;--accent-0-rgb:255,197,131!important;--accent-1:#ffb968!important;--accent-1-rgb:255,185,104!important;
+  --accent-2:#ffad4e!important;--accent-2-rgb:255,173,78!important;--accent-3:#ff9f31!important;--accent-3-rgb:255,159,49!important;
+  --accent-4:#ff9010!important;--accent-4-rgb:255,144,16!important;--accent-5:#e57a00!important;--accent-5-rgb:229,122,0!important;
+  --accent-6:#ffb662!important;--accent-6-rgb:255,182,98!important;--accent-7:#ff9a27!important;--accent-7-rgb:255,154,39!important;
+  --accent-8:#ffc079!important;--accent-8-rgb:255,192,121!important;--accent-9:#f88500!important;--accent-9-rgb:248,133,0!important;
+  --accent-deep:#8f4c00!important;--accent-deep-rgb:143,76,0!important;
+  --bg:#0d0d0d!important;--bg2:#120e0a!important;--bg-glow:rgba(255,197,131,.06)!important;--grid-tint:transparent!important;
+  --surface:rgba(26,20,16,.78)!important;--border:rgba(255,197,131,.35)!important;--mood-glow:rgba(255,197,131,.28)!important;
+  --accent:#ffc583!important;--cyan:#ffb968!important;--cyan-bright:#ffc583!important;--teal:#ffad4e!important;
+  --gold:#ffc583!important;--amber:#ff9f31!important;--lavender:#ffc079!important;--violet:#ffb662!important;
+  --text:#f5ead6!important;--text-dim:#a89f92!important;--muted:#a89f92!important;
+  --col-bg-main:#0d0d0d!important;--col-text-main:#cccccc!important;--col-text-muted:#8c8579!important;--col-gold:#ffd700!important;
+  --bg-tint-color:rgba(255,173,78,.05)!important;--bg-tint-color-high:rgba(255,173,78,.09)!important;
+  --dock-bg:rgba(16,13,10,.86)!important;--dock-quote:#f3dcb4!important;--dock-author:#c9bba5!important;
+  --eg-core:#fff4c8;--eg-hot:#ffb84d}
+html.pt2-electric body{background:radial-gradient(ellipse at 15% -5%,rgba(255,173,78,.11),transparent 45%),radial-gradient(ellipse at 90% 105%,rgba(255,144,16,.07),transparent 48%),#0d0d0d!important}
+html.pt2-electric ::selection{background:rgba(255,197,131,.35);color:#fff8ea}
+/* warm glass surfaces instead of the navy ones */
+html.pt2-electric :is(.portal-card,.portal-tab,.note,.online-panel,.toast,.modal-card,.quiz-settings-btn){background:linear-gradient(165deg,rgba(255,197,131,.07) 0%,rgba(22,17,12,.74) 46%,rgba(13,11,9,.86) 100%)!important}
+html.pt2-electric .settings-modal-content{background:linear-gradient(180deg,rgba(28,21,15,.97) 0%,rgba(17,13,10,.98) 55%,rgba(10,9,8,.99) 100%)!important;border-color:#ffc583!important;box-shadow:0 0 40px rgba(255,197,131,.18),0 24px 60px rgba(0,0,0,.6)!important}
+html.pt2-electric .settings-modal{background:rgba(10,8,6,.84)!important}
+html.pt2-electric .settings-nav{background:rgba(20,15,11,.98)!important}
+html.pt2-electric .settings-panels{background:rgba(14,11,8,.96)!important}
+html.pt2-electric .settings-modal-header{background:rgba(24,18,13,.98)!important}
+html.pt2-electric .pt1q .modal-card{background:linear-gradient(145deg,rgba(34,26,18,.95),rgba(16,12,9,.97))!important}
+/* titles glow like the main menu title */
+html.pt2-electric :is(#portalView h1,#setsView h1,#studyView h1){color:#ffc583!important;-webkit-text-fill-color:#ffc583;
+  text-shadow:0 0 18px rgba(255,197,131,.75),0 0 46px rgba(255,197,131,.4),0 0 90px rgba(255,197,131,.2)!important;animation:pt2TitleBreathe 3.8s ease-in-out infinite}
+html.pt2-electric .pt2-week-h{color:#ffc583!important;text-shadow:0 0 12px rgba(255,197,131,.45)}
+@keyframes pt2TitleBreathe{0%,100%{filter:brightness(1)}50%{filter:brightness(1.15)}}
+/* an electric current runs round a card while it is hovered */
+html.pt2-electric .portal-card::before{content:'';position:absolute;inset:-1.5px;border-radius:inherit;padding:1.5px;pointer-events:none;z-index:2;
+  background:conic-gradient(from var(--pt2-ang),transparent 0 58%,rgba(255,184,77,.35) 66%,var(--eg-hot) 74%,var(--eg-core) 78%,var(--eg-hot) 82%,transparent 90%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity .25s ease;animation:pt2Orbit 2.6s linear infinite paused;filter:drop-shadow(0 0 4px rgba(255,200,80,.8))}
+html.pt2-electric .portal-card:hover::before,html.pt2-electric .portal-card:focus-visible::before{opacity:1;animation-play-state:running}
+@keyframes pt2Orbit{to{--pt2-ang:360deg}}
+html.pt2-electric .timer-dock{border-color:rgba(255,197,131,.45)!important;box-shadow:0 0 22px rgba(255,197,131,.16),0 12px 30px rgba(0,0,0,.5)!important}
+html.pt2-electric .settings-nav-btn.active{text-shadow:0 0 10px rgba(255,197,131,.55)}
+/* faint scanlines and a few sparks, painted once and animated on the compositor */
+#pt2Fx{position:fixed;inset:0;pointer-events:none;z-index:0;display:none}
+html.pt2-electric #pt2Fx{display:block}
+#pt2Fx::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0,transparent 2px,rgba(255,197,131,.022) 2px,rgba(255,197,131,.022) 3px)}
+#pt2Fx i{position:absolute;width:12px;height:12px;margin:-6px 0 0 -6px;opacity:0;
+  background:radial-gradient(circle,#fff 0 12%,rgba(255,244,200,.9) 18%,rgba(255,184,77,0) 55%),
+    linear-gradient(90deg,transparent 45%,rgba(255,240,190,.9) 50%,transparent 55%),linear-gradient(0deg,transparent 45%,rgba(255,240,190,.9) 50%,transparent 55%);
+  filter:drop-shadow(0 0 3px rgba(255,190,80,.9));animation:pt2Spark var(--d,7s) ease-in-out var(--w,0s) infinite;will-change:opacity,transform}
+@keyframes pt2Spark{0%,86%,100%{opacity:0;transform:scale(.3) rotate(0deg)}90%{opacity:.95;transform:scale(1) rotate(30deg)}94%{opacity:.25;transform:scale(.7) rotate(60deg)}}
+@media (prefers-reduced-motion:reduce){
+  #pt2Fx i{animation:none}
+  html.pt2-electric :is(#portalView h1,#setsView h1,#studyView h1){animation:none}
+  html.pt2-electric .portal-card::before{animation:none;background:linear-gradient(90deg,var(--eg-hot),var(--eg-core),var(--eg-hot))}
+}
+
+/* the main menu cursor (only while the golden theme is on) */
+html[data-cursor="intro"]{--cur-w:100px;--cur-h:100px;--cur-border:none;--cur-radius:50%;--cur-blend:normal;--cur-shadow:none;
+  --cur-bg:radial-gradient(circle,rgba(var(--accent-0-rgb),.5) 0%,rgba(var(--accent-0-rgb),0) 70%);
+  --cur-active-w:100px;--cur-active-h:100px;--cur-active-border:transparent;--cur-active-bg:radial-gradient(circle,rgba(var(--accent-0-rgb),.6) 0%,rgba(var(--accent-0-rgb),0) 70%);
+  --cur-core-w:20px;--cur-core-h:20px;--cur-core-radius:50%;--cur-core-shadow:0 0 0 1px rgba(0,0,0,.85);
+  --cur-core-bg:radial-gradient(circle,var(--accent-0) 0,var(--accent-0) 8px,rgba(var(--accent-0-rgb),.8) 8px,rgba(var(--accent-0-rgb),.8) 10px)}
+html[data-cursor="intro"] #cursor:not(.core){opacity:.5;animation:pt2Aura 2s infinite}
+html[data-cursor="intro"] #cursor.core{outline:2px solid rgba(255,255,255,.9);outline-offset:1px}
+@keyframes pt2Aura{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.5}50%{transform:translate(-50%,-50%) scale(1.2);opacity:.8}}
+html.pt2-electric #cursor.hidden{opacity:1!important;visibility:visible!important}
+html.pt2-electric #cursor.core.hidden{opacity:1!important;visibility:visible!important}
+html.pt2-electric #cursor:not(.core).hidden{opacity:.5!important}
+
+/* emoji change while the palette is held: a short ripple in the emoji's colour */
+.pt2-ripple{position:fixed;left:0;top:0;width:0;height:0;pointer-events:none;z-index:2147482000}
+.pt2-ripple span{position:absolute;left:-60px;top:-60px;width:120px;height:120px;border-radius:47% 53% 51% 49%/52% 48% 52% 48%;
+  border:2px solid var(--rc);box-shadow:0 0 18px var(--rc),inset 0 0 14px var(--rc);opacity:0;animation:pt2Ripple 1s ease-out forwards}
+.pt2-ripple span:nth-child(2){animation-delay:.12s;border-radius:52% 48% 47% 53%/48% 53% 47% 52%}
+.pt2-ripple span:nth-child(3){animation-delay:.24s}
+@keyframes pt2Ripple{0%{opacity:.26;transform:scale(.3) rotate(0deg)}60%{opacity:.14}100%{opacity:0;transform:scale(4.2) rotate(24deg)}}
+.pt2-ripple.calm span{display:none}
+.pt2-ripple.calm::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at var(--rx) var(--ry),var(--rc),transparent 60%);opacity:0;animation:pt2Tint 1s ease forwards}
+@keyframes pt2Tint{0%,100%{opacity:0}35%{opacity:.12}}
+
+/* —— multicolour accents —— */
+html.pt2-mc :is(#portalView h1,#setsView h1,#studyView h1,#quizTitle,.pt2-week-h,.settings-panel-title,.pt1q .final .score-big){
+  background-image:var(--mc-grad)!important;background-size:200% 100%;-webkit-background-clip:text!important;background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;color:transparent!important;text-shadow:none!important}
+html.pt2-mc :is(#portalView h1,#setsView h1,#studyView h1){filter:drop-shadow(0 0 14px rgba(var(--accent-0-rgb),.35))}
+html.pt2-mc :is(.pt1q .track-fill,.btn-gold,.pt1q .btn-gold,.pt1q .nav-btn.primary,.settings-nav-btn.active::after,.pt2-mc-preview){background-image:var(--mc-grad)!important;background-size:200% 100%!important}
+html.pt2-mc :is(.portal-card,.timer-dock,.modal-card,.settings-modal-content,.pt1q .card,.pt1q #mainPanel,.pt2-mc-ringed)::after{content:'';position:absolute;inset:-1.5px;border-radius:inherit;padding:1.5px;pointer-events:none;z-index:1;
+  background:var(--mc-grad);background-size:200% 100%;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+html.pt2-mc :is(.modal-card,.settings-modal-content,.pt1q .card,.pt1q #mainPanel){position:relative}
+html.pt2-mc-wave :is(#portalView h1,#setsView h1,#studyView h1,#quizTitle,.pt2-week-h,.settings-panel-title,.pt1q .final .score-big,.pt1q .track-fill,.btn-gold,.pt1q .nav-btn.primary,.pt2-mc-preview),
+html.pt2-mc-wave :is(.portal-card,.timer-dock,.modal-card,.settings-modal-content,.pt1q .card,.pt1q #mainPanel)::after{animation:pt2McWave var(--mc-dur,8s) linear infinite!important}
+html.pt2-mc-aurora{--mc-bs:300% 300%}
+html.pt2-mc-aurora :is(#portalView h1,#setsView h1,#studyView h1,#quizTitle,.pt2-week-h,.settings-panel-title,.pt1q .final .score-big,.pt1q .track-fill,.btn-gold,.pt1q .nav-btn.primary,.pt2-mc-preview),
+html.pt2-mc-aurora :is(.portal-card,.timer-dock,.modal-card,.settings-modal-content,.pt1q .card,.pt1q #mainPanel)::after{background-size:300% 300%!important;animation:pt2McAurora var(--mc-dur,8s) ease-in-out infinite alternate!important}
+@keyframes pt2McWave{from{background-position:0% 50%}to{background-position:200% 50%}}
+@keyframes pt2McAurora{0%{background-position:0% 0%}100%{background-position:100% 100%}}
+@media (prefers-reduced-motion:reduce){
+  html.pt2-mc *,html.pt2-mc *::after{animation-name:none}
+}
+
+/* —— Extra tab —— */
+.pt2-mc-colors{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:6px 0 4px}
+.pt2-mc-chip{position:relative;display:inline-flex}
+.pt2-mc-chip input[type=color]{width:40px;height:40px;border:none;border-radius:10px;padding:0;background:none;cursor:pointer}
+.pt2-mc-x{position:absolute;top:-7px;right:-7px;width:18px;height:18px;border-radius:50%;border:1px solid var(--col-border);background:var(--col-bg-card,#1a1a1a);color:var(--col-text-muted);font-size:12px;line-height:15px;padding:0}
+.pt2-mc-add{width:40px;height:40px;border-radius:10px;border:1.5px dashed var(--col-border);background:transparent;color:var(--col-text-muted);font-size:20px}
+.pt2-mc-modes{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.pt2-mc-mode{padding:7px 14px;border-radius:999px;border:1px solid var(--col-border);background:transparent;color:var(--col-text-muted);font-size:.85em}
+.pt2-mc-mode.active{border-color:var(--accent-0);color:var(--accent-0);background:rgba(var(--accent-0-rgb),.1)}
+.pt2-mc-speed{display:flex;gap:10px;align-items:center;margin-top:6px}
+.pt2-mc-speed input{flex:1;accent-color:var(--accent-0)}
+.pt2-mc-preview{height:12px;border-radius:99px;margin:8px 0 2px;background-size:200% 100%}
+.pt2-mc-off .pt2-mc-body{opacity:.55}
