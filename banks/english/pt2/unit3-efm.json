@@ -3,7 +3,7 @@
   "subject": "ENGL101",
   "subjectId": "engl101",
   "title": "Unit 3: Basic Principles in Medicine + Digestive, Respiratory, and Circulatory Systems",
-  "formSize": 163,
+  "formSize": 179,
   "forms": [
     "A"
   ],
@@ -2872,6 +2872,284 @@
         ],
         "correct": 0,
         "explain": "Food typically remains in the stomach for about 5 hours during digestion before passing into the small intestine. About 2 hours and about 3 hours are shorter than usual for a typical mixed meal. About 8 hours is longer than normal gastric processing time."
+      },
+      {
+        "id": "ENG1PT20667",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'patient' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          0,
+          2
+        ],
+        "explain": "Patient can be a noun (a person receiving care) or an adjective (able to wait calmly). It is not a verb or adverb."
+      },
+      {
+        "id": "ENG1PT20668",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'average' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          0,
+          1,
+          2
+        ],
+        "explain": "Average can be a noun (a typical amount), a verb (to calculate a mean), or an adjective (typical or ordinary). It is not an adverb."
+      },
+      {
+        "id": "ENG1PT20669",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'routine' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          0,
+          2
+        ],
+        "explain": "Routine can be a noun (a regular sequence) or an adjective (regular or habitual). It is not a verb or adverb."
+      },
+      {
+        "id": "ENG1PT20670",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'local' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          0,
+          2
+        ],
+        "explain": "Local can be an adjective (belonging to a particular place) or a noun (a local person or thing). It is not a verb or adverb."
+      },
+      {
+        "id": "ENG1PT20671",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'open' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          1,
+          2
+        ],
+        "explain": "Open can be a verb (to make accessible) or an adjective (not closed). It is not a noun or adverb in this sense."
+      },
+      {
+        "id": "ENG1PT20672",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'living' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          0,
+          2
+        ],
+        "explain": "Living can be an adjective (alive) or a noun (a way of life or income). It is not a verb or adverb."
+      },
+      {
+        "id": "ENG1PT20673",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'chemical' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          0,
+          2
+        ],
+        "explain": "Chemical can be an adjective (relating to chemistry) or a noun (a substance). It is not a verb or adverb."
+      },
+      {
+        "id": "ENG1PT20674",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'human' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          0,
+          2
+        ],
+        "explain": "Human can be a noun (a person) or an adjective (relating to people). It is not a verb or adverb."
+      },
+      {
+        "id": "ENG1PT20675",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'middle' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          0,
+          2
+        ],
+        "explain": "Middle can be a noun (the central part) or an adjective (central). It is not a verb or adverb."
+      },
+      {
+        "id": "ENG1PT20676",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'front' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          0,
+          1,
+          2
+        ],
+        "explain": "Front can be a noun (the forward part), a verb (to face toward), or an adjective (at the front). It is not an adverb."
+      },
+      {
+        "id": "ENG1PT20677",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'back' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "explain": "Back can be a noun (the rear part), a verb (to support or reverse), an adjective (rear), or an adverb (toward the rear). All four are possible."
+      },
+      {
+        "id": "ENG1PT20678",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'right' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          0,
+          2,
+          3
+        ],
+        "explain": "Right can be a noun (a direction or entitlement), an adjective (correct or on the right side), or an adverb (correctly or toward the right). It is not a verb here."
+      },
+      {
+        "id": "ENG1PT20679",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'top' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          0,
+          1,
+          2
+        ],
+        "explain": "Top can be a noun (the highest part), a verb (to surpass), or an adjective (highest). It is not an adverb."
+      },
+      {
+        "id": "ENG1PT20680",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'lower' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          1,
+          2
+        ],
+        "explain": "Lower can be a verb (to reduce) or an adjective (situated below). It is not a noun or adverb in this sense."
+      },
+      {
+        "id": "ENG1PT20681",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'collapse' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          0,
+          1
+        ],
+        "explain": "Collapse can be a verb (to fall down) or a noun (the act of collapsing). It is not an adjective or adverb."
+      },
+      {
+        "id": "ENG1PT20682",
+        "type": "multi",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Which forms can the word 'function' take?",
+        "options": [
+          "Noun",
+          "Verb",
+          "Adjective",
+          "Adverb"
+        ],
+        "correct": [
+          0,
+          1
+        ],
+        "explain": "Function can be a noun (a purpose or role) or a verb (to work or operate). It is not an adjective or adverb."
       }
     ]
   }
