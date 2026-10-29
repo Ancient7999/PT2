@@ -1188,15 +1188,26 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 .portal-card.pt2-dim:hover,
 .pt2-peek-wrap .portal-card.pt2-dim:hover,
 .study-chip.pt2-dim,
-.study-chip.pt2-dim:hover,
-#studyQuizBtn.pt2-dim,
-#studyQuizBtn.pt2-dim:hover{
+.study-chip.pt2-dim:hover{
   transform: none !important;
   box-shadow: none !important;
   border-color: rgba(148,163,184,.28) !important;
   background: rgba(14,22,40,.55) !important;
   filter: none !important;
   opacity: .65;
+}
+
+/* Lighter dim for buttons (Open Quiz + Picture study) so they stay readable */
+#studyQuizBtn.pt2-dim,
+#studyQuizBtn.pt2-dim:hover,
+#studyNotesBtn.pt2-dim,
+#studyNotesBtn.pt2-dim:hover,
+.quiz-settings-btn.pt2-dim,
+.quiz-settings-btn.pt2-dim:hover{
+  opacity: .55 !important;
+  filter: saturate(.45) brightness(.8) !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 .portal-card.pt2-dim:hover .go,
 .portal-card.pt2-dim:hover h3,
