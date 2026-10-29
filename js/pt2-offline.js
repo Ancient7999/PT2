@@ -138,6 +138,9 @@
     // no automatic mood colours while the timer is off or the Timer box is hidden
     moodFrozen: function () { return get('pt2_pomo_disabled') || get('pt2_hide_dock'); },
     moodLocked: function () { return get('pt2_mood_lock'); } };
+  /* Lock emoji control shows only once unlocked (js/pt2-unlocks.js, feature:moodLock); set here so it never flashes.
+     A lock already switched on keeps working while the control is hidden. */
+  try { var gotU = JSON.parse(localStorage.getItem('pt2_emoji_unlocked_v1') || '{}') || {}; root.classList.toggle('pt2-lock-open', !!gotU['feature:moodLock']); } catch (e) {}
   /* Lock emoji (in the emoji dropdown): keeps the chosen emoji; unlocking restores automatic changes */
   function syncLock() {
     var on = get('pt2_mood_lock'), b = document.getElementById('pt2MoodLock');

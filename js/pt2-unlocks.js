@@ -24,14 +24,17 @@
       { emoji: '🏆', at: 600, label: 'Champion', fam: 'mood-happy', cls: 'mood-happy' },
       { emoji: '👑', at: 800, label: 'Royal', fam: 'mood-happy', cls: 'mood-happy' },
       { emoji: '🎓', all: true, label: 'Week 11 Graduate', fam: 'mood-happy', cls: 'mood-happy' }
+    ], features: [
+      // the Lock emoji control in the emoji dropdown: hidden (html:not(.pt2-lock-open)) until 250 questions are solved
+      { key: 'feature:moodLock', icon: '🔒', at: 250, label: 'Lock emoji', cls: 'pt2-lock-open' }
     ] }
     ,{ week: 'week12', history: true, done: 'Every Week 12 question solved', unlocks: [
       { emoji: '😌', all: true, label: 'Calm', fam: 'mood-calm', cls: 'mood-calm' },
       { emoji: '🧘', all: true, label: 'Zen', fam: 'mood-calm', cls: 'mood-zen' }
     ] }
   ];
-  var UNLOCKS = [];
-  WEEKS.forEach(function (w) { w.banks = (Q.weeks && Q.weeks[w.week]) || []; w.ledger = 'pt2_solved_ever_v1:' + w.week; w.unlocks.forEach(function (u) { u.w = w; UNLOCKS.push(u); }); });
+  var UNLOCKS = [], FEATURES = [];
+  WEEKS.forEach(function (w) { w.banks = (Q.weeks && Q.weeks[w.week]) || []; w.ledger = 'pt2_solved_ever_v1:' + w.week; w.unlocks.forEach(function (u) { u.w = w; UNLOCKS.push(u); }); (w.features || []).forEach(function (f) { f.w = w; FEATURES.push(f); }); });
   function lsGet(k) { try { return global.localStorage.getItem(k); } catch (e) { return null; } }
   function lsSet(k, v) { try { global.localStorage.setItem(k, v); } catch (e) {} }
   function readJSON(k, d) { try { var v = JSON.parse(lsGet(k) || 'null'); return v && typeof v === 'object' ? v : d; } catch (e) { return d; } }
@@ -72,8 +75,9 @@
     p.id = 'pt2-unlock-popup'; p.setAttribute('role', 'status'); p.setAttribute('aria-live', 'polite');
     p.innerHTML = '<div class="achievement-popup-content"><div class="achievement-popup-icon"></div><div class="achievement-popup-text">'
       + '<div class="achievement-popup-title">New emoji unlocked</div><div class="achievement-popup-name"></div><div class="achievement-popup-desc"></div></div></div>';
-    p.querySelector('.achievement-popup-icon').textContent = u.emoji;
-    p.querySelector('.achievement-popup-name').textContent = u.emoji + ' ' + u.label;
+    p.querySelector('.achievement-popup-icon').textContent = u.icon || u.emoji;
+    if (u.icon) p.querySelector('.achievement-popup-title').textContent = 'New option unlocked';
+    p.querySelector('.achievement-popup-name').textContent = u.icon ? u.label : u.emoji + ' ' + u.label;
     p.querySelector('.achievement-popup-desc').textContent = u.all ? u.w.done : u.at + ' questions solved';
     document.body.appendChild(p);
     setTimeout(function () { if (p.parentNode) p.remove(); next(); }, 4500);
@@ -82,8 +86,9 @@
   /* picker: a locked emoji is not shown at all; it appears only once unlocked */
   function decorate() { decorate0(); paginate(false); }
   function decorate0() {
-    var row = document.querySelector('#moodTray .mood-tray-row'); if (!row) return;
     var got = unlocked();
+    FEATURES.forEach(function (f) { document.documentElement.classList.toggle(f.cls, !!got[f.key]); });
+    var row = document.querySelector('#moodTray .mood-tray-row'); if (!row) return;
     UNLOCKS.forEach(function (u) {
       var b = row.querySelector('.mood-pick[data-mood="' + u.emoji + '"]');
       if (!got[u.emoji]) {
@@ -118,10 +123,11 @@
     WEEKS.forEach(function (w) {
       var L = sync(w), n = Object.keys(L).length; counts[w.week] = n;
       w.unlocks.forEach(function (u) { if (!got[u.emoji] && isOpen(u, L, n)) { got[u.emoji] = Date.now(); fresh.push(u); } });
+      (w.features || []).forEach(function (f) { if (!got[f.key] && n >= f.at) { got[f.key] = Date.now(); fresh.push(f); } });
     });
     if (fresh.length) { lsSet(GOT, JSON.stringify(got)); if (!quiet) fresh.forEach(popup); }
     decorate();
-    return { solved: counts, fresh: fresh.map(function (u) { return u.emoji; }) };
+    return { solved: counts, fresh: fresh.map(function (u) { return u.emoji || u.key; }) };
   }
   // the new emojis need a mood entry so choosing them works like any other emoji
   /* W: emoji picker paging, 20 per page. With 20 or fewer selectable emojis the pager is display:none (no space kept). */
@@ -180,5 +186,5 @@
     var L = readJSON(w.ledger, {}); if (L['pic|' + id]) return;
     L['pic|' + id] = 1; lsSet(w.ledger, JSON.stringify(L)); check(false);
   }
-  global.PT2Unlocks = { check: check, pictureSolved: pictureSolved, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? Object.keys(sync(w)).length : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, isLocked: isLocked };
+  global.PT2Unlocks = { check: check, pictureSolved: pictureSolved, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? Object.keys(sync(w)).length : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
 })(window);

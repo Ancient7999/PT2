@@ -41,6 +41,8 @@ html.pt2-no-grid #el-arquitecto-bg-layer{display:none!important}
 /* Practice title: same rule, no fixed second hue */
 .sets-wrap h1{background:linear-gradient(120deg,var(--cyan-bright) 0%,var(--cyan) 40%,color-mix(in srgb,var(--cyan) 65%,#000) 75%,var(--cyan-bright) 100%)!important;-webkit-background-clip:text!important;background-clip:text!important}
 
+/* Lock emoji stays hidden until it is unlocked (html.pt2-lock-open) */
+html:not(.pt2-lock-open) #pt2MoodLock{display:none!important}
 /* t325u: Lock emoji is a checkbox-style control, left of the Change cursor button */
 .mood-tray-tools .pt2-tools-row{display:flex;align-items:center;justify-content:center;gap:.6rem}
 .mood-lock-btn{display:inline-flex;align-items:center;gap:7px;padding:5px 10px 5px 7px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text-dim,inherit);font:inherit;font-family:var(--body,inherit);font-size:.78rem;line-height:1.2;cursor:pointer}
