@@ -3613,7 +3613,6 @@ function finishQuiz(){
     StudyStore.save(bankId(), st);
   }
   quizActive=false; spawnFireworkBurst(W*.5,H*.3,36);
-  try{ list.scrollTop=0; }catch(e){}
 }
 function showReview(){
   document.getElementById('finalScreen').style.display='none';
@@ -3690,7 +3689,6 @@ document.getElementById('backBtn').addEventListener('click', goBack);
 document.getElementById('setsBtn').addEventListener('click', ()=>{ if(typeof unlockAudio==='function') unlockAudio(); askLeaveRun(); });
 document.getElementById('againSetsBtn').addEventListener('click', ()=>{ clearWireLayer(); goSets(); });
 document.getElementById('reviewMenuBtn').addEventListener('click', goSets);
-document.getElementById('reviewBtn').addEventListener('click', showReview);
 document.getElementById('restartBtn').addEventListener('click', restartCard);
 document.getElementById('reviewBackBtn').addEventListener('click', ()=>{
   document.getElementById('reviewScreen').style.display='none';
