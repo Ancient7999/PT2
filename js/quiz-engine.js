@@ -3612,12 +3612,12 @@ function finishQuiz(){
   }
   quizActive=false; spawnFireworkBurst(W*.5,H*.3,36);
 }
-function showReview(){
+function showReview(){}
 function cardMoodOf(cardId){
   if(!window.StudyStore||!cardId) return null;
   const m=(StudyStore.load(bankId()).cards[cardId]||{}).mood; return m||null;
 }
-function restoreMoodUI(){
+function restoreMoodUI(){}
 
 /* —— leaving a run (PORTAL: save, stop clock) —— */
 function leaveRun(){
