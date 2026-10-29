@@ -5,7 +5,10 @@
    and Anatomy; Medical Physics and Study Skills (Week 12) do not count. The Week 11 emoji (🎓) needs every Week 11
    quiz question solved; picture study is not required for it.
    Each week has its own ledger, so 'Reset solved' on a set does not take unlocks away.
-   To add Week 12 later: add 'week12' banks in build_pt2.py (WEEKS) and a { week: 'week12', unlocks: [...] } entry below. */
+   Week 12 = the materials tagged "Week 12" in the catalog (Medical Physics and Study Skills); its banks are listed in
+   window.__PT2_QIDS.weeks.week12. Solving every Week 12 question unlocks 😌 and 🧘 together. The Week 12 tally is
+   retroactive: it reads the solved sets plus the ids of sets that were fully solved and then reset (resets[card].ids;
+   a set can only be reset once nothing is left in it), so history from before the unlock existed still counts. */
 (function (global) {
   'use strict';
   var GOT = 'pt2_emoji_unlocked_v1', PREFIX = 'sp_bank_v1:';
@@ -22,22 +25,28 @@
       { emoji: '👑', at: 800, label: 'Royal', fam: 'mood-happy', cls: 'mood-happy' },
       { emoji: '🎓', all: true, label: 'Week 11 Graduate', fam: 'mood-happy', cls: 'mood-happy' }
     ] }
-    // { week: 'week12', done: 'Every Week 12 question solved', unlocks: [ ... ] }   (none yet)
+    ,{ week: 'week12', history: true, done: 'Every Week 12 question solved', unlocks: [
+      { emoji: '😌', all: true, label: 'Calm', fam: 'mood-calm', cls: 'mood-calm' },
+      { emoji: '🧘', all: true, label: 'Zen', fam: 'mood-calm', cls: 'mood-zen' }
+    ] }
   ];
   var UNLOCKS = [];
   WEEKS.forEach(function (w) { w.banks = (Q.weeks && Q.weeks[w.week]) || []; w.ledger = 'pt2_solved_ever_v1:' + w.week; w.unlocks.forEach(function (u) { u.w = w; UNLOCKS.push(u); }); });
   function lsGet(k) { try { return global.localStorage.getItem(k); } catch (e) { return null; } }
   function lsSet(k, v) { try { global.localStorage.setItem(k, v); } catch (e) {} }
   function readJSON(k, d) { try { var v = JSON.parse(lsGet(k) || 'null'); return v && typeof v === 'object' ? v : d; } catch (e) { return d; } }
-  var known = {};
+  var known = {}, SLOT = {};
   Object.keys(Q.banks).forEach(function (bk) { known[bk] = {}; Q.banks[bk].forEach(function (id) { known[bk][id] = 1; }); });
   /* fold the current solved sets of a week's banks into that week's ledger (only real question ids) */
   function sync(w) {
     var L = readJSON(w.ledger, {}), changed = false;
     w.banks.forEach(function (bk) {
       if (!known[bk]) return;
-      var st = readJSON(PREFIX + bk, null); if (!st || !st.solved) return;
-      var ids = Array.isArray(st.solved) ? st.solved : Object.keys(st.solved);
+      var st = readJSON(PREFIX + bk, null); if (!st) return;
+      var ids = !st.solved ? [] : Array.isArray(st.solved) ? st.solved : Object.keys(st.solved);
+      if (w.history && st.resets && typeof st.resets === 'object') {
+        Object.keys(st.resets).forEach(function (c) { var r = st.resets[c]; if (r && Array.isArray(r.ids)) ids = ids.concat(r.ids); });
+      }
       ids.forEach(function (id) { if (known[bk][id] && !L[bk + '|' + id]) { L[bk + '|' + id] = 1; changed = true; } });
     });
     if (changed) lsSet(w.ledger, JSON.stringify(L));
@@ -77,16 +86,31 @@
     var got = unlocked();
     UNLOCKS.forEach(function (u) {
       var b = row.querySelector('.mood-pick[data-mood="' + u.emoji + '"]');
-      if (!got[u.emoji]) { if (b) b.remove(); return; }
-      if (!b) { b = document.createElement('button'); b.type = 'button'; b.className = 'mood-pick pt2-unlockable'; b.dataset.mood = u.emoji; b.textContent = u.emoji; b.title = u.label; row.appendChild(b); }
+      if (!got[u.emoji]) {
+        if (b) { if (!(u.emoji in SLOT)) { var nx = b.nextElementSibling; while (nx && byEmoji(nx.dataset.mood) && !got[nx.dataset.mood]) nx = nx.nextElementSibling; SLOT[u.emoji] = nx ? nx.dataset.mood || null : null; } b.remove(); }
+        return;
+      }
+      if (!b) {
+        b = document.createElement('button'); b.type = 'button'; b.className = 'mood-pick pt2-unlockable'; b.dataset.mood = u.emoji; b.textContent = u.emoji; b.title = u.label;
+        var at = SLOT[u.emoji] ? row.querySelector('.mood-pick[data-mood="' + SLOT[u.emoji] + '"]') : null;
+        if (at) row.insertBefore(b, at); else row.appendChild(b);
+        if (typeof currentMoodEmoji !== 'undefined' && currentMoodEmoji === u.emoji) b.classList.add('active');
+      }
+    });
+    // the end-of-set stamp row offers the same emoji only once it is unlocked
+    document.querySelectorAll('#moodContainer .mood-btn').forEach(function (btn) {
+      var u = byEmoji(btn.dataset.mood); if (u) btn.style.display = got[u.emoji] ? '' : 'none';
     });
     // locked emojis are never chosen automatically either
     try {
-      if (typeof FOCUS_MOOD_POOL !== 'undefined') UNLOCKS.forEach(function (u) {
-        var i = FOCUS_MOOD_POOL.indexOf(u.emoji);
-        if (!got[u.emoji] && i !== -1) { FOCUS_MOOD_POOL.splice(i, 1); FOCUS_MOOD_POOL.__pt2Held = (FOCUS_MOOD_POOL.__pt2Held || []).concat(u.emoji); }
-        else if (got[u.emoji] && FOCUS_MOOD_POOL.__pt2Held && FOCUS_MOOD_POOL.__pt2Held.indexOf(u.emoji) !== -1 && i === -1) FOCUS_MOOD_POOL.push(u.emoji);
-      });
+      var pools = [];
+      if (typeof FOCUS_MOOD_POOL !== 'undefined') pools.push(FOCUS_MOOD_POOL);
+      if (typeof BREAK_MOOD_POOL !== 'undefined') pools.push(BREAK_MOOD_POOL);
+      pools.forEach(function (P) { UNLOCKS.forEach(function (u) {
+        var i = P.indexOf(u.emoji);
+        if (!got[u.emoji] && i !== -1) { P.splice(i, 1); P.__pt2Held = (P.__pt2Held || []).concat(u.emoji); }
+        else if (got[u.emoji] && P.__pt2Held && P.__pt2Held.indexOf(u.emoji) !== -1 && i === -1) P.push(u.emoji);
+      }); });
     } catch (e) {}
   }
   function check(quiet) {
