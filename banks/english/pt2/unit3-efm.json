@@ -3,7 +3,7 @@
   "subject": "ENGL101",
   "subjectId": "engl101",
   "title": "Unit 3: Basic Principles in Medicine + Digestive, Respiratory, and Circulatory Systems",
-  "formSize": 180,
+  "formSize": 200,
   "forms": [
     "A"
   ],
@@ -3225,6 +3225,1053 @@
           }
         ],
         "explain": "Vertebra → vertebrae. Atrium → atria. Bronchus → bronchi. Alveolus → alveoli. Villus → villi. Diagnosis → diagnoses. These are the standard medical plurals."
+      },
+      {
+        "id": "ENG1PT20736",
+        "type": "stepped",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Identify the part of speech of each form in this word family.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "What part of speech is 'gastrointestinal'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 2
+          },
+          {
+            "id": "2",
+            "prompt": "What part of speech is 'gastroenteritis'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "What part of speech is 'gastroscope'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Gastrointestinal is an adjective. Gastroenteritis and gastroscope are nouns."
+      },
+      {
+        "id": "ENG1PT20737",
+        "type": "stepped",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Identify the part of speech of each form in this word family.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "What part of speech is 'cardiovascular'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 2
+          },
+          {
+            "id": "2",
+            "prompt": "What part of speech is 'cardiopathy'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "What part of speech is 'cardiologist'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Cardiovascular is an adjective. Cardiopathy and cardiologist are nouns."
+      },
+      {
+        "id": "ENG1PT20738",
+        "type": "stepped",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Identify the part of speech of each form in this word family.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "What part of speech is 'hyperglycemic'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 2
+          },
+          {
+            "id": "2",
+            "prompt": "What part of speech is 'hypertension'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "What part of speech is 'hyperventilate'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 1
+          }
+        ],
+        "explain": "Hyperglycemic is an adjective. Hypertension is a noun. Hyperventilate is a verb."
+      },
+      {
+        "id": "ENG1PT20739",
+        "type": "stepped",
+        "cat": "Unit 3 – Digestive System",
+        "q": "Identify the part of speech of each form in this word family.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "What part of speech is 'ingest'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 1
+          },
+          {
+            "id": "2",
+            "prompt": "What part of speech is 'intake'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Ingest is a verb. Intake is a noun."
+      },
+      {
+        "id": "ENG1PT20740",
+        "type": "stepped",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Identify the part of speech of each form in this word family.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "What part of speech is 'physiology'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "What part of speech is 'physiological'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 2
+          },
+          {
+            "id": "3",
+            "prompt": "What part of speech is 'physiotherapy'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Physiology and physiotherapy are nouns. Physiological is an adjective."
+      },
+      {
+        "id": "ENG1PT20741",
+        "type": "stepped",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Identify the part of speech of each form in this word family.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "What part of speech is 'renew'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 1
+          },
+          {
+            "id": "2",
+            "prompt": "What part of speech is 'renewal'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Renew is a verb. Renewal is a noun."
+      },
+      {
+        "id": "ENG1PT20742",
+        "type": "stepped",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Identify the part of speech of each form in this word family.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "What part of speech is 'reshape'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 1
+          }
+        ],
+        "explain": "Reshape is a verb."
+      },
+      {
+        "id": "ENG1PT20743",
+        "type": "stepped",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Identify the part of speech of each form in this word family.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "What part of speech is 'internal'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 2
+          }
+        ],
+        "explain": "Internal is an adjective."
+      },
+      {
+        "id": "ENG1PT20744",
+        "type": "stepped",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Identify the part of speech of each form in this word family.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "What part of speech is 'reproductive'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 2
+          }
+        ],
+        "explain": "Reproductive is an adjective."
+      },
+      {
+        "id": "ENG1PT20745",
+        "type": "stepped",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Identify the part of speech of each form in this word family.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "What part of speech is 'physical'?",
+            "options": [
+              "Noun",
+              "Verb",
+              "Adjective",
+              "Adverb"
+            ],
+            "correct": 2
+          }
+        ],
+        "explain": "Physical is an adjective."
+      },
+      {
+        "id": "ENG1PT20746",
+        "type": "matching",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Match each body system to its main job.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Endocrine system"
+          },
+          {
+            "id": "2",
+            "text": "Muscular system"
+          },
+          {
+            "id": "3",
+            "text": "Nervous system"
+          },
+          {
+            "id": "4",
+            "text": "Reproductive system"
+          },
+          {
+            "id": "5",
+            "text": "Skeletal system"
+          },
+          {
+            "id": "6",
+            "text": "Immune system"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Releases hormones"
+          },
+          {
+            "id": "B",
+            "text": "Produces movement"
+          },
+          {
+            "id": "C",
+            "text": "Sends signals"
+          },
+          {
+            "id": "D",
+            "text": "Produces offspring"
+          },
+          {
+            "id": "E",
+            "text": "Supports and protects"
+          },
+          {
+            "id": "F",
+            "text": "Fights infection"
+          },
+          {
+            "id": "G",
+            "text": "Filters blood"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F"
+        },
+        "explain": "Endocrine releases hormones. Muscular produces movement. Nervous sends signals. Reproductive produces offspring. Skeletal supports and protects. Immune fights infection."
+      },
+      {
+        "id": "ENG1PT20747",
+        "type": "matching",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Match each term to its meaning or location.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Aorta"
+          },
+          {
+            "id": "2",
+            "text": "Cardiopathy"
+          },
+          {
+            "id": "3",
+            "text": "Cardiology"
+          },
+          {
+            "id": "4",
+            "text": "Hypertension"
+          },
+          {
+            "id": "5",
+            "text": "Hypotension"
+          },
+          {
+            "id": "6",
+            "text": "Hyperglycemia"
+          },
+          {
+            "id": "7",
+            "text": "Pulmonary"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Main artery from the heart"
+          },
+          {
+            "id": "B",
+            "text": "Disease of the heart"
+          },
+          {
+            "id": "C",
+            "text": "Study of the heart"
+          },
+          {
+            "id": "D",
+            "text": "High blood pressure"
+          },
+          {
+            "id": "E",
+            "text": "Low blood pressure"
+          },
+          {
+            "id": "F",
+            "text": "High blood sugar"
+          },
+          {
+            "id": "G",
+            "text": "Relating to the lungs"
+          },
+          {
+            "id": "H",
+            "text": "Low blood sugar"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G"
+        },
+        "explain": "Aorta is the main artery leaving the heart. Cardiopathy is heart disease. Cardiology is the study of the heart. Hypertension is high blood pressure. Hypotension is low blood pressure. Hyperglycemia is high blood sugar. Pulmonary relates to the lungs."
+      },
+      {
+        "id": "ENG1PT20748",
+        "type": "matching",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Match each term to its meaning.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Hyperventilation"
+          },
+          {
+            "id": "2",
+            "text": "Hypoventilation"
+          },
+          {
+            "id": "3",
+            "text": "Hyperthyroidism"
+          },
+          {
+            "id": "4",
+            "text": "Hypothyroidism"
+          },
+          {
+            "id": "5",
+            "text": "Thyroid gland"
+          },
+          {
+            "id": "6",
+            "text": "Metabolize"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Breathing too fast"
+          },
+          {
+            "id": "B",
+            "text": "Breathing too slow"
+          },
+          {
+            "id": "C",
+            "text": "Overactive thyroid"
+          },
+          {
+            "id": "D",
+            "text": "Underactive thyroid"
+          },
+          {
+            "id": "E",
+            "text": "Gland in the neck"
+          },
+          {
+            "id": "F",
+            "text": "To process substances chemically"
+          },
+          {
+            "id": "G",
+            "text": "Normal breathing"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F"
+        },
+        "explain": "Hyperventilation is breathing too fast. Hypoventilation is breathing too slow. Hyperthyroidism is an overactive thyroid. Hypothyroidism is an underactive thyroid. The thyroid gland is in the neck. Metabolize means to process substances chemically."
+      },
+      {
+        "id": "ENG1PT20749",
+        "type": "matching",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Match each body part to its medical name or location.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Middle finger"
+          },
+          {
+            "id": "2",
+            "text": "Index finger"
+          },
+          {
+            "id": "3",
+            "text": "Ring finger"
+          },
+          {
+            "id": "4",
+            "text": "Pinky finger"
+          },
+          {
+            "id": "5",
+            "text": "Thumb"
+          },
+          {
+            "id": "6",
+            "text": "Big toe"
+          },
+          {
+            "id": "7",
+            "text": "Nail"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Third phalanx"
+          },
+          {
+            "id": "B",
+            "text": "Second phalanx"
+          },
+          {
+            "id": "C",
+            "text": "Fourth phalanx"
+          },
+          {
+            "id": "D",
+            "text": "Fifth phalanx"
+          },
+          {
+            "id": "E",
+            "text": "First digit of the hand"
+          },
+          {
+            "id": "F",
+            "text": "Hallux"
+          },
+          {
+            "id": "G",
+            "text": "Hard plate on a digit"
+          },
+          {
+            "id": "H",
+            "text": "Metacarpal"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G"
+        },
+        "explain": "Middle finger is the third phalanx. Index finger is the second. Ring finger is the fourth. Pinky is the fifth. Thumb is the first digit of the hand. Big toe is the hallux. Nail is the hard plate on a digit."
+      },
+      {
+        "id": "ENG1PT20750",
+        "type": "matching",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Match each body part to its location or description.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Forehead"
+          },
+          {
+            "id": "2",
+            "text": "Temple"
+          },
+          {
+            "id": "3",
+            "text": "Scalp"
+          },
+          {
+            "id": "4",
+            "text": "Navel"
+          },
+          {
+            "id": "5",
+            "text": "Sole"
+          },
+          {
+            "id": "6",
+            "text": "Heel"
+          },
+          {
+            "id": "7",
+            "text": "Calf"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Front of the head above the eyes"
+          },
+          {
+            "id": "B",
+            "text": "Side of the head"
+          },
+          {
+            "id": "C",
+            "text": "Skin covering the top of the head"
+          },
+          {
+            "id": "D",
+            "text": "Umbilicus on the abdomen"
+          },
+          {
+            "id": "E",
+            "text": "Bottom surface of the foot"
+          },
+          {
+            "id": "F",
+            "text": "Back of the foot"
+          },
+          {
+            "id": "G",
+            "text": "Back of the lower leg"
+          },
+          {
+            "id": "H",
+            "text": "Front of the lower leg"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G"
+        },
+        "explain": "Forehead is the front of the head above the eyes. Temple is the side of the head. Scalp is the skin on top of the head. Navel is the umbilicus. Sole is the bottom of the foot. Heel is the back of the foot. Calf is the back of the lower leg."
+      },
+      {
+        "id": "ENG1PT20751",
+        "type": "matching",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Match each term to its meaning.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Facilitate"
+          },
+          {
+            "id": "2",
+            "text": "Maintain"
+          },
+          {
+            "id": "3",
+            "text": "Promote"
+          },
+          {
+            "id": "4",
+            "text": "Suffer"
+          },
+          {
+            "id": "5",
+            "text": "Breakdown"
+          },
+          {
+            "id": "6",
+            "text": "Carry away"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Make easier"
+          },
+          {
+            "id": "B",
+            "text": "Keep in good condition"
+          },
+          {
+            "id": "C",
+            "text": "Encourage or support"
+          },
+          {
+            "id": "D",
+            "text": "Experience pain or harm"
+          },
+          {
+            "id": "E",
+            "text": "Separate into parts"
+          },
+          {
+            "id": "F",
+            "text": "Remove or transport away"
+          },
+          {
+            "id": "G",
+            "text": "Stop completely"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F"
+        },
+        "explain": "Facilitate means make easier. Maintain means keep in good condition. Promote means encourage. Suffer means experience pain. Breakdown means separate into parts. Carry away means remove or transport away."
+      },
+      {
+        "id": "ENG1PT20752",
+        "type": "matching",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Match each term to its meaning or related concept.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Chronic"
+          },
+          {
+            "id": "2",
+            "text": "Automatic"
+          },
+          {
+            "id": "3",
+            "text": "Microscopic"
+          },
+          {
+            "id": "4",
+            "text": "Mechanical"
+          },
+          {
+            "id": "5",
+            "text": "Biochemical"
+          },
+          {
+            "id": "6",
+            "text": "Generative"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Long-lasting"
+          },
+          {
+            "id": "B",
+            "text": "Happening by itself"
+          },
+          {
+            "id": "C",
+            "text": "Too small to see without a microscope"
+          },
+          {
+            "id": "D",
+            "text": "Relating to machines or physical force"
+          },
+          {
+            "id": "E",
+            "text": "Relating to chemical processes in living things"
+          },
+          {
+            "id": "F",
+            "text": "Able to produce or create"
+          },
+          {
+            "id": "G",
+            "text": "Short-term"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F"
+        },
+        "explain": "Chronic means long-lasting. Automatic means happening by itself. Microscopic means too small to see without a microscope. Mechanical relates to physical force. Biochemical relates to chemical processes in living things. Generative means able to produce."
+      },
+      {
+        "id": "ENG1PT20753",
+        "type": "matching",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Match each term to its meaning.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Fatigue"
+          },
+          {
+            "id": "2",
+            "text": "Insomnia"
+          },
+          {
+            "id": "3",
+            "text": "Tremor"
+          },
+          {
+            "id": "4",
+            "text": "Irritable"
+          },
+          {
+            "id": "5",
+            "text": "Depression"
+          },
+          {
+            "id": "6",
+            "text": "Chest pain"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Extreme tiredness"
+          },
+          {
+            "id": "B",
+            "text": "Inability to sleep"
+          },
+          {
+            "id": "C",
+            "text": "Involuntary shaking"
+          },
+          {
+            "id": "D",
+            "text": "Easily annoyed"
+          },
+          {
+            "id": "E",
+            "text": "Persistent low mood"
+          },
+          {
+            "id": "F",
+            "text": "Pain in the chest"
+          },
+          {
+            "id": "G",
+            "text": "High fever"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F"
+        },
+        "explain": "Fatigue is extreme tiredness. Insomnia is inability to sleep. Tremor is involuntary shaking. Irritable means easily annoyed. Depression is persistent low mood. Chest pain is pain in the chest."
+      },
+      {
+        "id": "ENG1PT20754",
+        "type": "matching",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Match each body part to its description.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Eyebrow"
+          },
+          {
+            "id": "2",
+            "text": "Eyelash"
+          },
+          {
+            "id": "3",
+            "text": "Eyelid"
+          },
+          {
+            "id": "4",
+            "text": "Lip"
+          },
+          {
+            "id": "5",
+            "text": "Nipple"
+          },
+          {
+            "id": "6",
+            "text": "Knuckle"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Hair above the eye"
+          },
+          {
+            "id": "B",
+            "text": "Hair on the edge of the eyelid"
+          },
+          {
+            "id": "C",
+            "text": "Skin that covers the eye"
+          },
+          {
+            "id": "D",
+            "text": "Soft edge of the mouth"
+          },
+          {
+            "id": "E",
+            "text": "Raised area on the breast"
+          },
+          {
+            "id": "F",
+            "text": "Joint of a finger"
+          },
+          {
+            "id": "G",
+            "text": "Bone of the wrist"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F"
+        },
+        "explain": "Eyebrow is hair above the eye. Eyelash is hair on the edge of the eyelid. Eyelid is the skin that covers the eye. Lip is the soft edge of the mouth. Nipple is the raised area on the breast. Knuckle is a finger joint."
+      },
+      {
+        "id": "ENG1PT20755",
+        "type": "matching",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Match each term to its meaning or related idea.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Blood supply"
+          },
+          {
+            "id": "2",
+            "text": "Blood circulation"
+          },
+          {
+            "id": "3",
+            "text": "Appearance"
+          },
+          {
+            "id": "4",
+            "text": "Effect"
+          },
+          {
+            "id": "5",
+            "text": "Excess"
+          },
+          {
+            "id": "6",
+            "text": "Extremity"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Blood delivered to a part"
+          },
+          {
+            "id": "B",
+            "text": "Movement of blood around the body"
+          },
+          {
+            "id": "C",
+            "text": "The way something looks"
+          },
+          {
+            "id": "D",
+            "text": "A result or consequence"
+          },
+          {
+            "id": "E",
+            "text": "More than needed"
+          },
+          {
+            "id": "F",
+            "text": "An arm or a leg"
+          },
+          {
+            "id": "G",
+            "text": "A type of cell"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F"
+        },
+        "explain": "Blood supply is blood delivered to a part. Blood circulation is the movement of blood. Appearance is the way something looks. Effect is a result. Excess is more than needed. Extremity is an arm or a leg."
       }
     ]
   }
