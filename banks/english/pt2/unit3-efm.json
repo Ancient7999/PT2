@@ -3,7 +3,7 @@
   "subject": "ENGL101",
   "subjectId": "engl101",
   "title": "Unit 3: Basic Principles in Medicine + Digestive, Respiratory, and Circulatory Systems",
-  "formSize": 179,
+  "formSize": 180,
   "forms": [
     "A"
   ],
@@ -3150,6 +3150,81 @@
           1
         ],
         "explain": "Function can be a noun (a purpose or role) or a verb (to work or operate). It is not an adjective or adverb."
+      },
+      {
+        "id": "ENG1PT20735",
+        "type": "stepped",
+        "cat": "Unit 3: Basic Principles in Medicine",
+        "q": "Choose the correct plural form of each medical term.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "What is the plural of 'vertebra'?",
+            "options": [
+              "vertebrae",
+              "vertebras",
+              "vertebraes",
+              "vertebri"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "What is the plural of 'atrium'?",
+            "options": [
+              "atria",
+              "atriums",
+              "atriaes",
+              "atrii"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "What is the plural of 'bronchus'?",
+            "options": [
+              "bronchi",
+              "bronchuses",
+              "bronchii",
+              "bronchae"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "4",
+            "prompt": "What is the plural of 'alveolus'?",
+            "options": [
+              "alveoli",
+              "alveoluses",
+              "alveolae",
+              "alveolii"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "5",
+            "prompt": "What is the plural of 'villus'?",
+            "options": [
+              "villi",
+              "villuses",
+              "villae",
+              "villii"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "6",
+            "prompt": "What is the plural of 'diagnosis'?",
+            "options": [
+              "diagnoses",
+              "diagnosises",
+              "diagnosi",
+              "diagnosisi"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Vertebra → vertebrae. Atrium → atria. Bronchus → bronchi. Alveolus → alveoli. Villus → villi. Diagnosis → diagnoses. These are the standard medical plurals."
       }
     ]
   }
