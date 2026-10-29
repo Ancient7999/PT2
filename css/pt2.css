@@ -212,5 +212,13 @@ html.pt2-grid-hover .settings-modal{background-color:rgba(8,10,16,.4)!important}
 #moodTray .pt2-pg-btn:focus-visible{outline:2px solid var(--cyan-bright);outline-offset:2px}
 #moodTray .pt2-pg-btn:disabled{opacity:.35;cursor:default}
 #moodTray .pt2-pg-ind{font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;color:var(--muted,var(--text));min-width:2.6rem;text-align:center}
-/* narrow cards: the peek eye pushes 'Coming Soon' into the title / Draft badge, so it moves to the bottom-right corner */
-@media (max-width:560px){ .pt2-peek-wrap .portal-card .pt2-soon{top:auto!important;bottom:16px;right:18px} }
+/* narrow cards: move 'Coming Soon' below the Draft badge (also covers Study-chip cards like Medical Terminology) */
+@media (max-width:560px){
+  .pt2-peek-wrap .portal-card .pt2-soon,
+  .portal-card-wrap .portal-card .pt2-soon,
+  .portal-card .pt2-soon{
+    top: auto !important;
+    bottom: 16px;
+    right: 16px !important; /* overrides the inline 58px set for peek cards */
+  }
+}
