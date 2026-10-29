@@ -161,6 +161,22 @@
   }
 
   /* —— helpers —— */
+  /* word bank window: at most BANK_MAX words, every one from a label still unsolved. The picture's labels sit in one
+     fixed shuffled order; a solved word leaves and the next unsolved one in that order comes in (with a short fade).
+     Pictures with BANK_MAX labels or fewer are unchanged. Typing mode does not use the bank. */
+  const BANK_MAX = 7, bankSeen = Object.create(null);
+  function bankWindow(key, labels, open) {
+    const openIds = new Set(open.map(l => l.id)), byId = {};
+    labels.forEach(l => { byId[l.id] = l; });
+    return seededShuffle(labels.map(l => l.id), key + '/bank').filter(id => openIds.has(id)).slice(0, BANK_MAX).map(id => byId[id].answer);
+  }
+  function markNewChips(sec, key, mode) {
+    const k = key + '|' + mode, bank = sec.querySelector('.simg-bank');
+    if (!bank) { delete bankSeen[k]; return; }
+    const chips = Array.prototype.slice.call(bank.querySelectorAll('.label-chip')), prev = bankSeen[k];
+    if (prev) chips.forEach(c => { if (prev.indexOf(c.dataset.text) < 0) c.classList.add('simg-chip-in'); });
+    bankSeen[k] = chips.map(c => c.dataset.text);
+  }
   function seededShuffle(arr, seedStr) {
     let h = 2166136261; for (let i = 0; i < seedStr.length; i++) { h ^= seedStr.charCodeAt(i); h = Math.imul(h, 16777619); }
     const a = arr.slice();
@@ -306,7 +322,7 @@
     if (mode === 'bank') {
       const open = labels.filter(l => !l._off && blanks.has(l.id) && !(slots[l.id] != null && matches(l, slots[l.id])));
       if (open.length) {
-        const words = single ? boneChips(ch, img) : seededShuffle(open.map(l => l.answer), key);
+        const words = single ? boneChips(ch, img) : bankWindow(key, labels, open);
         h += '<div class="label-bank simg-bank" aria-label="Word bank">' + words.map(w => { const hl = open.find(l => l.answer === w); return '<button type="button" class="label-chip" draggable="false"' + catAttr(hl && hl.hint) + ' data-text="' + esc(w) + '">' + esc(w) + '</button>'; }).join('') + '</div>';
       }
     }
@@ -323,6 +339,7 @@
   function renderSection(sec, ch, img, pager) {
     const key = keyOf(ch, img), mode = currentMode(key, img), single = isSingle(img);
     sec.innerHTML = sectionHTML(ch, img, pager);
+    markNewChips(sec, key, mode);
     sec.dataset.key = key; sec.dataset.img = img.id; sec.dataset.mode = mode;
     sec.classList.toggle('is-hidden', mode !== 'show');
     sec.classList.toggle('simg-live', !!img.views);
@@ -337,7 +354,7 @@
     if (rb) rb.addEventListener('click', () => {
       if (pager && pager.stopCd) pager.stopCd();
       if (rb.dataset.act === 'shuffle') reshuffle(key, img);
-      writeModeSlots(key, mode, {}); rerender(); updateSummary();
+      delete bankSeen[key + '|' + mode]; writeModeSlots(key, mode, {}); rerender(); updateSummary();
       const nb = sec.querySelector('.simg-restart'); if (nb) try { nb.focus({ preventScroll: true }); } catch (e) {}
       if (mode === 'type') focusFirstEmpty(sec);
     });
