@@ -33,7 +33,6 @@
     const lines = md.replace(/\r\n/g, '\n').split('\n');
     const out = [];
     let i = 0;
-    let currentMaterial = null;
     let inCode = false;
     let codeBuf = [];
     let codeLang = '';
@@ -322,6 +321,7 @@
   /* —— portal glue —— */
   let backTo = 'portalView';
   let quizOpener = null;
+  let currentMaterial = null;
   function isActive() {
     const v = document.getElementById('studyView');
     return !!(v && v.classList.contains('active'));
