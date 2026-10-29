@@ -1183,7 +1183,22 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 .achievement-popup-title{font-size:.7em;text-transform:uppercase;letter-spacing:1px;opacity:.85;margin-bottom:2px;font-family:var(--mono)}
 .achievement-popup-name{font-size:1.05em;font-weight:800;margin-bottom:2px;color:#3b2a00}
 .achievement-popup-desc{font-size:.8em;opacity:.92;color:#4a3500}
-
+/* Coming Soon / dimmed cards: no hover lift or glow */
+.portal-card.pt2-dim,
+.portal-card.pt2-dim:hover,
+.pt2-peek-wrap .portal-card.pt2-dim:hover{
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: rgba(148,163,184,.28) !important;
+  background: rgba(14,22,40,.55) !important;
+  filter: none !important;
+}
+.portal-card.pt2-dim:hover .go,
+.portal-card.pt2-dim:hover h3,
+.portal-card.pt2-dim:hover .sub{
+  color: inherit !important;
+  text-shadow: none !important;
+}
 </style>
 <link rel="stylesheet" href="css/quiz-pt1.css?v=16">
 <link rel="stylesheet" href="css/formula-practice.css?v=2">
