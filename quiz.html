@@ -2835,7 +2835,11 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
       if(typeof refreshSetsCards === 'function') refreshSetsCards();
       document.title = ((__bankMeta && __bankMeta.title) || m.title || 'Exam') + ' · Periodic Test 2';
       const snb = document.getElementById('studyNotesBtn');
-      if(snb){ snb.hidden = !m.study; snb.textContent = (m.study && m.study.images) ? '📖 Picture study' : '📖 Study notes'; }
+      if(snb){
+        snb.hidden = !m.study;
+        snb.textContent = (m.study && m.study.images) ? '📖 Picture study' : '📖 Study notes';
+        snb.classList.toggle('pt2-dim', !!(m.comingSoon));
+      }
       if(window.PT2Intro) PT2Intro(document.getElementById('setsSub'), 'pt2SetsIntro', m.intro);
       showView('setsView');
     }catch(err){
@@ -2953,22 +2957,12 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
         wrap.appendChild(card);
         const sb = document.createElement('button');
         sb.type = 'button';
-        sb.className = 'study-chip' + (m.comingSoon ? ' pt2-dim' : '');
+        sb.className = 'study-chip';
         sb.textContent = '📖 Study';
         sb.title = (m.study.title || 'Study notes');
         sb.addEventListener('click', e=>{
           e.stopPropagation();
-          if(m.draft && window.StudyConfirm){
-            StudyConfirm.ask({
-              title: m.title + ' is a draft',
-              text: m.comingSoon
-                ? 'Coming Soon: this is not the final version yet. Some pictures or notes may still change.'
-                : 'This is not the final version. Some pictures or notes may still change.',
-              confirm: 'Open anyway',
-              cancel: 'Cancel',
-              icon: 'warn'
-            }).then(ok=>{ if(ok) openStudy(); });
-          } else openStudy();
+          openStudy();
         });
         wrap.appendChild(sb);
         place(wrap, m);
@@ -3089,7 +3083,20 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
 <script>
 /* Sets "📖 Study notes" → PT1 study interface for the open material */
 document.getElementById('studyNotesBtn').addEventListener('click', ()=>{
-  if(window.StudyNotes && window.__activeMaterial) StudyNotes.open(__activeMaterial, { from:'setsView', openQuiz: ()=> showView('setsView') });
+  const m = window.__activeMaterial;
+  if(!window.StudyNotes || !m) return;
+  const open = ()=> StudyNotes.open(m, { from:'setsView', openQuiz: ()=> showView('setsView') });
+  if(m.draft && window.StudyConfirm){
+    StudyConfirm.ask({
+      title: (m.title || 'This') + ' is a draft',
+      text: m.comingSoon
+        ? 'Coming Soon: this is not the final version yet. Some pictures or notes may still change.'
+        : 'This is not the final version. Some pictures or notes may still change.',
+      confirm: 'Open anyway',
+      cancel: 'Cancel',
+      icon: 'warn'
+    }).then(ok=>{ if(ok) open(); });
+  } else open();
 });
 </script>
 <script>
