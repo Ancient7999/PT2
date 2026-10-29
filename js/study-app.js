@@ -33,6 +33,7 @@
     const lines = md.replace(/\r\n/g, '\n').split('\n');
     const out = [];
     let i = 0;
+    let currentMaterial = null;
     let inCode = false;
     let codeBuf = [];
     let codeLang = '';
@@ -337,6 +338,7 @@
     if (window.StudySymbols) window.StudySymbols.hide();
     backTo = opts.from || 'portalView';
     quizOpener = typeof opts.openQuiz === 'function' ? opts.openQuiz : null;
+    currentMaterial = material; // remember for the Open Quiz button
     const h = document.getElementById('studyTitle');
     if (h) h.textContent = study.title || 'Study Interface';
     const sub = document.getElementById('studySub');
@@ -351,7 +353,10 @@
     const back = document.getElementById('studyBackBtn');
     if (back) back.textContent = backTo === 'setsView' ? '← Practice sets' : '← Main Menu';
     const q = document.getElementById('studyQuizBtn');
-    if (q) q.hidden = !quizOpener;
+    if (q) {
+      q.hidden = !quizOpener;
+      q.classList.toggle('pt2-dim', !!(material && material.comingSoon));
+    }
     // picture study (catalog "study.images"): same chapter cards, pictures instead of Markdown
     if (study.images && window.StudyImages) {
       StudyImages.build(listEl, material, { focus: opts.focus }).catch(function (err) {
@@ -363,7 +368,21 @@
   }
 
   document.getElementById('studyBackBtn').addEventListener('click', goBack);
-  document.getElementById('studyQuizBtn').addEventListener('click', function () { if (quizOpener) quizOpener(); });
+  document.getElementById('studyQuizBtn').addEventListener('click', function () {
+    if (!quizOpener) return;
+    const m = currentMaterial;
+    if (m && m.draft && window.StudyConfirm) {
+      StudyConfirm.ask({
+        title: (m.title || 'This') + ' is a draft',
+        text: m.comingSoon
+          ? 'Coming Soon: these question banks have not been thoroughly checked yet and may not reflect the content selected for the exam.'
+          : 'This is not the final version. Some questions may still change.',
+        confirm: 'Open anyway',
+        cancel: 'Cancel',
+        icon: 'warn'
+      }).then(function (ok) { if (ok) quizOpener(); });
+    } else quizOpener();
+  });
 
   document.addEventListener('keydown', function (event) {
     if (!isActive()) return;
