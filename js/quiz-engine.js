@@ -3605,9 +3605,7 @@ function finishQuiz(){
   document.getElementById('finalStats').textContent=Math.round(s/n*100)+'% · '+runLabel+' · elapsed '+el;
   document.getElementById('statusText').textContent='results';
   document.getElementById('progressBar').style.width='100%';
-  const list=document.getElementById('resultsScroll');
-  fillResults(list);
-  // PORTAL: remember score + mark the run finished (kept for review)
+  // PORTAL: remember score + mark the run finished
   if(runCard && window.StudyStore){
     saveRunState({finished:true});
     const st=StudyStore.load(bankId());
@@ -3615,7 +3613,6 @@ function finishQuiz(){
     StudyStore.save(bankId(), st);
   }
   quizActive=false; spawnFireworkBurst(W*.5,H*.3,36);
-  restoreMoodUI();
   try{ list.scrollTop=0; }catch(e){}
 }
 function showReview(){
