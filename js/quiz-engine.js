@@ -1173,7 +1173,6 @@ function enterRunChrome(label){
   document.getElementById('qTotal').textContent=isSimpleRun()?wholeGroups().length:questions.length;
   document.getElementById('quizScreen').style.display='block';
   document.getElementById('finalScreen').style.display='none';
-  document.getElementById('reviewScreen').style.display='none';
   if(window.StudyChat && StudyChat.setLocalRoom) StudyChat.setLocalRoom('card_'+String(runCard?runCard.id:'run').replace(/[^a-z0-9_-]+/gi,'_'));
   showView('quizView');
 }
@@ -3596,7 +3595,6 @@ function finishQuiz(){
   stopElapsedClock();
   document.getElementById('elapsed').textContent=el;
   document.getElementById('quizScreen').style.display='none';
-  document.getElementById('reviewScreen').style.display='none';
   document.getElementById('finalScreen').style.display='block';
   const simple=isSimpleRun();
   const s=simple?wholeScore():score(), n=simple?wholeGroups().length:questions.length;
@@ -3615,31 +3613,11 @@ function finishQuiz(){
   quizActive=false; spawnFireworkBurst(W*.5,H*.3,36);
 }
 function showReview(){
-  document.getElementById('finalScreen').style.display='none';
-  document.getElementById('reviewScreen').style.display='block';
-  document.getElementById('reviewHeading').textContent='Answer review · '+runLabel;
-  fillResults(document.getElementById('reviewList'));
-  document.getElementById('statusText').textContent='review';
-}
 function cardMoodOf(cardId){
   if(!window.StudyStore||!cardId) return null;
   const m=(StudyStore.load(bankId()).cards[cardId]||{}).mood; return m||null;
 }
 function restoreMoodUI(){
-  const saved=cardMoodOf(runCard&&runCard.id);
-  document.querySelectorAll('#moodContainer .mood-btn').forEach(btn=>btn.classList.toggle('selected',!!(saved&&btn.dataset.mood===saved)));
-  document.getElementById('moodLabel').textContent=saved?('stamped '+saved+' · saved on its card'):'tap one · stamps this set on its card';
-}
-document.getElementById('moodContainer').addEventListener('click',e=>{
-  const btn=e.target.closest('.mood-btn'); if(!btn||!runCard||!window.StudyStore) return;
-  if(typeof unlockAudio==='function') unlockAudio();
-  const mood=btn.dataset.mood;
-  const st=StudyStore.load(bankId());
-  st.cards[runCard.id]=Object.assign({}, st.cards[runCard.id]||{}, {mood, at:Date.now()});
-  StudyStore.save(bankId(), st);
-  document.querySelectorAll('#moodContainer .mood-btn').forEach(b=>b.classList.toggle('selected',b===btn));
-  document.getElementById('moodLabel').textContent='stamped '+mood+' · saved on its card';
-});
 
 /* —— leaving a run (PORTAL: save, stop clock) —— */
 function leaveRun(){
@@ -3688,13 +3666,7 @@ document.getElementById('nextBtn').addEventListener('click', goNext);
 document.getElementById('backBtn').addEventListener('click', goBack);
 document.getElementById('setsBtn').addEventListener('click', ()=>{ if(typeof unlockAudio==='function') unlockAudio(); askLeaveRun(); });
 document.getElementById('againSetsBtn').addEventListener('click', ()=>{ clearWireLayer(); goSets(); });
-document.getElementById('reviewMenuBtn').addEventListener('click', goSets);
 document.getElementById('restartBtn').addEventListener('click', restartCard);
-document.getElementById('reviewBackBtn').addEventListener('click', ()=>{
-  document.getElementById('reviewScreen').style.display='none';
-  document.getElementById('finalScreen').style.display='block';
-  document.getElementById('statusText').textContent='results';
-});
 function toggleFullscreen(){ if(!document.fullscreenElement) document.documentElement.requestFullscreen().catch(()=>{}); else document.exitFullscreen(); }
 document.querySelectorAll('[data-fs]').forEach(b=>b.addEventListener('click', toggleFullscreen));
 /* app chrome is unselectable; Ctrl/Cmd+A selects nothing unless focus is in a field or a selectable reading region */
