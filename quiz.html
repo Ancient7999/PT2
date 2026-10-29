@@ -57,6 +57,19 @@ html.pt2-no-grid {
   pointer-events: none;
   z-index: 2;
 }
+/* Coming Soon / dimmed cards: no hover lift or glow */
+.portal-card.pt2-dim,
+.portal-card.pt2-dim:hover,
+.pt2-peek-wrap .portal-card.pt2-dim:hover,
+.study-chip.pt2-dim,
+.study-chip.pt2-dim:hover{
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: rgba(148,163,184,.28) !important;
+  background: rgba(14,22,40,.55) !important;
+  filter: none !important;
+  opacity: .65;
+}
 </style>
 <script>
 (function () {
