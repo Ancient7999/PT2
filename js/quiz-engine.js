@@ -1186,6 +1186,7 @@ function startRun(pool, label, opts){
   runCard=opts.card||{id:'adhoc', label, pool};
   currentForm=runCard.id;
   runDeck=deck;
+  if(typeof clearKbAdvance==='function') clearKbAdvance();
   questions=expandDeck(deck); answers=new Array(questions.length).fill(null); current=0; locked=false; quizActive=true; runLabel=label; unansweredMarkersVisible=false;
   startElapsedClock(0);
   enterRunChrome(label);
@@ -2439,6 +2440,7 @@ function renderMulti(q, ans){
     btn.textContent=opt;
     if(sel.has(i)) btn.classList.add('selected');
     if(!done && wrongMarks.has(i) && sel.has(i)) btn.classList.add('multi-wrong');
+    if(!done && sel.has(i) && q.correct.includes(i)) btn.classList.add('correct');
     if(done){ btn.disabled=true; if(q.correct.includes(i)) btn.classList.add('correct'); else btn.classList.add('multi-not'); }
     btn.onclick=()=>toggleMulti(i);
     opts.appendChild(btn);
@@ -2452,17 +2454,16 @@ function toggleMulti(idx, fromKb){
   const isCorrect=q.correct.includes(idx);
   const already=a.sel.includes(idx);
 
-  if(already && isCorrect && btn && btn.disabled) return;
-
   if(already){
     a.sel.splice(a.sel.indexOf(idx),1);
-    if(btn){ btn.classList.remove('selected','multi-wrong'); btn.setAttribute('aria-checked','false'); }
+    if(btn){ btn.classList.remove('selected','multi-wrong','correct'); btn.setAttribute('aria-checked','false'); }
   } else {
     a.sel.push(idx);
     a.sel.sort((x,y)=>x-y);
     if(btn){ btn.classList.add('selected'); btn.setAttribute('aria-checked','true'); }
     if(isCorrect){
-      if(btn){ btn.disabled=true; btn.classList.add('correct'); btn.classList.remove('multi-wrong'); }
+      // a right pick shows as right but stays clickable: it can be taken back like any other pick
+      if(btn){ btn.classList.add('correct'); btn.classList.remove('multi-wrong'); }
     } else {
       if(window.StudyAchievements && typeof StudyAchievements.recordWrong==='function') StudyAchievements.recordWrong();
       if(btn){ btn.classList.add('multi-wrong'); btn.classList.remove('soft-wrong'); void btn.offsetWidth; btn.classList.add('soft-wrong'); setTimeout(()=>btn.classList.remove('soft-wrong'),480); }
@@ -2472,9 +2473,9 @@ function toggleMulti(idx, fromKb){
     }
   }
 
-  const lockedCorrects=a.sel.filter(k=>q.correct.includes(k));
+  const pickedCorrects=a.sel.filter(k=>q.correct.includes(k));
   const stillWrong=a.sel.filter(k=>!q.correct.includes(k));
-  if(lockedCorrects.length===q.correct.length && !stillWrong.length){
+  if(pickedCorrects.length===q.correct.length && !stillWrong.length){
     locked=true; a.correct=true; delete a.wrong; onQuestionSolved(q);
     document.querySelectorAll('#options .multi-opt').forEach(o=>{ const k=+o.dataset.idx; o.disabled=true; o.classList.remove('multi-wrong'); o.classList.add(q.correct.includes(k)?'correct':'multi-not'); });
     const fb=document.getElementById('feedback');
@@ -3647,6 +3648,7 @@ document.getElementById('moodContainer').addEventListener('click',e=>{
 /* —— leaving a run (PORTAL: save, stop clock) —— */
 function leaveRun(){
   clearTimeout(afterAnswerProgress._finishT);
+  if(typeof clearKbAdvance==='function') clearKbAdvance();
   if(quizActive && runCard) saveRunState();
   quizActive=false;
   stopElapsedClock();
