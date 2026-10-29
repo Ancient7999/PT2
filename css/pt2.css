@@ -212,13 +212,25 @@ html.pt2-grid-hover .settings-modal{background-color:rgba(8,10,16,.4)!important}
 #moodTray .pt2-pg-btn:focus-visible{outline:2px solid var(--cyan-bright);outline-offset:2px}
 #moodTray .pt2-pg-btn:disabled{opacity:.35;cursor:default}
 #moodTray .pt2-pg-ind{font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;color:var(--muted,var(--text));min-width:2.6rem;text-align:center}
-/* narrow cards: move 'Coming Soon' below the Draft badge (also covers Study-chip cards like Medical Terminology) */
-@media (max-width:560px){
-  .pt2-peek-wrap .portal-card .pt2-soon,
-  .portal-card-wrap .portal-card .pt2-soon,
-  .portal-card .pt2-soon{
-    top: auto !important;
-    bottom: 16px;
-    right: 16px !important; /* overrides the inline 58px set for peek cards */
+/* phones: take Coming Soon out of absolute positioning so it sits under the Draft badge */
+@media (max-width:640px){
+  .portal-card:has(.pt2-soon){
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
+  .portal-card .pt2-soon{
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    order: 2;
+    display: inline-flex;
+    margin: 2px 0 10px;
+    font-size: .72rem;
+  }
+  .portal-card:has(.pt2-soon) h3{ order: 1; margin-bottom: 4px; }
+  .portal-card:has(.pt2-soon) .sub,
+  .portal-card:has(.pt2-soon) .badge-note{ order: 3; }
+  .portal-card:has(.pt2-soon) .go{ order: 4; }
 }
