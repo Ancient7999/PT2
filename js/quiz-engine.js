@@ -2457,18 +2457,22 @@ function toggleMulti(idx, fromKb){
     a.sel.splice(a.sel.indexOf(idx),1);
     if(btn){ btn.classList.remove('selected','multi-wrong','correct'); btn.setAttribute('aria-checked','false'); }
   } else {
-    a.sel.push(idx);
-    a.sel.sort((x,y)=>x-y);
-    if(btn){ btn.classList.add('selected'); btn.setAttribute('aria-checked','true'); }
     if(isCorrect){
-      // a right pick shows as right but stays clickable: it can be taken back like any other pick
+      a.sel.push(idx);
+      a.sel.sort((x,y)=>x-y);
+      if(btn){ btn.classList.add('selected'); btn.setAttribute('aria-checked','true'); }
       if(btn){ btn.classList.add('correct'); btn.classList.remove('multi-wrong'); }
     } else {
       if(window.StudyAchievements && typeof StudyAchievements.recordWrong==='function') StudyAchievements.recordWrong();
-      if(btn){ btn.classList.add('multi-wrong'); btn.classList.remove('soft-wrong'); void btn.offsetWidth; btn.classList.add('soft-wrong'); setTimeout(()=>btn.classList.remove('soft-wrong'),480); }
+      if(btn){
+        btn.classList.remove('soft-wrong'); void btn.offsetWidth;
+        btn.classList.add('soft-wrong');
+        setTimeout(()=>btn.classList.remove('soft-wrong'), 480);
+      }
       const fb=document.getElementById('feedback');
       fb.className='feedback soft'; fb.textContent='not that one · try again';
-      clearTimeout(selectAnswer._t); selectAnswer._t=setTimeout(()=>{ if(!locked){ fb.className='feedback idle'; fb.textContent=''; } },1400);
+      clearTimeout(selectAnswer._t); selectAnswer._t=setTimeout(()=>{ if(!locked){ fb.className='feedback idle'; fb.textContent=''; } },900);
+      return;
     }
   }
 
