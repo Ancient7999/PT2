@@ -160,14 +160,19 @@ html[data-cursor="system"] #cursor{z-index:2147483646!important}
   mask-image:radial-gradient(ellipse at 50% 42%,black 32%,transparent 92%);-webkit-mask-image:radial-gradient(ellipse at 50% 42%,black 32%,transparent 92%)}
 html[data-skin="grid-haze"]{--pt2-grid-size:64px}
 .settings-modal{transition:background-color .35s ease}
-html.pt2-grid-hover #pt2GridGlow,
-html:has(.pt2-opt:hover #pt2ShowGrid) #pt2GridGlow,
-html:has(#pt2ShowGrid:focus-visible) #pt2GridGlow{opacity:1}
-html.pt2-grid-hover .settings-modal,
-html:has(.pt2-opt:hover #pt2ShowGrid) .settings-modal,
-html:has(#pt2ShowGrid:focus-visible) .settings-modal{background-color:rgba(8,10,16,.4)!important}
-.pt2-opt:has(#pt2ShowGrid){border-radius:10px;transition:background .25s ease,box-shadow .25s ease}
-.pt2-opt:has(#pt2ShowGrid):hover,html.pt2-grid-hover .pt2-opt:has(#pt2ShowGrid){background:rgba(var(--accent-0-rgb),.08);box-shadow:inset 0 0 0 1px rgba(var(--accent-0-rgb),.35)}
+/* grid level: Low = plain grid (no glow), Medium = glow at half strength, High = the full hover glow */
+html[data-pt2-grid="med"] #pt2GridGlow{opacity:.5}
+html[data-pt2-grid="high"] #pt2GridGlow{opacity:1}
+html.pt2-grid-hover .settings-modal{background-color:rgba(8,10,16,.4)!important}
+.pt2-grid-opt{border-radius:10px;transition:background .25s ease,box-shadow .25s ease}
+.pt2-grid-opt:hover,html.pt2-grid-hover .pt2-grid-opt{background:rgba(var(--accent-0-rgb),.08);box-shadow:inset 0 0 0 1px rgba(var(--accent-0-rgb),.35)}
+/* Off / Low / Medium / High segmented control */
+.pt2-seg{flex:0 0 auto;display:inline-flex;gap:2px;padding:3px;border-radius:999px;border:1px solid rgba(var(--accent-0-rgb),.35);background:rgba(var(--accent-0-rgb),.06)}
+.pt2-seg button{appearance:none;border:0;background:transparent;color:inherit;font:inherit;font-size:.8rem;line-height:1;padding:7px 11px;border-radius:999px;cursor:pointer;opacity:.75;transition:background .2s ease,color .2s ease,opacity .2s ease}
+.pt2-seg button:hover{opacity:1;background:rgba(var(--accent-0-rgb),.12)}
+.pt2-seg button.active{opacity:1;background:rgba(var(--accent-0-rgb),.28);color:var(--accent-1);box-shadow:inset 0 0 0 1px rgba(var(--accent-0-rgb),.6);font-weight:600}
+.pt2-seg button:focus-visible{outline:2px solid var(--accent-1);outline-offset:1px}
+@media (max-width:480px){.pt2-grid-opt{flex-wrap:wrap}.pt2-seg button{padding:7px 9px}}
 
 /* M: Peek button on the dimmed Coming Soon cards (outside the card, so not dimmed) */
 .pt2-peek-wrap{position:relative;display:flex}

@@ -2,30 +2,65 @@
    double-clicked file as well as from a web server. Also the PT2 timer-box settings. */
 (function (global) {
   'use strict';
-  /* Background grid: on unless switched off in Settings (pt2_show_grid = '0') */
-  function gridOn() { try { return global.localStorage.getItem('pt2_show_grid') !== '0'; } catch (e) { return true; } }
+  /* Background grid level (Settings → Theme): off | low | med | high, saved as pt2_grid_level.
+     low = the plain grid, high = the accent glow the row used to show on hover, med = halfway (glow at half strength).
+     An older saved pt2_show_grid: '0' → off, anything else (or nothing) → low. */
+  var GRID_LEVELS = ['off', 'low', 'med', 'high'];
+  function gridLevel() {
+    try {
+      var v = global.localStorage.getItem('pt2_grid_level');
+      if (GRID_LEVELS.indexOf(v) >= 0) return v;
+      return global.localStorage.getItem('pt2_show_grid') === '0' ? 'off' : 'low';
+    } catch (e) { return 'low'; }
+  }
+  function showGridLevel(lv) {   // what the page shows (the saved level, or a hover preview)
+    var root = document.documentElement;
+    root.classList.toggle('pt2-no-grid', lv === 'off');
+    root.setAttribute('data-pt2-grid', lv);
+  }
   function applyGrid() {
-    document.documentElement.classList.toggle('pt2-no-grid', !gridOn());
-    var g = document.getElementById('pt2ShowGrid'); if (g) g.checked = gridOn();
+    var lv = gridLevel(); showGridLevel(lv);
+    var seg = document.getElementById('pt2GridLevel'); if (!seg) return;
+    [].forEach.call(seg.querySelectorAll('[data-level]'), function (bt) {
+      var on = bt.getAttribute('data-level') === lv;
+      bt.classList.toggle('active', on); bt.setAttribute('aria-checked', on ? 'true' : 'false'); bt.tabIndex = on ? 0 : -1;
+    });
+  }
+  function setGridLevel(lv) {
+    try { global.localStorage.setItem('pt2_grid_level', lv); global.localStorage.setItem('pt2_show_grid', lv === 'off' ? '0' : '1'); } catch (x) {}
+    applyGrid();
   }
   applyGrid();
   document.addEventListener('DOMContentLoaded', applyGrid);
-  /* Grid glow while the 'Show background grid' row is hovered or its switch focused (CSS :has() does the same;
-     this class is the fallback for browsers without :has()) */
+  /* Hover preview: pointing at (or keyboard-focusing) a level shows it on the page behind the dimmed Settings
+     panel; leaving the control goes back to the saved level. */
   function wireGridGlow() {
     if (!document.getElementById('pt2GridGlow') && document.body) {
       var gl = document.createElement('div'); gl.id = 'pt2GridGlow'; gl.setAttribute('aria-hidden', 'true');
       document.body.insertBefore(gl, document.body.firstChild);
     }
-    var cb = document.getElementById('pt2ShowGrid'); if (!cb || cb.dataset.glowWired) return;
-    cb.dataset.glowWired = '1';
-    var row = cb.closest('.pt2-opt') || cb.parentNode, root = document.documentElement;
-    var on = function () { root.classList.add('pt2-grid-hover'); }, off = function () { if (document.activeElement !== cb || !cb.matches(':focus-visible')) root.classList.remove('pt2-grid-hover'); };
-    row.addEventListener('mouseenter', on); row.addEventListener('mouseleave', off);
-    cb.addEventListener('focus', function () { try { if (cb.matches(':focus-visible')) on(); } catch (e) { on(); } });
-    cb.addEventListener('blur', function () { root.classList.remove('pt2-grid-hover'); });
-    document.addEventListener('pointerdown', function (e) { if (!row.contains(e.target)) root.classList.remove('pt2-grid-hover'); }, true);
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') root.classList.remove('pt2-grid-hover'); }, true);
+    var seg = document.getElementById('pt2GridLevel'); if (!seg || seg.dataset.glowWired) return;
+    seg.dataset.glowWired = '1';
+    var row = seg.closest('.pt2-opt') || seg.parentNode, root = document.documentElement;
+    var preview = function (lv) { root.classList.add('pt2-grid-hover'); showGridLevel(lv || gridLevel()); };
+    var end = function () { root.classList.remove('pt2-grid-hover'); showGridLevel(gridLevel()); };
+    row.addEventListener('mouseenter', function () { preview(); });
+    row.addEventListener('mouseleave', function () { if (!seg.contains(document.activeElement) || !document.activeElement.matches(':focus-visible')) end(); });
+    seg.addEventListener('mouseover', function (e) { var bt = e.target.closest && e.target.closest('[data-level]'); preview(bt ? bt.getAttribute('data-level') : null); });
+    seg.addEventListener('mouseout', function (e) { if (!e.relatedTarget || !seg.contains(e.relatedTarget)) preview(); });
+    seg.addEventListener('focusin', function (e) { var bt = e.target.closest('[data-level]'); try { if (bt && bt.matches(':focus-visible')) preview(bt.getAttribute('data-level')); } catch (x) {} });
+    seg.addEventListener('focusout', function (e) { if (!e.relatedTarget || !seg.contains(e.relatedTarget)) end(); });
+    seg.addEventListener('click', function (e) {
+      var bt = e.target.closest && e.target.closest('[data-level]'); if (!bt) return;
+      setGridLevel(bt.getAttribute('data-level')); if (row.matches(':hover')) preview(); });
+    seg.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : 0; if (!d) return;
+      e.preventDefault();
+      var lv = GRID_LEVELS[(GRID_LEVELS.indexOf(gridLevel()) + d + GRID_LEVELS.length) % GRID_LEVELS.length];
+      setGridLevel(lv); var bt = seg.querySelector('[data-level="' + lv + '"]'); if (bt) bt.focus(); preview(lv);
+    });
+    document.addEventListener('pointerdown', function (e) { if (!row.contains(e.target)) end(); }, true);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') end(); }, true);
   }
   document.addEventListener('DOMContentLoaded', wireGridGlow);
   /* S: connector from Medical Terminology to the lesser Anatomy card. An SVG in the week grid, redrawn whenever the grid
@@ -90,11 +125,6 @@
   global.addEventListener('resize', alignSettings);
   document.addEventListener('click', function () { setTimeout(alignSettings, 60); setTimeout(alignSettings, 500); }, true);
   global.addEventListener('hashchange', function () { setTimeout(alignSettings, 60); });
-  document.addEventListener('change', function (e) {
-    if (!e.target || e.target.id !== 'pt2ShowGrid') return;
-    try { global.localStorage.setItem('pt2_show_grid', e.target.checked ? '1' : '0'); } catch (x) {}
-    applyGrid();
-  });
   /* PT2 has no Mastery system: drop any saved mastery or hidden-question data */
   try { ['study_portal_mastery_v1', 'study_portal_dnsa_v1'].forEach(function (k) { global.localStorage.removeItem(k); }); } catch (e) {}
   var B = global.__PT2_BUNDLE || {};

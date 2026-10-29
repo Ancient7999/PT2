@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Periodic Test 2 · Quiz Interface</title>
-<script src="data/bundle.js?v=3"></script>
-<script src="js/pt2-offline.js?v=2"></script>
+<script src="data/bundle.js?v=4"></script>
+<script src="js/pt2-offline.js?v=3"></script>
 <script>
 (function(){
   try{
@@ -1191,7 +1191,7 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 <link rel="stylesheet" href="pt1-theme/fonts.css">
 <link rel="stylesheet" href="pt1-theme/theme-vars.css">
 <link rel="stylesheet" href="pt1-theme/colorizer.css">
-<link rel="stylesheet" href="css/pt2.css?v=2">
+<link rel="stylesheet" href="css/pt2.css?v=3">
 <link rel="stylesheet" href="css/controls.css?v=6">
 </head>
 <body>
@@ -1691,7 +1691,7 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 <button type="button" class="cursor-skin-opt cursor-skin-auto" data-cursor-skin="auto" title="Automatic: the timer and moods choose the cursor"><span class="cursor-skin-preview preview-auto" aria-hidden="true">↻</span><span class="cursor-skin-name">Automatic</span></button>
 </div>
 </div>
-<div class="setting-item"><span class="setting-item-label">Background</span><div class="pt2-opt-list"><div class="pt2-opt"><span class="pt2-opt-text"><span class="pt2-opt-name">Show background grid</span><span class="pt2-opt-hint">The faint grid lines behind the page</span></span><label class="toggle-switch"><input type="checkbox" id="pt2ShowGrid" checked><span class="toggle-slider"></span></label></div></div></div>
+<div class="setting-item"><span class="setting-item-label">Background</span><div class="pt2-opt-list"><div class="pt2-opt pt2-grid-opt"><span class="pt2-opt-text"><span class="pt2-opt-name" id="pt2GridLabel">Show background grid</span><span class="pt2-opt-hint">How strong the grid lines behind the page are</span></span><div class="pt2-seg" id="pt2GridLevel" role="radiogroup" aria-labelledby="pt2GridLabel"><button type="button" role="radio" aria-checked="false" data-level="off">Off</button><button type="button" role="radio" aria-checked="false" data-level="low">Low</button><button type="button" role="radio" aria-checked="false" data-level="med">Medium</button><button type="button" role="radio" aria-checked="false" data-level="high">High</button></div></div></div></div>
 <div class="setting-item" style="display: none;">
 <span class="setting-item-label">Appearance</span>
 <div class="toggle-container" style="margin:0; justify-content:flex-start;">
@@ -3066,7 +3066,7 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
 })();
 
 </script>
-<script src="js/quiz-engine.js?v=19"></script>
+<script src="js/quiz-engine.js?v=20"></script>
 <script src="js/formula-gen-pt2.js?v=1"></script>
 <script src="js/formula-practice.js?v=2"></script>
 <script src="js/study-images.js?v=12"></script>
