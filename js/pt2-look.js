@@ -196,6 +196,7 @@
   function usable(el) { return el && !el.disabled && !el.classList.contains('locked') && !el.classList.contains('pt2-locked-dim') && el.getAttribute('aria-disabled') !== 'true'; }
   document.addEventListener('pointerover', function (e) {
     if (e.pointerType && e.pointerType !== 'mouse') return;
+    if (!eOn()) { if (gTarget) hideGlass(); return; } // only with the gold palette; other accents keep their own hover
     var t = e.target && e.target.closest ? e.target.closest(GLASS_SEL) : null;
     if (t === gTarget) return;
     if (!t || !usable(t)) { hideGlass(); return; }
