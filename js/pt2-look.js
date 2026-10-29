@@ -78,14 +78,16 @@
     if (on) guardCursor();
   }
   var tipEl = null, tipT = null;
-  function tip(el, text) {
+  function tip(el, text, ms, kind) {
     if (!tipEl) { tipEl = document.createElement('div'); tipEl.className = 'pt2-tip'; tipEl.setAttribute('role', 'status'); document.body.appendChild(tipEl); }
     var r = el.getBoundingClientRect();
     tipEl.textContent = text;
     tipEl.style.left = Math.max(110, Math.min(global.innerWidth - 110, r.left + r.width / 2)) + 'px';
     tipEl.style.top = Math.max(40, r.top) + 'px';
+    tipEl.dataset.k = kind || '';
+    tipEl.classList.toggle('is-mood', kind === 'mood');
     tipEl.classList.add('on'); clearTimeout(tipT);
-    tipT = setTimeout(function () { tipEl.classList.remove('on'); }, 2200);
+    tipT = setTimeout(function () { tipEl.classList.remove('on'); }, ms || 2200);
   }
   document.addEventListener('click', function (e) {
     var t = e.target; if (!t || !t.closest) return;
@@ -95,6 +97,21 @@
     if (cb) { e.preventDefault(); e.stopImmediatePropagation(); tip($('cursorRandomBtn') || cb, 'Disable Golden theme in settings'); return; }
     if (t.closest('#cursor-skin-grid') || t.closest('#theme-lock-colorStrength')) { e.preventDefault(); e.stopImmediatePropagation(); return; }
     if (t.closest('#settings-panel-general .preset-swatch')) pendingOff();
+  }, true);
+  /* touch screens have no Change cursor button: a picked emoji explains why the colours stay (shown 3 times at most) */
+  var MOOD_TIP = 'pt2_gold_mood_tip_n', lastPointer = '';
+  document.addEventListener('pointerdown', function (e) {
+    lastPointer = e.pointerType || '';
+    if (tipEl && tipEl.dataset.k === 'mood' && tipEl.classList.contains('on')) { clearTimeout(tipT); tipEl.classList.remove('on'); }
+  }, true);
+  document.addEventListener('click', function (e) {
+    var b = e.target && e.target.closest && e.target.closest('.mood-pick');
+    if (!b || !eOn()) return;
+    if (lastPointer !== 'touch' && root.getAttribute('data-pointer-input') !== 'touch') return;
+    var n = 0; try { n = +(localStorage.getItem(MOOD_TIP) || 0) || 0; } catch (er) {}
+    if (n >= 3) return;
+    try { localStorage.setItem(MOOD_TIP, String(n + 1)); } catch (er) {}
+    tip(b, 'Disable Golden theme in settings to change colors', 3200, 'mood');
   }, true);
   ['input', 'change'].forEach(function (ev) {
     document.addEventListener(ev, function (e) {
@@ -321,5 +338,7 @@
   document.addEventListener('pt2-popup', function (e) { if (e.detail === 'look:a') setTimeout(autoOn, 700); });
   global.addEventListener('load', function () { setTimeout(function () { if (has('look:a') && !st().autoA && !document.getElementById('pt2-unlock-popup')) autoOn(); }, 1500); });
   if (reduce.addEventListener) reduce.addEventListener('change', applyMc);
-  global.PT2Look = { electricOn: eOn, activate: eActivate, deactivate: eDeactivate, multicolourOn: mcOn, wireStroke: wireStroke, applyMc: applyMc, sync: sync };
+  /* the next-question bar runs a little quicker with this palette (never under half a second) */
+  function advanceMs(ms) { return eOn() ? Math.max(500, ms - 1250) : ms; }
+  global.PT2Look = { advanceMs: advanceMs, electricOn: eOn, activate: eActivate, deactivate: eDeactivate, multicolourOn: mcOn, wireStroke: wireStroke, applyMc: applyMc, sync: sync };
 })(window);

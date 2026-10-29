@@ -24,6 +24,9 @@ html.light-mode #pt2Glass{box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 0 14px
   transform:translate(-50%,calc(-100% - 10px));opacity:0;transition:opacity .16s ease;white-space:nowrap}
 .pt2-tip.on{opacity:1}
 .pt2-tip::after{content:'';position:absolute;left:50%;bottom:-5px;width:10px;height:10px;transform:translateX(-50%) rotate(45deg);background:#ffc583}
+.pt2-tip.is-mood{padding:9px 13px 10px;border-radius:12px;border:1px solid rgba(var(--accent-0-rgb,255,185,104),.55);background:linear-gradient(165deg,rgba(var(--accent-0-rgb,255,185,104),.16) 0%,rgba(10,14,22,.94) 55%);
+  color:var(--text,#e8eef5);font:500 .86rem/1.35 var(--body,'Outfit',system-ui,sans-serif);box-shadow:0 0 18px rgba(var(--accent-0-rgb,255,185,104),.28),0 8px 22px rgba(0,0,0,.45);white-space:normal;max-width:min(260px,calc(100vw - 24px));text-align:center}
+.pt2-tip.is-mood::after{bottom:-6px;background:rgb(14,18,26);border-right:1px solid rgba(var(--accent-0-rgb,255,185,104),.55);border-bottom:1px solid rgba(var(--accent-0-rgb,255,185,104),.55)}
 .pt2-cur-note{display:none;margin:0 0 10px;font-size:.78em;color:var(--accent-0)}
 #theme-cursor-picker.pt2-cur-themed .pt2-cur-note{display:block}
 #theme-cursor-picker.pt2-cur-themed .cursor-skin-grid{opacity:.38;filter:grayscale(.7);cursor:not-allowed}
@@ -155,3 +158,14 @@ html.pt2-mc-aurora :is(.portal-card,.timer-dock,.modal-card,.settings-modal-cont
 .pt2-mc-speed input{flex:1;accent-color:var(--accent-0)}
 .pt2-mc-preview{height:12px;border-radius:99px;margin:8px 0 2px;background-size:200% 100%}
 .pt2-mc-off .pt2-mc-body{opacity:.55}
+/* next-question bar: the main menu's shine and glow */
+html.pt2-electric .pt1q .kb-advance .formula-advance-track{border-color:rgba(255,197,131,.55);box-shadow:0 0 14px rgba(255,185,104,.35),inset 0 1px 0 rgba(255,255,255,.12)}
+html.pt2-electric .pt1q .kb-advance .formula-advance-fill{background:linear-gradient(90deg,#ffad4e,#ffe3b0,#ffc583,#ffad4e);background-size:200% 100%;animation:pt2BarFlow 1.6s ease-in-out infinite;box-shadow:0 0 12px rgba(255,197,131,.7)}
+html.pt2-electric .pt1q .kb-advance .formula-advance-track::after{content:'';position:absolute;top:0;left:-60%;width:45%;height:100%;pointer-events:none;
+  background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.08) 40%,rgba(255,255,255,.55) 50%,rgba(255,255,255,.08) 60%,transparent 100%);transform:skewX(-18deg);animation:pt2BarShine .85s ease infinite}
+html.pt2-electric .pt1q .kb-advance .formula-advance-track::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:radial-gradient(circle at 18% 50%,#fff 0 1.2px,transparent 2px),radial-gradient(circle at 52% 40%,#fff6dd 0 1px,transparent 2px),radial-gradient(circle at 81% 60%,#fff 0 1.2px,transparent 2px);animation:pt2BarTwinkle 1.1s steps(2,end) infinite}
+@keyframes pt2BarFlow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes pt2BarShine{from{left:-60%}to{left:120%}}
+@keyframes pt2BarTwinkle{0%{opacity:.25}50%{opacity:1}100%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){html.pt2-electric .pt1q .kb-advance .formula-advance-fill,html.pt2-electric .pt1q .kb-advance .formula-advance-track::after,html.pt2-electric .pt1q .kb-advance .formula-advance-track::before{animation:none}html.pt2-electric .pt1q .kb-advance .formula-advance-track::after{display:none}}
