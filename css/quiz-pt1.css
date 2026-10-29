@@ -349,34 +349,23 @@ html.link-drawing .pt1q .match-item.paired:not(.drawing):not(.is-solved-link):fo
 .pt1q .q-nav-btn.unanswered::before,
 .pt1q .q-nav-btn.skipped:not(.done)::before,
 .pt1q #backBtn.has-skips-behind::before{
+  content:none!important;
+  animation:none!important;
+  will-change:auto!important;
+  background:none!important;
+}
+/* Red mark on both unanswered and skipped */
+.pt1q .q-nav-btn.unanswered::after,
+.pt1q .q-nav-btn.skipped:not(.done)::after{
   content:'';
   position:absolute;
-  z-index:-1;
-  inset:-45%;
+  top:3px;right:3px;
+  width:7px;height:7px;
+  border-radius:50%;
+  background:#f43f5e;
+  box-shadow:0 0 8px rgba(244,63,94,.75);
   pointer-events:none;
-  background:
-    linear-gradient(105deg,
-      transparent 0%,
-      transparent 30%,
-      rgba(255,255,255,0.48) 44%,
-      rgba(var(--accent-6-rgb), 0.26) 50%,
-      rgba(255,255,255,0.48) 56%,
-      transparent 70%,
-      transparent 100%),
-    linear-gradient(125deg,
-      rgba(255,255,255,.20) 0%,
-      rgba(255,255,255,.07) 24%,
-      transparent 48%,
-      rgba(255,255,255,.10) 100%);
-  background-repeat:no-repeat;
-  /* Wide moving band so a 0%→100% shift crosses the face; static glass stays. */
-  background-size:200% 100%, 100% 100%;
-  background-position:0% 0, 0 0;
-  transform:skewX(-25deg);
-  mix-blend-mode:color-dodge;
-  opacity:1;
-  animation:navSoftSheen 3.2s ease-in-out infinite;
-  will-change:background-position;
+  z-index:2;
 }
 .pt1q .q-nav-btn:nth-child(3n+1).unanswered::before,
 .pt1q .q-nav-btn:nth-child(3n+1).skipped:not(.done)::before{animation-delay:-1.1s}
