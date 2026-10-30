@@ -1,1 +1,1916 @@
-{"id": "lecture-9---combining-form-2", "subject": "Medical Terminology", "subjectId": "medical_terminology", "title": "Lecture 9 - Combining Form Part 2", "formSize": 85, "forms": ["A"], "bank": {"A": [{"id": "MT10901", "type": "mcq", "cat": "MT_lec9", "q": "Which set consists entirely of combining forms that mean skin?", "options": ["Cyt/o, Derm/o, and Cutane/o", "Dermat/o, Enter/o, and Hepat/o", "Derm/o, Dermat/o, and Cutane/o", "Cutane/o, Scler/o, and Sten/o"], "correct": 2, "explain": "Derm/o, Dermat/o, and Cutane/o are the three interchangeable combining forms for skin, seen in dermal, dermatologist, and cutaneous. Cyt/o, Derm/o, and Cutane/o mixes in Cyt/o, which means cell. Dermat/o, Enter/o, and Hepat/o mixes in Enter/o (small intestine) and Hepat/o (liver). Cutane/o, Scler/o, and Sten/o mixes in Scler/o (hard) and Sten/o (narrow). Each wrong set therefore contains a form that names a cell, an organ, or a quality rather than skin."}, {"id": "MT10902", "type": "mcq", "cat": "MT_lec9", "q": "Which two combining forms both mean poison?", "options": ["Tox/o and Toxic/o", "Carcin/o and Necr/o", "Lith/o and Sten/o", "Crin/o and Phag/o"], "correct": 0, "explain": "Tox/o and Toxic/o are the two spellings of the poison combining form, as in toxicoderma and cytotoxic. The other pairs are real combining forms from the same set but name different things: Carcin/o (cancer) and Necr/o (death), Lith/o (stone) and Sten/o (narrow), Crin/o (to secrete) and Phag/o (to eat or swallow)."}, {"id": "MT10903", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means cell?", "options": ["Cyt/o", "Derm/o", "Enter/o", "Hepat/o"], "correct": 0, "explain": "Cyt/o means cell, as in cytotoxic. Derm/o means skin, Enter/o means small intestine, and Hepat/o means liver."}, {"id": "MT10904", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means small intestine?", "options": ["Esophag/o", "Enter/o", "Gastr/o", "Hepat/o"], "correct": 1, "explain": "Enter/o means small intestine, as in enterocele. Esophag/o means esophagus, Gastr/o means stomach, and Hepat/o means liver."}, {"id": "MT10905", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means esophagus?", "options": ["Enter/o", "Gastr/o", "Esophag/o", "Hepat/o"], "correct": 2, "explain": "Esophag/o means esophagus, as in esophagoscopy. Enter/o means small intestine, Gastr/o means stomach, and Hepat/o means liver."}, {"id": "MT10906", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means stomach?", "options": ["Enter/o", "Esophag/o", "Hepat/o", "Gastr/o"], "correct": 3, "explain": "Gastr/o means stomach, as in gastroptosis. Enter/o means small intestine, Esophag/o means esophagus, and Hepat/o means liver."}, {"id": "MT10907", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means liver?", "options": ["Hepat/o", "Gastr/o", "Enter/o", "Esophag/o"], "correct": 0, "explain": "Hepat/o means liver, as in hepatectomy. Gastr/o means stomach, Enter/o means small intestine, and Esophag/o means esophagus."}, {"id": "MT10908", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means cancer?", "options": ["Necr/o", "Carcin/o", "Onc/o", "Path/o"], "correct": 1, "explain": "Carcin/o means cancer, as in carcinoma. Necr/o means death, Onc/o means tumor or mass, and Path/o means disease."}, {"id": "MT10909", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means to secrete?", "options": ["Crin/o", "Cyt/o", "Esthesi/o", "Fibr/o"], "correct": 0, "explain": "Crin/o means to secrete, as in endocrinology. Cyt/o means cell, Esthesi/o means sensation, and Fibr/o means fiber."}, {"id": "MT10910", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means sensation?", "options": ["Crin/o", "Cyt/o", "Esthesi/o", "Gen/o"], "correct": 2, "explain": "Esthesi/o means sensation, as in anesthesia. Crin/o means to secrete, Cyt/o means cell, and Gen/o means origin or production."}, {"id": "MT10911", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means fiber?", "options": ["Fibr/o", "Crin/o", "Esthesi/o", "Gen/o"], "correct": 0, "explain": "Fibr/o means fiber, as in fibroadenoma. Crin/o means to secrete, Esthesi/o means sensation, and Gen/o means origin or production."}, {"id": "MT10912", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means origin or production?", "options": ["Gynec/o", "Gen/o", "Crin/o", "Fibr/o"], "correct": 1, "explain": "Gen/o means origin or production, as in genogram. Gynec/o means woman, Crin/o means to secrete, and Fibr/o means fiber."}, {"id": "MT10913", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means woman?", "options": ["Gen/o", "Gynec/o", "Esthesi/o", "Crin/o"], "correct": 1, "explain": "Gynec/o means woman, as in gynecologist. Gen/o means origin or production, Esthesi/o means sensation, and Crin/o means to secrete."}, {"id": "MT10914", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means stone?", "options": ["Necr/o", "Lith/o", "Onc/o", "Scler/o"], "correct": 1, "explain": "Lith/o means stone, as in lithotripsy. Necr/o means death, Onc/o means tumor or mass, and Scler/o means hard."}, {"id": "MT10915", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means death?", "options": ["Lith/o", "Necr/o", "Onc/o", "Path/o"], "correct": 1, "explain": "Necr/o means death, as in necrosis. Lith/o means stone, Onc/o means tumor or mass, and Path/o means disease."}, {"id": "MT10916", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means tumor or mass?", "options": ["Onc/o", "Necr/o", "Carcin/o", "Path/o"], "correct": 0, "explain": "Onc/o means tumor or mass, as in oncology. Necr/o means death, Carcin/o means cancer, and Path/o means disease."}, {"id": "MT10917", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means straight, normal, or correct?", "options": ["Morph/o", "Orth/o", "Path/o", "Phas/o"], "correct": 1, "explain": "Orth/o means straight, normal, or correct, as in orthopedist. Morph/o means form, Path/o means disease, and Phas/o means speech."}, {"id": "MT10918", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means form?", "options": ["Orth/o", "Morph/o", "Path/o", "Phag/o"], "correct": 1, "explain": "Morph/o means form, as in morphometry. Orth/o means straight or correct, Path/o means disease, and Phag/o means eat or swallow."}, {"id": "MT10919", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means disease?", "options": ["Path/o", "Phas/o", "Phag/o", "Phob/o"], "correct": 0, "explain": "Path/o means disease, as in pathobiologist. Phas/o means speech, Phag/o means eat or swallow, and Phob/o means exaggerated fear or sensitivity."}, {"id": "MT10920", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form carries two senses, child and foot?", "options": ["Ped/o", "Path/o", "Phag/o", "Phas/o"], "correct": 0, "explain": "Ped/o carries two senses, child and foot, so the sense in any given term must be read from the rest of the word, as in bipedal where the prefix bi- for two points to the foot sense. Path/o means disease, Phag/o means eat or swallow, and Phas/o means speech."}, {"id": "MT10921", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means eat or swallow?", "options": ["Phas/o", "Phag/o", "Path/o", "Phob/o"], "correct": 1, "explain": "Phag/o means eat or swallow, as in phagophobia. Phas/o means speech, Path/o means disease, and Phob/o means exaggerated fear or sensitivity."}, {"id": "MT10922", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means speech?", "options": ["Phag/o", "Phas/o", "Path/o", "Phob/o"], "correct": 1, "explain": "Phas/o means speech, as in paraphasia. Phag/o means eat or swallow, Path/o means disease, and Phob/o means exaggerated fear or sensitivity."}, {"id": "MT10923", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means exaggerated fear or sensitivity?", "options": ["Phag/o", "Phas/o", "Phob/o", "Path/o"], "correct": 2, "explain": "Phob/o means exaggerated fear or sensitivity, as in hydrophobia and phagophobia. Phag/o means eat or swallow, Phas/o means speech, and Path/o means disease."}, {"id": "MT10924", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means narrow?", "options": ["Scler/o", "Sten/o", "Son/o", "Necr/o"], "correct": 1, "explain": "Sten/o means narrow, as in stenosis. Scler/o means hard, Son/o means sound, and Necr/o means death."}, {"id": "MT10925", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means hard?", "options": ["Sten/o", "Scler/o", "Son/o", "Necr/o"], "correct": 1, "explain": "Scler/o means hard, as in scleroderma. Sten/o means narrow, Son/o means sound, and Necr/o means death."}, {"id": "MT10926", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form means sound?", "options": ["Sten/o", "Scler/o", "Son/o", "Necr/o"], "correct": 2, "explain": "Son/o means sound, as in sonographer. Sten/o means narrow, Scler/o means hard, and Necr/o means death."}, {"id": "MT10927", "type": "mcq", "cat": "MT_lec9", "q": "Which pair is NOT two spellings of one meaning?", "options": ["Derm/o and Dermat/o", "Cyt/o and Gen/o", "Tox/o and Toxic/o", "Dermat/o and Cutane/o"], "correct": 1, "explain": "Cyt/o (cell) and Gen/o (origin or production) differ in meaning. Derm/o, Dermat/o, and Cutane/o all mean skin; Tox/o and Toxic/o both mean poison."}, {"id": "MT10928", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form names a function, not a structure or substance?", "options": ["Cyt/o", "Hepat/o", "Crin/o", "Lith/o"], "correct": 2, "explain": "Crin/o means to secrete, a function. Cyt/o (cell) and Hepat/o (liver) are structures; Lith/o (stone) is a substance."}, {"id": "MT10929", "type": "mcq", "cat": "MT_lec9", "q": "Which combining form belongs to the organ group, not the general group?", "options": ["Lith/o", "Necr/o", "Hepat/o", "Onc/o"], "correct": 2, "explain": "Hepat/o (liver) is an organ. Lith/o (stone), Necr/o (death), and Onc/o (tumor or mass) are in the general group."}, {"id": "MT10930", "type": "mcq", "cat": "MT_lec9", "q": "In the term lithotripsy (CF+S), the element -tripsy refers to which action?", "options": ["Crushing", "Stone", "Secreting", "Speech"], "correct": 0, "explain": "The element -tripsy means crushing, so lithotripsy is the crushing of stones. The stone sense in the same word comes from the combining form Lith/o, not from -tripsy; secreting is Crin/o and speech is Phas/o, neither of which is present here."}, {"id": "MT10931", "type": "mcq", "cat": "MT_lec9", "q": "In the term hydrophobia (CF+R+S), the element hydr refers to what?", "options": ["Fear", "Cell", "Stone", "Water"], "correct": 3, "explain": "Hydr means water, so hydrophobia is an exaggerated fear of or sensitivity to water. The fear sense in the same word is carried by the root phob, while cell is Cyt/o and stone is Lith/o; attributing water to phob or fear to hydr would swap the two parts of the term."}, {"id": "MT10932", "type": "mcq", "cat": "MT_lec9", "q": "In the term fibroadenoma (CF+R+S), the element aden refers to what?", "options": ["Fiber", "Gland", "Tumor", "Skin"], "correct": 1, "explain": "Aden means gland, so the aden element names the glandular tissue in fibroadenoma. The fiber sense in the same word comes from Fibr/o and the tumor sense from the suffix -oma, while skin is Derm/o; a fibroadenoma is a benign tumor built of fibrous and glandular tissue, so fiber, gland, and tumor each map to a different part."}, {"id": "MT10933", "type": "mcq", "cat": "MT_lec9", "q": "In the term pathobiologist (CF+CF+S), the element bi refers to what?", "options": ["Disease", "Specialist", "Life", "Form"], "correct": 2, "explain": "Bi means life, so the bi element contributes the sense of living processes in pathobiologist. The disease sense in the same word comes from Path/o and the specialist sense from the suffix -logist, while form is Morph/o; a pathobiologist is one who specializes in the study of the life and nature of disease."}, {"id": "MT10934", "type": "mcq", "cat": "MT_lec9", "q": "In bipedal (P+R+S), which sense of Ped/o applies?", "options": ["Foot", "Child", "Cell", "Stomach"], "correct": 0, "explain": "Ped/o means child or foot. In bipedal, bi- (two) counts feet, so the foot sense applies. Cell is Cyt/o; stomach is Gastr/o."}, {"id": "MT10935", "type": "mcq", "cat": "MT_lec9", "q": "In the term scleroderma (CF+R), the element scler refers to what?", "options": ["Narrow", "Hard", "Sound", "Stone"], "correct": 1, "explain": "Scler means hard, so scleroderma is a hardening of the skin, with derma as the root for skin. Narrow is Sten/o, sound is Son/o, and stone is Lith/o; reading scler as narrow or sound would swap it with a different quality form."}, {"id": "MT10936", "type": "mcq", "cat": "MT_lec9", "q": "What does the term cytotoxic mean?", "options": ["Poisonous to cells", "Pertaining to the skin", "Pertaining to the intestine", "Pertaining to the liver"], "correct": 0, "explain": "Cytotoxic is built from Cyt/o (cell) and tox (poison) with -ic (pertaining to), so it means damaging or poisonous to cells. Pertaining to the skin would use Derm/o or Cutane/o, pertaining to the small intestine would use Enter/o, and pertaining to the liver would use Hepat/o."}, {"id": "MT10937", "type": "mcq", "cat": "MT_lec9", "q": "What does the term dermatologist mean?", "options": ["Specialist in skin disorders", "Technician who images skin", "Surgeon who repairs burned skin", "Specialist in hair disorders"], "correct": 0, "explain": "Dermatologist is built from Dermat/o (skin) and -ologist (specialist), so it denotes a specialist in disorders of the skin. The other options keep part of the term but change another word part, so they do not match."}, {"id": "MT10938", "type": "mcq", "cat": "MT_lec9", "q": "What does the term enterocele mean?", "options": ["Hernia of the small intestine", "Downward displacement of the stomach", "Process of examining the esophagus", "Surgical removal of the liver"], "correct": 0, "explain": "Enterocele is built from Enter/o (small intestine) and -cele (hernia), so it denotes a hernia of the small intestine. Downward displacement of the stomach is gastroptosis, examining the esophagus is esophagoscopy, and removal of the liver is hepatectomy."}, {"id": "MT10939", "type": "mcq", "cat": "MT_lec9", "q": "What does the term esophagoscopy mean?", "options": ["Examining the esophagus with an instrument", "Removing part or all of the esophagus", "Downward drooping of the esophagus", "Hernia of the esophagus through a weakness"], "correct": 0, "explain": "Esophagoscopy is Esophag/o (esophagus) plus -scopy (process of examining with an instrument). Removal would be -ectomy, drooping would be -ptosis, and a hernia would be -cele."}, {"id": "MT10940", "type": "mcq", "cat": "MT_lec9", "q": "What does the term gastroptosis mean?", "options": ["Downward displacement of the stomach", "Inflammation of the stomach lining", "Hernia of the stomach through diaphragm", "Surgical removal of stomach part"], "correct": 0, "explain": "Gastroptosis is built from Gastr/o (stomach) and -ptosis (downward displacement or drooping), so it denotes a drooping of the stomach. The other options keep part of the term but change another word part, so they do not match."}, {"id": "MT10941", "type": "mcq", "cat": "MT_lec9", "q": "What does the term hepatectomy mean?", "options": ["Surgical removal of the liver", "Incision into the liver", "Enlargement of the liver", "Surgical repair of the liver"], "correct": 0, "explain": "Hepatectomy is built from Hepat/o (liver) and -ectomy (surgical removal), so it denotes surgical removal of the liver. The other options keep part of the term but change another word part, so they do not match."}, {"id": "MT10942", "type": "mcq", "cat": "MT_lec9", "q": "What does the term carcinoma mean?", "options": ["A malignant, cancerous tumor", "A benign tumor of glandular tissue", "The study of tumors", "Death of tissue or cells"], "correct": 0, "explain": "Carcinoma is built from Carcin/o (cancer) and -oma (tumor), so it denotes a malignant, cancerous tumor. The vowel-initial -oma drops the combining vowel o, so the form is R+S. A benign glandular tumor is fibroadenoma, the study of tumors is oncology, and tissue death is necrosis."}, {"id": "MT10943", "type": "mcq", "cat": "MT_lec9", "q": "What does the term endocrinology mean?", "options": ["Study of glands secreting within the body", "Study of tumors and other masses", "Study of glands secreting outside the body", "Study of the nature of disease"], "correct": 0, "explain": "Endocrinology is endo- (within) + Crin/o (to secrete) + -logy (study): the study of glands secreting within the body. Secreting outside would be exo-; tumors are oncology; disease is pathology."}, {"id": "MT10944", "type": "mcq", "cat": "MT_lec9", "q": "What does the term anesthesia mean?", "options": ["Loss of sensation", "Fear of water", "Hardening of skin", "Study of glands"], "correct": 0, "explain": "Anesthesia is an- (without) + esthesi (sensation) + -ia (condition): loss of sensation. Fear of water is hydrophobia, hardening of skin is scleroderma, and the study of glands is endocrinology."}, {"id": "MT10945", "type": "mcq", "cat": "MT_lec9", "q": "What does the term fibroadenoma mean?", "options": ["A benign tumor composed of fibrous and glandular tissue", "A malignant tumor composed of fibrous and glandular tissue", "A benign tumor composed of fatty and glandular tissue", "A benign tumor composed of fibrous and muscle tissue"], "correct": 0, "explain": "Fibroadenoma is Fibr/o (fiber) plus Aden/o (gland) plus -oma (tumor), a benign tumor of fibrous and glandular tissue. It is not malignant, and it contains neither fat nor muscle."}, {"id": "MT10946", "type": "mcq", "cat": "MT_lec9", "q": "What does the term genogram mean?", "options": ["Record of family origin", "Study of tumors or masses", "Process of measuring body form", "Death of tissue or cells"], "correct": 0, "explain": "Genogram is Gen/o (origin) + gram (record): a record of origin or family relationships. Tumors are oncology, measuring form is morphometry, death of tissue is necrosis."}, {"id": "MT10947", "type": "mcq", "cat": "MT_lec9", "q": "What does the term gynecologist mean?", "options": ["Specialist in disorders of women", "Specialist in disorders of skin", "Specialist in the nature of disease", "Specialist who performs sound imaging"], "correct": 0, "explain": "Gynecologist is built from Gynec/o (woman) and -ologist (specialist), so it denotes a specialist in disorders of women. A skin specialist is dermatologist, a specialist in the nature of disease is pathobiologist, and a sound-imaging specialist is sonographer."}, {"id": "MT10948", "type": "mcq", "cat": "MT_lec9", "q": "What does the term lithotripsy mean?", "options": ["Crushing of stones", "Tumor of fiber and gland", "Narrowing of a passage", "Hardening of the skin"], "correct": 0, "explain": "Lithotripsy is built from Lith/o (stone) and -tripsy (crushing), so it denotes crushing of stones. A benign glandular tumor is fibroadenoma, abnormal narrowing is stenosis, and hardening of the skin is scleroderma."}, {"id": "MT10949", "type": "mcq", "cat": "MT_lec9", "q": "What does the term necrosis mean?", "options": ["Death of tissue or of cells", "The study of tumors or masses", "Hardening of the skin surface", "Abnormal narrowing of a passage"], "correct": 0, "explain": "Necrosis is built from Necr/o (death) and -osis (condition), so it denotes death of tissue or cells. The study of tumors is oncology, hardening of the skin is scleroderma, and abnormal narrowing is stenosis."}, {"id": "MT10950", "type": "mcq", "cat": "MT_lec9", "q": "What does the term oncology mean?", "options": ["The study of tumors", "Death of tissue or cells", "A benign glandular tumor", "A malignant pigment tumor"], "correct": 0, "explain": "Oncology is built from Onc/o (tumor or mass) and -logy (study), so it denotes the study of tumors. Tissue death is necrosis, a benign glandular tumor is fibroadenoma, and a malignant pigment tumor is melanoma."}, {"id": "MT10951", "type": "mcq", "cat": "MT_lec9", "q": "What does the term orthopedist mean?", "options": ["Specialist in correcting deformities", "Specialist in the nature of disease", "Specialist in disorders of women", "Specialist in disorders of the skin"], "correct": 0, "explain": "Orthopedist is orth/o (straight or correct) + ped (foot) + -ist (specialist): a specialist in correcting musculoskeletal deformities. Disease is pathobiologist, women is gynecologist, skin is dermatologist."}, {"id": "MT10952", "type": "mcq", "cat": "MT_lec9", "q": "What does the term morphometry mean?", "options": ["Process of measuring form", "Study of tumors", "Record of family origin", "Death of tissue or cells"], "correct": 0, "explain": "Morphometry is built from Morph/o (form) and -metry (measurement), so it denotes the process of measuring form. The study of tumors is oncology, a record of origin is genogram, and tissue death is necrosis."}, {"id": "MT10953", "type": "mcq", "cat": "MT_lec9", "q": "What does the term pathobiologist mean?", "options": ["Specialist in the nature of disease", "Specialist in disorders of women", "Specialist in disorders of the skin", "Specialist in correcting musculoskeletal deformities"], "correct": 0, "explain": "Pathobiologist is built from Path/o (disease), bi/o (life), and -logist (specialist), so it denotes a specialist who studies the nature of disease, with two roots giving CF+CF+S. A specialist in women is gynecologist, a skin specialist is dermatologist, and a musculoskeletal specialist is orthopedist."}, {"id": "MT10954", "type": "mcq", "cat": "MT_lec9", "q": "What does the term phagophobia mean?", "options": ["Exaggerated fear of eating or swallowing", "Exaggerated fear of or sensitivity to water", "A disorder featuring errors of speech", "A skin condition caused by poison"], "correct": 0, "explain": "Phagophobia is built from Phag/o (eat or swallow), phob (fear), and -ia (condition), so it denotes an exaggerated fear of eating or swallowing. Fear of water is hydrophobia, errors of speech is paraphasia, and a poison skin condition is toxicoderma."}, {"id": "MT10955", "type": "mcq", "cat": "MT_lec9", "q": "What does the term paraphasia mean?", "options": ["A disorder featuring errors of speech", "Exaggerated fear of eating or swallowing", "A skin condition caused by poison", "Hardening of the skin"], "correct": 0, "explain": "Paraphasia is built from para- (abnormal), Phas/o (speech), and -ia (condition), so it denotes a disorder featuring errors of speech. Fear of eating is phagophobia, a poison skin condition is toxicoderma, and hardening of the skin is scleroderma."}, {"id": "MT10956", "type": "mcq", "cat": "MT_lec9", "q": "What does the term toxicoderma mean?", "options": ["Skin condition from poison", "Hardening of the skin", "Exaggerated fear of water", "Disorder of speech errors"], "correct": 0, "explain": "Toxicoderma is built from Toxic/o (poison) and derma (skin), so it denotes a skin condition caused by poison, with derma as a root giving CF+R. Hardening of the skin is scleroderma, fear of water is hydrophobia, and speech errors is paraphasia."}, {"id": "MT10957", "type": "mcq", "cat": "MT_lec9", "q": "What does the term hydrophobia mean?", "options": ["Exaggerated fear of or sensitivity to water", "Exaggerated fear of eating or of swallowing", "A skin condition caused by exposure to poison", "Loss of sensation affecting a body region"], "correct": 0, "explain": "Hydrophobia is built from Hydr/o (water), phob (fear), and -ia (condition), so it denotes an exaggerated fear of or sensitivity to water. Fear of eating is phagophobia, a poison skin condition is toxicoderma, and loss of sensation is anesthesia."}, {"id": "MT10958", "type": "mcq", "cat": "MT_lec9", "q": "What does the term stenosis mean?", "options": ["Narrowing of a passage", "Hardening of the skin", "Death of tissue or cells", "Record of family origin"], "correct": 0, "explain": "Stenosis is sten (narrow) + -osis (condition): abnormal narrowing of a passage or vessel. Hardening of skin is scleroderma, tissue death is necrosis, a family record is genogram."}, {"id": "MT10959", "type": "mcq", "cat": "MT_lec9", "q": "What does the term scleroderma mean?", "options": ["Hardening of the skin", "Narrowing of a passage", "Skin condition from poison", "Exaggerated fear of water"], "correct": 0, "explain": "Scleroderma is built from Scler/o (hard) and derma (skin), so it denotes hardening of the skin, with derma as a root giving CF+R. Abnormal narrowing is stenosis, a poison skin condition is toxicoderma, and fear of water is hydrophobia."}, {"id": "MT10960", "type": "mcq", "cat": "MT_lec9", "q": "What does the term sonographer mean?", "options": ["Specialist in imaging with sound waves", "Specialist treating hearing loss from noise", "Device recording heart sound waves", "Specialist in the physics of sound"], "correct": 0, "explain": "Sonographer is built from Son/o (sound) and -grapher (one who records or images), so it denotes a specialist who performs imaging using sound waves. The other options keep part of the term but change another word part, so they do not match."}, {"id": "MT10961", "type": "stepped", "cat": "MT_lec9", "q": "Compare the builds of hepatectomy and gastroptosis.", "steps": [{"id": "1", "prompt": "Which letter type begins the suffix -ectomy?", "options": ["Vowel", "Consonant"], "correct": 0}, {"id": "2", "prompt": "-ectomy begins with a vowel. Which build is hepatectomy?", "options": ["R+S", "CF+S", "CF+R", "P+R+S"], "correct": 0}, {"id": "3", "prompt": "Which letter type begins the suffix -ptosis?", "options": ["Vowel", "Consonant"], "correct": 1}, {"id": "4", "prompt": "-ptosis begins with a consonant. Which build is gastroptosis?", "options": ["R+S", "CF+S", "CF+R", "P+R+S"], "correct": 1}], "explain": "Hepat and gastr both end in a consonant. -ectomy begins with a vowel, so o is dropped: hepat + ectomy (R+S). -ptosis begins with a consonant, so o is kept: gastr/o + ptosis (CF+S). No same-vowel rule applies."}, {"id": "MT10962", "type": "stepped", "cat": "MT_lec9", "q": "Compare the builds of carcinoma and oncology.", "steps": [{"id": "1", "prompt": "Which letter type begins the suffix -oma?", "options": ["Vowel", "Consonant"], "correct": 0}, {"id": "2", "prompt": "-oma begins with a vowel. Which build is carcinoma?", "options": ["R+S", "CF+S", "CF+R", "P+R+S"], "correct": 0}, {"id": "3", "prompt": "Which letter type begins the suffix -logy?", "options": ["Vowel", "Consonant"], "correct": 1}, {"id": "4", "prompt": "-logy begins with a consonant. Which build is oncology?", "options": ["R+S", "CF+S", "CF+R", "P+R+S"], "correct": 1}], "explain": "Carcin and onc end in a consonant. -oma begins with a vowel, so o is dropped: carcin + oma (R+S). -logy begins with a consonant, so o is kept: onc/o + logy (CF+S)."}, {"id": "MT10963", "type": "stepped", "cat": "MT_lec9", "q": "Compare the builds of dermal and dermatologist.", "steps": [{"id": "1", "prompt": "Which letter type begins the suffix -al?", "options": ["Vowel", "Consonant"], "correct": 0}, {"id": "2", "prompt": "-al begins with a vowel. Which build is dermal?", "options": ["R+S", "CF+S", "CF+R", "P+R+S"], "correct": 0}, {"id": "3", "prompt": "Which letter type begins the suffix -logist?", "options": ["Vowel", "Consonant"], "correct": 1}, {"id": "4", "prompt": "-logist begins with a consonant. Which build is dermatologist?", "options": ["R+S", "CF+S", "CF+R", "P+R+S"], "correct": 1}], "explain": "Derm ends in a consonant. -al begins with a vowel, so o is dropped: derm + al (R+S), like cutane + ous. -logist begins with a consonant, so o is kept: dermat/o + logist (CF+S)."}, {"id": "MT10964", "type": "stepped", "cat": "MT_lec9", "q": "Compare the builds of anesthesia and endocrinology.", "steps": [{"id": "1", "prompt": "Which letter type begins the suffix -ia?", "options": ["Vowel", "Consonant"], "correct": 0}, {"id": "2", "prompt": "-ia begins with a vowel. Which build is anesthesia?", "options": ["P+R+S", "P+CF+S", "CF+R+S", "P+S"], "correct": 0}, {"id": "3", "prompt": "Which letter type begins the suffix -logy?", "options": ["Vowel", "Consonant"], "correct": 1}, {"id": "4", "prompt": "-logy begins with a consonant. Which build is endocrinology?", "options": ["P+R+S", "P+CF+S", "CF+R+S", "P+S"], "correct": 1}, {"prompt": "Which join decides R or CF in these words?", "options": ["Root and suffix", "Prefix and root"], "correct": 0, "id": "5"}], "explain": "Both start with a prefix, but the root-suffix join decides R or CF. -ia begins with a vowel, so esthesi stands bare: an + esthesi + ia (P+R+S). -logy begins with a consonant, so crin keeps o: endo + crin/o + logy (P+CF+S). Endo- keeps its o because crin begins with a consonant."}, {"id": "MT10965", "type": "stepped", "cat": "MT_lec9", "q": "Fibroadenoma is made of fibr, aden, and oma.", "steps": [{"id": "1", "prompt": "Which word part is aden?", "options": ["Root", "Suffix", "Prefix", "Combining vowel"], "correct": 0}, {"id": "2", "prompt": "Aden is a root. Is the o after fibr kept or dropped?", "options": ["Kept", "Dropped"], "correct": 0}, {"id": "3", "prompt": "The o is kept. Which build is fibroadenoma?", "options": ["CF+R+S", "R+R+S", "P+R+S", "CF+S"], "correct": 0}], "explain": "Fibr (fiber) and aden (gland) are two roots, then -oma. A combining vowel bridges two roots even before a vowel; the vowel drop applies only before a suffix. So fibr/o + aden + oma is CF+R+S. There is no prefix fib-."}, {"id": "MT10966", "type": "stepped", "cat": "MT_lec9", "q": "Compare the builds of toxicoderma and cytotoxic.", "steps": [{"id": "1", "prompt": "In toxicoderma, which word part is derma?", "options": ["Root", "Suffix", "Prefix", "Combining vowel"], "correct": 0}, {"id": "2", "prompt": "Derma is a root. Which build is toxicoderma?", "options": ["CF+R", "CF+R+S", "R+S", "CF+S"], "correct": 0}, {"id": "3", "prompt": "In cytotoxic, which word part is ic?", "options": ["Suffix", "Root", "Prefix", "Combining vowel"], "correct": 0}, {"id": "4", "prompt": "Ic is a suffix. Which build is cytotoxic?", "options": ["CF+R+S", "CF+R", "R+S", "CF+S"], "correct": 0}], "explain": "In toxicoderma, derma is a root (skin), so the word ends without a suffix: tox/o + derma (CF+R). In cytotoxic, -ic is a suffix (pertaining to): cyt/o + tox + ic (CF+R+S). No suffix is silent or deleted."}, {"id": "MT10967", "type": "stepped", "cat": "MT_lec9", "q": "Compare the builds of cutaneous and sonographer.", "steps": [{"id": "1", "prompt": "Which letter type begins the suffix -ous?", "options": ["Vowel", "Consonant"], "correct": 0}, {"id": "2", "prompt": "-ous begins with a vowel. Which build is cutaneous?", "options": ["R+S", "CF+S", "CF+R", "P+R+S"], "correct": 0}, {"id": "3", "prompt": "Which letter type begins the suffix -grapher?", "options": ["Vowel", "Consonant"], "correct": 1}, {"id": "4", "prompt": "-grapher begins with a consonant. Which build is sonographer?", "options": ["R+S", "CF+S", "CF+R", "P+R+S"], "correct": 1}], "explain": "Cutane and son end in a consonant. -ous begins with a vowel, so o is dropped: cutane + ous (R+S). -grapher begins with a consonant, so o is kept: son/o + grapher (CF+S)."}, {"id": "MT10968", "type": "matching", "cat": "MT_lec9", "q": "Match each organ or structure combining form to its meaning.", "leftItems": [{"id": "1", "text": "Cyt/o"}, {"id": "2", "text": "Derm/o"}, {"id": "3", "text": "Enter/o"}, {"id": "5", "text": "Gastr/o"}, {"id": "6", "text": "Hepat/o"}], "rightItems": [{"id": "A", "text": "Stomach"}, {"id": "B", "text": "Cell"}, {"id": "C", "text": "Liver"}, {"id": "D", "text": "Small intestine"}, {"id": "E", "text": "Skin"}], "correct_pairs": {"1": "B", "2": "E", "3": "D", "5": "A", "6": "C"}, "explain": "Cyt/o is cell, Derm/o is skin, Enter/o is small intestine, Gastr/o is stomach, and Hepat/o is liver."}, {"id": "MT10969", "type": "matching", "cat": "MT_lec9", "q": "Match each general-group combining form to its meaning.", "leftItems": [{"id": "1", "text": "Carcin/o"}, {"id": "2", "text": "Crin/o"}, {"id": "3", "text": "Esthesi/o"}, {"id": "5", "text": "Gen/o"}, {"id": "6", "text": "Gynec/o"}], "rightItems": [{"id": "B", "text": "Woman"}, {"id": "C", "text": "Cancer"}, {"id": "D", "text": "Sensation"}, {"id": "E", "text": "Origin or production"}, {"id": "F", "text": "To secrete"}], "correct_pairs": {"1": "C", "2": "F", "3": "D", "5": "E", "6": "B"}, "explain": "Carcin/o is cancer, Crin/o is to secrete, Esthesi/o is sensation, Gen/o is origin or production, and Gynec/o is woman."}, {"id": "MT10970", "type": "matching", "cat": "MT_lec9", "q": "Match each remaining combining form to the meaning it conveys.", "leftItems": [{"id": "1", "text": "Lith/o"}, {"id": "2", "text": "Necr/o"}, {"id": "3", "text": "Onc/o"}, {"id": "4", "text": "Orth/o"}, {"id": "5", "text": "Morph/o"}, {"id": "6", "text": "Path/o"}], "rightItems": [{"id": "A", "text": "Death"}, {"id": "B", "text": "Disease"}, {"id": "C", "text": "Form"}, {"id": "D", "text": "Stone"}, {"id": "E", "text": "Straight, normal, or correct"}, {"id": "F", "text": "Tumor or mass"}], "correct_pairs": {"1": "D", "2": "A", "3": "F", "4": "E", "5": "C", "6": "B"}, "explain": "Lith/o means stone, as in lithotripsy. Necr/o means death, as in necrosis. Onc/o means tumor or mass, as in oncology. Orth/o means straight, normal, or correct, as in orthopedist. Morph/o means form, as in morphometry. Path/o means disease, as in pathobiologist. Each form pairs with exactly one meaning."}, {"id": "MT10971", "type": "matching", "cat": "MT_lec9", "q": "Match each remaining combining form, including the poison pair, to the meaning it conveys.", "leftItems": [{"id": "1", "text": "Ped/o"}, {"id": "2", "text": "Phag/o"}, {"id": "3", "text": "Phas/o"}, {"id": "4", "text": "Tox/o, Toxic/o"}, {"id": "5", "text": "Phob/o"}, {"id": "6", "text": "Sten/o"}], "rightItems": [{"id": "A", "text": "Narrow"}, {"id": "B", "text": "Speech"}, {"id": "C", "text": "Poison"}, {"id": "D", "text": "Child or foot"}, {"id": "E", "text": "Exaggerated fear or sensitivity"}, {"id": "F", "text": "Eat or swallow"}], "correct_pairs": {"1": "D", "2": "F", "3": "B", "4": "C", "5": "E", "6": "A"}, "explain": "Ped/o means child or foot, as in bipedal where the prefix points to the foot. Phag/o means eat or swallow, as in phagophobia. Phas/o means speech, as in paraphasia. Tox/o and Toxic/o both mean poison, as in toxicoderma. Phob/o means exaggerated fear or sensitivity, as in hydrophobia. Sten/o means narrow, as in stenosis. Note that Ped/o alone carries two senses, and Tox/o and Toxic/o are two spellings of one meaning."}, {"id": "MT10972", "type": "matching", "cat": "MT_lec9", "q": "Match each built term to the word-part pattern used to form it.", "leftItems": [{"id": "1", "text": "Cytotoxic"}, {"id": "2", "text": "Enterocele"}, {"id": "3", "text": "Hepatectomy"}, {"id": "4", "text": "Anesthesia"}, {"id": "5", "text": "Toxicoderma"}, {"id": "6", "text": "Endocrinology"}], "rightItems": [{"id": "A", "text": "P+CF+S"}, {"id": "B", "text": "CF+R+S"}, {"id": "C", "text": "R+S"}, {"id": "D", "text": "CF+S"}, {"id": "E", "text": "P+R+S"}, {"id": "F", "text": "CF+R"}, {"id": "G", "text": "P+S"}], "correct_pairs": {"1": "B", "2": "D", "3": "C", "4": "E", "5": "F", "6": "A"}, "explain": "Cytotoxic joins Cyt/o, the root tox, and -ic, so the pattern is CF+R+S. Enterocele joins Enter/o and -cele, so the pattern is CF+S. Hepatectomy joins hepat and vowel-initial -ectomy with no combining vowel, so the pattern is R+S. Anesthesia joins an-, bare aesthesi, and vowel-initial -ia, so the pattern is P+R+S. Toxicoderma joins tox/o and the root derma with no suffix, so the pattern is CF+R. Endocrinology joins endo-, Crin/o, and -logy, so the pattern is P+CF+S. P+S fits none of these terms: each one has a root or a combining form between the prefix, if any, and the ending."}, {"id": "MT10973", "type": "mcq", "cat": "MT_lec9", "q": "Which word-part pattern builds the term lithotripsy?", "options": ["CF+S", "R+R", "R+S", "P+S"], "correct": 0, "explain": "Lithotripsy is Lith/o (stone) + -tripsy (crushing). The suffix begins with a consonant, so o is kept: CF+S. R+S would drop o; R+R and P+S need parts it lacks."}, {"id": "MT10974", "type": "mcq", "cat": "MT_lec9", "q": "In endocrinology, what do endo- and crin/o mean?", "options": ["Within, and to secrete", "Outside, and a tumor", "Middle, and to secrete", "Above, and a layer"], "correct": 0, "explain": "Endo- means within and Crin/o means to secrete. Outside is the opposite of endo-, tumor is Onc/o, and middle and above are other prefixes."}, {"id": "MT10975", "type": "mcq", "cat": "MT_lec9", "q": "Which word part in hypoesthesia carries the meaning sensation?", "options": ["The prefix hypo-", "The suffix -ia", "The root esthesi", "The prefix an-"], "correct": 2, "explain": "Hypoesthesia places hypo- (deficient or below) before the root esthesi (sensation) and the suffix -ia (condition), so the sensation sense is carried by esthesi, the root of Esthesi/o. The prefix hypo- names the degree, not the sensation. The suffix -ia names the condition, not the sensation. The prefix an- means without and appears in anesthesia, not in hypoesthesia."}, {"id": "MT10976", "type": "mcq", "cat": "MT_lec9", "q": "Toxemia is a blood condition involving what?", "options": ["Poison in blood", "New blood cell formation", "Reduced circulating volume", "Blood-borne hormone secretion"], "correct": 0, "explain": "Toxemia is tox (poison) + -emia (blood condition): poison in the blood. Cell formation would use -poiesis; secretion is Crin/o."}, {"id": "MT10977", "type": "mcq", "cat": "MT_lec9", "q": "In orthopedic, what do orth/o and ped/o mean?", "options": ["Correct, and foot", "Joint, and child", "Muscle, and foot", "Straight, and muscle"], "correct": 0, "explain": "Orth/o means straight, normal, or correct; ped/o means child or foot. Orthopedic reads them as correct and foot, as in orthopedist. Neither form means joint or muscle."}, {"id": "MT10978", "type": "mcq", "cat": "MT_lec9", "q": "Which build is genogram?", "options": ["CF+R", "CF+S", "R+S", "P+CF+S"], "correct": 0, "explain": "Genogram joins Gen/o (origin or production) to the root gram (record). Gram is not a suffix, so no further ending is attached and the build is CF+R. CF+S would need a suffix after the combining form. R+S would drop the combining vowel, which this term keeps. P+CF+S would need a prefix, which genogram does not have."}, {"id": "MT10979", "type": "mcq", "cat": "MT_lec9", "q": "Which build is orthopedist?", "options": ["CF+S", "CF+R+S", "R+S", "P+R+S"], "correct": 1, "explain": "Orthopedist joins Orth/o (straight or correct), the root ped (child or foot), and -ist (specialist), so the build is CF+R+S. CF+S would skip the ped root. R+S would drop the combining vowel before ped, which this term keeps. P+R+S would need a prefix, which orthopedist does not have."}, {"id": "MT10980", "type": "mcq", "cat": "MT_lec9", "q": "Which pair of builds matches scleroderma, then stenosis?", "options": ["R+S, then CF+R", "CF+S, then R+S", "CF+R, then CF+S", "CF+R, then R+S"], "correct": 3, "explain": "Scleroderma joins Scler/o to the root derma and has no suffix, so it is CF+R. Stenosis joins sten to vowel-initial -osis and drops the combining vowel, so it is R+S. R+S then CF+R reverses the two terms. CF+S then R+S treats scleroderma as if derma were a suffix. CF+R then CF+S keeps scleroderma right but treats -osis as consonant-initial."}, {"id": "MT10981", "type": "mcq", "cat": "MT_lec9", "q": "Which build is hydrophobia?", "options": ["CF+S", "R+S", "CF+R+S", "P+R+S"], "correct": 2, "explain": "Hydrophobia joins Hydr/o (water), the root phob (fear), and -ia (condition), so the build is CF+R+S. CF+S would skip the phob root. R+S would drop the combining vowel before phob, which this term keeps. P+R+S would need a prefix, which hydrophobia does not have."}, {"id": "MT10982", "type": "mcq", "cat": "MT_lec9", "q": "In the term cutaneous, what does Cutane/o stand for?", "options": ["Skin", "Hard", "Cell", "Poison"], "correct": 0, "explain": "Cutane/o means skin, so in cutaneous it is the skin element. The suffix -ous begins with a vowel, so the combining vowel is dropped and the written word is cutane + ous, still from Cutane/o. Hard is Scler/o, cell is Cyt/o, and poison is Tox/o or Toxic/o."}, {"id": "MT10983", "type": "mcq", "cat": "MT_lec9", "q": "Before a vowel-initial suffix, a combining vowel is…", "options": ["Kept", "Dropped"], "correct": 1, "explain": "Before a vowel-initial suffix the combining vowel is dropped, as in hepatectomy (hepat + ectomy)."}, {"id": "MT10984", "type": "mcq", "cat": "MT_lec9", "q": "Before a consonant-initial suffix, a combining vowel is…", "options": ["Kept", "Dropped"], "correct": 0, "explain": "Before a consonant-initial suffix the combining vowel is kept, as in gastroptosis (gastr/o + ptosis)."}, {"id": "MT10985", "type": "mcq", "cat": "MT_lec9", "q": "Between two roots, when the second begins with a vowel, a combining vowel is…", "options": ["Kept", "Dropped"], "correct": 0, "explain": "Between two roots the combining vowel is kept even before a vowel, as in fibroadenoma (fibr/o + aden + oma)."}]}}
+{
+  "id": "lecture-9---combining-form-2",
+  "subject": "Medical Terminology",
+  "subjectId": "medical_terminology",
+  "title": "Lecture 9 - Combining Form Part 2",
+  "formSize": 88,
+  "forms": [
+    "A"
+  ],
+  "bank": {
+    "A": [
+      {
+        "id": "MT10901",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which set consists entirely of combining forms that mean skin?",
+        "options": [
+          "Cyt/o, Derm/o, and Cutane/o",
+          "Dermat/o, Enter/o, and Hepat/o",
+          "Derm/o, Dermat/o, and Cutane/o",
+          "Cutane/o, Scler/o, and Sten/o"
+        ],
+        "correct": 2,
+        "explain": "Derm/o, Dermat/o, and Cutane/o are the three interchangeable combining forms for skin, seen in dermal, dermatologist, and cutaneous. Cyt/o, Derm/o, and Cutane/o mixes in Cyt/o, which means cell. Dermat/o, Enter/o, and Hepat/o mixes in Enter/o (small intestine) and Hepat/o (liver). Cutane/o, Scler/o, and Sten/o mixes in Scler/o (hard) and Sten/o (narrow). Each wrong set therefore contains a form that names a cell, an organ, or a quality rather than skin."
+      },
+      {
+        "id": "MT10902",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which two combining forms both mean poison?",
+        "options": [
+          "Tox/o and Toxic/o",
+          "Carcin/o and Necr/o",
+          "Lith/o and Sten/o",
+          "Crin/o and Phag/o"
+        ],
+        "correct": 0,
+        "explain": "Tox/o and Toxic/o are the two spellings of the poison combining form, as in toxicoderma and cytotoxic. The other pairs are real combining forms from the same set but name different things: Carcin/o (cancer) and Necr/o (death), Lith/o (stone) and Sten/o (narrow), Crin/o (to secrete) and Phag/o (to eat or swallow)."
+      },
+      {
+        "id": "MT10903",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means cell?",
+        "options": [
+          "Cyt/o",
+          "Derm/o",
+          "Enter/o",
+          "Hepat/o"
+        ],
+        "correct": 0,
+        "explain": "Cyt/o means cell, as in cytotoxic. Derm/o means skin, Enter/o means small intestine, and Hepat/o means liver."
+      },
+      {
+        "id": "MT10904",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means small intestine?",
+        "options": [
+          "Esophag/o",
+          "Enter/o",
+          "Gastr/o",
+          "Hepat/o"
+        ],
+        "correct": 1,
+        "explain": "Enter/o means small intestine, as in enterocele. Esophag/o means esophagus, Gastr/o means stomach, and Hepat/o means liver."
+      },
+      {
+        "id": "MT10905",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means esophagus?",
+        "options": [
+          "Enter/o",
+          "Gastr/o",
+          "Esophag/o",
+          "Hepat/o"
+        ],
+        "correct": 2,
+        "explain": "Esophag/o means esophagus, as in esophagoscopy. Enter/o means small intestine, Gastr/o means stomach, and Hepat/o means liver."
+      },
+      {
+        "id": "MT10906",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means stomach?",
+        "options": [
+          "Enter/o",
+          "Esophag/o",
+          "Hepat/o",
+          "Gastr/o"
+        ],
+        "correct": 3,
+        "explain": "Gastr/o means stomach, as in gastroptosis. Enter/o means small intestine, Esophag/o means esophagus, and Hepat/o means liver."
+      },
+      {
+        "id": "MT10907",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means liver?",
+        "options": [
+          "Hepat/o",
+          "Gastr/o",
+          "Enter/o",
+          "Esophag/o"
+        ],
+        "correct": 0,
+        "explain": "Hepat/o means liver, as in hepatectomy. Gastr/o means stomach, Enter/o means small intestine, and Esophag/o means esophagus."
+      },
+      {
+        "id": "MT10908",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means cancer?",
+        "options": [
+          "Necr/o",
+          "Carcin/o",
+          "Onc/o",
+          "Path/o"
+        ],
+        "correct": 1,
+        "explain": "Carcin/o means cancer, as in carcinoma. Necr/o means death, Onc/o means tumor or mass, and Path/o means disease."
+      },
+      {
+        "id": "MT10909",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means to secrete?",
+        "options": [
+          "Crin/o",
+          "Cyt/o",
+          "Esthesi/o",
+          "Fibr/o"
+        ],
+        "correct": 0,
+        "explain": "Crin/o means to secrete, as in endocrinology. Cyt/o means cell, Esthesi/o means sensation, and Fibr/o means fiber."
+      },
+      {
+        "id": "MT10910",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means sensation?",
+        "options": [
+          "Crin/o",
+          "Cyt/o",
+          "Esthesi/o",
+          "Gen/o"
+        ],
+        "correct": 2,
+        "explain": "Esthesi/o means sensation, as in anesthesia. Crin/o means to secrete, Cyt/o means cell, and Gen/o means origin or production."
+      },
+      {
+        "id": "MT10911",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means fiber?",
+        "options": [
+          "Fibr/o",
+          "Crin/o",
+          "Esthesi/o",
+          "Gen/o"
+        ],
+        "correct": 0,
+        "explain": "Fibr/o means fiber, as in fibroadenoma. Crin/o means to secrete, Esthesi/o means sensation, and Gen/o means origin or production."
+      },
+      {
+        "id": "MT10912",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means origin or production?",
+        "options": [
+          "Gynec/o",
+          "Gen/o",
+          "Crin/o",
+          "Fibr/o"
+        ],
+        "correct": 1,
+        "explain": "Gen/o means origin or production, as in genogram. Gynec/o means woman, Crin/o means to secrete, and Fibr/o means fiber."
+      },
+      {
+        "id": "MT10913",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means woman?",
+        "options": [
+          "Gen/o",
+          "Gynec/o",
+          "Esthesi/o",
+          "Crin/o"
+        ],
+        "correct": 1,
+        "explain": "Gynec/o means woman, as in gynecologist. Gen/o means origin or production, Esthesi/o means sensation, and Crin/o means to secrete."
+      },
+      {
+        "id": "MT10914",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means stone?",
+        "options": [
+          "Necr/o",
+          "Lith/o",
+          "Onc/o",
+          "Scler/o"
+        ],
+        "correct": 1,
+        "explain": "Lith/o means stone, as in lithotripsy. Necr/o means death, Onc/o means tumor or mass, and Scler/o means hard."
+      },
+      {
+        "id": "MT10915",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means death?",
+        "options": [
+          "Lith/o",
+          "Necr/o",
+          "Onc/o",
+          "Path/o"
+        ],
+        "correct": 1,
+        "explain": "Necr/o means death, as in necrosis. Lith/o means stone, Onc/o means tumor or mass, and Path/o means disease."
+      },
+      {
+        "id": "MT10916",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means tumor or mass?",
+        "options": [
+          "Onc/o",
+          "Necr/o",
+          "Carcin/o",
+          "Path/o"
+        ],
+        "correct": 0,
+        "explain": "Onc/o means tumor or mass, as in oncology. Necr/o means death, Carcin/o means cancer, and Path/o means disease."
+      },
+      {
+        "id": "MT10917",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means straight, normal, or correct?",
+        "options": [
+          "Morph/o",
+          "Orth/o",
+          "Path/o",
+          "Phas/o"
+        ],
+        "correct": 1,
+        "explain": "Orth/o means straight, normal, or correct, as in orthopedist. Morph/o means form, Path/o means disease, and Phas/o means speech."
+      },
+      {
+        "id": "MT10918",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means form?",
+        "options": [
+          "Orth/o",
+          "Morph/o",
+          "Path/o",
+          "Phag/o"
+        ],
+        "correct": 1,
+        "explain": "Morph/o means form, as in morphometry. Orth/o means straight or correct, Path/o means disease, and Phag/o means eat or swallow."
+      },
+      {
+        "id": "MT10919",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means disease?",
+        "options": [
+          "Path/o",
+          "Phas/o",
+          "Phag/o",
+          "Phob/o"
+        ],
+        "correct": 0,
+        "explain": "Path/o means disease, as in pathobiologist. Phas/o means speech, Phag/o means eat or swallow, and Phob/o means exaggerated fear or sensitivity."
+      },
+      {
+        "id": "MT10920",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form carries two senses, child and foot?",
+        "options": [
+          "Ped/o",
+          "Path/o",
+          "Phag/o",
+          "Phas/o"
+        ],
+        "correct": 0,
+        "explain": "Ped/o carries two senses, child and foot, so the sense in any given term must be read from the rest of the word, as in bipedal where the prefix bi- for two points to the foot sense. Path/o means disease, Phag/o means eat or swallow, and Phas/o means speech."
+      },
+      {
+        "id": "MT10921",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means eat or swallow?",
+        "options": [
+          "Phas/o",
+          "Phag/o",
+          "Path/o",
+          "Phob/o"
+        ],
+        "correct": 1,
+        "explain": "Phag/o means eat or swallow, as in phagophobia. Phas/o means speech, Path/o means disease, and Phob/o means exaggerated fear or sensitivity."
+      },
+      {
+        "id": "MT10922",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means speech?",
+        "options": [
+          "Phag/o",
+          "Phas/o",
+          "Path/o",
+          "Phob/o"
+        ],
+        "correct": 1,
+        "explain": "Phas/o means speech, as in paraphasia. Phag/o means eat or swallow, Path/o means disease, and Phob/o means exaggerated fear or sensitivity."
+      },
+      {
+        "id": "MT10923",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means exaggerated fear or sensitivity?",
+        "options": [
+          "Phag/o",
+          "Phas/o",
+          "Phob/o",
+          "Path/o"
+        ],
+        "correct": 2,
+        "explain": "Phob/o means exaggerated fear or sensitivity, as in hydrophobia and phagophobia. Phag/o means eat or swallow, Phas/o means speech, and Path/o means disease."
+      },
+      {
+        "id": "MT10924",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means narrow?",
+        "options": [
+          "Scler/o",
+          "Sten/o",
+          "Son/o",
+          "Necr/o"
+        ],
+        "correct": 1,
+        "explain": "Sten/o means narrow, as in stenosis. Scler/o means hard, Son/o means sound, and Necr/o means death."
+      },
+      {
+        "id": "MT10925",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means hard?",
+        "options": [
+          "Sten/o",
+          "Scler/o",
+          "Son/o",
+          "Necr/o"
+        ],
+        "correct": 1,
+        "explain": "Scler/o means hard, as in scleroderma. Sten/o means narrow, Son/o means sound, and Necr/o means death."
+      },
+      {
+        "id": "MT10926",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form means sound?",
+        "options": [
+          "Sten/o",
+          "Scler/o",
+          "Son/o",
+          "Necr/o"
+        ],
+        "correct": 2,
+        "explain": "Son/o means sound, as in sonographer. Sten/o means narrow, Scler/o means hard, and Necr/o means death."
+      },
+      {
+        "id": "MT10927",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which pair is NOT two spellings of one meaning?",
+        "options": [
+          "Derm/o and Dermat/o",
+          "Cyt/o and Gen/o",
+          "Tox/o and Toxic/o",
+          "Dermat/o and Cutane/o"
+        ],
+        "correct": 1,
+        "explain": "Cyt/o (cell) and Gen/o (origin or production) differ in meaning. Derm/o, Dermat/o, and Cutane/o all mean skin; Tox/o and Toxic/o both mean poison."
+      },
+      {
+        "id": "MT10928",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form names a function, not a structure or substance?",
+        "options": [
+          "Cyt/o",
+          "Hepat/o",
+          "Crin/o",
+          "Lith/o"
+        ],
+        "correct": 2,
+        "explain": "Crin/o means to secrete, a function. Cyt/o (cell) and Hepat/o (liver) are structures; Lith/o (stone) is a substance."
+      },
+      {
+        "id": "MT10929",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which combining form belongs to the organ group, not the general group?",
+        "options": [
+          "Lith/o",
+          "Necr/o",
+          "Hepat/o",
+          "Onc/o"
+        ],
+        "correct": 2,
+        "explain": "Hepat/o (liver) is an organ. Lith/o (stone), Necr/o (death), and Onc/o (tumor or mass) are in the general group."
+      },
+      {
+        "id": "MT10930",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "In the term lithotripsy (CF+S), the element -tripsy refers to which action?",
+        "options": [
+          "Crushing",
+          "Stone",
+          "Secreting",
+          "Speech"
+        ],
+        "correct": 0,
+        "explain": "The element -tripsy means crushing, so lithotripsy is the crushing of stones. The stone sense in the same word comes from the combining form Lith/o, not from -tripsy; secreting is Crin/o and speech is Phas/o, neither of which is present here."
+      },
+      {
+        "id": "MT10931",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "In the term hydrophobia (CF+R+S), the element hydr refers to what?",
+        "options": [
+          "Fear",
+          "Cell",
+          "Stone",
+          "Water"
+        ],
+        "correct": 3,
+        "explain": "Hydr means water, so hydrophobia is an exaggerated fear of or sensitivity to water. The fear sense in the same word is carried by the root phob, while cell is Cyt/o and stone is Lith/o; attributing water to phob or fear to hydr would swap the two parts of the term."
+      },
+      {
+        "id": "MT10932",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "In the term fibroadenoma (CF+R+S), the element aden refers to what?",
+        "options": [
+          "Fiber",
+          "Gland",
+          "Tumor",
+          "Skin"
+        ],
+        "correct": 1,
+        "explain": "Aden means gland, so the aden element names the glandular tissue in fibroadenoma. The fiber sense in the same word comes from Fibr/o and the tumor sense from the suffix -oma, while skin is Derm/o; a fibroadenoma is a benign tumor built of fibrous and glandular tissue, so fiber, gland, and tumor each map to a different part."
+      },
+      {
+        "id": "MT10933",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "In the term pathobiologist (CF+CF+S), the element bi refers to what?",
+        "options": [
+          "Disease",
+          "Specialist",
+          "Life",
+          "Form"
+        ],
+        "correct": 2,
+        "explain": "Bi means life, so the bi element contributes the sense of living processes in pathobiologist. The disease sense in the same word comes from Path/o and the specialist sense from the suffix -logist, while form is Morph/o; a pathobiologist is one who specializes in the study of the life and nature of disease."
+      },
+      {
+        "id": "MT10934",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "In bipedal (P+R+S), which sense of Ped/o applies?",
+        "options": [
+          "Foot",
+          "Child",
+          "Cell",
+          "Stomach"
+        ],
+        "correct": 0,
+        "explain": "Ped/o means child or foot. In bipedal, bi- (two) counts feet, so the foot sense applies. Cell is Cyt/o; stomach is Gastr/o."
+      },
+      {
+        "id": "MT10935",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "In the term scleroderma (CF+R), the element scler refers to what?",
+        "options": [
+          "Narrow",
+          "Hard",
+          "Sound",
+          "Stone"
+        ],
+        "correct": 1,
+        "explain": "Scler means hard, so scleroderma is a hardening of the skin, with derma as the root for skin. Narrow is Sten/o, sound is Son/o, and stone is Lith/o; reading scler as narrow or sound would swap it with a different quality form."
+      },
+      {
+        "id": "MT10936",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term cytotoxic mean?",
+        "options": [
+          "Poisonous to cells",
+          "Pertaining to the skin",
+          "Pertaining to the intestine",
+          "Pertaining to the liver"
+        ],
+        "correct": 0,
+        "explain": "Cytotoxic is built from Cyt/o (cell) and tox (poison) with -ic (pertaining to), so it means damaging or poisonous to cells. Pertaining to the skin would use Derm/o or Cutane/o, pertaining to the small intestine would use Enter/o, and pertaining to the liver would use Hepat/o."
+      },
+      {
+        "id": "MT10937",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term dermatologist mean?",
+        "options": [
+          "Specialist in skin disorders",
+          "Technician who images skin",
+          "Surgeon who repairs burned skin",
+          "Specialist in hair disorders"
+        ],
+        "correct": 0,
+        "explain": "Dermatologist is built from Dermat/o (skin) and -ologist (specialist), so it denotes a specialist in disorders of the skin. The other options keep part of the term but change another word part, so they do not match."
+      },
+      {
+        "id": "MT10938",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term enterocele mean?",
+        "options": [
+          "Hernia of the small intestine",
+          "Downward displacement of the stomach",
+          "Process of examining the esophagus",
+          "Surgical removal of the liver"
+        ],
+        "correct": 0,
+        "explain": "Enterocele is built from Enter/o (small intestine) and -cele (hernia), so it denotes a hernia of the small intestine. Downward displacement of the stomach is gastroptosis, examining the esophagus is esophagoscopy, and removal of the liver is hepatectomy."
+      },
+      {
+        "id": "MT10939",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term esophagoscopy mean?",
+        "options": [
+          "Examining the esophagus with an instrument",
+          "Removing part or all of the esophagus",
+          "Downward drooping of the esophagus",
+          "Hernia of the esophagus through a weakness"
+        ],
+        "correct": 0,
+        "explain": "Esophagoscopy is Esophag/o (esophagus) plus -scopy (process of examining with an instrument). Removal would be -ectomy, drooping would be -ptosis, and a hernia would be -cele."
+      },
+      {
+        "id": "MT10940",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term gastroptosis mean?",
+        "options": [
+          "Downward displacement of the stomach",
+          "Inflammation of the stomach lining",
+          "Hernia of the stomach through diaphragm",
+          "Surgical removal of stomach part"
+        ],
+        "correct": 0,
+        "explain": "Gastroptosis is built from Gastr/o (stomach) and -ptosis (downward displacement or drooping), so it denotes a drooping of the stomach. The other options keep part of the term but change another word part, so they do not match."
+      },
+      {
+        "id": "MT10941",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term hepatectomy mean?",
+        "options": [
+          "Surgical removal of the liver",
+          "Incision into the liver",
+          "Enlargement of the liver",
+          "Surgical repair of the liver"
+        ],
+        "correct": 0,
+        "explain": "Hepatectomy is built from Hepat/o (liver) and -ectomy (surgical removal), so it denotes surgical removal of the liver. The other options keep part of the term but change another word part, so they do not match."
+      },
+      {
+        "id": "MT10942",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term carcinoma mean?",
+        "options": [
+          "A malignant, cancerous tumor",
+          "A benign tumor of glandular tissue",
+          "The study of tumors",
+          "Death of tissue or cells"
+        ],
+        "correct": 0,
+        "explain": "Carcinoma is built from Carcin/o (cancer) and -oma (tumor), so it denotes a malignant, cancerous tumor. The vowel-initial -oma drops the combining vowel o, so the form is R+S. A benign glandular tumor is fibroadenoma, the study of tumors is oncology, and tissue death is necrosis."
+      },
+      {
+        "id": "MT10943",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term endocrinology mean?",
+        "options": [
+          "Study of glands secreting within the body",
+          "Study of tumors and other masses",
+          "Study of glands secreting outside the body",
+          "Study of the nature of disease"
+        ],
+        "correct": 0,
+        "explain": "Endocrinology is endo- (within) + Crin/o (to secrete) + -logy (study): the study of glands secreting within the body. Secreting outside would be exo-; tumors are oncology; disease is pathology."
+      },
+      {
+        "id": "MT10944",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term anesthesia mean?",
+        "options": [
+          "Loss of sensation",
+          "Fear of water",
+          "Hardening of skin",
+          "Study of glands"
+        ],
+        "correct": 0,
+        "explain": "Anesthesia is an- (without) + esthesi (sensation) + -ia (condition): loss of sensation. Fear of water is hydrophobia, hardening of skin is scleroderma, and the study of glands is endocrinology."
+      },
+      {
+        "id": "MT10945",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term fibroadenoma mean?",
+        "options": [
+          "A benign tumor composed of fibrous and glandular tissue",
+          "A malignant tumor composed of fibrous and glandular tissue",
+          "A benign tumor composed of fatty and glandular tissue",
+          "A benign tumor composed of fibrous and muscle tissue"
+        ],
+        "correct": 0,
+        "explain": "Fibroadenoma is Fibr/o (fiber) plus Aden/o (gland) plus -oma (tumor), a benign tumor of fibrous and glandular tissue. It is not malignant, and it contains neither fat nor muscle."
+      },
+      {
+        "id": "MT10946",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term genogram mean?",
+        "options": [
+          "Record of family origin",
+          "Study of tumors or masses",
+          "Process of measuring body form",
+          "Death of tissue or cells"
+        ],
+        "correct": 0,
+        "explain": "Genogram is Gen/o (origin) + gram (record): a record of origin or family relationships. Tumors are oncology, measuring form is morphometry, death of tissue is necrosis."
+      },
+      {
+        "id": "MT10947",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term gynecologist mean?",
+        "options": [
+          "Specialist in disorders of women",
+          "Specialist in disorders of skin",
+          "Specialist in the nature of disease",
+          "Specialist who performs sound imaging"
+        ],
+        "correct": 0,
+        "explain": "Gynecologist is built from Gynec/o (woman) and -ologist (specialist), so it denotes a specialist in disorders of women. A skin specialist is dermatologist, a specialist in the nature of disease is pathobiologist, and a sound-imaging specialist is sonographer."
+      },
+      {
+        "id": "MT10948",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term lithotripsy mean?",
+        "options": [
+          "Crushing of stones",
+          "Tumor of fiber and gland",
+          "Narrowing of a passage",
+          "Hardening of the skin"
+        ],
+        "correct": 0,
+        "explain": "Lithotripsy is built from Lith/o (stone) and -tripsy (crushing), so it denotes crushing of stones. A benign glandular tumor is fibroadenoma, abnormal narrowing is stenosis, and hardening of the skin is scleroderma."
+      },
+      {
+        "id": "MT10949",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term necrosis mean?",
+        "options": [
+          "Death of tissue or of cells",
+          "The study of tumors or masses",
+          "Hardening of the skin surface",
+          "Abnormal narrowing of a passage"
+        ],
+        "correct": 0,
+        "explain": "Necrosis is built from Necr/o (death) and -osis (condition), so it denotes death of tissue or cells. The study of tumors is oncology, hardening of the skin is scleroderma, and abnormal narrowing is stenosis."
+      },
+      {
+        "id": "MT10950",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term oncology mean?",
+        "options": [
+          "The study of tumors",
+          "Death of tissue or cells",
+          "A benign glandular tumor",
+          "A malignant pigment tumor"
+        ],
+        "correct": 0,
+        "explain": "Oncology is built from Onc/o (tumor or mass) and -logy (study), so it denotes the study of tumors. Tissue death is necrosis, a benign glandular tumor is fibroadenoma, and a malignant pigment tumor is melanoma."
+      },
+      {
+        "id": "MT10951",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term orthopedist mean?",
+        "options": [
+          "Specialist in correcting deformities",
+          "Specialist in the nature of disease",
+          "Specialist in disorders of women",
+          "Specialist in disorders of the skin"
+        ],
+        "correct": 0,
+        "explain": "Orthopedist is orth/o (straight or correct) + ped (foot) + -ist (specialist): a specialist in correcting musculoskeletal deformities. Disease is pathobiologist, women is gynecologist, skin is dermatologist."
+      },
+      {
+        "id": "MT10952",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term morphometry mean?",
+        "options": [
+          "Process of measuring form",
+          "Study of tumors",
+          "Record of family origin",
+          "Death of tissue or cells"
+        ],
+        "correct": 0,
+        "explain": "Morphometry is built from Morph/o (form) and -metry (measurement), so it denotes the process of measuring form. The study of tumors is oncology, a record of origin is genogram, and tissue death is necrosis."
+      },
+      {
+        "id": "MT10953",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term pathobiologist mean?",
+        "options": [
+          "Specialist in the nature of disease",
+          "Specialist in disorders of women",
+          "Specialist in disorders of the skin",
+          "Specialist in correcting musculoskeletal deformities"
+        ],
+        "correct": 0,
+        "explain": "Pathobiologist is built from Path/o (disease), bi/o (life), and -logist (specialist), so it denotes a specialist who studies the nature of disease, with two roots giving CF+CF+S. A specialist in women is gynecologist, a skin specialist is dermatologist, and a musculoskeletal specialist is orthopedist."
+      },
+      {
+        "id": "MT10954",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term phagophobia mean?",
+        "options": [
+          "Exaggerated fear of eating or swallowing",
+          "Exaggerated fear of or sensitivity to water",
+          "A disorder featuring errors of speech",
+          "A skin condition caused by poison"
+        ],
+        "correct": 0,
+        "explain": "Phagophobia is built from Phag/o (eat or swallow), phob (fear), and -ia (condition), so it denotes an exaggerated fear of eating or swallowing. Fear of water is hydrophobia, errors of speech is paraphasia, and a poison skin condition is toxicoderma."
+      },
+      {
+        "id": "MT10955",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term paraphasia mean?",
+        "options": [
+          "A disorder featuring errors of speech",
+          "Exaggerated fear of eating or swallowing",
+          "A skin condition caused by poison",
+          "Hardening of the skin"
+        ],
+        "correct": 0,
+        "explain": "Paraphasia is built from para- (abnormal), Phas/o (speech), and -ia (condition), so it denotes a disorder featuring errors of speech. Fear of eating is phagophobia, a poison skin condition is toxicoderma, and hardening of the skin is scleroderma."
+      },
+      {
+        "id": "MT10956",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term toxicoderma mean?",
+        "options": [
+          "Skin condition from poison",
+          "Hardening of the skin",
+          "Exaggerated fear of water",
+          "Disorder of speech errors"
+        ],
+        "correct": 0,
+        "explain": "Toxicoderma is built from Toxic/o (poison) and derma (skin), so it denotes a skin condition caused by poison, with derma as a root giving CF+R. Hardening of the skin is scleroderma, fear of water is hydrophobia, and speech errors is paraphasia."
+      },
+      {
+        "id": "MT10957",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term hydrophobia mean?",
+        "options": [
+          "Exaggerated fear of or sensitivity to water",
+          "Exaggerated fear of eating or of swallowing",
+          "A skin condition caused by exposure to poison",
+          "Loss of sensation affecting a body region"
+        ],
+        "correct": 0,
+        "explain": "Hydrophobia is built from Hydr/o (water), phob (fear), and -ia (condition), so it denotes an exaggerated fear of or sensitivity to water. Fear of eating is phagophobia, a poison skin condition is toxicoderma, and loss of sensation is anesthesia."
+      },
+      {
+        "id": "MT10958",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term stenosis mean?",
+        "options": [
+          "Narrowing of a passage",
+          "Hardening of the skin",
+          "Death of tissue or cells",
+          "Record of family origin"
+        ],
+        "correct": 0,
+        "explain": "Stenosis is sten (narrow) + -osis (condition): abnormal narrowing of a passage or vessel. Hardening of skin is scleroderma, tissue death is necrosis, a family record is genogram."
+      },
+      {
+        "id": "MT10959",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term scleroderma mean?",
+        "options": [
+          "Hardening of the skin",
+          "Narrowing of a passage",
+          "Skin condition from poison",
+          "Exaggerated fear of water"
+        ],
+        "correct": 0,
+        "explain": "Scleroderma is built from Scler/o (hard) and derma (skin), so it denotes hardening of the skin, with derma as a root giving CF+R. Abnormal narrowing is stenosis, a poison skin condition is toxicoderma, and fear of water is hydrophobia."
+      },
+      {
+        "id": "MT10960",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "What does the term sonographer mean?",
+        "options": [
+          "Specialist in imaging with sound waves",
+          "Specialist treating hearing loss from noise",
+          "Device recording heart sound waves",
+          "Specialist in the physics of sound"
+        ],
+        "correct": 0,
+        "explain": "Sonographer is built from Son/o (sound) and -grapher (one who records or images), so it denotes a specialist who performs imaging using sound waves. The other options keep part of the term but change another word part, so they do not match."
+      },
+      {
+        "id": "MT10961",
+        "type": "stepped",
+        "cat": "MT_lec9",
+        "q": "Compare the builds of hepatectomy and gastroptosis.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which letter type begins the suffix -ectomy?",
+            "options": [
+              "Vowel",
+              "Consonant"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "-ectomy begins with a vowel. Which build is hepatectomy?",
+            "options": [
+              "R+S",
+              "CF+S",
+              "CF+R",
+              "P+R+S"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "Which letter type begins the suffix -ptosis?",
+            "options": [
+              "Vowel",
+              "Consonant"
+            ],
+            "correct": 1
+          },
+          {
+            "id": "4",
+            "prompt": "-ptosis begins with a consonant. Which build is gastroptosis?",
+            "options": [
+              "R+S",
+              "CF+S",
+              "CF+R",
+              "P+R+S"
+            ],
+            "correct": 1
+          }
+        ],
+        "explain": "Hepat and gastr both end in a consonant. -ectomy begins with a vowel, so o is dropped: hepat + ectomy (R+S). -ptosis begins with a consonant, so o is kept: gastr/o + ptosis (CF+S). No same-vowel rule applies."
+      },
+      {
+        "id": "MT10962",
+        "type": "stepped",
+        "cat": "MT_lec9",
+        "q": "Compare the builds of carcinoma and oncology.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which letter type begins the suffix -oma?",
+            "options": [
+              "Vowel",
+              "Consonant"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "-oma begins with a vowel. Which build is carcinoma?",
+            "options": [
+              "R+S",
+              "CF+S",
+              "CF+R",
+              "P+R+S"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "Which letter type begins the suffix -logy?",
+            "options": [
+              "Vowel",
+              "Consonant"
+            ],
+            "correct": 1
+          },
+          {
+            "id": "4",
+            "prompt": "-logy begins with a consonant. Which build is oncology?",
+            "options": [
+              "R+S",
+              "CF+S",
+              "CF+R",
+              "P+R+S"
+            ],
+            "correct": 1
+          }
+        ],
+        "explain": "Carcin and onc end in a consonant. -oma begins with a vowel, so o is dropped: carcin + oma (R+S). -logy begins with a consonant, so o is kept: onc/o + logy (CF+S)."
+      },
+      {
+        "id": "MT10963",
+        "type": "stepped",
+        "cat": "MT_lec9",
+        "q": "Compare the builds of dermal and dermatologist.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which letter type begins the suffix -al?",
+            "options": [
+              "Vowel",
+              "Consonant"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "-al begins with a vowel. Which build is dermal?",
+            "options": [
+              "R+S",
+              "CF+S",
+              "CF+R",
+              "P+R+S"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "Which letter type begins the suffix -logist?",
+            "options": [
+              "Vowel",
+              "Consonant"
+            ],
+            "correct": 1
+          },
+          {
+            "id": "4",
+            "prompt": "-logist begins with a consonant. Which build is dermatologist?",
+            "options": [
+              "R+S",
+              "CF+S",
+              "CF+R",
+              "P+R+S"
+            ],
+            "correct": 1
+          }
+        ],
+        "explain": "Derm ends in a consonant. -al begins with a vowel, so o is dropped: derm + al (R+S), like cutane + ous. -logist begins with a consonant, so o is kept: dermat/o + logist (CF+S)."
+      },
+      {
+        "id": "MT10964",
+        "type": "stepped",
+        "cat": "MT_lec9",
+        "q": "Compare the builds of anesthesia and endocrinology.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which letter type begins the suffix -ia?",
+            "options": [
+              "Vowel",
+              "Consonant"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "-ia begins with a vowel. Which build is anesthesia?",
+            "options": [
+              "P+R+S",
+              "P+CF+S",
+              "CF+R+S",
+              "P+S"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "Which letter type begins the suffix -logy?",
+            "options": [
+              "Vowel",
+              "Consonant"
+            ],
+            "correct": 1
+          },
+          {
+            "id": "4",
+            "prompt": "-logy begins with a consonant. Which build is endocrinology?",
+            "options": [
+              "P+R+S",
+              "P+CF+S",
+              "CF+R+S",
+              "P+S"
+            ],
+            "correct": 1
+          },
+          {
+            "prompt": "Which join decides R or CF in these words?",
+            "options": [
+              "Root and suffix",
+              "Prefix and root"
+            ],
+            "correct": 0,
+            "id": "5"
+          }
+        ],
+        "explain": "Both start with a prefix, but the root-suffix join decides R or CF. -ia begins with a vowel, so esthesi stands bare: an + esthesi + ia (P+R+S). -logy begins with a consonant, so crin keeps o: endo + crin/o + logy (P+CF+S). Endo- keeps its o because crin begins with a consonant."
+      },
+      {
+        "id": "MT10965",
+        "type": "stepped",
+        "cat": "MT_lec9",
+        "q": "Fibroadenoma is made of fibr, aden, and oma.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which word part is aden?",
+            "options": [
+              "Root",
+              "Suffix",
+              "Prefix",
+              "Combining vowel"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Aden is a root. Is the o after fibr kept or dropped?",
+            "options": [
+              "Kept",
+              "Dropped"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "The o is kept. Which build is fibroadenoma?",
+            "options": [
+              "CF+R+S",
+              "R+R+S",
+              "P+R+S",
+              "CF+S"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Fibr (fiber) and aden (gland) are two roots, then -oma. A combining vowel bridges two roots even before a vowel; the vowel drop applies only before a suffix. So fibr/o + aden + oma is CF+R+S. There is no prefix fib-."
+      },
+      {
+        "id": "MT10966",
+        "type": "stepped",
+        "cat": "MT_lec9",
+        "q": "Compare the builds of toxicoderma and cytotoxic.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "In toxicoderma, which word part is derma?",
+            "options": [
+              "Root",
+              "Suffix",
+              "Prefix",
+              "Combining vowel"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Derma is a root. Which build is toxicoderma?",
+            "options": [
+              "CF+R",
+              "CF+R+S",
+              "R+S",
+              "CF+S"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "In cytotoxic, which word part is ic?",
+            "options": [
+              "Suffix",
+              "Root",
+              "Prefix",
+              "Combining vowel"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "4",
+            "prompt": "Ic is a suffix. Which build is cytotoxic?",
+            "options": [
+              "CF+R+S",
+              "CF+R",
+              "R+S",
+              "CF+S"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "In toxicoderma, derma is a root (skin), so the word ends without a suffix: tox/o + derma (CF+R). In cytotoxic, -ic is a suffix (pertaining to): cyt/o + tox + ic (CF+R+S). No suffix is silent or deleted."
+      },
+      {
+        "id": "MT10967",
+        "type": "stepped",
+        "cat": "MT_lec9",
+        "q": "Compare the builds of cutaneous and sonographer.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which letter type begins the suffix -ous?",
+            "options": [
+              "Vowel",
+              "Consonant"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "-ous begins with a vowel. Which build is cutaneous?",
+            "options": [
+              "R+S",
+              "CF+S",
+              "CF+R",
+              "P+R+S"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "Which letter type begins the suffix -grapher?",
+            "options": [
+              "Vowel",
+              "Consonant"
+            ],
+            "correct": 1
+          },
+          {
+            "id": "4",
+            "prompt": "-grapher begins with a consonant. Which build is sonographer?",
+            "options": [
+              "R+S",
+              "CF+S",
+              "CF+R",
+              "P+R+S"
+            ],
+            "correct": 1
+          }
+        ],
+        "explain": "Cutane and son end in a consonant. -ous begins with a vowel, so o is dropped: cutane + ous (R+S). -grapher begins with a consonant, so o is kept: son/o + grapher (CF+S)."
+      },
+      {
+        "id": "MT10968",
+        "type": "matching",
+        "cat": "MT_lec9",
+        "q": "Match each organ or structure combining form to its meaning.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Cyt/o"
+          },
+          {
+            "id": "2",
+            "text": "Derm/o"
+          },
+          {
+            "id": "3",
+            "text": "Enter/o"
+          },
+          {
+            "id": "5",
+            "text": "Gastr/o"
+          },
+          {
+            "id": "6",
+            "text": "Hepat/o"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Stomach"
+          },
+          {
+            "id": "B",
+            "text": "Cell"
+          },
+          {
+            "id": "C",
+            "text": "Liver"
+          },
+          {
+            "id": "D",
+            "text": "Small intestine"
+          },
+          {
+            "id": "E",
+            "text": "Skin"
+          }
+        ],
+        "correct_pairs": {
+          "1": "B",
+          "2": "E",
+          "3": "D",
+          "5": "A",
+          "6": "C"
+        },
+        "explain": "Cyt/o is cell, Derm/o is skin, Enter/o is small intestine, Gastr/o is stomach, and Hepat/o is liver."
+      },
+      {
+        "id": "MT10969",
+        "type": "matching",
+        "cat": "MT_lec9",
+        "q": "Match each general-group combining form to its meaning.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Carcin/o"
+          },
+          {
+            "id": "2",
+            "text": "Crin/o"
+          },
+          {
+            "id": "3",
+            "text": "Esthesi/o"
+          },
+          {
+            "id": "5",
+            "text": "Gen/o"
+          },
+          {
+            "id": "6",
+            "text": "Gynec/o"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "B",
+            "text": "Woman"
+          },
+          {
+            "id": "C",
+            "text": "Cancer"
+          },
+          {
+            "id": "D",
+            "text": "Sensation"
+          },
+          {
+            "id": "E",
+            "text": "Origin or production"
+          },
+          {
+            "id": "F",
+            "text": "To secrete"
+          }
+        ],
+        "correct_pairs": {
+          "1": "C",
+          "2": "F",
+          "3": "D",
+          "5": "E",
+          "6": "B"
+        },
+        "explain": "Carcin/o is cancer, Crin/o is to secrete, Esthesi/o is sensation, Gen/o is origin or production, and Gynec/o is woman."
+      },
+      {
+        "id": "MT10970",
+        "type": "matching",
+        "cat": "MT_lec9",
+        "q": "Match each remaining combining form to the meaning it conveys.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Lith/o"
+          },
+          {
+            "id": "2",
+            "text": "Necr/o"
+          },
+          {
+            "id": "3",
+            "text": "Onc/o"
+          },
+          {
+            "id": "4",
+            "text": "Orth/o"
+          },
+          {
+            "id": "5",
+            "text": "Morph/o"
+          },
+          {
+            "id": "6",
+            "text": "Path/o"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Death"
+          },
+          {
+            "id": "B",
+            "text": "Disease"
+          },
+          {
+            "id": "C",
+            "text": "Form"
+          },
+          {
+            "id": "D",
+            "text": "Stone"
+          },
+          {
+            "id": "E",
+            "text": "Straight, normal, or correct"
+          },
+          {
+            "id": "F",
+            "text": "Tumor or mass"
+          }
+        ],
+        "correct_pairs": {
+          "1": "D",
+          "2": "A",
+          "3": "F",
+          "4": "E",
+          "5": "C",
+          "6": "B"
+        },
+        "explain": "Lith/o means stone, as in lithotripsy. Necr/o means death, as in necrosis. Onc/o means tumor or mass, as in oncology. Orth/o means straight, normal, or correct, as in orthopedist. Morph/o means form, as in morphometry. Path/o means disease, as in pathobiologist. Each form pairs with exactly one meaning."
+      },
+      {
+        "id": "MT10971",
+        "type": "matching",
+        "cat": "MT_lec9",
+        "q": "Match each remaining combining form, including the poison pair, to the meaning it conveys.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Ped/o"
+          },
+          {
+            "id": "2",
+            "text": "Phag/o"
+          },
+          {
+            "id": "3",
+            "text": "Phas/o"
+          },
+          {
+            "id": "4",
+            "text": "Tox/o, Toxic/o"
+          },
+          {
+            "id": "5",
+            "text": "Phob/o"
+          },
+          {
+            "id": "6",
+            "text": "Sten/o"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Narrow"
+          },
+          {
+            "id": "B",
+            "text": "Speech"
+          },
+          {
+            "id": "C",
+            "text": "Poison"
+          },
+          {
+            "id": "D",
+            "text": "Child or foot"
+          },
+          {
+            "id": "E",
+            "text": "Exaggerated fear or sensitivity"
+          },
+          {
+            "id": "F",
+            "text": "Eat or swallow"
+          }
+        ],
+        "correct_pairs": {
+          "1": "D",
+          "2": "F",
+          "3": "B",
+          "4": "C",
+          "5": "E",
+          "6": "A"
+        },
+        "explain": "Ped/o means child or foot, as in bipedal where the prefix points to the foot. Phag/o means eat or swallow, as in phagophobia. Phas/o means speech, as in paraphasia. Tox/o and Toxic/o both mean poison, as in toxicoderma. Phob/o means exaggerated fear or sensitivity, as in hydrophobia. Sten/o means narrow, as in stenosis. Note that Ped/o alone carries two senses, and Tox/o and Toxic/o are two spellings of one meaning."
+      },
+      {
+        "id": "MT10972",
+        "type": "matching",
+        "cat": "MT_lec9",
+        "q": "Match each built term to the word-part pattern used to form it.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Cytotoxic"
+          },
+          {
+            "id": "2",
+            "text": "Enterocele"
+          },
+          {
+            "id": "3",
+            "text": "Hepatectomy"
+          },
+          {
+            "id": "4",
+            "text": "Anesthesia"
+          },
+          {
+            "id": "5",
+            "text": "Toxicoderma"
+          },
+          {
+            "id": "6",
+            "text": "Endocrinology"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "P+CF+S"
+          },
+          {
+            "id": "B",
+            "text": "CF+R+S"
+          },
+          {
+            "id": "C",
+            "text": "R+S"
+          },
+          {
+            "id": "D",
+            "text": "CF+S"
+          },
+          {
+            "id": "E",
+            "text": "P+R+S"
+          },
+          {
+            "id": "F",
+            "text": "CF+R"
+          },
+          {
+            "id": "G",
+            "text": "P+S"
+          }
+        ],
+        "correct_pairs": {
+          "1": "B",
+          "2": "D",
+          "3": "C",
+          "4": "E",
+          "5": "F",
+          "6": "A"
+        },
+        "explain": "Cytotoxic is CF+R+S (Cyt/o + tox + -ic). Enterocele is CF+S (Enter/o + -cele). Hepatectomy is R+S (hepat + -ectomy). Anesthesia is P+R+S (an- + esthesi + -ia). Toxicoderma is CF+R (tox/o + derma). Endocrinology is P+CF+S (endo- + Crin/o + -logy). No listed term is P+S."
+      },
+      {
+        "id": "MT10973",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which word-part pattern builds the term lithotripsy?",
+        "options": [
+          "CF+S",
+          "R+R",
+          "R+S",
+          "P+S"
+        ],
+        "correct": 0,
+        "explain": "Lithotripsy is Lith/o (stone) + -tripsy (crushing). The suffix begins with a consonant, so o is kept: CF+S. R+S would drop o; R+R and P+S need parts it lacks."
+      },
+      {
+        "id": "MT10974",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "In endocrinology, what do endo- and crin/o mean?",
+        "options": [
+          "Within, and to secrete",
+          "Outside, and a tumor",
+          "Middle, and to secrete",
+          "Above, and a layer"
+        ],
+        "correct": 0,
+        "explain": "Endo- means within and Crin/o means to secrete. Outside is the opposite of endo-, tumor is Onc/o, and middle and above are other prefixes."
+      },
+      {
+        "id": "MT10975",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which word part in hypoesthesia carries the meaning sensation?",
+        "options": [
+          "The prefix hypo-",
+          "The suffix -ia",
+          "The root esthesi",
+          "The prefix an-"
+        ],
+        "correct": 2,
+        "explain": "Hypoesthesia places hypo- (deficient or below) before the root esthesi (sensation) and the suffix -ia (condition), so the sensation sense is carried by esthesi, the root of Esthesi/o. The prefix hypo- names the degree, not the sensation. The suffix -ia names the condition, not the sensation. The prefix an- means without and appears in anesthesia, not in hypoesthesia."
+      },
+      {
+        "id": "MT10976",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Toxemia is a blood condition involving what?",
+        "options": [
+          "Poison in blood",
+          "New blood cell formation",
+          "Reduced circulating volume",
+          "Blood-borne hormone secretion"
+        ],
+        "correct": 0,
+        "explain": "Toxemia is tox (poison) + -emia (blood condition): poison in the blood. Cell formation would use -poiesis; secretion is Crin/o."
+      },
+      {
+        "id": "MT10977",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "In orthopedic, what do orth/o and ped/o mean?",
+        "options": [
+          "Correct, and foot",
+          "Joint, and child",
+          "Muscle, and foot",
+          "Straight, and muscle"
+        ],
+        "correct": 0,
+        "explain": "Orth/o means straight, normal, or correct; ped/o means child or foot. Orthopedic reads them as correct and foot, as in orthopedist. Neither form means joint or muscle."
+      },
+      {
+        "id": "MT10978",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which build is genogram?",
+        "options": [
+          "CF+R",
+          "CF+S",
+          "R+S",
+          "P+CF+S"
+        ],
+        "correct": 0,
+        "explain": "Genogram joins Gen/o (origin or production) to the root gram (record). Gram is not a suffix, so no further ending is attached and the build is CF+R. CF+S would need a suffix after the combining form. R+S would drop the combining vowel, which this term keeps. P+CF+S would need a prefix, which genogram does not have."
+      },
+      {
+        "id": "MT10979",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which build is orthopedist?",
+        "options": [
+          "CF+S",
+          "CF+R+S",
+          "R+S",
+          "P+R+S"
+        ],
+        "correct": 1,
+        "explain": "Orthopedist joins Orth/o (straight or correct), the root ped (child or foot), and -ist (specialist), so the build is CF+R+S. CF+S would skip the ped root. R+S would drop the combining vowel before ped, which this term keeps. P+R+S would need a prefix, which orthopedist does not have."
+      },
+      {
+        "id": "MT10980",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which pair of builds matches scleroderma, then stenosis?",
+        "options": [
+          "R+S, then CF+R",
+          "CF+S, then R+S",
+          "CF+R, then CF+S",
+          "CF+R, then R+S"
+        ],
+        "correct": 3,
+        "explain": "Scleroderma joins Scler/o to the root derma and has no suffix, so it is CF+R. Stenosis joins sten to vowel-initial -osis and drops the combining vowel, so it is R+S. R+S then CF+R reverses the two terms. CF+S then R+S treats scleroderma as if derma were a suffix. CF+R then CF+S keeps scleroderma right but treats -osis as consonant-initial."
+      },
+      {
+        "id": "MT10981",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Which build is hydrophobia?",
+        "options": [
+          "CF+S",
+          "R+S",
+          "CF+R+S",
+          "P+R+S"
+        ],
+        "correct": 2,
+        "explain": "Hydrophobia joins Hydr/o (water), the root phob (fear), and -ia (condition), so the build is CF+R+S. CF+S would skip the phob root. R+S would drop the combining vowel before phob, which this term keeps. P+R+S would need a prefix, which hydrophobia does not have."
+      },
+      {
+        "id": "MT10982",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "In the term cutaneous, what does Cutane/o stand for?",
+        "options": [
+          "Skin",
+          "Hard",
+          "Cell",
+          "Poison"
+        ],
+        "correct": 0,
+        "explain": "Cutane/o means skin, so in cutaneous it is the skin element. The suffix -ous begins with a vowel, so the combining vowel is dropped and the written word is cutane + ous, still from Cutane/o. Hard is Scler/o, cell is Cyt/o, and poison is Tox/o or Toxic/o."
+      },
+      {
+        "id": "MT10983",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Before a vowel-initial suffix, a combining vowel is…",
+        "options": [
+          "Kept",
+          "Dropped"
+        ],
+        "correct": 1,
+        "explain": "Before a vowel-initial suffix the combining vowel is dropped, as in hepatectomy (hepat + ectomy)."
+      },
+      {
+        "id": "MT10984",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Before a consonant-initial suffix, a combining vowel is…",
+        "options": [
+          "Kept",
+          "Dropped"
+        ],
+        "correct": 0,
+        "explain": "Before a consonant-initial suffix the combining vowel is kept, as in gastroptosis (gastr/o + ptosis)."
+      },
+      {
+        "id": "MT10985",
+        "type": "mcq",
+        "cat": "MT_lec9",
+        "q": "Between two roots, when the second begins with a vowel, a combining vowel is…",
+        "options": [
+          "Kept",
+          "Dropped"
+        ],
+        "correct": 0,
+        "explain": "Between two roots the combining vowel is kept even before a vowel, as in fibroadenoma (fibr/o + aden + oma)."
+      },
+      {
+        "id": "MT10986",
+        "type": "matching",
+        "cat": "MT_lec9",
+        "q": "Match each combining form to its category.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Cyt/o"
+          },
+          {
+            "id": "2",
+            "text": "Carcin/o"
+          },
+          {
+            "id": "3",
+            "text": "Derm/o"
+          },
+          {
+            "id": "4",
+            "text": "Crin/o"
+          },
+          {
+            "id": "5",
+            "text": "Enter/o"
+          },
+          {
+            "id": "6",
+            "text": "Esthesi/o"
+          },
+          {
+            "id": "7",
+            "text": "Esophag/o"
+          },
+          {
+            "id": "8",
+            "text": "Fibr/o"
+          },
+          {
+            "id": "9",
+            "text": "Gastr/o"
+          },
+          {
+            "id": "10",
+            "text": "Gen/o"
+          },
+          {
+            "id": "11",
+            "text": "Hepat/o"
+          },
+          {
+            "id": "12",
+            "text": "Gynec/o"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Organs / Structures"
+          },
+          {
+            "id": "B",
+            "text": "General"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "A",
+          "4": "B",
+          "5": "A",
+          "6": "B",
+          "7": "A",
+          "8": "B",
+          "9": "A",
+          "10": "B",
+          "11": "A",
+          "12": "B"
+        },
+        "explain": "Cyt/o, Derm/o, Enter/o, Esophag/o, Gastr/o and Hepat/o are Organs / Structures. Carcin/o, Crin/o, Esthesi/o, Fibr/o, Gen/o and Gynec/o are General."
+      },
+      {
+        "id": "MT10987",
+        "type": "matching",
+        "cat": "MT_lec9",
+        "q": "Match each combining form to its category.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Dermat/o"
+          },
+          {
+            "id": "2",
+            "text": "Lith/o"
+          },
+          {
+            "id": "3",
+            "text": "Cutane/o"
+          },
+          {
+            "id": "4",
+            "text": "Morph/o"
+          },
+          {
+            "id": "5",
+            "text": "Aden/o"
+          },
+          {
+            "id": "6",
+            "text": "Necr/o"
+          },
+          {
+            "id": "7",
+            "text": "Onc/o"
+          },
+          {
+            "id": "8",
+            "text": "Orth/o"
+          },
+          {
+            "id": "9",
+            "text": "Path/o"
+          },
+          {
+            "id": "10",
+            "text": "Ped/o"
+          },
+          {
+            "id": "11",
+            "text": "Phag/o"
+          },
+          {
+            "id": "12",
+            "text": "Phas/o"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Organs / Structures"
+          },
+          {
+            "id": "B",
+            "text": "General"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "A",
+          "4": "B",
+          "5": "A",
+          "6": "B",
+          "7": "B",
+          "8": "B",
+          "9": "B",
+          "10": "B",
+          "11": "B",
+          "12": "B"
+        },
+        "explain": "Dermat/o, Cutane/o and Aden/o are Organs / Structures. Lith/o, Morph/o, Necr/o, Onc/o, Orth/o, Path/o, Ped/o, Phag/o and Phas/o are General."
+      },
+      {
+        "id": "MT10988",
+        "type": "matching",
+        "cat": "MT_lec9",
+        "q": "Match each combining form to its category.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Phob/o"
+          },
+          {
+            "id": "2",
+            "text": "Scler/o"
+          },
+          {
+            "id": "3",
+            "text": "Son/o"
+          },
+          {
+            "id": "4",
+            "text": "Sten/o"
+          },
+          {
+            "id": "5",
+            "text": "Tox/o"
+          },
+          {
+            "id": "6",
+            "text": "Toxic/o"
+          },
+          {
+            "id": "7",
+            "text": "Hydr/o"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Organs / Structures"
+          },
+          {
+            "id": "B",
+            "text": "General"
+          }
+        ],
+        "correct_pairs": {
+          "1": "B",
+          "2": "B",
+          "3": "B",
+          "4": "B",
+          "5": "B",
+          "6": "B",
+          "7": "B"
+        },
+        "explain": "Phob/o, Scler/o, Son/o, Sten/o, Tox/o, Toxic/o and Hydr/o are all General. None of these is an organ or structure."
+      }
+    ]
+  }
+}
