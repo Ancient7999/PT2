@@ -1169,7 +1169,6 @@ function enterRunChrome(label){
   document.body.classList.toggle('simple-run', isSimpleRun());
   document.getElementById('quizSub').textContent=(BANK.title||'')+' · '+(isSimpleRun()?wholeGroups().length:questions.length)+' remaining this run';
   document.getElementById('statusText').textContent=label;
-  { const esc=document.getElementById('quizEscLabel'); if(esc) esc.textContent=LECTURE_SET?'back to lectures':'back to sets'; }
   document.getElementById('qTotal').textContent=isSimpleRun()?wholeGroups().length:questions.length;
   document.getElementById('quizScreen').style.display='block';
   document.getElementById('finalScreen').style.display='none';
