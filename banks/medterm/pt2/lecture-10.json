@@ -1,1 +1,2381 @@
-{"id": "lecture-10---disease-abbreviation-pharmaceutical-treatment-dental-terms", "subject": "Medical Terminology", "subjectId": "medical_terminology", "title": "Lecture 10 - Disease, Abbreviation, Pharmaceutical, Treatment, and Dental Terms", "formSize": 102, "forms": ["A"], "bank": {"A": [{"id": "MT10001", "type": "mcq", "cat": "MT_lec10", "q": "Which term describes a condition with severe symptoms over a short period, such as a cold?", "options": ["Chronic", "Acute", "Progressive", "Recurrent"], "correct": 1, "explain": "Acute denotes severe symptoms over a short period, as in a cold. Chronic denotes slow development of symptoms over a long period, as in asthma, and is the opposite course. Progressive denotes increasing severity, and recurrent denotes occurrence or repetition, neither of which matches the short severe course."}, {"id": "MT10002", "type": "mcq", "cat": "MT_lec10", "q": "Which term describes a disease that develops slowly over a long period, such as asthma?", "options": ["Acute", "Chronic", "Progressive", "Recurrent"], "correct": 1, "explain": "Chronic denotes slow development of symptoms over a long period, as in asthma. Acute is its opposite, severe symptoms over a short period, as in a cold. Progressive means increasing severity of signs and symptoms, and recurrent means to occur or repeat again, as in a viral infection; all four describe the course of a disease, but only chronic matches a long slow development."}, {"id": "MT10003", "type": "mcq", "cat": "MT_lec10", "q": "Which term describes a tumor that is mild or non-cancerous?", "options": ["Malignant", "Benign", "Systemic", "Progressive"], "correct": 1, "explain": "Benign denotes a mild or non-cancerous growth, as in a venous lymphangioma on the shoulder. Malignant is its opposite, a harmful or cancerous growth such as lung or breast cancer. Systemic relates to the whole body, and progressive denotes increasing severity, neither of which names the mild quality of a tumor."}, {"id": "MT10004", "type": "mcq", "cat": "MT_lec10", "q": "Which term describes a growth that is harmful or cancerous, such as lung or breast cancer?", "options": ["Benign", "Malignant", "Localized", "Etiologic"], "correct": 1, "explain": "Malignant denotes a harmful or cancerous growth, such as lung or breast cancer. Benign is its opposite, a mild or non-cancerous growth. Localized means confined to a definite area, and etiologic pertains to the study of causes, neither of which names the cancerous quality."}, {"id": "MT10005", "type": "mcq", "cat": "MT_lec10", "q": "Which term denotes the identification of a disease from its symptoms and tests, as when malaria is identified?", "options": ["Etiology", "Prognosis", "Prophylaxis", "Diagnosis"], "correct": 3, "explain": "Diagnosis is the identification of the disease based on symptoms and tests, as when malaria is identified. Etiology is the study of the causes of a disease, with the cause sense in the root etio-. Prognosis is the prediction of the likely outcome, and prophylaxis denotes preventive or precautionary measures such as vaccination; the four are the workup and prevention verbs, but only diagnosis matches identification from symptoms and tests."}, {"id": "MT10006", "type": "mcq", "cat": "MT_lec10", "q": "In the term etiology, which element supplies the sense of cause?", "options": ["etio-", "-logy", "-y", "-gen"], "correct": 0, "explain": "Etiology decomposes into the root etio- (cause), the suffix -logy (study), and the nominal ending -y. The sense of cause sits in etio-. The suffix -logy supplies study, and -y only makes the noun. The element -gen means origin or production, but it is not part of this word and does not carry the cause sense here."}, {"id": "MT10007", "type": "mcq", "cat": "MT_lec10", "q": "Which term describes a condition limited to a definite area, such as a headache?", "options": ["Systemic", "Localized", "Progressive", "Recurrent"], "correct": 1, "explain": "Localized denotes confinement to a definite area or part, as in a headache. Systemic relates to the whole body, as in a fever, and is the opposite scope. Progressive denotes increasing severity, and recurrent denotes occurrence or repetition, neither of which describes confinement to one area."}, {"id": "MT10008", "type": "mcq", "cat": "MT_lec10", "q": "Which term describes a condition relating to the whole body, such as a fever?", "options": ["Localized", "Systemic", "Prognostic", "Etiologic"], "correct": 1, "explain": "Systemic denotes involvement of the whole body, as in a fever. Localized is its opposite, confinement to a definite area such as a headache. Prognostic pertains to the prediction of an outcome, and etiologic pertains to the study of causes, neither of which describes whole-body involvement."}, {"id": "MT10009", "type": "mcq", "cat": "MT_lec10", "q": "Which term means predicting a disease's likely outcome before symptoms, as in Alzheimer's?", "options": ["Prognosis", "Progressive", "Prophylaxis", "Diagnosis"], "correct": 0, "explain": "Prognosis is the prediction of the likely outcome of a disease, possible before symptoms in Alzheimer's. Progressive is worsening, prophylaxis is prevention, and diagnosis is identification."}, {"id": "MT10010", "type": "mcq", "cat": "MT_lec10", "q": "Which term denotes increasing severity of signs and symptoms, as in advancing ailments such as Alzheimer's disease?", "options": ["Prognosis", "Progressive", "Prophylaxis", "Recurrent"], "correct": 1, "explain": "Progressive denotes increasing severity of signs and symptoms. Prognosis predicts the likely outcome, prophylaxis denotes preventive measures, and recurrent denotes occurrence or repetition rather than advancing severity."}, {"id": "MT10011", "type": "mcq", "cat": "MT_lec10", "q": "Which term denotes preventive or precautionary measures, such as vaccination?", "options": ["Prophylaxis", "Prognosis", "Recurrent", "Syndrome"], "correct": 0, "explain": "Prophylaxis denotes preventive or precautionary measures, as in vaccination. Prognosis predicts the likely outcome, recurrent denotes occurrence or repetition, and a syndrome is a group of symptoms and signs, none of which names a preventive measure."}, {"id": "MT10012", "type": "mcq", "cat": "MT_lec10", "q": "Which term means to occur or repeat again, as in a viral infection?", "options": ["Progressive", "Prophylaxis", "Recurrent", "Localized"], "correct": 2, "explain": "Recurrent means to occur or repeat again, as in a viral infection. Progressive denotes increasing severity, prophylaxis denotes preventive measures, and localized denotes confinement to a definite area, none of which matches a repeated occurrence."}, {"id": "MT10013", "type": "mcq", "cat": "MT_lec10", "q": "Which term denotes a single observable mark or symptom of a disease, such as a fever or pain?", "options": ["Syndrome", "Sign", "Diagnosis", "Etiology"], "correct": 1, "explain": "A sign is a single mark or symptom of a disease, such as fever or pain. A syndrome is the coherent group of symptoms and signs of a particular disease, such as Down syndrome. Diagnosis and etiology name the identification and the study of causes, neither of which is a single observable mark."}, {"id": "MT10014", "type": "mcq", "cat": "MT_lec10", "q": "Which term denotes the group of symptoms and signs of a particular disease?", "options": ["Sign", "Syndrome", "Systemic", "Prognosis"], "correct": 1, "explain": "A syndrome is the group of symptoms and signs of a particular disease, such as Down syndrome. A sign is a single observable mark, systemic relates to the whole body, and prognosis predicts the likely outcome, none of which names the grouping itself."}, {"id": "MT10015", "type": "stepped", "cat": "MT_lec10", "q": "Alzheimer's disease illustrates two course terms.", "steps": [{"id": "1", "prompt": "Which term foresees the likely outcome before symptoms show?", "options": ["Prognosis", "Progressive", "Diagnosis", "Etiology"], "correct": 0}, {"id": "2", "prompt": "Prognosis comes before symptoms. Which term marks worsening after confirmation?", "options": ["Progressive", "Prognosis", "Recurrent", "Localized"], "correct": 0}], "explain": "In Alzheimer's, prognosis foresees the likely outcome before symptoms show; progressive describes the worsening after the disease is confirmed. Diagnosis identifies the disease, and etiology studies its cause."}, {"id": "MT10016", "type": "mcq", "cat": "MT_lec10", "q": "Which set of abbreviations names care units or a treatment room rather than patient status or measurement?", "options": ["IP, OP, DC, BP", "Rx, Sx, Dx, Tx", "CCU, ECU, ICU, OR", "bid, tid, pp, wk"], "correct": 2, "explain": "CCU is the coronary or cardiac care unit, ECU is the emergency care unit, ICU is the intensive care unit, and OR is the operating room, so that set names care units or a treatment room. IP and OP are patient statuses, DC is discharge or discontinue, and BP is a measurement. Rx, Sx, Dx, and Tx are clinical documentation nouns. Bid, tid, pp, and wk mix dose timing with a calendar span."}, {"id": "MT10017", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation stands for the coronary or cardiac care unit?", "options": ["CCU", "ECU", "ICU", "OR"], "correct": 0, "explain": "CCU stands for the coronary or cardiac care unit. ECU is the emergency care unit, ICU is the intensive care unit, and OR is the operating room."}, {"id": "MT10018", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation stands for the emergency care unit?", "options": ["CCU", "ECU", "ICU", "OR"], "correct": 1, "explain": "ECU stands for the emergency care unit. CCU is the coronary or cardiac care unit, ICU is the intensive care unit, and OR is the operating room."}, {"id": "MT10019", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation stands for the intensive care unit?", "options": ["CCU", "ECU", "ICU", "OR"], "correct": 2, "explain": "ICU stands for the intensive care unit. CCU is the coronary or cardiac care unit, ECU is the emergency care unit, and OR is the operating room."}, {"id": "MT10020", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation stands for the operating room?", "options": ["CCU", "ECU", "ICU", "OR"], "correct": 3, "explain": "OR stands for the operating room. CCU is the coronary or cardiac care unit, ECU is the emergency care unit, and ICU is the intensive care unit."}, {"id": "MT10021", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation stands for an in patient?", "options": ["IP", "OP", "DC", "BP"], "correct": 0, "explain": "IP stands for in patient, a patient admitted to the hospital. OP stands for out patient, one seen without admission. DC or D/C means discharge or discontinue, and BP is blood pressure."}, {"id": "MT10022", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation stands for an out patient?", "options": ["IP", "OP", "DC", "BP"], "correct": 1, "explain": "OP stands for out patient, one seen without admission to the hospital. IP stands for in patient, DC or D/C means discharge or discontinue, and BP is blood pressure."}, {"id": "MT10023", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation stands for discharge or discontinue?", "options": ["DC or D/C", "Dx or DX", "DNR or DNAR", "D&C or D and C"], "correct": 0, "explain": "DC or D/C stands for discharge or discontinue. Dx is diagnosis, DNR or DNAR is do not resuscitate, and D&C is dilation and curettage."}, {"id": "MT10025", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation stands for twice a day?", "options": ["bid, from the Latin bis in die", "tid, from the Latin ter in die", "pp, from the Latin postprandial", "wk, the abbreviation for week"], "correct": 0, "explain": "Bid stands for twice a day, from the Latin bis in die. Tid stands for three times a day, from ter in die. Pp means after meals, from postprandial. Wk is the abbreviation for week, not a dosing instruction."}, {"id": "MT10026", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation stands for three times a day?", "options": ["bid, from the Latin bis in die", "tid, from the Latin ter in die", "pp, from the Latin postprandial", "wk, the abbreviation for week"], "correct": 1, "explain": "Tid stands for three times a day, from the Latin ter in die. Bid stands for twice a day, from bis in die. Pp means after meals, from postprandial. Wk is the abbreviation for week, not a dosing instruction."}, {"id": "MT10027", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation means after meals?", "options": ["bid, from the Latin bis in die", "tid, from the Latin ter in die", "pp, from the Latin postprandial", "wk, the abbreviation for week"], "correct": 2, "explain": "Pp means after meals, from the Latin postprandial. Bid stands for twice a day, from bis in die. Tid stands for three times a day, from ter in die. Wk is the abbreviation for week, not a meal timing."}, {"id": "MT10028", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation stands for week?", "options": ["bid", "pp", "wk", "yr"], "correct": 2, "explain": "Wk stands for week. Bid means twice a day, pp means after meals, and yr stands for year."}, {"id": "MT10029", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation stands for year?", "options": ["bid", "tid", "wk", "yr"], "correct": 3, "explain": "Yr stands for year. Bid means twice a day, tid means three times a day, and wk stands for week."}, {"id": "MT10030", "type": "mcq", "cat": "MT_lec10", "q": "Which set consists entirely of clinical documentation nouns?", "options": ["bid, tid, pp, wk", "CCU, ECU, ICU, OR", "Rx, Sx, Dx, Tx", "IP, OP, DC, BP"], "correct": 2, "explain": "Rx, Sx, Dx, and Tx are the clinical documentation nouns, standing for prescription, symptoms, diagnosis, and treatment, each written as a single letter plus x. The set CCU, ECU, ICU, OR names care units and a procedure room. The set IP, OP, DC, BP mixes patient admission status with a clinical action and a measurement. The set bid, tid, pp, wk mixes dosing instructions with a calendar span. Only the documentation set is coherent as a group of clinical record nouns."}, {"id": "MT10031", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation stands for prescription?", "options": ["Rx", "Sx", "Dx", "Tx"], "correct": 0, "explain": "Rx stands for prescription. Sx stands for symptoms, Dx for diagnosis, and Tx for treatment."}, {"id": "MT10032", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation stands for symptoms?", "options": ["Rx", "Sx", "Dx", "Tx"], "correct": 1, "explain": "Sx stands for symptoms. Rx stands for prescription, Dx for diagnosis, and Tx for treatment."}, {"id": "MT10033", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation stands for diagnosis?", "options": ["Rx", "Sx", "Dx", "Tx"], "correct": 2, "explain": "Dx stands for diagnosis. Rx stands for prescription, Sx for symptoms, and Tx for treatment."}, {"id": "MT10034", "type": "mcq", "cat": "MT_lec10", "q": "Which abbreviation stands for treatment?", "options": ["Rx", "Sx", "Dx", "Tx"], "correct": 3, "explain": "Tx stands for treatment. Rx stands for prescription, Sx for symptoms, and Dx for diagnosis."}, {"id": "MT10035", "type": "mcq", "cat": "MT_lec10", "q": "Which structure is the upper jaw?", "options": ["The mandible", "The maxilla", "The gingiva", "The apex"], "correct": 1, "explain": "The maxilla is the upper jaw. The mandible is the lower jaw, the gingiva is the gums, and the apex is the terminal tip of the tooth root."}, {"id": "MT10036", "type": "mcq", "cat": "MT_lec10", "q": "Which structure is the lower jaw?", "options": ["The maxilla", "The mandible", "The gingiva", "The enamel"], "correct": 1, "explain": "The mandible is the lower jaw. The maxilla is the upper jaw, the gingiva is the gums, and the enamel is the hard outer part of the tooth."}, {"id": "MT10037", "type": "mcq", "cat": "MT_lec10", "q": "The permanent dentition in one jaw counts each tooth class. Which pairing of class to number is incorrect?", "options": ["Incisors, four", "Canines, four", "Premolars, four", "Molars, six"], "correct": 1, "explain": "In one jaw, the permanent dentition counts four incisors, two canines, four premolars, and six molars. Stating canines as four is incorrect because that jaw has two canines. Four is the count of the incisors and of the premolars. The other three pairings match those one-jaw counts."}, {"id": "MT10038", "type": "mcq", "cat": "MT_lec10", "q": "Which class of teeth is the front teeth for cutting?", "options": ["Incisors", "Canines", "Premolars", "Molars"], "correct": 0, "explain": "Incisors are the front teeth for cutting. Canines are the pointed teeth for tearing, premolars are the teeth for chewing, and molars are the grinding teeth."}, {"id": "MT10039", "type": "mcq", "cat": "MT_lec10", "q": "Which class of teeth is the pointed teeth for tearing?", "options": ["Incisors", "Canines", "Premolars", "Molars"], "correct": 1, "explain": "Canines are the pointed teeth for tearing. Incisors are the front teeth for cutting, premolars are the teeth for chewing, and molars are the grinding teeth."}, {"id": "MT10040", "type": "mcq", "cat": "MT_lec10", "q": "Which class of teeth is the teeth for chewing?", "options": ["Incisors", "Canines", "Premolars", "Molars"], "correct": 2, "explain": "Premolars are the teeth for chewing. Incisors are for cutting, canines for tearing, and molars are the grinding teeth."}, {"id": "MT10041", "type": "mcq", "cat": "MT_lec10", "q": "Which class of teeth is the grinding teeth?", "options": ["Incisors", "Canines", "Premolars", "Molars"], "correct": 3, "explain": "Molars are the grinding teeth. Incisors are for cutting, canines for tearing, and premolars for chewing."}, {"id": "MT10042", "type": "mcq", "cat": "MT_lec10", "q": "Which statement correctly describes plaque?", "options": ["Sticky food and bacteria deposit", "Tooth decay caused by caries", "Hard outer part of the tooth", "Tissue holding the blood and nerves"], "correct": 0, "explain": "Plaque is a sticky deposit of food and bacteria on the teeth. Decay is a cavity, the hard outer part is enamel, and the blood and nerve tissue is pulp."}, {"id": "MT10043", "type": "mcq", "cat": "MT_lec10", "q": "Which statement correctly describes a cavity?", "options": ["Sticky food and bacteria deposit", "Tooth decay caused by caries", "Narrow passage inside the tooth", "Part fixed in the jaws"], "correct": 1, "explain": "A cavity is tooth decay caused by caries. Plaque is the sticky deposit, the narrow passage is the canal, and the part in the jaws is the root."}, {"id": "MT10044", "type": "mcq", "cat": "MT_lec10", "q": "How are plaque and a cavity linked?", "options": ["Cavity first, then plaque deposits", "Gingiva hardens into plaque, then cavity", "Enamel dissolves into pulp, leaving cavity", "Plaque fosters caries, causing the cavity"], "correct": 3, "explain": "Plaque fosters caries, and caries produces the cavity (tooth decay). The cavity does not come first, and gingiva and enamel do not turn into plaque or pulp."}, {"id": "MT10045", "type": "mcq", "cat": "MT_lec10", "q": "Which layer is the hard outer part of the tooth?", "options": ["Enamel", "Dentin", "Pulp", "Gingiva"], "correct": 0, "explain": "Enamel is the hard outer part of the tooth. Dentin is the part below the enamel, pulp is the tissue containing the blood and nerve supply, and gingiva is the gums."}, {"id": "MT10046", "type": "mcq", "cat": "MT_lec10", "q": "Which layer is the part below the enamel?", "options": ["Enamel", "Dentin", "Pulp", "Canal"], "correct": 1, "explain": "Dentin is the part below the enamel. Enamel is the hard outer part, pulp is the tissue containing the blood and nerve supply, and canal is the narrow tubular passage inside the tooth."}, {"id": "MT10047", "type": "mcq", "cat": "MT_lec10", "q": "Which tooth structure is the tissue containing the blood and nerve supply?", "options": ["Enamel", "Dentin", "Pulp", "Gingiva"], "correct": 2, "explain": "Pulp is the tissue containing the blood and nerve supply. Enamel is the hard outer part, dentin is the part below the enamel, and gingiva is the gums."}, {"id": "MT10048", "type": "mcq", "cat": "MT_lec10", "q": "What does the term gingiva denote?", "options": ["Gums", "Enamel", "Canal", "Apex"], "correct": 0, "explain": "Gingiva means the gums. Enamel is the hard outer part, the canal is the passage inside the tooth, and the apex is the root tip."}, {"id": "MT10049", "type": "mcq", "cat": "MT_lec10", "q": "Which structure is the narrow tubular passage inside the tooth?", "options": ["The root", "The canal", "The apex", "The gingiva"], "correct": 1, "explain": "The canal is the narrow tubular passage inside the tooth. The root is the part fixed in the jaws, the apex is the terminal tip of the root, and the gingiva is the gums."}, {"id": "MT10050", "type": "mcq", "cat": "MT_lec10", "q": "Which structure is the part of the tooth fixed in the jaws?", "options": ["The canal", "The apex", "The root", "The pulp"], "correct": 2, "explain": "The root is the part of the tooth fixed in the jaws. The canal is the narrow tubular passage, the apex is the terminal tip of the root, and the pulp is the inner tissue containing the blood and nerve supply."}, {"id": "MT10051", "type": "mcq", "cat": "MT_lec10", "q": "Which structure is the terminal tip of the tooth root?", "options": ["The canal", "The apex", "The root", "The gingiva"], "correct": 1, "explain": "The apex is the terminal tip of the tooth root. The canal is the narrow tubular passage inside the tooth, the root is the part fixed in the jaws, and the gingiva is the gums."}, {"id": "MT10052", "type": "mcq", "cat": "MT_lec10", "q": "Reading a tooth from its outer surface toward its center, which order of layers is correct?", "options": ["Enamel, dentin, pulp", "Dentin, enamel, pulp", "Pulp, dentin, enamel", "Enamel, pulp, dentin"], "correct": 0, "explain": "Reading from the outer surface inward, enamel is the hard outer part, dentin is the part below the enamel, and pulp is the inner tissue containing the blood and nerve supply, so the order is enamel, dentin, pulp. The pulp is innermost and never the outer layer, and dentin never lies outside enamel."}, {"id": "MT10053", "type": "mcq", "cat": "MT_lec10", "q": "Which term denotes an artificial substitute for natural teeth, supplied as a partial or full appliance?", "options": ["A denture", "An endodontist", "An orthodontist", "A prosthodontist"], "correct": 0, "explain": "A denture is the artificial substitute for natural teeth, supplied as a partial or full appliance, so it is an object. The endodontist, orthodontist, and prosthodontist are practitioners rather than appliances."}, {"id": "MT10054", "type": "mcq", "cat": "MT_lec10", "q": "Which specialist treats pulp-related dental problems?", "options": ["The endodontist", "The orthodontist", "The pedodontist", "The prosthodontist"], "correct": 0, "explain": "The endodontist treats pulp-related problems, with endo- pointing within to the pulp. The orthodontist straightens teeth, the pedodontist treats children's teeth, and the prosthodontist replaces missing teeth."}, {"id": "MT10055", "type": "mcq", "cat": "MT_lec10", "q": "Which specialist straightens the teeth?", "options": ["The endodontist", "The orthodontist", "The pedodontist", "The prosthodontist"], "correct": 1, "explain": "The orthodontist straightens the teeth, with ortho- meaning straight. The endodontist treats pulp problems, the pedodontist treats children's teeth, and the prosthodontist replaces missing teeth."}, {"id": "MT10056", "type": "mcq", "cat": "MT_lec10", "q": "Which specialist treats children's teeth?", "options": ["The endodontist", "The orthodontist", "The pedodontist", "The prosthodontist"], "correct": 2, "explain": "The pedodontist treats children's teeth, with pedo- meaning child. The endodontist treats pulp problems, the orthodontist straightens teeth, and the prosthodontist replaces missing teeth."}, {"id": "MT10058", "type": "mcq", "cat": "MT_lec10", "q": "Which of the following combining forms means tooth?", "options": ["cyt/o", "gingiv/o", "oste/o", "odont/o"], "correct": 3, "explain": "Odont/o means tooth or teeth, as in endodontist and orthodontist. Gingiv/o means the gums, cyt/o means cell, and oste/o means bone, none of which denotes the tooth. The tooth is also carried by the interchangeable forms dent/o, dent/i, and dent-, seen in dentin and denture."}, {"id": "MT10059", "type": "matching", "cat": "MT_lec10", "q": "Match each disease-course or tumor term to the meaning it conveys.", "leftItems": [{"id": "1", "text": "Acute"}, {"id": "2", "text": "Chronic"}, {"id": "3", "text": "Benign"}, {"id": "4", "text": "Malignant"}, {"id": "5", "text": "Diagnosis"}, {"id": "6", "text": "Etiology"}], "rightItems": [{"id": "A", "text": "Study of disease causes"}, {"id": "B", "text": "Severe symptoms over a short period"}, {"id": "C", "text": "Mild or non-cancerous"}, {"id": "D", "text": "Identifying disease from symptoms, tests"}, {"id": "E", "text": "Harmful or cancerous"}, {"id": "F", "text": "Slow symptoms over long period"}], "correct_pairs": {"1": "B", "2": "F", "3": "C", "4": "E", "5": "D", "6": "A"}, "explain": "Acute is severe and short, chronic slow and long, benign mild or non-cancerous, malignant harmful or cancerous, diagnosis identification from symptoms and tests, and etiology the study of causes."}, {"id": "MT10060", "type": "matching", "cat": "MT_lec10", "q": "Match each remaining disease term to the meaning it conveys.", "leftItems": [{"id": "1", "text": "Localized"}, {"id": "2", "text": "Systemic"}, {"id": "3", "text": "Prognosis"}, {"id": "4", "text": "Progressive"}, {"id": "5", "text": "Prophylaxis"}, {"id": "6", "text": "Recurrent"}], "rightItems": [{"id": "A", "text": "Limited to one definite area"}, {"id": "B", "text": "Predicting a disease's likely outcome"}, {"id": "C", "text": "Preventive or precautionary measures"}, {"id": "D", "text": "Relating to the whole body"}, {"id": "E", "text": "To occur or repeat again"}, {"id": "F", "text": "Increasing severity of signs and symptoms"}], "correct_pairs": {"1": "A", "2": "D", "3": "B", "4": "F", "5": "C", "6": "E"}, "explain": "Localized is limited to one area, systemic involves the whole body, prognosis predicts the outcome, progressive means increasing severity, prophylaxis is prevention, and recurrent means repeating."}, {"id": "MT10061", "type": "matching", "cat": "MT_lec10", "q": "Match each term to the meaning it conveys.", "leftItems": [{"id": "1", "text": "Sign"}, {"id": "2", "text": "Syndrome"}, {"id": "3", "text": "Maxilla"}, {"id": "4", "text": "Mandible"}, {"id": "5", "text": "Plaque"}, {"id": "6", "text": "Cavity"}], "rightItems": [{"id": "A", "text": "Lower jaw"}, {"id": "B", "text": "Sticky food and bacteria deposit"}, {"id": "C", "text": "A mark or symptom of disease"}, {"id": "D", "text": "Tooth decay caused by caries"}, {"id": "E", "text": "Upper jaw"}, {"id": "F", "text": "Cluster of signs of one disease"}], "correct_pairs": {"1": "C", "2": "F", "3": "E", "4": "A", "5": "B", "6": "D"}, "explain": "A sign is a mark of disease, a syndrome a group of signs and symptoms of one disease, the maxilla the upper jaw, the mandible the lower jaw, plaque a sticky deposit, and a cavity decay from caries."}, {"id": "MT10062", "type": "matching", "cat": "MT_lec10", "q": "Match each medical abbreviation to the meaning it conveys.", "leftItems": [{"id": "1", "text": "CCU"}, {"id": "2", "text": "ECU"}, {"id": "3", "text": "ICU"}, {"id": "4", "text": "OR"}, {"id": "5", "text": "IP"}, {"id": "6", "text": "OP"}], "rightItems": [{"id": "A", "text": "Emergency Care Unit"}, {"id": "B", "text": "Intensive Care Unit"}, {"id": "C", "text": "Out Patient"}, {"id": "D", "text": "Coronary or Cardiac Care Unit"}, {"id": "E", "text": "Operating Room"}, {"id": "F", "text": "In Patient"}], "correct_pairs": {"1": "D", "2": "A", "3": "B", "4": "E", "5": "F", "6": "C"}, "explain": "The care units sort by the kind of attention given. CCU is the coronary or cardiac care unit, ECU is the emergency care unit, ICU is the intensive care unit, and OR is the operating room where surgery occurs. Patient status is binary, IP for an admitted in patient and OP for an out patient seen without admission."}, {"id": "MT10063", "type": "matching", "cat": "MT_lec10", "q": "Match each dosing or status abbreviation to the meaning it conveys.", "leftItems": [{"id": "1", "text": "DC or D/C"}, {"id": "2", "text": "BP"}, {"id": "3", "text": "bid"}, {"id": "4", "text": "tid"}, {"id": "5", "text": "pp"}, {"id": "6", "text": "wk"}], "rightItems": [{"id": "A", "text": "Discharge, Discontinue"}, {"id": "B", "text": "Twice a day (bis in die)"}, {"id": "C", "text": "After meals (post prandial)"}, {"id": "D", "text": "Blood Pressure"}, {"id": "E", "text": "Week"}, {"id": "F", "text": "Three times daily (ter in die)"}], "correct_pairs": {"1": "A", "2": "D", "3": "B", "4": "F", "5": "C", "6": "E"}, "explain": "DC or D/C is discharge or discontinue, BP blood pressure, bid twice a day, tid three times a day, pp after meals, and wk week."}, {"id": "MT10064", "type": "matching", "cat": "MT_lec10", "q": "Match each remaining abbreviation to the meaning it conveys.", "leftItems": [{"id": "1", "text": "Rx"}, {"id": "2", "text": "Sx"}, {"id": "3", "text": "Dx"}, {"id": "4", "text": "Tx"}, {"id": "5", "text": "yr"}, {"id": "6", "text": "OR"}], "rightItems": [{"id": "A", "text": "Diagnosis"}, {"id": "B", "text": "Symptoms"}, {"id": "C", "text": "Prescription"}, {"id": "D", "text": "Operating Room"}, {"id": "E", "text": "Treatment"}, {"id": "F", "text": "Year"}], "correct_pairs": {"1": "C", "2": "B", "3": "A", "4": "E", "5": "F", "6": "D"}, "explain": "The four clinical nouns are written as a single letter plus x. Rx is prescription, Sx is symptoms, Dx is diagnosis, and Tx is treatment. The x stands in for the trailing consonant cluster of each word, and the leading letter fixes which noun is meant. The calendar span yr stands for year, and OR stands for the operating room."}, {"id": "MT10065", "type": "matching", "cat": "MT_lec10", "q": "Match each tooth structure to the meaning it conveys.", "leftItems": [{"id": "1", "text": "Enamel"}, {"id": "2", "text": "Dentin"}, {"id": "3", "text": "Pulp"}, {"id": "4", "text": "Gingiva"}, {"id": "5", "text": "Canal"}, {"id": "6", "text": "Root"}], "rightItems": [{"id": "A", "text": "Part below enamel"}, {"id": "B", "text": "Gums"}, {"id": "C", "text": "Hard outer part of tooth"}, {"id": "D", "text": "Narrow tubular passage inside the tooth"}, {"id": "E", "text": "Tissue containing blood and nerve supply"}, {"id": "F", "text": "Part fixed in the jaws"}], "correct_pairs": {"1": "C", "2": "A", "3": "E", "4": "B", "5": "D", "6": "F"}, "explain": "The layers and supporting parts of a tooth are enamel as the hard outer part, dentin as the part below the enamel, pulp as the tissue containing the blood and nerve supply, gingiva as the gums, canal as the narrow tubular passage inside the tooth, and root as the part fixed in the jaws. Read from outer surface toward center, the main tissue order is enamel, dentin, pulp."}, {"id": "MT10066", "type": "matching", "cat": "MT_lec10", "q": "Match each dental appliance or specialist to the meaning it conveys.", "leftItems": [{"id": "1", "text": "Denture"}, {"id": "2", "text": "Endodontist"}, {"id": "3", "text": "Orthodontist"}, {"id": "4", "text": "Pedodontist"}, {"id": "5", "text": "Prosthodontist"}], "rightItems": [{"id": "A", "text": "Specialist in replacing missing teeth"}, {"id": "B", "text": "Artificial teeth, partial or full"}, {"id": "C", "text": "Specialist in treating children's teeth"}, {"id": "D", "text": "Specialist in pulp-related treatment"}, {"id": "E", "text": "Specialist in straightening teeth"}], "correct_pairs": {"1": "B", "2": "D", "3": "E", "4": "C", "5": "A"}, "explain": "A denture is a partial or full artificial set of teeth. Endodontists treat pulp, orthodontists straighten teeth, pedodontists treat children, and prosthodontists replace missing teeth."}, {"id": "MT10067", "type": "mcq", "cat": "MT_lec10", "q": "Which analysis identifies the components of hyperlipemia and the meaning of each?", "options": ["R+R+S: below or less, protein, blood condition", "CF+R+S: production, sugar, blood condition", "P+CF+S: above or excessive, oxygen, blood condition", "P+R+S: above or excessive, fat, blood condition"], "correct": 3, "explain": "Hyperlipemia splits into the prefix hyper- (above or excessive), the root lip (fat), and the suffix -emia (blood condition), so the reading is excessive fat in the blood. A below-or-less and protein reading names a low protein blood condition, and it is not this word. A production and sugar reading analyzes a different built term. An above-or-excessive and oxygen reading keeps a fitting prefix but substitutes the wrong root."}, {"id": "MT10068", "type": "mcq", "cat": "MT_lec10", "q": "Which term completes the meaning of before surgery?", "options": ["Postoperative", "Intraoperative", "Preoperative", "Perioperative"], "correct": 2, "explain": "Preoperative uses pre- for before, so it names the period before surgery. Postoperative uses post- for after the procedure. Intraoperative uses intra- for within the procedure. Perioperative uses peri- for around the time of the procedure, which is wider than the period before surgery alone."}, {"id": "MT10069", "type": "mcq", "cat": "MT_lec10", "q": "A clinician names the disease, then predicts its outcome. Which terms, in order?", "options": ["Diagnosis, then prognosis", "Prognosis, then diagnosis", "Diagnosis, then prophylaxis", "Syndrome, then diagnosis"], "correct": 0, "explain": "Naming the disease from findings is diagnosis; predicting the outcome is prognosis. Prophylaxis is prevention and a syndrome is a group of signs."}, {"id": "MT10070", "type": "mcq", "cat": "MT_lec10", "q": "Which set of combining forms is interchangeable for tooth or teeth?", "options": ["odont/o, dent/o, dent/i, and dent-", "gingiv/o, dent/o, dent/i, and dent-", "odont/o, oste/o, dent/i, and dent-", "cyt/o, odont/o, dent/o, and dent-"], "correct": 0, "explain": "The tooth is named by the interchangeable forms odont/o, dent/o, dent/i, and dent-, as in endodontist, dentin, and denture. Gingiv/o names the gums, so a set that leads with gingiv/o is not a tooth set. Oste/o names bone, and cyt/o names cell, so either substitution leaves the set."}, {"id": "MT10071", "type": "mcq", "cat": "MT_lec10", "q": "Where is a patient needing urgent care, without cardiac monitoring or surgery, sent?", "options": ["ICU, the intensive care unit", "ECU, the emergency care unit", "CCU, the coronary or cardiac care unit", "OP, the out patient clinic"], "correct": 1, "explain": "Urgent treatment goes to the ECU, the emergency care unit. The ICU is intensive care, the CCU coronary or cardiac care, and OP the outpatient clinic."}, {"id": "MT10072", "type": "mcq", "cat": "MT_lec10", "q": "Which karyotype is the female pattern of Down syndrome?", "options": ["47,XX,+21, female trisomy 21", "47,XY,+21, male trisomy 21", "46,XX, usual female count", "47,XX,+18, female trisomy 18"], "correct": 0, "explain": "The female pattern of Down syndrome is 47,XX,+21, an extra chromosome 21 with a female sex-chromosome pair. 47,XY,+21 is the male pattern of the same trisomy, so it is not the female pattern. 46,XX is the usual female count, with no extra chromosome. 47,XX,+18 is a female trisomy of chromosome 18, not chromosome 21."}, {"id": "MT10073", "type": "stepped", "cat": "MT_lec10", "q": "Which findings make up the sign cluster of Down syndrome?", "steps": [{"id": "1", "prompt": "Face", "options": ["Flat face", "Long face", "Round face", "Narrow face"], "correct": 0}, {"id": "2", "prompt": "Head", "options": ["Small head", "Large head", "Long head", "Pointed head"], "correct": 0}, {"id": "3", "prompt": "Tongue", "options": ["Protruding tongue", "Small, short tongue", "Absent tongue", "Tied-down tongue"], "correct": 0}, {"id": "4", "prompt": "Eyes", "options": ["Upward slanting eyes", "Downward slanting eyes", "Lateral slanting eyes", "No eye slant"], "correct": 0}, {"id": "5", "prompt": "Cheeks", "options": ["Rounded cheeks", "Sunken cheeks", "Hollow cheeks", "Pale cheeks"], "correct": 0}, {"id": "6", "prompt": "Muscles", "options": ["Hypotonia", "Rigid muscles", "Spasm", "Tremor"], "correct": 0}], "explain": "Down syndrome gathers a flat face, a small head, a small mouth with a protruding tongue, upward slanting eyes, rounded cheeks, and weak floppy muscles, called hypotonia. A long, round, or narrow face is not the face finding. A large, long, or pointed head is not the head finding. A small, absent, or short tongue is not the tongue finding. Downward, lateral, or absent slant is not the eye finding. Sunken, hollow, or pale cheeks are not the cheek finding. Rigid muscles, spasm, and tremor are not the muscle finding."}, {"id": "MT10074", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 1, "q": "What does CCU stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which expansion is spelled correctly?", "options": ["Coronary or cardiac care unit", "Corronary or cardiac care unit", "Coronery or cardiac care unit", "Coronorry or cardiac care unit"], "correct": 0}], "explain": "CCU stands for the coronary or cardiac care unit. Corronary, Coronery, and Coronorry misspell the content word. The other care units are ECU, ICU, and OR."}, {"id": "MT10075", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 2, "q": "What does ECU stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["Emergency care unit", "Endocrine care unit", "External cardiac unit", "Elective cardiac unit"], "correct": 0}], "explain": "ECU stands for the emergency care unit. Endocrine care unit, external cardiac unit, and elective cardiac unit share the letters but are not the expansion."}, {"id": "MT10076", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 3, "q": "What does ICU stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["Intensive care unit", "Internal cardiac unit", "Immediate cardiac unit", "Intravenous care unit"], "correct": 0}], "explain": "ICU stands for the intensive care unit. Internal cardiac unit, immediate cardiac unit, and intravenous care unit share the letters but are not the expansion."}, {"id": "MT10077", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 4, "q": "What does OR stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["Operating room", "Oncology room", "Orthopedic room", "Outpatient recovery"], "correct": 0}], "explain": "OR stands for the operating room. Oncology room, orthopedic room, and outpatient recovery share the letters but are not the expansion."}, {"id": "MT10078", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 5, "q": "What does IP stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["In patient", "Isolated patient", "Intake procedure", "Internal pressure"], "correct": 0}], "explain": "IP stands for in patient, a patient admitted to the hospital. Isolated patient, intake procedure, and internal pressure share the letters but are not the expansion."}, {"id": "MT10079", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 6, "q": "What does OP stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["Out patient", "Operating procedure", "Observed patient", "Oral pressure"], "correct": 0}], "explain": "OP stands for out patient, one seen without admission. Operating procedure, observed patient, and oral pressure share the letters but are not the expansion."}, {"id": "MT10080", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 7, "q": "What does DC stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["Discharge or discontinue", "Daily care or dosage", "Dose change or delay", "Drug control or dispensing"], "correct": 0}], "explain": "DC or D/C stands for discharge or discontinue. Daily care or dosage, dose change or delay, and drug control or dispensing share the letters but are not the expansion."}, {"id": "MT10081", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 8, "q": "What does BP stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["Blood pressure", "Blood plasma", "Body pulse", "Basal pressure"], "correct": 0}], "explain": "BP stands for blood pressure. Blood plasma, body pulse, and basal pressure share the letters but are not the expansion."}, {"id": "MT10082", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 9, "q": "What does bid stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["Twice a day", "Three times a day", "After meals", "Every week"], "correct": 0}, {"id": "2", "prompt": "Which Latin source is spelled correctly?", "options": ["Bis in die", "Bis in dee", "Bis en die", "Biss in die"], "correct": 0}], "explain": "Bid means twice a day. Three times a day is tid, after meals is pp, and week is wk. The Latin source is bis in die. Bis in dee, Bis en die, and Biss in die misspell that source."}, {"id": "MT10083", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 10, "q": "What does tid stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["Three times a day", "Four times a day", "After every meal", "Once every week"], "correct": 0}, {"id": "2", "prompt": "Which Latin source is spelled correctly?", "options": ["Ter in die", "Ter in dee", "Ter en die", "Terr in die"], "correct": 0}], "explain": "Tid means three times a day. Twice a day is bid, after meals is pp, and week is wk. The Latin source is ter in die. Ter in dee, Ter en die, and Terr in die misspell that source."}, {"id": "MT10084", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 11, "q": "What does pp stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["After meals", "Twice a day", "Three times a day", "Every week"], "correct": 0}, {"id": "2", "prompt": "Which Latin source is spelled correctly?", "options": ["Postprandial", "Postprandal", "Postprandeal", "Postprandiel"], "correct": 0}], "explain": "Pp means after meals. Twice a day is bid, three times a day is tid, and week is wk. The Latin source is postprandial. Postprandal, Postprandeal, and Postprandiel misspell that source."}, {"id": "MT10085", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 12, "q": "What does wk stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["Week", "Year", "Twice a day", "After meals"], "correct": 0}], "explain": "Wk stands for week. Year is yr, twice a day is bid, and after meals is pp."}, {"id": "MT10086", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 13, "q": "What does yr stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["Year", "Week", "Month", "Day"], "correct": 0}], "explain": "Yr stands for year. Week is wk, twice a day is bid, and three times a day is tid."}, {"id": "MT10087", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 14, "q": "What does Rx stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["Prescription", "Symptoms", "Diagnosis", "Treatment"], "correct": 0}], "explain": "Rx stands for prescription. Symptoms is Sx, diagnosis is Dx, and treatment is Tx."}, {"id": "MT10088", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 15, "q": "What does Sx stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["Symptoms", "Prescription", "Diagnosis", "Treatment"], "correct": 0}], "explain": "Sx stands for symptoms. Prescription is Rx, diagnosis is Dx, and treatment is Tx."}, {"id": "MT10089", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 16, "q": "What does Dx stand for? Answer each step, then the next abbreviation follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["Diagnosis", "Prescription", "Symptoms", "Treatment"], "correct": 0}], "explain": "Dx stands for diagnosis. Prescription is Rx, symptoms is Sx, and treatment is Tx."}, {"id": "MT10090", "type": "stepped", "cat": "MT_lec10", "group": "abbrev-drill", "groupOrder": 17, "q": "What does Tx stand for? Answer each step, then the next structure follows.", "steps": [{"id": "1", "prompt": "Which meaning belongs to this abbreviation?", "options": ["Treatment", "Prescription", "Symptoms", "Diagnosis"], "correct": 0}], "explain": "Tx stands for treatment. Prescription is Rx, symptoms is Sx, and diagnosis is Dx."}, {"id": "MT10091", "type": "stepped", "cat": "MT_lec10", "group": "tooth-drill", "groupOrder": 1, "q": "This is the hard outer part of the tooth.", "steps": [{"id": "1", "prompt": "Which is the correct spelling of this layer?", "options": ["Enamel", "Enamle", "Enamell", "Enemal"], "correct": 0}, {"id": "2", "prompt": "What lies inside the Enamel?", "options": ["Dentin", "Pulp", "Gingiva", "Root"], "correct": 0}], "explain": "The hard outer part is enamel. Dentin lies inside it. Pulp is deeper, inside the dentin. Gingiva names the gums, and the root is the part fixed in the jaw."}, {"id": "MT10092", "type": "stepped", "cat": "MT_lec10", "group": "tooth-drill", "groupOrder": 2, "q": "This layer lies below the hard outer part and outside the blood and nerve tissue.", "steps": [{"id": "1", "prompt": "Which is the correct spelling of this layer?", "options": ["Dentin", "Dentinee", "Dentinn", "Denten"], "correct": 0}, {"id": "2", "prompt": "What lies outside the Dentin?", "options": ["Enamel", "Pulp", "Gingiva", "Canal"], "correct": 0}, {"id": "3", "prompt": "What lies inside the Dentin?", "options": ["Pulp", "Enamel", "Root", "Apex"], "correct": 0}], "explain": "This layer is dentin. Enamel lies outside it and pulp lies inside it. Gingiva names the gums, the canal is the tubular passage, the root is fixed in the jaw, and the apex is the tip of the root."}, {"id": "MT10093", "type": "stepped", "cat": "MT_lec10", "group": "tooth-drill", "groupOrder": 3, "q": "This tissue holds the blood and nerve supply of the tooth.", "steps": [{"id": "1", "prompt": "Which is the correct spelling of this tissue?", "options": ["Pulp", "Pulpe", "Pulpp", "Polp"], "correct": 0}, {"id": "2", "prompt": "What lies outside the Pulp?", "options": ["Dentin", "Enamel", "Gingiva", "Root"], "correct": 0}], "explain": "This tissue is pulp. Dentin lies outside it, and enamel is farther out. Gingiva names the gums, and the root is the part fixed in the jaw."}, {"id": "MT10094", "type": "stepped", "cat": "MT_lec10", "group": "tooth-drill", "groupOrder": 4, "q": "This names the gums. Answer each step, then the next structure follows.", "steps": [{"id": "1", "prompt": "Which is the correct spelling of this structure?", "options": ["Gingiva", "Gingeva", "Gengiva", "Gingvia"], "correct": 0}, {"id": "2", "prompt": "Which combining form names it?", "options": ["Gingiv/o", "Odont/o", "Dent/o", "Oste/o"], "correct": 0}], "explain": "The gums are the gingiva, and gingiv/o names them. Odont/o and dent/o name the tooth. Oste/o names bone."}, {"id": "MT10095", "type": "stepped", "cat": "MT_lec10", "group": "tooth-drill", "groupOrder": 5, "q": "This is the narrow tubular passage inside the tooth.", "steps": [{"id": "1", "prompt": "Which is the correct spelling of this passage?", "options": ["Canal", "Canel", "Cannal", "Canall"], "correct": 0}, {"id": "2", "prompt": "Which tissue runs in the Canal?", "options": ["Pulp", "Enamel", "Dentin", "Gingiva"], "correct": 0}], "explain": "The narrow tubular passage is the canal. Pulp, with its blood and nerve supply, runs in it. Enamel and dentin are the outer layers, and gingiva names the gums."}, {"id": "MT10096", "type": "stepped", "cat": "MT_lec10", "group": "tooth-drill", "groupOrder": 6, "q": "This is the part of the tooth fixed in the jaws.", "steps": [{"id": "1", "prompt": "Which is the correct spelling of this part?", "options": ["Root", "Roote", "Rott", "Roott"], "correct": 0}, {"id": "2", "prompt": "Which tip ends the Root?", "options": ["Apex", "Canal", "Pulp", "Enamel"], "correct": 0}], "explain": "The part fixed in the jaws is the root. Its terminal tip is the apex. The canal is the tubular passage, pulp is the inner tissue, and enamel is the hard outer part."}, {"id": "MT10097", "type": "stepped", "cat": "MT_lec10", "group": "tooth-drill", "groupOrder": 7, "q": "This is the terminal tip of the part fixed in the jaws.", "steps": [{"id": "1", "prompt": "Which is the correct spelling of this tip?", "options": ["Apex", "Appex", "Apix", "Apecs"], "correct": 0}, {"id": "2", "prompt": "Which part does the Apex end?", "options": ["Root", "Canal", "Enamel", "Gingiva"], "correct": 0}], "explain": "The terminal tip is the apex, and it ends the root. The canal is the tubular passage, enamel is the hard outer part, and gingiva names the gums."}, {"id": "MT10098", "type": "stepped", "cat": "MT_lec10", "group": "tooth-drill", "groupOrder": 8, "q": "This is the upper jaw. Answer each step, then the next structure follows.", "steps": [{"id": "1", "prompt": "Which is the correct spelling of this jaw?", "options": ["Maxilla", "Maxila", "Maxillae", "Maxillla"], "correct": 0}, {"id": "2", "prompt": "Where does the other jaw lie relative to the maxilla?", "options": ["Inferior to it", "Superior to it", "Inside the canal", "On the tooth crown"], "correct": 0}], "explain": "The upper jaw is the maxilla. Maxillae is the plural, not the singular jaw asked here. The mandible lies inferior to it."}, {"id": "MT10099", "type": "stepped", "cat": "MT_lec10", "group": "tooth-drill", "groupOrder": 9, "q": "This is the lower jaw. Answer each step, then the specialist run follows.", "steps": [{"id": "1", "prompt": "Which is the correct spelling of this jaw?", "options": ["Mandible", "Mandable", "Mandiblle", "Mandibel"], "correct": 0}, {"id": "2", "prompt": "Where does the other jaw lie relative to the mandible?", "options": ["Superior to it", "Inferior to it", "Inside the canal", "On the tooth crown"], "correct": 0}], "explain": "The lower jaw is the mandible. The maxilla lies superior to it."}, {"id": "MT10100", "type": "stepped", "cat": "MT_lec10", "group": "specialist-drill", "groupOrder": 1, "q": "This specialist treats pulp-related dental problems. Answer each step, then the next specialist follows.", "steps": [{"id": "1", "prompt": "Which is the correct spelling of this specialist?", "options": ["Endodontist", "Endodonist", "Endodentist", "Endodontest"], "correct": 0}, {"id": "2", "prompt": "Which element points within, to the pulp?", "options": ["Endo-", "Ortho-", "Pedo-", "Prosth-"], "correct": 0}], "explain": "The specialist in pulp-related treatment is the endodontist. Endo- points within, to the pulp. Ortho- means straight, pedo- means child, and prosth- means replacement."}, {"id": "MT10101", "type": "stepped", "cat": "MT_lec10", "group": "specialist-drill", "groupOrder": 2, "q": "This specialist straightens the teeth. Answer each step, then the next specialist follows.", "steps": [{"id": "1", "prompt": "Which is the correct spelling of this specialist?", "options": ["Orthodontist", "Orthodonist", "Orthodentist", "Orthodontest"], "correct": 0}, {"id": "2", "prompt": "Which element means straight?", "options": ["Ortho-", "Endo-", "Pedo-", "Prosth-"], "correct": 0}], "explain": "The specialist who straightens teeth is the orthodontist. Ortho- means straight. Endo- points within, pedo- means child, and prosth- means replacement."}, {"id": "MT10102", "type": "stepped", "cat": "MT_lec10", "group": "specialist-drill", "groupOrder": 3, "q": "This specialist treats children's teeth. Answer each step, then the next specialist follows.", "steps": [{"id": "1", "prompt": "Which is the correct spelling of this specialist?", "options": ["Pedodontist", "Pedodonist", "Pedodentist", "Pedodontest"], "correct": 0}, {"id": "2", "prompt": "Which element means child?", "options": ["Pedo-", "Endo-", "Ortho-", "Prosth-"], "correct": 0}], "explain": "The specialist in children's teeth is the pedodontist. Pedo- means child. Endo- points within, ortho- means straight, and prosth- means replacement."}, {"id": "MT10103", "type": "stepped", "cat": "MT_lec10", "group": "specialist-drill", "groupOrder": 4, "q": "This specialist replaces missing teeth. Answer each step, then the appliance follows.", "steps": [{"id": "1", "prompt": "Which is the correct spelling of this specialist?", "options": ["Prosthodontist", "Prosthondontist", "Prosthodonist", "Prosthodentist"], "correct": 0}, {"id": "2", "prompt": "Which element means replacement?", "options": ["Prosth-", "Endo-", "Ortho-", "Pedo-"], "correct": 0}], "explain": "The specialist who replaces missing teeth is the prosthodontist. Prosth- means replacement. Endo- points within, ortho- means straight, and pedo- means child."}, {"id": "MT10104", "type": "stepped", "cat": "MT_lec10", "group": "specialist-drill", "groupOrder": 5, "q": "This is an artificial substitute for natural teeth, partial or full.", "steps": [{"id": "1", "prompt": "Which is the correct spelling of this appliance?", "options": ["Denture", "Denturre", "Dentuer", "Dentore"], "correct": 0}, {"id": "2", "prompt": "Which specialist supplies the Denture?", "options": ["Prosthodontist", "Endodontist", "Orthodontist", "Pedodontist"], "correct": 0}], "explain": "The artificial substitute for natural teeth is a denture, partial or full. The prosthodontist replaces missing teeth. The endodontist treats pulp, the orthodontist straightens teeth, and the pedodontist treats children's teeth."}]}}
+{
+  "id": "lecture-10---disease-abbreviation-pharmaceutical-treatment-dental-terms",
+  "subject": "Medical Terminology",
+  "subjectId": "medical_terminology",
+  "title": "Lecture 10 - Disease, Abbreviation, Pharmaceutical, Treatment, and Dental Terms",
+  "formSize": 102,
+  "forms": [
+    "A"
+  ],
+  "bank": {
+    "A": [
+      {
+        "id": "MT10001",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which term describes a condition with severe symptoms over a short period, such as a cold?",
+        "options": [
+          "Chronic",
+          "Acute",
+          "Progressive",
+          "Recurrent"
+        ],
+        "correct": 1,
+        "explain": "Acute denotes severe symptoms over a short period, as in a cold. Chronic denotes slow development of symptoms over a long period, as in asthma, and is the opposite course. Progressive denotes increasing severity, and recurrent denotes occurrence or repetition, neither of which matches the short severe course."
+      },
+      {
+        "id": "MT10002",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which term describes a disease that develops slowly over a long period, such as asthma?",
+        "options": [
+          "Acute",
+          "Chronic",
+          "Progressive",
+          "Recurrent"
+        ],
+        "correct": 1,
+        "explain": "Chronic denotes slow development of symptoms over a long period, as in asthma. Acute is the opposite (severe short course). Progressive means increasing severity. Recurrent means to occur again. Only chronic matches long slow development."
+      },
+      {
+        "id": "MT10003",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which term describes a tumor that is mild or non-cancerous?",
+        "options": [
+          "Malignant",
+          "Benign",
+          "Systemic",
+          "Progressive"
+        ],
+        "correct": 1,
+        "explain": "Benign denotes a mild or non-cancerous growth, as in a venous lymphangioma on the shoulder. Malignant is its opposite, a harmful or cancerous growth such as lung or breast cancer. Systemic relates to the whole body, and progressive denotes increasing severity, neither of which names the mild quality of a tumor."
+      },
+      {
+        "id": "MT10004",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which term describes a growth that is harmful or cancerous, such as lung or breast cancer?",
+        "options": [
+          "Benign",
+          "Malignant",
+          "Localized",
+          "Etiologic"
+        ],
+        "correct": 1,
+        "explain": "Malignant denotes a harmful or cancerous growth, such as lung or breast cancer. Benign is its opposite, a mild or non-cancerous growth. Localized means confined to a definite area, and etiologic pertains to the study of causes, neither of which names the cancerous quality."
+      },
+      {
+        "id": "MT10005",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which term denotes the identification of a disease from its symptoms and tests, as when malaria is identified?",
+        "options": [
+          "Etiology",
+          "Prognosis",
+          "Prophylaxis",
+          "Diagnosis"
+        ],
+        "correct": 3,
+        "explain": "Diagnosis identifies the disease from symptoms and tests, as when malaria is identified. Etiology studies causes (etio- = cause). Prognosis predicts the outcome. Prophylaxis is prevention such as vaccination. Only diagnosis matches identification."
+      },
+      {
+        "id": "MT10006",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "In the term etiology, which element supplies the sense of cause?",
+        "options": [
+          "etio-",
+          "-logy",
+          "-y",
+          "-gen"
+        ],
+        "correct": 0,
+        "explain": "Etiology decomposes into the root etio- meaning cause, the suffix -logy meaning study, and the nominal ending -y. The sense of cause sits in etio-. The suffix -logy supplies study, and -y only makes the noun. The element -gen means origin or production but is not part of this word."
+      },
+      {
+        "id": "MT10007",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which term describes a condition limited to a definite area, such as a headache?",
+        "options": [
+          "Systemic",
+          "Localized",
+          "Progressive",
+          "Recurrent"
+        ],
+        "correct": 1,
+        "explain": "Localized denotes confinement to a definite area or part, as in a headache. Systemic relates to the whole body, as in a fever, and is the opposite scope. Progressive denotes increasing severity, and recurrent denotes occurrence or repetition, neither of which describes confinement to one area."
+      },
+      {
+        "id": "MT10008",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which term describes a condition relating to the whole body, such as a fever?",
+        "options": [
+          "Localized",
+          "Systemic",
+          "Prognostic",
+          "Etiologic"
+        ],
+        "correct": 1,
+        "explain": "Systemic denotes involvement of the whole body, as in a fever. Localized is its opposite, confinement to a definite area such as a headache. Prognostic pertains to the prediction of an outcome, and etiologic pertains to the study of causes, neither of which describes whole-body involvement."
+      },
+      {
+        "id": "MT10009",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which term means predicting a disease's likely outcome before symptoms, as in Alzheimer's?",
+        "options": [
+          "Prognosis",
+          "Progressive",
+          "Prophylaxis",
+          "Diagnosis"
+        ],
+        "correct": 0,
+        "explain": "Prognosis is the prediction of the likely outcome of a disease, possible before symptoms in Alzheimer's. Progressive is worsening, prophylaxis is prevention, and diagnosis is identification."
+      },
+      {
+        "id": "MT10010",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which term denotes increasing severity of signs and symptoms, as in advancing ailments such as Alzheimer's disease?",
+        "options": [
+          "Prognosis",
+          "Progressive",
+          "Prophylaxis",
+          "Recurrent"
+        ],
+        "correct": 1,
+        "explain": "Progressive denotes increasing severity of signs and symptoms. Prognosis predicts the likely outcome, prophylaxis denotes preventive measures, and recurrent denotes occurrence or repetition rather than advancing severity."
+      },
+      {
+        "id": "MT10011",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which term denotes preventive or precautionary measures, such as vaccination?",
+        "options": [
+          "Prophylaxis",
+          "Prognosis",
+          "Recurrent",
+          "Syndrome"
+        ],
+        "correct": 0,
+        "explain": "Prophylaxis denotes preventive or precautionary measures, as in vaccination. Prognosis predicts the likely outcome, recurrent denotes occurrence or repetition, and a syndrome is a group of symptoms and signs, none of which names a preventive measure."
+      },
+      {
+        "id": "MT10012",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which term means to occur or repeat again, as in a viral infection?",
+        "options": [
+          "Progressive",
+          "Prophylaxis",
+          "Recurrent",
+          "Localized"
+        ],
+        "correct": 2,
+        "explain": "Recurrent means to occur or repeat again, as in a viral infection. Progressive denotes increasing severity, prophylaxis denotes preventive measures, and localized denotes confinement to a definite area, none of which matches a repeated occurrence."
+      },
+      {
+        "id": "MT10013",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which term denotes a single observable mark or symptom of a disease, such as a fever or pain?",
+        "options": [
+          "Syndrome",
+          "Sign",
+          "Diagnosis",
+          "Etiology"
+        ],
+        "correct": 1,
+        "explain": "A sign is a single mark or symptom of a disease, such as fever or pain. A syndrome is the coherent group of symptoms and signs of a particular disease, such as Down syndrome. Diagnosis and etiology name the identification and the study of causes, neither of which is a single observable mark."
+      },
+      {
+        "id": "MT10014",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which term denotes the group of symptoms and signs of a particular disease?",
+        "options": [
+          "Sign",
+          "Syndrome",
+          "Systemic",
+          "Prognosis"
+        ],
+        "correct": 1,
+        "explain": "A syndrome is the group of symptoms and signs of a particular disease, such as Down syndrome. A sign is a single observable mark, systemic relates to the whole body, and prognosis predicts the likely outcome, none of which names the grouping itself."
+      },
+      {
+        "id": "MT10015",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "q": "Alzheimer's disease illustrates two course terms.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which term foresees the likely outcome before symptoms show?",
+            "options": [
+              "Prognosis",
+              "Progressive",
+              "Diagnosis",
+              "Etiology"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Prognosis comes before symptoms. Which term marks worsening after confirmation?",
+            "options": [
+              "Progressive",
+              "Prognosis",
+              "Recurrent",
+              "Localized"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "In Alzheimer's, prognosis foresees the likely outcome before symptoms show; progressive describes the worsening after the disease is confirmed. Diagnosis identifies the disease, and etiology studies its cause."
+      },
+      {
+        "id": "MT10016",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which set of abbreviations names care units or a treatment room rather than patient status or measurement?",
+        "options": [
+          "IP, OP, DC, BP",
+          "Rx, Sx, Dx, Tx",
+          "CCU, ECU, ICU, OR",
+          "bid, tid, pp, wk"
+        ],
+        "correct": 2,
+        "explain": "CCU, ECU, ICU, and OR name care units or a treatment room. IP and OP are patient statuses, DC discharge or discontinue, BP a measurement. Rx, Sx, Dx, Tx are clinical nouns. Bid, tid, pp, wk mix dose timing with a calendar span."
+      },
+      {
+        "id": "MT10017",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation stands for the coronary or cardiac care unit?",
+        "options": [
+          "CCU",
+          "ECU",
+          "ICU",
+          "OR"
+        ],
+        "correct": 0,
+        "explain": "CCU stands for the coronary or cardiac care unit. ECU is the emergency care unit, ICU is the intensive care unit, and OR is the operating room."
+      },
+      {
+        "id": "MT10018",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation stands for the emergency care unit?",
+        "options": [
+          "CCU",
+          "ECU",
+          "ICU",
+          "OR"
+        ],
+        "correct": 1,
+        "explain": "ECU stands for the emergency care unit. CCU is the coronary or cardiac care unit, ICU is the intensive care unit, and OR is the operating room."
+      },
+      {
+        "id": "MT10019",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation stands for the intensive care unit?",
+        "options": [
+          "CCU",
+          "ECU",
+          "ICU",
+          "OR"
+        ],
+        "correct": 2,
+        "explain": "ICU stands for the intensive care unit. CCU is the coronary or cardiac care unit, ECU is the emergency care unit, and OR is the operating room."
+      },
+      {
+        "id": "MT10020",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation stands for the operating room?",
+        "options": [
+          "CCU",
+          "ECU",
+          "ICU",
+          "OR"
+        ],
+        "correct": 3,
+        "explain": "OR stands for the operating room. CCU is the coronary or cardiac care unit, ECU is the emergency care unit, and ICU is the intensive care unit."
+      },
+      {
+        "id": "MT10021",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation stands for inpatient?",
+        "options": [
+          "IP",
+          "OP",
+          "DC",
+          "BP"
+        ],
+        "correct": 0,
+        "explain": "IP stands for inpatient, a patient admitted to the hospital. OP stands for outpatient, one seen without admission. DC or D/C means discharge or discontinue, and BP is blood pressure."
+      },
+      {
+        "id": "MT10022",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation stands for outpatient?",
+        "options": [
+          "IP",
+          "OP",
+          "DC",
+          "BP"
+        ],
+        "correct": 1,
+        "explain": "OP stands for outpatient, one seen without admission to the hospital. IP stands for inpatient, DC or D/C means discharge or discontinue, and BP is blood pressure."
+      },
+      {
+        "id": "MT10023",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation stands for discharge or discontinue?",
+        "options": [
+          "DC or D/C",
+          "Dx or DX",
+          "DNR or DNAR",
+          "D&C or D and C"
+        ],
+        "correct": 0,
+        "explain": "DC or D/C stands for discharge or discontinue. Dx is diagnosis, DNR or DNAR is do not resuscitate, and D&C is dilation and curettage."
+      },
+      {
+        "id": "MT10025",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation stands for twice a day?",
+        "options": [
+          "bid, from the Latin bis in die",
+          "tid, from the Latin ter in die",
+          "pp, from the Latin postprandial",
+          "wk, the abbreviation for week"
+        ],
+        "correct": 0,
+        "explain": "Bid stands for twice a day, from the Latin bis in die. Tid stands for three times a day, from ter in die. Pp means after meals, from postprandial. Wk is the abbreviation for week, not a dosing instruction."
+      },
+      {
+        "id": "MT10026",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation stands for three times a day?",
+        "options": [
+          "bid, from the Latin bis in die",
+          "tid, from the Latin ter in die",
+          "pp, from the Latin postprandial",
+          "wk, the abbreviation for week"
+        ],
+        "correct": 1,
+        "explain": "Tid stands for three times a day, from the Latin ter in die. Bid stands for twice a day, from bis in die. Pp means after meals, from postprandial. Wk is the abbreviation for week, not a dosing instruction."
+      },
+      {
+        "id": "MT10027",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation means after meals?",
+        "options": [
+          "bid, from the Latin bis in die",
+          "tid, from the Latin ter in die",
+          "pp, from the Latin postprandial",
+          "wk, the abbreviation for week"
+        ],
+        "correct": 2,
+        "explain": "Pp means after meals, from the Latin postprandial. Bid stands for twice a day, from bis in die. Tid stands for three times a day, from ter in die. Wk is the abbreviation for week, not a meal timing."
+      },
+      {
+        "id": "MT10028",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation stands for week?",
+        "options": [
+          "bid",
+          "pp",
+          "wk",
+          "yr"
+        ],
+        "correct": 2,
+        "explain": "Wk stands for week. Bid means twice a day, pp means after meals, and yr stands for year."
+      },
+      {
+        "id": "MT10029",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation stands for year?",
+        "options": [
+          "bid",
+          "tid",
+          "wk",
+          "yr"
+        ],
+        "correct": 3,
+        "explain": "Yr stands for year. Bid means twice a day, tid means three times a day, and wk stands for week."
+      },
+      {
+        "id": "MT10030",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which set consists entirely of clinical documentation nouns?",
+        "options": [
+          "bid, tid, pp, wk",
+          "CCU, ECU, ICU, OR",
+          "Rx, Sx, Dx, Tx",
+          "IP, OP, DC, BP"
+        ],
+        "correct": 2,
+        "explain": "Rx, Sx, Dx, and Tx are clinical documentation nouns (prescription, symptoms, diagnosis, treatment). CCU, ECU, ICU, OR name care units and a room. IP, OP, DC, BP mix status, action, and measurement. Bid, tid, pp, wk mix dosing and calendar. Only the documentation set is coherent."
+      },
+      {
+        "id": "MT10031",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation stands for prescription?",
+        "options": [
+          "Rx",
+          "Sx",
+          "Dx",
+          "Tx"
+        ],
+        "correct": 0,
+        "explain": "Rx stands for prescription. Sx stands for symptoms, Dx for diagnosis, and Tx for treatment."
+      },
+      {
+        "id": "MT10032",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation stands for symptoms?",
+        "options": [
+          "Rx",
+          "Sx",
+          "Dx",
+          "Tx"
+        ],
+        "correct": 1,
+        "explain": "Sx stands for symptoms. Rx stands for prescription, Dx for diagnosis, and Tx for treatment."
+      },
+      {
+        "id": "MT10033",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation stands for diagnosis?",
+        "options": [
+          "Rx",
+          "Sx",
+          "Dx",
+          "Tx"
+        ],
+        "correct": 2,
+        "explain": "Dx stands for diagnosis. Rx stands for prescription, Sx for symptoms, and Tx for treatment."
+      },
+      {
+        "id": "MT10034",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which abbreviation stands for treatment?",
+        "options": [
+          "Rx",
+          "Sx",
+          "Dx",
+          "Tx"
+        ],
+        "correct": 3,
+        "explain": "Tx stands for treatment. Rx stands for prescription, Sx for symptoms, and Dx for diagnosis."
+      },
+      {
+        "id": "MT10035",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which structure is the upper jaw?",
+        "options": [
+          "The mandible",
+          "The maxilla",
+          "The gingiva",
+          "The apex"
+        ],
+        "correct": 1,
+        "explain": "The maxilla is the upper jaw. The mandible is the lower jaw, the gingiva is the gums, and the apex is the terminal tip of the tooth root."
+      },
+      {
+        "id": "MT10036",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which structure is the lower jaw?",
+        "options": [
+          "The maxilla",
+          "The mandible",
+          "The gingiva",
+          "The enamel"
+        ],
+        "correct": 1,
+        "explain": "The mandible is the lower jaw. The maxilla is the upper jaw, the gingiva is the gums, and the enamel is the hard outer part of the tooth."
+      },
+      {
+        "id": "MT10037",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "The permanent dentition in one jaw counts each tooth class. Which pairing of class to number is incorrect?",
+        "options": [
+          "Incisors, four",
+          "Canines, four",
+          "Premolars, four",
+          "Molars, six"
+        ],
+        "correct": 1,
+        "explain": "In one jaw, the permanent dentition counts four incisors, two canines, four premolars, and six molars. Stating canines as four is incorrect because that jaw has two canines. Four is the count of the incisors and of the premolars. The other three pairings match those one-jaw counts."
+      },
+      {
+        "id": "MT10038",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which class of teeth is the front teeth for cutting?",
+        "options": [
+          "Incisors",
+          "Canines",
+          "Premolars",
+          "Molars"
+        ],
+        "correct": 0,
+        "explain": "Incisors are the front teeth for cutting. Canines are the pointed teeth for tearing, premolars are the teeth for chewing, and molars are the grinding teeth."
+      },
+      {
+        "id": "MT10039",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which class of teeth is the pointed teeth for tearing?",
+        "options": [
+          "Incisors",
+          "Canines",
+          "Premolars",
+          "Molars"
+        ],
+        "correct": 1,
+        "explain": "Canines are the pointed teeth for tearing. Incisors are the front teeth for cutting, premolars are the teeth for chewing, and molars are the grinding teeth."
+      },
+      {
+        "id": "MT10040",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which class of teeth is the teeth for chewing?",
+        "options": [
+          "Incisors",
+          "Canines",
+          "Premolars",
+          "Molars"
+        ],
+        "correct": 2,
+        "explain": "Premolars are the teeth for chewing. Incisors are for cutting, canines for tearing, and molars are the grinding teeth."
+      },
+      {
+        "id": "MT10041",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which class of teeth is the grinding teeth?",
+        "options": [
+          "Incisors",
+          "Canines",
+          "Premolars",
+          "Molars"
+        ],
+        "correct": 3,
+        "explain": "Molars are the grinding teeth. Incisors are for cutting, canines for tearing, and premolars for chewing."
+      },
+      {
+        "id": "MT10042",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which statement correctly describes plaque?",
+        "options": [
+          "Sticky food and bacteria deposit",
+          "Tooth decay caused by caries",
+          "Hard outer part of the tooth",
+          "Tissue holding the blood and nerves"
+        ],
+        "correct": 0,
+        "explain": "Plaque is a sticky deposit of food and bacteria on the teeth. Decay is a cavity, the hard outer part is enamel, and the blood and nerve tissue is pulp."
+      },
+      {
+        "id": "MT10043",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which statement correctly describes a cavity?",
+        "options": [
+          "Sticky food and bacteria deposit",
+          "Tooth decay caused by caries",
+          "Narrow passage inside the tooth",
+          "Part fixed in the jaws"
+        ],
+        "correct": 1,
+        "explain": "A cavity is tooth decay caused by caries. Plaque is the sticky deposit, the narrow passage is the canal, and the part in the jaws is the root."
+      },
+      {
+        "id": "MT10044",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "How are plaque and a cavity linked?",
+        "options": [
+          "Cavity first, then plaque deposits",
+          "Gingiva hardens into plaque, then cavity",
+          "Enamel dissolves into pulp, leaving cavity",
+          "Plaque fosters caries, causing the cavity"
+        ],
+        "correct": 3,
+        "explain": "Plaque fosters caries, and caries produces the cavity which is tooth decay. The cavity does not come first, and gingiva and enamel do not turn into plaque or pulp."
+      },
+      {
+        "id": "MT10045",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which layer is the hard outer part of the tooth?",
+        "options": [
+          "Enamel",
+          "Dentin",
+          "Pulp",
+          "Gingiva"
+        ],
+        "correct": 0,
+        "explain": "Enamel is the hard outer part of the tooth. Dentin is the part below the enamel, pulp is the tissue containing the blood and nerve supply, and gingiva is the gums."
+      },
+      {
+        "id": "MT10046",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which layer is the part below the enamel?",
+        "options": [
+          "Enamel",
+          "Dentin",
+          "Pulp",
+          "Canal"
+        ],
+        "correct": 1,
+        "explain": "Dentin is the part below the enamel. Enamel is the hard outer part, pulp is the tissue containing the blood and nerve supply, and canal is the narrow tubular passage inside the tooth."
+      },
+      {
+        "id": "MT10047",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which tooth structure is the tissue containing the blood and nerve supply?",
+        "options": [
+          "Enamel",
+          "Dentin",
+          "Pulp",
+          "Gingiva"
+        ],
+        "correct": 2,
+        "explain": "Pulp is the tissue containing the blood and nerve supply. Enamel is the hard outer part, dentin is the part below the enamel, and gingiva is the gums."
+      },
+      {
+        "id": "MT10048",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "What does the term gingiva denote?",
+        "options": [
+          "Gums",
+          "Enamel",
+          "Canal",
+          "Apex"
+        ],
+        "correct": 0,
+        "explain": "Gingiva means the gums. Enamel is the hard outer part, the canal is the passage inside the tooth, and the apex is the root tip."
+      },
+      {
+        "id": "MT10049",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which structure is the narrow tubular passage inside the tooth?",
+        "options": [
+          "The root",
+          "The canal",
+          "The apex",
+          "The gingiva"
+        ],
+        "correct": 1,
+        "explain": "The canal is the narrow tubular passage inside the tooth. The root is the part fixed in the jaws, the apex is the terminal tip of the root, and the gingiva is the gums."
+      },
+      {
+        "id": "MT10050",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which structure is the part of the tooth fixed in the jaws?",
+        "options": [
+          "The canal",
+          "The apex",
+          "The root",
+          "The pulp"
+        ],
+        "correct": 2,
+        "explain": "The root is the part of the tooth fixed in the jaws. The canal is the narrow tubular passage, the apex is the terminal tip of the root, and the pulp is the inner tissue containing the blood and nerve supply."
+      },
+      {
+        "id": "MT10051",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which structure is the terminal tip of the tooth root?",
+        "options": [
+          "The canal",
+          "The apex",
+          "The root",
+          "The gingiva"
+        ],
+        "correct": 1,
+        "explain": "The apex is the terminal tip of the tooth root. The canal is the narrow tubular passage inside the tooth, the root is the part fixed in the jaws, and the gingiva is the gums."
+      },
+      {
+        "id": "MT10052",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Reading a tooth from its outer surface toward its center, which order of layers is correct?",
+        "options": [
+          "Enamel → Dentin → Pulp",
+          "Dentin → Enamel → Pulp",
+          "Pulp → Dentin → Enamel",
+          "Enamel → Pulp → Dentin"
+        ],
+        "correct": 0,
+        "explain": "Reading from the outer surface inward, enamel is the hard outer part, dentin is the part below the enamel, and pulp is the inner tissue containing the blood and nerve supply, so the order is enamel, dentin, pulp. The pulp is innermost and never the outer layer, and dentin never lies outside enamel."
+      },
+      {
+        "id": "MT10053",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which term denotes an artificial substitute for natural teeth, supplied as a partial or full appliance?",
+        "options": [
+          "A denture",
+          "An endodontist",
+          "An orthodontist",
+          "A prosthodontist"
+        ],
+        "correct": 0,
+        "explain": "A denture is the artificial substitute for natural teeth, supplied as a partial or full appliance, so it is an object. The endodontist, orthodontist, and prosthodontist are practitioners rather than appliances."
+      },
+      {
+        "id": "MT10054",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which specialist treats pulp-related dental problems?",
+        "options": [
+          "The endodontist",
+          "The orthodontist",
+          "The pedodontist",
+          "The prosthodontist"
+        ],
+        "correct": 0,
+        "explain": "The endodontist treats pulp-related problems, with endo- pointing within to the pulp. The orthodontist straightens teeth, the pedodontist treats children's teeth, and the prosthodontist replaces missing teeth."
+      },
+      {
+        "id": "MT10055",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which specialist straightens the teeth?",
+        "options": [
+          "The endodontist",
+          "The orthodontist",
+          "The pedodontist",
+          "The prosthodontist"
+        ],
+        "correct": 1,
+        "explain": "The orthodontist straightens the teeth, with ortho- meaning straight. The endodontist treats pulp problems, the pedodontist treats children's teeth, and the prosthodontist replaces missing teeth."
+      },
+      {
+        "id": "MT10056",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which specialist treats children's teeth?",
+        "options": [
+          "The endodontist",
+          "The orthodontist",
+          "The pedodontist",
+          "The prosthodontist"
+        ],
+        "correct": 2,
+        "explain": "The pedodontist treats children's teeth, with pedo- meaning child. The endodontist treats pulp problems, the orthodontist straightens teeth, and the prosthodontist replaces missing teeth."
+      },
+      {
+        "id": "MT10058",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which of the following combining forms means tooth?",
+        "options": [
+          "cyt/o",
+          "gingiv/o",
+          "oste/o",
+          "odont/o"
+        ],
+        "correct": 3,
+        "explain": "Odont/o means tooth or teeth, as in endodontist and orthodontist. Gingiv/o means the gums, cyt/o means cell, and oste/o means bone, none of which denotes the tooth. The tooth is also carried by the interchangeable forms dent/o, dent/i, and dent-, seen in dentin and denture."
+      },
+      {
+        "id": "MT10059",
+        "type": "matching",
+        "cat": "MT_lec10",
+        "q": "Match each disease-course or tumor term to the meaning it conveys.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Acute"
+          },
+          {
+            "id": "2",
+            "text": "Chronic"
+          },
+          {
+            "id": "3",
+            "text": "Benign"
+          },
+          {
+            "id": "4",
+            "text": "Malignant"
+          },
+          {
+            "id": "5",
+            "text": "Diagnosis"
+          },
+          {
+            "id": "6",
+            "text": "Etiology"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Study of disease causes"
+          },
+          {
+            "id": "B",
+            "text": "Severe symptoms over a short period"
+          },
+          {
+            "id": "C",
+            "text": "Mild or non-cancerous"
+          },
+          {
+            "id": "D",
+            "text": "Identifying disease from symptoms, tests"
+          },
+          {
+            "id": "E",
+            "text": "Harmful or cancerous"
+          },
+          {
+            "id": "F",
+            "text": "Slow symptoms over long period"
+          }
+        ],
+        "correct_pairs": {
+          "1": "B",
+          "2": "F",
+          "3": "C",
+          "4": "E",
+          "5": "D",
+          "6": "A"
+        },
+        "explain": "Acute is severe and short, chronic slow and long, benign mild or non-cancerous, malignant harmful or cancerous, diagnosis identification from symptoms and tests, and etiology the study of causes."
+      },
+      {
+        "id": "MT10060",
+        "type": "matching",
+        "cat": "MT_lec10",
+        "q": "Match each remaining disease term to the meaning it conveys.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Localized"
+          },
+          {
+            "id": "2",
+            "text": "Systemic"
+          },
+          {
+            "id": "3",
+            "text": "Prognosis"
+          },
+          {
+            "id": "4",
+            "text": "Progressive"
+          },
+          {
+            "id": "5",
+            "text": "Prophylaxis"
+          },
+          {
+            "id": "6",
+            "text": "Recurrent"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Limited to one definite area"
+          },
+          {
+            "id": "B",
+            "text": "Predicting a disease's likely outcome"
+          },
+          {
+            "id": "C",
+            "text": "Preventive or precautionary measures"
+          },
+          {
+            "id": "D",
+            "text": "Relating to the whole body"
+          },
+          {
+            "id": "E",
+            "text": "To occur or repeat again"
+          },
+          {
+            "id": "F",
+            "text": "Increasing severity of signs and symptoms"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "D",
+          "3": "B",
+          "4": "F",
+          "5": "C",
+          "6": "E"
+        },
+        "explain": "Localized is limited to one area, systemic involves the whole body, prognosis predicts the outcome, progressive means increasing severity, prophylaxis is prevention, and recurrent means repeating."
+      },
+      {
+        "id": "MT10061",
+        "type": "matching",
+        "cat": "MT_lec10",
+        "q": "Match each term to the meaning it conveys.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Sign"
+          },
+          {
+            "id": "2",
+            "text": "Syndrome"
+          },
+          {
+            "id": "3",
+            "text": "Maxilla"
+          },
+          {
+            "id": "4",
+            "text": "Mandible"
+          },
+          {
+            "id": "5",
+            "text": "Plaque"
+          },
+          {
+            "id": "6",
+            "text": "Cavity"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Lower jaw"
+          },
+          {
+            "id": "B",
+            "text": "Sticky food and bacteria deposit"
+          },
+          {
+            "id": "C",
+            "text": "A mark or symptom of disease"
+          },
+          {
+            "id": "D",
+            "text": "Tooth decay caused by caries"
+          },
+          {
+            "id": "E",
+            "text": "Upper jaw"
+          },
+          {
+            "id": "F",
+            "text": "Cluster of signs of one disease"
+          }
+        ],
+        "correct_pairs": {
+          "1": "C",
+          "2": "F",
+          "3": "E",
+          "4": "A",
+          "5": "B",
+          "6": "D"
+        },
+        "explain": "A sign is a mark of disease, a syndrome a group of signs and symptoms of one disease, the maxilla the upper jaw, the mandible the lower jaw, plaque a sticky deposit, and a cavity decay from caries."
+      },
+      {
+        "id": "MT10062",
+        "type": "matching",
+        "cat": "MT_lec10",
+        "q": "Match each medical abbreviation to the meaning it conveys.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "CCU"
+          },
+          {
+            "id": "2",
+            "text": "ECU"
+          },
+          {
+            "id": "3",
+            "text": "ICU"
+          },
+          {
+            "id": "4",
+            "text": "OR"
+          },
+          {
+            "id": "5",
+            "text": "IP"
+          },
+          {
+            "id": "6",
+            "text": "OP"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Emergency Care Unit"
+          },
+          {
+            "id": "B",
+            "text": "Intensive Care Unit"
+          },
+          {
+            "id": "C",
+            "text": "Outpatient"
+          },
+          {
+            "id": "D",
+            "text": "Coronary or Cardiac Care Unit"
+          },
+          {
+            "id": "E",
+            "text": "Operating Room"
+          },
+          {
+            "id": "F",
+            "text": "Inpatient"
+          }
+        ],
+        "correct_pairs": {
+          "1": "D",
+          "2": "A",
+          "3": "B",
+          "4": "E",
+          "5": "F",
+          "6": "C"
+        },
+        "explain": "The care units sort by the kind of attention given. CCU is the coronary or cardiac care unit, ECU is the emergency care unit, ICU is the intensive care unit, and OR is the operating room where surgery occurs. Patient status is binary, IP for an admitted inpatient and OP for an outpatient seen without admission."
+      },
+      {
+        "id": "MT10063",
+        "type": "matching",
+        "cat": "MT_lec10",
+        "q": "Match each dosing or status abbreviation to the meaning it conveys.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "DC or D/C"
+          },
+          {
+            "id": "2",
+            "text": "BP"
+          },
+          {
+            "id": "3",
+            "text": "bid"
+          },
+          {
+            "id": "4",
+            "text": "tid"
+          },
+          {
+            "id": "5",
+            "text": "pp"
+          },
+          {
+            "id": "6",
+            "text": "wk"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Discharge, Discontinue"
+          },
+          {
+            "id": "B",
+            "text": "Twice a day (bis in die)"
+          },
+          {
+            "id": "C",
+            "text": "After meals (post prandial)"
+          },
+          {
+            "id": "D",
+            "text": "Blood Pressure"
+          },
+          {
+            "id": "E",
+            "text": "Week"
+          },
+          {
+            "id": "F",
+            "text": "Three times daily (ter in die)"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "D",
+          "3": "B",
+          "4": "F",
+          "5": "C",
+          "6": "E"
+        },
+        "explain": "DC or D/C is discharge or discontinue, BP blood pressure, bid twice a day, tid three times a day, pp after meals, and wk week."
+      },
+      {
+        "id": "MT10064",
+        "type": "matching",
+        "cat": "MT_lec10",
+        "q": "Match each remaining abbreviation to the meaning it conveys.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Rx"
+          },
+          {
+            "id": "2",
+            "text": "Sx"
+          },
+          {
+            "id": "3",
+            "text": "Dx"
+          },
+          {
+            "id": "4",
+            "text": "Tx"
+          },
+          {
+            "id": "5",
+            "text": "yr"
+          },
+          {
+            "id": "6",
+            "text": "OR"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Diagnosis"
+          },
+          {
+            "id": "B",
+            "text": "Symptoms"
+          },
+          {
+            "id": "C",
+            "text": "Prescription"
+          },
+          {
+            "id": "D",
+            "text": "Operating Room"
+          },
+          {
+            "id": "E",
+            "text": "Treatment"
+          },
+          {
+            "id": "F",
+            "text": "Year"
+          }
+        ],
+        "correct_pairs": {
+          "1": "C",
+          "2": "B",
+          "3": "A",
+          "4": "E",
+          "5": "F",
+          "6": "D"
+        },
+        "explain": "The four clinical nouns are written as a single letter plus x. Rx is prescription, Sx is symptoms, Dx is diagnosis, and Tx is treatment. The x stands in for the trailing consonant cluster of each word, and the leading letter fixes which noun is meant. The calendar span yr stands for year, and OR stands for the operating room."
+      },
+      {
+        "id": "MT10065",
+        "type": "matching",
+        "cat": "MT_lec10",
+        "q": "Match each tooth structure to the meaning it conveys.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Enamel"
+          },
+          {
+            "id": "2",
+            "text": "Dentin"
+          },
+          {
+            "id": "3",
+            "text": "Pulp"
+          },
+          {
+            "id": "4",
+            "text": "Gingiva"
+          },
+          {
+            "id": "5",
+            "text": "Canal"
+          },
+          {
+            "id": "6",
+            "text": "Root"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Part below enamel"
+          },
+          {
+            "id": "B",
+            "text": "Gums"
+          },
+          {
+            "id": "C",
+            "text": "Hard outer part of tooth"
+          },
+          {
+            "id": "D",
+            "text": "Narrow tubular passage inside the tooth"
+          },
+          {
+            "id": "E",
+            "text": "Tissue containing blood and nerve supply"
+          },
+          {
+            "id": "F",
+            "text": "Part fixed in the jaws"
+          }
+        ],
+        "correct_pairs": {
+          "1": "C",
+          "2": "A",
+          "3": "E",
+          "4": "B",
+          "5": "D",
+          "6": "F"
+        },
+        "explain": "Enamel is the hard outer part, dentin the part below it, pulp the tissue with blood and nerve supply, gingiva the gums, canal the narrow tubular passage, and root the part fixed in the jaws. Outer to center the order is enamel, dentin, pulp."
+      },
+      {
+        "id": "MT10066",
+        "type": "matching",
+        "cat": "MT_lec10",
+        "q": "Match each dental appliance or specialist to the meaning it conveys.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Denture"
+          },
+          {
+            "id": "2",
+            "text": "Endodontist"
+          },
+          {
+            "id": "3",
+            "text": "Orthodontist"
+          },
+          {
+            "id": "4",
+            "text": "Pedodontist"
+          },
+          {
+            "id": "5",
+            "text": "Prosthodontist"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Specialist in replacing missing teeth"
+          },
+          {
+            "id": "B",
+            "text": "Artificial teeth, partial or full"
+          },
+          {
+            "id": "C",
+            "text": "Specialist in treating children's teeth"
+          },
+          {
+            "id": "D",
+            "text": "Specialist in pulp-related treatment"
+          },
+          {
+            "id": "E",
+            "text": "Specialist in straightening teeth"
+          }
+        ],
+        "correct_pairs": {
+          "1": "B",
+          "2": "D",
+          "3": "E",
+          "4": "C",
+          "5": "A"
+        },
+        "explain": "A denture is a partial or full artificial set of teeth. Endodontists treat pulp, orthodontists straighten teeth, pedodontists treat children, and prosthodontists replace missing teeth."
+      },
+      {
+        "id": "MT10067",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which analysis identifies the components of hyperlipemia and the meaning of each?",
+        "options": [
+          "R+R+S: below or less, protein, blood condition",
+          "CF+R+S: production, sugar, blood condition",
+          "P+CF+S: above or excessive, oxygen, blood condition",
+          "P+R+S: above or excessive, fat, blood condition"
+        ],
+        "correct": 3,
+        "explain": "Hyperlipemia is prefix hyper- meaning above or excessive, root lip meaning fat, suffix -emia meaning blood condition, so excessive fat in the blood. A below-or-less protein reading is a different condition. A production-and-sugar reading analyzes another term. An oxygen root keeps the prefix but uses the wrong root."
+      },
+      {
+        "id": "MT10068",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which term completes the meaning of before surgery?",
+        "options": [
+          "Postoperative",
+          "Intraoperative",
+          "Preoperative",
+          "Perioperative"
+        ],
+        "correct": 2,
+        "explain": "Preoperative uses pre- for before, so it names the period before surgery. Postoperative uses post- for after the procedure. Intraoperative uses intra- for within the procedure. Perioperative uses peri- for around the time of the procedure, which is wider than the period before surgery alone."
+      },
+      {
+        "id": "MT10069",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "A clinician names the disease, then predicts its outcome. Which terms, in order?",
+        "options": [
+          "Diagnosis, then prognosis",
+          "Prognosis, then diagnosis",
+          "Diagnosis, then prophylaxis",
+          "Syndrome, then diagnosis"
+        ],
+        "correct": 0,
+        "explain": "Naming the disease from findings is diagnosis; predicting the outcome is prognosis. Prophylaxis is prevention and a syndrome is a group of signs."
+      },
+      {
+        "id": "MT10070",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which set of combining forms is interchangeable for tooth or teeth?",
+        "options": [
+          "odont/o, dent/o, dent/i, and dent-",
+          "gingiv/o, dent/o, dent/i, and dent-",
+          "odont/o, oste/o, dent/i, and dent-",
+          "cyt/o, odont/o, dent/o, and dent-"
+        ],
+        "correct": 0,
+        "explain": "The tooth is named by the interchangeable forms odont/o, dent/o, dent/i, and dent-, as in endodontist, dentin, and denture. Gingiv/o names the gums, so a set that leads with gingiv/o is not a tooth set. Oste/o names bone, and cyt/o names cell, so either substitution leaves the set."
+      },
+      {
+        "id": "MT10071",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Where is a patient needing urgent care, without cardiac monitoring or surgery, sent?",
+        "options": [
+          "ICU, the intensive care unit",
+          "ECU, the emergency care unit",
+          "CCU, the coronary or cardiac care unit",
+          "OP, the outpatient clinic"
+        ],
+        "correct": 1,
+        "explain": "Urgent treatment goes to the ECU, the emergency care unit. The ICU is intensive care, the CCU coronary or cardiac care, and OP the outpatient clinic."
+      },
+      {
+        "id": "MT10072",
+        "type": "mcq",
+        "cat": "MT_lec10",
+        "q": "Which karyotype is the female pattern of Down syndrome?",
+        "options": [
+          "47,XX,+21, female trisomy 21",
+          "47,XY,+21, male trisomy 21",
+          "46,XX, usual female count",
+          "47,XX,+18, female trisomy 18"
+        ],
+        "correct": 0,
+        "explain": "The female pattern of Down syndrome is 47,XX,+21, an extra chromosome 21 with a female sex-chromosome pair. 47,XY,+21 is the male pattern of the same trisomy, so it is not the female pattern. 46,XX is the usual female count, with no extra chromosome. 47,XX,+18 is a female trisomy of chromosome 18, not chromosome 21."
+      },
+      {
+        "id": "MT10073",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "q": "Which findings make up the sign cluster of Down syndrome?",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Face",
+            "options": [
+              "Flat face",
+              "Long face",
+              "Round face",
+              "Narrow face"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Head",
+            "options": [
+              "Small head",
+              "Large head",
+              "Long head",
+              "Pointed head"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "Tongue",
+            "options": [
+              "Protruding tongue",
+              "Small, short tongue",
+              "Absent tongue",
+              "Tied-down tongue"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "4",
+            "prompt": "Eyes",
+            "options": [
+              "Upward slanting eyes",
+              "Downward slanting eyes",
+              "Lateral slanting eyes",
+              "No eye slant"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "5",
+            "prompt": "Cheeks",
+            "options": [
+              "Rounded cheeks",
+              "Sunken cheeks",
+              "Hollow cheeks",
+              "Pale cheeks"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "6",
+            "prompt": "Muscles",
+            "options": [
+              "Hypotonia",
+              "Rigid muscles",
+              "Spasm",
+              "Tremor"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Down syndrome gathers a flat face, a small head, a small mouth with a protruding tongue, upward slanting eyes, rounded cheeks, and weak floppy muscles, called hypotonia. A long, round, or narrow face is not the face finding. A large, long, or pointed head is not the head finding. A small, absent, or short tongue is not the tongue finding. Downward, lateral, or absent slant is not the eye finding. Sunken, hollow, or pale cheeks are not the cheek finding. Rigid muscles, spasm, and tremor are not the muscle finding."
+      },
+      {
+        "id": "MT10074",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 1,
+        "q": "What does CCU stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which expansion is spelled correctly?",
+            "options": [
+              "Coronary or Cardiac Care Unit",
+              "Corronary or Cardiac Care Unit",
+              "Coronery or Cardiac Care Unit",
+              "Coronorry or Cardiac Care Unit"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "CCU stands for the coronary or cardiac care unit. Corronary, Coronery, and Coronorry misspell the content word. The other care units are ECU, ICU, and OR."
+      },
+      {
+        "id": "MT10075",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 2,
+        "q": "What does ECU stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "Emergency Care Unit",
+              "Endocrine Care Unit",
+              "External Cardiac Unit",
+              "Elective Cardiac Unit"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "ECU stands for the emergency care unit. Endocrine care unit, external cardiac unit, and elective cardiac unit share the letters but are not the expansion."
+      },
+      {
+        "id": "MT10076",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 3,
+        "q": "What does ICU stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "Intensive Care Unit",
+              "Internal Cardiac Unit",
+              "Immediate Cardiac Unit",
+              "Intravenous Care Unit"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "ICU stands for the intensive care unit. Internal cardiac unit, immediate cardiac unit, and intravenous care unit share the letters but are not the expansion."
+      },
+      {
+        "id": "MT10077",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 4,
+        "q": "What does OR stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "Operating Room",
+              "Oncology Room",
+              "Orthopedic Room",
+              "Outpatient Recovery"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "OR stands for the operating room. Oncology room, orthopedic room, and outpatient recovery share the letters but are not the expansion."
+      },
+      {
+        "id": "MT10078",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 5,
+        "q": "What does IP stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "Inpatient",
+              "Isolated patient",
+              "Intake procedure",
+              "Internal pressure"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "IP stands for inpatient, a patient admitted to the hospital. Isolated patient, intake procedure, and internal pressure share the letters but are not the expansion."
+      },
+      {
+        "id": "MT10079",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 6,
+        "q": "What does OP stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "Outpatient",
+              "Operating procedure",
+              "Observed patient",
+              "Oral pressure"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "OP stands for outpatient, one seen without admission. Operating procedure, observed patient, and oral pressure share the letters but are not the expansion."
+      },
+      {
+        "id": "MT10080",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 7,
+        "q": "What does DC stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "Discharge or discontinue",
+              "Daily care or dosage",
+              "Dose change or delay",
+              "Drug control or dispensing"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "DC or D/C stands for discharge or discontinue. Daily care or dosage, dose change or delay, and drug control or dispensing share the letters but are not the expansion."
+      },
+      {
+        "id": "MT10081",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 8,
+        "q": "What does BP stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "Blood Pressure",
+              "Blood Plasma",
+              "Body Pulse",
+              "Basal Pressure"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "BP stands for blood pressure. Blood plasma, body pulse, and basal pressure share the letters but are not the expansion."
+      },
+      {
+        "id": "MT10082",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 9,
+        "q": "What does bid stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "Twice a day",
+              "Three times a day",
+              "After meals",
+              "Every week"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Which Latin source is spelled correctly?",
+            "options": [
+              "Bis in die",
+              "Bis in dee",
+              "Bis en die",
+              "Biss in die"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Bid means twice a day. Three times a day is tid, after meals is pp, and week is wk. The Latin source is bis in die. Bis in dee, Bis en die, and Biss in die misspell that source."
+      },
+      {
+        "id": "MT10083",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 10,
+        "q": "What does tid stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "Three times a day",
+              "Four times a day",
+              "After every meal",
+              "Once every week"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Which Latin source is spelled correctly?",
+            "options": [
+              "Ter in die",
+              "Ter in dee",
+              "Ter en die",
+              "Terr in die"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Tid means three times a day. Twice a day is bid, after meals is pp, and week is wk. The Latin source is ter in die. Ter in dee, Ter en die, and Terr in die misspell that source."
+      },
+      {
+        "id": "MT10084",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 11,
+        "q": "What does pp stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "After meals",
+              "Twice a day",
+              "Three times a day",
+              "Every week"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Which Latin source is spelled correctly?",
+            "options": [
+              "Postprandial",
+              "Postprandal",
+              "Postprandeal",
+              "Postprandiel"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Pp means after meals. Twice a day is bid, three times a day is tid, and week is wk. The Latin source is postprandial. Postprandal, Postprandeal, and Postprandiel misspell that source."
+      },
+      {
+        "id": "MT10085",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 12,
+        "q": "What does wk stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "Week",
+              "Year",
+              "Twice a day",
+              "After meals"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Wk stands for week. Year is yr, twice a day is bid, and after meals is pp."
+      },
+      {
+        "id": "MT10086",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 13,
+        "q": "What does yr stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "Year",
+              "Week",
+              "Month",
+              "Day"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Yr stands for year. Week is wk, twice a day is bid, and three times a day is tid."
+      },
+      {
+        "id": "MT10087",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 14,
+        "q": "What does Rx stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "Prescription",
+              "Symptoms",
+              "Diagnosis",
+              "Treatment"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Rx stands for prescription. Symptoms is Sx, diagnosis is Dx, and treatment is Tx."
+      },
+      {
+        "id": "MT10088",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 15,
+        "q": "What does Sx stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "Symptoms",
+              "Prescription",
+              "Diagnosis",
+              "Treatment"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Sx stands for symptoms. Prescription is Rx, diagnosis is Dx, and treatment is Tx."
+      },
+      {
+        "id": "MT10089",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 16,
+        "q": "What does Dx stand for? Answer each step, then the next abbreviation follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "Diagnosis",
+              "Prescription",
+              "Symptoms",
+              "Treatment"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Dx stands for diagnosis. Prescription is Rx, symptoms is Sx, and treatment is Tx."
+      },
+      {
+        "id": "MT10090",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "abbrev-drill",
+        "groupOrder": 17,
+        "q": "What does Tx stand for? Answer each step, then the next structure follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which meaning belongs to this abbreviation?",
+            "options": [
+              "Treatment",
+              "Prescription",
+              "Symptoms",
+              "Diagnosis"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Tx stands for treatment. Prescription is Rx, symptoms is Sx, and diagnosis is Dx."
+      },
+      {
+        "id": "MT10091",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "tooth-drill",
+        "groupOrder": 1,
+        "q": "This is the hard outer part of the tooth.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which is the correct spelling of this layer?",
+            "options": [
+              "Enamel",
+              "Enamle",
+              "Enamell",
+              "Enemal"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "What lies inside the Enamel?",
+            "options": [
+              "Dentin",
+              "Pulp",
+              "Gingiva",
+              "Root"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "The hard outer part is enamel. Dentin lies inside it. Pulp is deeper, inside the dentin. Gingiva names the gums, and the root is the part fixed in the jaw."
+      },
+      {
+        "id": "MT10092",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "tooth-drill",
+        "groupOrder": 2,
+        "q": "This layer lies below the hard outer part and outside the blood and nerve tissue.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which is the correct spelling of this layer?",
+            "options": [
+              "Dentin",
+              "Dentinee",
+              "Dentinn",
+              "Denten"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "What lies outside the Dentin?",
+            "options": [
+              "Enamel",
+              "Pulp",
+              "Gingiva",
+              "Canal"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "What lies inside the Dentin?",
+            "options": [
+              "Pulp",
+              "Enamel",
+              "Root",
+              "Apex"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "This layer is dentin. Enamel lies outside it and pulp lies inside it. Gingiva names the gums, the canal is the tubular passage, the root is fixed in the jaw, and the apex is the tip of the root."
+      },
+      {
+        "id": "MT10093",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "tooth-drill",
+        "groupOrder": 3,
+        "q": "This tissue holds the blood and nerve supply of the tooth.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which is the correct spelling of this tissue?",
+            "options": [
+              "Pulp",
+              "Pulpe",
+              "Pulpp",
+              "Polp"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "What lies outside the Pulp?",
+            "options": [
+              "Dentin",
+              "Enamel",
+              "Gingiva",
+              "Root"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "This tissue is pulp. Dentin lies outside it, and enamel is farther out. Gingiva names the gums, and the root is the part fixed in the jaw."
+      },
+      {
+        "id": "MT10094",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "tooth-drill",
+        "groupOrder": 4,
+        "q": "This names the gums. Answer each step, then the next structure follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which is the correct spelling of this structure?",
+            "options": [
+              "Gingiva",
+              "Gingeva",
+              "Gengiva",
+              "Gingvia"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Which combining form names it?",
+            "options": [
+              "Gingiv/o",
+              "Odont/o",
+              "Dent/o",
+              "Oste/o"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "The gums are the gingiva, and gingiv/o names them. Odont/o and dent/o name the tooth. Oste/o names bone."
+      },
+      {
+        "id": "MT10095",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "tooth-drill",
+        "groupOrder": 5,
+        "q": "This is the narrow tubular passage inside the tooth.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which is the correct spelling of this passage?",
+            "options": [
+              "Canal",
+              "Canel",
+              "Cannal",
+              "Canall"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Which tissue runs in the Canal?",
+            "options": [
+              "Pulp",
+              "Enamel",
+              "Dentin",
+              "Gingiva"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "The narrow tubular passage is the canal. Pulp, with its blood and nerve supply, runs in it. Enamel and dentin are the outer layers, and gingiva names the gums."
+      },
+      {
+        "id": "MT10096",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "tooth-drill",
+        "groupOrder": 6,
+        "q": "This is the part of the tooth fixed in the jaws.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which is the correct spelling of this part?",
+            "options": [
+              "Root",
+              "Roote",
+              "Rott",
+              "Roott"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Which tip ends the Root?",
+            "options": [
+              "Apex",
+              "Canal",
+              "Pulp",
+              "Enamel"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "The part fixed in the jaws is the root. Its terminal tip is the apex. The canal is the tubular passage, pulp is the inner tissue, and enamel is the hard outer part."
+      },
+      {
+        "id": "MT10097",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "tooth-drill",
+        "groupOrder": 7,
+        "q": "This is the terminal tip of the part fixed in the jaws.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which is the correct spelling of this tip?",
+            "options": [
+              "Apex",
+              "Appex",
+              "Apix",
+              "Apecs"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Which part does the Apex end?",
+            "options": [
+              "Root",
+              "Canal",
+              "Enamel",
+              "Gingiva"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "The terminal tip is the apex, and it ends the root. The canal is the tubular passage, enamel is the hard outer part, and gingiva names the gums."
+      },
+      {
+        "id": "MT10098",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "tooth-drill",
+        "groupOrder": 8,
+        "q": "This is the upper jaw. Answer each step, then the next structure follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which is the correct spelling of this jaw?",
+            "options": [
+              "Maxilla",
+              "Maxila",
+              "Maxillae",
+              "Maxillla"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Where does the other jaw lie relative to the maxilla?",
+            "options": [
+              "Inferior to it",
+              "Superior to it",
+              "Inside the canal",
+              "On the tooth crown"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "The upper jaw is the maxilla. Maxillae is the plural, not the singular jaw asked here. The mandible lies inferior to it."
+      },
+      {
+        "id": "MT10099",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "tooth-drill",
+        "groupOrder": 9,
+        "q": "This is the lower jaw. Answer each step, then the specialist run follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which is the correct spelling of this jaw?",
+            "options": [
+              "Mandible",
+              "Mandable",
+              "Mandiblle",
+              "Mandibel"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Where does the other jaw lie relative to the mandible?",
+            "options": [
+              "Superior to it",
+              "Inferior to it",
+              "Inside the canal",
+              "On the tooth crown"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "The lower jaw is the mandible. The maxilla lies superior to it."
+      },
+      {
+        "id": "MT10100",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "specialist-drill",
+        "groupOrder": 1,
+        "q": "This specialist treats pulp-related dental problems. Answer each step, then the next specialist follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which is the correct spelling of this specialist?",
+            "options": [
+              "Endodontist",
+              "Endodonist",
+              "Endodentist",
+              "Endodontest"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Which element points within, to the pulp?",
+            "options": [
+              "Endo-",
+              "Ortho-",
+              "Pedo-",
+              "Prosth-"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "The specialist in pulp-related treatment is the endodontist. Endo- points within, to the pulp. Ortho- means straight, pedo- means child, and prosth- means replacement."
+      },
+      {
+        "id": "MT10101",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "specialist-drill",
+        "groupOrder": 2,
+        "q": "This specialist straightens the teeth. Answer each step, then the next specialist follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which is the correct spelling of this specialist?",
+            "options": [
+              "Orthodontist",
+              "Orthodonist",
+              "Orthodentist",
+              "Orthodontest"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Which element means straight?",
+            "options": [
+              "Ortho-",
+              "Endo-",
+              "Pedo-",
+              "Prosth-"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "The specialist who straightens teeth is the orthodontist. Ortho- means straight. Endo- points within, pedo- means child, and prosth- means replacement."
+      },
+      {
+        "id": "MT10102",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "specialist-drill",
+        "groupOrder": 3,
+        "q": "This specialist treats children's teeth. Answer each step, then the next specialist follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which is the correct spelling of this specialist?",
+            "options": [
+              "Pedodontist",
+              "Pedodonist",
+              "Pedodentist",
+              "Pedodontest"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Which element means child?",
+            "options": [
+              "Pedo-",
+              "Endo-",
+              "Ortho-",
+              "Prosth-"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "The specialist in children's teeth is the pedodontist. Pedo- means child. Endo- points within, ortho- means straight, and prosth- means replacement."
+      },
+      {
+        "id": "MT10103",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "specialist-drill",
+        "groupOrder": 4,
+        "q": "This specialist replaces missing teeth. Answer each step, then the appliance follows.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which is the correct spelling of this specialist?",
+            "options": [
+              "Prosthodontist",
+              "Prosthondontist",
+              "Prosthodonist",
+              "Prosthodentist"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Which element means replacement?",
+            "options": [
+              "Prosth-",
+              "Endo-",
+              "Ortho-",
+              "Pedo-"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "The specialist who replaces missing teeth is the prosthodontist. Prosth- means replacement. Endo- points within, ortho- means straight, and pedo- means child."
+      },
+      {
+        "id": "MT10104",
+        "type": "stepped",
+        "cat": "MT_lec10",
+        "group": "specialist-drill",
+        "groupOrder": 5,
+        "q": "This is an artificial substitute for natural teeth, partial or full.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which is the correct spelling of this appliance?",
+            "options": [
+              "Denture",
+              "Denturre",
+              "Dentuer",
+              "Dentore"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Which specialist supplies the Denture?",
+            "options": [
+              "Prosthodontist",
+              "Endodontist",
+              "Orthodontist",
+              "Pedodontist"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "The artificial substitute for natural teeth is a denture, partial or full. The prosthodontist replaces missing teeth. The endodontist treats pulp, the orthodontist straightens teeth, and the pedodontist treats children's teeth."
+      }
+    ]
+  }
+}
