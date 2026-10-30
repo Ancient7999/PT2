@@ -10,7 +10,7 @@
   "bank": {
     "A": [
       {
-        "id": "SS70001",
+        "id": "SSPT207000",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What is the first study habit tip?",
@@ -24,7 +24,7 @@
         "explain": "The first tip is to process information as deeply as possible. Highlighting while reading can become mindless. Saving practice for the night before is not advised. Setting a regular time is a study-atmosphere tip."
       },
       {
-        "id": "SS70002",
+        "id": "SSPT207001",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What does elaboration help you do?",
@@ -38,7 +38,7 @@
         "explain": "Elaboration helps memory by linking information to what you already know. Practice exams guide studying, questions maintain focus, and layering organizes concepts."
       },
       {
-        "id": "SS70003",
+        "id": "SSPT207002",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "How should you organize studying by layering?",
@@ -52,7 +52,7 @@
         "explain": "Layering means learning major concepts first, then big categories, then headings and subheadings. Details-first, headings-first, and subheadings-first reverse the order."
       },
       {
-        "id": "SS70004",
+        "id": "SSPT207003",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should you do with practice exams and questions from study aids?",
@@ -66,7 +66,7 @@
         "explain": "Practice exams and questions from study aids should guide studying while you study. They should not be saved for the night before the exam."
       },
       {
-        "id": "SS70005",
+        "id": "SSPT207004",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "When studying practice questions, what should you examine?",
@@ -80,7 +80,7 @@
         "explain": "Look at both right and wrong answers for clues about what is important to study. The stem, title, or instructions do not give the same answer-pattern clues."
       },
       {
-        "id": "SS70006",
+        "id": "SSPT207005",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "When should you highlight while reading?",
@@ -94,7 +94,7 @@
         "explain": "Highlight after finishing a paragraph or section, then think about the most important information and go back to highlight it. Line-by-line highlighting can become mindless."
       },
       {
-        "id": "SS70007",
+        "id": "SSPT207006",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What does formulating questions do while reading?",
@@ -108,7 +108,7 @@
         "explain": "Formulating questions is an active reading strategy. It gives a purpose for reading, raises curiosity, increases comprehension, and helps maintain focus."
       },
       {
-        "id": "SS70008",
+        "id": "SSPT207007",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "When can you write questions for active reading?",
@@ -122,7 +122,7 @@
         "explain": "Write questions before you read, as you read, and after you read. The other options pair reading stages with highlighting, note-taking, or surveying and miss part of the active reading strategy."
       },
       {
-        "id": "SS70009",
+        "id": "SSPT207008",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What is the first step of SQ4R?",
@@ -136,7 +136,7 @@
         "explain": "SQ4R starts with surveying the chapter. Reciting, reviewing, and recording are later steps."
       },
       {
-        "id": "SS70010",
+        "id": "SSPT207009",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which set lists the SQ4R steps in order?",
@@ -150,7 +150,7 @@
         "explain": "The order is Survey, Question, Read, Record, Recite, Review. Each wrong option swaps one step position, making the sequence incorrect."
       },
       {
-        "id": "SS70011",
+        "id": "SSPT207010",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What is the first essential strategy for textbook reading?",
@@ -164,7 +164,7 @@
         "explain": "The first essential strategy is a clear intention to understand what you read. Organized systems, inquisitiveness, and time management are other essential strategies."
       },
       {
-        "id": "SS70012",
+        "id": "SSPT207011",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should you relate new information to?",
@@ -178,7 +178,7 @@
         "explain": "Relate new information to existing schemas in long-term memory. Sensory codes, headings, and glossary or index entries are other reading or surveying tools."
       },
       {
-        "id": "SS70013",
+        "id": "SSPT207012",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which textbook part lists the chapters and page numbers?",
@@ -192,7 +192,7 @@
         "explain": "The table of contents lists chapters and page numbers. An appendix adds material, a glossary defines terms, and an index locates topics."
       },
       {
-        "id": "SS70014",
+        "id": "SSPT207013",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should you read carefully when surveying a chapter?",
@@ -206,7 +206,7 @@
         "explain": "Read introductory material carefully. Headings, visuals, marginal notes, terminology, and end-of-chapter items are also surveyed, but the advice singles out introductory material."
       },
       {
-        "id": "SS70016",
+        "id": "SSPT207014",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "How should you begin reading science textbooks?",
@@ -220,7 +220,7 @@
         "explain": "Begin with overview reading, then use thorough reading. Examples, terminology, mental images, recitation, diagrams, and larger concepts come later."
       },
       {
-        "id": "SS70017",
+        "id": "SSPT207015",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "How long should pre-reading take?",
@@ -234,7 +234,7 @@
         "explain": "Pre-reading should involve basic skimming and take about 10-15 minutes. Two hours, five minutes, or the entire night do not match the stated time."
       },
       {
-        "id": "SS70018",
+        "id": "SSPT207016",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Where should you sit during class?",
@@ -248,7 +248,7 @@
         "explain": "Sit where distractions will be minimized. Talking friends, the back row, and phone checking increase distractions."
       },
       {
-        "id": "SS70019",
+        "id": "SSPT207017",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "When should you review notes after class?",
@@ -262,7 +262,7 @@
         "explain": "Briefly review notes within a day or two. Waiting a month, never reviewing, or reviewing during the exam does not follow the timing."
       },
       {
-        "id": "SS70020",
+        "id": "SSPT207018",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should you form for class?",
@@ -276,7 +276,7 @@
         "explain": "Form a good listening habit. Talking, daydreaming, and phone checking prevent listening."
       },
       {
-        "id": "SS70021",
+        "id": "SSPT207019",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should you avoid for studying?",
@@ -290,7 +290,7 @@
         "explain": "Try not to use your bed for studying so it stays linked to relaxation. A clear desk, good lighting, and a proper chair support studying."
       },
       {
-        "id": "SS70022",
+        "id": "SSPT207020",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should a study desk have on it?",
@@ -304,7 +304,7 @@
         "explain": "The desk should have nothing on it except the subject you are studying. Unrelated objects, snacks, drinks, and phones create distractions."
       },
       {
-        "id": "SS70023",
+        "id": "SSPT207021",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which items are listed as necessary for studying?",
@@ -318,7 +318,7 @@
         "explain": "The listed items are a solid surface, good lighting, a chair, books, supplies, a clock, and a drink. A soft bed, a phone, and snacks replace required items."
       },
       {
-        "id": "SS70024",
+        "id": "SSPT207022",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Is your best friend the best study partner?",
@@ -332,7 +332,7 @@
         "explain": "Your best friend is not necessarily your best study partner. A different partner may give a new perspective. A guaranteed choice, identical partner, and avoiding discussion do not match."
       },
       {
-        "id": "SS70025",
+        "id": "SSPT207023",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should a real break include?",
@@ -346,7 +346,7 @@
         "explain": "Make sure a break is really a break. Get up, go outside, and walk around. Staying seated, checking the phone, or continuing to read does not make a real break."
       },
       {
-        "id": "SS70026",
+        "id": "SSPT207024",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which set lists everyday brain foods?",
@@ -360,7 +360,7 @@
         "explain": "Everyday brain foods listed include breakfast, oranges, water, healthy snacks, eggs, fish, berries, raisins, chocolate/crisps, and nuts. The other sets are not the listed everyday brain-food set."
       },
       {
-        "id": "SS70028",
+        "id": "SSPT207025",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should you do if you cannot focus on reading?",
@@ -374,7 +374,7 @@
         "explain": "Do something a bit easier or more enjoyable, then try again in 30 minutes. Sitting and staring, giving up, or checking the phone does not ease you back into studying."
       },
       {
-        "id": "SS70029",
+        "id": "SSPT207026",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What is a mind map?",
@@ -388,7 +388,7 @@
         "explain": "A mind map is a diagram used to visually organize information. It is hierarchical and shows relationships among pieces of the whole. A list, paragraph, or numerical table is not a mind map."
       },
       {
-        "id": "SS70030",
+        "id": "SSPT207027",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Who are mind maps especially good for?",
@@ -402,7 +402,7 @@
         "explain": "Mind maps are good for the visual learner. They are used to visualize, structure, and classify ideas. Auditory, kinesthetic, and no learner do not match the statement."
       },
       {
-        "id": "SS70031",
+        "id": "SSPT207028",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which is a study technique?",
@@ -416,7 +416,7 @@
         "explain": "Study difficult subjects first. Also use waiting time effectively and use a regular study area day after day. Easy-first, sleeping area, and ignored gaps go against the techniques."
       },
       {
-        "id": "SS70032",
+        "id": "SSPT207029",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Where should you study?",
@@ -430,7 +430,7 @@
         "explain": "Study where you will be alert. Do not study where you sleep, in noisy areas, or while using the phone. The library can also signal work mode."
       },
       {
-        "id": "SS70033",
+        "id": "SSPT207030",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should you hang on your door?",
@@ -444,7 +444,7 @@
         "explain": "Hang a do not disturb sign on your door. A come in anytime sign, a phone is available sign, or a study after lunch sign would invite interruptions or delay study."
       },
       {
-        "id": "SS70034",
+        "id": "SSPT207031",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which set lists the keys to study?",
@@ -458,7 +458,7 @@
         "explain": "The keys are time management, mind maps, note taking, and concentration. Daydreaming, excuses, and phone use are distractions, not keys."
       },
       {
-        "id": "SS70035",
+        "id": "SSPT207032",
         "type": "stepped",
         "cat": "Tips for Good Study Habits",
         "q": "Use the SQ4R sequence.",
@@ -533,7 +533,7 @@
         "explain": "SQ4R order is Survey, Question, Read, Record, Recite, Review. Survey is first; Question follows Survey; Read follows Question; Record follows Read; Recite follows Record; Review is final."
       },
       {
-        "id": "SS70036",
+        "id": "SSPT207033",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should you stop looking for?",
@@ -547,7 +547,7 @@
         "explain": "Stop looking for excuses not to study. Think about the end goal, your exam. Free time, lighting, and quieter places are useful adjustments, not excuses."
       },
       {
-        "id": "SS70037",
+        "id": "SSPT207034",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "How can you use dead time?",
@@ -561,7 +561,7 @@
         "explain": "Think about dead time and use it more effectively for studying. Sleep, phone use, or leaving it unused does not use it effectively."
       },
       {
-        "id": "SS70038",
+        "id": "SSPT207035",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should you know to prepare well?",
@@ -575,7 +575,7 @@
         "explain": "Know the exam papers and review mock exam papers. The paper title, one sample question, or no exam knowledge does not prepare you fully."
       },
       {
-        "id": "SS70039",
+        "id": "SSPT207036",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What is the key to study?",
@@ -589,7 +589,7 @@
         "explain": "The key to study is learning to be a smart learner, especially with exam questions and exam papers. Avoiding preparation, studying once, or ignoring time management is the opposite."
       },
       {
-        "id": "SS70040",
+        "id": "SSPT207037",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What do questions and answers create?",
@@ -603,7 +603,7 @@
         "explain": "Questions and answers create memory cues or associations to recall information later. They do not create confusion, boredom, or distraction."
       },
       {
-        "id": "SS70041",
+        "id": "SSPT207038",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should you do with notes after class?",
@@ -617,7 +617,7 @@
         "explain": "Reorganize, restate, and reformat notes to process information at a deeper level. Leaving them unchanged, throwing them away, or reading them once does not deepen processing."
       },
       {
-        "id": "SS70042",
+        "id": "SSPT207039",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Why should you note your caffeine intake?",
@@ -631,7 +631,7 @@
         "explain": "Note caffeine intake so you can keep alert without becoming jittery and stop in time to sleep. Hunger, outdoor breaks, and bed-relaxation are separate study-habit tips."
       },
       {
-        "id": "SS70043",
+        "id": "SSPT207040",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which situation illustrates using waiting time?",
@@ -645,7 +645,7 @@
         "explain": "Use waiting time effectively, such as waiting for the bus or time between classes. Long blocks, late nights, or ignored gaps waste usable time."
       },
       {
-        "id": "SS70044",
+        "id": "SSPT207041",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should you agree with family about?",
@@ -659,7 +659,7 @@
         "explain": "Agree with family or friends about suitable study time. No scheduled study time, phone time, or banned quiet time would prevent studying."
       },
       {
-        "id": "SS70045",
+        "id": "SSPT207042",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should good study habits help you remember?",
@@ -673,7 +673,7 @@
         "explain": "With good study habits, you should remember your predicted results. Excuses, distractions, and phone numbers are not the stated outcome."
       },
       {
-        "id": "SS70046",
+        "id": "SSPT207043",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which approach divides learning into separate sessions?",
@@ -687,7 +687,7 @@
         "explain": "Spaced studying means learning across separate sessions. Timetable planning, use of waiting time, and regular study time are other ways to manage study time."
       },
       {
-        "id": "SS70047",
+        "id": "SSPT207044",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which set lists study techniques?",
@@ -701,7 +701,7 @@
         "explain": "Study techniques include difficult subjects first, waiting time, regular study areas, and library signals. Deep processing, mind maps, and highlighting belong to other study tips."
       },
       {
-        "id": "SS70048",
+        "id": "SSPT207045",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which set lists how to get the best possible results?",
@@ -715,7 +715,7 @@
         "explain": "The best-results advice is smart learning with exam papers, plus using time effectively by making a study timetable. Predicted results, do-not-disturb signs, and brain foods belong to other sections."
       },
       {
-        "id": "SS70049",
+        "id": "SSPT207046",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which set lists ways to use your time wisely?",
@@ -729,7 +729,7 @@
         "explain": "Using time wisely includes study and exam timetables, dead time, and mock papers. Do-not-disturb signs, brain foods, and elaboration belong to other tips."
       },
       {
-        "id": "SS70050",
+        "id": "SSPT207047",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which set lists the first four study habit tips?",
@@ -743,7 +743,7 @@
         "explain": "The first four main tips are processing, reading, lectures, and study atmosphere. Social studying, highlighting, and brain foods are not first-level tips."
       },
       {
-        "id": "SS70052",
+        "id": "SSPT207048",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which set lists points for surveying a chapter?",
@@ -757,7 +757,7 @@
         "explain": "Chapter surveying includes introductory material, headings, visuals, marginal notes, terminology, and end-of-chapter items. Copyright pages, bibliographies, and appendices belong to textbook surveying."
       },
       {
-        "id": "SS70053",
+        "id": "SSPT207049",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which set lists parts for surveying a textbook?",
@@ -771,7 +771,7 @@
         "explain": "Textbook surveying includes the title page, copyright page, table of contents, introductory information, appendix, glossary, references, and index. Chapter headings, visuals, and end-of-chapter items belong to chapter surveying."
       },
       {
-        "id": "SS70054",
+        "id": "SSPT207050",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What does liaising with classmates help you do?",
@@ -785,7 +785,7 @@
         "explain": "Liaising with classmates helps you get, swap, or share notes. A new perspective comes from a different partner, websites are another help source, and answering machines relate to phone interruptions."
       },
       {
-        "id": "SS70055",
+        "id": "SSPT207051",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "After Survey and Question, which set lists the 4 Rs in order?",
@@ -799,7 +799,7 @@
         "explain": "SQ4R begins with Survey and Question, then the 4 Rs are Read, Record, Recite, and Review. The wrong options place one R too early or too late."
       },
       {
-        "id": "SS70056",
+        "id": "SSPT207052",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What does liaise mean when classmates help each other?",
@@ -813,7 +813,7 @@
         "explain": "Liaise means to work together and exchange information. When classmates help each other, this includes getting, swapping, or sharing notes. Linking information describes elaboration, identical partners relates to study partners, and diagrams describe mind maps."
       },
       {
-        "id": "SS70057",
+        "id": "SSPT207053",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which elaboration method reorganizes information?",
@@ -827,7 +827,7 @@
         "explain": "Elaboration includes linking information to prior knowledge, reorganizing with charts, outlines, or diagrams, using vivid visualization, and acting out situations. This item tests the reorganizing method."
       },
       {
-        "id": "SS70058",
+        "id": "SSPT207054",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What do practice questions show you?",
@@ -841,7 +841,7 @@
         "explain": "Practice questions show where you need to read or watch more. Layering, breaks, and mind maps are other study-habit tips."
       },
       {
-        "id": "SS70059",
+        "id": "SSPT207055",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should you do after finishing a section?",
@@ -855,7 +855,7 @@
         "explain": "After finishing a section, predict possible exam questions, their wording, correct answers, and misleading answers. Spaced studying, liaising, and memory cues are other tips."
       },
       {
-        "id": "SS70060",
+        "id": "SSPT207056",
         "type": "stepped",
         "cat": "Tips for Good Study Habits",
         "q": "Use the pre-lecture preparation steps.",
@@ -919,7 +919,7 @@
         "explain": "Pre-lecture preparation moves from major concepts to 10-15 minute skimming, new words, difficult points, and note organization. Other durations, later items, highlighting, breaks, and seating are not the asked step."
       },
       {
-        "id": "SS70061",
+        "id": "SSPT207057",
         "type": "stepped",
         "cat": "Tips for Good Study Habits",
         "q": "Use the after-lecture note steps.",
@@ -950,7 +950,7 @@
         "explain": "After class, mark clear points and clarification needs; predicted results, brain foods, and library signals are other tips. Then cross-reference notes with lectures, books, and aids; headings, charts, and glossary entries are other tools."
       },
       {
-        "id": "SS70062",
+        "id": "SSPT207058",
         "type": "stepped",
         "cat": "Tips for Good Study Habits",
         "q": "Use the science-textbook facts.",
@@ -981,7 +981,7 @@
         "explain": "Understanding science textbooks involves hands-on laboratory demonstrations, experiments, and observations. Science textbooks also use declarative and procedural knowledge. Major concepts, charts, and sensory codes are other tips."
       },
       {
-        "id": "SS70063",
+        "id": "SSPT207059",
         "type": "matching",
         "cat": "Tips for Good Study Habits",
         "q": "Match each social-studying helper to its purpose.",
@@ -1021,7 +1021,7 @@
         "explain": "Social studying includes swapping notes with classmates, gaining a new perspective from a different partner, and asking teachers or looking up websites."
       },
       {
-        "id": "SS70064",
+        "id": "SSPT207060",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should you track for body needs?",
@@ -1035,7 +1035,7 @@
         "explain": "Track when you get hungry and what gives an energy boost so you can plan snacks and meal breaks. Break timing, caffeine and water, and meal or sleep planning are other body-needs points."
       },
       {
-        "id": "SS70065",
+        "id": "SSPT207061",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Why choose the right food and drink?",
@@ -1049,7 +1049,7 @@
         "explain": "Right food and drink aid concentration during exams. Organizing charts, memory cues, and reading focus are other study strategies."
       },
       {
-        "id": "SS70066",
+        "id": "SSPT207062",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which task suits the evening for a morning person?",
@@ -1063,7 +1063,7 @@
         "explain": "A morning person should study the hardest material in the morning and keep evenings for lower-attention tasks such as making flashcards or rewriting charts. Lab demonstrations and mock papers belong to other sections."
       },
       {
-        "id": "SS70067",
+        "id": "SSPT207063",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "What should you do with mock exam papers?",
@@ -1077,7 +1077,7 @@
         "explain": "Review mock exam papers and spend time redoing answers. Saving them for exam night, sticking timetables above tables, and predicting misleading answers are other tips."
       },
       {
-        "id": "SS70068",
+        "id": "SSPT207064",
         "type": "mcq",
         "cat": "Tips for Good Study Habits",
         "q": "Which set lists uses of mind maps?",
@@ -1091,7 +1091,7 @@
         "explain": "Mind maps are used to visualize, organize information, solve problems, support decision making, and help structure answers. Predictions, highlighting, and waiting time are other study topics."
       },
       {
-        "id": "SS70069",
+        "id": "SSPT207065",
         "type": "matching",
         "cat": "Tips for Good Study Habits",
         "q": "Match each essential reading strategy to its description.",
@@ -1149,7 +1149,7 @@
         "explain": "Essential reading strategies include using an organized system, being inquisitive, including feedback, managing reading time, and encoding ordinary words into new sensory codes."
       },
       {
-        "id": "SS70070",
+        "id": "SSPT207066",
         "type": "matching",
         "cat": "Tips for Good Study Habits",
         "q": "Match each deep-processing tip to its purpose.",
@@ -1198,7 +1198,7 @@
         "explain": "Elaboration links new information to existing knowledge. Layering starts with major concepts. Practice questions guide further study. Highlighting after a section prevents mindless marking."
       },
       {
-        "id": "SS70071",
+        "id": "SSPT207067",
         "type": "matching",
         "cat": "Tips for Good Study Habits",
         "q": "Match each SQ4R step to what it involves.",
@@ -1265,7 +1265,7 @@
         "explain": "SQ4R: Survey the structure, Question by turning headings into questions, Read to find answers, Record the answers, Recite from memory, and Review later."
       },
       {
-        "id": "SS70072",
+        "id": "SSPT207068",
         "type": "matching",
         "cat": "Tips for Good Study Habits",
         "q": "Match each study-atmosphere tip to its action.",
@@ -1314,7 +1314,7 @@
         "explain": "A regular place builds a study association. A do not disturb sign blocks interruptions. A clear table removes distractions. Getting off the phone prevents constant interruptions."
       },
       {
-        "id": "SS70073",
+        "id": "SSPT207069",
         "type": "matching",
         "cat": "Tips for Good Study Habits",
         "q": "Match each key to study to its focus.",
@@ -1363,7 +1363,7 @@
         "explain": "The four keys are time management (planning study time), mind maps (visual organization), note taking (from lectures and textbooks), and concentration (sustained focus)."
       },
       {
-        "id": "SS70074",
+        "id": "SSPT207070",
         "type": "matching",
         "cat": "Tips for Good Study Habits",
         "q": "Match each body-needs tip to its purpose.",
