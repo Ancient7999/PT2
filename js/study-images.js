@@ -136,7 +136,7 @@ function storeKey(key, img) {
   function updateSummary() {
     if (!DATA) return;
     let n = 0, k = 0;
-    DATA.chapters.forEach(ch => { const t = chapterTotals(ch); n += t.n; k += t.k; });
+    DATA.chapters.filter(ch => !ch.hidden).forEach(ch => { const t = chapterTotals(ch); n += t.n; k += t.k; });
     const el = document.getElementById('studySummary');
     if (el) { el.hidden = false; el.innerHTML = '<span class="ss-label">Progress</span><span class="ss-track"><span class="ss-fill" style="width:' + (n ? Math.round(k / n * 100) : 0) + '%"></span></span><span class="ss-count">' + k + ' / ' + n + ' labels solved</span>'; }
     document.querySelectorAll('#chapterList .chapter-card').forEach(card => {
