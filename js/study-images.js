@@ -17,8 +17,6 @@
 (function () {
   'use strict';
   const STORE = 'sp_study_images_v1';
-  const XP_STORE = 'sp_study_images_xp_v1';
-  const XP_PER_DROP = 2;
   const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   const norm = s => (typeof saqNorm === 'function') ? saqNorm(s) : String(s == null ? '' : s).trim().replace(/\s+/g, ' ');
   const cands = l => [l.answer].concat(Array.isArray(l.accept) ? l.accept : [], Array.isArray(l.alias) ? l.alias : []).filter(x => x != null && String(x).trim() !== '');
@@ -113,23 +111,18 @@
   const titleCase = t => String(t).replace(/(^|[\s-])([a-z])/g, (m, a, b) => a + b.toUpperCase());
   const labelsOf = img => isSingle(img) ? [{ id: 'name', answer: img.answer, accept: img.accept || [] }] : img.labels;
   const keyOf = (ch, img) => ch.lecture + '/' + img.id;
+function storeKey(key, img) {
+  if (img && img.variants) {
+    const v = variantState(key, img).v;
+    if (v && v.id) return key + '|' + v.id;
+  }
+  return key;
+}
   const modesOf = img => (Array.isArray(img.modes) && img.modes.length) ? img.modes : (isSingle(img) ? ['type', 'bank', 'show'] : ['bank', 'type', 'show']);
   function currentMode(key, img) { const m = modeOf[key]; return modesOf(img).includes(m) ? m : modesOf(img)[0]; }
-  function solvedIn(key, img, mode) { const s = modeSlots(key, mode); return labelsOf(img).filter(l => s[l.id] != null && matches(l, s[l.id])).map(l => l.id); }
+  function solvedIn(key, img, mode) { const s = modeSlots(storeKey(key, img), mode); return labelsOf(img).filter(l => s[l.id] != null && matches(l, s[l.id])).map(l => l.id); }
   function solvedIds(key, img) { return new Set(solvedIn(key, img, 'bank').concat(solvedIn(key, img, 'type'))); }
   function solvedCount(key, img) { return solvedIds(key, img).size; }
-
-  /* —— XP (anti-farm ledger) —— */
-  function xpUser() { try { const u = window.StudyProfiles && StudyProfiles.getUser && StudyProfiles.getUser(); return (u && u.uid) || 'local'; } catch (e) { return 'local'; } }
-  function awardDropXP(key, labelId) {
-    const all = loadJSON(XP_STORE), u = xpUser();
-    const byPic = ((all[u] = all[u] || {})[setKey()] = (all[u][setKey()] || {}));
-    const got = byPic[key] = byPic[key] || [];
-    if (got.includes(labelId)) return 0;
-    got.push(labelId); saveJSON(XP_STORE, all);
-    try { if (window.StudyProfiles && typeof StudyProfiles.bumpQuestionsAnswered === 'function') { const p = StudyProfiles.bumpQuestionsAnswered(XP_PER_DROP); if (p && p.catch) p.catch(() => {}); } } catch (e) {}
-    return XP_PER_DROP;
-  }
 
   /* —— totals —— */
   function lectureOf(id) { return ((MAT && MAT.lectures) || []).find(l => l.id === id) || {}; }
@@ -276,7 +269,7 @@
     if (stk) applyFrame(img, stk.frame);
     const vst = img.variants ? variantState(key, img) : null;
     if (vst) applyVariant(img, vst.v);
-    const slots = modeSlots(key, mode), labels = labelsOf(img), blanks = blankIds(key, img), n = blanks.size;
+    const slots = modeSlots(storeKey(key, img), mode), labels = labelsOf(img), blanks = blankIds(key, img), n = blanks.size;
     const solvedHere = mode === 'show' ? [] : labels.filter(l => slots[l.id] != null && matches(l, slots[l.id]));
     const k = mode === 'show' ? solvedCount(key, img) : labels.filter(l => blanks.has(l.id) && slots[l.id] != null && matches(l, slots[l.id])).length;
     const title = single ? 'Bone Anatomy' : img.title;
@@ -354,7 +347,7 @@
     if (rb) rb.addEventListener('click', () => {
       if (pager && pager.stopCd) pager.stopCd();
       if (rb.dataset.act === 'shuffle') reshuffle(key, img);
-      delete bankSeen[key + '|' + mode]; writeModeSlots(key, mode, {}); rerender(); updateSummary();
+      delete bankSeen[key + '|' + mode]; writeModeSlots(storeKey(key, img), mode, {}); rerender(); updateSummary();
       const nb = sec.querySelector('.simg-restart'); if (nb) try { nb.focus({ preventScroll: true }); } catch (e) {}
       if (mode === 'type') focusFirstEmpty(sec);
     });
@@ -367,8 +360,8 @@
     const say = (cls, msg, ms) => { fb.className = 'feedback ' + cls + ' simg-fb'; fb.textContent = msg; clearTimeout(fb._t); if (ms) fb._t = setTimeout(() => { fb.className = 'feedback idle simg-fb'; fb.textContent = ''; }, ms); };
     const shake = el => { if (!el) return; el.classList.remove('soft-wrong'); void el.offsetWidth; el.classList.add('soft-wrong'); setTimeout(() => el.classList.remove('soft-wrong'), 480); };
     const lock = (l, text, el, how) => {
-      const slots = modeSlots(key, mode); if (slots[l.id] != null) return;
-      slots[l.id] = (typeof labelCanon === 'function') ? labelCanon(l, text) : norm(text); writeModeSlots(key, mode, slots);
+      const slots = modeSlots(storeKey(key, img), mode); if (slots[l.id] != null) return;
+      slots[l.id] = (typeof labelCanon === 'function') ? labelCanon(l, text) : norm(text); writeModeSlots(storeKey(key, img), mode, slots);
       const r = el.getBoundingClientRect();
       const labels = labelsOf(img), k = labels.filter(x => slots[x.id] != null).length, n = labels.length;
       const hadFocus = el.contains(document.activeElement);
@@ -891,7 +884,7 @@
     return c;
   }
   function chapterIds(material) { return (DATA && material && material.study && dataSrc === material.study.images) ? DATA.chapters.map(c => c.lecture) : null; }
-  window.StudyImages = { build, storeKey: STORE, xpKey: XP_STORE, chapterIds, _data: () => DATA, _matchName: (img, t) => matches(labelsOf(img)[0], t) };
+  window.StudyImages = { build, storeKey: STORE, chapterIds, _data: () => DATA, _matchName: (img, t) => matches(labelsOf(img)[0], t) };
   addEventListener('study-prefs-changed', () => {
     document.querySelectorAll('#chapterList .simg-chyme [data-base]').forEach(el => { el.setAttribute('dur', (parseFloat(el.dataset.base) * (isBasic() ? 3 : 1)) + 's'); });
     document.querySelectorAll('#chapterList .simg-card img.simg-img').forEach(el => {
