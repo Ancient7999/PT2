@@ -99,6 +99,7 @@
       return Promise.all(jobs).then(function () {
         ['week11', 'week12'].forEach(function (wk) { weeks[wk] = weeks[wk].filter(function (bk) { return banks[bk]; }); });
         setQ({ banks: banks, weeks: weeks });
+        READY = true; baseline();
       });
     });
   }
@@ -164,6 +165,35 @@
     });
     var all = Object.keys(Q.banks).length > 0 && Object.keys(Q.banks).every(function (bk) { return Q.banks[bk].every(function (id) { return seen[bk + '|' + id]; }); });
     return { n: Object.keys(seen).length, all: all };
+  }
+  /* Solve counts include repeats. History before this existed only records which questions/labels were ever solved,
+     so that distinct total is kept once as the starting point and every solve after it adds one. */
+  var COUNT = 'pt2_solve_count_v1', READY = false;
+  function counter() { var c = readJSON(COUNT, null); return c && c.base && typeof c.base === 'object' ? c : null; }
+  function baseline() {
+    if (counter()) return;
+    var base = { total: tally().n };
+    WEEKS.forEach(function (w) { base[w.week] = countOf(sync(w)); });
+    lsSet(COUNT, JSON.stringify({ base: base, ev: {}, since: Date.now() }));
+  }
+  function bump(week) {
+    var c = counter(); if (!c || !week) return false;
+    c.ev = c.ev || {}; c.ev[week] = (c.ev[week] | 0) + 1; lsSet(COUNT, JSON.stringify(c)); return true;
+  }
+  function evSum(c) { var n = 0; Object.keys(c.ev || {}).forEach(function (k) { n += c.ev[k] | 0; }); return n; }
+  function weekCount(w, L) { var c = counter(); return c ? (c.base[w.week] | 0) + ((c.ev || {})[w.week] | 0) : countOf(L); }
+  function totalCount(t) { var c = counter(); return c ? (c.base.total | 0) + evSum(c) : t.n; }
+  function weekOfBank(bk) { for (var i = 0; i < WEEKS.length; i++) if (WEEKS[i].banks.indexOf(bk) !== -1) return WEEKS[i]; return null; }
+  function picWeek() { var w = null; for (var i = 0; i < WEEKS.length; i++) if (WEEKS[i].pictures) w = WEEKS[i]; return w; }
+  // one question solved in a run (quiz-engine.js), repeats included
+  function questionSolved(bk, id) {
+    if (!READY || !known[bk] || !known[bk][id]) return;
+    var w = weekOfBank(bk); if (w) bump(w.week);
+  }
+  // asked before a label's answer is saved: has this label been named before?
+  function labelFresh(set, pic, id) {
+    var w = picWeek(); if (!w || !READY) return true;
+    return !sync(w)['lbl|' + set + '|' + pic + '|' + id];
   }
   function isOpen(u, L, n) { return u.all ? allDone(u.w, L) : n >= u.at; }
   function unlocked() { return readJSON(GOT, {}); }
@@ -231,11 +261,11 @@
   function check(quiet) {
     var got = unlocked(), fresh = [], counts = {};
     WEEKS.forEach(function (w) {
-      var L = sync(w), n = countOf(L); counts[w.week] = n;
+      var L = sync(w), n = weekCount(w, L); counts[w.week] = n;
       w.unlocks.forEach(function (u) { if (!got[u.emoji] && isOpen(u, L, n)) { got[u.emoji] = Date.now(); fresh.push(u); } });
       (w.features || []).forEach(function (f) { if (!got[f.key] && n >= f.at) { got[f.key] = Date.now(); fresh.push(f); } });
     });
-    var t = tally();
+    var t = tally(); t.n = totalCount(t);
     EXTRAS.forEach(function (f) { if (!got[f.key] && f.ok(t)) { got[f.key] = Date.now(); fresh.push(f); } });
     if (fresh.length) { lsSet(GOT, JSON.stringify(got)); if (!quiet) fresh.forEach(popup); }
     decorate();
@@ -303,6 +333,11 @@
     L['pic|' + id] = 1; lsSet(w.ledger, JSON.stringify(L)); check(false);
   }
   // one picture label named correctly (study-images.js); the saved answers are read too, so this only makes it immediate
-  function labelSolved() { check(false); }
-  global.PT2Unlocks = { has: function (k) { return !!unlocked()[k]; }, tally: tally, check: check, pictureSolved: pictureSolved, labelSolved: labelSolved, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? countOf(sync(w)) : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
+  /* typed labels count every time; word-bank labels only the first time (Reset plus trial-and-error dragging would farm them) */
+  function labelSolved(set, pic, id, how, fresh) {
+    var w = picWeek();
+    if (READY && w && set && (how === 'type' || fresh)) bump(w.week);
+    check(false);
+  }
+  global.PT2Unlocks = { has: function (k) { return !!unlocked()[k]; }, tally: tally, check: check, pictureSolved: pictureSolved, labelSolved: labelSolved, labelFresh: labelFresh, questionSolved: questionSolved, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? weekCount(w, sync(w)) : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
 })(window);

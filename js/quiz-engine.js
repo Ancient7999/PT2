@@ -277,6 +277,7 @@ function updateCounters(){
 }
 function markSolved(q){
   const id=(q&&q.__id)||qid(q,0);
+  if(window.PT2Unlocks && PT2Unlocks.questionSolved) PT2Unlocks.questionSolved(bankId(), id);
   if(window.StudyStore) StudyStore.markSolved(bankId(), id);
   updateCounters();
 }
@@ -717,6 +718,27 @@ function serializeAnswers(){
   return out;
 }
 let runDeck=null; // un-expanded deck of the active run (for saving)
+/* A set is complete as soon as its last open question is solved: the card is saved as finished right then, the run
+   stays on screen (no ending screen, no next-question bar), the last question's button reads Finish, and leaving
+   (Finish, Return to interface or Esc) goes straight back to the sets without asking. */
+let runComplete=false;
+function completeRun(){
+  if(runComplete) return;
+  runComplete=true;
+  if(typeof clearKbAdvance==='function') clearKbAdvance();
+  clearTimeout(afterAnswerProgress._finishT);
+  stopElapsedClock();
+  const simple=isSimpleRun();
+  const s=simple?wholeScore():score(), n=simple?wholeGroups().length:questions.length;
+  const sb=document.getElementById('scoreBig'); if(sb) sb.textContent=s+' / '+n;
+  if(runCard && window.StudyStore){
+    saveRunState({finished:true});
+    const st=StudyStore.load(bankId());
+    st.cards[runCard.id]=Object.assign({}, st.cards[runCard.id]||{}, {score:s,total:n,done:true,at:Date.now()});
+    StudyStore.save(bankId(), st);
+  }
+  try{ spawnFireworkBurst(W*.5,H*.3,36); }catch(e){}
+}
 function saveRunState(extra){
   if(quizActive) updateSolvedProgress();
   if(!runCard || !questions.length || !window.StudyStore) return;
@@ -724,7 +746,7 @@ function saveRunState(extra){
   const el=runElapsedSec();
   st.runs[runCard.id]=Object.assign({
     v:2, card:runCard.id, deck:serializeDeck(runDeck||[]), ans:serializeAnswers(),
-    cur:current, el, uv:!!unansweredMarkersVisible, finished:false, updated:Date.now()
+    cur:current, el, uv:!!unansweredMarkersVisible, finished:!!runComplete, updated:Date.now()
   }, extra||{});
   StudyStore.save(bankId(), st);
 }
@@ -1185,7 +1207,7 @@ function startRun(pool, label, opts){
   currentForm=runCard.id;
   runDeck=deck;
   if(typeof clearKbAdvance==='function') clearKbAdvance();
-  questions=expandDeck(deck); answers=new Array(questions.length).fill(null); current=0; locked=false; quizActive=true; runLabel=label; unansweredMarkersVisible=false;
+  questions=expandDeck(deck); answers=new Array(questions.length).fill(null); current=0; locked=false; quizActive=true; runLabel=label; unansweredMarkersVisible=false; runComplete=false;
   startElapsedClock(0);
   enterRunChrome(label);
   renderQuestion();
@@ -1212,7 +1234,7 @@ function resumeRun(card){
   cardCtx(card);
   const run=loadRunState(card.id);
   if(!run) return false;
-  runCard=card; currentForm=card.id; runLabel=card.label;
+  runCard=card; currentForm=card.id; runLabel=card.label; runComplete=false;
   const r=restoreRun(run);
   if(!r){ clearRunState(card.id); return false; }
   const added=syncRunWithBank(card);
@@ -1220,7 +1242,7 @@ function resumeRun(card){
   startElapsedClock(r.elapsed);
   if(added) saveRunState();
   enterRunChrome(card.label);
-  if(allQuestionsAnswered()){ finishQuiz(); return true; }
+  if(allQuestionsAnswered()){ completeRun(); renderQuestion(); updateNextActionButton(); return true; }
   renderQuestion();
   pt1Toast('Resumed · '+(isSimpleRun()?wholeGroups().length-wholeSolved():questions.filter((q,i)=>!isAnswered(answers[i],q)).length)+' left in this run');
   return true;
@@ -1277,9 +1299,8 @@ function afterAnswerProgress(){
   saveRunState();
   if(allQuestionsAnswered()){
     unansweredMarkersVisible=false;
-    hideNextBtn();
-    clearTimeout(afterAnswerProgress._finishT);
-    afterAnswerProgress._finishT=setTimeout(function(){ if(quizActive && allQuestionsAnswered()) finishQuiz(); }, 700);
+    completeRun();
+    updateNextActionButton();
     return;
   }
   updateNextActionButton();
@@ -1290,9 +1311,12 @@ function updateNextActionButton(){
   const atLast=questions.length>0 && current===questions.length-1;
   const answeredHere=isAnswered(answers[current], questions[current]);
   const firstOpen=firstUnansweredIndex();
-  // Full solve → keep nextBtn hidden; Run complete opens via afterAnswerProgress.
-  if(allQuestionsAnswered() || (atLast && answeredHere && firstOpen<0)){
-    hideNextBtn();
+  // Complete set: Next → through the questions, Finish on the last one (back to the sets)
+  if(runComplete || allQuestionsAnswered() || (atLast && answeredHere && firstOpen<0)){
+    delete btn.dataset.target;
+    btn.hidden=false; btn.disabled=false;
+    btn.textContent=atLast?'Finish':'Next →';
+    btn.dataset.action=atLast?'finish':'next';
     return;
   }
   btn.dataset.action='next';
@@ -3501,6 +3525,7 @@ function goNext(){
   if(!quizActive) return;
   const btn=document.getElementById('nextBtn');
   const action=btn && btn.dataset.action;
+  if(action==='finish' || (runComplete && current===questions.length-1)){ clearWireLayer(); goSets(); return; }
   if(action==='return-unanswered'){
     unansweredMarkersVisible=true;
     const target=parseInt(btn.dataset.target,10);
@@ -3523,7 +3548,7 @@ function goNext(){
       renderNav();
       return;
     }
-    finishQuiz();
+    completeRun(); clearWireLayer(); goSets();
   }
 }
 function goBack(){ const t=prevTarget(); if(t>=0) stepTo(t); }
@@ -3596,19 +3621,22 @@ function finishQuiz(){
   clearWireLayer();
   const el=elapsedLabel();
   stopElapsedClock();
-  document.getElementById('elapsed').textContent=el;
-  document.getElementById('quizScreen').style.display='none';
-  document.getElementById('finalScreen').style.display='block';
+  // parts of the results screen may be missing from the page: each one is optional
+  const $=id=>document.getElementById(id);
+  if($('elapsed')) $('elapsed').textContent=el;
+  if($('quizScreen')) $('quizScreen').style.display='none';
+  if($('finalScreen')) $('finalScreen').style.display='block';
   const simple=isSimpleRun();
   const s=simple?wholeScore():score(), n=simple?wholeGroups().length:questions.length;
-  document.getElementById('finalScreen').classList.toggle('simple-final', simple);
-  document.getElementById('scoreBig').textContent=s+' / '+n;
-  document.getElementById('finalStats').textContent=Math.round(s/n*100)+'% · '+runLabel+' · elapsed '+el;
-  document.getElementById('statusText').textContent='results';
-  document.getElementById('progressBar').style.width='100%';
+  if($('finalScreen')) $('finalScreen').classList.toggle('simple-final', simple);
+  if($('scoreBig')) $('scoreBig').textContent=s+' / '+n;
+  if($('finalStats')) $('finalStats').textContent=Math.round(s/n*100)+'% · '+runLabel+' · elapsed '+el;
+  if($('statusText')) $('statusText').textContent='results';
+  if($('progressBar')) $('progressBar').style.width='100%';
+  const list=$('resultsScroll'); if(list) fillResults(list);
   // PORTAL: remember score + mark the run finished
   if(runCard && window.StudyStore){
-    saveRunState({finished:true});
+    runComplete=true; saveRunState({finished:true});
     const st=StudyStore.load(bankId());
     st.cards[runCard.id]=Object.assign({}, st.cards[runCard.id]||{}, {score:s,total:n,done:true,at:Date.now()});
     StudyStore.save(bankId(), st);
@@ -3625,6 +3653,7 @@ function restoreMoodUI(){}
 /* —— leaving a run (PORTAL: save, stop clock) —— */
 function leaveRun(){
   clearTimeout(afterAnswerProgress._finishT);
+  if(quizActive && !runComplete && questions.length && allQuestionsAnswered()) completeRun();
   if(typeof clearKbAdvance==='function') clearKbAdvance();
   if(quizActive && runCard) saveRunState();
   quizActive=false;
@@ -3668,8 +3697,8 @@ document.getElementById('resetModalCancel').addEventListener('click',()=>{ resta
 document.getElementById('nextBtn').addEventListener('click', goNext);
 document.getElementById('backBtn').addEventListener('click', goBack);
 document.getElementById('setsBtn').addEventListener('click', ()=>{ if(typeof unlockAudio==='function') unlockAudio(); askLeaveRun(); });
-document.getElementById('againSetsBtn').addEventListener('click', ()=>{ clearWireLayer(); goSets(); });
-document.getElementById('restartBtn').addEventListener('click', restartCard);
+{ const b=document.getElementById('againSetsBtn'); if(b) b.addEventListener('click', ()=>{ clearWireLayer(); goSets(); }); }
+{ const b=document.getElementById('restartBtn'); if(b) b.addEventListener('click', restartCard); }
 function toggleFullscreen(){ if(!document.fullscreenElement) document.documentElement.requestFullscreen().catch(()=>{}); else document.exitFullscreen(); }
 document.querySelectorAll('[data-fs]').forEach(b=>b.addEventListener('click', toggleFullscreen));
 /* app chrome is unselectable; Ctrl/Cmd+A selects nothing unless focus is in a field or a selectable reading region */
@@ -3827,7 +3856,7 @@ document.addEventListener('wheel', ()=>{ if(kbAdv && isTouchDevice()) kbAdvTouch
 let leaveAsking=false;
 function leaveRunOpen(){ return leaveAsking; }
 function askLeaveRun(){
-  const midRun=quizActive && document.getElementById('quizScreen').style.display!=='none';
+  const midRun=quizActive && !runComplete && document.getElementById('quizScreen').style.display!=='none';
   if(!midRun || !(window.StudyConfirm && StudyConfirm.ask)){ goSets(); return; }
   if(leaveAsking) return;
   clearKbAdvance(); kbLinkClear();

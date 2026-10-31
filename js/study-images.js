@@ -361,8 +361,9 @@ function storeKey(key, img) {
     const shake = el => { if (!el) return; el.classList.remove('soft-wrong'); void el.offsetWidth; el.classList.add('soft-wrong'); setTimeout(() => el.classList.remove('soft-wrong'), 480); };
     const lock = (l, text, el, how) => {
       const slots = modeSlots(storeKey(key, img), mode); if (slots[l.id] != null) return;
+      const fresh = !(window.PT2Unlocks && PT2Unlocks.labelFresh) || PT2Unlocks.labelFresh(setKey(), key, l.id);
       slots[l.id] = (typeof labelCanon === 'function') ? labelCanon(l, text) : norm(text); writeModeSlots(storeKey(key, img), mode, slots);
-      if (window.PT2Unlocks && PT2Unlocks.labelSolved) PT2Unlocks.labelSolved();
+      if (window.PT2Unlocks && PT2Unlocks.labelSolved) PT2Unlocks.labelSolved(setKey(), key, l.id, how, fresh);
       const r = el.getBoundingClientRect();
       const labels = labelsOf(img), k = labels.filter(x => slots[x.id] != null).length, n = labels.length;
       const hadFocus = el.contains(document.activeElement);
