@@ -1324,17 +1324,6 @@
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
           {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Humerus",
-              "Humerous",
-              "Humorus",
-              "Humeris"
-            ],
-            "correct": 0
-          },
-          {
             "id": "2",
             "prompt": "Which type of bone is this?",
             "options": [
@@ -1374,7 +1363,7 @@
             "accept": []
           }
         ],
-        "explain": "Humerus is the long bone of the upper arm, in the appendicular skeleton. Humerous, Humorus, and Humeris are misspellings. It is not a short, flat, or irregular bone. It is not axial. The forearm is the radius and ulna, the thigh is the femur, and the shin is the tibia.",
+        "explain": "Humerus is the long bone of the upper arm, in the appendicular skeleton. It is not a short, flat, or irregular bone. It is not axial. The forearm is the radius and ulna, the thigh is the femur, and the shin is the tibia.",
         "image": "banks/medterm/img/bones/bone-mt11077.png",
         "alt": "Front view of the skeleton from the head to the hips, with the single long bone of each upper arm, between the shoulder and the elbow, highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -1388,17 +1377,6 @@
         "groupOrder": 2,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Femur",
-              "Femour",
-              "Femer",
-              "Femar"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -1452,7 +1430,7 @@
             ]
           }
         ],
-        "explain": "Femur is the long bone of the thigh, in the appendicular skeleton, and its combining form is Femor/o. Femour, Femer, and Femar are misspellings. It is not a short, flat, or irregular bone. It is not axial. The upper arm is the humerus, the shin is the tibia, and the kneecap is the patella. Fibr/o means fiber, Fasci/o means fascia, and Tibi/o means tibia.",
+        "explain": "Femur is the long bone of the thigh, in the appendicular skeleton, and its combining form is Femor/o. It is not a short, flat, or irregular bone. It is not axial. The upper arm is the humerus, the shin is the tibia, and the kneecap is the patella. Fibr/o means fiber, Fasci/o means fascia, and Tibi/o means tibia.",
         "image": "banks/medterm/img/bones/bone-mt11078.png",
         "alt": "Front view of the lower body skeleton with the long bone of each thigh, between the hip and the knee, highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -1466,17 +1444,6 @@
         "groupOrder": 3,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Tibia",
-              "Tibea",
-              "Tibbia",
-              "Tibya"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -1520,7 +1487,7 @@
             ]
           }
         ],
-        "explain": "Tibia is the long bone of the shin, the medial bone of the leg, in the appendicular skeleton. Tibea, Tibbia, and Tibya are misspellings. It is not a short, flat, or irregular bone. It is not axial. The thigh is the femur, the lateral leg bone is the fibula, and the upper arm is the humerus.",
+        "explain": "Tibia is the long bone of the shin, the medial bone of the leg, in the appendicular skeleton. It is not a short, flat, or irregular bone. It is not axial. The thigh is the femur, the lateral leg bone is the fibula, and the upper arm is the humerus.",
         "image": "banks/medterm/img/bones/bone-mt11079.png",
         "alt": "Front view of both lower legs with the larger, inner bone of each shin, between the knee and the ankle, highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -1534,17 +1501,6 @@
         "groupOrder": 4,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Fibula",
-              "Fibulla",
-              "Fiblua",
-              "Fibulaa"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -1585,7 +1541,7 @@
             "accept": []
           }
         ],
-        "explain": "Fibula is the long bone on the lateral side of the leg, in the appendicular skeleton. Fibulla, Fiblua, and Fibulaa are misspellings. It is not a short, flat, or irregular bone. It is not axial. The medial shin bone is the tibia, the thigh is the femur, and the forearm is the radius and ulna.",
+        "explain": "Fibula is the long bone on the lateral side of the leg, in the appendicular skeleton. It is not a short, flat, or irregular bone. It is not axial. The medial shin bone is the tibia, the thigh is the femur, and the forearm is the radius and ulna.",
         "image": "banks/medterm/img/bones/bone-mt11080.png",
         "alt": "Front view of both lower legs with the thin outer bone on the lateral side of each leg, between the knee and the ankle, highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -1599,17 +1555,6 @@
         "groupOrder": 5,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Radius",
-              "Radious",
-              "Radias",
-              "Raduis"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -1661,7 +1606,7 @@
             "accept": []
           }
         ],
-        "explain": "Radius is a long bone of the forearm on the thumb side, in the appendicular skeleton, and its combining form is Radi/o. Radious, Radias, and Raduis are misspellings. It is not a short, flat, or irregular bone. It is not axial. The upper arm is the humerus, the medial forearm bone is the ulna, and the wrist bones are the carpals. Uln/o means ulna, Cost/o means rib, and Crani/o means skull.",
+        "explain": "Radius is a long bone of the forearm on the thumb side, in the appendicular skeleton, and its combining form is Radi/o. It is not a short, flat, or irregular bone. It is not axial. The upper arm is the humerus, the medial forearm bone is the ulna, and the wrist bones are the carpals. Uln/o means ulna, Cost/o means rib, and Crani/o means skull.",
         "image": "banks/medterm/img/bones/bone-mt11081.png",
         "alt": "Front view of the skeleton with the forearm bone on the thumb side of each arm highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -1675,17 +1620,6 @@
         "groupOrder": 6,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Ulna",
-              "Ulnna",
-              "Ulnea",
-              "Ulnar"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -1737,7 +1671,7 @@
             "accept": []
           }
         ],
-        "explain": "Ulna is a long bone of the forearm on the medial side, in the appendicular skeleton, and its combining form is Uln/o. Ulnna, Ulnea, and Ulnar are not the bone name (ulnar is the adjective). It is not a short, flat, or irregular bone. It is not axial. The thumb-side forearm bone is the radius, the upper arm is the humerus, and the wrist bones are the carpals. Radi/o means radius, Femor/o means femur, and Stern/o means sternum.",
+        "explain": "Ulna is a long bone of the forearm on the medial side, in the appendicular skeleton, and its combining form is Uln/o. It is not a short, flat, or irregular bone. It is not axial. The thumb-side forearm bone is the radius, the upper arm is the humerus, and the wrist bones are the carpals. Radi/o means radius, Femor/o means femur, and Stern/o means sternum.",
         "image": "banks/medterm/img/bones/bone-mt11082.png",
         "alt": "Front view of the skeleton with the forearm bone on the little-finger side of each arm highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -1751,17 +1685,6 @@
         "groupOrder": 7,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Carpals",
-              "Carpels",
-              "Carples",
-              "Carpalls"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -1805,7 +1728,7 @@
             ]
           }
         ],
-        "explain": "Carpals are the short bones of the wrist, in the appendicular skeleton. Carpels, Carples, and Carpalls are misspellings. They are not long, flat, or irregular bones. They are not axial. The ankle bones are the tarsals, the palm bones are the metacarpals, and the digit bones are the phalanges.",
+        "explain": "Carpals are the short bones of the wrist, in the appendicular skeleton. They are not long, flat, or irregular bones. They are not axial. The ankle bones are the tarsals, the palm bones are the metacarpals, and the digit bones are the phalanges.",
         "image": "banks/medterm/img/bones/bone-mt11083.png",
         "alt": "Palm-side view of a left hand skeleton with the cluster of small bones of the wrist, between the forearm and the palm, highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -1819,17 +1742,6 @@
         "groupOrder": 8,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Tarsals",
-              "Tarsels",
-              "Tarsles",
-              "Tarsalls"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -1873,7 +1785,7 @@
             ]
           }
         ],
-        "explain": "Tarsals are the short bones of the ankle, in the appendicular skeleton. Tarsels, Tarsles, and Tarsalls are misspellings. They are not long, flat, or irregular bones. They are not axial. The wrist bones are the carpals, the palm bones are the metacarpals, and the shin is the tibia.",
+        "explain": "Tarsals are the short bones of the ankle, in the appendicular skeleton. They are not long, flat, or irregular bones. They are not axial. The wrist bones are the carpals, the palm bones are the metacarpals, and the shin is the tibia.",
         "image": "banks/medterm/img/bones/bone-mt11084.png",
         "alt": "Top view of both foot skeletons with the group of short bones of the ankle and back of the foot shown in different colours.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -1887,17 +1799,6 @@
         "groupOrder": 9,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Patella",
-              "Patela",
-              "Patellae",
-              "Patellla"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -1951,7 +1852,7 @@
             ]
           }
         ],
-        "explain": "Patella is the sesamoid bone of the knee, a round bone embedded in the quadriceps tendon, in the appendicular skeleton, and its combining form is Patell/o. Patela and Patellla are misspellings, and patellae is the plural, not the singular bone name. It is not a long, short, or flat bone. It is not axial. The thigh is the femur, the shin is the tibia, and the ankle bones are the tarsals. Femor/o means femur, Tibi/o means tibia, and Pelv/o means pelvis.",
+        "explain": "Patella is the sesamoid bone of the knee, a round bone embedded in the quadriceps tendon, in the appendicular skeleton, and its combining form is Patell/o. It is not a long, short, or flat bone. It is not axial. The thigh is the femur, the shin is the tibia, and the ankle bones are the tarsals. Femor/o means femur, Tibi/o means tibia, and Pelv/o means pelvis.",
         "image": "banks/medterm/img/bones/bone-mt11085.png",
         "alt": "Front and side views of the knee joint, with the small bone at the front of the knee, sitting over the end of the thigh bone, highlighted in red.",
         "credit": "Knee image: Patrick J. Lynch · CC BY 2.5 (recoloured)",
@@ -1965,17 +1866,6 @@
         "groupOrder": 10,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Sternum",
-              "Sternem",
-              "Sternam",
-              "Sternumm"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -2029,7 +1919,7 @@
             ]
           }
         ],
-        "explain": "Sternum is the flat breastbone of the chest, in the axial skeleton, and its combining form is Stern/o. Sternem, Sternam, and Sternumm are misspellings. It is not a long, short, or irregular bone. It is not appendicular. The U-shaped bone at the base of the tongue is the hyoid, the shoulder blade is the scapula, and the lower back is the lumbar region. Cost/o means rib, Thorac/o means chest, and Crani/o means skull.",
+        "explain": "Sternum is the flat breastbone of the chest, in the axial skeleton, and its combining form is Stern/o. It is not a long, short, or irregular bone. It is not appendicular. The U-shaped bone at the base of the tongue is the hyoid, the shoulder blade is the scapula, and the lower back is the lumbar region. Cost/o means rib, Thorac/o means chest, and Crani/o means skull.",
         "image": "banks/medterm/img/bones/bone-mt11086.png",
         "alt": "Front view of the chest skeleton with the flat vertical bone in the middle of the front of the chest highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -2043,17 +1933,6 @@
         "groupOrder": 11,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Scapula",
-              "Scapulla",
-              "Scapala",
-              "Scaplua"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -2096,7 +1975,7 @@
             ]
           }
         ],
-        "explain": "Scapula is the flat shoulder blade, in the appendicular skeleton as part of the pectoral girdle. Scapulla, Scapala, and Scaplua are misspellings. It is not a long, short, or irregular bone. It is not axial. The breastbone is the sternum, the hip bone is the pelvis, and the skull is the cranium.",
+        "explain": "Scapula is the flat shoulder blade, in the appendicular skeleton as part of the pectoral girdle. It is not a long, short, or irregular bone. It is not axial. The breastbone is the sternum, the hip bone is the pelvis, and the skull is the cranium.",
         "image": "banks/medterm/img/bones/bone-mt11087.png",
         "alt": "Front view of the upper body skeleton with the flat triangular bone at the back of each shoulder, seen behind the rib cage, highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -2110,17 +1989,6 @@
         "groupOrder": 12,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Ribs",
-              "Ribes",
-              "Ribbs",
-              "Rybs"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -2174,7 +2042,7 @@
             ]
           }
         ],
-        "explain": "Ribs are flat bones of the thoracic cage, in the axial skeleton, and their combining form is Cost/o. Ribes, Ribbs, and Rybs are misspellings. They are not long, short, or irregular bones. They are not appendicular. The vertebral column is the spine, the shoulder girdle is pectoral, and the pelvic girdle is the hip. Stern/o means sternum, Crani/o means skull, and Carp/o means wrist.",
+        "explain": "Ribs are flat bones of the thoracic cage, in the axial skeleton, and their combining form is Cost/o. They are not long, short, or irregular bones. They are not appendicular. The vertebral column is the spine, the shoulder girdle is pectoral, and the pelvic girdle is the hip. Stern/o means sternum, Crani/o means skull, and Carp/o means wrist.",
         "image": "banks/medterm/img/bones/bone-mt11088.png",
         "alt": "Front view of the chest skeleton with the curved bones that form the thoracic cage highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -2188,17 +2056,6 @@
         "groupOrder": 13,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Pelvis",
-              "Pelvus",
-              "Pelviss",
-              "Pellvis"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -2250,7 +2107,7 @@
             "accept": []
           }
         ],
-        "explain": "Pelvis is an irregular bone of the hip: each hip bone is formed by the fused ilium, ischium and pubis. It forms the pelvic girdle, which is appendicular, and its combining form is Pelv/o. Pelvus and Pelviss are misspellings, and a repeated Pelvis line is not a second bone. It is not a long, short, or flat bone. It is not axial. The shoulder girdle is pectoral, the chest wall is the thoracic cage, and the skull is cranial. Femor/o means femur, Cost/o means rib, and Lumb/o means loin.",
+        "explain": "Pelvis is an irregular bone of the hip: each hip bone is formed by the fused ilium, ischium and pubis. It forms the pelvic girdle, which is appendicular, and its combining form is Pelv/o. It is not a long, short, or flat bone. It is not axial. The shoulder girdle is pectoral, the chest wall is the thoracic cage, and the skull is cranial. Femor/o means femur, Cost/o means rib, and Lumb/o means loin.",
         "image": "banks/medterm/img/bones/bone-mt11089.png",
         "alt": "Front view of the skeleton with the basin-shaped ring of bones at the hips highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -2264,17 +2121,6 @@
         "groupOrder": 14,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Skull",
-              "Scull",
-              "Skulle",
-              "Skulls"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "The skull is a collection of bones. Which of these skull bones is a flat bone?",
@@ -2326,7 +2172,7 @@
             "accept": []
           }
         ],
-        "explain": "Skull is the bony framework of the head, in the axial skeleton, and its combining form is Crani/o. Scull and Skulle are misspellings, and skulls is the plural rather than the name used here. The skull is a collection of bones, so it has no single bone type: the parietal bone is flat, while the sphenoid, the ethmoid and the mandible are irregular. It is not appendicular. Facial bones are the bones of the face, the chest is the thoracic cage, and the bone at the base of the tongue is the hyoid. Cervic/o means neck, Cost/o means rib, and Carp/o means wrist.",
+        "explain": "Skull is the bony framework of the head, in the axial skeleton, and its combining form is Crani/o. The skull is a collection of bones, so it has no single bone type: the parietal bone is flat, while the sphenoid, the ethmoid and the mandible are irregular. It is not appendicular. Facial bones are the bones of the face, the chest is the thoracic cage, and the bone at the base of the tongue is the hyoid. Cervic/o means neck, Cost/o means rib, and Carp/o means wrist.",
         "image": "banks/medterm/img/bones/bone-mt11090.png",
         "alt": "Front view of the complete bony skeleton of the head, including the braincase and the face.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -2340,17 +2186,6 @@
         "groupOrder": 15,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Vertebra",
-              "Verterba",
-              "Vertibra",
-              "Vertebrea"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -2404,7 +2239,7 @@
             ]
           }
         ],
-        "explain": "A vertebra is an irregular bone of the vertebral column, in the axial skeleton, and its combining form is Spondyl/o (Vertebr/o is the paired form). Verterba, Vertibra, and Vertebrea are misspellings. It is not a long, short, or flat bone. It is not appendicular. The thoracic cage is the ribs and sternum, the skull is the cranium, and the pelvic girdle is the hip. Stern/o means sternum, Cost/o means rib, and Crani/o means skull.",
+        "explain": "A vertebra is an irregular bone of the vertebral column, in the axial skeleton, and its combining form is Spondyl/o (Vertebr/o is the paired form). It is not a long, short, or flat bone. It is not appendicular. The thoracic cage is the ribs and sternum, the skull is the cranium, and the pelvic girdle is the hip. Stern/o means sternum, Cost/o means rib, and Crani/o means skull.",
         "image": "banks/medterm/img/bones/bone-mt11091.png",
         "alt": "Front view of the lower trunk skeleton with one single bone of the lower spinal column highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -2418,17 +2253,6 @@
         "groupOrder": 16,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Sacrum",
-              "Sacrem",
-              "Sacrim",
-              "Sacrumm"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -2469,7 +2293,7 @@
             "accept": []
           }
         ],
-        "explain": "Sacrum is an irregular bone of the lower vertebral column, in the axial skeleton. Sacrem, Sacrim, and Sacrumm are misspellings. It is not a long, short, or flat bone. It is not appendicular. The chest is the thoracic cage, the knee sesamoid is the patella, and the wrist bones are the carpals.",
+        "explain": "Sacrum is an irregular bone of the lower vertebral column, in the axial skeleton. It is not a long, short, or flat bone. It is not appendicular. The chest is the thoracic cage, the knee sesamoid is the patella, and the wrist bones are the carpals.",
         "image": "banks/medterm/img/bones/bone-mt11092.png",
         "alt": "Front view of the pelvis with the triangular bone at the base of the spine, between the two hip bones, highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -2483,17 +2307,6 @@
         "groupOrder": 17,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of these bones?",
-            "options": [
-              "Facial Bones",
-              "Faciel Bones",
-              "Faceal Bones",
-              "Facial Bons"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -2537,7 +2350,7 @@
             ]
           }
         ],
-        "explain": "Facial Bones are irregular bones of the face, in the axial skeleton. Faciel Bones, Faceal Bones, and Facial Bons are misspellings. They are not long, short, or flat bones. They are not appendicular. The cranium alone is the skull vault, the vertebral column is the spine, and the thoracic cage is the ribs and sternum.",
+        "explain": "Facial Bones are irregular bones of the face, in the axial skeleton. They are not long, short, or flat bones. They are not appendicular. The cranium alone is the skull vault, the vertebral column is the spine, and the thoracic cage is the ribs and sternum.",
         "image": "banks/medterm/img/bones/bone-mt11093.png",
         "alt": "Front view of the bones of the face shown on their own in different colours, without the braincase.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -2551,17 +2364,6 @@
         "groupOrder": 18,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Hyoid",
-              "Hioid",
-              "Hyoide",
-              "Hyoidd"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -2604,7 +2406,7 @@
             ]
           }
         ],
-        "explain": "Hyoid is the irregular bone at the base of the tongue, in the axial skeleton. It is an irregular bone. Hioid, Hyoide, and Hyoidd are misspellings. It is not appendicular. The breastbone is the sternum, the knee sesamoid is the patella, and the shoulder blade is the scapula.",
+        "explain": "Hyoid is the irregular bone at the base of the tongue, in the axial skeleton. It is not appendicular. The breastbone is the sternum, the knee sesamoid is the patella, and the shoulder blade is the scapula.",
         "image": "banks/medterm/img/bones/bone-mt11094.png",
         "alt": "Front view of the head, neck and upper chest skeleton with the small U-shaped bone in the front of the neck, just below the lower jaw, highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -2618,17 +2420,6 @@
         "groupOrder": 19,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Metacarpals",
-              "Metacarpels",
-              "Metacarples",
-              "Metacarpalls"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -2682,7 +2473,7 @@
             ]
           }
         ],
-        "explain": "The long-bone group is the bones of the arms and legs, and the metacarpals are labeled in that group. Metacarpals are bones of the palm, in the upper limb, so they are appendicular. They are long bones, not short, flat, or irregular. Metacarpels, Metacarples, and Metacarpalls are misspellings. They are not axial. The wrist bones are the carpals, the ankle bones are the tarsals, and the sole bones are the metatarsals.",
+        "explain": "The long-bone group is the bones of the arms and legs, and the metacarpals are labeled in that group. Metacarpals are bones of the palm, in the upper limb, so they are appendicular. They are long bones, not short, flat, or irregular. They are not axial. The wrist bones are the carpals, the ankle bones are the tarsals, and the sole bones are the metatarsals.",
         "image": "banks/medterm/img/bones/bone-mt11095.png",
         "alt": "Palm-side view of a left hand skeleton with the five long bones of the palm, between the wrist and the fingers, highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -2696,17 +2487,6 @@
         "groupOrder": 20,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Metatarsals",
-              "Metatarsels",
-              "Metatarsles",
-              "Metatarsalls"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -2760,7 +2540,7 @@
             ]
           }
         ],
-        "explain": "The long-bone group is the bones of the arms and legs, and the metatarsals are labeled in that group. Metatarsals are bones of the sole, in the lower limb, so they are appendicular. They are long bones, not short, flat, or irregular. Metatarsels, Metatarsles, and Metatarsalls are misspellings. They are not axial. The palm bones are the metacarpals, the ankle bones are the tarsals, and the shin is the tibia.",
+        "explain": "The long-bone group is the bones of the arms and legs, and the metatarsals are labeled in that group. Metatarsals are bones of the sole, in the lower limb, so they are appendicular. They are long bones, not short, flat, or irregular. They are not axial. The palm bones are the metacarpals, the ankle bones are the tarsals, and the shin is the tibia.",
         "image": "banks/medterm/img/bones/bone-mt11096.png",
         "alt": "Top view of both foot skeletons with the five long bones of each foot, between the ankle bones and the toes, highlighted in green.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -2774,17 +2554,6 @@
         "groupOrder": 21,
         "q": "Answer each part in order, then the next bone follows.",
         "steps": [
-          {
-            "id": "1",
-            "prompt": "Which is the correct spelling of this bone?",
-            "options": [
-              "Phalanges",
-              "Falanges",
-              "Phalangies",
-              "Phalangess"
-            ],
-            "correct": 0
-          },
           {
             "id": "2",
             "prompt": "Which type of bone is this?",
@@ -2838,7 +2607,7 @@
             ]
           }
         ],
-        "explain": "The long-bone group is the bones of the arms and legs, and the phalanges are labeled in that group. Phalanges are the bones of the digits in both the hand and the foot, so they are appendicular. They are long bones, not short, flat, or irregular. Falanges and Phalangies are misspellings, and a repeated Phalanges line is not a second spelling. Dactyl/o means digit. Carp/o means wrist, Tars/o means ankle, and Cost/o means rib.",
+        "explain": "The long-bone group is the bones of the arms and legs, and the phalanges are labeled in that group. Phalanges are the bones of the digits in both the hand and the foot, so they are appendicular. They are long bones, not short, flat, or irregular. Dactyl/o means digit. Carp/o means wrist, Tars/o means ankle, and Cost/o means rib.",
         "image": "banks/medterm/img/bones/bone-mt11097.png",
         "alt": "Palm-side view of a left hand skeleton with the bones of the thumb and fingers highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
