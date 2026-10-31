@@ -1,0 +1,2197 @@
+{
+  "id": "mixed-medterm-lec9-17",
+  "subject": "Medical Terminology",
+  "subjectId": "medical_terminology",
+  "title": "Mixed Medical Terminology - Lectures 9 to 17",
+  "formSize": 153,
+  "forms": ["A"],
+  "bank": {
+    "A": [
+      {
+        "id": "MT09001",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Tox/o" },
+          { "id": "2", "text": "Lith/o" },
+          { "id": "3", "text": "Orth/o" },
+          { "id": "4", "text": "Phag/o" },
+          { "id": "5", "text": "Gynec/o" },
+          { "id": "6", "text": "Sten/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Poison" },
+          { "id": "B", "text": "Stone" },
+          { "id": "C", "text": "Straight, normal, or correct" },
+          { "id": "D", "text": "Eat or swallow" },
+          { "id": "E", "text": "Woman" },
+          { "id": "F", "text": "Narrow" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
+        "explain": "Tox/o means poison; Lith/o means stone; Orth/o means straight, normal, or correct; Phag/o means eat or swallow; Gynec/o means woman; Sten/o means narrow."
+      },
+      {
+        "id": "MT09002",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Gingiv/o" },
+          { "id": "2", "text": "Cost/o" },
+          { "id": "3", "text": "Lumb/o" },
+          { "id": "4", "text": "Radi/o" },
+          { "id": "5", "text": "Tendin/o" },
+          { "id": "6", "text": "Son/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Gums" },
+          { "id": "B", "text": "Rib" },
+          { "id": "C", "text": "Loin" },
+          { "id": "D", "text": "Forearm bone on the thumb side" },
+          { "id": "E", "text": "Cord joining muscle to bone" },
+          { "id": "F", "text": "Pressure wave perceived by the ear" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
+        "explain": "Gingiv/o means gums; Cost/o means rib; Lumb/o means loin or lower back; Radi/o means radius; Tendin/o means tendon; Son/o means sound."
+      },
+      {
+        "id": "MT09003",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Coron/o" },
+          { "id": "2", "text": "Ather/o" },
+          { "id": "3", "text": "Ventricul/o" },
+          { "id": "4", "text": "Thym/o" },
+          { "id": "5", "text": "Hemat/o" },
+          { "id": "6", "text": "Sinus/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Circle or crown" },
+          { "id": "B", "text": "Fatty or lipid paste" },
+          { "id": "C", "text": "Lower heart chamber" },
+          { "id": "D", "text": "Lymphoid organ that matures T cells" },
+          { "id": "E", "text": "Blood" },
+          { "id": "F", "text": "Skull air space" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
+        "explain": "Coron/o means circle or crown; Ather/o means fatty or lipid paste; Ventricul/o means lower heart chamber; Thym/o means thymus; Hemat/o means blood; Sinus/o means a skull air space."
+      },
+      {
+        "id": "MT09004",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Rhin/o" },
+          { "id": "2", "text": "Palat/o" },
+          { "id": "3", "text": "Uvul/o" },
+          { "id": "4", "text": "Capn/o" },
+          { "id": "5", "text": "Ox/i" },
+          { "id": "6", "text": "Spir/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Nose" },
+          { "id": "B", "text": "Roof separating mouth and nose" },
+          { "id": "C", "text": "Grape-like projection at the back of the mouth" },
+          { "id": "D", "text": "Waste gas exhaled" },
+          { "id": "E", "text": "Gas taken into the blood" },
+          { "id": "F", "text": "Breathing" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
+        "explain": "Rhin/o means nose; Palat/o means palate; Uvul/o means uvula; Capn/o means carbon dioxide; Ox/i means oxygen; Spir/o means breathing."
+      },
+      {
+        "id": "MT09005",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means death?",
+        "answer": "Necr/o",
+        "accept": [],
+        "explain": "Necr/o means death, as in necrosis."
+      },
+      {
+        "id": "MT09006",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means form?",
+        "answer": "Morph/o",
+        "accept": [],
+        "explain": "Morph/o means form, as in morphometry."
+      },
+      {
+        "id": "MT09007",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means disease?",
+        "answer": "Path/o",
+        "accept": [],
+        "explain": "Path/o means disease, as in pathobiologist."
+      },
+      {
+        "id": "MT09008",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means speech?",
+        "answer": "Phas/o",
+        "accept": [],
+        "explain": "Phas/o means speech, as in paraphasia."
+      },
+      {
+        "id": "MT09009",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Vas/o and Vascul/o, which combining form means vessel?",
+        "answer": "Angi/o",
+        "accept": [],
+        "explain": "Angi/o means vessel. Vas/o and Vascul/o are the other vessel forms."
+      },
+      {
+        "id": "MT09010",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means lung only?",
+        "answer": "Pulmon/o",
+        "accept": [],
+        "explain": "Pulmon/o means lung. Pneum/o means air or lung, not lung only."
+      },
+      {
+        "id": "MT09011",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Brachi/o" },
+          { "id": "2", "text": "Dactyl/o" },
+          { "id": "3", "text": "Enter/o" },
+          { "id": "4", "text": "Gen/o" },
+          { "id": "5", "text": "Hydr/o" },
+          { "id": "6", "text": "Onc/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Upper limb" },
+          { "id": "B", "text": "Finger or toe" },
+          { "id": "C", "text": "Bowel between stomach and colon" },
+          { "id": "D", "text": "Origin or production" },
+          { "id": "E", "text": "Water" },
+          { "id": "F", "text": "Tumor or mass" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
+        "explain": "Brachi/o means arm or upper limb; Dactyl/o means digit; Enter/o means small intestine; Gen/o means origin or production; Hydr/o means water; Onc/o means tumor or mass."
+      },
+      {
+        "id": "MT09012",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Pharyng/o" },
+          { "id": "2", "text": "Laryng/o" },
+          { "id": "3", "text": "Ven/o" },
+          { "id": "4", "text": "Fasci/o" },
+          { "id": "5", "text": "Ton/o" },
+          { "id": "6", "text": "Varic/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Throat" },
+          { "id": "B", "text": "Voice box" },
+          { "id": "C", "text": "Tube returning blood to the heart" },
+          { "id": "D", "text": "Band of connective tissue" },
+          { "id": "E", "text": "Degree of muscle contraction" },
+          { "id": "F", "text": "Abnormally dilated blood channel" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
+        "explain": "Pharyng/o means throat; Laryng/o means voice box; Ven/o means vein; Fasci/o means a band of connective tissue; Ton/o means tone or tension; Varic/o means a swollen or twisted vein."
+      },
+      {
+        "id": "MT09013",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Stern/o" },
+          { "id": "2", "text": "Vertebr/o" },
+          { "id": "3", "text": "Fibr/o" },
+          { "id": "4", "text": "Aden/o" },
+          { "id": "5", "text": "Crani/o" },
+          { "id": "6", "text": "Ten/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Flat bone of the anterior chest" },
+          { "id": "B", "text": "Backbone segment" },
+          { "id": "C", "text": "Threadlike strand" },
+          { "id": "D", "text": "Secretory organ" },
+          { "id": "E", "text": "Cranial vault" },
+          { "id": "F", "text": "Cord attaching muscle to bone" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
+        "explain": "Stern/o means sternum; Vertebr/o means vertebra; Fibr/o means fiber; Aden/o means gland; Crani/o means skull; Ten/o means tendon."
+      },
+      {
+        "id": "MT09014",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Or/o" },
+          { "id": "2", "text": "Tonsill/o" },
+          { "id": "3", "text": "Pector/o" },
+          { "id": "4", "text": "Myel/o" },
+          { "id": "5", "text": "Oste/o" },
+          { "id": "6", "text": "Chondr/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Mouth" },
+          { "id": "B", "text": "Lymphatic tissue beside the throat" },
+          { "id": "C", "text": "Chest" },
+          { "id": "D", "text": "Bone marrow or spinal cord" },
+          { "id": "E", "text": "Skeletal tissue" },
+          { "id": "F", "text": "Gristle" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
+        "explain": "Or/o means mouth; Tonsill/o means tonsil; Pector/o means chest; Myel/o means bone marrow or spinal cord; Oste/o means bone; Chondr/o means cartilage."
+      },
+      {
+        "id": "MT09015",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Hem/o" },
+          { "id": "2", "text": "Chrom/o" },
+          { "id": "3", "text": "Pneumon/o" },
+          { "id": "4", "text": "Bronch/o" },
+          { "id": "5", "text": "Ox/o" },
+          { "id": "6", "text": "Aer/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Blood" },
+          { "id": "B", "text": "Hue" },
+          { "id": "C", "text": "Respiratory organ" },
+          { "id": "D", "text": "Primary airway at the tracheal split" },
+          { "id": "E", "text": "Gas taken into the blood" },
+          { "id": "F", "text": "Atmosphere" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
+        "explain": "Hem/o means blood; Chrom/o means color; Pneumon/o means lung; Bronch/o means bronchus; Ox/o means oxygen; Aer/o means air."
+      },
+      {
+        "id": "MT09016",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means cell?",
+        "answer": "Cyt/o",
+        "accept": [],
+        "explain": "Cyt/o means cell, as in cytotoxic."
+      },
+      {
+        "id": "MT09017",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means to secrete?",
+        "answer": "Crin/o",
+        "accept": [],
+        "explain": "Crin/o means to secrete, as in endocrinology."
+      },
+      {
+        "id": "MT09018",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means exaggerated fear or sensitivity?",
+        "answer": "Phob/o",
+        "accept": [],
+        "explain": "Phob/o means exaggerated fear or sensitivity, as in hydrophobia."
+      },
+      {
+        "id": "MT09019",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means hard?",
+        "answer": "Scler/o",
+        "accept": [],
+        "explain": "Scler/o means hard, as in scleroderma."
+      },
+      {
+        "id": "MT09020",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Derm/o and Dermat/o, which combining form means skin?",
+        "answer": "Cutane/o",
+        "accept": [],
+        "explain": "Cutane/o is the third combining form for skin. Derm/o and Dermat/o are the other two."
+      },
+      {
+        "id": "MT09021",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which suffix means crushing?",
+        "answer": "-tripsy",
+        "accept": [],
+        "explain": "-tripsy means crushing, as in lithotripsy."
+      },
+      {
+        "id": "MT09022",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which suffix means softening?",
+        "answer": "-malacia",
+        "accept": [],
+        "explain": "-malacia means softening, as in chondromalacia."
+      },
+      {
+        "id": "MT09023",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means muscle?",
+        "answer": "My/o",
+        "accept": [],
+        "explain": "My/o means muscle, as in myoma."
+      },
+      {
+        "id": "MT09024",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Vertebr/o, which combining form means vertebra?",
+        "answer": "Spondyl/o",
+        "accept": [],
+        "explain": "Spondyl/o means vertebra. Vertebr/o is the other vertebra form."
+      },
+      {
+        "id": "MT09025",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means neck?",
+        "answer": "Cervic/o",
+        "accept": [],
+        "explain": "Cervic/o means neck, as in cervicobrachial."
+      },
+      {
+        "id": "MT09026",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means kneecap?",
+        "answer": "Patell/o",
+        "accept": [],
+        "explain": "Patell/o means kneecap, the sesamoid bone in the quadriceps tendon."
+      },
+      {
+        "id": "MT09027",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Articul/o, which combining form means joint?",
+        "answer": "Arthr/o",
+        "accept": [],
+        "explain": "Arthr/o means joint. Articul/o is the other joint form."
+      },
+      {
+        "id": "MT09028",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which suffix means surgical puncture?",
+        "answer": "-centesis",
+        "accept": [],
+        "explain": "-centesis means surgical puncture, as in thoracocentesis."
+      },
+      {
+        "id": "MT09029",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which suffix means downward displacement?",
+        "answer": "-ptosis",
+        "accept": [],
+        "explain": "-ptosis means downward displacement, as in gastroptosis."
+      },
+      {
+        "id": "MT09030",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means artery?",
+        "answer": "Arteri/o",
+        "accept": [],
+        "explain": "Arteri/o means artery, as in arteriostenosis."
+      },
+      {
+        "id": "MT09031",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means upper heart chamber?",
+        "answer": "Atri/o",
+        "accept": [],
+        "explain": "Atri/o means atrium, the upper heart chamber, as in atrioventricular."
+      },
+      {
+        "id": "MT09032",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means pulse?",
+        "answer": "Sphygm/o",
+        "accept": [],
+        "explain": "Sphygm/o means pulse, as in sphygmomanometer."
+      },
+      {
+        "id": "MT09033",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means spleen?",
+        "answer": "Splen/o",
+        "accept": [],
+        "explain": "Splen/o means spleen, as in splenomegaly."
+      },
+      {
+        "id": "MT09034",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means clear fluid?",
+        "answer": "Lymph/o",
+        "accept": [],
+        "explain": "Lymph/o means lymph, the clear fluid collected from tissues."
+      },
+      {
+        "id": "MT09035",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means safe?",
+        "answer": "Immun/o",
+        "accept": [],
+        "explain": "Immun/o means safe, as in immunopharmacology."
+      },
+      {
+        "id": "MT09036",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means diaphragm?",
+        "answer": "Phren/o",
+        "accept": [],
+        "explain": "Phren/o means diaphragm, as in phrenoptosis."
+      },
+      {
+        "id": "MT09037",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means pleura?",
+        "answer": "Pleur/o",
+        "accept": [],
+        "explain": "Pleur/o means pleura, the membrane around the lung, as in pleuritis."
+      },
+      {
+        "id": "MT09038",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Rhin/o, which combining form means nose?",
+        "answer": "Nas/o",
+        "accept": [],
+        "explain": "Nas/o means nose. Rhin/o is the other nose form."
+      },
+      {
+        "id": "MT09039",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means windpipe?",
+        "answer": "Trache/o",
+        "accept": [],
+        "explain": "Trache/o means trachea, the windpipe from the larynx to the carina."
+      },
+      {
+        "id": "MT09040",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Dent/o, Dent/i, and Dent-, which combining form means tooth?",
+        "answer": "Odont/o",
+        "accept": [],
+        "explain": "Odont/o means tooth. Dent/o, Dent/i, and Dent- are the other tooth forms."
+      },
+      {
+        "id": "MT09041",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Derm/o" },
+          { "id": "2", "text": "Esophag/o" },
+          { "id": "3", "text": "Gastr/o" },
+          { "id": "4", "text": "Hepat/o" },
+          { "id": "5", "text": "Carcin/o" },
+          { "id": "6", "text": "Esthesi/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Skin" },
+          { "id": "B", "text": "Food tube from throat to stomach" },
+          { "id": "C", "text": "Organ that churns food" },
+          { "id": "D", "text": "Largest internal organ" },
+          { "id": "E", "text": "Malignant growth" },
+          { "id": "F", "text": "Feeling" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
+        "explain": "Derm/o means skin; Esophag/o means esophagus; Gastr/o means stomach; Hepat/o means liver; Carcin/o means cancer; Esthesi/o means sensation."
+      },
+      {
+        "id": "MT09042",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Vas/o" },
+          { "id": "2", "text": "Aort/o" },
+          { "id": "3", "text": "Cardi/o" },
+          { "id": "4", "text": "Steth/o" },
+          { "id": "5", "text": "Phleb/o" },
+          { "id": "6", "text": "Thromb/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Tube carrying fluid" },
+          { "id": "B", "text": "Largest artery leaving the heart" },
+          { "id": "C", "text": "Muscular pump" },
+          { "id": "D", "text": "Thorax" },
+          { "id": "E", "text": "Tube returning blood to the heart" },
+          { "id": "F", "text": "Clot" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
+        "explain": "Vas/o means vessel; Aort/o means aorta; Cardi/o means heart; Steth/o means chest; Phleb/o means vein; Thromb/o means clot."
+      },
+      {
+        "id": "MT09043",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Alveol/o" },
+          { "id": "2", "text": "Bronchiol/o" },
+          { "id": "3", "text": "Lob/o" },
+          { "id": "4", "text": "Pneum/o" },
+          { "id": "5", "text": "Carb/o" },
+          { "id": "6", "text": "Chromat/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Air sac" },
+          { "id": "B", "text": "Smallest airway" },
+          { "id": "C", "text": "Lung section" },
+          { "id": "D", "text": "Air or lung" },
+          { "id": "E", "text": "Waste gas" },
+          { "id": "F", "text": "Hue" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
+        "explain": "Alveol/o means air sac; Bronchiol/o means bronchiole; Lob/o means lobe; Pneum/o means air or lung; Carb/o means carbon dioxide; Chromat/o means color."
+      },
+      {
+        "id": "MT09044",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Sarc/o" },
+          { "id": "2", "text": "Femor/o" },
+          { "id": "3", "text": "Pelv/o" },
+          { "id": "4", "text": "Uln/o" },
+          { "id": "5", "text": "Thorac/o" },
+          { "id": "6", "text": "Muscul/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Flesh" },
+          { "id": "B", "text": "Thigh bone" },
+          { "id": "C", "text": "Hip girdle" },
+          { "id": "D", "text": "Inner forearm bone" },
+          { "id": "E", "text": "Chest wall" },
+          { "id": "F", "text": "Flesh that contracts" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
+        "explain": "Sarc/o means flesh; Femor/o means femur; Pelv/o means pelvis; Uln/o means ulna; Thorac/o means chest; Muscul/o means muscle."
+      },
+      {
+        "id": "MT09045",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Dermat/o" },
+          { "id": "2", "text": "Ped/o" },
+          { "id": "3", "text": "Dent/o" },
+          { "id": "4", "text": "Toxic/o" },
+          { "id": "5", "text": "Articul/o" },
+          { "id": "6", "text": "Tend/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Skin" },
+          { "id": "B", "text": "Child or foot" },
+          { "id": "C", "text": "Tooth" },
+          { "id": "D", "text": "Poison" },
+          { "id": "E", "text": "Joint" },
+          { "id": "F", "text": "Cord to bone" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
+        "explain": "Dermat/o means skin; Ped/o means child or foot; Dent/o means tooth; Toxic/o means poison; Articul/o means joint; Tend/o means tendon."
+      },
+      {
+        "id": "MT09046",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Cyt/o" },
+          { "id": "2", "text": "Gastr/o" },
+          { "id": "3", "text": "Hepat/o" },
+          { "id": "4", "text": "Lymph/o" },
+          { "id": "5", "text": "Phren/o" },
+          { "id": "6", "text": "Trache/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Cell" },
+          { "id": "B", "text": "Stomach" },
+          { "id": "C", "text": "Liver" },
+          { "id": "D", "text": "Clear fluid" },
+          { "id": "E", "text": "Diaphragm" },
+          { "id": "F", "text": "Windpipe" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
+        "explain": "Cyt/o means cell; Gastr/o means stomach; Hepat/o means liver; Lymph/o means clear fluid; Phren/o means diaphragm; Trache/o means windpipe."
+      },
+      {
+        "id": "MT09047",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Derm/o and Cutane/o, which combining form means skin?",
+        "answer": "Dermat/o",
+        "accept": [],
+        "explain": "Dermat/o means skin. Derm/o and Cutane/o are the other skin forms."
+      },
+      {
+        "id": "MT09048",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Dermat/o and Cutane/o, which combining form means skin?",
+        "answer": "Derm/o",
+        "accept": [],
+        "explain": "Derm/o means skin. Dermat/o and Cutane/o are the other skin forms."
+      },
+      {
+        "id": "MT09049",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means small intestine?",
+        "answer": "Enter/o",
+        "accept": [],
+        "explain": "Enter/o means small intestine, as in enterocele."
+      },
+      {
+        "id": "MT09050",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means esophagus?",
+        "answer": "Esophag/o",
+        "accept": [],
+        "explain": "Esophag/o means esophagus, as in esophagoscopy."
+      },
+      {
+        "id": "MT09051",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means stomach?",
+        "answer": "Gastr/o",
+        "accept": [],
+        "explain": "Gastr/o means stomach, as in gastroptosis."
+      },
+      {
+        "id": "MT09052",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means liver?",
+        "answer": "Hepat/o",
+        "accept": [],
+        "explain": "Hepat/o means liver, as in hepatectomy."
+      },
+      {
+        "id": "MT09053",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means cancer?",
+        "answer": "Carcin/o",
+        "accept": [],
+        "explain": "Carcin/o means cancer, as in carcinoma."
+      },
+      {
+        "id": "MT09054",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means sensation?",
+        "answer": "Esthesi/o",
+        "accept": [],
+        "explain": "Esthesi/o means sensation, as in anesthesia."
+      },
+      {
+        "id": "MT09055",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means fiber?",
+        "answer": "Fibr/o",
+        "accept": [],
+        "explain": "Fibr/o means fiber, as in fibroadenoma."
+      },
+      {
+        "id": "MT09056",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means origin or production?",
+        "answer": "Gen/o",
+        "accept": [],
+        "explain": "Gen/o means origin or production, as in genogram."
+      },
+      {
+        "id": "MT09057",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means woman?",
+        "answer": "Gynec/o",
+        "accept": [],
+        "explain": "Gynec/o means woman, as in gynecologist."
+      },
+      {
+        "id": "MT09058",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means stone?",
+        "answer": "Lith/o",
+        "accept": [],
+        "explain": "Lith/o means stone, as in lithotripsy."
+      },
+      {
+        "id": "MT09059",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means tumor or mass?",
+        "answer": "Onc/o",
+        "accept": [],
+        "explain": "Onc/o means tumor or mass, as in oncology."
+      },
+      {
+        "id": "MT09060",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means straight, normal, or correct?",
+        "answer": "Orth/o",
+        "accept": [],
+        "explain": "Orth/o means straight, normal, or correct, as in orthopedist."
+      },
+      {
+        "id": "MT09061",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means child or foot?",
+        "answer": "Ped/o",
+        "accept": [],
+        "explain": "Ped/o means child or foot, as in bipedal."
+      },
+      {
+        "id": "MT09062",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means eat or swallow?",
+        "answer": "Phag/o",
+        "accept": [],
+        "explain": "Phag/o means eat or swallow, as in phagophobia."
+      },
+      {
+        "id": "MT09063",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Toxic/o, which combining form means poison?",
+        "answer": "Tox/o",
+        "accept": [],
+        "explain": "Tox/o means poison. Toxic/o is the other poison form."
+      },
+      {
+        "id": "MT09064",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Tox/o, which combining form means poison?",
+        "answer": "Toxic/o",
+        "accept": [],
+        "explain": "Toxic/o means poison. Tox/o is the other poison form."
+      },
+      {
+        "id": "MT09065",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means narrow?",
+        "answer": "Sten/o",
+        "accept": [],
+        "explain": "Sten/o means narrow, as in stenosis."
+      },
+      {
+        "id": "MT09066",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means sound?",
+        "answer": "Son/o",
+        "accept": [],
+        "explain": "Son/o means sound, as in sonographer."
+      },
+      {
+        "id": "MT09067",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Arthr/o, which combining form means joint?",
+        "answer": "Articul/o",
+        "accept": [],
+        "explain": "Articul/o means joint. Arthr/o is the other joint form."
+      },
+      {
+        "id": "MT09068",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means arm?",
+        "answer": "Brachi/o",
+        "accept": [],
+        "explain": "Brachi/o means arm, as in brachioplasty."
+      },
+      {
+        "id": "MT09069",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means cartilage?",
+        "answer": "Chondr/o",
+        "accept": [],
+        "explain": "Chondr/o means cartilage, as in chondromalacia."
+      },
+      {
+        "id": "MT09070",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means rib?",
+        "answer": "Cost/o",
+        "accept": [],
+        "explain": "Cost/o means rib, as in intercostal."
+      },
+      {
+        "id": "MT09071",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means skull?",
+        "answer": "Crani/o",
+        "accept": [],
+        "explain": "Crani/o means skull, as in craniotomy."
+      },
+      {
+        "id": "MT09072",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means digit?",
+        "answer": "Dactyl/o",
+        "accept": [],
+        "explain": "Dactyl/o means digit, as in dactylitis."
+      },
+      {
+        "id": "MT09073",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means fascia?",
+        "answer": "Fasci/o",
+        "accept": [],
+        "explain": "Fasci/o means fascia, a band of connective tissue."
+      },
+      {
+        "id": "MT09074",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means femur?",
+        "answer": "Femor/o",
+        "accept": [],
+        "explain": "Femor/o means femur, as in femoral."
+      },
+      {
+        "id": "MT09075",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means loin?",
+        "answer": "Lumb/o",
+        "accept": [],
+        "explain": "Lumb/o means loin or lower back, as in lumbar."
+      },
+      {
+        "id": "MT09076",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means bone?",
+        "answer": "Oste/o",
+        "accept": [],
+        "explain": "Oste/o means bone, as in osteoarthrotomy."
+      },
+      {
+        "id": "MT09077",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means bone marrow or spinal cord?",
+        "answer": "Myel/o",
+        "accept": [],
+        "explain": "Myel/o means bone marrow or spinal cord, as in myeloma."
+      },
+      {
+        "id": "MT09078",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides My/o and Muscul/o, which combining form means muscle?",
+        "answer": "Myos/o",
+        "accept": [],
+        "explain": "Myos/o means muscle. My/o and Muscul/o are the other muscle forms."
+      },
+      {
+        "id": "MT09079",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides My/o and Myos/o, which combining form means muscle?",
+        "answer": "Muscul/o",
+        "accept": [],
+        "explain": "Muscul/o means muscle. My/o and Myos/o are the other muscle forms."
+      },
+      {
+        "id": "MT09080",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means flesh?",
+        "answer": "Sarc/o",
+        "accept": [],
+        "explain": "Sarc/o means flesh, as in sarcoma."
+      },
+      {
+        "id": "MT09081",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Pelv/o, which combining form means hip bone or pelvic cavity?",
+        "answer": "Pelv/i",
+        "accept": [],
+        "explain": "Pelv/i means hip bone or pelvic cavity. Pelv/o is the other pelvic form."
+      },
+      {
+        "id": "MT09082",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Pelv/i, which combining form means hip bone or pelvic cavity?",
+        "answer": "Pelv/o",
+        "accept": [],
+        "explain": "Pelv/o means hip bone or pelvic cavity. Pelv/i is the other pelvic form."
+      },
+      {
+        "id": "MT09083",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means radius?",
+        "answer": "Radi/o",
+        "accept": [],
+        "explain": "Radi/o means radius, the forearm bone on the thumb side."
+      },
+      {
+        "id": "MT09084",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means ulna?",
+        "answer": "Uln/o",
+        "accept": [],
+        "explain": "Uln/o means ulna, the inner forearm bone."
+      },
+      {
+        "id": "MT09085",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Spondyl/o, which combining form means vertebra?",
+        "answer": "Vertebr/o",
+        "accept": [],
+        "explain": "Vertebr/o means vertebra. Spondyl/o is the other vertebra form."
+      },
+      {
+        "id": "MT09086",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means sternum?",
+        "answer": "Stern/o",
+        "accept": [],
+        "explain": "Stern/o means sternum, as in sternocostal."
+      },
+      {
+        "id": "MT09087",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Tend/o and Tendin/o, which combining form means tendon?",
+        "answer": "Ten/o",
+        "accept": [],
+        "explain": "Ten/o means tendon. Tend/o and Tendin/o are the other tendon forms."
+      },
+      {
+        "id": "MT09088",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Ten/o and Tendin/o, which combining form means tendon?",
+        "answer": "Tend/o",
+        "accept": [],
+        "explain": "Tend/o means tendon. Ten/o and Tendin/o are the other tendon forms."
+      },
+      {
+        "id": "MT09089",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Ten/o and Tend/o, which combining form means tendon?",
+        "answer": "Tendin/o",
+        "accept": [],
+        "explain": "Tendin/o means tendon. Ten/o and Tend/o are the other tendon forms."
+      },
+      {
+        "id": "MT09090",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Thorac/o, Pector/o, and Steth/o, which combining form means chest?",
+        "answer": "Thoracic/o",
+        "accept": [],
+        "explain": "Thoracic/o means chest. Thorac/o, Pector/o, and Steth/o are the other chest forms."
+      },
+      {
+        "id": "MT09091",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Thoracic/o, Pector/o, and Steth/o, which combining form means chest?",
+        "answer": "Thorac/o",
+        "accept": [],
+        "explain": "Thorac/o means chest. Thoracic/o, Pector/o, and Steth/o are the other chest forms."
+      },
+      {
+        "id": "MT09092",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Thorac/o, Thoracic/o, and Steth/o, which combining form means chest?",
+        "answer": "Pector/o",
+        "accept": [],
+        "explain": "Pector/o means chest. Thorac/o, Thoracic/o, and Steth/o are the other chest forms."
+      },
+      {
+        "id": "MT09093",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Thorac/o, Thoracic/o, and Pector/o, which combining form means chest?",
+        "answer": "Steth/o",
+        "accept": [],
+        "explain": "Steth/o means chest. Thorac/o, Thoracic/o, and Pector/o are the other chest forms."
+      },
+      {
+        "id": "MT09094",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Angi/o and Vas/o, which combining form means vessel?",
+        "answer": "Vascul/o",
+        "accept": [],
+        "explain": "Vascul/o means vessel. Angi/o and Vas/o are the other vessel forms."
+      },
+      {
+        "id": "MT09095",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Angi/o and Vascul/o, which combining form means vessel?",
+        "answer": "Vas/o",
+        "accept": [],
+        "explain": "Vas/o means vessel. Angi/o and Vascul/o are the other vessel forms."
+      },
+      {
+        "id": "MT09096",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means aorta?",
+        "answer": "Aort/o",
+        "accept": [],
+        "explain": "Aort/o means aorta, as in aortalgia."
+      },
+      {
+        "id": "MT09097",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means fatty or lipid paste?",
+        "answer": "Ather/o",
+        "accept": [],
+        "explain": "Ather/o means fatty or lipid paste, as in atherosclerosis."
+      },
+      {
+        "id": "MT09098",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means heart?",
+        "answer": "Cardi/o",
+        "accept": [],
+        "explain": "Cardi/o means heart, as in cardioangiology."
+      },
+      {
+        "id": "MT09099",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means circle or crown?",
+        "answer": "Coron/o",
+        "accept": [],
+        "explain": "Coron/o means circle or crown, as in coronary artery."
+      },
+      {
+        "id": "MT09100",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means clot?",
+        "answer": "Thromb/o",
+        "accept": [],
+        "explain": "Thromb/o means clot, as in thrombosis."
+      },
+      {
+        "id": "MT09101",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Phleb/o, which combining form means vein?",
+        "answer": "Ven/o",
+        "accept": [],
+        "explain": "Ven/o means vein. Phleb/o is the other vein form."
+      },
+      {
+        "id": "MT09102",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Ven/o, which combining form means vein?",
+        "answer": "Phleb/o",
+        "accept": [],
+        "explain": "Phleb/o means vein. Ven/o is the other vein form."
+      },
+      {
+        "id": "MT09103",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means swollen or twisted vein?",
+        "answer": "Varic/o",
+        "accept": [],
+        "explain": "Varic/o means swollen or twisted vein, as in varicose veins."
+      },
+      {
+        "id": "MT09104",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means ventricle?",
+        "answer": "Ventricul/o",
+        "accept": [],
+        "explain": "Ventricul/o means ventricle or pouch, as in ventriculoatriostomy."
+      },
+      {
+        "id": "MT09105",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Chromat/o, which combining form means color?",
+        "answer": "Chrom/o",
+        "accept": [],
+        "explain": "Chrom/o means color. Chromat/o is the other color form."
+      },
+      {
+        "id": "MT09106",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Chrom/o, which combining form means color?",
+        "answer": "Chromat/o",
+        "accept": [],
+        "explain": "Chromat/o means color. Chrom/o is the other color form."
+      },
+      {
+        "id": "MT09107",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Hemat/o, which combining form means blood?",
+        "answer": "Hem/o",
+        "accept": [],
+        "explain": "Hem/o means blood. Hemat/o is the other blood form."
+      },
+      {
+        "id": "MT09108",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Hem/o, which combining form means blood?",
+        "answer": "Hemat/o",
+        "accept": [],
+        "explain": "Hemat/o means blood. Hem/o is the other blood form."
+      },
+      {
+        "id": "MT09109",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Thym/i, which combining form means thymus?",
+        "answer": "Thym/o",
+        "accept": [],
+        "explain": "Thym/o means thymus. Thym/i is the other thymus form."
+      },
+      {
+        "id": "MT09110",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Thym/o, which combining form means thymus?",
+        "answer": "Thym/i",
+        "accept": [],
+        "explain": "Thym/i means thymus. Thym/o is the other thymus form."
+      },
+      {
+        "id": "MT09111",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means alveolus?",
+        "answer": "Alveol/o",
+        "accept": [],
+        "explain": "Alveol/o means alveolus, an air sac, as in alveolar."
+      },
+      {
+        "id": "MT09112",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Bronchi/o, which combining form means bronchus?",
+        "answer": "Bronch/o",
+        "accept": [],
+        "explain": "Bronch/o means bronchus. Bronchi/o is the other bronchus form."
+      },
+      {
+        "id": "MT09113",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Bronch/o, which combining form means bronchus?",
+        "answer": "Bronchi/o",
+        "accept": [],
+        "explain": "Bronchi/o means bronchus. Bronch/o is the other bronchus form."
+      },
+      {
+        "id": "MT09114",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means bronchiole?",
+        "answer": "Bronchiol/o",
+        "accept": [],
+        "explain": "Bronchiol/o means bronchiole, as in bronchiolectasis."
+      },
+      {
+        "id": "MT09115",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Carb/o, which combining form means carbon dioxide?",
+        "answer": "Capn/o",
+        "accept": [],
+        "explain": "Capn/o means carbon dioxide. Carb/o is the other carbon dioxide form."
+      },
+      {
+        "id": "MT09116",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Capn/o, which combining form means carbon dioxide?",
+        "answer": "Carb/o",
+        "accept": [],
+        "explain": "Carb/o means carbon dioxide. Capn/o is the other carbon dioxide form."
+      },
+      {
+        "id": "MT09117",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means larynx?",
+        "answer": "Laryng/o",
+        "accept": [],
+        "explain": "Laryng/o means larynx, or voice box, as in laryngomalacia."
+      },
+      {
+        "id": "MT09118",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Nas/o, which combining form means nose?",
+        "answer": "Rhin/o",
+        "accept": [],
+        "explain": "Rhin/o means nose. Nas/o is the other nose form."
+      },
+      {
+        "id": "MT09119",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means mouth?",
+        "answer": "Or/o",
+        "accept": [],
+        "explain": "Or/o means mouth, as in oromandibular."
+      },
+      {
+        "id": "MT09120",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means lobe?",
+        "answer": "Lob/o",
+        "accept": [],
+        "explain": "Lob/o means lobe, a portion, as in lobectomy."
+      },
+      {
+        "id": "MT09121",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Ox/i, which combining form means oxygen?",
+        "answer": "Ox/o",
+        "accept": [],
+        "explain": "Ox/o means oxygen. Ox/i is the other oxygen form."
+      },
+      {
+        "id": "MT09122",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Ox/o, which combining form means oxygen?",
+        "answer": "Ox/i",
+        "accept": [],
+        "explain": "Ox/i means oxygen. Ox/o is the other oxygen form."
+      },
+      {
+        "id": "MT09123",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means air or lung?",
+        "answer": "Pneum/o",
+        "accept": [],
+        "explain": "Pneum/o means air or lung, as in pneumonectomy."
+      },
+      {
+        "id": "MT09124",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Besides Pulmon/o and Pneum/o, which combining form means lung?",
+        "answer": "Pneumon/o",
+        "accept": [],
+        "explain": "Pneumon/o means lung. Pulmon/o and Pneum/o are the other lung forms."
+      },
+      {
+        "id": "MT09125",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means tonsil?",
+        "answer": "Tonsill/o",
+        "accept": [],
+        "explain": "Tonsill/o means tonsil, as in tonsillopathy."
+      },
+      {
+        "id": "MT09126",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means breathing?",
+        "answer": "Spir/o",
+        "accept": [],
+        "explain": "Spir/o means breathing, as in spirometry."
+      },
+      {
+        "id": "MT09127",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means sinus?",
+        "answer": "Sinus/o",
+        "accept": [],
+        "explain": "Sinus/o means sinus, a cavity, as in aerosinusitis."
+      },
+      {
+        "id": "MT09128",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means pharynx?",
+        "answer": "Pharyng/o",
+        "accept": [],
+        "explain": "Pharyng/o means pharynx, or throat, as in pharyngorhinoscopy."
+      },
+      {
+        "id": "MT09129",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means palate?",
+        "answer": "Palat/o",
+        "accept": [],
+        "explain": "Palat/o means palate, as in palatal."
+      },
+      {
+        "id": "MT09130",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means uvula?",
+        "answer": "Uvul/o",
+        "accept": [],
+        "explain": "Uvul/o means uvula, as in uvulectomy."
+      },
+      {
+        "id": "MT09131",
+        "type": "saq",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Which combining form means tone or tension?",
+        "answer": "Ton/o",
+        "accept": [],
+        "explain": "Ton/o means tone or tension, as in dystonia."
+      },
+      {
+        "id": "MT09132",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Crin/o" },
+          { "id": "2", "text": "Necr/o" },
+          { "id": "3", "text": "Morph/o" },
+          { "id": "4", "text": "Path/o" },
+          { "id": "5", "text": "Phas/o" },
+          { "id": "6", "text": "Phob/o" },
+          { "id": "7", "text": "Scler/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "To secrete" },
+          { "id": "B", "text": "Death" },
+          { "id": "C", "text": "Form" },
+          { "id": "D", "text": "Disease" },
+          { "id": "E", "text": "Speech" },
+          { "id": "F", "text": "Exaggerated fear or sensitivity" },
+          { "id": "G", "text": "Hard" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F", "7": "G" },
+        "explain": "Crin/o means to secrete; Necr/o means death; Morph/o means form; Path/o means disease; Phas/o means speech; Phob/o means exaggerated fear or sensitivity; Scler/o means hard."
+      },
+      {
+        "id": "MT09133",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Cervic/o" },
+          { "id": "2", "text": "Arteri/o" },
+          { "id": "3", "text": "Atri/o" },
+          { "id": "4", "text": "Sphygm/o" },
+          { "id": "5", "text": "Splen/o" },
+          { "id": "6", "text": "Immun/o" },
+          { "id": "7", "text": "Pleur/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Neck" },
+          { "id": "B", "text": "Vessel carrying blood away from the heart" },
+          { "id": "C", "text": "Upper heart chamber" },
+          { "id": "D", "text": "Pulse" },
+          { "id": "E", "text": "Organ that filters old blood cells" },
+          { "id": "F", "text": "Safe" },
+          { "id": "G", "text": "Membrane around the lung" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F", "7": "G" },
+        "explain": "Cervic/o means neck; Arteri/o means artery; Atri/o means atrium or upper heart chamber; Sphygm/o means pulse; Splen/o means spleen; Immun/o means safe; Pleur/o means pleura."
+      },
+      {
+        "id": "MT09134",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each medical term to its word-part pattern.",
+        "leftItems": [
+          { "id": "1", "text": "Cytotoxic" },
+          { "id": "2", "text": "Dermal" },
+          { "id": "3", "text": "Dermatologist" },
+          { "id": "4", "text": "Cutaneous" },
+          { "id": "5", "text": "Enterocele" },
+          { "id": "6", "text": "Esophagoscopy" },
+          { "id": "7", "text": "Gastroptosis" },
+          { "id": "8", "text": "Hepatectomy" },
+          { "id": "9", "text": "Carcinoma" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "CF+R+S" },
+          { "id": "B", "text": "R+S" },
+          { "id": "C", "text": "CF+S" },
+          { "id": "D", "text": "P+R+S" },
+          { "id": "E", "text": "P+CF+S" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "B",
+          "5": "C",
+          "6": "C",
+          "7": "C",
+          "8": "B",
+          "9": "B"
+        },
+        "explain": "Cytotoxic is CF+R+S; Dermal, Cutaneous, Hepatectomy, and Carcinoma are R+S; Dermatologist, Enterocele, Esophagoscopy, and Gastroptosis are CF+S."
+      },
+      {
+        "id": "MT09135",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each medical term to its word-part pattern.",
+        "leftItems": [
+          { "id": "1", "text": "Endocrinology" },
+          { "id": "2", "text": "Anesthesia" },
+          { "id": "3", "text": "Fibroadenoma" },
+          { "id": "4", "text": "Genogram" },
+          { "id": "5", "text": "Gynecologist" },
+          { "id": "6", "text": "Lithotripsy" },
+          { "id": "7", "text": "Necrosis" },
+          { "id": "8", "text": "Oncology" },
+          { "id": "9", "text": "Orthopedist" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "P+CF+S" },
+          { "id": "B", "text": "P+R+S" },
+          { "id": "C", "text": "CF+R+S" },
+          { "id": "D", "text": "CF+R" },
+          { "id": "E", "text": "CF+S" },
+          { "id": "F", "text": "R+S" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "E",
+          "7": "F",
+          "8": "E",
+          "9": "C"
+        },
+        "explain": "Endocrinology is P+CF+S; Anesthesia is P+R+S; Fibroadenoma and Orthopedist are CF+R+S; Genogram is CF+R; Gynecologist, Lithotripsy, and Oncology are CF+S; Necrosis is R+S."
+      },
+      {
+        "id": "MT09136",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each medical term to its word-part pattern.",
+        "leftItems": [
+          { "id": "1", "text": "Morphometry" },
+          { "id": "2", "text": "Toxicoderma" },
+          { "id": "3", "text": "Hydrophobia" },
+          { "id": "4", "text": "Stenosis" },
+          { "id": "5", "text": "Scleroderma" },
+          { "id": "6", "text": "Sonographer" },
+          { "id": "7", "text": "Angiogram" },
+          { "id": "8", "text": "Vasospasm" },
+          { "id": "9", "text": "Vasculopath" },
+          { "id": "10", "text": "Aortalgia" },
+          { "id": "11", "text": "Arterionecrosis" },
+          { "id": "12", "text": "Atherosclerosis" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "CF+S" },
+          { "id": "B", "text": "CF+R" },
+          { "id": "C", "text": "CF+R+S" },
+          { "id": "D", "text": "R+S" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "B",
+          "6": "A",
+          "7": "A",
+          "8": "A",
+          "9": "B",
+          "10": "D",
+          "11": "C",
+          "12": "C"
+        },
+        "explain": "Morphometry, Sonographer, Angiogram, and Vasospasm are CF+S; Toxicoderma, Scleroderma, and Vasculopath are CF+R; Hydrophobia, Arterionecrosis, and Atherosclerosis are CF+R+S; Stenosis and Aortalgia are R+S."
+      },
+      {
+        "id": "MT09137",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each medical term to its word-part pattern.",
+        "leftItems": [
+          { "id": "1", "text": "Atherectomy" },
+          { "id": "2", "text": "Atrioventricular" },
+          { "id": "3", "text": "Cardioangiology" },
+          { "id": "4", "text": "Coronary Artery" },
+          { "id": "5", "text": "Coronary Vein" },
+          { "id": "6", "text": "Myocardial" },
+          { "id": "7", "text": "Pectoral" },
+          { "id": "8", "text": "Stethoscope" },
+          { "id": "9", "text": "Sphygmomanometer" },
+          { "id": "10", "text": "Thrombosis" },
+          { "id": "11", "text": "Venosclerosis" },
+          { "id": "12", "text": "Varicose veins" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "R+S" },
+          { "id": "B", "text": "CF+R+S" },
+          { "id": "C", "text": "CF+CF+S" },
+          { "id": "D", "text": "CF+S" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "A",
+          "5": "A",
+          "6": "B",
+          "7": "A",
+          "8": "D",
+          "9": "C",
+          "10": "A",
+          "11": "B",
+          "12": "A"
+        },
+        "explain": "Atherectomy, Coronary Artery, Coronary Vein, Pectoral, Thrombosis, and Varicose veins are R+S; Atrioventricular, Myocardial, and Venosclerosis are CF+R+S; Cardioangiology and Sphygmomanometer are CF+CF+S; Stethoscope is CF+S."
+      },
+      {
+        "id": "MT09138",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each medical term to its word-part pattern.",
+        "leftItems": [
+          { "id": "1", "text": "Ventriculoatriostomy" },
+          { "id": "2", "text": "Hemochromatosis" },
+          { "id": "3", "text": "Hematocytopenia" },
+          { "id": "4", "text": "Splenomegaly" },
+          { "id": "5", "text": "Thrombophlebitis" },
+          { "id": "6", "text": "Immunopharmacology" },
+          { "id": "7", "text": "Lymphoduct" },
+          { "id": "8", "text": "Thymocyte" },
+          { "id": "9", "text": "Athymism" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "CF+CF+S" },
+          { "id": "B", "text": "CF+R+S" },
+          { "id": "C", "text": "CF+S" },
+          { "id": "D", "text": "P+R+S" },
+          { "id": "E", "text": "CF+R" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "A",
+          "4": "C",
+          "5": "B",
+          "6": "A",
+          "7": "E",
+          "8": "B",
+          "9": "D"
+        },
+        "explain": "Ventriculoatriostomy, Hematocytopenia, and Immunopharmacology are CF+CF+S; Hemochromatosis, Thrombophlebitis, and Thymocyte are CF+R+S; Splenomegaly is CF+S; Athymism is P+R+S; Lymphoduct is CF+R."
+      },
+      {
+        "id": "MT09139",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each medical term to its word-part pattern.",
+        "leftItems": [
+          { "id": "1", "text": "Alveolar" },
+          { "id": "2", "text": "Bronchoscopy" },
+          { "id": "3", "text": "Bronchitis" },
+          { "id": "4", "text": "Bronchiolectasis" },
+          { "id": "5", "text": "Capnography" },
+          { "id": "6", "text": "Carbohemia" },
+          { "id": "7", "text": "Laryngomalacia" },
+          { "id": "8", "text": "Nasopharyngolaryngoscopy" },
+          { "id": "9", "text": "Rhinesthesia" },
+          { "id": "10", "text": "Oromandibular" },
+          { "id": "11", "text": "Lobectomy" },
+          { "id": "12", "text": "Oximeter" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "R+S" },
+          { "id": "B", "text": "CF+S" },
+          { "id": "C", "text": "CF+R+S" },
+          { "id": "D", "text": "CF+CF+CF+S" },
+          { "id": "E", "text": "R+R+S" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "A",
+          "4": "A",
+          "5": "B",
+          "6": "C",
+          "7": "B",
+          "8": "D",
+          "9": "E",
+          "10": "C",
+          "11": "A",
+          "12": "B"
+        },
+        "explain": "Alveolar, Bronchitis, Bronchiolectasis, and Lobectomy are R+S; Bronchoscopy, Capnography, Laryngomalacia, and Oximeter are CF+S; Carbohemia and Oromandibular are CF+R+S; Nasopharyngolaryngoscopy is CF+CF+CF+S; Rhinesthesia is R+R+S."
+      },
+      {
+        "id": "MT09140",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each medical term to its word-part pattern.",
+        "leftItems": [
+          { "id": "1", "text": "Pneumonectomy" },
+          { "id": "2", "text": "Pulmonary" },
+          { "id": "3", "text": "Tonsillopathy" },
+          { "id": "4", "text": "Spirometry" },
+          { "id": "5", "text": "Dyspnea" },
+          { "id": "6", "text": "Tracheostomy" },
+          { "id": "7", "text": "Thoracocentesis" },
+          { "id": "8", "text": "Pectorophony" },
+          { "id": "9", "text": "Phrenoptosis" },
+          { "id": "10", "text": "Palatal" },
+          { "id": "11", "text": "Uvulectomy" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "R+S" },
+          { "id": "B", "text": "CF+R+S" },
+          { "id": "C", "text": "CF+S" },
+          { "id": "D", "text": "P+S" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "A",
+          "3": "B",
+          "4": "C",
+          "5": "D",
+          "6": "C",
+          "7": "C",
+          "8": "B",
+          "9": "C",
+          "10": "A",
+          "11": "A"
+        },
+        "explain": "Pneumonectomy, Pulmonary, Palatal, and Uvulectomy are R+S; Tonsillopathy and Pectorophony are CF+R+S; Spirometry, Tracheostomy, Thoracocentesis, and Phrenoptosis are CF+S; Dyspnea is P+S."
+      },
+      {
+        "id": "MT09141",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each medical term to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Arthrodynia" },
+          { "id": "2", "text": "Articulus" },
+          { "id": "3", "text": "Brachioplasty" },
+          { "id": "4", "text": "Cervicobrachial" },
+          { "id": "5", "text": "Chondromalacia" },
+          { "id": "6", "text": "Intercostal" },
+          { "id": "7", "text": "Craniotomy" },
+          { "id": "8", "text": "Dactylitis" },
+          { "id": "9", "text": "Fascial" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Pain in a joint" },
+          { "id": "B", "text": "Joint" },
+          { "id": "C", "text": "Surgical reshaping of the upper arm" },
+          { "id": "D", "text": "Relating to the neck and arm" },
+          { "id": "E", "text": "Softening of cartilage" },
+          { "id": "F", "text": "Between the ribs" },
+          { "id": "G", "text": "Surgical opening of the skull" },
+          { "id": "H", "text": "Swelling of a finger or toe" },
+          { "id": "I", "text": "Relating to fascia (connective tissue)" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G",
+          "8": "H",
+          "9": "I"
+        },
+        "explain": "Arthrodynia is joint pain; Articulus is a joint; Brachioplasty reshapes the upper arm; Cervicobrachial relates to neck and arm; Chondromalacia is cartilage softening; Intercostal is between ribs; Craniotomy opens the skull; Dactylitis is digit swelling; Fascial relates to fascia."
+      },
+      {
+        "id": "MT09142",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each medical term to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Femoral" },
+          { "id": "2", "text": "Lumbar" },
+          { "id": "3", "text": "Osteoarthrotomy" },
+          { "id": "4", "text": "Fibrocartilage" },
+          { "id": "5", "text": "Myeloma" },
+          { "id": "6", "text": "Myoma" },
+          { "id": "7", "text": "Myositis" },
+          { "id": "8", "text": "Sarcoma" },
+          { "id": "9", "text": "Pelvimetry" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Relating to the thigh bone" },
+          { "id": "B", "text": "Relating to the lower back" },
+          { "id": "C", "text": "Surgical removal of a joint end of bone" },
+          { "id": "D", "text": "Cartilage with abundant collagen fibers" },
+          { "id": "E", "text": "Tumor of bone marrow" },
+          { "id": "F", "text": "Benign tumor of muscle" },
+          { "id": "G", "text": "Inflammation of muscle" },
+          { "id": "H", "text": "Malignant tumor of connective tissue" },
+          { "id": "I", "text": "Measurement of the pelvis" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G",
+          "8": "H",
+          "9": "I"
+        },
+        "explain": "Femoral relates to the femur; Lumbar relates to the lower back; Osteoarthrotomy removes a joint end of bone; Fibrocartilage has collagen fibers; Myeloma is a bone marrow tumor; Myoma is a benign muscle tumor; Myositis is muscle inflammation; Sarcoma is a connective tissue cancer; Pelvimetry measures the pelvis."
+      },
+      {
+        "id": "MT09143",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each medical term to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Pelvofemoral" },
+          { "id": "2", "text": "Radioulnar" },
+          { "id": "3", "text": "Spondylosis" },
+          { "id": "4", "text": "Sternocostal" },
+          { "id": "5", "text": "Tenotomy" },
+          { "id": "6", "text": "Tendinitis" },
+          { "id": "7", "text": "Thoracolumbar" },
+          { "id": "8", "text": "Thoracicoabdominal" },
+          { "id": "9", "text": "Dystonia" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Relating to the pelvis and femur" },
+          { "id": "B", "text": "Relating to the radius and ulna" },
+          { "id": "C", "text": "Degenerative spinal disease" },
+          { "id": "D", "text": "Relating to the sternum and ribs" },
+          { "id": "E", "text": "Surgical division of a tendon" },
+          { "id": "F", "text": "Inflammation of a tendon" },
+          { "id": "G", "text": "Relating to the thorax and lumbar region" },
+          { "id": "H", "text": "Relating to the thorax and abdomen" },
+          { "id": "I", "text": "Movement disorder with sustained muscle contractions" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G",
+          "8": "H",
+          "9": "I"
+        },
+        "explain": "Pelvofemoral relates to pelvis and femur; Radioulnar relates to radius and ulna; Spondylosis is spinal degeneration; Sternocostal relates to sternum and ribs; Tenotomy divides a tendon; Tendinitis is tendon inflammation; Thoracolumbar relates to thorax and lumbar region; Thoracicoabdominal relates to thorax and abdomen; Dystonia is a movement disorder."
+      },
+      {
+        "id": "MT09144",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each medical term to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Acute" },
+          { "id": "2", "text": "Chronic" },
+          { "id": "3", "text": "Benign" },
+          { "id": "4", "text": "Malignant" },
+          { "id": "5", "text": "Diagnosis" },
+          { "id": "6", "text": "Etiology" },
+          { "id": "7", "text": "Localized" },
+          { "id": "8", "text": "Systemic" },
+          { "id": "9", "text": "Prognosis" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Severe symptoms - short period" },
+          { "id": "B", "text": "Slow development of symptoms - long period" },
+          { "id": "C", "text": "Mild or non-cancerous" },
+          { "id": "D", "text": "Harmful or cancerous" },
+          { "id": "E", "text": "Identification of disease from symptoms and tests" },
+          { "id": "F", "text": "Study of causes of a disease" },
+          { "id": "G", "text": "Limited to a definite area" },
+          { "id": "H", "text": "Relating to the whole body" },
+          { "id": "I", "text": "Prediction of the likely outcome" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G",
+          "8": "H",
+          "9": "I"
+        },
+        "explain": "Acute is severe and short; Chronic is slow and long; Benign is mild or non-cancerous; Malignant is harmful or cancerous; Diagnosis identifies disease; Etiology studies causes; Localized is limited to an area; Systemic relates to the whole body; Prognosis predicts outcome."
+      },
+      {
+        "id": "MT09145",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each medical term to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Progressive" },
+          { "id": "2", "text": "Prophylaxis" },
+          { "id": "3", "text": "Recurrent" },
+          { "id": "4", "text": "Sign" },
+          { "id": "5", "text": "Syndrome" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Increasing severity of signs and symptoms" },
+          { "id": "B", "text": "Preventive or precautionary measures" },
+          { "id": "C", "text": "To occur or repeat again" },
+          { "id": "D", "text": "A mark or symptom of a disease" },
+          { "id": "E", "text": "Group of symptoms and signs of a particular disease" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E" },
+        "explain": "Progressive increases severity; Prophylaxis prevents; Recurrent repeats; Sign is a mark or symptom; Syndrome is a group of symptoms and signs."
+      },
+      {
+        "id": "MT09146",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each abbreviation to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "CCU" },
+          { "id": "2", "text": "ECU" },
+          { "id": "3", "text": "ICU" },
+          { "id": "4", "text": "IP" },
+          { "id": "5", "text": "OP" },
+          { "id": "6", "text": "OR" },
+          { "id": "7", "text": "DC or D/C" },
+          { "id": "8", "text": "BP" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Coronary / Cardiac Care Unit" },
+          { "id": "B", "text": "Emergency Care Unit" },
+          { "id": "C", "text": "Intensive Care Unit" },
+          { "id": "D", "text": "In Patient" },
+          { "id": "E", "text": "Out Patient" },
+          { "id": "F", "text": "Operating Room" },
+          { "id": "G", "text": "Discharge, Discontinue" },
+          { "id": "H", "text": "Blood Pressure" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G",
+          "8": "H"
+        },
+        "explain": "CCU is Coronary / Cardiac Care Unit; ECU is Emergency Care Unit; ICU is Intensive Care Unit; IP is In Patient; OP is Out Patient; OR is Operating Room; DC or D/C is Discharge, Discontinue; BP is Blood Pressure."
+      },
+      {
+        "id": "MT09147",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each treatment term to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "bid" },
+          { "id": "2", "text": "tid" },
+          { "id": "3", "text": "pp" },
+          { "id": "4", "text": "wk" },
+          { "id": "5", "text": "yr" },
+          { "id": "6", "text": "Rx" },
+          { "id": "7", "text": "Sx" },
+          { "id": "8", "text": "Dx" },
+          { "id": "9", "text": "Tx" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Twice a day" },
+          { "id": "B", "text": "Three times a day" },
+          { "id": "C", "text": "After meals" },
+          { "id": "D", "text": "Week" },
+          { "id": "E", "text": "Year" },
+          { "id": "F", "text": "Prescription" },
+          { "id": "G", "text": "Symptoms" },
+          { "id": "H", "text": "Diagnosis" },
+          { "id": "I", "text": "Treatment" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G",
+          "8": "H",
+          "9": "I"
+        },
+        "explain": "bid is twice a day; tid is three times a day; pp is after meals; wk is week; yr is year; Rx is prescription; Sx is symptoms; Dx is diagnosis; Tx is treatment."
+      },
+      {
+        "id": "MT09148",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each dental term to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Maxilla" },
+          { "id": "2", "text": "Mandible" },
+          { "id": "3", "text": "Incisors" },
+          { "id": "4", "text": "Canines" },
+          { "id": "5", "text": "Premolars" },
+          { "id": "6", "text": "Molars" },
+          { "id": "7", "text": "Plaque" },
+          { "id": "8", "text": "Cavity" },
+          { "id": "9", "text": "Enamel" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Upper jaw" },
+          { "id": "B", "text": "Lower jaw" },
+          { "id": "C", "text": "Front teeth for cutting" },
+          { "id": "D", "text": "Pointed teeth for tearing" },
+          { "id": "E", "text": "Teeth for chewing" },
+          { "id": "F", "text": "Grinding teeth" },
+          { "id": "G", "text": "Sticky deposit of food and bacteria on teeth" },
+          { "id": "H", "text": "Tooth decay caused by caries" },
+          { "id": "I", "text": "Hard outer part of tooth" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G",
+          "8": "H",
+          "9": "I"
+        },
+        "explain": "Maxilla is upper jaw; Mandible is lower jaw; Incisors cut; Canines tear; Premolars chew; Molars grind; Plaque is a sticky deposit; Cavity is tooth decay; Enamel is the hard outer part."
+      },
+      {
+        "id": "MT09149",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each dental term to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Dentin" },
+          { "id": "2", "text": "Pulp" },
+          { "id": "3", "text": "Gingiva" },
+          { "id": "4", "text": "Canal" },
+          { "id": "5", "text": "Root" },
+          { "id": "6", "text": "Apex" },
+          { "id": "7", "text": "Denture" },
+          { "id": "8", "text": "Endodontist" },
+          { "id": "9", "text": "Orthodontist" },
+          { "id": "10", "text": "Pedodontist" },
+          { "id": "11", "text": "Prosthodontist" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Part below enamel" },
+          { "id": "B", "text": "Tissue containing blood and nerve supply" },
+          { "id": "C", "text": "Gums" },
+          { "id": "D", "text": "Narrow tubular passage inside tooth" },
+          { "id": "E", "text": "Part fixed in the jaws" },
+          { "id": "F", "text": "Tip of the root" },
+          { "id": "G", "text": "Artificial substitute for natural teeth" },
+          { "id": "H", "text": "Specialist in pulp related treatment" },
+          { "id": "I", "text": "Specialist in teeth straightening" },
+          { "id": "J", "text": "Specialist in treating children's teeth" },
+          { "id": "K", "text": "Specialist in replacing missing teeth" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G",
+          "8": "H",
+          "9": "I",
+          "10": "J",
+          "11": "K"
+        },
+        "explain": "Dentin is below enamel; Pulp has blood and nerve supply; Gingiva is gums; Canal is a narrow passage; Root is fixed in the jaws; Apex is the root tip; Denture is artificial teeth; Endodontist treats pulp; Orthodontist straightens teeth; Pedodontist treats children's teeth; Prosthodontist replaces missing teeth."
+      },
+      {
+        "id": "MT09150",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each medical term to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Pathobiologist" },
+          { "id": "2", "text": "Bipedal" },
+          { "id": "3", "text": "Phagophobia" },
+          { "id": "4", "text": "Paraphasia" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Disease specialist" },
+          { "id": "B", "text": "Using two feet" },
+          { "id": "C", "text": "Fear of swallowing" },
+          { "id": "D", "text": "Speaking errors" }
+        ],
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D" },
+        "explain": "Pathobiologist relates to disease; Bipedal means using two feet; Phagophobia is fear of swallowing; Paraphasia means speaking errors."
+      },
+      {
+        "id": "MT09151",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Arthr/o" },
+          { "id": "2", "text": "My/o" },
+          { "id": "3", "text": "Myos/o" },
+          { "id": "4", "text": "Pelv/i" },
+          { "id": "5", "text": "Spondyl/o" },
+          { "id": "6", "text": "Ten/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Joint" },
+          { "id": "B", "text": "Muscle" },
+          { "id": "C", "text": "Hip bone or pelvic cavity" },
+          { "id": "D", "text": "Vertebra" },
+          { "id": "E", "text": "Cord attaching muscle to bone" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "B",
+          "4": "C",
+          "5": "D",
+          "6": "E"
+        },
+        "explain": "Arthr/o means joint; My/o and Myos/o mean muscle; Pelv/i means hip bone or pelvic cavity; Spondyl/o means vertebra; Ten/o means tendon."
+      },
+      {
+        "id": "MT09152",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Thoracic/o" },
+          { "id": "2", "text": "Angi/o" },
+          { "id": "3", "text": "Vascul/o" },
+          { "id": "4", "text": "Thym/i" },
+          { "id": "5", "text": "Bronchi/o" },
+          { "id": "6", "text": "Nas/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Chest" },
+          { "id": "B", "text": "Vessel" },
+          { "id": "C", "text": "Organ where T lymphocytes mature" },
+          { "id": "D", "text": "Primary airway branching from the carina" },
+          { "id": "E", "text": "Nose" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "B",
+          "4": "C",
+          "5": "D",
+          "6": "E"
+        },
+        "explain": "Thoracic/o means chest; Angi/o and Vascul/o mean vessel; Thym/i means thymus; Bronchi/o means bronchus; Nas/o means nose."
+      },
+      {
+        "id": "MT09153",
+        "type": "matching",
+        "cat": "MT_mixed_lec9-17",
+        "q": "Match each combining form to its meaning.",
+        "leftItems": [
+          { "id": "1", "text": "Pulmon/o" },
+          { "id": "2", "text": "Cutane/o" },
+          { "id": "3", "text": "Onc/o" },
+          { "id": "4", "text": "Crani/o" },
+          { "id": "5", "text": "Dent/o" },
+          { "id": "6", "text": "Dent/i" },
+          { "id": "7", "text": "Odont/o" }
+        ],
+        "rightItems": [
+          { "id": "A", "text": "Lung" },
+          { "id": "B", "text": "Skin" },
+          { "id": "C", "text": "Tumor or mass" },
+          { "id": "D", "text": "Skull" },
+          { "id": "E", "text": "Tooth" }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "E",
+          "7": "E"
+        },
+        "explain": "Pulmon/o means lung; Cutane/o means skin; Onc/o means tumor or mass; Crani/o means skull; Dent/o, Dent/i, and Odont/o all mean tooth."
+      }
+    ]
+  }
+}
