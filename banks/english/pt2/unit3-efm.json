@@ -3,7 +3,7 @@
   "subject": "ENGL101",
   "subjectId": "engl101",
   "title": "Unit 3: Basic Principles in Medicine + Digestive, Respiratory, and Circulatory Systems",
-  "formSize": 201,
+  "formSize": 203,
   "forms": [
     "A"
   ],
@@ -4279,14 +4279,42 @@
         "cat": "Unit 3: Basic Principles in Medicine",
         "q": "Which mineral is a major component of bone?",
         "options": [
-        "Calcium phosphate",
-        "Sodium chloride",
-        "Potassium iodide",
-        "Iron sulfate"
+          "Calcium phosphate",
+          "Sodium chloride",
+          "Potassium iodide",
+          "Iron sulfate"
         ],
         "correct": 0,
         "explain": "Bone contains minerals such as calcium phosphate, which helps give bone its strength and rigidity. The other options are not the main mineral component of bone."
-      }
+      },
+      {
+        "id": "ENG1PT20757",
+        "type": "mcq",
+        "cat": "Unit 3 – Circulatory System",
+        "q": "Approximately how many blood cells are there in a single drop of blood?",
+        "options": [
+          "250 million",
+          "25 million",
+          "40 million",
+          "400 million"
+        ],
+        "correct": 0,
+        "explain": "A single drop of blood contains about 250 million blood cells, including red blood cells, white blood cells, and platelets."
+      },
+      {
+      "id": "ENG1PT20758",
+      "type": "mcq",
+      "cat": "Unit 3: Basic Principles in Medicine",
+      "q": "Which option gives the two meanings of the verb 'regulate'?",
+      "options": [
+        "To control or maintain something, and to make something regular",
+        "To remove something completely, and to make something irregular",
+        "To increase something, and to decrease something",
+        "To stop something, and to start something"
+      ],
+      "correct": 0,
+      "explain": "Regulate means to control or maintain something (e.g., regulate body temperature) and also to make something regular (e.g., regulate the flow). The other options do not match either meaning."
+    }
     ]
   }
 }
