@@ -114,6 +114,13 @@
               "bank": "banks/medterm/pt2/lecture-16-17.json",
               "status": "ready",
               "draft": false
+            },
+            {
+              "id": "mixed-medterm-lec9-17",
+              "title": "Mixed Medical Terminology - Lectures 9 to 17",
+              "bank": "banks/medterm/pt2/mixed-9-17.json",
+              "status": "ready",
+              "draft": true
             }
           ],
           "studyKey": "medterm/pt2",
