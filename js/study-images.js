@@ -847,7 +847,7 @@ function storeKey(key, img) {
       DATA.chapters.forEach(c => (c.images || []).forEach(i => { if (!isSingle(i) || !i.answer) return; const tc = t => /\s/.test(String(t).trim()) ? titleCase(t) : t; i.answer = tc(i.answer); const acc = (Array.isArray(i.accept) ? i.accept : []).map(tc); [i.answer].concat(acc.slice()).forEach(t => caseVariants(t).forEach(v => { if (v !== i.answer && !acc.includes(v)) acc.push(v); })); i.accept = acc; }));
     }
     listEl.innerHTML = '';
-    DATA.chapters.forEach(ch => {
+    DATA.chapters.filter(ch => !ch.hidden).forEach(ch => {
       const lec = lectureOf(ch.lecture);
       const card = document.createElement('article');
       card.className = 'chapter-card simg-chapter-card'; card.dataset.id = ch.lecture;
