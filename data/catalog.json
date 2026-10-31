@@ -56,9 +56,9 @@
           "id": "medterm-pt2",
           "title": "Medical Terminology",
           "subtitle": "Lectures 10-17",
-          "draft": true,
+          "draft": false,
           "locked": false,
-          "comingSoon": true,
+          "comingSoon": false,
           "study": {
             "title": "Picture Study",
             "images": "banks/medterm/study/study-images-pt2.json"
