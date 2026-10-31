@@ -362,6 +362,7 @@ function storeKey(key, img) {
     const lock = (l, text, el, how) => {
       const slots = modeSlots(storeKey(key, img), mode); if (slots[l.id] != null) return;
       slots[l.id] = (typeof labelCanon === 'function') ? labelCanon(l, text) : norm(text); writeModeSlots(storeKey(key, img), mode, slots);
+      if (window.PT2Unlocks && PT2Unlocks.labelSolved) PT2Unlocks.labelSolved();
       const r = el.getBoundingClientRect();
       const labels = labelsOf(img), k = labels.filter(x => slots[x.id] != null).length, n = labels.length;
       const hadFocus = el.contains(document.activeElement);

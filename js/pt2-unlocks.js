@@ -1,18 +1,20 @@
 /* PT2 emoji unlocks (local only, saved on this device; no accounts, no XP, no progress shown).
    Counted per week: a week's tally = distinct questions of that week's banks answered correctly at least once
-   (window.__PT2_QIDS.weeks lists the banks of each week; the build fills it), plus, for Week 11, each picture study
-   item (a picture, a picture variant or a bone page) solved completely once. Week 11 = English, Medical Terminology
-   and Anatomy; Medical Physics and Study Skills (Week 12) do not count. The Week 11 emoji (🎓) needs every Week 11
-   quiz question solved; picture study is not required for it.
+   (the banks of each week come from the catalog's week tags; Anatomy always counts), plus, for Week 11, each picture
+   study label named correctly once (per label of a picture, whatever the mode or picture variant). Week 11 = English,
+   Medical Terminology and Anatomy; Medical Physics and Study Skills are Week 12. The Week 11 emoji (🎓) needs every
+   Week 11 quiz question solved; picture study is not required for it.
    Each week has its own ledger, so 'Reset solved' on a set does not take unlocks away.
-   Week 12 = the materials tagged "Week 12" in the catalog (Medical Physics and Study Skills); its banks are listed in
-   window.__PT2_QIDS.weeks.week12. Solving every Week 12 question unlocks 😌 and 🧘 together. The Week 12 tally is
-   retroactive: it reads the solved sets plus the ids of sets that were fully solved and then reset (resets[card].ids;
-   a set can only be reset once nothing is left in it), so history from before the unlock existed still counts. */
+   Solving every Week 12 question unlocks 😌 and 🧘 together. The Week 12 tally is retroactive: it reads the solved
+   sets plus the ids of sets that were fully solved and then reset (resets[card].ids; a set can only be reset once
+   nothing is left in it), so history from before the unlock existed still counts. */
 (function (global) {
   'use strict';
   var GOT = 'pt2_emoji_unlocked_v1', PREFIX = 'sp_bank_v1:';
   var Q = global.__PT2_QIDS || { banks: {}, weeks: {} };
+  /* The bank and week lists are read from data/catalog.json and the bank files when the page loads (through the offline
+     bundle when it is there), so they always match the banks in use. A list the bundle provides is only a head start. */
+  var PICS = [], PICLAB = {}, PIC_STORE = 'sp_study_images_v1';
   var WEEKS = [
     { week: 'week11', pictures: true, done: 'Every Week 11 question solved', unlocks: [
       { emoji: '⚡', at: 20, label: 'Electric', fam: 'mood-fierce', cls: 'mood-electric' },
@@ -44,7 +46,62 @@
   function lsSet(k, v) { try { global.localStorage.setItem(k, v); } catch (e) {} }
   function readJSON(k, d) { try { var v = JSON.parse(lsGet(k) || 'null'); return v && typeof v === 'object' ? v : d; } catch (e) { return d; } }
   var known = {}, SLOT = {};
-  Object.keys(Q.banks).forEach(function (bk) { known[bk] = {}; Q.banks[bk].forEach(function (id) { known[bk][id] = 1; }); });
+  function setQ(q) {
+    Q = q; known = {};
+    Object.keys(Q.banks).forEach(function (bk) { known[bk] = {}; Q.banks[bk].forEach(function (id) { known[bk][id] = 1; }); });
+    WEEKS.forEach(function (w) { w.banks = (Q.weeks && Q.weeks[w.week]) || []; });
+  }
+  setQ(Q);
+  /* question ids of a bank: the same rule as the quiz (id, or a fallback from the stem; '~n' on a repeated id) */
+  function qidsOf(data) {
+    var out = [], seen = {}, bank = (data && data.bank) || {};
+    var forms = Array.isArray(data && data.forms) && data.forms.length ? data.forms : Object.keys(bank);
+    forms.forEach(function (letter) {
+      (bank[letter] || []).forEach(function (q, i) {
+        var qi = q && q.id != null ? String(q.id) : 'q_' + String((q && q.q) || '').slice(0, 48) + '_' + i;
+        if (seen[qi]) { seen[qi]++; qi = qi + '~' + seen[qi]; } else seen[qi] = 1;
+        out.push(qi);
+      });
+    });
+    return out;
+  }
+  function bkOf(path) { var m = String(path || '').match(/banks\/(.+)\.json$/); return m ? m[1] : null; }
+  function getJSON(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return r.json(); }); }
+  /* Week 11 = the materials tagged Week 11 (English, Medical Terminology, Anatomy); Week 12 = those tagged Week 12.
+     Anatomy always counts, whatever week it is filed under. Picture studies: every material with study.images. */
+  function loadLists() {
+    return getJSON('data/catalog.json').then(function (cat) {
+      var weeks = { week11: [], week12: [] }, jobs = [], banks = {}, pics = [];
+      (cat.subjects || []).forEach(function (sub) { (sub.materials || []).forEach(function (m) {
+        var tag = String(m.week || ''), wk = /\b12\b/.test(tag) ? 'week12' : /\b11\b/.test(tag) ? 'week11' : null;
+        if (!wk && /anatom/i.test(String(m.id) + ' ' + String(m.title))) wk = 'week11';
+        if (m.study && m.study.images) pics.push({ set: m.studyKey || ('medterm/' + m.id), src: m.study.images });
+        if (!wk) return;
+        var paths = (m.lectures || []).map(function (l) { return l.bank; }).concat(m.bank ? [m.bank] : []);
+        paths.forEach(function (p) { var bk = bkOf(p); if (!bk || weeks.week11.indexOf(bk) !== -1 || weeks.week12.indexOf(bk) !== -1) return;
+          weeks[wk].push(bk);
+          jobs.push(getJSON(p).then(function (d) { banks[bk] = qidsOf(d); }, function () {}));
+        });
+      }); });
+      pics.forEach(function (pc) {
+        jobs.push(getJSON(pc.src).then(function (d) {
+          var map = PICLAB[pc.set] = {};
+          (d.chapters || []).forEach(function (ch) { (ch.images || []).forEach(function (img) {
+            var single = img.kind === 'single-structure' || !(img.labels && img.labels.length);
+            var ids = single ? ['name'] : img.labels.map(function (l) { return l.id; });
+            var vars = {};
+            (img.variants || []).forEach(function (v) { if (v && v.id) vars[v.id] = v.pos && typeof v.pos === 'object' ? ids.filter(function (id) { return v.pos[id]; }) : ids; });
+            map[ch.lecture + '/' + img.id] = { ids: ids, vars: vars };
+          }); });
+        }, function () {}));
+      });
+      PICS = pics;
+      return Promise.all(jobs).then(function () {
+        ['week11', 'week12'].forEach(function (wk) { weeks[wk] = weeks[wk].filter(function (bk) { return banks[bk]; }); });
+        setQ({ banks: banks, weeks: weeks });
+      });
+    });
+  }
   /* fold the current solved sets of a week's banks into that week's ledger (only real question ids) */
   function sync(w) {
     var L = readJSON(w.ledger, {}), changed = false;
@@ -57,9 +114,38 @@
       }
       ids.forEach(function (id) { if (known[bk][id] && !L[bk + '|' + id]) { L[bk + '|' + id] = 1; changed = true; } });
     });
+    if (w.pictures && foldPictures(L)) changed = true;
     if (changed) lsSet(w.ledger, JSON.stringify(L));
     return L;
   }
+  /* Picture study counts one per label named correctly (typed or placed from the word bank), once per label of a
+     picture: other modes, other pictures of the same diagram (variants) and redoing it after a reset add nothing.
+     Read from the saved picture answers, and from the pictures recorded as fully solved before labels were counted. */
+  function foldPictures(L) {
+    var changed = false, all = readJSON(PIC_STORE, {});
+    function add(set, pic, id) {
+      var p = PICLAB[set] && PICLAB[set][pic]; if (!p || p.ids.indexOf(id) === -1) return;
+      var k = 'lbl|' + set + '|' + pic + '|' + id; if (!L[k]) { L[k] = 1; changed = true; }
+    }
+    Object.keys(PICLAB).forEach(function (set) {
+      var s = all[set]; if (!s || typeof s !== 'object') return;
+      Object.keys(s).forEach(function (sk) {
+        var r = s[sk] || {}, pic = sk.split('|')[0], slotsets = [];
+        if (r.m && typeof r.m === 'object') Object.keys(r.m).forEach(function (md) { if (r.m[md] && r.m[md].slots) slotsets.push(r.m[md].slots); });
+        else if (r.slots) slotsets.push(r.slots);
+        slotsets.forEach(function (sl) { Object.keys(sl).forEach(function (id) { if (sl[id] != null) add(set, pic, id); }); });
+      });
+    });
+    Object.keys(L).forEach(function (k) {
+      if (k.indexOf('pic|') !== 0) return;
+      var parts = k.slice(4).split('|'), set = parts[0], pic = parts[1], vid = parts[2], p = PICLAB[set] && PICLAB[set][pic];
+      if (!p) return;
+      ((vid && p.vars[vid]) || p.ids).forEach(function (id) { add(set, pic, id); });
+    });
+    return changed;
+  }
+  /* what a ledger counts: questions and picture labels (the older whole-picture entries are covered by their labels) */
+  function countOf(L) { return Object.keys(L).filter(function (k) { return k.indexOf('pic|') !== 0; }).length; }
   function allDone(w, L) {
     if (!w.banks.length) return false;
     return w.banks.every(function (bk) { return (Q.banks[bk] || []).length && Q.banks[bk].every(function (id) { return L[bk + '|' + id]; }); });
@@ -145,7 +231,7 @@
   function check(quiet) {
     var got = unlocked(), fresh = [], counts = {};
     WEEKS.forEach(function (w) {
-      var L = sync(w), n = Object.keys(L).length; counts[w.week] = n;
+      var L = sync(w), n = countOf(L); counts[w.week] = n;
       w.unlocks.forEach(function (u) { if (!got[u.emoji] && isOpen(u, L, n)) { got[u.emoji] = Date.now(); fresh.push(u); } });
       (w.features || []).forEach(function (f) { if (!got[f.key] && n >= f.at) { got[f.key] = Date.now(); fresh.push(f); } });
     });
@@ -203,7 +289,10 @@
       S[fn] = function () { var r = orig.apply(this, arguments); setTimeout(function () { check(false); }, 0); return r; };
     });
   }
-  function init() { addMoods(); wrapStore(); check(false); }
+  function init() {
+    addMoods(); wrapStore(); check(false);
+    try { loadLists().then(function () { check(false); }, function () {}); } catch (e) {}
+  }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
   // for tests only (nothing in the page shows counts or the next unlock)
   function weekOf(id) { for (var i = 0; i < WEEKS.length; i++) if (WEEKS[i].week === id) return WEEKS[i]; return null; }
@@ -213,5 +302,7 @@
     var L = readJSON(w.ledger, {}); if (L['pic|' + id]) return;
     L['pic|' + id] = 1; lsSet(w.ledger, JSON.stringify(L)); check(false);
   }
-  global.PT2Unlocks = { has: function (k) { return !!unlocked()[k]; }, tally: tally, check: check, pictureSolved: pictureSolved, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? Object.keys(sync(w)).length : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
+  // one picture label named correctly (study-images.js); the saved answers are read too, so this only makes it immediate
+  function labelSolved() { check(false); }
+  global.PT2Unlocks = { has: function (k) { return !!unlocked()[k]; }, tally: tally, check: check, pictureSolved: pictureSolved, labelSolved: labelSolved, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? countOf(sync(w)) : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
 })(window);
