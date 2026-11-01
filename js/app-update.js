@@ -1,4 +1,4 @@
-/* Version footer, What's New pop-up, Settings → Changelog and the "new update" notice. Reads js/app-info.js. */
+/* What's New pop-up, Settings → Changelog and the "new update" notice. Reads js/app-info.js. */
 (function (g) {
   'use strict';
   var INFO = g.APP_INFO; if (!INFO || !INFO.version) return;
@@ -10,25 +10,6 @@
 
   // drop the ?u= left by the Update button so it does not stay in the address bar
   try { var u0 = new URL(g.location.href); if (u0.searchParams.has('u')) { u0.searchParams.delete('u'); g.history.replaceState(g.history.state, '', u0.pathname + (u0.search || '') + u0.hash); } } catch (e) {}
-
-  /* —— version footer (bottom left; lifted above the timer box when they would meet) —— */
-  var foot = null;
-  function footer() {
-    if (foot || !document.body) return;
-    foot = document.createElement('div'); foot.id = 'version-footer'; foot.className = 'version-footer';
-    foot.textContent = 'v ' + V + ' ' + D; document.body.appendChild(foot); placeFooter();
-  }
-  function placeFooter() {
-    if (!foot) return;
-    foot.style.bottom = '';
-    var f = foot.getBoundingClientRect(), lift = 0;
-    document.querySelectorAll('.timer-dock').forEach(function (d) {
-      if (!d.offsetParent && getComputedStyle(d).position !== 'fixed') return;
-      var r = d.getBoundingClientRect(); if (!r.width || !r.height) return;
-      if (r.left < f.right + 6 && r.right > f.left && r.bottom > f.top - 6 && r.top < f.bottom + 6) lift = Math.max(lift, g.innerHeight - r.top + 6);
-    });
-    if (lift) foot.style.bottom = lift + 'px';
-  }
 
   /* —— What's New pop-up: once per version and date —— */
   var WKEY = 'pt2_welcome_v' + V + '_r' + D.replace(/\//g, '-');
@@ -90,7 +71,10 @@
     var box = $('changelog-releases'); if (!box) return;
     var v = $('about-version'), d = $('about-revision-date');
     if (v) v.textContent = V; if (d) d.textContent = D;
-    box.innerHTML = releases.map(function (r) {
+    // newest first, whatever order the blocks were written in
+    var vnum = function (r) { return String(r.version).split('.').map(Number); };
+    var list = releases.slice().sort(function (a, b) { var x = vnum(a), y = vnum(b); for (var i = 0; i < Math.max(x.length, y.length); i++) { var d = (y[i] || 0) - (x[i] || 0); if (d) return d; } return 0; });
+    box.innerHTML = list.map(function (r) {
       return '<div class="cl-release"><div class="cl-ver">v' + esc(r.version) + ' — ' + esc(r.date) + '</div><ul class="changelog-list">' +
         (r.changes || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></div>';
     }).join('');
@@ -124,9 +108,7 @@
   g.PT2Update = { check: function () { last = 0; check(); }, show: showNotice, version: V };
 
   function start() {
-    footer(); fillChangelog(); checkWelcomePopup();
-    g.addEventListener('resize', placeFooter);
-    setInterval(placeFooter, 1500);
+    fillChangelog(); checkWelcomePopup();
     setTimeout(check, 6000);
     setInterval(function () { if (!document.hidden) check(); }, 10 * 60000);
     document.addEventListener('visibilitychange', function () { if (!document.hidden) check(); });

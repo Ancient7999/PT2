@@ -1,7 +1,4 @@
-/* Shared by index.html and quiz.html: version footer, What's New pop-up, Settings → Changelog, new update notice, Basic theme */
-.version-footer{position:fixed;bottom:15px;left:20px;font-size:.75em;color:var(--col-text-muted);opacity:.6;z-index:10;pointer-events:none;font-family:'Courier New',monospace;letter-spacing:.5px;transition:opacity .3s ease}
-.version-footer:hover{opacity:1}
-@media (max-width:640px){.version-footer{left:12px;bottom:10px;font-size:.68em}}
+/* Shared by index.html and quiz.html: What's New pop-up, Settings → Changelog, new update notice, Basic theme */
 
 #welcome-popup{display:none;flex-direction:column;position:fixed;top:27.5%;left:50%;transform:translate(-50%,-50%);z-index:2147483400;width:min(360px,calc(100vw - 24px));height:310px;
   background:var(--col-bg-card,#141414);border:2px solid var(--accent-0);border-radius:var(--radius-box,12px);box-shadow:0 10px 50px rgba(0,0,0,.8);color:var(--col-text-main);overflow:hidden;font-family:var(--font-ui,var(--body,'Outfit')),'Outfit',system-ui,sans-serif}

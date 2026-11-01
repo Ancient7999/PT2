@@ -336,17 +336,17 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
   // for tests only (nothing in the page shows counts or the next unlock)
   function weekOf(id) { for (var i = 0; i < WEEKS.length; i++) if (WEEKS[i].week === id) return WEEKS[i]; return null; }
+  /* a picture completed (study-images.js): one solve every time, repeats included; the ledger keeps the first one */
   function pictureSolved(id) {
-    var w = null; for (var i = 0; i < WEEKS.length; i++) if (WEEKS[i].pictures) w = WEEKS[i];
-    if (!w || !id) return;
-    var L = readJSON(w.ledger, {}); if (L['pic|' + id]) return;
-    L['pic|' + id] = 1; lsSet(w.ledger, JSON.stringify(L)); check(false);
-  }
-  // one picture label named correctly (study-images.js); the saved answers are read too, so this only makes it immediate
-  /* typed labels count every time; word-bank labels only the first time (Reset plus trial-and-error dragging would farm them) */
-  function labelSolved(set, pic, id, how, fresh) {
     var w = picWeek();
-    if (READY && w && set && (how === 'type' || fresh)) bump(w.week);
+    if (!w || !id) return;
+    if (READY) bump(w.week);
+    var L = readJSON(w.ledger, {});
+    if (!L['pic|' + id]) { L['pic|' + id] = 1; lsSet(w.ledger, JSON.stringify(L)); }
+    check(false);
+  }
+  // one picture label named correctly (study-images.js): no longer a solve by itself; only a completed picture counts
+  function labelSolved(set, pic, id, how, fresh) {
     check(false);
   }
   global.PT2Unlocks = { has: function (k) { return !!unlocked()[k]; }, tally: tally, check: check, pictureSolved: pictureSolved, labelSolved: labelSolved, labelFresh: labelFresh, questionSolved: questionSolved, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? weekCount(w, sync(w)) : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
