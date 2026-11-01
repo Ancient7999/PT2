@@ -1255,7 +1255,6 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
       <button type="button" class="mood-pick" data-mood="😎" title="Cool">😎</button>
       <button type="button" class="mood-pick" data-mood="🙂" title="Smile">🙂</button>
       <button type="button" class="mood-pick" data-mood="😌" title="Calm">😌</button>
-      <button type="button" class="mood-pick" data-mood="🧘" title="Zen">🧘</button>
       <button type="button" class="mood-pick" data-mood="😤" title="Frustrated">😤</button>
       <button type="button" class="mood-pick" data-mood="😭" title="Crying">😭</button>
       <button type="button" class="mood-pick" data-mood="🤔" title="Thinking">🤔</button>
@@ -1893,7 +1892,6 @@ const MOODS = [
   {emoji:'🧐', cls:'mood-study', fam:'mood-neutral', label:'Study'},
   {emoji:'🎯', cls:'mood-focus', fam:'mood-neutral', label:'Focus'},
   {emoji:'😌', cls:'mood-calm', fam:'mood-calm', label:'Calm'},
-  {emoji:'🧘', cls:'mood-zen', fam:'mood-calm', label:'Zen'},
   {emoji:'🌿', cls:'mood-nature', fam:'mood-calm', label:'Nature'},
   {emoji:'✨', cls:'mood-sparkle', fam:'mood-calm', label:'Sparkle'},
   {emoji:'☕', cls:'mood-coffee', fam:'mood-calm', label:'Coffee'},
@@ -1910,14 +1908,15 @@ const MOODS = [
   {emoji:'🚿', cls:'mood-reset', fam:'mood-calm', label:'Reset'}
 ];
 const FOCUS_MOOD_POOL = ['😊','🤩','😎','🙂','🥳','😄','🤔','🤓','🧐','🎯','😌','😤','💪','⚡','😭'];
-const BREAK_MOOD_POOL = ['😌','🧘','🌿','☕','🌙','✨','🧸','💭','🫧','☁️','🎧','🚿'];
+const BREAK_MOOD_POOL = ['😌','🌿','☕','🌙','✨','🧸','💭','🫧','☁️','🎧','🚿'];
 const MOOD_CLASSES = ['mood-happy', 'mood-neutral', 'mood-calm', 'mood-fierce', 'mood-mad', 'mood-sad', 'mood-crying', 'mood-sleepy', 'mood-bubbles', 'mood-cloud', 'mood-coffee', 'mood-cool', 'mood-cozy', 'mood-daydream', 'mood-electric', 'mood-firedup', 'mood-focus', 'mood-grin', 'mood-headphones', 'mood-moon', 'mood-nature', 'mood-nerd', 'mood-party', 'mood-reset', 'mood-sleep', 'mood-smile', 'mood-sparkle', 'mood-starstruck', 'mood-strong', 'mood-study', 'mood-thinking', 'mood-zen'];
 let currentMoodEmoji = '😊';
 let moodAutoMode = true; // auto-rotate each focus/break unless user just picked
 const moodWrap = document.getElementById('moodWrapLive');
 const liveMoodBtn = document.getElementById('liveMoodBtn');
 function resolveMood(emoji){
-  return MOODS.find(x=>x.emoji===emoji) || MOODS[0];
+  // an unknown or retired face (e.g. an old saved 🧘) falls back to 😊
+  return MOODS.find(x=>x.emoji===emoji) || MOODS.find(x=>x.emoji==='😊') || MOODS[0];
 }
 function applyLiveMood(emoji, opts){
   opts = opts || {};
@@ -2390,12 +2389,19 @@ const QUOTE_SOURCES = {
   '💪':{own:['😤'], share:['😐']},
   '🌿':{own:['🌿'], share:['🧘','😴']},
   '🧐':{own:['😐'], share:['🥱']},
-  '😌':{own:['😌'], share:['🧘']},
-  '🧘':{own:['🧘'], share:['😌']},
+  '😌':{own:['😌','🧘'], share:['🙂']},
   '🤓':{own:['🌙'], share:['😐','🥱']},
   '🥳':{own:['✨'], share:['😊']},
   '🤗':{own:['😢'], share:['😌']},
-  '😴':{own:['😴','🥱'], share:['☕']}
+  '😄':{own:['😊'], share:['✨']},
+  '🎯':{own:['😐'], share:['😤']},
+  '☕':{own:['☕'], share:['🙂']},
+  '🎧':{own:['😐'], share:['🌙']},
+  '🌙':{own:['🌙'], share:['✨','😴']},
+  '🫧':{own:['😌'], share:['☕']},
+  '☁️':{own:['🌿'], share:['😢']},
+  '🚿':{own:['🥱'], share:['🧘']},
+  '✨':{own:['✨'], share:['🤩']}
 };
 const QUOTE_SHARE_CHANCE = 0.35;
 function moodQuotePool(emoji){
@@ -3260,7 +3266,7 @@ document.getElementById('studyNotesBtn').addEventListener('click', ()=>{
 <script src="pt1-theme/particles.js"></script>
 <script src="pt1-theme/colorizer-theme.js?v=3"></script>
 <script src="js/pt2-color.js"></script>
-<script src="js/pt2-unlocks.js?v=9"></script>
+<script src="js/pt2-unlocks.js?v=10"></script>
 <script src="js/app-update.js?v=1"></script>
 </body>
 </html>

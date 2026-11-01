@@ -5,7 +5,7 @@
    Medical Terminology and Anatomy; Medical Physics and Study Skills are Week 12. The Week 11 emoji (🎓) needs every
    Week 11 quiz question solved; picture study is not required for it.
    Each week has its own ledger, so 'Reset solved' on a set does not take unlocks away.
-   Solving every Week 12 question unlocks 😌 and 🧘 together. The Week 12 tally is retroactive: it reads the solved
+   Solving every Week 12 question unlocks 😌. The Week 12 tally is retroactive: it reads the solved
    sets plus the ids of sets that were fully solved and then reset (resets[card].ids; a set can only be reset once
    nothing is left in it), so history from before the unlock existed still counts. */
 (function (global) {
@@ -31,8 +31,7 @@
       { key: 'feature:moodLock', icon: '🔒', at: 250, label: 'Lock emoji', cls: 'pt2-lock-open' }
     ] }
     ,{ week: 'week12', history: true, done: 'Every Week 12 question solved', unlocks: [
-      { emoji: '😌', all: true, label: 'Calm', fam: 'mood-calm', cls: 'mood-calm' },
-      { emoji: '🧘', all: true, label: 'Zen', fam: 'mood-calm', cls: 'mood-zen' }
+      { emoji: '😌', all: true, label: 'Calm', fam: 'mood-calm', cls: 'mood-calm' }
     ] }
   ];
   // options that follow the overall tally rather than one week
@@ -44,10 +43,11 @@
   WEEKS.forEach(function (w) { w.banks = (Q.weeks && Q.weeks[w.week]) || []; w.ledger = 'pt2_solved_ever_v1:' + w.week; w.unlocks.forEach(function (u) { u.w = w; UNLOCKS.push(u); }); (w.features || []).forEach(function (f) { f.w = w; FEATURES.push(f); }); });
   // emojis that follow the overall solve count (both weeks, repeats included), like the options above
   var TOTAL = { week: 'total', unlocks: [
-    { emoji: '\uD83E\uDD13', at: 1250, label: 'Nerd', fam: 'mood-neutral', cls: 'mood-nerd' },
-    { emoji: '\uD83E\uDD73', at: 1500, label: 'Party', fam: 'mood-happy', cls: 'mood-party' },
+    // rot: also chosen by the automatic mood rotation while still locked; unlocking only adds it to the picker
+    { emoji: '\uD83E\uDD13', at: 1250, rot: true, label: 'Nerd', fam: 'mood-neutral', cls: 'mood-nerd' },
+    { emoji: '\uD83E\uDD73', at: 1500, rot: true, label: 'Party', fam: 'mood-happy', cls: 'mood-party' },
     { emoji: '\uD83E\uDD17', at: 2000, label: 'Warm', fam: 'mood-calm', cls: 'mood-calm' },
-    { emoji: '\uD83D\uDE34', at: 3000, label: 'Sleepy', fam: 'mood-sleepy', cls: 'mood-cozy' }
+    { emoji: '\u2728', at: 2500, rot: true, label: 'Sparkle', fam: 'mood-calm', cls: 'mood-sparkle' }
   ] };
   TOTAL.unlocks.forEach(function (u) { u.w = TOTAL; UNLOCKS.push(u); });
   function lsGet(k) { try { return global.localStorage.getItem(k); } catch (e) { return null; } }
@@ -260,6 +260,7 @@
       if (typeof FOCUS_MOOD_POOL !== 'undefined') pools.push(FOCUS_MOOD_POOL);
       if (typeof BREAK_MOOD_POOL !== 'undefined') pools.push(BREAK_MOOD_POOL);
       pools.forEach(function (P) { UNLOCKS.forEach(function (u) {
+        if (u.rot) return;
         var i = P.indexOf(u.emoji);
         if (!got[u.emoji] && i !== -1) { P.splice(i, 1); P.__pt2Held = (P.__pt2Held || []).concat(u.emoji); }
         else if (got[u.emoji] && P.__pt2Held && P.__pt2Held.indexOf(u.emoji) !== -1 && i === -1) P.push(u.emoji);
