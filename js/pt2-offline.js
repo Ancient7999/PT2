@@ -63,33 +63,36 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') end(); }, true);
   }
   document.addEventListener('DOMContentLoaded', wireGridGlow);
-  /* S: connector from Medical Terminology to the lesser Anatomy card. An SVG in the week grid, redrawn whenever the grid
-     or the cards change size, so it stays attached; pointer-events:none so it never blocks a click. */
+  /* S: connectors from English and Medical Terminology to the smaller Anatomy card. An SVG in the week grid, redrawn
+     whenever the grid or the cards change size, so it stays attached; pointer-events:none so it never blocks a click. */
   var SVGNS = 'http://www.w3.org/2000/svg';
   function drawBranch(grid) {
-    var an = grid.querySelector(':scope > .pt2-lesser'), mt = an && an.previousElementSibling;
+    var an = grid.querySelector(':scope > .pt2-lesser');
+    var mains = [].filter.call(grid.children, function (c) { return c !== an && c.tagName.toLowerCase() !== 'svg'; });
     var svg = grid.querySelector(':scope > svg.pt2-branch');
-    if (!an || !mt) { if (svg) svg.remove(); return; }
-    var g = grid.getBoundingClientRect(), a = an.getBoundingClientRect(), m = mt.getBoundingClientRect();
-    if (!g.width || !a.width || !m.width) return;
-    if (!svg) { svg = document.createElementNS(SVGNS, 'svg'); svg.setAttribute('class', 'pt2-branch'); svg.setAttribute('aria-hidden', 'true'); grid.appendChild(svg); }
+    if (!an || !mains.length) { if (svg) svg.remove(); return; }
+    var g = grid.getBoundingClientRect(), a = an.getBoundingClientRect();
+    if (!g.width || !a.width) return;
     var X = function (v) { return Math.round((v - g.left) * 10) / 10; }, Y = function (v) { return Math.round((v - g.top) * 10) / 10; };
-    var r = 10, d, p0, p1;
-    if (a.left >= m.right - 4) {
-      // beside it (wide screens): out of Medical Terminology's right edge, down the gap, into Anatomy's left edge
-      var y1 = Y(m.top + m.height * 0.5), y2 = Y(a.top + Math.min(a.height * 0.5, 60)), x1 = X(m.right), x2 = X(a.left), xm = Math.round((x1 + x2) / 2);
-      var rr = Math.max(0, Math.min(r, (x2 - x1) / 2 - 1, Math.abs(y2 - y1) / 2));
-      d = 'M' + x1 + ' ' + y1 + ' H' + (xm - rr) + ' Q' + xm + ' ' + y1 + ' ' + xm + ' ' + (y1 + rr) + ' V' + (y2 - rr) + ' Q' + xm + ' ' + y2 + ' ' + (xm + rr) + ' ' + y2 + ' H' + x2;
-      p0 = [x1, y1]; p1 = [x2, y2];
-    } else {
-      // under it (narrow screens): down from Medical Terminology's bottom edge, then right into Anatomy's left edge
-      var xs = X(m.left + Math.max(18, Math.min(40, (a.left - m.left) / 2))), ys = Y(m.bottom), ye = Y(a.top + Math.min(a.height * 0.5, 50)), xe = X(a.left);
-      if (xe - xs < 8) xs = X(a.left + 26);
-      var r2 = Math.max(0, Math.min(r, (xe - xs) - 1, (ye - ys) / 2));
-      d = xe > xs ? 'M' + xs + ' ' + ys + ' V' + (ye - r2) + ' Q' + xs + ' ' + ye + ' ' + (xs + r2) + ' ' + ye + ' H' + xe : 'M' + xs + ' ' + ys + ' V' + Y(a.top);
-      p0 = [xs, ys]; p1 = xe > xs ? [xe, ye] : [xs, Y(a.top)];
-    }
-    var html = '<path d="' + d + '"/><circle cx="' + p0[0] + '" cy="' + p0[1] + '" r="3.5"/><circle cx="' + p1[0] + '" cy="' + p1[1] + '" r="3.5"/>';
+    var html = '';
+    mains.forEach(function (mc) {
+      var m = mc.getBoundingClientRect(); if (!m.width) return;
+      var top, bot;  // the card above and the card below
+      if (a.top >= m.bottom - 4) { top = m; bot = a; } else if (m.top >= a.bottom - 4) { top = a; bot = m; } else return;
+      var y1 = Y(top.bottom), y2 = Y(bot.top), ol = Math.max(top.left, bot.left), orr = Math.min(top.right, bot.right), d, x1, x2;
+      if (orr - ol >= 40) {
+        // they overlap sideways: a straight line down the middle of the overlap
+        x1 = x2 = X((ol + orr) / 2); d = 'M' + x1 + ' ' + y1 + ' V' + y2;
+      } else {
+        // no overlap: down, across, down, with rounded corners
+        var left = top.right <= bot.left;
+        x1 = X(left ? top.right - 40 : top.left + 40); x2 = X(left ? bot.left + 40 : bot.right - 40);
+        var ym = Math.round((y1 + y2) / 2), s = x2 > x1 ? 1 : -1, r = Math.max(0, Math.min(10, Math.abs(x2 - x1) / 2, (y2 - y1) / 2));
+        d = 'M' + x1 + ' ' + y1 + ' V' + (ym - r) + ' Q' + x1 + ' ' + ym + ' ' + (x1 + s * r) + ' ' + ym + ' H' + (x2 - s * r) + ' Q' + x2 + ' ' + ym + ' ' + x2 + ' ' + (ym + r) + ' V' + y2;
+      }
+      html += '<path d="' + d + '"/><circle cx="' + x1 + '" cy="' + y1 + '" r="3.5"/><circle cx="' + x2 + '" cy="' + y2 + '" r="3.5"/>';
+    });
+    if (!svg) { svg = document.createElementNS(SVGNS, 'svg'); svg.setAttribute('class', 'pt2-branch'); svg.setAttribute('aria-hidden', 'true'); grid.appendChild(svg); }
     if (svg.__h !== html) { svg.__h = html; svg.innerHTML = html; }
   }
   var branchRO = global.ResizeObserver ? new ResizeObserver(function (es) { es.forEach(function (e) { var gr = e.target.closest('.pt2-week-cards'); if (gr) drawBranch(gr); }); }) : null;
@@ -111,6 +114,7 @@
     }).observe(document.body, { childList: true, subtree: true });
   });
   global.addEventListener('resize', queueBranches);
+  global.addEventListener('orientationchange', function () { queueBranches(); setTimeout(queueBranches, 300); });
   global.addEventListener('load', queueBranches);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(queueBranches);
   /* the Settings text button sits on the same line as the Fullscreen button of the open view */
