@@ -42,6 +42,14 @@
   ];
   var UNLOCKS = [], FEATURES = [];
   WEEKS.forEach(function (w) { w.banks = (Q.weeks && Q.weeks[w.week]) || []; w.ledger = 'pt2_solved_ever_v1:' + w.week; w.unlocks.forEach(function (u) { u.w = w; UNLOCKS.push(u); }); (w.features || []).forEach(function (f) { f.w = w; FEATURES.push(f); }); });
+  // emojis that follow the overall solve count (both weeks, repeats included), like the options above
+  var TOTAL = { week: 'total', unlocks: [
+    { emoji: '\uD83E\uDD13', at: 1250, label: 'Nerd', fam: 'mood-neutral', cls: 'mood-nerd' },
+    { emoji: '\uD83E\uDD73', at: 1500, label: 'Party', fam: 'mood-happy', cls: 'mood-party' },
+    { emoji: '\uD83E\uDD17', at: 2000, label: 'Warm', fam: 'mood-calm', cls: 'mood-calm' },
+    { emoji: '\uD83D\uDE34', at: 3000, label: 'Sleepy', fam: 'mood-sleepy', cls: 'mood-cozy' }
+  ] };
+  TOTAL.unlocks.forEach(function (u) { u.w = TOTAL; UNLOCKS.push(u); });
   function lsGet(k) { try { return global.localStorage.getItem(k); } catch (e) { return null; } }
   function lsSet(k, v) { try { global.localStorage.setItem(k, v); } catch (e) {} }
   function readJSON(k, d) { try { var v = JSON.parse(lsGet(k) || 'null'); return v && typeof v === 'object' ? v : d; } catch (e) { return d; } }
@@ -267,6 +275,7 @@
     });
     var t = tally(); t.n = totalCount(t);
     EXTRAS.forEach(function (f) { if (!got[f.key] && f.ok(t)) { got[f.key] = Date.now(); fresh.push(f); } });
+    TOTAL.unlocks.forEach(function (u) { if (!got[u.emoji] && t.n >= u.at) { got[u.emoji] = Date.now(); fresh.push(u); } });
     if (fresh.length) { lsSet(GOT, JSON.stringify(got)); if (!quiet) fresh.forEach(popup); }
     decorate();
     if (fresh.length) { try { document.dispatchEvent(new CustomEvent('pt2-unlocked', { detail: fresh.map(function (u) { return u.emoji || u.key; }) })); } catch (e) {} }

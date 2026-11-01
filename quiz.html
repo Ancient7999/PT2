@@ -2378,9 +2378,37 @@ function normalizeQuote(q){
   if(q && typeof q==='object') return {text:q.text||'', author:q.author||''};
   return {text:String(q||''), author:''};
 }
+/* where a face takes its quotes from: mostly its own set, sometimes a related set, so no set sits behind one face */
+const QUOTE_SOURCES = {
+  '😊':{own:['😊'], share:['✨']},
+  '🤩':{own:['🤩'], share:['🌙']},
+  '😎':{own:['😎'], share:['😠']},
+  '🙂':{own:['🙂'], share:['☕','😌']},
+  '😤':{own:['😤'], share:['😠']},
+  '😭':{own:['😭'], share:['😢']},
+  '🤔':{own:['😐'], share:['🌙']},
+  '💪':{own:['😤'], share:['😐']},
+  '🌿':{own:['🌿'], share:['🧘','😴']},
+  '🧐':{own:['😐'], share:['🥱']},
+  '😌':{own:['😌'], share:['🧘']},
+  '🧘':{own:['🧘'], share:['😌']},
+  '🤓':{own:['🌙'], share:['😐','🥱']},
+  '🥳':{own:['✨'], share:['😊']},
+  '🤗':{own:['😢'], share:['😌']},
+  '😴':{own:['😴','🥱'], share:['☕']}
+};
+const QUOTE_SHARE_CHANCE = 0.35;
+function moodQuotePool(emoji){
+  const src = QUOTE_SOURCES[emoji];
+  if(!src) return { pool: MOOD_QUOTES[emoji] || MOOD_QUOTES['😐'] || BREAK_QUOTES, key: 'mood:' + emoji };
+  const keys = (src.share.length && Math.random() < QUOTE_SHARE_CHANCE) ? src.share : src.own;
+  const pool = [].concat(...keys.map(k => MOOD_QUOTES[k] || []));
+  return pool.length ? { pool, key: 'mood:' + keys.join('') } : { pool: MOOD_QUOTES['😐'], key: 'mood:😐' };
+}
 function pickQuote(emoji, isBreak){
-  const pool = isBreak ? BREAK_QUOTES : (MOOD_QUOTES[emoji] || MOOD_QUOTES['😐'] || BREAK_QUOTES);
-  const key = (isBreak?'break:':'mood:') + (isBreak?'x':emoji);
+  const src = isBreak ? { pool: BREAK_QUOTES, key: 'break:x' } : moodQuotePool(emoji);
+  const pool = src.pool;
+  const key = src.key;
   if(!quotePoolUsed[key]) quotePoolUsed[key] = [];
   let used = quotePoolUsed[key];
   let options = pool.filter(q => !used.includes(normalizeQuote(q).text));
@@ -3232,7 +3260,7 @@ document.getElementById('studyNotesBtn').addEventListener('click', ()=>{
 <script src="pt1-theme/particles.js"></script>
 <script src="pt1-theme/colorizer-theme.js?v=3"></script>
 <script src="js/pt2-color.js"></script>
-<script src="js/pt2-unlocks.js?v=8"></script>
+<script src="js/pt2-unlocks.js?v=9"></script>
 <script src="js/app-update.js?v=1"></script>
 </body>
 </html>
