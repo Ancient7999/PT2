@@ -6,6 +6,13 @@
 var APP_INFO = {
   releases: [
     {
+      version: '0.27',
+      date: '01/11/2026',
+      changes: [
+        'Update notices and the what\'s new popup now show in the quiz screen.'
+      ]
+    },
+    {
       version: '0.26',
       date: '01/11/2026',
       changes: [

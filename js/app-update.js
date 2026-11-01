@@ -18,7 +18,8 @@
     try {
       for (var i = 0; i < g.localStorage.length; i++) {
         var k = g.localStorage.key(i) || '';
-        if (/^pt2_welcome_v|^pt2_solve_count_v1$|^pt2_solved_ever_v1/.test(k)) continue;
+        // keys the pages write by themselves on a first load are not a sign of a returning visitor
+        if (/^pt2_welcome_v|^pt2_solve_count_v1$|^pt2_solved_ever_v1|^pt2_color_owner$/.test(k)) continue;
         if (/^pt2_/.test(k) || /^sp_bank_v1:.*\/pt2\//.test(k) || /^sp_bank_v1:anatomy\//.test(k) || k === 'sp_study_images_v1') return true;
       }
     } catch (e) {}
