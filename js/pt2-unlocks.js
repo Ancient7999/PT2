@@ -37,7 +37,7 @@
   ];
   // options that follow the overall tally rather than one week
   var EXTRAS = [
-    { key: 'look:a', icon: '\u26A1', label: 'Golden theme', title: 'New theme unlocked', desc: '1000 questions solved', cls: 'pt2-la-open', ok: function (t) { return t.n >= 1000; } },
+    { key: 'look:a', icon: '\u26A1', label: 'Glow cursor & Animation effects', title: 'New options unlocked', desc: '1000 questions solved · see Settings → Theme', cls: 'pt2-la-open', ok: function (t) { return t.n >= 1000; } },
     { key: 'look:b', icon: '\uD83C\uDF08', label: 'Multicolour Accents', title: 'New setting unlocked', desc: 'Every question solved', cls: 'pt2-lb-open', ok: function (t) { return t.all; } }
   ];
   var UNLOCKS = [], FEATURES = [];

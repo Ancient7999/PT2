@@ -91,7 +91,7 @@ html:not(.pt2-lock-open) #pt2MoodLock{display:none!important}
    pt2-offline.js). Wide screens: the two main cards share one row at the same size, Anatomy is centred below them.
    Phones: one column, Anatomy between English and Medical Terminology. */
 .pt2-week-cards.pt2-has-lesser{position:relative;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;row-gap:44px}
-.pt2-week-cards.pt2-has-lesser > .pt2-lesser{grid-column:1 / -1;grid-row:2;justify-self:center;align-self:start;width:calc((100% - 18px) / 2 * .86)}
+.pt2-week-cards.pt2-has-lesser > .pt2-lesser{grid-column:1 / -1;grid-row:2;justify-self:center;align-self:start;width:58%}
 .pt2-week-cards.pt2-has-lesser > .pt2-lesser .portal-card{padding:20px 19px}
 .pt2-week-cards.pt2-has-lesser > .pt2-lesser .portal-card h3{font-size:1.05rem}
 @media (max-width:640px){
@@ -104,7 +104,7 @@ html:not(.pt2-lock-open) #pt2MoodLock{display:none!important}
 .pt2-branch path{fill:none;stroke:var(--accent-0);stroke-width:2;stroke-dasharray:5 5;stroke-linecap:round;opacity:.85}
 .pt2-branch circle{fill:var(--accent-0)}
 .pt2-branch{filter:drop-shadow(0 0 4px rgba(var(--accent-0-rgb),.7))}
-@media (prefers-reduced-motion:no-preference){.pt2-branch path{animation:pt2-branch-flow 1.6s linear infinite}}
+@media (prefers-reduced-motion:no-preference){.pt2-branch path{animation:pt2-branch-flow 3.6s linear infinite}}
 @keyframes pt2-branch-flow{to{stroke-dashoffset:-20}}
 /* the section description under a view title (Human Atlas credit for Anatomy) */
 .pt2-view-intro{margin:6px 0 10px}
@@ -159,9 +159,8 @@ html[data-cursor="system"] #cursor{z-index:2147483646!important}
   mask-image:radial-gradient(ellipse at 50% 42%,black 32%,transparent 92%);-webkit-mask-image:radial-gradient(ellipse at 50% 42%,black 32%,transparent 92%)}
 html[data-skin="grid-haze"]{--pt2-grid-size:64px}
 .settings-modal{transition:background-color .35s ease}
-/* grid level: Low = plain grid (no glow), Medium = glow at half strength, High = the full hover glow */
-html[data-pt2-grid="med"] #pt2GridGlow{opacity:.5}
-html[data-pt2-grid="high"] #pt2GridGlow{opacity:1}
+/* grid level: Low = plain grid (no glow), Moderate = a light glow (weaker than the old Medium) */
+html[data-pt2-grid="mod"] #pt2GridGlow{opacity:.3}
 html.pt2-grid-hover .settings-modal{background-color:rgba(8,10,16,.4)!important}
 .pt2-grid-opt{border-radius:10px;transition:background .25s ease,box-shadow .25s ease}
 .pt2-grid-opt:hover,html.pt2-grid-hover .pt2-grid-opt{background:rgba(var(--accent-0-rgb),.08);box-shadow:inset 0 0 0 1px rgba(var(--accent-0-rgb),.35)}
@@ -233,3 +232,14 @@ html.pt2-grid-hover .settings-modal{background-color:rgba(8,10,16,.4)!important}
   .portal-card:has(.pt2-soon) .badge-note{ order: 3; }
   .portal-card:has(.pt2-soon) .go{ order: 4; }
 }
+
+/* Subject cards on the main interface: Aero-style glass tinted with the accent colour (a gloss layer on top of the tint) */
+#materialCards .portal-card{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.15) 0%,rgba(255,255,255,.06) 42%,rgba(255,255,255,0) 52%),
+    linear-gradient(160deg,rgba(var(--accent-0-rgb),.17) 0%,rgba(var(--accent-0-rgb),.06) 40%,rgba(12,16,26,.5) 100%);
+  -webkit-backdrop-filter:blur(14px) saturate(1.6);backdrop-filter:blur(14px) saturate(1.6);
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3),inset 0 0 18px rgba(var(--accent-0-rgb),.14),0 14px 34px -14px rgba(0,0,0,.65)}
+#materialCards .portal-card:hover:not(.locked){border-color:rgba(255,255,255,.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.36),inset 0 0 22px rgba(var(--accent-0-rgb),.2),0 0 26px var(--mood-glow),0 18px 40px -12px rgba(0,0,0,.6)}
+#materialCards .portal-card.pt2-dim{background:linear-gradient(180deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,0) 50%),linear-gradient(160deg,rgba(255,255,255,.06) 0%,rgba(12,16,26,.58) 60%);border-color:rgba(255,255,255,.14)}

@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Periodic Test 2 · Quiz Interface</title>
 <script src="data/bundle.js?v=12"></script>
-<script src="js/pt2-offline.js?v=5"></script>
-<script src="js/pt2-look.js?v=3"></script>
+<script src="js/app-info.js"></script>
+<script src="js/pt2-offline.js?v=6"></script>
+<script src="js/pt2-look.js?v=4"></script>
 <script>
 (function(){
   try{
@@ -15,7 +16,9 @@
     var basic=(q==='basic'||q==='1'||q==='true');
     var curOn=!(c==='0'||c==='false'||c==='off');
     document.documentElement.setAttribute('data-quality', basic?'basic':'full');
-    document.documentElement.setAttribute('data-custom-cursor', curOn?'on':'off');
+    var pb=localStorage.getItem('pt2_basic_theme')==='1';
+    if(pb) document.documentElement.classList.add('pt2-basic');
+    document.documentElement.setAttribute('data-custom-cursor', (curOn&&!pb)?'on':'off');
   }catch(e){
     document.documentElement.setAttribute('data-quality','full');
     document.documentElement.setAttribute('data-custom-cursor','on');
@@ -1225,9 +1228,10 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 <link rel="stylesheet" href="pt1-theme/fonts.css">
 <link rel="stylesheet" href="pt1-theme/theme-vars.css">
 <link rel="stylesheet" href="pt1-theme/colorizer.css">
-<link rel="stylesheet" href="css/pt2.css?v=4">
+<link rel="stylesheet" href="css/pt2.css?v=5">
 <link rel="stylesheet" href="css/controls.css?v=6">
-<link rel="stylesheet" href="css/pt2-look.css?v=3">
+<link rel="stylesheet" href="css/pt2-look.css?v=4">
+<link rel="stylesheet" href="css/pt2-site.css?v=1">
 </head>
 <body>
 <canvas id="fxCanvas"></canvas>
@@ -1489,10 +1493,12 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
       <div class="settings-nav">
         <button class="settings-nav-btn active" data-panel="general" onclick="openSettingsPanel('general')">Theme</button>
         <button class="settings-nav-btn" data-panel="quiz" onclick="openSettingsPanel('quiz')">Quiz</button>
+        <button class="settings-nav-btn" data-panel="changelog" onclick="openSettingsPanel('changelog')">Changelog</button>
       </div>
       <div class="settings-panels">
         <div class="settings-panel active" id="settings-panel-general">
           <div class="settings-panel-title">Theme</div>
+<div class="setting-item" style="padding-top:8px;"><div class="pt2-opt-list"><div class="pt2-opt"><span class="pt2-opt-text"><span class="pt2-opt-name">Basic theme</span><span class="pt2-opt-hint">A plainer, lighter look: no glass, glow, sparks or motion, and the normal system cursor. Accent colours still work.</span></span><label class="toggle-switch"><input type="checkbox" id="pt2BasicOn"><span class="toggle-slider"></span></label></div></div></div>
 <div class="setting-item" style="padding-top:20px; position:relative;">
 <div style="font-size:0.75em; font-weight:bold; color:var(--col-text-muted); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; opacity:0.6;">Theme</div>
 <button title="Reset Theme to Defaults" onclick="resetThemeToDefaults()" style="position:absolute; top:20px; right:0; background:transparent; border:1px solid var(--col-error); color:var(--col-error); border-radius:6px; padding:3px 8px; font-size:0.8em; ">↺</button>
@@ -1708,11 +1714,13 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 <button type="button" class="cursor-skin-opt" data-cursor-skin="beam-h" title="Beam Horizontal"><span class="cursor-skin-preview preview-beam-h"></span><span class="cursor-skin-name">Beam H</span></button>
 <button type="button" class="cursor-skin-opt" data-cursor-skin="diamond" title="Diamond"><span class="cursor-skin-preview preview-diamond"></span><span class="cursor-skin-name">Diamond</span></button>
 <button type="button" class="cursor-skin-opt" data-cursor-skin="comma" title="Comma"><span class="cursor-skin-preview preview-comma"></span><span class="cursor-skin-name">Comma</span></button>
+<button type="button" class="cursor-skin-opt pt2-intro-skin" data-cursor-skin="intro" title="Glow: the main menu cursor"><span class="cursor-skin-preview preview-intro"></span><span class="cursor-skin-name">Glow</span></button>
 <button type="button" class="cursor-skin-opt" data-cursor-skin="system" title="System-style pointer"><span class="cursor-skin-preview preview-system"></span><span class="cursor-skin-name">System</span></button>
 <button type="button" class="cursor-skin-opt cursor-skin-auto" data-cursor-skin="auto" title="Automatic: the timer and moods choose the cursor"><span class="cursor-skin-preview preview-auto" aria-hidden="true">↻</span><span class="cursor-skin-name">Automatic</span></button>
 </div>
 </div>
-<div class="setting-item"><span class="setting-item-label">Background</span><div class="pt2-opt-list"><div class="pt2-opt pt2-grid-opt"><span class="pt2-opt-text"><span class="pt2-opt-name" id="pt2GridLabel">Show background grid</span><span class="pt2-opt-hint">How strong the grid lines behind the page are</span></span><div class="pt2-seg" id="pt2GridLevel" role="radiogroup" aria-labelledby="pt2GridLabel"><button type="button" role="radio" aria-checked="false" data-level="off">Off</button><button type="button" role="radio" aria-checked="false" data-level="low">Low</button><button type="button" role="radio" aria-checked="false" data-level="med">Medium</button><button type="button" role="radio" aria-checked="false" data-level="high">High</button></div></div></div></div>
+<div class="setting-item"><span class="setting-item-label">Background</span><div class="pt2-opt-list"><div class="pt2-opt pt2-grid-opt"><span class="pt2-opt-text"><span class="pt2-opt-name" id="pt2GridLabel">Show background grid</span><span class="pt2-opt-hint">How strong the grid lines behind the page are</span></span><div class="pt2-seg" id="pt2GridLevel" role="radiogroup" aria-labelledby="pt2GridLabel"><button type="button" role="radio" aria-checked="false" data-level="off">Off</button><button type="button" role="radio" aria-checked="false" data-level="low">Low</button><button type="button" role="radio" aria-checked="false" data-level="mod">Moderate</button></div></div></div></div>
+<div class="setting-item pt2-fx-item"><span class="setting-item-label">Effects</span><div class="pt2-opt-list"><div class="pt2-opt"><span class="pt2-opt-text"><span class="pt2-opt-name">Animation effects</span><span class="pt2-opt-hint">Extra motion in your accent colour: shine on hover, livelier cards and next-question bar, a few sparks</span></span><label class="toggle-switch"><input type="checkbox" id="pt2FxOn"><span class="toggle-slider"></span></label></div></div></div>
 <div class="setting-item" style="display: none;">
 <span class="setting-item-label">Appearance</span>
 <div class="toggle-container" style="margin:0; justify-content:flex-start;">
@@ -1724,6 +1732,12 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 <span class="toggle-label">Light</span>
 </div>
 </div>
+        </div>
+        <div class="settings-panel" id="settings-panel-changelog">
+          <div class="pt2-cl-header"><div class="settings-panel-title">Changelog</div><a class="pt2-cl-gh" href="https://github.com/Ancient7999/PT2" target="_blank" rel="noopener">GitHub · Ancient7999/PT2</a></div>
+          <div class="about-row"><span class="about-label">Version</span><span class="about-value" id="about-version"></span></div>
+          <div class="about-row"><span class="about-label">Revision Date</span><span class="about-value" id="about-revision-date"></span></div>
+          <div id="changelog-releases"></div>
         </div>
         <div class="settings-panel" id="settings-panel-quiz">
           <div class="settings-panel-title">Quiz</div>
@@ -1795,6 +1809,7 @@ function spawnFireworkBurst(cx,cy,count=28){
 setInterval(()=>{var basic=document.documentElement.getAttribute('data-quality')==='basic'; if(basic)return; if(!quizFxCtl.fireworks) return; if(Math.random()>.55)spawnFireworkBurst(Math.random()*W,Math.random()*H*.7,14);},2800);
 var __fxRunning=false;
 function fxAllowed(){
+  if(document.documentElement.classList.contains('pt2-basic')) return false;
   if(window.StudyPrefs&&typeof StudyPrefs.isBasic==='function') return !StudyPrefs.isBasic();
   return document.documentElement.getAttribute('data-quality')!=='basic';
 }
@@ -2071,7 +2086,29 @@ function chimePersist10s(){
 }
 
 /* —— Global auto timer + persist + mood quotes —— */
-const FOCUS_SEC = 25*60, BREAK_SEC = 5*60;
+const FOCUS_SEC = 25*60, BREAK_SEC = 5*60, LONG_BREAK_SEC = 15*60;
+/* Long break: after two normal breaks, the third is 15 minutes, as long as those two both started within the
+   last 5 hours. A long break starts the count again. Break start times are kept in pt2_break_log_v1. */
+const BREAK_LOG_LS = 'pt2_break_log_v1', LONG_BREAK_WINDOW_MS = 5*60*60*1000;
+let breakIsLong = false;
+function readBreakLog(){ try{ const a = JSON.parse(localStorage.getItem(BREAK_LOG_LS)||'[]'); return Array.isArray(a) ? a.filter(x=>x && typeof x.t==='number') : []; }catch(e){ return []; } }
+function nextBreakIsLong(now){
+  now = now || Date.now();
+  const last = readBreakLog().slice(-2);
+  return last.length === 2 && !last[0].long && !last[1].long && last.every(x => now - x.t <= LONG_BREAK_WINDOW_MS && x.t <= now);
+}
+function logBreakStart(at){
+  at = at || Date.now();
+  const long = nextBreakIsLong(at);
+  const log = readBreakLog(); log.push({ t: at, long: long });
+  try{ localStorage.setItem(BREAK_LOG_LS, JSON.stringify(log.slice(-6))); }catch(e){}
+  return long;
+}
+function breakSecNow(){ return breakIsLong ? LONG_BREAK_SEC : BREAK_SEC; }
+function syncBreakLabels(){
+  const t = document.getElementById('breakTitle'); if(t) t.textContent = breakIsLong ? 'Take a long break' : 'Take a break';
+  const m = document.getElementById('breakModal'); if(m) m.classList.toggle('is-long-break', breakIsLong && timerMode==='break');
+}
 const TIMER_LS = 'pt1_pomodoro_v1';
 const CYCLE_LS = 'pt1_pomo_cycle_v1';
 const QUOTE_META_LS = 'pt1_quote_meta_v1';
@@ -2425,7 +2462,8 @@ function persistTimer(){
       mode: timerMode,
       endsAt: phaseEndsAt,
       focusSec: FOCUS_SEC,
-      breakSec: BREAK_SEC,
+      breakSec: breakSecNow(),
+      longBreak: timerMode==='break' && breakIsLong,
       quoteThreshold: lastQuoteThreshold,
       cycle: pomodoroCycle
     }));
@@ -2470,6 +2508,8 @@ function maybeAdvanceQuoteOnTick(){
 function setPhase(mode, durationSec, announceQuote){
   const prev = timerMode;
   timerMode = mode;
+  if(mode !== 'break') breakIsLong = false;
+  syncBreakLabels();
   phaseEndsAt = Date.now() + durationSec*1000;
   syncSecondsFromDeadline();
   // reset threshold tracking on phase change so break/focus get fresh quote
@@ -2515,9 +2555,11 @@ function enterBreak(){
   if(!pomodoroEnabled) return;
   breakModalDismissed = false;
   randomizeBreakMood();
-  setPhase('break', BREAK_SEC, true);
+  breakIsLong = logBreakStart();
+  setPhase('break', breakSecNow(), true);
+  syncBreakLabels();
   chimeOnce();
-  showToast('Break · 5:00', 2800);
+  showToast(breakIsLong ? 'Long break · 15:00' : 'Break · 5:00', 2800);
 }
 function enterFocus(fromBreak){
   bumpFocusCycle();
@@ -2559,6 +2601,7 @@ function restoreTimer(){
       if(data && data.endsAt){
         timerMode = (data.mode==='break') ? 'break' : 'focus';
         phaseEndsAt = data.endsAt;
+        breakIsLong = timerMode==='break' && !!data.longBreak;
         if(typeof data.cycle==='number'){ pomodoroCycle = data.cycle; saveCycle(); }
         if(data.quoteThreshold!=null) lastQuoteThreshold = data.quoteThreshold;
         syncSecondsFromDeadline();
@@ -2567,7 +2610,8 @@ function restoreTimer(){
         while(secondsLeft<=0 && guard++<20){
           if(timerMode==='focus'){
             timerMode='break';
-            phaseEndsAt = Date.now() + BREAK_SEC*1000;
+            breakIsLong = logBreakStart();
+            phaseEndsAt = Date.now() + breakSecNow()*1000;
           } else {
             timerMode='focus';
             phaseEndsAt = Date.now() + FOCUS_SEC*1000;
@@ -2594,6 +2638,7 @@ function restoreTimer(){
             lastQuoteThreshold = th;
           }
         }
+        syncBreakLabels();
         renderTimer();
         if(window.__timerUiReady) refreshTimerQuote(false);
         return;
@@ -2722,6 +2767,7 @@ function getPomodoroState(){
   return {
     enabled: !!pomodoroEnabled,
     mode: timerMode === 'break' ? 'break' : 'focus',
+    longBreak: timerMode === 'break' && breakIsLong,
     phaseEndsAt: phaseEndsAt || 0,
     secondsLeft: secondsLeft,
     displayName: name,
@@ -2739,6 +2785,8 @@ function applyPomodoroState(state, opts){
   if(!pomodoroEnabled) setPomodoroEnabled(true, { fromSync:true });
   const mode = state.mode === 'break' ? 'break' : 'focus';
   timerMode = mode;
+  breakIsLong = mode === 'break' && !!state.longBreak;
+  syncBreakLabels();
   if(typeof state.phaseEndsAt === 'number' && state.phaseEndsAt > 0){
     phaseEndsAt = state.phaseEndsAt;
   } else if(typeof state.secondsLeft === 'number'){
@@ -2752,7 +2800,7 @@ function applyPomodoroState(state, opts){
   renderTimer();
   if(window.__timerUiReady) refreshTimerQuote(true);
   if(!opts.silent){
-    showToast('Timer synced · ' + (mode==='break'?'Break':'Focus') + ' ' + fmt(secondsLeft), 2200);
+    showToast('Timer synced · ' + (mode==='break'?(breakIsLong?'Long break':'Break'):'Focus') + ' ' + fmt(secondsLeft), 2200);
   }
   if(window.StudyPartyTimers && StudyPartyTimers.onLocalChange) StudyPartyTimers.onLocalChange();
 }
@@ -3121,7 +3169,7 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
 })();
 
 </script>
-<script src="js/quiz-engine.js?v=28"></script>
+<script src="js/quiz-engine.js?v=29"></script>
 <script src="js/formula-gen-pt2.js?v=1"></script>
 <script src="js/formula-practice.js?v=2"></script>
 <script src="js/study-images.js?v=14"></script>
@@ -3183,8 +3231,9 @@ document.getElementById('studyNotesBtn').addEventListener('click', ()=>{
 })();
 </script>
 <script src="pt1-theme/particles.js"></script>
-<script src="pt1-theme/colorizer-theme.js?v=2"></script>
+<script src="pt1-theme/colorizer-theme.js?v=3"></script>
 <script src="js/pt2-color.js"></script>
-<script src="js/pt2-unlocks.js?v=7"></script>
+<script src="js/pt2-unlocks.js?v=8"></script>
+<script src="js/app-update.js?v=1"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* Look options: theme palette, hover sheen and accent modes (saved on this device). */
+/* Look options: animation effects, hover sheen and accent modes (saved on this device). */
 (function (global) {
   'use strict';
   var root = document.documentElement, KEY = 'pt2_look_v1', PREV = 'pt2_look_prev_v1', GOT = 'pt2_emoji_unlocked_v1';
@@ -16,111 +16,33 @@
   function sample(cols, x) { var n = cols.length; x = ((x % 1) + 1) % 1 * n; var i = Math.floor(x), f = x - i; return mix(cols[i % n], cols[(i + 1) % n], f); }
   function rgbs(h) { return h2r(h).join(','); }
 
-  /* ———————————————— Golden theme ———————————————— */
-  function eOn() { return root.classList.contains('pt2-electric'); }
-  function guardCursor() { if (eOn() && root.getAttribute('data-cursor') !== 'intro') root.setAttribute('data-cursor', 'intro'); }
-  new MutationObserver(guardCursor).observe(root, { attributes: true, attributeFilter: ['data-cursor'] });
-  function showCursorNow() { document.querySelectorAll('#cursor').forEach(function (el) { el.classList.remove('hidden'); }); if (document.body) document.body.classList.remove('cursor-idle'); }
-  function slider() { return $('accent-strength-slider'); }
-  function eActivate() {
-    if (!has('look:a')) return;
-    if (!eOn() || !st().e) {
-      var s = slider(), prev = { cursor: root.getAttribute('data-cursor') || '', strength: s ? +s.value : +(localStorage.getItem('atc_accent_strength') || 90) };
-      if (prev.cursor === 'intro') prev.cursor = (rd(PREV, {}) || {}).cursor || '';
-      wr(PREV, prev);
-      var o = st(); o.e = 1; wr(KEY, o);
-      root.classList.add('pt2-electric');
-    }
-    guardCursor(); showCursorNow(); sync();
+  /* ———————————————— Animation effects (Settings → Theme, shown once unlocked; off until switched on) ————————————————
+     Extra motion in the current accent colour: hover sheen, card current, sparks, livelier next-question bar. */
+  function fxOn() { return root.classList.contains('pt2-fx'); }
+  function applyFx() {
+    var on = has('look:a') && !!st().fx && !root.classList.contains('pt2-basic');
+    root.classList.toggle('pt2-fx', on); root.classList.remove('pt2-electric');
+    var t = $('pt2FxOn'); if (t) t.checked = !!st().fx;
+    if (!on && typeof hideGlass === 'function') hideGlass();
   }
-  function eDeactivate() {
-    if (!eOn()) return;
-    var o = st(); delete o.e; wr(KEY, o);
-    var prev = rd(PREV, {}) || {};
+  function setFx(on) { var o = st(); if (on) o.fx = 1; else delete o.fx; wr(KEY, o); applyFx(); }
+  /* the old palette option is gone: anyone who had it on keeps its effects (as the switch, on) with their own accent */
+  function migrate() {
+    var o = st(); if (!o.e && !o.autoA) return;
+    if (o.e && has('look:a')) o.fx = 1;
+    delete o.e; delete o.autoA; wr(KEY, o);
+    try { localStorage.removeItem(PREV); localStorage.removeItem('pt2_gold_mood_tip_n'); } catch (e) {}
     root.classList.remove('pt2-electric');
-    if (prev.cursor && prev.cursor !== 'intro') root.setAttribute('data-cursor', prev.cursor);
-    else if (typeof global.applyCursorSkin === 'function') { try { global.applyCursorSkin(false); } catch (e) {} }
-    var s = slider(), v = prev.strength;
-    if (s && v >= 0) {
-      s.value = v; var d = $('strength-value-display'); if (d) d.textContent = v;
-      try { localStorage.setItem('atc_accent_strength', String(v)); } catch (e) {}
-      var pk = $('accent-color-picker');
-      if (pk && typeof global.changeAccentColor === 'function') global.changeAccentColor(pk.value, v);
+    if (root.getAttribute('data-cursor') === 'intro') {
+      var keep = null; try { keep = localStorage.getItem('pt1_cursor_skin'); } catch (e) {}
+      if (keep !== 'intro' && typeof global.applyCursorSkin === 'function') { try { global.applyCursorSkin(false); } catch (e) {} }
     }
-    sync();
   }
-  var offTimer = null;
-  function pendingOff() { clearTimeout(offTimer); offTimer = setTimeout(eDeactivate, 0); }
-  function goldSwatch() {
-    var row = document.querySelector('#settings-panel-general .preset-swatches'); if (!row) return null;
-    var b = row.querySelector('.pt2-gold-swatch');
-    if (!b && has('look:a')) {
-      b = document.createElement('button'); b.type = 'button'; b.className = 'preset-swatch pt2-gold-swatch';
-      b.title = 'Golden theme'; b.setAttribute('aria-label', 'Golden theme'); row.appendChild(b);
-    }
-    return b;
+  function wireFx() {
+    var t = $('pt2FxOn'); if (!t || t.dataset.wired) return;
+    t.dataset.wired = '1'; t.checked = !!st().fx;
+    t.addEventListener('change', function () { setFx(this.checked); });
   }
-  function sync() {
-    var on = eOn(), b = goldSwatch();
-    if (b) b.classList.toggle('active-preset', on);
-    if (on) document.querySelectorAll('#settings-panel-general .preset-swatch.active-preset:not(.pt2-gold-swatch)').forEach(function (x) { x.classList.remove('active-preset'); });
-    var s = slider(), box = $('theme-lock-colorStrength');
-    if (box) box.classList.toggle('pt2-locked-dim', on);
-    if (s) { s.disabled = on; if (on) { s.value = 100; var d = $('strength-value-display'); if (d) d.textContent = '100'; } }
-    var cp = $('theme-cursor-picker');
-    if (cp) {
-      cp.classList.toggle('pt2-cur-themed', on);
-      if (!cp.querySelector('.pt2-cur-note')) { var n = document.createElement('p'); n.className = 'pt2-cur-note'; n.textContent = 'Locked by the Golden theme: it uses the main menu cursor.'; var g = $('cursor-skin-grid'); if (g) g.parentNode.insertBefore(n, g); }
-    }
-    var cb = $('cursorRandomBtn'), hint = document.querySelector('.mood-cursor-hint');
-    [cb, hint].forEach(function (el) { if (el) el.classList.toggle('pt2-locked-dim', on); });
-    if (cb) { if (on) cb.setAttribute('aria-disabled', 'true'); else cb.removeAttribute('aria-disabled'); }
-    if (on) guardCursor();
-  }
-  var tipEl = null, tipT = null;
-  function tip(el, text, ms, kind) {
-    if (!tipEl) { tipEl = document.createElement('div'); tipEl.className = 'pt2-tip'; tipEl.setAttribute('role', 'status'); document.body.appendChild(tipEl); }
-    var r = el.getBoundingClientRect();
-    tipEl.textContent = text;
-    tipEl.style.left = Math.max(110, Math.min(global.innerWidth - 110, r.left + r.width / 2)) + 'px';
-    tipEl.style.top = Math.max(40, r.top) + 'px';
-    tipEl.dataset.k = kind || '';
-    tipEl.classList.toggle('is-mood', kind === 'mood');
-    tipEl.classList.add('on'); clearTimeout(tipT);
-    tipT = setTimeout(function () { tipEl.classList.remove('on'); }, ms || 2200);
-  }
-  document.addEventListener('click', function (e) {
-    var t = e.target; if (!t || !t.closest) return;
-    if (t.closest('.pt2-gold-swatch')) { e.preventDefault(); e.stopImmediatePropagation(); eActivate(); return; }
-    if (!eOn()) return;
-    var cb = t.closest('#cursorRandomBtn, .mood-tray-tools .mood-cursor-hint');
-    if (cb) { e.preventDefault(); e.stopImmediatePropagation(); tip($('cursorRandomBtn') || cb, 'Disable Golden theme in settings'); return; }
-    if (t.closest('#cursor-skin-grid') || t.closest('#theme-lock-colorStrength')) { e.preventDefault(); e.stopImmediatePropagation(); return; }
-    if (t.closest('#settings-panel-general .preset-swatch')) pendingOff();
-  }, true);
-  /* touch screens have no Change cursor button: a picked emoji explains why the colours stay (shown 3 times at most) */
-  var MOOD_TIP = 'pt2_gold_mood_tip_n', lastPointer = '';
-  document.addEventListener('pointerdown', function (e) {
-    lastPointer = e.pointerType || '';
-    if (tipEl && tipEl.dataset.k === 'mood' && tipEl.classList.contains('on')) { clearTimeout(tipT); tipEl.classList.remove('on'); }
-  }, true);
-  document.addEventListener('click', function (e) {
-    var b = e.target && e.target.closest && e.target.closest('.mood-pick');
-    if (!b || !eOn()) return;
-    if (lastPointer !== 'touch' && root.getAttribute('data-pointer-input') !== 'touch') return;
-    var n = 0; try { n = +(localStorage.getItem(MOOD_TIP) || 0) || 0; } catch (er) {}
-    if (n >= 3) return;
-    try { localStorage.setItem(MOOD_TIP, String(n + 1)); } catch (er) {}
-    tip(b, 'Disable Golden theme in settings to change colors', 3200, 'mood');
-  }, true);
-  ['input', 'change'].forEach(function (ev) {
-    document.addEventListener(ev, function (e) {
-      var t = e.target; if (!eOn() || !t) return;
-      if (t.id === 'accent-color-picker') pendingOff();
-      else if (t.id === 'accent-hex-input' && /^#?[0-9a-f]{6}$/i.test(String(t.value).trim())) pendingOff();
-      else if (t.id === 'accent-strength-slider') { e.stopImmediatePropagation(); sync(); }
-    }, true);
-  });
 
   /* emoji change while the palette is held: a short ripple in that emoji's colour */
   var moodColour = null;
@@ -141,7 +63,7 @@
   new MutationObserver(function () {
     var m = moodOf(root.className); if (m === lastMood) return;
     var before = lastMood.split(' '); lastMood = m;
-    if (!rippleReady || !(eOn() || mcOn())) return;
+    if (!rippleReady || !(fxOn() || mcOn())) return;
     var added = m.split(' ').filter(function (x) { return x && before.indexOf(x) < 0; });
     var c = null, map = moodColours();
     for (var i = 0; i < added.length && !c; i++) c = map[added[i]];
@@ -161,7 +83,7 @@
   function recolorFx() {
     try {
       if (typeof streams === 'undefined' || !streams.forEach) return;
-      var cs = getComputedStyle(root), held = eOn() || mcOn(), a = cs.getPropertyValue('--cyan').trim(), b = cs.getPropertyValue('--gold').trim();
+      var cs = getComputedStyle(root), held = mcOn(), a = cs.getPropertyValue('--cyan').trim(), b = cs.getPropertyValue('--gold').trim();
       streams.forEach(function (s, i) { if (s._c0 == null) s._c0 = s.color; s.color = held ? (i % 3 ? a : b) : s._c0; });
     } catch (e) {}
   }
@@ -196,7 +118,7 @@
   function usable(el) { return el && !el.disabled && !el.classList.contains('locked') && !el.classList.contains('pt2-locked-dim') && el.getAttribute('aria-disabled') !== 'true'; }
   document.addEventListener('pointerover', function (e) {
     if (e.pointerType && e.pointerType !== 'mouse') return;
-    if (!eOn()) { if (gTarget) hideGlass(); return; } // only with the gold palette; other accents keep their own hover
+    if (!fxOn()) { if (gTarget) hideGlass(); return; } // only with Animation effects on
     var t = e.target && e.target.closest ? e.target.closest(GLASS_SEL) : null;
     if (t === gTarget) return;
     if (!t || !usable(t)) { hideGlass(); return; }
@@ -274,7 +196,7 @@
     if (!nav || !panels) return;
     var b = document.createElement('button'); b.className = 'settings-nav-btn'; b.dataset.panel = 'extra'; b.textContent = 'Extra';
     b.addEventListener('click', function () { if (typeof global.openSettingsPanel === 'function') global.openSettingsPanel('extra'); });
-    nav.appendChild(b);
+    var clb = nav.querySelector('[data-panel="changelog"]'); if (clb) nav.insertBefore(b, clb); else nav.appendChild(b);
     var p = document.createElement('div'); p.className = 'settings-panel'; p.id = 'settings-panel-extra';
     p.innerHTML = '<div class="settings-panel-title">Extra</div>' +
       '<div class="setting-item" style="padding-top:8px;"><span class="setting-item-label">Multicolour Accents</span>' +
@@ -319,27 +241,20 @@
   }
 
   /* —— start —— */
-  function boot() {
-    fx();
-    if (st().e && !has('look:a')) root.classList.remove('pt2-electric');
-    if (st().e && has('look:a')) { root.classList.add('pt2-electric'); guardCursor(); }
-    applyMc(); buildExtra(); sync();
-  }
+  function boot() { fx(); migrate(); applyFx(); wireFx(); applyMc(); buildExtra(); }
   // before the body exists: palette vars for the accent mode so nothing flashes
   if (st().mc && st().mc.on && has('look:b')) applyMc();
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
-  global.addEventListener('load', function () { setTimeout(function () { sync(); buildExtra(); }, 0); });
-  document.addEventListener('click', function (e) { if (e.target && e.target.closest && e.target.closest('#settings-btn')) setTimeout(function () { buildExtra(); sync(); }, 0); }, true);
+  global.addEventListener('load', function () { setTimeout(function () { buildExtra(); wireFx(); applyFx(); }, 0); });
+  document.addEventListener('click', function (e) { if (e.target && e.target.closest && e.target.closest('#settings-btn')) setTimeout(function () { buildExtra(); wireFx(); }, 0); }, true);
   document.addEventListener('pt2-unlocked', function (e) {
     var d = (e.detail || []);
-    if (d.indexOf('look:b') >= 0) setTimeout(function () { buildExtra(); sync(); }, 0);
+    if (d.indexOf('look:b') >= 0) setTimeout(buildExtra, 0);
+    if (d.indexOf('look:a') >= 0) setTimeout(function () { wireFx(); applyFx(); }, 0);
   });
-  // the theme switches itself on once, right after its pop-up
-  function autoOn() { var o = st(); if (o.autoA || !has('look:a')) return; o.autoA = 1; wr(KEY, o); eActivate(); }
-  document.addEventListener('pt2-popup', function (e) { if (e.detail === 'look:a') setTimeout(autoOn, 700); });
-  global.addEventListener('load', function () { setTimeout(function () { if (has('look:a') && !st().autoA && !document.getElementById('pt2-unlock-popup')) autoOn(); }, 1500); });
+  document.addEventListener('pt2-basic', applyFx);
   if (reduce.addEventListener) reduce.addEventListener('change', applyMc);
   /* the next-question bar runs a little quicker with this palette (never under half a second) */
-  function advanceMs(ms) { return eOn() ? Math.max(500, ms - 1250) : ms; }
-  global.PT2Look = { advanceMs: advanceMs, electricOn: eOn, activate: eActivate, deactivate: eDeactivate, multicolourOn: mcOn, wireStroke: wireStroke, applyMc: applyMc, sync: sync };
+  function advanceMs(ms) { return fxOn() ? Math.max(500, ms - 1250) : ms; }
+  global.PT2Look = { advanceMs: advanceMs, effectsOn: fxOn, setEffects: setFx, applyEffects: applyFx, multicolourOn: mcOn, wireStroke: wireStroke, applyMc: applyMc };
 })(window);

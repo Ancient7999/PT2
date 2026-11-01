@@ -14,12 +14,9 @@
   if (!customCursorOn()) return;
 
   var IDLE_MS = 1500;
-  /* the golden theme keeps the cursor on screen (no idle hide) */
+  /* the Glow cursor (Settings → Custom Cursor) keeps the cursor on screen (no idle hide) */
   function keepCursor() {
-    try {
-      var g = JSON.parse(localStorage.getItem('pt2_emoji_unlocked_v1') || '{}') || {}, l = JSON.parse(localStorage.getItem('pt2_look_v1') || '{}') || {};
-      return !!(g['look:a'] && l.e);
-    } catch (e) { return false; }
+    try { return localStorage.getItem('pt1_cursor_skin') === 'intro' && localStorage.getItem('sp_cursor_lock') === 'settings'; } catch (e) { return false; }
   }
   var KEEP = keepCursor();
   var HOVER_SEL = '.ps2-menu-item,.ps2-back-btn,.option-card,.variant-pill,.mode-btn,.btn,.opt,.card,.chapter-toggle,.nav-btn,.fs-btn,.portal-card,.settings-nav-btn,.settings-btn';

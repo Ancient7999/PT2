@@ -555,7 +555,7 @@ global.resetThemeToDefaults = resetThemeToDefaults;
 
   var CURSOR_SKIN_KEY = 'pt1_cursor_skin';
   var CURSOR_ON_KEY = 'pt1_custom_cursor';
-  var CURSOR_SKINS = ['ring-screen','ring-tight','ring-gold','pill','beam-v','beam-h','diamond','comma','system'];
+  var CURSOR_SKINS = ['ring-screen','ring-tight','ring-gold','pill','beam-v','beam-h','diamond','comma','system','intro'];
 
   function isCustomCursorEnabled() {
     try {

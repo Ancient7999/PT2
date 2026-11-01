@@ -209,7 +209,7 @@ function pt1CursorOn(){ var root=document.documentElement; return (typeof custom
   function releaseIdle(){ clearTimeout(idleTimer); idleTimer=null; document.body.classList.remove('cursor-idle'); }
   function hideCursor(){
     if(touchMode()){ releaseIdle(); return; }
-    if(document.documentElement.classList.contains('pt2-electric')){ releaseIdle(); return; }
+    if(document.documentElement.getAttribute('data-cursor')==='intro'){ releaseIdle(); return; } // the Glow cursor stays on screen
     clearTimeout(idleTimer);
     cursors().forEach(function(el){ el.classList.add('hidden'); });
     document.body.classList.add('cursor-idle');
