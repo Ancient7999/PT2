@@ -455,14 +455,23 @@ html[data-custom-cursor="on"]:not([data-pointer-input="touch"]) .pt1q .q-nav-btn
 .pt1q .q-nav-bone{position:relative;display:inline-flex;align-items:center;gap:4px;border-radius:11px}
 .pt1q .q-nav-btn.bone{min-width:3.6rem;white-space:nowrap}
 .pt1q .q-nav-btn.bone .q-nav-icon{margin-right:3px}
-.pt1q .q-nav-steps{display:none;gap:4px;align-items:center}
+/* smooth swap: the pill folds away while its step pills unfold (widths measured in JS: --bone-lab-w / --bone-steps-w) */
+.pt1q .q-nav-bone{gap:0}
+.pt1q .q-nav-bone > .q-nav-btn.bone{box-sizing:border-box;max-width:var(--bone-lab-w,8rem);overflow:hidden;transition:max-width .32s cubic-bezier(.2,.7,.2,1),min-width .32s cubic-bezier(.2,.7,.2,1),padding .32s cubic-bezier(.2,.7,.2,1),border-width .32s,opacity .22s ease,visibility 0s linear 0s}
+.pt1q .q-nav-steps{display:inline-flex;gap:4px;align-items:center;max-width:0;opacity:0;visibility:hidden;overflow:hidden;overflow:clip;overflow-clip-margin:8px;transition:max-width .32s cubic-bezier(.2,.7,.2,1),opacity .22s ease,visibility 0s linear .32s}
 .pt1q .q-nav-bone:hover .q-nav-steps,
-.pt1q .q-nav-bone:focus-within .q-nav-steps{display:inline-flex}
+.pt1q .q-nav-bone:focus-within .q-nav-steps{max-width:var(--bone-steps-w,40rem);opacity:1;visibility:visible;transition:max-width .32s cubic-bezier(.2,.7,.2,1),opacity .22s ease .06s,visibility 0s linear 0s}
 .pt1q .q-nav-bone:hover > .q-nav-btn.bone,
-.pt1q .q-nav-bone:focus-within > .q-nav-btn.bone{display:none}
+.pt1q .q-nav-bone:focus-within > .q-nav-btn.bone{max-width:0;min-width:0;padding-left:0;padding-right:0;border-width:0;opacity:0;visibility:hidden;transition:max-width .32s cubic-bezier(.2,.7,.2,1),min-width .32s cubic-bezier(.2,.7,.2,1),padding .32s cubic-bezier(.2,.7,.2,1),border-width .32s,opacity .16s ease,visibility 0s linear .32s}
+/* a pill rebuilt under the pointer (after a click) opens at once instead of replaying the animation */
+.pt1q .q-nav-bone.bone-instant > .q-nav-btn.bone,.pt1q .q-nav-bone.bone-instant .q-nav-steps{transition:none!important}
+@media (prefers-reduced-motion: reduce){.pt1q .q-nav-bone > .q-nav-btn.bone,.pt1q .q-nav-steps{transition:none!important}}
 .pt1q .q-nav-btn.q-nav-step{min-width:2rem}
 .pt1q .q-nav-btn.q-nav-step.locked,
-.pt1q .q-nav-btn.q-nav-step:disabled{opacity:.35;cursor:not-allowed;pointer-events:auto}
+.pt1q .q-nav-btn.q-nav-step:disabled{opacity:.35;cursor:pointer;pointer-events:auto}
+/* a locked step click lands on the last unlocked step: short pulse there */
+@keyframes stepPulse{0%{box-shadow:0 0 0 0 rgba(var(--accent-0-rgb),.65)}60%{box-shadow:0 0 0 8px rgba(var(--accent-0-rgb),0)}100%{box-shadow:0 0 0 0 rgba(var(--accent-0-rgb),0)}}
+.pt1q .q-nav-btn.q-nav-step.step-pulse,.pt1q #mainPanel .question.step-pulse{animation:stepPulse .9s ease-out}
 .pt1q .question.is-step-question{display:flex;flex-direction:column;gap:.55rem}
 .pt1q .step-stem{color:var(--text)}
 .pt1q .step-prompt{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem;font-size:.92em;color:var(--accent-1)}
@@ -762,3 +771,16 @@ html.link-drawing[data-custom-cursor="off"],html.link-drawing[data-custom-cursor
 .pt1q .opt,.pt1q .match-item,.pt1q .saq-input{font-family:var(--font-choice,var(--qa-font))}
 /* keyboard focus on linking items (arrow keys) */
 .pt1q .match-item.kb-focus{outline:2px solid var(--accent-0);outline-offset:2px;border-color:var(--accent-0);box-shadow:0 0 0 4px rgba(var(--accent-0-rgb),.16),0 0 14px rgba(var(--accent-0-rgb),.28)}
+
+/* —— phones (html.pt2-phone, set from one media query in quiz-engine.js) ——
+   question pills and Back / Next give way to a "3 / 40" counter; swipe moves between questions.
+   Next stays only for Finish / Return to first unanswered. */
+.pt1q .q-pos{display:none}
+html.pt2-phone .pt1q #qNav{display:none}
+html.pt2-phone .pt1q .q-pos{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;min-width:4.2rem;height:1.85rem;padding:0 .7rem;border-radius:999px;border:1px solid rgba(var(--accent-0-rgb),.35);background:rgba(var(--accent-0-rgb),.1);color:var(--accent-1);font-family:var(--mono);font-size:.86rem;font-variant-numeric:tabular-nums;letter-spacing:.02em;box-shadow:0 0 12px rgba(var(--accent-0-rgb),.18)}
+html.pt2-phone .pt1q #quizScreen #backBtn,
+html.pt2-phone .pt1q #quizScreen #nextBtn[data-action="next"]{display:none}
+html.pt2-phone .pt1q #quizScreen .nav:not(:has(#nextBtn:not([hidden]):not([data-action="next"]))){display:none}
+html.pt2-phone .pt1q #quizScreen .kb-advance{display:none}
+html.pt2-phone .pt1q #quizScreen .kbd-hint{display:none}
+html.pt2-phone .pt1q #quizScreen{touch-action:pan-y pinch-zoom}

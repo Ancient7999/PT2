@@ -1393,6 +1393,7 @@ function renderNav(){
     nav.appendChild(b);
   }
   updateBackSkipGlow();
+  updatePhoneCounter();
 }
 /* STEPPED: one pill "🦴 21–23" for the whole question; hovering (or focusing)
    expands it into one sub-pill per step. Later steps stay locked (disabled)
@@ -1418,6 +1419,8 @@ function renderBonePill(start, markUnanswered){
   lab.addEventListener('click',()=>{ jumpToQuestion(here?current:firstOpenStep(start)); });
   wrap.appendChild(lab);
   const steps=document.createElement('div'); steps.className='q-nav-steps';
+  let lastOpen=start;
+  for(let j=start;j<=end;j++){ if(isUnlocked(j)) lastOpen=j; }
   for(let j=start;j<=end;j++){
     const done=isAnswered(answers[j],questions[j]);
     const open=isUnlocked(j);
@@ -1425,14 +1428,39 @@ function renderBonePill(start, markUnanswered){
     b.type='button';
     b.className='q-nav-btn q-nav-step'+(j===current?' current':'')+(done?' done':'')+(!open?' locked':'')+((skipped && !done && open)?' skipped':'');
     b.innerHTML='<span class="q-nav-number">'+(j+1)+'</span>';
-    b.disabled=!open;
-    b.title=!open?'Locked — answer the previous step first':(done?'Step answered':'Step '+(j-start+1));
+    b.dataset.qi=String(j);
+    // STEPPED: a locked step stays clickable and sends you to the last unlocked step of this question
+    if(!open) b.setAttribute('aria-disabled','true');
+    b.title=!open?'Locked — opens step '+(lastOpen+1)+', the last unlocked step':(done?'Step answered':'Step '+(j-start+1));
     const idx=j;
-    b.addEventListener('click',e=>{ e.stopPropagation(); jumpToQuestion(idx); });
+    b.addEventListener('click',e=>{
+      e.stopPropagation();
+      if(open){ jumpToQuestion(idx); return; }
+      if(lastOpen!==current) jumpToQuestion(lastOpen);
+      pulseLastOpenStep(lastOpen);
+    });
     steps.appendChild(b);
   }
   wrap.appendChild(steps);
+  // smooth expand / collapse: the CSS animates max-width up to the measured widths
+  wrap.classList.add('bone-instant');
+  requestAnimationFrame(()=>{
+    if(!wrap.isConnected) return;
+    wrap.style.setProperty('--bone-lab-w', lab.scrollWidth+'px');
+    wrap.style.setProperty('--bone-steps-w', steps.scrollWidth+'px');
+    requestAnimationFrame(()=>requestAnimationFrame(()=>wrap.classList.remove('bone-instant')));
+  });
   return wrap;
+}
+/* STEPPED: brief pulse on the step a locked click sent you to (pill + question) */
+function pulseLastOpenStep(i){
+  requestAnimationFrame(()=>{
+    const b=document.querySelector('#qNav .q-nav-step[data-qi="'+i+'"]');
+    const targets=[b, document.getElementById('qText')].filter(Boolean);
+    targets.forEach(t=>{ t.classList.remove('step-pulse'); void t.offsetWidth; t.classList.add('step-pulse'); setTimeout(()=>t.classList.remove('step-pulse'),900); });
+    const q=document.getElementById('qText');
+    if(q && q.getBoundingClientRect){ const r=q.getBoundingClientRect(); if(r.top<0 || r.top>window.innerHeight*0.6){ try{ q.scrollIntoView({behavior:'smooth', block:'center'}); }catch(e){} } }
+  });
 }
 
 /* —— PT1 3136–3160, 3223–3848 · linking engine, copied verbatim except ADAPT/FIX lines —— */
@@ -3726,6 +3754,7 @@ let kbAdv=null;
 function clearKbAdvance(){ if(!kbAdv) return; const k=kbAdv; kbAdv=null; cancelAnimationFrame(k.raf); clearTimeout(k.timer); if(k.wrap.isConnected) k.wrap.remove(); }
 function startKbAdvance(){
   clearKbAdvance();
+  if(isPhoneLayout()) return; // PORTAL: phones get no auto-next bar; swipe to move on
   const host=document.getElementById('feedback'); if(!host) return;
   let MS=3200; // formula practice's ADVANCE_MS
   try{ if(window.PT2Look && typeof PT2Look.advanceMs==='function') MS=PT2Look.advanceMs(MS)||MS; }catch(er){}
@@ -3987,3 +4016,78 @@ placeSettingsGear();
 window.StudyQuiz={ isAnswered, leaveRun, labelFit, labelFitWire, labelZoneTarget, DROP_RADIUS, DROP_EXIT, loadBank, ingestBank, startRun, resumeRun, goSets, goPortal, renderSets, refreshSetsCards,
   get bankKey(){ return BANK_KEY; }, get cards(){ return CARDS; }, get questions(){ return questions; }, get answers(){ return answers; },
   get current(){ return current; }, get active(){ return quizActive; }, jumpToQuestion, selectAnswer, submitSaq, toggleMulti, submitMulti, isMulti, saqMatches, saqHint, orderShuffle, goNext, goBack, idReport:()=>ID_REPORT, get lectureSet(){ return LECTURE_SET; } };
+
+/* —— PORTAL: phone layout (one media query, used by both CSS and JS through html.pt2-phone) ——
+   Phones: no auto-next bar, no question pills or Back / Next buttons (a "3 / 40" counter instead),
+   and a horizontal swipe on the question moves to the next (left) or previous (right) question. */
+const PT2_PHONE_MQ='(pointer: coarse) and (max-width: 768px), (pointer: coarse) and (max-height: 500px)';
+function isPhoneLayout(){ try{ return !!(window.matchMedia && matchMedia(PT2_PHONE_MQ).matches); }catch(e){ return false; } }
+(function wirePhoneLayout(){
+  const root=document.documentElement;
+  const apply=()=>{ const on=isPhoneLayout(); root.classList.toggle('pt2-phone', on); if(on) clearKbAdvance(); updatePhoneCounter(); };
+  apply();
+  try{ const mq=matchMedia(PT2_PHONE_MQ); if(mq.addEventListener) mq.addEventListener('change', apply); else if(mq.addListener) mq.addListener(apply); }catch(e){}
+})();
+function updatePhoneCounter(){
+  const el=document.getElementById('qPos'); if(!el) return;
+  if(!questions.length){ el.textContent=''; return; }
+  let pos=current+1, total=questions.length;
+  if(isSimpleRun()){ const g=wholeGroups(); total=g.length; const k=g.findIndex(x=>x.indexOf(current)>=0); pos=k<0?1:k+1; }
+  el.textContent=pos+' / '+total;
+  el.setAttribute('aria-label','Question '+pos+' of '+total);
+}
+(function wireQuestionSwipe(){
+  const host=document.getElementById('quizScreen'); if(!host) return;
+  const MIN_X=60, RATIO=1.5;
+  const SKIP='input,textarea,select,[contenteditable],.match-item,.match-board,.label-chip,.label-figure,.lz-zoomed,.order-card,canvas,.saq-wrap';
+  let t=null;
+  const moving=()=>[document.getElementById('qText'), document.getElementById('options')].filter(Boolean);
+  function setShift(dx, animate){
+    moving().forEach(el=>{
+      el.style.transition=animate?'transform .22s ease, opacity .22s ease':'none';
+      el.style.transform=dx?'translateX('+dx+'px)':'';
+      el.style.opacity=dx?String(Math.max(.55, 1-Math.abs(dx)/600)):'';
+    });
+  }
+  function hScrollable(el){
+    for(let n=el; n && n!==host; n=n.parentElement){ if(n.scrollWidth>n.clientWidth+2){ const ox=getComputedStyle(n).overflowX; if(ox==='auto'||ox==='scroll') return true; } }
+    return false;
+  }
+  host.addEventListener('touchstart', e=>{
+    t=null;
+    if(!isPhoneLayout() || !quizActive || e.touches.length!==1) return;
+    if(document.getElementById('quizScreen').style.display==='none') return;
+    const tg=e.target;
+    if(tg && tg.closest && tg.closest(SKIP)) return;
+    if(drawState || hScrollable(tg)) return;
+    const p=e.touches[0];
+    t={x:p.clientX, y:p.clientY, dx:0, dir:0, horiz:null};
+  }, {passive:true});
+  host.addEventListener('touchmove', e=>{
+    if(!t) return;
+    if(e.touches.length!==1 || drawState){ setShift(0,true); t=null; return; }
+    const p=e.touches[0], dx=p.clientX-t.x, dy=p.clientY-t.y;
+    if(t.horiz===null){
+      if(Math.abs(dx)<10 && Math.abs(dy)<10) return;
+      t.horiz=Math.abs(dx)>Math.abs(dy)*RATIO;
+      if(!t.horiz){ t=null; return; }
+    }
+    const sel=window.getSelection && String(window.getSelection()); if(sel){ setShift(0,true); t=null; return; }
+    t.dx=dx;
+    const dir=dx<0?1:-1, edge=(dir>0 && current>=questions.length-1) || (dir<0 && prevTarget()<0);
+    setShift(edge?dx*0.15:dx*0.4, false);
+  }, {passive:true});
+  function end(){
+    if(!t) return;
+    const s=t; t=null;
+    if(!s.horiz || Math.abs(s.dx)<MIN_X){ setShift(0,true); return; }
+    const dir=s.dx<0?1:-1, before=current;
+    jumpToQuestion(current+dir, dir);
+    if(current===before){ setShift(0,true); return; }
+    // the new question slides in from the side it came from
+    setShift(dir*48,false);
+    requestAnimationFrame(()=>requestAnimationFrame(()=>setShift(0,true)));
+  }
+  host.addEventListener('touchend', end, {passive:true});
+  host.addEventListener('touchcancel', ()=>{ if(t){ t=null; setShift(0,true); } }, {passive:true});
+})();
