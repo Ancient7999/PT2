@@ -45,9 +45,7 @@ const PT2_CHAPTERS = [
   { id: 'ch5', title: 'Chapter 5', subtitle: 'Ray optics',
     keys: ['refractiveIndex','snell','criticalAngle'] },
   { id: 'ch6', title: 'Chapter 6', subtitle: 'Optical instruments',
-    keys: ['mirrorFocal','thinLens','magnification','lensPower','powerSum','separatedLenses','simpleMagnifier'] },
-  { id: 'ch7', title: 'Chapter 7', subtitle: 'Atomic & nuclear',
-    keys: ['photonEnergy','deBroglie','nuclearRadius','halfLife','activity','absorbedDose','doseEquivalent'] }
+    keys: ['mirrorFocal','thinLens','magnification','lensPower','powerSum','separatedLenses','simpleMagnifier'] }
 ];
 
 function appendSetsSection(host) {
