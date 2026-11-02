@@ -784,3 +784,5 @@ html.pt2-phone .pt1q #quizScreen .nav:not(:has(#nextBtn:not([hidden]):not([data-
 html.pt2-phone .pt1q #quizScreen .kb-advance{display:none}
 html.pt2-phone .pt1q #quizScreen .kbd-hint{display:none}
 html.pt2-phone .pt1q #quizScreen{touch-action:pan-y pinch-zoom}
+/* phones: room under the run so the explanation (and the last choices) can scroll clear of the fixed timer dock */
+html.pt2-phone #quizView{padding-bottom:calc(140px + env(safe-area-inset-bottom,0px))}

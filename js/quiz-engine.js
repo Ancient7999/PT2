@@ -1293,6 +1293,7 @@ function updateSolvedProgress(){
     if(bar) bar.style.width=Math.round(solved/total*100)+'%'; }
 }
 function afterAnswerProgress(){
+  if(typeof phoneScrollToExplanation==='function') phoneScrollToExplanation(); // PORTAL: phones
   updateSolvedProgress();
   renderNav();
   updateCounters();
@@ -3540,10 +3541,12 @@ function selectAnswer(idx){
 /* PT1 3892–3926 + STEPPED: moves never land on a locked step. */
 function stepTo(i){
   if(typeof clearKbAdvance==='function') clearKbAdvance();
+  const from=current;
   current=i;
   locked=isAnswered(answers[current], questions[current]);
   renderQuestion();
   saveRunState();
+  if(from!==current && typeof phoneScrollToQuestion==='function') phoneScrollToQuestion(); // PORTAL: phones
 }
 function prevTarget(){
   if(current<=0) return -1;
@@ -4090,4 +4093,103 @@ function updatePhoneCounter(){
   }
   host.addEventListener('touchend', end, {passive:true});
   host.addEventListener('touchcancel', ()=>{ if(t){ t=null; setShift(0,true); } }, {passive:true});
+})();
+
+/* —— PORTAL: phone scrolling ——
+   · moving to another question: the question card (counter, question and choices) comes into view
+   · a correct answer: the explanation box (#feedback) slides into view
+   · the on-screen keyboard: the question stays at the top of what is still visible, the input above the keyboard
+   Visible area = the visual viewport (shrinks with the keyboard) minus the fixed timer dock at the bottom. */
+function phoneSmooth(){ try{ return matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'; }catch(e){ return 'smooth'; } }
+function phoneVisibleBand(){
+  const vv=window.visualViewport;
+  let top=vv?vv.offsetTop:0, bottom=vv?vv.offsetTop+vv.height:window.innerHeight;
+  const dock=document.querySelector('.timer-dock');
+  if(dock && dock.getClientRects().length && getComputedStyle(dock).position==='fixed' && getComputedStyle(dock).visibility!=='hidden'){
+    const r=dock.getBoundingClientRect();
+    if(r.height && r.top>top+(bottom-top)*0.5 && r.top<bottom) bottom=r.top;
+  }
+  return {top:top+8, bottom:bottom-10};
+}
+function phoneScrollBy(dy, instant){
+  if(Math.abs(dy)<4) return;
+  const max=document.documentElement.scrollHeight-window.innerHeight;
+  const to=Math.max(0, Math.min(max, window.scrollY+dy));
+  window.scrollTo({top:to, left:window.scrollX, behavior:instant?'auto':phoneSmooth()});
+}
+function phoneQuizOn(){ return isPhoneLayout() && quizActive && document.getElementById('quizView').classList.contains('active') && document.getElementById('quizScreen').style.display!=='none'; }
+let phoneNavSeq=0;
+function phoneScrollToQuestion(){
+  if(!phoneQuizOn()) return;
+  const seq=++phoneNavSeq;
+  // after the new question has laid out (images may still load: measured again shortly after)
+  const run=()=>{
+    if(seq!==phoneNavSeq || !phoneQuizOn()) return;
+    if(phoneKeyboardOpen() && phoneFocusedInput()){ phoneKeepInputVisible(); return; }
+    const band=phoneVisibleBand(), h=band.bottom-band.top;
+    const panel=document.getElementById('mainPanel'), qt=document.getElementById('qText'), op=document.getElementById('options');
+    if(!panel || !qt) return;
+    const pTop=panel.getBoundingClientRect().top, qTop=qt.getBoundingClientRect().top;
+    const oBottom=op && op.getBoundingClientRect().height ? op.getBoundingClientRect().bottom : qt.getBoundingClientRect().bottom;
+    // the whole card (with the counter) when question + choices fit, else start at the question itself
+    const anchor=(oBottom-pTop<=h)?pTop:qTop;
+    phoneScrollBy(anchor-band.top);
+  };
+  requestAnimationFrame(()=>requestAnimationFrame(run));
+}
+let phoneExplainAt=0;
+function phoneScrollToExplanation(){
+  if(!phoneQuizOn()) return;
+  const fb=document.getElementById('feedback');
+  if(!fb || !fb.classList.contains('good') || !String(fb.textContent||'').trim()) return;
+  const qi=current; phoneExplainAt=performance.now();
+  // the box grows in with its own animation: measure once it has settled, check again a moment later
+  setTimeout(()=>{ if(current===qi) phoneRevealExplanation(); }, 320);
+  setTimeout(()=>{ if(current===qi) phoneRevealExplanation(); }, 900);
+}
+function phoneRevealExplanation(){
+  if(!phoneQuizOn()) return;
+  const fb=document.getElementById('feedback'); if(!fb || !fb.classList.contains('good')) return;
+  const band=phoneVisibleBand(), r=fb.getBoundingClientRect(), h=band.bottom-band.top;
+  if(r.top>=band.top && r.bottom<=band.bottom) return; // already in view
+  // the whole box when it fits (bottom just above the dock / keyboard), else its first lines at the top
+  phoneScrollBy(r.height<=h ? r.bottom-band.bottom : r.top-band.top);
+}
+function phoneFocusedInput(){
+  const a=document.activeElement;
+  return (a && a.matches && a.matches('input,textarea') && a.closest('#quizScreen')) ? a : null;
+}
+let phoneVvBase=0;
+function phoneKeyboardOpen(){
+  const vv=window.visualViewport; if(!vv) return false;
+  return vv.height < Math.max(phoneVvBase, window.innerHeight)*0.78;
+}
+function phoneKeepInputVisible(){
+  const inp=phoneFocusedInput(); if(!inp || !phoneQuizOn()) return;
+  const band=phoneVisibleBand();
+  const qt=document.getElementById('qText');
+  const qTop=qt?qt.getBoundingClientRect().top:inp.getBoundingClientRect().top;
+  const iBottom=inp.getBoundingClientRect().bottom;
+  // question top at the top of the visible band, unless that would leave the input under the keyboard
+  let dy=qTop-band.top;
+  if(iBottom-dy>band.bottom) dy=iBottom-band.bottom;
+  phoneScrollBy(dy);
+}
+(function wirePhoneKeyboard(){
+  const vv=window.visualViewport; if(!vv) return;
+  phoneVvBase=vv.height;
+  let t=0;
+  const settle=()=>{
+    clearTimeout(t);
+    t=setTimeout(()=>{
+      if(!isPhoneLayout()) { phoneVvBase=vv.height; return; }
+      if(!phoneKeyboardOpen()) phoneVvBase=vv.height; // keyboard closed: new full height (toolbar show / hide)
+      if(phoneKeyboardOpen() && phoneFocusedInput()) phoneKeepInputVisible();
+      else if(performance.now()-phoneExplainAt<1500) phoneRevealExplanation(); // the keyboard closed after a typed answer
+    }, 140); // after the keyboard animation and the browser's own focus scroll have settled
+  };
+  vv.addEventListener('resize', settle);
+  // a tap into an input while the keyboard is already open
+  document.addEventListener('focusin', e=>{ if(isPhoneLayout() && phoneFocusedInput()===e.target && phoneKeyboardOpen()) settle(); });
+  window.addEventListener('orientationchange', ()=>{ setTimeout(()=>{ phoneVvBase=vv.height; }, 600); });
 })();
