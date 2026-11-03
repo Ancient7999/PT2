@@ -251,7 +251,7 @@
           "Muscle"
         ],
         "correct": 3,
-        "explain": "My/o means muscle, the myocardium being the middle muscle layer of the heart wall. Heart is cardi/o, vessel is angi/o or vas/o, and chest is thorac/o."
+        "explain": "My/o, like Myos/o and Muscul/o, means muscle, the myocardium being the middle muscle layer of the heart wall. Heart is cardi/o, vessel is angi/o, vas/o, or vascul/o, and chest is thorac/o."
       },
       {
         "id": "MT12017",
@@ -265,7 +265,7 @@
           "Chest, as the body region containing the heart"
         ],
         "correct": 0,
-        "explain": "In cardioangiology, cardio means heart, while angi/o means vessel. The term concerns heart and vessels, not the atrium or chest alone."
+        "explain": "In cardioangiology, cardio means heart, while angi/o, like vas/o and vascul/o, means vessel. The term concerns heart and vessels, not the atrium or chest alone."
       },
       {
         "id": "MT12018",
@@ -517,7 +517,7 @@
           "Vein"
         ],
         "correct": 0,
-        "explain": "Angi/o means vessel, as in angiogram. Aorta is Aort/o, artery is Arteri/o, and vein is Ven/o or Phleb/o."
+        "explain": "Angi/o, like Vas/o and Vascul/o, means vessel, as in angiogram. Aorta is Aort/o, artery is Arteri/o, and vein is Ven/o or Phleb/o."
       },
       {
         "id": "MT12036",
@@ -3038,10 +3038,10 @@
         "id": "MT12109",
         "type": "saq",
         "cat": "MT_lec12-13",
-        "q": "What is the combining form meaning fatty or lipid paste?",
+        "q": "Besides Lip/o and Lipid/o, which mean fat, which combining form means fatty or lipid paste?",
         "answer": "Ather/o",
         "accept": [],
-        "explain": "Ather/o means fatty or lipid paste, as in atherosclerosis and atherectomy. Clot is Thromb/o, vessel is Angi/o or Vas/o, and pulse is Sphygm/o."
+        "explain": "Ather/o means fatty or lipid paste, the plaque in atherosclerosis and atherectomy, while Lip/o and Lipid/o mean fat in general. Clot is Thromb/o, vessel is Angi/o, Vas/o, or Vascul/o, and pulse is Sphygm/o."
       },
       {
         "id": "MT12110",

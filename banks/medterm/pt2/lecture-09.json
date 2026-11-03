@@ -49,7 +49,7 @@
           "Hepat/o"
         ],
         "correct": 0,
-        "explain": "Cyt/o means cell, as in cytotoxic. Derm/o means skin, Enter/o means small intestine, and Hepat/o means liver."
+        "explain": "Cyt/o means cell, as in cytotoxic. Derm/o, like Dermat/o and Cutane/o, means skin, Enter/o means small intestine, and Hepat/o means liver."
       },
       {
         "id": "MT10904",
@@ -1655,7 +1655,7 @@
           "Poison"
         ],
         "correct": 0,
-        "explain": "Cutane/o means skin, so in cutaneous it is the skin element. The suffix -ous begins with a vowel, so the combining vowel is dropped and the written word is cutane + ous, still from Cutane/o. Hard is Scler/o, cell is Cyt/o, and poison is Tox/o or Toxic/o."
+        "explain": "Cutane/o, like Derm/o and Dermat/o, means skin, so in cutaneous it is the skin element. The suffix -ous begins with a vowel, so the combining vowel is dropped and the written word is cutane + ous, still from Cutane/o. Hard is Scler/o, cell is Cyt/o, and poison is Tox/o or Toxic/o."
       },
       {
         "id": "MT10983",

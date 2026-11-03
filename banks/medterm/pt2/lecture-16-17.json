@@ -412,14 +412,9 @@
         "type": "mcq",
         "cat": "MT_lec16-17",
         "q": "Which combining form means air or lung, not lung alone?",
-        "options": [
-          "Pulmon/o",
-          "Pleur/o",
-          "Pneum/o",
-          "Alveol/o"
-        ],
+        "options": ["Pulmon/o", "Pleur/o", "Pneum/o", "Alveol/o"],
         "correct": 2,
-        "explain": "Pneum/o means air or lung. Pulmon/o means lung only, Pleur/o names the membrane around the lung, and Alveol/o names the air sac."
+        "explain": "Pneum/o, like Pneumon/o, means air or lung. Pulmon/o means lung only, Pleur/o names the membrane around the lung, and Alveol/o names the air sac."
       },
       {
         "id": "MT16024",
@@ -496,14 +491,9 @@
         "type": "mcq",
         "cat": "MT_lec16-17",
         "q": "What does the combining form Pulmon/o mean?",
-        "options": [
-          "Air or lung",
-          "Lung",
-          "Lung membrane",
-          "Lung air sac"
-        ],
+        "options": ["Air or lung", "Lung", "Lung membrane", "Lung air sac"],
         "correct": 1,
-        "explain": "Pulmon/o means lung. Air or lung is pneum/o, the lung membrane is pleur/o, and the air sac is alveol/o."
+        "explain": "Pulmon/o means lung. Air or lung is pneum/o or pneumon/o, the lung membrane is pleur/o, and the air sac is alveol/o."
       },
       {
         "id": "MT16030",
@@ -811,7 +801,7 @@
           "A disease condition of a lung"
         ],
         "correct": 1,
-        "explain": "Pneumonectomy is built from Pneumon/o (lung) and -ectomy (surgical removal), so it denotes the surgical removal of a lung. Incision would use -tomy. Inflammation would use -itis. Disease would use -pathy."
+        "explain": "Pneumonectomy is built from Pneumon/o (air or lung, like Pneum/o) and -ectomy (surgical removal), so it denotes the surgical removal of a lung. Incision would use -tomy. Inflammation would use -itis. Disease would use -pathy."
       },
       {
         "id": "MT16053",
@@ -998,66 +988,23 @@
         "cat": "MT_lec16-17",
         "q": "Match each respiratory combining form to the gas, process, or membrane it denotes.",
         "leftItems": [
-          {
-            "id": "1",
-            "text": "Capn/o, Carb/o"
-          },
-          {
-            "id": "2",
-            "text": "Ox/o, Ox/i"
-          },
-          {
-            "id": "3",
-            "text": "Spir/o and -pnea"
-          },
-          {
-            "id": "4",
-            "text": "Pneum/o, Pneumon/o"
-          },
-          {
-            "id": "5",
-            "text": "Pulmon/o"
-          },
-          {
-            "id": "6",
-            "text": "Pleur/o"
-          }
+          { "id": "1", "text": "Capn/o, Carb/o" },
+          { "id": "2", "text": "Ox/o, Ox/i" },
+          { "id": "3", "text": "Spir/o and -pnea" },
+          { "id": "4", "text": "Pneum/o, Pneumon/o" },
+          { "id": "5", "text": "Pulmon/o" },
+          { "id": "6", "text": "Pleur/o" }
         ],
         "rightItems": [
-          {
-            "id": "A",
-            "text": "Gas breathed in to blood"
-          },
-          {
-            "id": "B",
-            "text": "Waste gas breathed out"
-          },
-          {
-            "id": "C",
-            "text": "Membrane around lung, lining chest"
-          },
-          {
-            "id": "D",
-            "text": "Moving air in and out"
-          },
-          {
-            "id": "E",
-            "text": "Air or lung"
-          },
-          {
-            "id": "F",
-            "text": "Lung"
-          }
+          { "id": "A", "text": "Gas breathed in to blood" },
+          { "id": "B", "text": "Waste gas breathed out" },
+          { "id": "C", "text": "Membrane around lung, lining chest" },
+          { "id": "D", "text": "Moving air in and out" },
+          { "id": "E", "text": "Air or lung" },
+          { "id": "F", "text": "Lung" }
         ],
-        "correct_pairs": {
-          "1": "B",
-          "2": "A",
-          "3": "D",
-          "4": "E",
-          "5": "F",
-          "6": "C"
-        },
-        "explain": "Capn/o and Carb/o mean carbon dioxide, the waste gas exhaled. Ox/o and Ox/i mean oxygen. Spir/o and -pnea mean breathing. Pneum/o means air or lung, Pulmon/o lung, and Pleur/o the pleura."
+        "correct_pairs": { "1": "B", "2": "A", "3": "D", "4": "E", "5": "F", "6": "C" },
+        "explain": "Capn/o and Carb/o mean carbon dioxide, the waste gas exhaled. Ox/o and Ox/i mean oxygen. Spir/o and -pnea mean breathing. Pneum/o, like Pneumon/o, means air or lung, Pulmon/o lung, and Pleur/o the pleura."
       },
       {
         "id": "MT16063",

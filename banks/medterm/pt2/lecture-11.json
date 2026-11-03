@@ -228,7 +228,7 @@
           "Spondyl/o and Vertebr/o"
         ],
         "correct": 0,
-        "explain": "Arthr/o and Articul/o both mean joint, as in arthrodynia and articulus. Chondr/o means cartilage and Oste/o means bone; My/o and Muscul/o mean muscle; Spondyl/o and Vertebr/o mean vertebra."
+        "explain": "Arthr/o and Articul/o both mean joint, as in arthrodynia and articulus. Chondr/o means cartilage and Oste/o means bone; My/o and Muscul/o, like Myos/o, mean muscle; Spondyl/o and Vertebr/o mean vertebra."
       },
       {
         "id": "MT11023",
@@ -242,7 +242,7 @@
           "Oste/o"
         ],
         "correct": 1,
-        "explain": "Chondr/o means cartilage or gristle, as in chondromalacia. Arthr/o means joint, Myel/o means bone marrow or spinal cord, and Oste/o means bone."
+        "explain": "Chondr/o means cartilage or gristle, as in chondromalacia. Arthr/o, like Articul/o, means joint, Myel/o means bone marrow or spinal cord, and Oste/o means bone."
       },
       {
         "id": "MT11024",
@@ -972,7 +972,7 @@
           "5": "C",
           "6": "E"
         },
-        "explain": "Myel/o means bone marrow or the spinal cord, as in myeloma and leukomyelopathy. Spondyl/o and Vertebr/o both mean vertebra, as in spondylosis and vertebroplasty. Ten/o, Tend/o, and Tendin/o all mean tendon, as in tenotomy and tendinitis. Thorac/o and Thoracic/o mean chest, as in thoracolumbar and thoracicoabdominal. Orth/o means straight, as in orthopedic. Patell/o means the kneecap, or patella."
+        "explain": "Myel/o means bone marrow or the spinal cord, as in myeloma and leukomyelopathy. Spondyl/o and Vertebr/o both mean vertebra, as in spondylosis and vertebroplasty. Ten/o, Tend/o, and Tendin/o all mean tendon, as in tenotomy and tendinitis. Thorac/o and Thoracic/o, like Pector/o and Steth/o, mean chest, as in thoracolumbar and thoracicoabdominal. Orth/o means straight, as in orthopedic. Patell/o means the kneecap, or patella."
       },
       {
         "id": "MT11061",
@@ -1852,7 +1852,7 @@
             ]
           }
         ],
-        "explain": "Patella is the sesamoid bone of the knee, a round bone embedded in the quadriceps tendon, in the appendicular skeleton, and its combining form is Patell/o. It is not a long, short, or flat bone. It is not axial. The thigh is the femur, the shin is the tibia, and the ankle bones are the tarsals. Femor/o means femur, Tibi/o means tibia, and Pelv/o means pelvis.",
+        "explain": "Patella is the sesamoid bone of the knee, a round bone embedded in the quadriceps tendon, in the appendicular skeleton, and its combining form is Patell/o. It is not a long, short, or flat bone. It is not axial. The thigh is the femur, the shin is the tibia, and the ankle bones are the tarsals. Femor/o means femur, Tibi/o means tibia, and Pelv/o, like Pelv/i, means pelvis.",
         "image": "banks/medterm/img/bones/bone-mt11085.png",
         "alt": "Front and side views of the knee joint, with the small bone at the front of the knee, sitting over the end of the thigh bone, highlighted in red.",
         "credit": "Knee image: Patrick J. Lynch · CC BY 2.5 (recoloured)",
@@ -1919,7 +1919,7 @@
             ]
           }
         ],
-        "explain": "Sternum is the flat breastbone of the chest, in the axial skeleton, and its combining form is Stern/o. It is not a long, short, or irregular bone. It is not appendicular. The U-shaped bone at the base of the tongue is the hyoid, the shoulder blade is the scapula, and the lower back is the lumbar region. Cost/o means rib, Thorac/o means chest, and Crani/o means skull.",
+        "explain": "Sternum is the flat breastbone of the chest, in the axial skeleton, and its combining form is Stern/o. It is not a long, short, or irregular bone. It is not appendicular. The U-shaped bone at the base of the tongue is the hyoid, the shoulder blade is the scapula, and the lower back is the lumbar region. Cost/o means rib, Thorac/o, like Thoracic/o, Pector/o, and Steth/o, means chest, and Crani/o means skull.",
         "image": "banks/medterm/img/bones/bone-mt11086.png",
         "alt": "Front view of the chest skeleton with the flat vertical bone in the middle of the front of the chest highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",

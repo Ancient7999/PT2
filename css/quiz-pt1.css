@@ -786,3 +786,10 @@ html.pt2-phone .pt1q #quizScreen .kbd-hint{display:none}
 html.pt2-phone .pt1q #quizScreen{touch-action:pan-y pinch-zoom}
 /* phones: room under the run so the explanation (and the last choices) can scroll clear of the fixed timer dock */
 html.pt2-phone #quizView{padding-bottom:calc(140px + env(safe-area-inset-bottom,0px))}
+
+/* set cards: the run's timer + progress bar */
+.pt1q .card .card-progress{display:flex;align-items:center;gap:10px;margin-top:10px}
+.pt1q .card .card-timer{font-family:var(--mono);font-size:.82rem;font-weight:600;color:var(--accent-1);letter-spacing:.02em;min-width:3.4em;opacity:.85}
+.pt1q .card .card-timer.live{opacity:1}
+.pt1q .card .card-progress .track{display:block;min-width:0;height:5px}
+.pt1q .card .card-progress .track-fill{display:block}

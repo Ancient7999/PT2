@@ -29,7 +29,7 @@
           { "id": "F", "text": "Narrow" }
         ],
         "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
-        "explain": "Tox/o means poison; Lith/o means stone; Orth/o means straight, normal, or correct; Phag/o means eat or swallow; Gynec/o means woman; Sten/o means narrow."
+        "explain": "Tox/o, like Toxic/o, means poison; Lith/o means stone; Orth/o means straight, normal, or correct; Phag/o means eat or swallow; Gynec/o means woman; Sten/o means narrow."
       },
       {
         "id": "MT09002",
@@ -53,7 +53,7 @@
           { "id": "F", "text": "Pressure wave perceived by the ear" }
         ],
         "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
-        "explain": "Gingiv/o means gums; Cost/o means rib; Lumb/o means loin or lower back; Radi/o means radius; Tendin/o means tendon; Son/o means sound."
+        "explain": "Gingiv/o means gums; Cost/o means rib; Lumb/o means loin or lower back; Radi/o means radius; Tendin/o, like Ten/o and Tend/o, means tendon; Son/o means sound."
       },
       {
         "id": "MT09003",
@@ -77,7 +77,7 @@
           { "id": "F", "text": "Skull air space" }
         ],
         "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
-        "explain": "Coron/o means circle or crown; Ather/o means fatty or lipid paste; Ventricul/o means lower heart chamber; Thym/o means thymus; Hemat/o means blood; Sinus/o means a skull air space."
+        "explain": "Coron/o means circle or crown; Ather/o means fatty or lipid paste; Ventricul/o means lower heart chamber; Thym/o, like Thym/i, means thymus; Hemat/o, like Hem/o, means blood; Sinus/o means a skull air space."
       },
       {
         "id": "MT09004",
@@ -101,7 +101,7 @@
           { "id": "F", "text": "Breathing" }
         ],
         "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
-        "explain": "Rhin/o means nose; Palat/o means palate; Uvul/o means uvula; Capn/o means carbon dioxide; Ox/i means oxygen; Spir/o means breathing."
+        "explain": "Rhin/o, like Nas/o, means nose; Palat/o means palate; Uvul/o means uvula; Capn/o, like Carb/o, means carbon dioxide; Ox/i, like Ox/o, means oxygen; Spir/o means breathing."
       },
       {
         "id": "MT09005",
@@ -155,7 +155,7 @@
         "q": "Which combining form means lung only?",
         "answer": "Pulmon/o",
         "accept": [],
-        "explain": "Pulmon/o means lung. Pneum/o means air or lung, not lung only."
+        "explain": "Pulmon/o means lung. Pneum/o, like Pneumon/o, means air or lung, not lung only."
       },
       {
         "id": "MT09011",
@@ -203,7 +203,7 @@
           { "id": "F", "text": "Abnormally dilated blood channel" }
         ],
         "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
-        "explain": "Pharyng/o means throat; Laryng/o means voice box; Ven/o means vein; Fasci/o means a band of connective tissue; Ton/o means tone or tension; Varic/o means a swollen or twisted vein."
+        "explain": "Pharyng/o means throat; Laryng/o means voice box; Ven/o, like Phleb/o, means vein; Fasci/o means a band of connective tissue; Ton/o means tone or tension; Varic/o means a swollen or twisted vein."
       },
       {
         "id": "MT09013",
@@ -227,7 +227,7 @@
           { "id": "F", "text": "Cord attaching muscle to bone" }
         ],
         "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
-        "explain": "Stern/o means sternum; Vertebr/o means vertebra; Fibr/o means fiber; Aden/o means gland; Crani/o means skull; Ten/o means tendon."
+        "explain": "Stern/o means sternum; Vertebr/o, like Spondyl/o, means vertebra; Fibr/o means fiber; Aden/o means gland; Crani/o means skull; Ten/o, like Tend/o and Tendin/o, means tendon."
       },
       {
         "id": "MT09014",
@@ -251,7 +251,7 @@
           { "id": "F", "text": "Gristle" }
         ],
         "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
-        "explain": "Or/o means mouth; Tonsill/o means tonsil; Pector/o means chest; Myel/o means bone marrow or spinal cord; Oste/o means bone; Chondr/o means cartilage."
+        "explain": "Or/o means mouth; Tonsill/o means tonsil; Pector/o, like Thorac/o, Thoracic/o, and Steth/o, means chest; Myel/o means bone marrow or spinal cord; Oste/o means bone; Chondr/o means cartilage."
       },
       {
         "id": "MT09015",
@@ -268,14 +268,14 @@
         ],
         "rightItems": [
           { "id": "A", "text": "Blood" },
-          { "id": "B", "text": "Hue" },
+          { "id": "B", "text": "Color" },
           { "id": "C", "text": "Respiratory organ" },
           { "id": "D", "text": "Primary airway at the tracheal split" },
           { "id": "E", "text": "Gas taken into the blood" },
           { "id": "F", "text": "Atmosphere" }
         ],
         "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
-        "explain": "Hem/o means blood; Chrom/o means color; Pneumon/o means lung; Bronch/o means bronchus; Ox/o means oxygen; Aer/o means air."
+        "explain": "Hem/o, like Hemat/o, means blood; Chrom/o, like Chromat/o, means color; Pneumon/o, like Pneum/o, means air or lung; Bronch/o, like Bronchi/o, means bronchus; Ox/o, like Ox/i, means oxygen; Aer/o means air."
       },
       {
         "id": "MT09016",
@@ -344,10 +344,14 @@
         "id": "MT09023",
         "type": "saq",
         "cat": "MT_mixed_lec9-17",
-        "q": "Which combining form means muscle?",
-        "answer": "My/o",
-        "accept": [],
-        "explain": "My/o means muscle, as in myoma."
+        "q": "The three combining forms that mean muscle are __________, __________, and __________.",
+        "explain": "My/o, Myos/o, and Muscul/o all mean muscle, as in myoma, myositis, and muscular.",
+        "answers": [
+          ["My/o"],
+          ["Myos/o"],
+          ["Muscul/o"]
+        ],
+        "anyOrder": true
       },
       {
         "id": "MT09024",
@@ -524,7 +528,7 @@
           { "id": "F", "text": "Feeling" }
         ],
         "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
-        "explain": "Derm/o means skin; Esophag/o means esophagus; Gastr/o means stomach; Hepat/o means liver; Carcin/o means cancer; Esthesi/o means sensation."
+        "explain": "Derm/o, like Dermat/o and Cutane/o, means skin; Esophag/o means esophagus; Gastr/o means stomach; Hepat/o means liver; Carcin/o means cancer; Esthesi/o means sensation."
       },
       {
         "id": "MT09042",
@@ -548,7 +552,7 @@
           { "id": "F", "text": "Clot" }
         ],
         "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
-        "explain": "Vas/o means vessel; Aort/o means aorta; Cardi/o means heart; Steth/o means chest; Phleb/o means vein; Thromb/o means clot."
+        "explain": "Vas/o, like Angi/o and Vascul/o, means vessel; Aort/o means aorta; Cardi/o means heart; Steth/o, like Thorac/o, Thoracic/o, and Pector/o, means chest; Phleb/o, like Ven/o, means vein; Thromb/o means clot."
       },
       {
         "id": "MT09043",
@@ -569,10 +573,10 @@
           { "id": "C", "text": "Lung section" },
           { "id": "D", "text": "Air or lung" },
           { "id": "E", "text": "Waste gas" },
-          { "id": "F", "text": "Hue" }
+          { "id": "F", "text": "Color" }
         ],
         "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
-        "explain": "Alveol/o means air sac; Bronchiol/o means bronchiole; Lob/o means lobe; Pneum/o means air or lung; Carb/o means carbon dioxide; Chromat/o means color."
+        "explain": "Alveol/o means air sac; Bronchiol/o means bronchiole; Lob/o means lobe; Pneum/o, like Pneumon/o, means air or lung; Carb/o, like Capn/o, means carbon dioxide; Chromat/o, like Chrom/o, means color."
       },
       {
         "id": "MT09044",
@@ -596,7 +600,7 @@
           { "id": "F", "text": "Flesh that contracts" }
         ],
         "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
-        "explain": "Sarc/o means flesh; Femor/o means femur; Pelv/o means pelvis; Uln/o means ulna; Thorac/o means chest; Muscul/o means muscle."
+        "explain": "Sarc/o means flesh; Femor/o means femur; Pelv/o, like Pelv/i, means pelvis; Uln/o means ulna; Thorac/o, like Thoracic/o, Pector/o, and Steth/o, means chest; Muscul/o, like My/o and Myos/o, means muscle."
       },
       {
         "id": "MT09045",
@@ -620,7 +624,7 @@
           { "id": "F", "text": "Cord to bone" }
         ],
         "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F" },
-        "explain": "Dermat/o means skin; Ped/o means child or foot; Dent/o means tooth; Toxic/o means poison; Articul/o means joint; Tend/o means tendon."
+        "explain": "Dermat/o, like Derm/o and Cutane/o, means skin; Ped/o means child or foot; Dent/o, like Dent/i and Odont/o, means tooth; Toxic/o, like Tox/o, means poison; Articul/o, like Arthr/o, means joint; Tend/o, like Ten/o and Tendin/o, means tendon."
       },
       {
         "id": "MT09046",
@@ -1100,10 +1104,10 @@
         "id": "MT09097",
         "type": "saq",
         "cat": "MT_mixed_lec9-17",
-        "q": "Which combining form means fatty or lipid paste?",
+        "q": "Besides Lip/o and Lipid/o, which mean fat, which combining form means fatty or lipid paste?",
         "answer": "Ather/o",
         "accept": [],
-        "explain": "Ather/o means fatty or lipid paste, as in atherosclerosis."
+        "explain": "Ather/o means fatty or lipid paste, the plaque in atherosclerosis and atherectomy, while Lip/o and Lipid/o mean fat in general."
       },
       {
         "id": "MT09098",
@@ -1334,10 +1338,13 @@
         "id": "MT09123",
         "type": "saq",
         "cat": "MT_mixed_lec9-17",
-        "q": "Which combining form means air or lung?",
-        "answer": "Pneum/o",
-        "accept": [],
-        "explain": "Pneum/o means air or lung, as in pneumonectomy."
+        "q": "The two combining forms that mean air or lung are __________ and __________.",
+        "explain": "Pneum/o and Pneumon/o both mean air or lung, as in pneumothorax and pneumonectomy; Pulmon/o means lung only.",
+        "answers": [
+          ["Pneum/o"],
+          ["Pneumon/o"]
+        ],
+        "anyOrder": true
       },
       {
         "id": "MT09124",
@@ -1346,7 +1353,7 @@
         "q": "Besides Pulmon/o and Pneum/o, which combining form means lung?",
         "answer": "Pneumon/o",
         "accept": [],
-        "explain": "Pneumon/o means lung. Pulmon/o and Pneum/o are the other lung forms."
+        "explain": "Pneumon/o, like Pneum/o, means air or lung, and so names the lung in pneumonectomy. Pulmon/o is the form that means lung only."
       },
       {
         "id": "MT09125",
@@ -1586,15 +1593,12 @@
           { "id": "1", "text": "Atherectomy" },
           { "id": "2", "text": "Atrioventricular" },
           { "id": "3", "text": "Cardioangiology" },
-          { "id": "4", "text": "Coronary Artery" },
-          { "id": "5", "text": "Coronary Vein" },
           { "id": "6", "text": "Myocardial" },
           { "id": "7", "text": "Pectoral" },
           { "id": "8", "text": "Stethoscope" },
           { "id": "9", "text": "Sphygmomanometer" },
           { "id": "10", "text": "Thrombosis" },
-          { "id": "11", "text": "Venosclerosis" },
-          { "id": "12", "text": "Varicose veins" }
+          { "id": "11", "text": "Venosclerosis" }
         ],
         "rightItems": [
           { "id": "A", "text": "R+S" },
@@ -1602,21 +1606,8 @@
           { "id": "C", "text": "CF+CF+S" },
           { "id": "D", "text": "CF+S" }
         ],
-        "correct_pairs": {
-          "1": "A",
-          "2": "B",
-          "3": "C",
-          "4": "A",
-          "5": "A",
-          "6": "B",
-          "7": "A",
-          "8": "D",
-          "9": "C",
-          "10": "A",
-          "11": "B",
-          "12": "A"
-        },
-        "explain": "Atherectomy, Coronary Artery, Coronary Vein, Pectoral, Thrombosis, and Varicose veins are R+S; Atrioventricular, Myocardial, and Venosclerosis are CF+R+S; Cardioangiology and Sphygmomanometer are CF+CF+S; Stethoscope is CF+S."
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "6": "B", "7": "A", "8": "D", "9": "C", "10": "A", "11": "B" },
+        "explain": "Atherectomy, Pectoral, and Thrombosis are R+S; Atrioventricular, Myocardial, and Venosclerosis are CF+R+S; Cardioangiology and Sphygmomanometer are CF+CF+S; Stethoscope is CF+S."
       },
       {
         "id": "MT09138",
@@ -1641,18 +1632,8 @@
           { "id": "D", "text": "P+R+S" },
           { "id": "E", "text": "CF+R" }
         ],
-        "correct_pairs": {
-          "1": "A",
-          "2": "B",
-          "3": "A",
-          "4": "C",
-          "5": "B",
-          "6": "A",
-          "7": "E",
-          "8": "B",
-          "9": "D"
-        },
-        "explain": "Ventriculoatriostomy, Hematocytopenia, and Immunopharmacology are CF+CF+S; Hemochromatosis, Thrombophlebitis, and Thymocyte are CF+R+S; Splenomegaly is CF+S; Athymism is P+R+S; Lymphoduct is CF+R."
+        "correct_pairs": { "1": "A", "2": "B", "3": "A", "4": "C", "5": "B", "6": "A", "7": "E", "8": "C", "9": "D" },
+        "explain": "Ventriculoatriostomy, Hematocytopenia, and Immunopharmacology are CF+CF+S; Hemochromatosis and Thrombophlebitis are CF+R+S; Splenomegaly and Thymocyte (Thym/o + -cyte) are CF+S; Athymism is P+R+S; Lymphoduct is CF+R."
       },
       {
         "id": "MT09139",
@@ -1936,23 +1917,14 @@
           { "id": "A", "text": "Coronary / Cardiac Care Unit" },
           { "id": "B", "text": "Emergency Care Unit" },
           { "id": "C", "text": "Intensive Care Unit" },
-          { "id": "D", "text": "In Patient" },
-          { "id": "E", "text": "Out Patient" },
+          { "id": "D", "text": "Inpatient" },
+          { "id": "E", "text": "Outpatient" },
           { "id": "F", "text": "Operating Room" },
           { "id": "G", "text": "Discharge, Discontinue" },
           { "id": "H", "text": "Blood Pressure" }
         ],
-        "correct_pairs": {
-          "1": "A",
-          "2": "B",
-          "3": "C",
-          "4": "D",
-          "5": "E",
-          "6": "F",
-          "7": "G",
-          "8": "H"
-        },
-        "explain": "CCU is Coronary / Cardiac Care Unit; ECU is Emergency Care Unit; ICU is Intensive Care Unit; IP is In Patient; OP is Out Patient; OR is Operating Room; DC or D/C is Discharge, Discontinue; BP is Blood Pressure."
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F", "7": "G", "8": "H" },
+        "explain": "CCU is Coronary / Cardiac Care Unit; ECU is Emergency Care Unit; ICU is Intensive Care Unit; IP is Inpatient; OP is Outpatient; OR is Operating Room; DC or D/C is Discharge, Discontinue; BP is Blood Pressure."
       },
       {
         "id": "MT09147",
@@ -2120,15 +2092,8 @@
           { "id": "D", "text": "Vertebra" },
           { "id": "E", "text": "Cord attaching muscle to bone" }
         ],
-        "correct_pairs": {
-          "1": "A",
-          "2": "B",
-          "3": "B",
-          "4": "C",
-          "5": "D",
-          "6": "E"
-        },
-        "explain": "Arthr/o means joint; My/o and Myos/o mean muscle; Pelv/i means hip bone or pelvic cavity; Spondyl/o means vertebra; Ten/o means tendon."
+        "correct_pairs": { "1": "A", "2": "B", "3": "B", "4": "C", "5": "D", "6": "E" },
+        "explain": "Arthr/o, like Articul/o, means joint; My/o and Myos/o, like Muscul/o, mean muscle; Pelv/i, like Pelv/o, means hip bone or pelvic cavity; Spondyl/o, like Vertebr/o, means vertebra; Ten/o, like Tend/o and Tendin/o, means tendon."
       },
       {
         "id": "MT09152",
@@ -2150,15 +2115,8 @@
           { "id": "D", "text": "Primary airway branching from the carina" },
           { "id": "E", "text": "Nose" }
         ],
-        "correct_pairs": {
-          "1": "A",
-          "2": "B",
-          "3": "B",
-          "4": "C",
-          "5": "D",
-          "6": "E"
-        },
-        "explain": "Thoracic/o means chest; Angi/o and Vascul/o mean vessel; Thym/i means thymus; Bronchi/o means bronchus; Nas/o means nose."
+        "correct_pairs": { "1": "A", "2": "B", "3": "B", "4": "C", "5": "D", "6": "E" },
+        "explain": "Thoracic/o, like Thorac/o, Pector/o, and Steth/o, means chest; Angi/o and Vascul/o, like Vas/o, mean vessel; Thym/i, like Thym/o, means thymus; Bronchi/o, like Bronch/o, means bronchus; Nas/o, like Rhin/o, means nose."
       },
       {
         "id": "MT09153",
@@ -2181,16 +2139,8 @@
           { "id": "D", "text": "Skull" },
           { "id": "E", "text": "Tooth" }
         ],
-        "correct_pairs": {
-          "1": "A",
-          "2": "B",
-          "3": "C",
-          "4": "D",
-          "5": "E",
-          "6": "E",
-          "7": "E"
-        },
-        "explain": "Pulmon/o means lung; Cutane/o means skin; Onc/o means tumor or mass; Crani/o means skull; Dent/o, Dent/i, and Odont/o all mean tooth."
+        "correct_pairs": { "1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "E", "7": "E" },
+        "explain": "Pulmon/o means lung; Cutane/o, like Derm/o and Dermat/o, means skin; Onc/o means tumor or mass; Crani/o means skull; Dent/o, Dent/i, and Odont/o all mean tooth."
       }
     ]
   }

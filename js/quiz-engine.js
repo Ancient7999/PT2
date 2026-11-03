@@ -734,7 +734,7 @@ function completeRun(){
   if(runCard && window.StudyStore){
     saveRunState({finished:true});
     const st=StudyStore.load(bankId());
-    st.cards[runCard.id]=Object.assign({}, st.cards[runCard.id]||{}, {score:s,total:n,done:true,at:Date.now()});
+    st.cards[runCard.id]=Object.assign({}, st.cards[runCard.id]||{}, {score:s,total:n,done:true,at:Date.now(),el:runElapsedSec()});
     StudyStore.save(bankId(), st);
   }
   try{ spawnFireworkBurst(W*.5,H*.3,36); }catch(e){}
@@ -798,7 +798,7 @@ function restoreRun(run){
     if(isSaq(q)){
       if(isSaqMulti(q)){
         if(a && typeof a==='object' && Array.isArray(a.parts)){
-          const parts=q.answers.map((_,k)=>{ const v=a.parts[k]; return v!=null && saqBlankResult(q,k,v) ? String(v) : null; });
+          const parts=[]; q.answers.forEach((_,k)=>{ const v=a.parts[k]; parts[k]=(v!=null && saqBlankResult(q,k,v,parts)) ? String(v) : null; });
           if(parts.some(x=>x!=null)) answers[i]={parts, correct:parts.every(x=>x!=null)};
         }
         return;
@@ -908,6 +908,18 @@ function appendSoonCard(grid, card){
   el.innerHTML=`<div class="card-top"><span class="form-letter">${escapeHtml(card.label)}</span></div>${cardBadgesHTML(card)}`; // nothing beyond the lecture numbers + badges
   grid.appendChild(el);
 }
+/* PORTAL: each set card shows the run's timer and progress bar (the run screen's timer line):
+   the time of the run in progress, else of the last finished run; the bar is solved / total. */
+function cardClock(sec){ sec=Math.max(0,sec|0); return String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0'); }
+function cardProgressHTML(pool, left, meta, run, simple){
+  const n=pool.length; if(!n) return '';
+  let done=n-left;
+  if(simple){ done=run&&run.ans?Object.keys(run.ans).filter(k=>run.ans[k]!=null).length:(meta.done?n:0); done=Math.min(n,done); }
+  const sec=run?(run.el|0):(meta.el|0);
+  const tip=run?'Time in this run so far':(meta.done&&meta.el!=null?'Time of the last finished run':'Not started');
+  const pct=Math.round(done/n*100);
+  return `<div class="card-progress" aria-label="${escapeHtml(tip+' · '+done+' of '+n+' solved')}"><span class="card-timer${run?' live':''}" title="${escapeHtml(tip)}">${cardClock(sec)}</span><span class="track" title="${done} / ${n} solved"><span class="track-fill" style="width:${pct}%"></span></span></div>`;
+}
 function appendPoolCard(grid, label, pool, card){
   cardCtx(card);
   const left=remainingOf(pool).length;
@@ -927,6 +939,7 @@ function appendPoolCard(grid, label, pool, card){
     :`<div class="card-pct">${left} left</div><div class="card-meta">${pool.length-left} solved / ${pool.length}</div>`;
   btn.innerHTML=`<div class="card-top"><span class="form-letter">${escapeHtml(label)}</span><span class="mood-stamp">${escapeHtml(meta.mood||'')}</span></div>${cardBadgesHTML(card)}
     <div class="card-sub">${sub2}</div>
+    ${cardProgressHTML(pool, left, meta, inProgress?run:null, simple)}
     ${stats?`<div class="card-stats">${stats}</div>`:''}`;
   if(left===0 && !simple) btn.style.opacity='.55';
   btn.addEventListener('click',()=>{
@@ -1611,9 +1624,30 @@ function submitSaq(k, o){
 }
 /* —— several blanks: one box per blank, in order. Enter or leaving a box grades that box; a right one locks and the
    focus moves to the next open blank; the question is solved when every blank is right. —— */
-function saqBlankResult(q, k, typed){
+function saqBlankResult(q, k, typed, parts){
   const cs=!!q.caseSensitive, t=saqNorm(typed); if(!t) return null;
+  if(q.anyOrder) return saqAnyOrderGroup(q, k, t, parts)>=0 ? t : null;
   return saqBlankAlts(q,k).some(a=>saqKey(a,cs)===saqKey(t,cs)) ? t : null;
+}
+/* "anyOrder": true — the blanks are a set (e.g. the three muscle forms): any blank takes any
+   answer group, but each group only once. Returns the group the text fills, or -1. */
+function saqAnyOrderUsed(q, k, parts){
+  const used=new Set(), cs=!!q.caseSensitive;
+  (parts||[]).forEach((p,j)=>{
+    if(j===k || p==null) return;
+    const g=q.answers.findIndex((_,gi)=>!used.has(gi) && saqBlankAlts(q,gi).some(a=>saqKey(a,cs)===saqKey(p,cs)));
+    if(g>=0) used.add(g);
+  });
+  return used;
+}
+function saqAnyOrderGroup(q, k, t, parts){
+  const used=saqAnyOrderUsed(q,k,parts), cs=!!q.caseSensitive;
+  return q.answers.findIndex((_,g)=>!used.has(g) && saqBlankAlts(q,g).some(a=>saqKey(a,cs)===saqKey(t,cs)));
+}
+function saqBlankHintAlts(q, j, parts){
+  if(!q.anyOrder) return saqBlankAlts(q,j);
+  const used=saqAnyOrderUsed(q,j,parts);
+  return q.answers.map((_,g)=>g).filter(g=>!used.has(g)).reduce((acc,g)=>acc.concat(saqBlankAlts(q,g)),[]);
 }
 function saqBlankContext(q, k){
   // the words just before the blank name it ("combining form", "meaning")
@@ -1682,10 +1716,10 @@ function submitSaqBlank(k, o){
   const check=j=>{
     const inp=inputs[j]; if(!inp || inp.disabled) return 'skip';
     const typed=inp.value; if(!saqNorm(typed)) return 'empty';
-    const r=saqBlankResult(q,j,typed);
+    const r=saqBlankResult(q,j,typed,a.parts);
     if(r){ lockPart(j,r); return 'ok'; }
     // the whole answer typed into one box ("Phleb/o vein"): fill this blank and the next one
-    if(j+1<q.answers.length && a.parts[j+1]==null){
+    if(!q.anyOrder && j+1<q.answers.length && a.parts[j+1]==null){
       const t=saqNorm(typed);
       for(const x of saqBlankAlts(q,j)) for(const y of saqBlankAlts(q,j+1)){
         for(const sep of [' ',', ',',',' meaning ',' - ',' – ']){ if(saqKey(x+sep+y,q.caseSensitive)===saqKey(t,q.caseSensitive)){ lockPart(j,saqNorm(x)); lockPart(j+1,saqNorm(y)); return 'ok'; } }
@@ -1706,7 +1740,8 @@ function submitSaqBlank(k, o){
   saveRunState();
   if(firstWrong){
     const j=firstWrong[0];
-    saqSoftWrong(inputs[j], (q.answers.length>1?'blank '+(j+1)+' · ':'')+saqHint({answer:saqBlankAlts(q,j), caseSensitive:q.caseSensitive}, inputs[j].value), o);
+    const dup=q.anyOrder && q.answers.some((_,g)=>saqBlankAlts(q,g).some(x=>saqKey(x,q.caseSensitive)===saqKey(inputs[j].value,q.caseSensitive)));
+    saqSoftWrong(inputs[j], (q.answers.length>1?'blank '+(j+1)+' · ':'')+(dup?'already entered · type another form':saqHint({answer:saqBlankHintAlts(q,j,a.parts), caseSensitive:q.caseSensitive}, inputs[j].value)), o);
     return;
   }
   if(res.some(r=>r[1]==='ok')){
@@ -3669,7 +3704,7 @@ function finishQuiz(){
   if(runCard && window.StudyStore){
     runComplete=true; saveRunState({finished:true});
     const st=StudyStore.load(bankId());
-    st.cards[runCard.id]=Object.assign({}, st.cards[runCard.id]||{}, {score:s,total:n,done:true,at:Date.now()});
+    st.cards[runCard.id]=Object.assign({}, st.cards[runCard.id]||{}, {score:s,total:n,done:true,at:Date.now(),el:runElapsedSec()});
     StudyStore.save(bankId(), st);
   }
   quizActive=false; spawnFireworkBurst(W*.5,H*.3,36);
