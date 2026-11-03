@@ -447,8 +447,3 @@
 /* the picture's leader lines and outlines are not focus targets (no browser focus ring on click); their label boxes are */
 #studyView .simg-regions,#studyView .simg-regions *{outline:none}
 
-/* picture study opened inside a question bank (sets view), PCs only: fit the picture in ~58% of the screen height so the
-   question, word bank and controls stay in view. Zoom (--lz) still scales up from here; phones and the stand-alone /
-   Anatomy picture study keep the rules above. */
-html:not(.pt2-phone) #studyView.simg-from-bank .simg-figure[style*="--ar"]:not(.single){width:calc(min(100%, 980px, 58vh * var(--ar)) * var(--lz,1));width:calc(min(100%, 980px, 58dvh * var(--ar)) * var(--lz,1))}
-html:not(.pt2-phone) #studyView.simg-from-bank .simg-figure.single[style*="--ar"]{max-width:calc(min(440px, 58vh * var(--ar)) * var(--lz,1));max-width:calc(min(440px, 58dvh * var(--ar)) * var(--lz,1))}
