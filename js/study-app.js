@@ -339,6 +339,9 @@
     backTo = opts.from || 'portalView';
     quizOpener = typeof opts.openQuiz === 'function' ? opts.openQuiz : null;
     currentMaterial = material; // remember for the Open Quiz button
+    // picture study opened from a question bank's sets (not the portal's stand-alone study, not Anatomy): smaller pictures on PCs
+    { const sv = document.getElementById('studyView');
+      if (sv) sv.classList.toggle('simg-from-bank', backTo === 'setsView' && !!study.images && !/^anatomy/.test(String((material && (material.id || material.subjectId)) || ''))); }
     const h = document.getElementById('studyTitle');
     if (h) h.textContent = study.title || 'Study Interface';
     const sub = document.getElementById('studySub');
