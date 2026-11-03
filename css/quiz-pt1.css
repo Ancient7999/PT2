@@ -584,6 +584,10 @@ html[data-pointer-input="touch"] .pt1q .multi-check-key{display:none}
 .label-stage{position:relative;overflow:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--border);background:#fff;max-width:100%;touch-action:pan-x pan-y pinch-zoom}
 .label-figure{position:relative;width:calc(100% * var(--lz,1));min-width:0;container-type:inline-size;user-select:none;-webkit-user-select:none}
 .label-figure .label-img{display:block;width:100%;height:auto;pointer-events:none}
+/* label questions in a quiz, PCs only: fit the whole picture in ~52% of the screen height (centred) so the question, picture and
+   word bank fit together. The stage keeps the picture's aspect ratio, so the % positioned slots and leaders stay aligned;
+   zoom (--lz) still scales the figure up inside the stage. Phones, Picture Study and Anatomy pages are not affected. */
+html:not(.pt2-phone) #quizView .label-wrap>.label-stage[style*="--ar"]{width:min(100%, 52vh * var(--ar));width:min(100%, 52dvh * var(--ar));margin-inline:auto}
 .label-leaders{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:0}
 .label-leader polyline,.label-leader line{fill:none;stroke:var(--accent-0);stroke-linejoin:round;stroke-width:0;stroke-linecap:round;vector-effect:non-scaling-stroke;opacity:0;transition:opacity .18s ease,stroke-width .18s ease}
 .label-leader.lit polyline,.label-leader.lit line{opacity:1;stroke-width:3px;filter:drop-shadow(0 0 3px var(--accent-0)) drop-shadow(0 0 6px rgba(var(--accent-0-rgb),.7))}

@@ -2009,6 +2009,10 @@ function renderLabel(q, ans){
   wrap.innerHTML=h;
   opts.appendChild(wrap);
   labelFitWire(wrap.querySelector('.label-figure'), q.labels);
+  // picture's aspect ratio on the stage, so PCs can fit the whole figure in the screen height (css: .label-stage[style*="--ar"])
+  { const im=wrap.querySelector('.label-img'), st=wrap.querySelector('.label-stage');
+    const setAr=()=>{ if(im && st && im.naturalWidth && im.naturalHeight) st.style.setProperty('--ar', (im.naturalWidth/im.naturalHeight).toFixed(4)); };
+    if(im){ if(im.complete) setAr(); else im.addEventListener('load', setAr, {once:true}); } }
   const mb=wrap.querySelector('#labelModeBtn');
   if(mb) mb.addEventListener('click',()=>{ labelTyping=!labelTyping; try{ localStorage.setItem('sp_label_mode_v1', labelTyping?'type':'drag'); }catch(e){} renderQuestion(); });
   wrap.querySelectorAll('.label-chip').forEach(chip=>{
