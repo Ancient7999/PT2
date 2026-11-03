@@ -97,7 +97,7 @@ function isSaqMulti(q){ return isSaq(q) && Array.isArray(q.answers) && q.answers
 const SAQ_BLANK_RE=/_{3,}/g;
 function saqBlankAlts(q,k){ const a=q.answers[k]; return (Array.isArray(a)?a:[a]).filter(x=>x!=null&&String(x).trim()!==''); }
 function saqNorm(s){ return String(s==null?'':s).trim().replace(/\s+/g,' '); }
-function saqKey(s, cs){ const t=saqNorm(s); return cs?t:t.toLowerCase(); }
+function saqKey(s, cs){ const t=saqNorm(s).replace(/[\u2018\u2019\u02BC\u0060\u00B4']/g,'').replace(/\s+/g,' ').trim(); return cs?t:t.toLowerCase(); }  /* apostrophes ignored: ' ’ or none all match */
 function saqAccepts(q){
   if(q && Array.isArray(q.answers)) return [q.answers.map((a,k)=>saqBlankAlts(q,k)[0]||'').join(', ')];
   const a=q&&q.answer; return (Array.isArray(a)?a:[a]).concat(Array.isArray(q&&q.accept)?q.accept:[]).filter(x=>x!=null&&String(x).trim()!=='');

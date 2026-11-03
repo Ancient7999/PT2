@@ -120,7 +120,7 @@
               "title": "Mixed Medical Terminology - Lectures 9 to 17",
               "bank": "banks/medterm/pt2/mixed-9-17.json",
               "status": "ready",
-              "draft": true
+              "draft": false
             }
           ],
           "studyKey": "medterm/pt2",
