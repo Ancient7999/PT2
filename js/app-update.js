@@ -82,7 +82,7 @@
   }
 
   /* —— new update notice —— */
-  var last = 0, shown = false, SRC = 'js/app-info.js';
+  var last = 0, shown = false, dismissed = '', SRC = 'js/app-info.js';
   function check() {
     if (shown || !g.fetch || g.location.protocol === 'file:') return;
     var now = Date.now(); if (now - last < 60000) return; last = now;
@@ -90,15 +90,17 @@
     g.fetch(SRC, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.text() : null; }).then(function (t) {
       if (!t) return;
       var v = (t.match(/version:\s*'([^']+)'/) || [])[1], d = (t.match(/date:\s*'([^']+)'/) || [])[1];
-      if (v && (v !== V || (d && d !== D))) showNotice();
+      if (v && (v !== V || (d && d !== D)) && (v + '|' + (d || '')) !== dismissed) showNotice(v + '|' + (d || ''));
     }).catch(function () {});
   }
-  function showNotice() {
+  function showNotice(key) {
     if (shown || !document.body) return; shown = true;
     var n = document.createElement('div'); n.className = 'pt2-upd'; n.id = 'pt2UpdateNotice'; n.setAttribute('role', 'status'); n.setAttribute('aria-live', 'polite');
-    n.innerHTML = '<div class="pt2-upd-card"><span class="pt2-upd-text">A new update is available.</span><button type="button" class="pt2-upd-btn">Update</button></div>';
+    n.innerHTML = '<div class="pt2-upd-card"><span class="pt2-upd-text">A new update is available.</span><span class="pt2-upd-acts"><button type="button" class="pt2-upd-btn pt2-upd-dismiss">Dismiss</button><button type="button" class="pt2-upd-btn pt2-upd-go">Update</button></span></div>';
     document.body.appendChild(n);
-    n.querySelector('.pt2-upd-btn').addEventListener('click', function () {
+    // Dismiss: hide it for this page session only; a newer version than the dismissed one shows it again
+    n.querySelector('.pt2-upd-dismiss').addEventListener('click', function () { dismissed = key || dismissed || '*'; shown = false; if (n.parentNode) n.parentNode.removeChild(n); });
+    n.querySelector('.pt2-upd-go').addEventListener('click', function () {
       this.disabled = true; this.textContent = 'Updating…';
       var here = g.location.href.split('#')[0];
       var go = function () { try { var u = new URL(g.location.href); u.searchParams.set('u', Date.now()); g.location.replace(u.toString()); } catch (e) { g.location.reload(); } };

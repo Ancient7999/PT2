@@ -42,6 +42,9 @@
 .pt2-upd-btn:hover{box-shadow:0 0 14px var(--mood-glow,rgba(var(--accent-0-rgb),.35))}
 .pt2-upd-btn:active{transform:scale(.97)}
 .pt2-upd-btn:disabled{opacity:.7;cursor:default}
+.pt2-upd-acts{display:flex;gap:6px;flex-shrink:0}
+.pt2-upd-btn.pt2-upd-dismiss{min-width:0;background:transparent;border-color:rgba(var(--accent-0-rgb),.35);color:var(--text,#e5e7eb);-webkit-text-fill-color:var(--text,#e5e7eb);font-weight:600;opacity:.85}
+.pt2-upd-btn.pt2-upd-dismiss:hover{opacity:1;box-shadow:none;background:rgba(var(--accent-0-rgb),.12)}
 @keyframes pt2UpdIn{from{opacity:0;transform:translate(-50%,-12px)}to{opacity:1;transform:translate(-50%,0)}}
 @media (max-width:420px){.pt2-upd-text{white-space:normal}}
 @media (prefers-reduced-motion:reduce){.pt2-upd{animation:none}}
