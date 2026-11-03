@@ -6,6 +6,21 @@
 var APP_INFO = {
   releases: [
     {
+      version: '0.28',
+      date: '03/11/2026',
+      changes: [
+        'Medical Physics now covers Chapters 3 to 6. Chapter 7 has been removed, including its formulas and its Mixed Chapters questions.',
+        'On phones, you can swipe left or right to change questions, and a question counter replaces the navigation buttons.',
+        'On phones, the auto-next bar is gone, and the page now scrolls to keep the question, its explanation and the keyboard in view.',
+        'Each set card now shows its timer and progress bar.',
+        'Stepped questions expand smoothly, and tapping a locked step takes you to the last unlocked one.',
+        'Pictures in quiz questions are smaller on PCs.',
+        'Typed answers now ignore apostrophes.',
+        'Changes to the Mixed section of Medical Terminology, which is now finalized.',
+        'The update notice now has a Dismiss button.'
+      ]
+    },
+    {
       version: '0.27',
       date: '01/11/2026',
       changes: [
