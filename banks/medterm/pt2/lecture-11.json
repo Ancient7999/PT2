@@ -1975,7 +1975,7 @@
             ]
           }
         ],
-        "explain": "Scapula is the flat shoulder blade, in the appendicular skeleton as part of the pectoral girdle. It is not a long, short, or irregular bone. It is not axial. The breastbone is the sternum, the hip bone is the pelvis, and the skull is the cranium.",
+        "explain": "Scapula is the flat shoulder blade, in the appendicular skeleton as part of the pectoral girdle. It is not a long, short, or irregular bone. It is not axial. The breastbone is the sternum, the hip bone is part of the pelvis, and the skull is the cranium.",
         "image": "banks/medterm/img/bones/bone-mt11087.png",
         "alt": "Front view of the upper body skeleton with the flat triangular bone at the back of each shoulder, seen behind the rib cage, highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -2071,10 +2071,12 @@
             "id": "3",
             "prompt": "Which skeleton does the Pelvis belong to?",
             "options": [
-              "Axial skeleton",
-              "Appendicular skeleton"
+              "Axial skeleton only",
+              "Appendicular skeleton only",
+              "Both: hip bones appendicular, sacrum and coccyx axial",
+              "Both: hip bones axial, sacrum and coccyx appendicular"
             ],
-            "correct": 1
+            "correct": 2
           },
           {
             "id": "4",
@@ -2107,7 +2109,7 @@
             "accept": []
           }
         ],
-        "explain": "The Pelvis is a ring of bones at the hip: the two hip bones (each fused from the ilium, ischium and pubis), the sacrum and the coccyx, and each of them is an irregular bone. It forms the pelvic girdle, which is appendicular, and its combining form is Pelv/o. None of them is a long, short, or flat bone. It is not axial. The shoulder girdle is pectoral, the chest wall is the thoracic cage, and the skull is cranial. Femor/o means femur, Cost/o means rib, and Lumb/o means loin.",
+        "explain": "The Pelvis is a ring of bones at the hip: the two hip bones (each fused from the ilium, ischium and pubis), the sacrum and the coccyx, and each of them is an irregular bone. It spans both skeletons: the two hip bones form the pelvic girdle of the appendicular skeleton, while the sacrum and coccyx are the end of the vertebral column in the axial skeleton. Its combining form is Pelv/o. None of them is a long, short, or flat bone. The shoulder girdle is pectoral, the chest wall is the thoracic cage, and the skull is cranial. Femor/o means femur, Cost/o means rib, and Lumb/o means loin.",
         "image": "banks/medterm/img/bones/bone-mt11089.png",
         "alt": "Front view of the skeleton with the basin-shaped ring of bones at the hips highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
