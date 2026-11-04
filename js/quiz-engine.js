@@ -2656,6 +2656,10 @@ function wireColorHex(value){
   }
   return '';
 }
+/* Drawing Lines (pt2-lines.js, unlocked at 240 solved): with colour rotation on, each new line takes the next palette
+   colour; peek = the colour of the stroke being drawn, take = commit it and move the rotation on. Off: the accent colour. */
+function peekWireColor(){ try{ if(window.PT2Lines && PT2Lines.on()){ const c=wireColorHex(PT2Lines.peek()); if(c) return c; } }catch(e){} return currentWireColor(); }
+function takeWireColor(){ const c=peekWireColor(); try{ if(window.PT2Lines && PT2Lines.on()) PT2Lines.advance(); }catch(e){} return c; }
 function currentWireColor(){
   // ADAPT: accent vars live on .pt1q containers in the portal (see quiz-accent-bridge.js)
   const cs=getComputedStyle(document.querySelector('.pt1q')||document.documentElement);
@@ -2765,7 +2769,7 @@ function paintWires(_ignored,wires,live){
   wctx.setTransform(dpr,0,0,dpr,0,0);
   wctx.clearRect(0,0,boxW,boxH);
   wctx.translate(r.left,r.top);
-  const ink=currentWireColor();
+  const ink=peekWireColor(), base=currentWireColor();
   wctx.globalCompositeOperation='source-over';
   wctx.globalAlpha=1;
   wctx.lineWidth=WIRE_STROKE;
@@ -2775,7 +2779,7 @@ function paintWires(_ignored,wires,live){
   // Each committed wire owns an absolute color. Only legacy wires without a
   // color are migrated here; existing colors are never replaced on redraw.
   (wires||[]).forEach(w=>{
-    const color=wireColorHex(w&&w.color) || ink;
+    const color=wireColorHex(w&&w.color) || base;
     if(w && w.color!==color) w.color=color;
     wctx.strokeStyle=color;
     wctx.fillStyle=color;
@@ -3186,7 +3190,7 @@ function onDrawUp(ev){
       const pts=drawState.points.map(pt=>({x:pt.x,y:pt.y}));
       cur.wires=cur.wires.filter(w=>w.loose || w.leftId!==leftId);
       cur.pairs[leftId]=rightId;
-      const wire={leftId,rightId,points:pts,color:currentWireColor()};
+      const wire={leftId,rightId,points:pts,color:takeWireColor()};
       tagWireAnchors(wire, src, hit);
       cur.wires.push(wire);
       cur.checked=false;
@@ -3212,7 +3216,7 @@ function onDrawUp(ev){
       // Wrong target: keep the unfinished stroke, but do not store a pair or glow.
       if(drawState.points.length){
         const pts=drawState.points.map(pt=>({x:pt.x,y:pt.y}));
-        const loose={points:pts,loose:true,color:currentWireColor()};
+        const loose={points:pts,loose:true,color:takeWireColor()};
         if(drawState.side==='L') loose.leftId=drawState.id;
         else loose.rightId=drawState.id;
         tagWireAnchors(loose, src, null);
@@ -3224,7 +3228,7 @@ function onDrawUp(ev){
     }
   } else if(drawState.points.length){
     const pts=drawState.points.map(pt=>({x:pt.x,y:pt.y}));
-    const loose={points:pts,loose:true,color:currentWireColor()};
+    const loose={points:pts,loose:true,color:takeWireColor()};
     if(drawState.side==='L') loose.leftId=drawState.id;
     else loose.rightId=drawState.id;
     tagWireAnchors(loose, src, null);
@@ -3363,7 +3367,7 @@ function rebuildMissingWires(q, ans){
     if(!a||!b) return;
     const pts=[{x:a.x,y:a.y}];
     spreadSnapAnchors(R, pts, ans.wires, lid);
-    const w={leftId:lid,rightId:rid,points:pts,color:currentWireColor()};
+    const w={leftId:lid,rightId:rid,points:pts,color:takeWireColor()};
     tagWireAnchors(w, L, R);
     ans.wires.push(w);
   });

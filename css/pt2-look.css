@@ -133,3 +133,14 @@ html.pt2-fx .pt1q .kb-advance .formula-advance-track::before{content:'';position
 @keyframes pt2BarShine{from{left:-60%}to{left:120%}}
 @keyframes pt2BarTwinkle{0%{opacity:.25}50%{opacity:1}100%{opacity:.25}}
 @media (prefers-reduced-motion:reduce){html.pt2-fx .pt1q .kb-advance .formula-advance-fill,html.pt2-fx .pt1q .kb-advance .formula-advance-track::after,html.pt2-fx .pt1q .kb-advance .formula-advance-track::before{animation:none}html.pt2-fx .pt1q .kb-advance .formula-advance-track::after{display:none}}
+/* Settings → Drawing Lines (pt2-lines.js) */
+.pt2-ln-list{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.pt2-ln-pal{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--col-border-light,rgba(255,255,255,.12));background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.pt2-ln-pal:hover{border-color:var(--accent-0)}
+.pt2-ln-pal[aria-pressed="true"]{border-color:var(--accent-0);box-shadow:0 0 0 1px var(--accent-0) inset;background:rgba(var(--accent-0-rgb),.08)}
+.pt2-ln-name{display:flex;flex-direction:column;gap:2px;font-weight:600;font-size:.9rem}
+.pt2-ln-hint{font-weight:400;font-size:.75rem;opacity:.7}
+.pt2-ln-sws{display:flex;gap:5px;flex-shrink:0}
+.pt2-ln-sw{width:18px;height:18px;border-radius:50%;box-shadow:0 0 0 1px rgba(0,0,0,.18)}
+#settings-panel-lines.pt2-ln-off .pt2-ln-pals{opacity:.5}
+@media (max-width:480px){.pt2-ln-sw{width:14px;height:14px}.pt2-ln-sws{gap:3px}}
