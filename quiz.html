@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Periodic Test 2 · Quiz Interface</title>
-<script src="data/bundle.js?v=20"></script>
+<script src="data/bundle.js?v=21"></script>
 <script src="js/app-info.js"></script>
-<script src="js/pt2-offline.js?v=6"></script>
+<script src="js/pt2-offline.js?v=7"></script>
 <script src="js/pt2-look.js?v=4"></script>
 <script>
 (function(){
@@ -1228,7 +1228,7 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 <link rel="stylesheet" href="pt1-theme/fonts.css">
 <link rel="stylesheet" href="pt1-theme/theme-vars.css">
 <link rel="stylesheet" href="pt1-theme/colorizer.css">
-<link rel="stylesheet" href="css/pt2.css?v=5">
+<link rel="stylesheet" href="css/pt2.css?v=6">
 <link rel="stylesheet" href="css/controls.css?v=6">
 <link rel="stylesheet" href="css/pt2-look.css?v=5">
 <link rel="stylesheet" href="css/pt2-site.css?v=3">
@@ -1930,6 +1930,7 @@ function applyLiveMood(emoji, opts){
   document.querySelectorAll('.mood-pick').forEach(p=>p.classList.toggle('active', p.dataset.mood===m.emoji));
   try{ localStorage.setItem('pt1_live_mood', m.emoji);
   if(window.StudyCursors && StudyCursors.onMoodChange) StudyCursors.onMoodChange(); }catch(e){}
+  try{ document.dispatchEvent(new CustomEvent('pt2-mood', { detail: m.emoji })); }catch(e){} // 🔒 forces the Lock emoji control on (pt2-offline.js)
   streams.forEach((s,i)=>{ const cols=moodFxColors(); s.color = (i%2? cols[0] : cols[3]); });
   if(window.__skinsReady){
     if(typeof applySkin==='function') applySkin();
@@ -3266,7 +3267,7 @@ document.getElementById('studyNotesBtn').addEventListener('click', ()=>{
 <script src="pt1-theme/particles.js"></script>
 <script src="pt1-theme/colorizer-theme.js?v=3"></script>
 <script src="js/pt2-color.js"></script>
-<script src="js/pt2-unlocks.js?v=13"></script>
+<script src="js/pt2-unlocks.js?v=14"></script>
 <script src="js/pt2-lines.js?v=2"></script>
 <script src="js/app-update.js?v=4"></script>
 </body>

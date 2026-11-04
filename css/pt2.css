@@ -50,6 +50,9 @@ html:not(.pt2-lock-open) #pt2MoodLock{display:none!important}
 .mood-lock-box{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:4px;border:1.5px solid var(--cyan);font-size:11px;font-weight:800;line-height:1;color:#05070c;background:transparent}
 .mood-lock-btn[aria-checked="true"]{border-color:var(--cyan);color:var(--cyan-bright,inherit)}
 .mood-lock-btn[aria-checked="true"] .mood-lock-box{background:var(--cyan)}
+/* forced on by the 🔒 emoji: red check, cannot be switched off while 🔒 is chosen */
+.mood-lock-btn.forced{border-color:#ef4444;color:#ef4444;cursor:not-allowed}
+.mood-lock-btn.forced .mood-lock-box{background:#ef4444!important;border-color:#ef4444;color:#fff}
 
 /* t327u: Week sections on the home menu */
 #materialCards.pt2-weeks{display:block}
@@ -113,8 +116,9 @@ html:not(.pt2-lock-open) #pt2MoodLock{display:none!important}
 /* steer C: the 'System' cursor is the custom-drawn arrow from Medphys-pt1 (quiz/index.html), accent coloured.
    It keeps the custom cursor z-index above (settings, pop-ups, confirms, tips). */
 html[data-cursor="system"]{--cur-w:18px;--cur-h:26px;--cur-border:none;--cur-radius:0;--cur-bg:var(--accent-0);--cur-blend:normal;--cur-shadow:none;--cur-core-w:0px;--cur-core-h:0px;--cur-core-bg:transparent;--cur-active-w:20px;--cur-active-h:28px;--cur-active-bg:var(--accent-1);--cur-active-border:transparent}
-html[data-cursor="system"] #cursor,
-html[data-cursor="system"] #cursor.active{
+/* not while a link line is drawn: then the pencil rules (quiz-pt1.css) take over, as for the other skins */
+html[data-cursor="system"]:not(.link-drawing) #cursor,
+html[data-cursor="system"]:not(.link-drawing) #cursor.active{
   border:none!important;border-radius:0!important;
   background:var(--accent-0)!important;
   clip-path:polygon(0% 0%,0% 100%,34% 70%,48% 100%,60% 95%,42% 62%,78% 62%);
@@ -124,12 +128,12 @@ html[data-cursor="system"] #cursor.active{
   filter:drop-shadow(0 0 0.6px var(--accent-0)) drop-shadow(0 0 0.6px var(--accent-0)) drop-shadow(1px 2px 3px rgba(0,0,0,.45))!important;
   box-shadow:none!important;
 }
-html[data-cursor="system"] #cursor.active{
+html[data-cursor="system"]:not(.link-drawing) #cursor.active{
   background:var(--accent-1)!important;
   filter:drop-shadow(0 0 0.6px var(--accent-1)) drop-shadow(0 0 0.6px var(--accent-1)) drop-shadow(1px 2px 3px rgba(0,0,0,.45))!important;
 }
-html[data-cursor="system"] #cursor.core,
-html[data-cursor="system"] #cursor.core.active{display:none!important;opacity:0!important;width:0!important;height:0!important}
+html[data-cursor="system"]:not(.link-drawing) #cursor.core,
+html[data-cursor="system"]:not(.link-drawing) #cursor.core.active{display:none!important;opacity:0!important;width:0!important;height:0!important}
 html[data-cursor="system"] #cursor{z-index:2147483646!important}
 
 /* steer B: 'Automatic' in the cursor picker */

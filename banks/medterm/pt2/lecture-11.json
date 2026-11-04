@@ -2058,7 +2058,7 @@
         "steps": [
           {
             "id": "2",
-            "prompt": "Which type of bone is this?",
+            "prompt": "Which type of bone is each bone of the Pelvis?",
             "options": [
               "Long bone",
               "Short bone",
@@ -2107,7 +2107,7 @@
             "accept": []
           }
         ],
-        "explain": "Pelvis is an irregular bone of the hip: each hip bone is formed by the fused ilium, ischium and pubis. It forms the pelvic girdle, which is appendicular, and its combining form is Pelv/o. It is not a long, short, or flat bone. It is not axial. The shoulder girdle is pectoral, the chest wall is the thoracic cage, and the skull is cranial. Femor/o means femur, Cost/o means rib, and Lumb/o means loin.",
+        "explain": "The Pelvis is a ring of bones at the hip: the two hip bones (each fused from the ilium, ischium and pubis), the sacrum and the coccyx, and each of them is an irregular bone. It forms the pelvic girdle, which is appendicular, and its combining form is Pelv/o. None of them is a long, short, or flat bone. It is not axial. The shoulder girdle is pectoral, the chest wall is the thoracic cage, and the skull is cranial. Femor/o means femur, Cost/o means rib, and Lumb/o means loin.",
         "image": "banks/medterm/img/bones/bone-mt11089.png",
         "alt": "Front view of the skeleton with the basin-shaped ring of bones at the hips highlighted in red.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -2309,14 +2309,14 @@
         "steps": [
           {
             "id": "2",
-            "prompt": "Which type of bone is this?",
+            "prompt": "Which types of bone make up the Facial Bones?",
             "options": [
-              "Long bone",
-              "Short bone",
-              "Sesamoid bone",
-              "Irregular bone"
+              "Flat and irregular bones",
+              "Long and short bones",
+              "Short and sesamoid bones",
+              "Long and sesamoid bones"
             ],
-            "correct": 3
+            "correct": 0
           },
           {
             "id": "3",
@@ -2350,7 +2350,7 @@
             ]
           }
         ],
-        "explain": "Facial Bones are irregular bones of the face, in the axial skeleton. They are not long, short, or flat bones. They are not appendicular. The cranium alone is the skull vault, the vertebral column is the spine, and the thoracic cage is the ribs and sternum.",
+        "explain": "Facial Bones are a group of 14 bones of the face, in the axial skeleton, and they are of two types: the nasal and lacrimal bones and the vomer are flat, while the maxillae, zygomatic bones, palatine bones, inferior nasal conchae and mandible are irregular. None of them is long, short or sesamoid, and they are not appendicular. The cranium alone is the skull vault, the vertebral column is the spine, and the thoracic cage is the ribs and sternum.",
         "image": "banks/medterm/img/bones/bone-mt11093.png",
         "alt": "Front view of the bones of the face shown on their own in different colours, without the braincase.",
         "credit": "Bone image: BodyParts3D/Anatomography © DBCLS · CC BY-SA 2.1 JP (adapted)",
@@ -2715,7 +2715,7 @@
         "id": "MT11111",
         "type": "matching",
         "cat": "MT_lec11",
-        "q": "Match each bone to the type Long bones.",
+        "q": "Match each bone to its type.",
         "leftItems": [
           {
             "id": "1",
@@ -2723,39 +2723,19 @@
           },
           {
             "id": "2",
-            "text": "Radius"
+            "text": "Carpals"
           },
           {
             "id": "3",
-            "text": "Ulna"
+            "text": "Sternum"
           },
           {
             "id": "4",
-            "text": "Metacarpal"
+            "text": "Vertebrae"
           },
           {
             "id": "5",
-            "text": "Phalanges of the hand"
-          },
-          {
-            "id": "6",
-            "text": "Femur"
-          },
-          {
-            "id": "7",
-            "text": "Tibia"
-          },
-          {
-            "id": "8",
-            "text": "Fibula"
-          },
-          {
-            "id": "9",
-            "text": "Metatarsal"
-          },
-          {
-            "id": "10",
-            "text": "Phalanges of the foot"
+            "text": "Cranial bones"
           }
         ],
         "rightItems": [
@@ -2774,21 +2754,20 @@
           {
             "id": "D",
             "text": "Irregular bones"
+          },
+          {
+            "id": "E",
+            "text": "Flat and irregular bones"
           }
         ],
         "correct_pairs": {
           "1": "A",
-          "2": "A",
-          "3": "A",
-          "4": "A",
-          "5": "A",
-          "6": "A",
-          "7": "A",
-          "8": "A",
-          "9": "A",
-          "10": "A"
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E"
         },
-        "explain": "Humerus, radius, ulna, metacarpals and the phalanges of the hand, together with femur, tibia, fibula, metatarsals and the phalanges of the foot, are the long bones of the arms and legs."
+        "explain": "The humerus is longer than it is wide, a long bone, and the carpals are cube-like short bones. The sternum is a thin flat bone and each vertebra is an irregular bone. The 8 cranial bones are a mixed group: the frontal, parietal and occipital bones are flat, while the sphenoid, ethmoid and temporal bones are irregular."
       },
       {
         "id": "MT11112",
@@ -2798,7 +2777,7 @@
         "leftItems": [
           {
             "id": "1",
-            "text": "Carpals"
+            "text": "Femur"
           },
           {
             "id": "2",
@@ -2806,7 +2785,7 @@
           },
           {
             "id": "3",
-            "text": "Vertebrae"
+            "text": "Scapulae"
           },
           {
             "id": "4",
@@ -2814,76 +2793,83 @@
           },
           {
             "id": "5",
-            "text": "Facial Bones"
-          },
-          {
-            "id": "6",
-            "text": "Hyoid"
+            "text": "Facial bones"
           }
         ],
         "rightItems": [
           {
             "id": "A",
-            "text": "Short bones"
-          },
-          {
-            "id": "B",
-            "text": "Irregular bones"
-          },
-          {
-            "id": "C",
             "text": "Long bones"
           },
           {
-            "id": "D",
+            "id": "B",
+            "text": "Short bones"
+          },
+          {
+            "id": "C",
             "text": "Flat bones"
+          },
+          {
+            "id": "D",
+            "text": "Irregular bones"
+          },
+          {
+            "id": "E",
+            "text": "Flat and irregular bones"
           }
         ],
         "correct_pairs": {
           "1": "A",
-          "2": "A",
-          "3": "B",
-          "4": "B",
-          "5": "B",
-          "6": "B"
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E"
         },
-        "explain": "Carpals and tarsals are short bones. Vertebrae, the sacrum, the Facial Bones and the Hyoid are irregular bones."
+        "explain": "The femur is a long bone and the tarsals are short bones. Each scapula is a flat bone and the sacrum is an irregular bone. The 14 facial bones are a mixed group: the nasal and lacrimal bones and the vomer are flat, while the maxillae, zygomatic bones, palatine bones, inferior nasal conchae and mandible are irregular."
       },
       {
         "id": "MT11113",
         "type": "matching",
         "cat": "MT_lec11",
-        "q": "Match each bone to the type Flat bones.",
+        "q": "Match each bone to its type.",
         "leftItems": [
           {
             "id": "1",
-            "text": "Cranial bones"
+            "text": "Radius"
           },
           {
             "id": "2",
-            "text": "Sternum"
+            "text": "Phalanges of the hand"
           },
           {
             "id": "3",
-            "text": "Scapulae"
+            "text": "Ribs"
           },
           {
             "id": "4",
-            "text": "Ribs"
+            "text": "Hyoid"
+          },
+          {
+            "id": "5",
+            "text": "Metatarsal"
+          },
+          {
+            "id": "6",
+            "text": "Fibula"
           }
         ],
         "rightItems": [
           {
             "id": "A",
-            "text": "Flat bones"
-          },
-          {
-            "id": "B",
             "text": "Long bones"
           },
           {
-            "id": "C",
+            "id": "B",
             "text": "Short bones"
+          },
+          {
+            "id": "C",
+            "text": "Flat bones"
           },
           {
             "id": "D",
@@ -2893,10 +2879,12 @@
         "correct_pairs": {
           "1": "A",
           "2": "A",
-          "3": "A",
-          "4": "A"
+          "3": "C",
+          "4": "D",
+          "5": "A",
+          "6": "A"
         },
-        "explain": "Cranial bones, the sternum, the scapulae and the ribs are the flat bones."
+        "explain": "The radius, the phalanges of the hand, the metatarsals and the fibula are all longer than they are wide, so they are long bones, even the small phalanges. Each rib is a curved flat bone, and the hyoid is an irregular bone. No bone here is a short bone; those are the carpals and tarsals."
       },
       {
         "id": "MT11115",

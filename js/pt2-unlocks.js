@@ -25,6 +25,8 @@
       { emoji: '💎', at: 495, label: 'Diamond', fam: 'mood-calm', cls: 'mood-calm' },
       { emoji: '🏆', at: 600, label: 'Champion', fam: 'mood-happy', cls: 'mood-happy' },
       { emoji: '👑', at: 800, label: 'Royal', fam: 'mood-happy', cls: 'mood-happy' },
+      // the literal lock emoji comes with the Lock emoji control (feature:moodLock, same 250); its own pop-up is skipped
+      { emoji: '\uD83D\uDD12', at: 250, silent: true, label: 'Locked', fam: 'mood-calm', cls: 'mood-calm' },
       { emoji: '🎓', all: true, label: 'Week 11 Graduate', fam: 'mood-happy', cls: 'mood-happy' }
     ], features: [
       // the Lock emoji control in the emoji dropdown: hidden (html:not(.pt2-lock-open)) until 250 questions are solved
@@ -280,7 +282,7 @@
     var t = tally(); t.n = totalCount(t);
     EXTRAS.forEach(function (f) { if (!got[f.key] && f.ok(t)) { got[f.key] = Date.now(); fresh.push(f); } });
     TOTAL.unlocks.forEach(function (u) { if (!got[u.emoji] && t.n >= u.at) { got[u.emoji] = Date.now(); fresh.push(u); } });
-    if (fresh.length) { lsSet(GOT, JSON.stringify(got)); if (!quiet) fresh.forEach(popup); }
+    if (fresh.length) { lsSet(GOT, JSON.stringify(got)); if (!quiet) fresh.forEach(function (u) { if (!u.silent) popup(u); }); }
     decorate();
     if (fresh.length) { try { document.dispatchEvent(new CustomEvent('pt2-unlocked', { detail: fresh.map(function (u) { return u.emoji || u.key; }) })); } catch (e) {} }
     return { total: t.n, solved: counts, fresh: fresh.map(function (u) { return u.emoji || u.key; }) };

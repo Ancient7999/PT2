@@ -183,13 +183,15 @@
     { id: 'pt2HideDock', key: 'pt2_hide_dock', cls: 'pt2-hide-dock' }
   ];
   function get(k) { try { return localStorage.getItem(k) === '1'; } catch (e) { return false; } }
+  // the 🔒 emoji (unlocked with the Lock emoji control) keeps itself: while it is the chosen emoji the lock is forced on
+  function lockEmojiOn() { try { return localStorage.getItem('pt1_live_mood') === '\uD83D\uDD12'; } catch (e) { return false; } }
   function set(k, on) { try { localStorage.setItem(k, on ? '1' : '0'); } catch (e) {} }
   var root = document.documentElement;
   PREFS.forEach(function (p) { root.classList.toggle(p.cls, get(p.key)); });
   global.PT2Prefs = { muted: function () { return get('pt2_pomo_muted'); }, disabled: function () { return get('pt2_pomo_disabled'); },
     // no automatic mood colours while the timer is off or the Timer box is hidden
     moodFrozen: function () { return get('pt2_pomo_disabled') || get('pt2_hide_dock'); },
-    moodLocked: function () { return get('pt2_mood_lock'); } };
+    moodLocked: function () { return get('pt2_mood_lock') || lockEmojiOn(); } };
   /* Lock emoji control shows only once unlocked (js/pt2-unlocks.js, feature:moodLock); set here so it never flashes.
      A lock already switched on keeps working while the control is hidden. */
   try { var gotU = JSON.parse(localStorage.getItem('pt2_emoji_unlocked_v1') || '{}') || {}; root.classList.toggle('pt2-lock-open', !!gotU['feature:moodLock']);
@@ -223,17 +225,19 @@
   });
   /* Lock emoji (in the emoji dropdown): keeps the chosen emoji; unlocking restores automatic changes */
   function syncLock() {
-    var on = get('pt2_mood_lock'), b = document.getElementById('pt2MoodLock');
+    var forced = lockEmojiOn(), on = forced || get('pt2_mood_lock'), b = document.getElementById('pt2MoodLock');
     root.classList.toggle('pt2-mood-locked', on);
     if (!b) return;
     b.setAttribute('aria-checked', on ? 'true' : 'false');
-    b.title = on ? 'Emoji locked · it stays as chosen' : 'Keep this emoji instead of letting it change automatically';
+    b.classList.toggle('forced', forced); b.setAttribute('aria-disabled', forced ? 'true' : 'false');
+    b.title = forced ? 'Locked by the \uD83D\uDD12 emoji · pick another emoji to change this' : on ? 'Emoji locked · it stays as chosen' : 'Keep this emoji instead of letting it change automatically';
     var i = b.querySelector('.mood-lock-box'); if (i) i.textContent = on ? '\u2713' : '';
   }
   document.addEventListener('click', function (e) {
     var b = e.target && e.target.closest && e.target.closest('#pt2MoodLock'); if (!b) return;
-    e.stopPropagation(); set('pt2_mood_lock', !get('pt2_mood_lock')); syncLock();
+    e.stopPropagation(); if (lockEmojiOn()) { syncLock(); return; } set('pt2_mood_lock', !get('pt2_mood_lock')); syncLock();
   }, true);
+  document.addEventListener('pt2-mood', syncLock);
   document.addEventListener('DOMContentLoaded', syncLock);
   /* quiz order switches in Settings mirror the Quiz settings panel above the banks */
   var MIRROR = {};
