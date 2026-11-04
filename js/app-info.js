@@ -6,6 +6,14 @@
 var APP_INFO = {
   releases: [
     {
+      version: '0.35',
+      date: '04/11/2026',
+      changes: [
+        'Medical Terminology: the Cell Specifications card now comes after the Mixed card.',
+        'Corrected the Medical Terminology lecture range in the main menu.'
+      ]
+    },
+    {
       version: '0.34',
       date: '04/11/2026',
       changes: [

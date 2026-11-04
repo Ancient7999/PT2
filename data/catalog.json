@@ -55,7 +55,7 @@
         {
           "id": "medterm-pt2",
           "title": "Medical Terminology",
-          "subtitle": "Lectures 10-17",
+          "subtitle": "Lectures 9-17",
           "draft": false,
           "locked": false,
           "comingSoon": false,
@@ -109,13 +109,6 @@
               "draft": false
             },
             {
-              "id": "cells14-15",
-              "title": "Lectures 14 & 15 – Cell Specifications",
-              "bank": "banks/medterm/pt2/cell-specifications.json",
-              "status": "ready",
-              "draft": false
-            },
-            {
               "id": "lec16-17",
               "title": "Lectures 16 & 17 – Respiratory System",
               "bank": "banks/medterm/pt2/lecture-16-17.json",
@@ -126,6 +119,13 @@
               "id": "mixed-medterm-lec9-17",
               "title": "Mixed Medical Terminology - Lectures 9 to 17",
               "bank": "banks/medterm/pt2/mixed-9-17.json",
+              "status": "ready",
+              "draft": false
+            },
+            {
+              "id": "cells14-15",
+              "title": "Cell Specifications",
+              "bank": "banks/medterm/pt2/cell-specifications.json",
               "status": "ready",
               "draft": false
             }
