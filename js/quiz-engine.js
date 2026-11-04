@@ -267,7 +267,6 @@ function syncResetSolvedBtn(){
   btn.hidden = true; /* permanently hidden — use per-card reset */
 }
 function updateCounters(){
-  syncTypeOnlyToggle();
   if(BANK) document.getElementById('bankMeta').textContent=(allQuestions().length)+' questions · '+(LECTURE_SET?lectureSolvedTotal():loadSolved().size)+' solved';
   syncResetSolvedBtn();
   if(quizActive){
@@ -354,7 +353,7 @@ function buildGroupedCards(all, groups){
     pool.forEach(q=>taken.add(q.__id));
     const filtered=overlap;
     if(filtered) pool=pool.map(q=>cardCopyOf(q, g.hideTags)).filter(Boolean);
-    cards.push({id:'grp:'+(g.id||g.title||('card'+(i+1))), label:String(g.title||g.id||('Set '+(i+1))), pool, cats:[...set], badges:Array.isArray(g.badges)?g.badges:null, group:g.group||'', hideTags:Array.isArray(g.hideTags)?g.hideTags.slice():[], __filtered:filtered});
+    cards.push({typeOnly:!!g.typeOnly, id:'grp:'+(g.id||g.title||('card'+(i+1))), label:String(g.title||g.id||('Set '+(i+1))), pool, cats:[...set], badges:Array.isArray(g.badges)?g.badges:null, group:g.group||'', hideTags:Array.isArray(g.hideTags)?g.hideTags.slice():[], __filtered:filtered});
   });
   if(overlap) return cards;
   const rest=all.filter(q=>!taken.has(q.__id));
@@ -467,18 +466,16 @@ function applyPerm(q, perm){
    Saved per bank; typed steps use their own step keys ("~t"), so choice answers saved earlier never mix with them. */
 function typeOnlyKey(){ return 'pt2_type_only_v1:'+((BANK&&BANK.id)||''); }
 function typeOnlyOn(){ try{ return !!(BANK && BANK.typeOnlyOption && localStorage.getItem(typeOnlyKey())==='1'); }catch(e){ return false; } }
-function syncTypeOnlyToggle(){
-  const tools=document.querySelector('#setsView .sets-tools'); if(!tools) return;
-  let w=document.getElementById('typeOnlyWrap');
-  if(!(BANK && BANK.typeOnlyOption)){ if(w) w.hidden=true; return; }
-  if(!w){
-    w=document.createElement('label'); w.id='typeOnlyWrap'; w.className='type-only-toggle';
-    w.title='Ask every step that can be typed as a typed answer instead of choices';
-    w.innerHTML='<input type="checkbox" id="typeOnlyChk"><span>Type mode only</span>';
-    tools.appendChild(w);
-    w.querySelector('input').addEventListener('change', e=>{ try{ localStorage.setItem(typeOnlyKey(), e.target.checked?'1':'0'); }catch(_){} });
-  }
-  w.hidden=false; w.querySelector('input').checked=typeOnlyOn();
+/* the "Type mode only" switch sits under the card that has "typeOnly": true (Anatomy: Bone Identification) */
+function typeOnlyChipFor(card){
+  if(!(BANK && BANK.typeOnlyOption && card && card.typeOnly)) return null;
+  const lb=document.createElement('label'); lb.className='card-study-chip card-type-only';
+  lb.title='Ask every step that can be typed as a typed answer instead of choices (from the next run)';
+  lb.innerHTML='<input type="checkbox"><span>⌨ Type mode only</span>';
+  const cb=lb.querySelector('input'); cb.checked=typeOnlyOn();
+  cb.addEventListener('change', ()=>{ try{ localStorage.setItem(typeOnlyKey(), cb.checked?'1':'0'); }catch(_){} });
+  lb.addEventListener('click', e=>e.stopPropagation());
+  return lb;
 }
 function expandDeck(deck){
   const out=[], typeOnly=typeOnlyOn();
@@ -971,6 +968,8 @@ function appendPoolCard(grid, label, pool, card){
     if(inProgress && resumeRun(card)) return;
     startRun(pool, label, {card});
   });
+  const toc=typeOnlyChipFor(card);
+  if(toc){ const wrap=document.createElement('div'); wrap.className='card-study-wrap'; wrap.append(btn, toc); grid.appendChild(wrap); return; }
   // PICTURE STUDY: each lecture card gets its own 📖 Study button (opens that lecture's chapter)
   const mat=window.__activeMaterial;
   if(LECTURE_SET && String(card.id).startsWith('lec:') && mat && mat.study && mat.study.images && window.StudyNotes){
