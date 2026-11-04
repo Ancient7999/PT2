@@ -3928,24 +3928,9 @@ function kbAdvStopKey(e, typing){
   clearKbAdvance();
   return true;
 }
-let kbAdvSwallowUntil=0, kbAdvSwallowId=null;
-function kbAdvTouchStop(){ if(!kbAdvArmed()) return false; clearKbAdvance(); return true; }
+/* touch (tapping, touching a picture, scrolling) never stops the auto-next bar: it keeps moving.
+   Swiping to another question moves on as usual; opening a picture full size stops the bar (see the gallery). */
 function isTouchDevice(){ return document.documentElement.getAttribute('data-pointer-input')==='touch' || (navigator.maxTouchPoints||0)>0 || 'ontouchstart' in window; }
-// the tap that stops the bar is used up: it does not also press what it landed on
-window.addEventListener('pointerdown', e=>{
-  if(e.pointerType==='touch' && kbAdvTouchStop()){ kbAdvSwallowId=e.pointerId; kbAdvSwallowUntil=performance.now()+1500; e.preventDefault(); e.stopImmediatePropagation(); return; }
-  if(kbAdvSwallowId!==null && e.pointerId!==kbAdvSwallowId){ kbAdvSwallowId=null; kbAdvSwallowUntil=0; }
-}, true);
-window.addEventListener('pointercancel', e=>{ if(e.pointerId===kbAdvSwallowId){ kbAdvSwallowId=null; kbAdvSwallowUntil=0; } }, true); // it became a scroll: no click follows
-window.addEventListener('pointerup', e=>{ if(e.pointerId===kbAdvSwallowId){ kbAdvSwallowId=null; kbAdvSwallowUntil=performance.now()+400; e.preventDefault(); e.stopImmediatePropagation(); } }, true);
-['mousedown','mouseup','click','contextmenu'].forEach(t=>window.addEventListener(t, e=>{
-  if(performance.now()>=kbAdvSwallowUntil) return;
-  e.preventDefault(); e.stopImmediatePropagation();
-  if(t==='click') kbAdvSwallowUntil=0;
-}, true));
-document.addEventListener('touchstart', ()=>{ kbAdvTouchStop(); }, {capture:true, passive:true});
-document.addEventListener('touchmove', ()=>{ kbAdvTouchStop(); }, {capture:true, passive:true});
-document.addEventListener('wheel', ()=>{ if(kbAdv && isTouchDevice()) kbAdvTouchStop(); }, {capture:true, passive:true});
 /* leaving a set mid-run (Esc with no bar, or the return button): the small confirmation from the top,
    the same one the cards use. Enter leaves, Esc stays. Results and review screens leave straight away. */
 let leaveAsking=false;
@@ -4274,6 +4259,7 @@ function phoneKeepInputVisible(){
 /* full-size view of a gallery picture (stepped questions with several pictures) */
 (function(){
   function open(img){
+    if(typeof clearKbAdvance==='function') clearKbAdvance(); // looking at a picture full size: no auto-next behind it
     const ov=document.createElement('div'); ov.className='step-lightbox'; ov.setAttribute('role','dialog'); ov.setAttribute('aria-label','Picture, full size');
     ov.innerHTML='<img src="'+img.getAttribute('src')+'" alt="'+(img.getAttribute('alt')||'').replace(/"/g,'&quot;')+'"><button type="button" class="step-lightbox-x" aria-label="Close">✕</button>';
     const close=()=>{ ov.remove(); document.removeEventListener('keydown', key, true); try{ img.focus({preventScroll:true}); }catch(e){} };
