@@ -26,7 +26,7 @@
       { emoji: '🏆', at: 600, label: 'Champion', fam: 'mood-happy', cls: 'mood-happy' },
       { emoji: '👑', at: 800, label: 'Royal', fam: 'mood-happy', cls: 'mood-happy' },
       // the literal lock emoji comes with the Lock emoji control (feature:moodLock, same 250); its own pop-up is skipped
-      { emoji: '\uD83D\uDD12', at: 250, silent: true, label: 'Locked', fam: 'mood-calm', cls: 'mood-calm' },
+      { emoji: '\uD83D\uDD12', at: 250, silent: true, label: 'Locked', fam: 'mood-calm', cls: 'mood-locked' },
       { emoji: '🎓', all: true, label: 'Week 11 Graduate', fam: 'mood-happy', cls: 'mood-happy' }
     ], features: [
       // the Lock emoji control in the emoji dropdown: hidden (html:not(.pt2-lock-open)) until 250 questions are solved
