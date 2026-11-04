@@ -1228,7 +1228,7 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 <link rel="stylesheet" href="pt1-theme/fonts.css">
 <link rel="stylesheet" href="pt1-theme/theme-vars.css">
 <link rel="stylesheet" href="pt1-theme/colorizer.css">
-<link rel="stylesheet" href="css/pt2.css?v=8">
+<link rel="stylesheet" href="css/pt2.css?v=9">
 <link rel="stylesheet" href="css/controls.css?v=6">
 <link rel="stylesheet" href="css/pt2-look.css?v=5">
 <link rel="stylesheet" href="css/pt2-site.css?v=3">
@@ -1910,7 +1910,7 @@ const MOODS = [
 ];
 const FOCUS_MOOD_POOL = ['😊','🤩','😎','🙂','🥳','😄','🤔','🤓','🧐','🎯','😌','😤','💪','⚡','😭'];
 const BREAK_MOOD_POOL = ['😌','🌿','☕','🌙','✨','🧸','💭','🫧','☁️','🎧','🚿'];
-const MOOD_CLASSES = ['mood-locked', 'mood-devil', 'mood-frozen', 'mood-hot', 'mood-ghost', 'mood-robot', 'mood-happy', 'mood-neutral', 'mood-calm', 'mood-fierce', 'mood-mad', 'mood-sad', 'mood-crying', 'mood-sleepy', 'mood-bubbles', 'mood-cloud', 'mood-coffee', 'mood-cool', 'mood-cozy', 'mood-daydream', 'mood-electric', 'mood-firedup', 'mood-focus', 'mood-grin', 'mood-headphones', 'mood-moon', 'mood-nature', 'mood-nerd', 'mood-party', 'mood-reset', 'mood-sleep', 'mood-smile', 'mood-sparkle', 'mood-starstruck', 'mood-strong', 'mood-study', 'mood-thinking', 'mood-zen'];
+const MOOD_CLASSES = ['mood-locked', 'mood-devil', 'mood-frozen', 'mood-hot', 'mood-ghost', 'mood-happy', 'mood-neutral', 'mood-calm', 'mood-fierce', 'mood-mad', 'mood-sad', 'mood-crying', 'mood-sleepy', 'mood-bubbles', 'mood-cloud', 'mood-coffee', 'mood-cool', 'mood-cozy', 'mood-daydream', 'mood-electric', 'mood-firedup', 'mood-focus', 'mood-grin', 'mood-headphones', 'mood-moon', 'mood-nature', 'mood-nerd', 'mood-party', 'mood-reset', 'mood-sleep', 'mood-smile', 'mood-sparkle', 'mood-starstruck', 'mood-strong', 'mood-study', 'mood-thinking', 'mood-zen'];
 let currentMoodEmoji = '😊';
 let moodAutoMode = true; // auto-rotate each focus/break unless user just picked
 const moodWrap = document.getElementById('moodWrapLive');
@@ -2136,6 +2136,38 @@ const timerDock = document.getElementById('timerDock');
 const timerResetBtn = document.getElementById('timerResetBtn');
 
 const MOOD_QUOTES = {
+  '😀': [
+    {text:"Happiness is not something ready made. It comes from your own actions.", author:"Dalai Lama"},
+    {text:"Keep your face always toward the sunshine, and shadows will fall behind you.", author:"Walt Whitman"}
+  ],
+  '😃': [
+    {text:"Optimism is the faith that leads to achievement.", author:"Helen Keller"},
+    {text:"A smile is happiness you'll find right under your nose.", author:"Tom Wilson"}
+  ],
+  '😁': [
+    {text:"Laughter is the shortest distance between two people.", author:"Victor Borge"},
+    {text:"Every time you smile at someone, it is an action of love.", author:"Mother Teresa"}
+  ],
+  '😆': [
+    {text:"Against the assault of laughter nothing can stand.", author:"Mark Twain"},
+    {text:"Laughter is a sunbeam of the soul.", author:"Thomas Mann"}
+  ],
+  '🥰': [
+    {text:"Where there is love there is life.", author:"Mahatma Gandhi"},
+    {text:"Love all, trust a few, do wrong to none.", author:"William Shakespeare"}
+  ],
+  '😋': [
+    {text:"One cannot think well, love well, sleep well, if one has not dined well.", author:"Virginia Woolf"},
+    {text:"Knowledge is food for the mind.", author:"Socrates"}
+  ],
+  '😚': [
+    {text:"Kind words can be short and easy to speak, but their echoes are truly endless.", author:"Mother Teresa"},
+    {text:"Wherever there is a human being, there is an opportunity for a kindness.", author:"Seneca"}
+  ],
+  '😍': [
+    {text:"Choose a job you love, and you will never have to work a day in your life.", author:"Confucius"},
+    {text:"The only way to do great work is to love what you do.", author:"Steve Jobs"}
+  ],
   '😇': [
     {text:"No act of kindness, no matter how small, is ever wasted.", author:"Aesop"},
     {text:"The best way to find yourself is to lose yourself in the service of others.", author:"Mahatma Gandhi"}
@@ -2175,10 +2207,6 @@ const MOOD_QUOTES = {
   '👻': [
     {text:"We are such stuff as dreams are made on.", author:"William Shakespeare"},
     {text:"The only thing we have to fear is fear itself.", author:"Franklin D. Roosevelt"}
-  ],
-  '🤖': [
-    {text:"Any sufficiently advanced technology is indistinguishable from magic.", author:"Arthur C. Clarke"},
-    {text:"We can only see a short distance ahead, but we can see plenty there that needs to be done.", author:"Alan Turing"}
   ],
   '😈': [
     {text:"I can resist everything except temptation.", author:"Oscar Wilde"},
@@ -3319,7 +3347,7 @@ document.getElementById('studyNotesBtn').addEventListener('click', ()=>{
 <script src="pt1-theme/particles.js"></script>
 <script src="pt1-theme/colorizer-theme.js?v=3"></script>
 <script src="js/pt2-color.js"></script>
-<script src="js/pt2-unlocks.js?v=16"></script>
+<script src="js/pt2-unlocks.js?v=17"></script>
 <script src="js/pt2-lines.js?v=2"></script>
 <script src="js/app-update.js?v=4"></script>
 </body>

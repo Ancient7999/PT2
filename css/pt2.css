@@ -277,7 +277,7 @@ html.mood-locked:not(.pt2-basic)::after{background:repeating-linear-gradient(180
 @keyframes pt2LockGrid{to{background-position:0 -44px,44px 0,0 0,0 0}}
 @keyframes pt2LockHeat{from{opacity:.3}to{opacity:.65}}
 
-/* Special emoji rethemes (😈 🥶 🥵 👻 🤖), built like 🔒 above: custom properties plus two fixed background layers,
+/* Special emoji rethemes (😈 🥶 🥵 👻), built like 🔒 above: custom properties plus two fixed background layers,
    still under Basic, moving only with Animation effects on and motion allowed. Picking another emoji removes them. */
 html.mood-devil{ /* 😈 */
   --bg:#0c0410; --bg2:#150619; --bg-glow:rgba(192,38,211,.09); --grid-tint:transparent;
@@ -351,28 +351,9 @@ html.mood-ghost:not(.pt2-basic)::after{background:radial-gradient(ellipse 45% 30
   html.mood-ghost.pt2-fx:not(.pt2-basic)::before{animation:pt2MoodDrift 26s ease-in-out infinite alternate}
   html.mood-ghost.pt2-fx:not(.pt2-basic)::after{animation:pt2MoodDrift2 34s ease-in-out infinite alternate}
 }
-html.mood-robot{ /* 🤖 */
-  --bg:#020d07; --bg2:#04160c; --bg-glow:rgba(34,197,94,.09); --grid-tint:transparent;
-  --accent:#22c55e; --cyan:#22c55e; --cyan-bright:#86efac; --teal:#15803d;
-  --border:rgba(34,197,94,.42); --mood-glow:rgba(34,197,94,.28); --gold:#86efac;
-  --accent-0:#22c55e!important; --accent-0-rgb:34,197,94!important;
-  --accent-1:#16a34a!important; --accent-1-rgb:22,163,74!important;
-  --accent-2:#4ade80!important; --accent-2-rgb:74,222,128!important;
-  --accent-3:#15803d!important; --accent-3-rgb:21,128,61!important;
-  --accent-4:#86efac!important; --accent-4-rgb:134,239,172!important;
-  --anim-speed:.75; --pulse-ms:2200ms; --transition-ms:360ms; --particle-speed:.7;
-}
-html.mood-robot:not(.pt2-basic)::before,html.mood-robot:not(.pt2-basic)::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none}
-html.mood-robot:not(.pt2-basic)::before{background:linear-gradient(rgba(34,197,94,.06) 1px,transparent 1px) 0 0/28px 28px,linear-gradient(90deg,rgba(34,197,94,.06) 1px,transparent 1px) 0 0/28px 28px,radial-gradient(ellipse at 50% -8%,rgba(34,197,94,.16),transparent 46%)}
-html.mood-robot:not(.pt2-basic)::after{background:repeating-linear-gradient(180deg,transparent 0 2px,rgba(4,40,16,.14) 2px 3px);opacity:.6}
-@media (prefers-reduced-motion:no-preference){
-  html.mood-robot.pt2-fx:not(.pt2-basic)::before{animation:pt2MoodGrid 20s linear infinite}
-  html.mood-robot.pt2-fx:not(.pt2-basic)::after{animation:pt2MoodHeat 4s steps(6) infinite alternate}
-}
 @keyframes pt2MoodBreathe{from{opacity:.7}to{opacity:1}}
 @keyframes pt2MoodFlicker{0%{opacity:.35}40%{opacity:.6}55%{opacity:.4}100%{opacity:.7}}
 @keyframes pt2MoodHeat{from{opacity:.3;transform:translateY(0)}to{opacity:.7;transform:translateY(-3px)}}
 @keyframes pt2MoodSnow{to{background-position:0 600px,30px 930px}}
 @keyframes pt2MoodDrift{from{transform:translate(0,0)}to{transform:translate(4vw,-3vh)}}
 @keyframes pt2MoodDrift2{from{transform:translate(0,0)}to{transform:translate(-5vw,2vh)}}
-@keyframes pt2MoodGrid{to{background-position:0 28px,28px 0,0 0}}
