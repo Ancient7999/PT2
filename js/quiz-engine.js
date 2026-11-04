@@ -3156,6 +3156,16 @@ function nearestOppositeMatchItem(clientX,clientY,fromSide){
   }
   return best;
 }
+function reachPillEdge(points, el, ev){
+  if(!points || !points.length || !el) return;
+  const r=el.getBoundingClientRect(); if(r.width<1||r.height<1) return;
+  if(ev.clientX>=r.left && ev.clientX<=r.right && ev.clientY>=r.top && ev.clientY<=r.bottom) return; // already on the pill
+  const stage=document.querySelector('.match-stage'), sr=stage?stage.getBoundingClientRect():{left:0,top:0};
+  const inset=Math.min(10, r.height/2);
+  const ex=el.dataset.side==='R'?r.left:el.dataset.side==='L'?r.right:Math.max(r.left,Math.min(r.right,ev.clientX));
+  const ey=Math.max(r.top+inset, Math.min(r.bottom-inset, ev.clientY));
+  putWireTip(points, {x:ex-sr.left, y:ey-sr.top});
+}
 function onDrawUp(ev){
   if(!drawState) return;
   stopDragAutoScroll();
@@ -3173,8 +3183,12 @@ function onDrawUp(ev){
   src.blur();
   // Prefer distance-to-nearest opposite choice (expanded hit) over elementFromPoint.
   const svg=document.querySelector('.match-wires');
-  putWireTip(drawState.points, boardPoint(svg, ev));
+  // the release event can carry the last fast movement as coalesced samples: record them all, then the release point
+  followDrawPointer(ev, svg);
   const hit=nearestOppositeMatchItem(ev.clientX, ev.clientY, drawState.side);
+  // Released within the hit pad but short of the pill (a fast flick): the link counts, so the drawn line is carried on
+  // with one straight segment to the nearest point of the pill's facing edge. The hand-drawn part is not reshaped.
+  if(hit) reachPillEdge(drawState.points, hit, ev);
   const cur=ensureMatchAns();
   if(hit && hit.dataset.side && hit.dataset.side!==drawState.side && !hit.disabled){
     const leftId=drawState.side==='L'?drawState.id:hit.dataset.id;
