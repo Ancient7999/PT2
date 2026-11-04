@@ -6,6 +6,18 @@
 var APP_INFO = {
   releases: [
     {
+      version: '0.33',
+      date: '04/11/2026',
+      changes: [
+        'Medical Terminology Lecture 11: improved bone linking questions.',
+        'Corrected bone types and skeleton groupings in Anatomy and Medical Terminology.',
+        'Linking lines now always reach the box you link to.',
+        'The System cursor now turns into a pencil while drawing.',
+        'The 🔒 emoji is now unlockable, with its own look.',
+        'New unlockable emojis.'
+      ]
+    },
+    {
       version: '0.32',
       date: '04/11/2026',
       changes: [
