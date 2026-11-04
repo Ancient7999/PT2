@@ -267,6 +267,7 @@ function syncResetSolvedBtn(){
   btn.hidden = true; /* permanently hidden — use per-card reset */
 }
 function updateCounters(){
+  syncTypeOnlyToggle();
   if(BANK) document.getElementById('bankMeta').textContent=(allQuestions().length)+' questions · '+(LECTURE_SET?lectureSolvedTotal():loadSolved().size)+' solved';
   syncResetSolvedBtn();
   if(quizActive){
@@ -462,8 +463,25 @@ function applyPerm(q, perm){
   return q;
 }
 /* STEPPED: expand a bone into one deck entry per step (each step is its own numbered question). */
+/* "Type mode only" (bank "typeOnlyOption": true): steps with a typeAs {answer, accept} are asked as typed answers.
+   Saved per bank; typed steps use their own step keys ("~t"), so choice answers saved earlier never mix with them. */
+function typeOnlyKey(){ return 'pt2_type_only_v1:'+((BANK&&BANK.id)||''); }
+function typeOnlyOn(){ try{ return !!(BANK && BANK.typeOnlyOption && localStorage.getItem(typeOnlyKey())==='1'); }catch(e){ return false; } }
+function syncTypeOnlyToggle(){
+  const tools=document.querySelector('#setsView .sets-tools'); if(!tools) return;
+  let w=document.getElementById('typeOnlyWrap');
+  if(!(BANK && BANK.typeOnlyOption)){ if(w) w.hidden=true; return; }
+  if(!w){
+    w=document.createElement('label'); w.id='typeOnlyWrap'; w.className='type-only-toggle';
+    w.title='Ask every step that can be typed as a typed answer instead of choices';
+    w.innerHTML='<input type="checkbox" id="typeOnlyChk"><span>Type mode only</span>';
+    tools.appendChild(w);
+    w.querySelector('input').addEventListener('change', e=>{ try{ localStorage.setItem(typeOnlyKey(), e.target.checked?'1':'0'); }catch(_){} });
+  }
+  w.hidden=false; w.querySelector('input').checked=typeOnlyOn();
+}
 function expandDeck(deck){
-  const out=[];
+  const out=[], typeOnly=typeOnlyOn();
   deck.forEach(q=>{
     if(!isStepped(q)){ out.push(q); return; }
     // display order: steps marked showFirst lead (they can be appended to the file with a new
@@ -477,8 +495,12 @@ function expandDeck(deck){
         q:q.q, prompt:st.prompt||'', options:st.options||[], correct:st.correct, __perm:st.__perm,
         cat:q.cat, explain:(st&&st.explain)||q.explain
       };
+      if(typeOnly && !isTypedStepDef(st) && st.typeAs && st.typeAs.answer){
+        e.type='saq'; e.answer=st.typeAs.answer; e.accept=Array.isArray(st.typeAs.accept)?st.typeAs.accept.slice():[]; e.__stepId+='~t';
+        delete e.options; delete e.correct; delete e.__perm;
+      }
       if(isTypedStepDef(st)){ e.type='saq'; e.answer=st.answer; e.accept=Array.isArray(st.accept)?st.accept.slice():[]; if(st.caseSensitive) e.caseSensitive=true; if(st.complete!=null) e.complete=st.complete; delete e.options; delete e.correct; delete e.__perm; }
-      if(q.image){ e.image=q.image; e.alt=q.alt||''; e.credit=q.credit||''; e.creditUrl=q.creditUrl||''; if(q.imageSize) e.imageSize=q.imageSize; }
+      if(q.image){ e.image=q.image; e.alt=q.alt||''; e.credit=q.credit||''; e.creditUrl=q.creditUrl||''; if(q.imageSize) e.imageSize=q.imageSize; if(Array.isArray(q.images) && q.images.length) e.images=q.images; }
       out.push(e);
     });
   });
@@ -1535,6 +1557,10 @@ function saqAutoGrade(input, grade){
 /* picture on a stepped question (shown on every step), with its license caption */
 function stepFigureHTML(q, review){
   if(!q || !q.image) return '';
+  // several pictures of the same bone: side by side (4 across on PCs, 2 × 2 on phones), tap one to see it full size
+  if(Array.isArray(q.images) && q.images.length>1){
+    return '<div class="step-gallery n'+q.images.length+(review?' in-review':'')+'">'+q.images.map((im,k)=>'<figure class="step-figure gal"><img class="step-img step-zoomable" src="'+escapeHtml(im.src)+'" alt="'+escapeHtml(im.alt||q.alt||'')+'" draggable="false" tabindex="0" role="button" aria-label="Picture '+(k+1)+' of '+q.images.length+', open full size"></figure>').join('')+'</div>';
+  }
   const cr=q.credit?('<figcaption class="label-credit step-credit">'+(q.creditUrl?'<a href="'+escapeHtml(q.creditUrl)+'" target="_blank" rel="noopener">'+escapeHtml(q.credit)+'</a>':escapeHtml(q.credit))+'</figcaption>'):'';
   return '<figure class="step-figure'+(review?' in-review':'')+(q.imageSize==='large'?' large':'')+'"><img class="step-img" src="'+escapeHtml(q.image)+'" alt="'+escapeHtml(q.alt||'')+'" draggable="false">'+cr+'</figure>';
 }
@@ -3796,7 +3822,6 @@ let kbAdv=null;
 function clearKbAdvance(){ if(!kbAdv) return; const k=kbAdv; kbAdv=null; cancelAnimationFrame(k.raf); clearTimeout(k.timer); if(k.wrap.isConnected) k.wrap.remove(); }
 function startKbAdvance(){
   clearKbAdvance();
-  if(isPhoneLayout()) return; // PORTAL: phones get no auto-next bar; swipe to move on
   const host=document.getElementById('feedback'); if(!host) return;
   let MS=3200; // formula practice's ADVANCE_MS
   try{ if(window.PT2Look && typeof PT2Look.advanceMs==='function') MS=PT2Look.advanceMs(MS)||MS; }catch(er){}
@@ -4066,7 +4091,7 @@ const PT2_PHONE_MQ='(pointer: coarse) and (max-width: 768px), (pointer: coarse) 
 function isPhoneLayout(){ try{ return !!(window.matchMedia && matchMedia(PT2_PHONE_MQ).matches); }catch(e){ return false; } }
 (function wirePhoneLayout(){
   const root=document.documentElement;
-  const apply=()=>{ const on=isPhoneLayout(); root.classList.toggle('pt2-phone', on); if(on) clearKbAdvance(); updatePhoneCounter(); };
+  const apply=()=>{ const on=isPhoneLayout(); root.classList.toggle('pt2-phone', on); updatePhoneCounter(); };
   apply();
   try{ const mq=matchMedia(PT2_PHONE_MQ); if(mq.addEventListener) mq.addEventListener('change', apply); else if(mq.addListener) mq.addListener(apply); }catch(e){}
 })();
@@ -4189,14 +4214,17 @@ function phoneScrollToExplanation(){
 function phoneRevealExplanation(){
   if(!phoneQuizOn()) return;
   const fb=document.getElementById('feedback'); if(!fb || !fb.classList.contains('good')) return;
-  const band=phoneVisibleBand(), r=fb.getBoundingClientRect(), h=band.bottom-band.top;
+  const band=phoneVisibleBand(), h=band.bottom-band.top, r0=fb.getBoundingClientRect();
+  // the auto-next bar right under the box comes into view with it
+  const bar=fb.nextElementSibling && fb.nextElementSibling.classList.contains('kb-advance') ? fb.nextElementSibling.getBoundingClientRect() : null;
+  const r={top:r0.top, bottom:bar?Math.max(r0.bottom,bar.bottom):r0.bottom}; r.height=r.bottom-r.top;
   if(r.top>=band.top && r.bottom<=band.bottom) return; // already in view
   // the whole box when it fits (bottom just above the dock / keyboard), else its first lines at the top
   phoneScrollBy(r.height<=h ? r.bottom-band.bottom : r.top-band.top);
 }
 function phoneFocusedInput(){
   const a=document.activeElement;
-  return (a && a.matches && a.matches('input,textarea') && a.closest('#quizScreen')) ? a : null;
+  return (a && a.matches && a.matches('input,textarea') && (a.closest('#quizScreen') || a.closest('#studyView'))) ? a : null;
 }
 let phoneVvBase=0;
 function phoneKeyboardOpen(){
@@ -4204,7 +4232,18 @@ function phoneKeyboardOpen(){
   return vv.height < Math.max(phoneVvBase, window.innerHeight)*0.78;
 }
 function phoneKeepInputVisible(){
-  const inp=phoneFocusedInput(); if(!inp || !phoneQuizOn()) return;
+  const inp=phoneFocusedInput(); if(!inp) return;
+  // Picture Study (Med Term and Anatomy): the input just above the keyboard, with as much of its picture as fits above it
+  if(inp.closest('#studyView')){
+    if(!isPhoneLayout() || !document.getElementById('studyView').classList.contains('active')) return;
+    const band=phoneVisibleBand(), ir=inp.getBoundingClientRect();
+    const card=inp.closest('.simg-card'), cTop=card?card.getBoundingClientRect().top:ir.top;
+    let dy=ir.bottom-band.bottom;                       // input bottom on the keyboard's edge
+    if(cTop-dy>band.top) dy=Math.min(dy, cTop-band.top); // the whole card fits: start at its top instead
+    if(ir.top-dy<band.top) dy=ir.top-band.top;           // never push the input above the visible band
+    phoneScrollBy(dy); return;
+  }
+  if(!phoneQuizOn()) return;
   const band=phoneVisibleBand();
   const qt=document.getElementById('qText');
   const qTop=qt?qt.getBoundingClientRect().top:inp.getBoundingClientRect().top;
@@ -4231,4 +4270,18 @@ function phoneKeepInputVisible(){
   // a tap into an input while the keyboard is already open
   document.addEventListener('focusin', e=>{ if(isPhoneLayout() && phoneFocusedInput()===e.target && phoneKeyboardOpen()) settle(); });
   window.addEventListener('orientationchange', ()=>{ setTimeout(()=>{ phoneVvBase=vv.height; }, 600); });
+})();
+
+/* full-size view of a gallery picture (stepped questions with several pictures) */
+(function(){
+  function open(img){
+    const ov=document.createElement('div'); ov.className='step-lightbox'; ov.setAttribute('role','dialog'); ov.setAttribute('aria-label','Picture, full size');
+    ov.innerHTML='<img src="'+img.getAttribute('src')+'" alt="'+(img.getAttribute('alt')||'').replace(/"/g,'&quot;')+'"><button type="button" class="step-lightbox-x" aria-label="Close">✕</button>';
+    const close=()=>{ ov.remove(); document.removeEventListener('keydown', key, true); try{ img.focus({preventScroll:true}); }catch(e){} };
+    const key=e=>{ if(e.key==='Escape'||e.key==='Enter'||e.key===' '){ e.preventDefault(); e.stopImmediatePropagation(); close(); } };
+    ov.addEventListener('click', close); document.addEventListener('keydown', key, true);
+    document.body.appendChild(ov);
+  }
+  document.addEventListener('click', e=>{ const im=e.target.closest && e.target.closest('.step-zoomable'); if(im){ e.preventDefault(); open(im); } });
+  document.addEventListener('keydown', e=>{ const im=e.target.closest && e.target.closest('.step-zoomable'); if(im && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); e.stopPropagation(); open(im); } });
 })();

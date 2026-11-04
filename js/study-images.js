@@ -119,7 +119,10 @@ function storeKey(key, img) {
   return key;
 }
   const modesOf = img => (Array.isArray(img.modes) && img.modes.length) ? img.modes : (isSingle(img) ? ['type', 'bank', 'show'] : ['bank', 'type', 'show']);
-  function currentMode(key, img) { const m = modeOf[key]; return modesOf(img).includes(m) ? m : modesOf(img)[0]; }
+  // the mode picked on any picture is used for every picture (saved, so the next pictures open in it too)
+  const MODE_KEY = 'pt2_simg_mode_v1';
+  function prefMode() { try { return localStorage.getItem(MODE_KEY) || ''; } catch (e) { return ''; } }
+  function currentMode(key, img) { const m = modeOf[key] || prefMode(); return modesOf(img).includes(m) ? m : modesOf(img)[0]; }
   function solvedIn(key, img, mode) { const s = modeSlots(storeKey(key, img), mode); return labelsOf(img).filter(l => s[l.id] != null && matches(l, s[l.id])).map(l => l.id); }
   function solvedIds(key, img) { return new Set(solvedIn(key, img, 'bank').concat(solvedIn(key, img, 'type'))); }
   function solvedCount(key, img) { return solvedIds(key, img).size; }
@@ -338,9 +341,14 @@ function storeKey(key, img) {
     sec.classList.toggle('simg-live', !!img.views);
     sec.classList.toggle('simg-has-var', !!img.variants);
     const rerender = () => renderSection(sec, ch, img, pager);
+    sec.__simgRerender = rerender;
     sec.querySelectorAll('.simg-mode').forEach(b => b.addEventListener('click', () => {
       if (b.dataset.mode === mode) return;
-      modeOf[key] = b.dataset.mode; rerender();
+      try { localStorage.setItem(MODE_KEY, b.dataset.mode); } catch (e) {}
+      Object.keys(modeOf).forEach(k => { delete modeOf[k]; });
+      rerender();
+      // every other picture on the page switches too (when it has that mode)
+      document.querySelectorAll('#studyView .simg-card').forEach(o => { if (o !== sec && o.isConnected && typeof o.__simgRerender === 'function' && o.dataset.mode !== b.dataset.mode) o.__simgRerender(); });
       if (b.dataset.mode === 'type') { const f = sec.querySelector('.label-input, .simg-name-input'); if (f) try { f.focus({ preventScroll: true }); } catch (e) {} }
     }));
     const rb = sec.querySelector('.simg-restart');
