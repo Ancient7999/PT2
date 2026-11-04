@@ -3829,7 +3829,7 @@ function startKbAdvance(){
   host.insertAdjacentElement('afterend', w);
   const fill=w.querySelector('.formula-advance-fill'), t0=performance.now();
   const tick=now=>{ if(!kbAdv) return; const t=Math.min(1,(now-t0)/MS); fill.style.transform='scaleX('+(1-t)+')'; if(t<1) kbAdv.raf=requestAnimationFrame(tick); };
-  kbAdv={t0:performance.now(), wrap:w, raf:requestAnimationFrame(tick), timer:setTimeout(()=>{ if(kbAdv){ clearKbAdvance(); document.querySelectorAll('.step-lightbox').forEach(o=>o.click()); /* a full-size picture closes as the run moves on */ if(quizActive) goNext(); } }, MS)};
+  kbAdv={t0:performance.now(), wrap:w, raf:requestAnimationFrame(tick), timer:setTimeout(()=>{ if(kbAdv){ clearKbAdvance(); if(quizActive) goNext(); } }, MS)};
 }
 /* —— linking questions: arrow keys ——
    The first arrow press shows a focus ring (never on mouse or touch use). ↑ ↓ move within a side,
@@ -4268,16 +4268,54 @@ function phoneKeepInputVisible(){
   window.addEventListener('orientationchange', ()=>{ setTimeout(()=>{ phoneVvBase=vv.height; }, 600); });
 })();
 
-/* full-size view of a gallery picture (stepped questions with several pictures) */
+/* full-size view of a gallery picture (stepped questions with several pictures). Opening it stops the auto-next bar.
+   ← → keys, the ‹ › buttons or a sideways swipe (60px, clearly more sideways than vertical) go to the question's
+   other pictures, stopping at the first / last one. Tap the picture area or ✕ / Esc to close. */
 (function(){
+  let cur=null;
+  function show(){
+    const {ov, imgs, i}=cur, im=imgs[i];
+    const pic=ov.querySelector('.step-lightbox-img'); pic.src=im.getAttribute('src'); pic.alt=im.getAttribute('alt')||'';
+    ov.querySelector('.step-lightbox-n').textContent=(i+1)+' / '+imgs.length;
+    ov.querySelector('.step-lightbox-prev').disabled=i===0; ov.querySelector('.step-lightbox-next').disabled=i===imgs.length-1;
+  }
+  function go(d){ if(!cur) return; const n=cur.i+d; if(n<0||n>=cur.imgs.length) return; cur.i=n; show(); }
+  function close(){
+    if(!cur) return; const {ov, imgs, i}=cur; cur=null; ov.remove(); document.removeEventListener('keydown', key, true);
+    try{ imgs[i].focus({preventScroll:true}); }catch(e){}
+  }
+  function key(e){
+    if(!cur) return;
+    if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ e.preventDefault(); e.stopImmediatePropagation(); go(e.key==='ArrowLeft'?-1:1); return; }
+    if(e.key==='Escape'||e.key==='Enter'||e.key===' '){ e.preventDefault(); e.stopImmediatePropagation(); close(); }
+  }
   function open(img){
-    const ov=document.createElement('div'); ov.className='step-lightbox'; ov.setAttribute('role','dialog'); ov.setAttribute('aria-label','Picture, full size');
-    ov.innerHTML='<img src="'+img.getAttribute('src')+'" alt="'+(img.getAttribute('alt')||'').replace(/"/g,'&quot;')+'"><button type="button" class="step-lightbox-x" aria-label="Close">✕</button>';
-    const close=()=>{ ov.remove(); document.removeEventListener('keydown', key, true); try{ img.focus({preventScroll:true}); }catch(e){} };
-    const key=e=>{ if(e.key==='Escape'||e.key==='Enter'||e.key===' '){ e.preventDefault(); e.stopImmediatePropagation(); close(); } };
-    ov.addEventListener('click', close); document.addEventListener('keydown', key, true);
-    document.body.appendChild(ov);
+    if(typeof clearKbAdvance==='function') clearKbAdvance(); // looking at a picture full size stops auto-next
+    close();
+    const gal=img.closest('.step-gallery'), imgs=gal?[...gal.querySelectorAll('.step-zoomable')]:[img];
+    const ov=document.createElement('div'); ov.className='step-lightbox'+(imgs.length>1?' multi':''); ov.setAttribute('role','dialog'); ov.setAttribute('aria-label','Picture, full size');
+    ov.innerHTML='<img class="step-lightbox-img" alt=""><button type="button" class="step-lightbox-x" aria-label="Close">✕</button>'
+      +'<button type="button" class="step-lightbox-nav step-lightbox-prev" aria-label="Previous picture">‹</button><button type="button" class="step-lightbox-nav step-lightbox-next" aria-label="Next picture">›</button>'
+      +'<span class="step-lightbox-n" aria-live="polite"></span>';
+    cur={ov, imgs, i:Math.max(0, imgs.indexOf(img))};
+    let t=null, swiped=false;
+    ov.addEventListener('touchstart', e=>{ t=e.touches.length===1?{x:e.touches[0].clientX, y:e.touches[0].clientY}:null; swiped=false; }, {passive:true});
+    ov.addEventListener('touchmove', e=>{ if(e.touches.length>1) t=null; }, {passive:true}); // pinch: never a picture change
+    ov.addEventListener('touchend', e=>{
+      if(!t) return; const p=e.changedTouches[0], dx=p.clientX-t.x, dy=p.clientY-t.y; t=null;
+      const zoomed=window.visualViewport && window.visualViewport.scale>1.05;
+      if(!zoomed && Math.abs(dx)>=60 && Math.abs(dx)>Math.abs(dy)*1.5){ swiped=true; setTimeout(()=>{ swiped=false; }, 350); go(dx<0?1:-1); }
+    }, {passive:true});
+    ov.addEventListener('click', e=>{
+      if(swiped){ swiped=false; return; } // the swipe's own click does not close the viewer
+      const b=e.target.closest('button');
+      if(b && b.classList.contains('step-lightbox-prev')) return go(-1);
+      if(b && b.classList.contains('step-lightbox-next')) return go(1);
+      close();
+    });
+    document.addEventListener('keydown', key, true);
+    document.body.appendChild(ov); show();
   }
   document.addEventListener('click', e=>{ const im=e.target.closest && e.target.closest('.step-zoomable'); if(im){ e.preventDefault(); open(im); } });
-  document.addEventListener('keydown', e=>{ const im=e.target.closest && e.target.closest('.step-zoomable'); if(im && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); e.stopPropagation(); open(im); } });
+  document.addEventListener('keydown', e=>{ if(cur) return; const im=e.target.closest && e.target.closest('.step-zoomable'); if(im && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); e.stopPropagation(); open(im); } });
 })();
