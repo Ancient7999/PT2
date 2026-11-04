@@ -6,6 +6,17 @@
 var APP_INFO = {
   releases: [
     {
+      version: '0.30',
+      date: '04/11/2026',
+      changes: [
+        'Anatomy: Axial and Appendicular are now one Bone Identification card that asks which part of the skeleton each bone belongs to.',
+        'Anatomy: new Bone MCQs and Bone Linking cards.',
+        'Anatomy: clearer wording for the vertebrae, skull and facial bones.',
+        'On phones, a slight sideways swipe or opening a picture now stops the auto-next bar, and other touches no longer do.',
+        'You can swipe between a question\'s pictures when they\'re open full size.'
+      ]
+    },
+    {
       version: '0.29',
       date: '04/11/2026',
       changes: [
