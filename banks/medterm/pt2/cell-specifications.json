@@ -115,9 +115,7 @@
           "T lymphocyte",
           "T lymphocytes",
           "T-lymphocyte",
-          "T-lymphocytes",
-          "Tcell",
-          "Tcells"
+          "T-lymphocytes"
         ],
         "explain": "This is the T cell (also accepted: T-cell, T lymphocyte). It matures in the thymus, attacks foreign, cancerous and virus-infected cells, and lives about 30 to 160 days."
       },
@@ -135,9 +133,7 @@
           "B lymphocyte",
           "B lymphocytes",
           "B-lymphocyte",
-          "B-lymphocytes",
-          "Bcell",
-          "Bcells"
+          "B-lymphocytes"
         ],
         "explain": "This is the B cell (also accepted: B-cell, B lymphocyte). It arises in the bone marrow and makes antibodies, the Y-shaped proteins that destroy or inactivate antigens, and lives about 5 to 6 weeks."
       },
@@ -157,9 +153,7 @@
           "Natural killer",
           "Natural killers",
           "NK",
-          "NKs",
-          "NKcell",
-          "NKcells"
+          "NKs"
         ],
         "explain": "This is the NK cell (also accepted: natural killer cell, NK-cell). It carries cytotoxic substances that kill tumour and infected cells and lives up to about 2 weeks."
       },
@@ -185,13 +179,9 @@
         "answer": "Megakaryocyte",
         "accept": [
           "Megakaryocyte",
-          "Megakaryocytes",
-          "Megakarocyte",
-          "Megakarocytes",
-          "Megakaryocite",
-          "Megakaryocites"
+          "Megakaryocytes"
         ],
-        "explain": "This is the megakaryocyte (also accepted: megakaryocytes, and the misspelling megakarocyte). It stays in the bone marrow and its cytoplasm fragments into thrombocytes (platelets), the smallest cell fragments, which live 7 to 10 days and are essential for coagulation."
+        "explain": "This is the megakaryocyte (also accepted: megakaryocytes). It stays in the bone marrow and its cytoplasm fragments into thrombocytes (platelets), the smallest cell fragments, which live 7 to 10 days and are essential for coagulation."
       },
       {
         "id": "MT14212",
@@ -460,18 +450,14 @@
         "answers": [
           [
             "Megakaryocyte",
-            "Megakaryocytes",
-            "Megakarocyte",
-            "Megakarocytes",
-            "Megakaryocite",
-            "Megakaryocites"
+            "Megakaryocytes"
           ],
           [
             "Monocyte",
             "Monocytes"
           ]
         ],
-        "explain": "The megakaryocyte (also accepted: megakaryocytes, megakarocyte) is the largest cell in the bone marrow and stays there, sending only its cytoplasmic fragments, the thrombocytes (platelets), into the blood. The monocyte (also accepted: monocytes) is the largest white blood cell and so the largest cell in circulating blood, with one large nucleus and no granules."
+        "explain": "The megakaryocyte (also accepted: megakaryocytes) is the largest cell in the bone marrow and stays there, sending only its cytoplasmic fragments, the thrombocytes (platelets), into the blood. The monocyte (also accepted: monocytes) is the largest white blood cell and so the largest cell in circulating blood, with one large nucleus and no granules."
       },
       {
         "id": "MT14223",
@@ -555,9 +541,7 @@
           "B lymphocyte",
           "B lymphocytes",
           "B-lymphocyte",
-          "B-lymphocytes",
-          "Bcell",
-          "Bcells"
+          "B-lymphocytes"
         ],
         "explain": "The B cell (also accepted: B-cell, B lymphocyte) makes antibodies, the Y-shaped proteins that inactivate antigens."
       },
@@ -691,9 +675,7 @@
           "T lymphocyte",
           "T lymphocytes",
           "T-lymphocyte",
-          "T-lymphocytes",
-          "Tcell",
-          "Tcells"
+          "T-lymphocytes"
         ],
         "explain": "The T cell (also accepted: T-cell, T lymphocyte) matures under thymic influence; the B cell arises in the bone marrow."
       },
@@ -713,9 +695,7 @@
           "Natural killer",
           "Natural killers",
           "NK",
-          "NKs",
-          "NKcell",
-          "NKcells"
+          "NKs"
         ],
         "explain": "The NK cell (also accepted: natural killer cell, NK-cell) kills tumour and infected cells with cytotoxic substances."
       },
@@ -733,9 +713,7 @@
             "T lymphocyte",
             "T lymphocytes",
             "T-lymphocyte",
-            "T-lymphocytes",
-            "Tcell",
-            "Tcells"
+            "T-lymphocytes"
           ],
           [
             "B cell",
@@ -745,9 +723,7 @@
             "B lymphocyte",
             "B lymphocytes",
             "B-lymphocyte",
-            "B-lymphocytes",
-            "Bcell",
-            "Bcells"
+            "B-lymphocytes"
           ],
           [
             "NK cell",
@@ -759,9 +735,7 @@
             "Natural killer",
             "Natural killers",
             "NK",
-            "NKs",
-            "NKcell",
-            "NKcells"
+            "NKs"
           ]
         ],
         "anyOrder": true,
