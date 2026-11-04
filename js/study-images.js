@@ -191,10 +191,15 @@ function storeKey(key, img) {
    * img.views[] = {id, name, kind:'3d'|'slice', ends:[top, bottom], frames:[{src, pos:{labelId:[x,y,w,h, ax,ay, fx,fy]}}], chyme?}
    * Labels keep their ids in every view, so an answer belongs to its structure across cuts and planes.
    * A label only shows when its structure is cut (or seen) in the current picture. */
+  const VIEW_KEY = 'pt2_simg_view_v1';
+  function viewPref() { try { return localStorage.getItem(VIEW_KEY) || ''; } catch (e) { return ''; } }
   const viewOf = Object.create(null);   // picture key → {v, at:{viewId: cut}} (this visit only)
   const SL_ABBR = { Superior: 'Sup', Inferior: 'Inf', Left: 'L', Right: 'R', Front: 'Ant', Back: 'Post' };
   function stackState(key, img) {
     const st = viewOf[key] = viewOf[key] || { v: 0, at: {} };
+    // the view picked on any picture (3D, Axial, Sagittal, Coronal…) is used for every picture that has it, and saved
+    const pref = viewPref();
+    if (st.p !== pref) { st.p = pref; const j = img.views.findIndex(w => w.id === pref); if (j >= 0) st.v = j; }
     if (!img.views[st.v]) st.v = 0;
     const view = img.views[st.v], n = view.frames.length;
     let i = st.at[view.id]; if (!(i >= 0 && i < n)) i = st.at[view.id] = Math.floor((n - 1) / 2);
@@ -656,7 +661,7 @@ function storeKey(key, img) {
     if (img.variants) sec.querySelectorAll('.simg-var').forEach(b => b.addEventListener('click', () => { if ((varOf[key] | 0) === +b.dataset.var) return; varOf[key] = +b.dataset.var; rerender(); const nb = sec.querySelector('.simg-var[data-var="' + b.dataset.var + '"]'); if (nb) try { nb.focus({ preventScroll: true }); } catch (e) {} }));
     /* view stacks: view buttons re-render; the cut slider swaps the picture and moves the labels in place */
     if (img.views) {
-      sec.querySelectorAll('.simg-view').forEach(b => b.addEventListener('click', () => { const st = viewOf[key]; if (+b.dataset.v === st.v) return; st.v = +b.dataset.v; rerender(); const nb = sec.querySelector('.simg-view[data-v="' + b.dataset.v + '"]'); if (nb) try { nb.focus({ preventScroll: true }); } catch (e) {} }));
+      sec.querySelectorAll('.simg-view').forEach(b => b.addEventListener('click', () => { const st = viewOf[key]; if (+b.dataset.v === st.v) return; st.v = +b.dataset.v; const vid = (img.views[st.v] || {}).id || ''; try { localStorage.setItem(VIEW_KEY, vid); } catch (e) {} st.p = vid; rerender(); document.querySelectorAll('#studyView .simg-card').forEach(o => { if (o !== sec && o.isConnected && typeof o.__simgRerender === 'function') o.__simgRerender(); }); const nb = sec.querySelector('.simg-view[data-v="' + b.dataset.v + '"]'); if (nb) try { nb.focus({ preventScroll: true }); } catch (e) {} }));
       const sl = sec.querySelector('.simg-slider');
       if (sl) {
         const track = sl.querySelector('.simg-sl-track'), thumb = sl.querySelector('.simg-sl-thumb'), posEl = sl.querySelector('.simg-sl-pos');
