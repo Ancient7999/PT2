@@ -131,8 +131,8 @@
           "title": "Anatomy",
           "subtitle": "Bone identification, relative positions and Picture Study",
           "bank": "banks/anatomy/bone-identification.json",
-          "draft": true,
-          "comingSoon": true,
+          "draft": false,
+          "comingSoon": false,
           "study": {
             "title": "Picture Study",
             "images": "banks/anatomy/study/study-images.json"
