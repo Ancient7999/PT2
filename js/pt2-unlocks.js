@@ -50,7 +50,21 @@
     { emoji: '\uD83E\uDD13', at: 1250, rot: true, label: 'Nerd', fam: 'mood-neutral', cls: 'mood-nerd' },
     { emoji: '\uD83E\uDD73', at: 1500, rot: true, label: 'Party', fam: 'mood-happy', cls: 'mood-party' },
     { emoji: '\uD83E\uDD17', at: 2000, label: 'Warm', fam: 'mood-calm', cls: 'mood-calm' },
-    { emoji: '\u2728', at: 2500, rot: true, label: 'Sparkle', fam: 'mood-calm', cls: 'mood-sparkle' }
+    { emoji: '\u2728', at: 2500, rot: true, label: 'Sparkle', fam: 'mood-calm', cls: 'mood-sparkle' },
+    // mostly faces at spread-out totals; 🥶 🥵 👻 🤖 😈 bring their own look (css/pt2.css)
+    { emoji: '\uD83D\uDE07', at: 40, label: 'Angel', fam: 'mood-calm', cls: 'mood-calm' },
+    { emoji: '\uD83D\uDE43', at: 100, label: 'Upside Down', fam: 'mood-happy', cls: 'mood-grin' },
+    { emoji: '\uD83D\uDE0F', at: 200, label: 'Smirk', fam: 'mood-happy', cls: 'mood-cool' },
+    { emoji: '\uD83E\uDEE1', at: 320, label: 'Salute', fam: 'mood-neutral', cls: 'mood-focus' },
+    { emoji: '\uD83E\uDD20', at: 420, label: 'Cowboy', fam: 'mood-happy', cls: 'mood-party' },
+    { emoji: '\uD83E\uDD79', at: 550, label: 'Touched', fam: 'mood-happy', cls: 'mood-happy' },
+    { emoji: '\uD83E\uDD2F', at: 700, label: 'Mind Blown', fam: 'mood-fierce', cls: 'mood-electric' },
+    { emoji: '\uD83E\uDD76', at: 900, label: 'Frozen', fam: 'mood-calm', cls: 'mood-frozen' },
+    { emoji: '\uD83E\uDD75', at: 1050, label: 'Overheated', fam: 'mood-fierce', cls: 'mood-hot' },
+    { emoji: '\uD83D\uDC7B', at: 1100, label: 'Ghost', fam: 'mood-neutral', cls: 'mood-ghost' },
+    { emoji: '\uD83E\uDD16', at: 1350, label: 'Robot', fam: 'mood-neutral', cls: 'mood-robot' },
+    { emoji: '\uD83D\uDE08', at: 1750, label: 'Devil', fam: 'mood-fierce', cls: 'mood-devil' },
+    { emoji: '\uD83E\uDEE0', at: 2250, label: 'Melting', fam: 'mood-sleepy', cls: 'mood-cozy' }
   ] };
   TOTAL.unlocks.forEach(function (u) { u.w = TOTAL; UNLOCKS.push(u); });
   function lsGet(k) { try { return global.localStorage.getItem(k); } catch (e) { return null; } }

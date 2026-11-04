@@ -276,3 +276,103 @@ html.mood-locked:not(.pt2-basic)::after{background:repeating-linear-gradient(180
 }
 @keyframes pt2LockGrid{to{background-position:0 -44px,44px 0,0 0,0 0}}
 @keyframes pt2LockHeat{from{opacity:.3}to{opacity:.65}}
+
+/* Special emoji rethemes (😈 🥶 🥵 👻 🤖), built like 🔒 above: custom properties plus two fixed background layers,
+   still under Basic, moving only with Animation effects on and motion allowed. Picking another emoji removes them. */
+html.mood-devil{ /* 😈 */
+  --bg:#0c0410; --bg2:#150619; --bg-glow:rgba(192,38,211,.09); --grid-tint:transparent;
+  --accent:#c026d3; --cyan:#c026d3; --cyan-bright:#e879f9; --teal:#6b21a8;
+  --border:rgba(192,38,211,.42); --mood-glow:rgba(192,38,211,.28); --gold:#e879f9;
+  --accent-0:#c026d3!important; --accent-0-rgb:192,38,211!important;
+  --accent-1:#9333ea!important; --accent-1-rgb:147,51,234!important;
+  --accent-2:#be123c!important; --accent-2-rgb:190,18,60!important;
+  --accent-3:#6b21a8!important; --accent-3-rgb:107,33,168!important;
+  --accent-4:#e879f9!important; --accent-4-rgb:232,121,249!important;
+  --anim-speed:.75; --pulse-ms:2200ms; --transition-ms:360ms; --particle-speed:.7;
+}
+html.mood-devil:not(.pt2-basic)::before,html.mood-devil:not(.pt2-basic)::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none}
+html.mood-devil:not(.pt2-basic)::before{background:radial-gradient(ellipse at 15% 110%,rgba(190,18,60,.26),transparent 50%),radial-gradient(ellipse at 85% 110%,rgba(147,51,234,.26),transparent 50%),radial-gradient(ellipse at 50% -10%,rgba(192,38,211,.16),transparent 45%)}
+html.mood-devil:not(.pt2-basic)::after{background:repeating-linear-gradient(180deg,transparent 0 3px,rgba(60,6,50,.09) 3px 4px);opacity:.6}
+@media (prefers-reduced-motion:no-preference){
+  html.mood-devil.pt2-fx:not(.pt2-basic)::before{animation:pt2MoodBreathe 6s ease-in-out infinite alternate}
+  html.mood-devil.pt2-fx:not(.pt2-basic)::after{animation:pt2MoodFlicker 9s ease-in-out infinite alternate}
+}
+html.mood-frozen{ /* 🥶 */
+  --bg:#03101a; --bg2:#061826; --bg-glow:rgba(56,189,248,.09); --grid-tint:transparent;
+  --accent:#38bdf8; --cyan:#38bdf8; --cyan-bright:#bae6fd; --teal:#0284c7;
+  --border:rgba(56,189,248,.42); --mood-glow:rgba(56,189,248,.28); --gold:#bae6fd;
+  --accent-0:#38bdf8!important; --accent-0-rgb:56,189,248!important;
+  --accent-1:#0ea5e9!important; --accent-1-rgb:14,165,233!important;
+  --accent-2:#7dd3fc!important; --accent-2-rgb:125,211,252!important;
+  --accent-3:#0284c7!important; --accent-3-rgb:2,132,199!important;
+  --accent-4:#bae6fd!important; --accent-4-rgb:186,230,253!important;
+  --anim-speed:.75; --pulse-ms:2200ms; --transition-ms:360ms; --particle-speed:.7;
+}
+html.mood-frozen:not(.pt2-basic)::before,html.mood-frozen:not(.pt2-basic)::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none}
+html.mood-frozen:not(.pt2-basic)::before{background:radial-gradient(ellipse at center,transparent 55%,rgba(186,230,253,.10) 100%),radial-gradient(ellipse at 50% -10%,rgba(56,189,248,.18),transparent 50%)}
+html.mood-frozen:not(.pt2-basic)::after{background:radial-gradient(circle,rgba(224,242,254,.35) 1px,transparent 1.6px) 0 0/60px 60px,radial-gradient(circle,rgba(224,242,254,.22) 1px,transparent 1.4px) 30px 30px/90px 90px;opacity:.6}
+@media (prefers-reduced-motion:no-preference){
+  html.mood-frozen.pt2-fx:not(.pt2-basic)::before{animation:pt2MoodBreathe 8s ease-in-out infinite alternate}
+  html.mood-frozen.pt2-fx:not(.pt2-basic)::after{animation:pt2MoodSnow 40s linear infinite}
+}
+html.mood-hot{ /* 🥵 */
+  --bg:#150703; --bg2:#200b05; --bg-glow:rgba(249,115,22,.09); --grid-tint:transparent;
+  --accent:#f97316; --cyan:#f97316; --cyan-bright:#fdba74; --teal:#c2410c;
+  --border:rgba(249,115,22,.42); --mood-glow:rgba(249,115,22,.28); --gold:#fdba74;
+  --accent-0:#f97316!important; --accent-0-rgb:249,115,22!important;
+  --accent-1:#ea580c!important; --accent-1-rgb:234,88,12!important;
+  --accent-2:#fb923c!important; --accent-2-rgb:251,146,60!important;
+  --accent-3:#c2410c!important; --accent-3-rgb:194,65,12!important;
+  --accent-4:#fdba74!important; --accent-4-rgb:253,186,116!important;
+  --anim-speed:.75; --pulse-ms:2200ms; --transition-ms:360ms; --particle-speed:.7;
+}
+html.mood-hot:not(.pt2-basic)::before,html.mood-hot:not(.pt2-basic)::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none}
+html.mood-hot:not(.pt2-basic)::before{background:radial-gradient(ellipse at 50% 115%,rgba(234,88,12,.32),transparent 55%),radial-gradient(ellipse at 50% -10%,rgba(251,146,60,.12),transparent 45%)}
+html.mood-hot:not(.pt2-basic)::after{background:repeating-linear-gradient(180deg,transparent 0 4px,rgba(120,40,4,.10) 4px 5px);opacity:.6}
+@media (prefers-reduced-motion:no-preference){
+  html.mood-hot.pt2-fx:not(.pt2-basic)::before{animation:pt2MoodBreathe 3.5s ease-in-out infinite alternate}
+  html.mood-hot.pt2-fx:not(.pt2-basic)::after{animation:pt2MoodHeat 2.6s ease-in-out infinite alternate}
+}
+html.mood-ghost{ /* 👻 */
+  --bg:#0a0a12; --bg2:#11111c; --bg-glow:rgba(165,180,252,.09); --grid-tint:transparent;
+  --accent:#a5b4fc; --cyan:#a5b4fc; --cyan-bright:#e0e7ff; --teal:#6366f1;
+  --border:rgba(165,180,252,.42); --mood-glow:rgba(165,180,252,.28); --gold:#e0e7ff;
+  --accent-0:#a5b4fc!important; --accent-0-rgb:165,180,252!important;
+  --accent-1:#818cf8!important; --accent-1-rgb:129,140,248!important;
+  --accent-2:#c4b5fd!important; --accent-2-rgb:196,181,253!important;
+  --accent-3:#6366f1!important; --accent-3-rgb:99,102,241!important;
+  --accent-4:#e0e7ff!important; --accent-4-rgb:224,231,255!important;
+  --anim-speed:.75; --pulse-ms:2200ms; --transition-ms:360ms; --particle-speed:.7;
+}
+html.mood-ghost:not(.pt2-basic)::before,html.mood-ghost:not(.pt2-basic)::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none}
+html.mood-ghost:not(.pt2-basic)::before{background:radial-gradient(ellipse 60% 40% at 20% 30%,rgba(199,210,254,.10),transparent 70%),radial-gradient(ellipse 50% 35% at 80% 70%,rgba(196,181,253,.10),transparent 70%)}
+html.mood-ghost:not(.pt2-basic)::after{background:radial-gradient(ellipse 45% 30% at 60% 20%,rgba(224,231,255,.07),transparent 70%),radial-gradient(ellipse 40% 30% at 30% 85%,rgba(224,231,255,.06),transparent 70%);opacity:.6}
+@media (prefers-reduced-motion:no-preference){
+  html.mood-ghost.pt2-fx:not(.pt2-basic)::before{animation:pt2MoodDrift 26s ease-in-out infinite alternate}
+  html.mood-ghost.pt2-fx:not(.pt2-basic)::after{animation:pt2MoodDrift2 34s ease-in-out infinite alternate}
+}
+html.mood-robot{ /* 🤖 */
+  --bg:#020d07; --bg2:#04160c; --bg-glow:rgba(34,197,94,.09); --grid-tint:transparent;
+  --accent:#22c55e; --cyan:#22c55e; --cyan-bright:#86efac; --teal:#15803d;
+  --border:rgba(34,197,94,.42); --mood-glow:rgba(34,197,94,.28); --gold:#86efac;
+  --accent-0:#22c55e!important; --accent-0-rgb:34,197,94!important;
+  --accent-1:#16a34a!important; --accent-1-rgb:22,163,74!important;
+  --accent-2:#4ade80!important; --accent-2-rgb:74,222,128!important;
+  --accent-3:#15803d!important; --accent-3-rgb:21,128,61!important;
+  --accent-4:#86efac!important; --accent-4-rgb:134,239,172!important;
+  --anim-speed:.75; --pulse-ms:2200ms; --transition-ms:360ms; --particle-speed:.7;
+}
+html.mood-robot:not(.pt2-basic)::before,html.mood-robot:not(.pt2-basic)::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none}
+html.mood-robot:not(.pt2-basic)::before{background:linear-gradient(rgba(34,197,94,.06) 1px,transparent 1px) 0 0/28px 28px,linear-gradient(90deg,rgba(34,197,94,.06) 1px,transparent 1px) 0 0/28px 28px,radial-gradient(ellipse at 50% -8%,rgba(34,197,94,.16),transparent 46%)}
+html.mood-robot:not(.pt2-basic)::after{background:repeating-linear-gradient(180deg,transparent 0 2px,rgba(4,40,16,.14) 2px 3px);opacity:.6}
+@media (prefers-reduced-motion:no-preference){
+  html.mood-robot.pt2-fx:not(.pt2-basic)::before{animation:pt2MoodGrid 20s linear infinite}
+  html.mood-robot.pt2-fx:not(.pt2-basic)::after{animation:pt2MoodHeat 4s steps(6) infinite alternate}
+}
+@keyframes pt2MoodBreathe{from{opacity:.7}to{opacity:1}}
+@keyframes pt2MoodFlicker{0%{opacity:.35}40%{opacity:.6}55%{opacity:.4}100%{opacity:.7}}
+@keyframes pt2MoodHeat{from{opacity:.3;transform:translateY(0)}to{opacity:.7;transform:translateY(-3px)}}
+@keyframes pt2MoodSnow{to{background-position:0 600px,30px 930px}}
+@keyframes pt2MoodDrift{from{transform:translate(0,0)}to{transform:translate(4vw,-3vh)}}
+@keyframes pt2MoodDrift2{from{transform:translate(0,0)}to{transform:translate(-5vw,2vh)}}
+@keyframes pt2MoodGrid{to{background-position:0 28px,28px 0,0 0}}
