@@ -6,6 +6,16 @@
 var APP_INFO = {
   releases: [
     {
+      version: '0.32',
+      date: '04/11/2026',
+      changes: [
+        'Linking lines now follow your drawing exactly.',
+        'New unlock at 240 questions solved: Drawing Lines. Lines in linking questions change color with each line you draw.',
+        'It turns on by itself when you unlock it. Pick from 12 palettes, such as Theme, Ocean and Forest, or turn it off in Settings → Drawing Lines.',
+        'On phones and tablets, the 1000-question unlock no longer mentions the glow cursor.'
+      ]
+    },
+    {
       version: '0.31',
       date: '04/11/2026',
       changes: [
