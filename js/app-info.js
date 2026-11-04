@@ -6,6 +6,13 @@
 var APP_INFO = {
   releases: [
     {
+      version: '0.31',
+      date: '04/11/2026',
+      changes: [
+        'On phones, linking questions now show Previous and Next buttons.'
+      ]
+    },
+    {
       version: '0.30',
       date: '04/11/2026',
       changes: [
