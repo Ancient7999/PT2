@@ -8,11 +8,17 @@
   var KEY = 'pt2_lines_v1', IDX = 'pt2_lines_idx_v1', FEATURE = 'look:lines';
   var PRESETS = [
     { id: 'theme', name: 'Theme', hint: 'Shades of your accent colour' },
-    { id: 'rainbow', name: 'Rainbow', c: ['#ef4444', '#f97316', '#eab308', '#22c55e', '#3b82f6', '#a855f7'] },
-    { id: 'pastel', name: 'Pastel', c: ['#f472b6', '#fb923c', '#facc15', '#4ade80', '#60a5fa', '#a78bfa'] },
-    { id: 'neon', name: 'Neon', c: ['#ff2bd6', '#00d9ff', '#39e600', '#ffd500', '#ff6b00'] },
     { id: 'ocean', name: 'Ocean', c: ['#0ea5e9', '#06b6d4', '#14b8a6', '#3b82f6', '#6366f1'] },
-    { id: 'sunset', name: 'Sunset', c: ['#f43f5e', '#f97316', '#f59e0b', '#ec4899', '#a855f7'] }
+    { id: 'sunset', name: 'Sunset', c: ['#f43f5e', '#f97316', '#f59e0b', '#ec4899', '#a855f7'] },
+    { id: 'forest', name: 'Forest', c: ['#15803d', '#65a30d', '#0d9488', '#4d7c0f', '#059669'] },
+    { id: 'berry', name: 'Berry', c: ['#be185d', '#9333ea', '#db2777', '#7c3aed', '#c026d3'] },
+    { id: 'autumn', name: 'Autumn', c: ['#c2410c', '#b45309', '#a16207', '#dc2626', '#92400e'] },
+    { id: 'mint', name: 'Mint', c: ['#10b981', '#14b8a6', '#22c55e', '#06b6d4', '#34d399'] },
+    { id: 'candy', name: 'Candy', c: ['#ec4899', '#8b5cf6', '#f472b6', '#38bdf8', '#e879f9'] },
+    { id: 'aurora', name: 'Aurora', c: ['#22d3ee', '#4ade80', '#a78bfa', '#2dd4bf', '#818cf8'] },
+    { id: 'coral', name: 'Coral', c: ['#f87171', '#fb923c', '#f472b6', '#fb7185', '#f59e0b'] },
+    { id: 'pastel', name: 'Pastel', c: ['#f472b6', '#a78bfa', '#fb923c', '#60a5fa', '#e879f9'] },
+    { id: 'neon', name: 'Neon', c: ['#ff2bd6', '#00d9ff', '#39e600', '#ffd500', '#ff6b00'] }
   ];
   function ls(k, v) { try { if (v === undefined) return global.localStorage.getItem(k); global.localStorage.setItem(k, v); } catch (e) { return null; } }
   function unlocked() { try { return !!(global.PT2Unlocks && global.PT2Unlocks.has(FEATURE)); } catch (e) { return false; } }

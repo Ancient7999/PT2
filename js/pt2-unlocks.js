@@ -36,8 +36,8 @@
   ];
   // options that follow the overall tally rather than one week
   var EXTRAS = [
-    { key: 'look:a', icon: '\u26A1', label: 'Glow cursor & Animation effects', title: 'New options unlocked', desc: '1000 questions solved · see Settings → Theme', cls: 'pt2-la-open', ok: function (t) { return t.n >= 1000; } },
-    { key: 'look:lines', icon: '\uD83D\uDD8D\uFE0F', label: 'Drawing Lines', title: 'New settings tab unlocked', desc: '240 questions solved · see Settings → Drawing Lines', cls: 'pt2-lines-open', ok: function (t) { return t.n >= 240; } },
+    { key: 'look:a', icon: '\u26A1', label: 'Glow cursor & Animation effects', labelTouch: 'Animation effects', titleTouch: 'New option unlocked', title: 'New options unlocked', desc: '1000 questions solved · see Settings → Theme', cls: 'pt2-la-open', ok: function (t) { return t.n >= 1000; } },
+    { key: 'look:lines', icon: '\uD83D\uDD8D\uFE0F', label: 'Drawing Lines', title: 'New unlock', desc: '240 questions solved · line colours now rotate, change them in Settings → Drawing Lines', cls: 'pt2-lines-open', ok: function (t) { return t.n >= 240; } },
     { key: 'look:b', icon: '\uD83C\uDF08', label: 'Multicolour Accents', title: 'New setting unlocked', desc: 'Every question solved', cls: 'pt2-lb-open', ok: function (t) { return t.all; } }
   ];
   var UNLOCKS = [], FEATURES = [];
@@ -221,8 +221,10 @@
     p.innerHTML = '<div class="achievement-popup-content"><div class="achievement-popup-icon"></div><div class="achievement-popup-text">'
       + '<div class="achievement-popup-title">New emoji unlocked</div><div class="achievement-popup-name"></div><div class="achievement-popup-desc"></div></div></div>';
     p.querySelector('.achievement-popup-icon').textContent = u.icon || u.emoji;
-    if (u.icon) p.querySelector('.achievement-popup-title').textContent = u.title || 'New option unlocked';
-    p.querySelector('.achievement-popup-name').textContent = u.icon ? u.label : u.emoji + ' ' + u.label;
+    // touch-only devices have no cursor, so the glow cursor is left out of what the pop-up announces there
+    var touchOnly = false; try { touchOnly = global.matchMedia('(hover: none) and (pointer: coarse)').matches || document.documentElement.getAttribute('data-pointer-input') === 'touch'; } catch (e) {}
+    if (u.icon) p.querySelector('.achievement-popup-title').textContent = (touchOnly && u.titleTouch) || u.title || 'New option unlocked';
+    p.querySelector('.achievement-popup-name').textContent = u.icon ? ((touchOnly && u.labelTouch) || u.label) : u.emoji + ' ' + u.label;
     p.querySelector('.achievement-popup-desc').textContent = u.desc || (u.all ? u.w.done : u.at + ' questions solved');
     document.body.appendChild(p);
     if (u.key) { try { document.dispatchEvent(new CustomEvent('pt2-popup', { detail: u.key })); } catch (e) {} }
