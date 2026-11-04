@@ -2975,10 +2975,9 @@ function beginDraw(ev,q,btn){
 function putWireTip(points, p){
   if(!points||!p) return;
   if(!points.length){ points.push({x:p.x,y:p.y}); return; }
+  // Record every pen movement as drawn; only skip an exact repeat of the last point.
   const last=points[points.length-1];
-  const dx=p.x-last.x, dy=p.y-last.y;
-  if(points.length===1 || dx*dx+dy*dy>=2.25) points.push({x:p.x,y:p.y});
-  else { last.x=p.x; last.y=p.y; }
+  if(p.x!==last.x || p.y!==last.y) points.push({x:p.x,y:p.y});
 }
 function followDrawPointer(ev, layer){
   if(!drawState||!ev) return;
