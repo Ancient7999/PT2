@@ -1,0 +1,809 @@
+{
+  "id": "cell-specifications-lec14-15",
+  "subject": "Medical Terminology",
+  "subjectId": "medical_terminology",
+  "title": "Cell Specifications - Lectures 14 and 15",
+  "formSize": 38,
+  "forms": [
+    "A"
+  ],
+  "bank": {
+    "A": [
+      {
+        "id": "MT14201",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which cell is the most numerous formed element of blood, has no nucleus, and carries oxygen and carbon dioxide bound to hemoglobin?",
+        "answer": "Erythrocyte",
+        "accept": [
+          "Erythrocyte",
+          "Erythrocytes",
+          "Red blood cell",
+          "Red blood cells",
+          "Red cell",
+          "Red cells",
+          "RBC",
+          "RBCs",
+          "Red blood corpuscle",
+          "Red blood corpuscles",
+          "Red corpuscle",
+          "Red corpuscles"
+        ],
+        "explain": "This is the erythrocyte, also accepted as red blood cell, red cell or RBC. It lacks a nucleus, is the most numerous blood cell, and carries oxygen and carbon dioxide on hemoglobin for about 110 to 120 days."
+      },
+      {
+        "id": "MT14202",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which white cell is the most common leukocyte, has a many-lobed nucleus with granules that take neither an acid nor a basic stain, and clears bacterial infection by engulfing germs?",
+        "answer": "Neutrophil",
+        "accept": [
+          "Neutrophil",
+          "Neutrophils",
+          "Polymorphonuclear neutrophil",
+          "Polymorphonuclear neutrophils",
+          "Neutrophilic granulocyte",
+          "Neutrophilic granulocytes",
+          "PMN",
+          "PMNs"
+        ],
+        "explain": "This is the neutrophil (also accepted: neutrophils, PMN). Its granules stain neutral, its nucleus is lobed, it is the most common white cell, and it engulfs germs for up to about 24 hours."
+      },
+      {
+        "id": "MT14203",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which granulocyte has bright yellow-red to orange (rosy) granules and rises in number during parasitic infections and allergic reactions?",
+        "answer": "Eosinophil",
+        "accept": [
+          "Eosinophil",
+          "Eosinophils",
+          "Eosinophilic granulocyte",
+          "Eosinophilic granulocytes"
+        ],
+        "explain": "This is the eosinophil (also accepted: eosinophils). Its granules stain bright yellow-red, orange or rosy, its count climbs in parasitic infection and allergy, and it lives about 2 to 5 days."
+      },
+      {
+        "id": "MT14204",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which granulocyte has dark blue to blue-black granules, takes part in immune surveillance, and releases anticoagulant substances and histamine into inflamed tissue?",
+        "answer": "Basophil",
+        "accept": [
+          "Basophil",
+          "Basophils",
+          "Basophilic granulocyte",
+          "Basophilic granulocytes"
+        ],
+        "explain": "This is the basophil (also accepted: basophils). Its granules stain dark blue, it carries anticoagulant (heparin) and histamine to inflamed tissue, it helps immune surveillance, and it usually lives under 2 days."
+      },
+      {
+        "id": "MT14205",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which agranulocyte is the largest white cell, has a single large nucleus, and engulfs viruses, bacteria, fungi and protozoa?",
+        "answer": "Monocyte",
+        "accept": [
+          "Monocyte",
+          "Monocytes"
+        ],
+        "explain": "This is the monocyte (also accepted: monocytes). It is the largest leukocyte, has one large nucleus and no granules, destroys germs by engulfing them, and lives up to about 24 hours in blood."
+      },
+      {
+        "id": "MT14206",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which agranulocyte has one large nucleus, no granules, and gives rise to three lineages that handle adaptive and innate immune defence?",
+        "answer": "Lymphocyte",
+        "accept": [
+          "Lymphocyte",
+          "Lymphocytes"
+        ],
+        "explain": "This is the lymphocyte (also accepted: lymphocytes). It has a single large nucleus and no granules, and its three lineages are the T cell, the B cell and the NK cell."
+      },
+      {
+        "id": "MT14207",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which lymphocyte matures under the influence of the thymus and attacks foreign cells, cancer cells and virus-infected cells?",
+        "answer": "T cell",
+        "accept": [
+          "T cell",
+          "T cells",
+          "T-cell",
+          "T-cells",
+          "T lymphocyte",
+          "T lymphocytes",
+          "T-lymphocyte",
+          "T-lymphocytes",
+          "Tcell",
+          "Tcells"
+        ],
+        "explain": "This is the T cell (also accepted: T-cell, T lymphocyte). It matures in the thymus, attacks foreign, cancerous and virus-infected cells, and lives about 30 to 160 days."
+      },
+      {
+        "id": "MT14208",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which lymphocyte arises in the bone marrow and produces Y-shaped proteins that inactivate antigens?",
+        "answer": "B cell",
+        "accept": [
+          "B cell",
+          "B cells",
+          "B-cell",
+          "B-cells",
+          "B lymphocyte",
+          "B lymphocytes",
+          "B-lymphocyte",
+          "B-lymphocytes",
+          "Bcell",
+          "Bcells"
+        ],
+        "explain": "This is the B cell (also accepted: B-cell, B lymphocyte). It arises in the bone marrow and makes antibodies, the Y-shaped proteins that destroy or inactivate antigens, and lives about 5 to 6 weeks."
+      },
+      {
+        "id": "MT14209",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which lymphocyte carries cytotoxic substances and kills tumour cells and infected cells without needing antibodies?",
+        "answer": "NK cell",
+        "accept": [
+          "NK cell",
+          "NK cells",
+          "NK-cell",
+          "NK-cells",
+          "Natural killer cell",
+          "Natural killer cells",
+          "Natural killer",
+          "Natural killers",
+          "NK",
+          "NKs",
+          "NKcell",
+          "NKcells"
+        ],
+        "explain": "This is the NK cell (also accepted: natural killer cell, NK-cell). It carries cytotoxic substances that kill tumour and infected cells and lives up to about 2 weeks."
+      },
+      {
+        "id": "MT14210",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which formed element is a small, nucleus-free fragment shed from a large bone-marrow cell and is essential for blood coagulation?",
+        "answer": "Thrombocyte",
+        "accept": [
+          "Thrombocyte",
+          "Thrombocytes",
+          "Platelet",
+          "Platelets"
+        ],
+        "explain": "This is the thrombocyte, also accepted as platelet. It is a fragment of the megakaryocyte, has no nucleus, is the smallest formed element, starts clotting, and lives about 7 to 10 days."
+      },
+      {
+        "id": "MT14211",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which very large bone-marrow cell is the parent that sheds the fragments used in blood clotting?",
+        "answer": "Megakaryocyte",
+        "accept": [
+          "Megakaryocyte",
+          "Megakaryocytes"
+        ],
+        "explain": "This is the megakaryocyte (also accepted: megakaryocytes). It stays in the bone marrow and breaks into platelets (thrombocytes); lymphoblasts, monoblasts and erythroblasts give rise to other cells."
+      },
+      {
+        "id": "MT14212",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "The erythrocyte (red blood cell) is the most numerous blood cell, has no nucleus, and carries oxygen and carbon dioxide on hemoglobin. What is its lifespan?",
+        "answer": "110 to 120 days",
+        "accept": [
+          "110 to 120 days",
+          "110 to 120",
+          "about 110 to 120 days",
+          "110-120 days",
+          "110-120",
+          "about 110-120 days",
+          "110–120 days",
+          "110–120",
+          "about 110–120 days",
+          "110 - 120 days",
+          "110 - 120",
+          "about 110 - 120 days",
+          "120",
+          "120 days",
+          "about 120 days",
+          "up to 120 days",
+          "about 4 months",
+          "4 months"
+        ],
+        "explain": "The erythrocyte lives about 110 to 120 days (accepted as 120 days, 110-120 or about 4 months) before the spleen removes it. It is the most numerous blood cell, has no nucleus and carries gases on hemoglobin."
+      },
+      {
+        "id": "MT14213",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "The neutrophil is the most common white cell, a granulocyte with a lobed nucleus and neutral-staining granules that engulfs bacteria. What is its lifespan?",
+        "answer": "Up to 24 hours",
+        "accept": [
+          "Up to 24 hours",
+          "24 hours",
+          "24",
+          "up to 24 hours",
+          "about 24 hours",
+          "less than 24 hours",
+          "under 24 hours",
+          "1 day",
+          "one day",
+          "a day",
+          "up to 1 day",
+          "up to a day",
+          "about a day",
+          "24 hrs",
+          "24h"
+        ],
+        "explain": "The neutrophil lives up to about 24 hours (accepted as 24 hours, 24 or one day). It is the most common leukocyte, has a lobed nucleus and neutral granules, and fights infection by phagocytosis."
+      },
+      {
+        "id": "MT14214",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "The eosinophil is a granulocyte with bright yellow-red to orange granules whose count rises in parasitic infections and allergic reactions. What is its lifespan?",
+        "answer": "2 to 5 days",
+        "accept": [
+          "2 to 5 days",
+          "2 to 5",
+          "about 2 to 5 days",
+          "2-5 days",
+          "2-5",
+          "about 2-5 days",
+          "2–5 days",
+          "2–5",
+          "about 2–5 days",
+          "2 - 5 days",
+          "2 - 5",
+          "about 2 - 5 days",
+          "5",
+          "5 days",
+          "about 5 days",
+          "up to 5 days"
+        ],
+        "explain": "The eosinophil lives about 2 to 5 days (accepted as 2-5 days or 5 days). Its granules stain orange to rosy and it increases in parasitic infection and allergy."
+      },
+      {
+        "id": "MT14215",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "The basophil is a granulocyte with dark blue granules that helps immune surveillance and releases anticoagulants and histamine into inflamed tissue. What is its lifespan?",
+        "answer": "Under 2 days",
+        "accept": [
+          "Under 2 days",
+          "2 days",
+          "2",
+          "under 2 days",
+          "less than 2 days",
+          "up to 2 days",
+          "about 2 days",
+          "under two days",
+          "less than two days",
+          "two days",
+          "48 hours",
+          "under 48 hours",
+          "1 to 2 days",
+          "1-2 days",
+          "1-2"
+        ],
+        "explain": "The basophil usually lives under 2 days (accepted as 2 days, less than 2 days or 48 hours). Its granules stain dark blue and it brings anticoagulants and histamine to inflamed tissue."
+      },
+      {
+        "id": "MT14216",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "The monocyte is the largest white cell, an agranulocyte with a single large nucleus that engulfs viruses, bacteria, fungi and protozoa. What is its lifespan in the blood?",
+        "answer": "Up to 24 hours",
+        "accept": [
+          "Up to 24 hours",
+          "24 hours",
+          "24",
+          "up to 24 hours",
+          "about 24 hours",
+          "less than 24 hours",
+          "under 24 hours",
+          "1 day",
+          "one day",
+          "a day",
+          "up to 1 day",
+          "up to a day",
+          "about a day",
+          "24 hrs",
+          "24h"
+        ],
+        "explain": "The monocyte lives up to about 24 hours in the blood (accepted as 24 hours, 24 or one day), the same as the neutrophil. It is the largest leukocyte and an agranular phagocyte."
+      },
+      {
+        "id": "MT14217",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "The thrombocyte (platelet) is the smallest formed element, a nucleus-free fragment of the megakaryocyte that is essential for coagulation. What is its lifespan?",
+        "answer": "7 to 10 days",
+        "accept": [
+          "7 to 10 days",
+          "7 to 10",
+          "about 7 to 10 days",
+          "7-10 days",
+          "7-10",
+          "about 7-10 days",
+          "7–10 days",
+          "7–10",
+          "about 7–10 days",
+          "7 - 10 days",
+          "7 - 10",
+          "about 7 - 10 days",
+          "10",
+          "10 days",
+          "about 10 days",
+          "up to 10 days",
+          "7 days",
+          "about 7 days",
+          "a week",
+          "1 week",
+          "one week",
+          "about a week"
+        ],
+        "explain": "The thrombocyte (platelet) lives about 7 to 10 days (accepted as 7-10 days, 10 days, 7 days or about a week). It is a megakaryocyte fragment with no nucleus that starts clotting."
+      },
+      {
+        "id": "MT14218",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "The T cell is a lymphocyte that matures under thymic influence and attacks foreign cells, cancer cells and virus-infected cells. What is its lifespan?",
+        "answer": "30 to 160 days",
+        "accept": [
+          "30 to 160 days",
+          "30 to 160",
+          "about 30 to 160 days",
+          "30-160 days",
+          "30-160",
+          "about 30-160 days",
+          "30–160 days",
+          "30–160",
+          "about 30–160 days",
+          "30 - 160 days",
+          "30 - 160",
+          "about 30 - 160 days",
+          "160",
+          "160 days",
+          "about 160 days",
+          "up to 160 days"
+        ],
+        "explain": "The T cell lives about 30 to 160 days (accepted as 30-160 days or 160 days). It matures in the thymus and attacks foreign, cancerous and virus-infected cells."
+      },
+      {
+        "id": "MT14219",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "The B cell is a lymphocyte that arises in the bone marrow and produces antibodies against antigens. What is its lifespan?",
+        "answer": "5 to 6 weeks",
+        "accept": [
+          "5 to 6 weeks",
+          "5 to 6",
+          "about 5 to 6 weeks",
+          "5-6 weeks",
+          "5-6",
+          "about 5-6 weeks",
+          "5–6 weeks",
+          "5–6",
+          "about 5–6 weeks",
+          "5 - 6 weeks",
+          "5 - 6",
+          "about 5 - 6 weeks",
+          "6",
+          "6 weeks",
+          "about 6 weeks",
+          "up to 6 weeks",
+          "5 weeks"
+        ],
+        "explain": "The B cell lives about 5 to 6 weeks (accepted as 5-6 weeks, 6 weeks or 5 weeks). It arises in the bone marrow and makes antibodies."
+      },
+      {
+        "id": "MT14220",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "The NK cell (natural killer cell) is a lymphocyte that carries cytotoxic substances to kill tumour and infected cells. What is its lifespan?",
+        "answer": "Up to 2 weeks",
+        "accept": [
+          "Up to 2 weeks",
+          "2 weeks",
+          "2",
+          "up to 2 weeks",
+          "about 2 weeks",
+          "two weeks",
+          "up to two weeks",
+          "14 days",
+          "up to 14 days",
+          "less than 2 weeks",
+          "under 2 weeks"
+        ],
+        "explain": "The NK cell lives up to about 2 weeks (accepted as 2 weeks or 14 days). It carries cytotoxic substances that kill tumour and infected cells."
+      },
+      {
+        "id": "MT14221",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which two white cells engulf and digest germs as their main way of fighting infection?",
+        "answers": [
+          [
+            "Neutrophil",
+            "Neutrophils",
+            "Polymorphonuclear neutrophil",
+            "Polymorphonuclear neutrophils",
+            "Neutrophilic granulocyte",
+            "Neutrophilic granulocytes",
+            "PMN",
+            "PMNs"
+          ],
+          [
+            "Monocyte",
+            "Monocytes"
+          ]
+        ],
+        "anyOrder": true,
+        "explain": "The neutrophil and the monocyte destroy germs by phagocytosis (singular or plural accepted, any order). The eosinophil acts mainly in parasites and allergy, the basophil releases anticoagulants and histamine, and lymphocytes work through T, B and NK cells."
+      },
+      {
+        "id": "MT14222",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which white cell is the largest leukocyte?",
+        "answer": "Monocyte",
+        "accept": [
+          "Monocyte",
+          "Monocytes"
+        ],
+        "explain": "The monocyte (also accepted: monocytes) is the largest white blood cell; it has one large nucleus and no granules."
+      },
+      {
+        "id": "MT14223",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which formed element of blood is the smallest?",
+        "answer": "Thrombocyte",
+        "accept": [
+          "Thrombocyte",
+          "Thrombocytes",
+          "Platelet",
+          "Platelets"
+        ],
+        "explain": "The thrombocyte (platelet) is the smallest formed element; it is a nucleus-free fragment of the megakaryocyte, not a whole cell."
+      },
+      {
+        "id": "MT14224",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which blood cell is the most numerous in the blood?",
+        "answer": "Erythrocyte",
+        "accept": [
+          "Erythrocyte",
+          "Erythrocytes",
+          "Red blood cell",
+          "Red blood cells",
+          "Red cell",
+          "Red cells",
+          "RBC",
+          "RBCs",
+          "Red blood corpuscle",
+          "Red blood corpuscles",
+          "Red corpuscle",
+          "Red corpuscles"
+        ],
+        "explain": "The erythrocyte (red blood cell, RBC) far outnumbers every other blood cell."
+      },
+      {
+        "id": "MT14225",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which white cell is the most common leukocyte in the blood?",
+        "answer": "Neutrophil",
+        "accept": [
+          "Neutrophil",
+          "Neutrophils",
+          "Polymorphonuclear neutrophil",
+          "Polymorphonuclear neutrophils",
+          "Neutrophilic granulocyte",
+          "Neutrophilic granulocytes",
+          "PMN",
+          "PMNs"
+        ],
+        "explain": "The neutrophil (also accepted: neutrophils, PMN) is the most common white cell, making up most of the leukocyte count."
+      },
+      {
+        "id": "MT14226",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which white cell releases histamine and anticoagulant substances into inflamed tissue?",
+        "answer": "Basophil",
+        "accept": [
+          "Basophil",
+          "Basophils",
+          "Basophilic granulocyte",
+          "Basophilic granulocytes"
+        ],
+        "explain": "The basophil (also accepted: basophils) releases histamine and anticoagulant (heparin) into inflamed tissue."
+      },
+      {
+        "id": "MT14227",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which lymphocyte produces antibodies?",
+        "answer": "B cell",
+        "accept": [
+          "B cell",
+          "B cells",
+          "B-cell",
+          "B-cells",
+          "B lymphocyte",
+          "B lymphocytes",
+          "B-lymphocyte",
+          "B-lymphocytes",
+          "Bcell",
+          "Bcells"
+        ],
+        "explain": "The B cell (also accepted: B-cell, B lymphocyte) makes antibodies, the Y-shaped proteins that inactivate antigens."
+      },
+      {
+        "id": "MT14228",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which cell contains hemoglobin to carry oxygen and carbon dioxide?",
+        "answer": "Erythrocyte",
+        "accept": [
+          "Erythrocyte",
+          "Erythrocytes",
+          "Red blood cell",
+          "Red blood cells",
+          "Red cell",
+          "Red cells",
+          "RBC",
+          "RBCs",
+          "Red blood corpuscle",
+          "Red blood corpuscles",
+          "Red corpuscle",
+          "Red corpuscles"
+        ],
+        "explain": "The erythrocyte (red blood cell, RBC) carries oxygen and carbon dioxide bound to hemoglobin."
+      },
+      {
+        "id": "MT14229",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which two formed elements of blood have no nucleus?",
+        "answers": [
+          [
+            "Erythrocyte",
+            "Erythrocytes",
+            "Red blood cell",
+            "Red blood cells",
+            "Red cell",
+            "Red cells",
+            "RBC",
+            "RBCs",
+            "Red blood corpuscle",
+            "Red blood corpuscles",
+            "Red corpuscle",
+            "Red corpuscles"
+          ],
+          [
+            "Thrombocyte",
+            "Thrombocytes",
+            "Platelet",
+            "Platelets"
+          ]
+        ],
+        "anyOrder": true,
+        "explain": "The erythrocyte (red blood cell) and the thrombocyte (platelet) have no nucleus (singular or plural accepted, any order). All white cells keep a nucleus."
+      },
+      {
+        "id": "MT14230",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Name the three white cells that carry granules (the granulocytes).",
+        "answers": [
+          [
+            "Neutrophil",
+            "Neutrophils",
+            "Polymorphonuclear neutrophil",
+            "Polymorphonuclear neutrophils",
+            "Neutrophilic granulocyte",
+            "Neutrophilic granulocytes",
+            "PMN",
+            "PMNs"
+          ],
+          [
+            "Eosinophil",
+            "Eosinophils",
+            "Eosinophilic granulocyte",
+            "Eosinophilic granulocytes"
+          ],
+          [
+            "Basophil",
+            "Basophils",
+            "Basophilic granulocyte",
+            "Basophilic granulocytes"
+          ]
+        ],
+        "anyOrder": true,
+        "explain": "The neutrophil, eosinophil and basophil are the granulocytes, with lobed nuclei and granules (singular or plural accepted, any order). The lymphocyte and monocyte are agranulocytes."
+      },
+      {
+        "id": "MT14231",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Name the two white cells that have a single nucleus and no granules (the agranulocytes).",
+        "answers": [
+          [
+            "Lymphocyte",
+            "Lymphocytes"
+          ],
+          [
+            "Monocyte",
+            "Monocytes"
+          ]
+        ],
+        "anyOrder": true,
+        "explain": "The lymphocyte and the monocyte are the agranulocytes, also called mononuclear leukocytes (singular or plural accepted, any order). Neutrophils, eosinophils and basophils carry granules."
+      },
+      {
+        "id": "MT14232",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which white cell increases during parasitic infections and allergic reactions?",
+        "answer": "Eosinophil",
+        "accept": [
+          "Eosinophil",
+          "Eosinophils",
+          "Eosinophilic granulocyte",
+          "Eosinophilic granulocytes"
+        ],
+        "explain": "The eosinophil (also accepted: eosinophils) rises in parasitic infections and allergic reactions; its granules stain orange to rosy."
+      },
+      {
+        "id": "MT14233",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which lymphocyte matures in the thymus?",
+        "answer": "T cell",
+        "accept": [
+          "T cell",
+          "T cells",
+          "T-cell",
+          "T-cells",
+          "T lymphocyte",
+          "T lymphocytes",
+          "T-lymphocyte",
+          "T-lymphocytes",
+          "Tcell",
+          "Tcells"
+        ],
+        "explain": "The T cell (also accepted: T-cell, T lymphocyte) matures under thymic influence; the B cell arises in the bone marrow."
+      },
+      {
+        "id": "MT14234",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which lymphocyte kills tumour cells using cytotoxic substances?",
+        "answer": "NK cell",
+        "accept": [
+          "NK cell",
+          "NK cells",
+          "NK-cell",
+          "NK-cells",
+          "Natural killer cell",
+          "Natural killer cells",
+          "Natural killer",
+          "Natural killers",
+          "NK",
+          "NKs",
+          "NKcell",
+          "NKcells"
+        ],
+        "explain": "The NK cell (also accepted: natural killer cell, NK-cell) kills tumour and infected cells with cytotoxic substances."
+      },
+      {
+        "id": "MT14235",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Name the three lineages that arise from the lymphocyte.",
+        "answers": [
+          [
+            "T cell",
+            "T cells",
+            "T-cell",
+            "T-cells",
+            "T lymphocyte",
+            "T lymphocytes",
+            "T-lymphocyte",
+            "T-lymphocytes",
+            "Tcell",
+            "Tcells"
+          ],
+          [
+            "B cell",
+            "B cells",
+            "B-cell",
+            "B-cells",
+            "B lymphocyte",
+            "B lymphocytes",
+            "B-lymphocyte",
+            "B-lymphocytes",
+            "Bcell",
+            "Bcells"
+          ],
+          [
+            "NK cell",
+            "NK cells",
+            "NK-cell",
+            "NK-cells",
+            "Natural killer cell",
+            "Natural killer cells",
+            "Natural killer",
+            "Natural killers",
+            "NK",
+            "NKs",
+            "NKcell",
+            "NKcells"
+          ]
+        ],
+        "anyOrder": true,
+        "explain": "The lymphocyte gives rise to the T cell, the B cell and the NK cell (natural killer cell); hyphenated forms and the lymphocyte names are accepted, in any order."
+      },
+      {
+        "id": "MT14236",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which bone-marrow cell sheds platelets?",
+        "answer": "Megakaryocyte",
+        "accept": [
+          "Megakaryocyte",
+          "Megakaryocytes"
+        ],
+        "explain": "The megakaryocyte (also accepted: megakaryocytes) stays in the bone marrow and fragments into platelets."
+      },
+      {
+        "id": "MT14237",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which two white cells have the shortest lifespan, up to about 24 hours in the blood?",
+        "answers": [
+          [
+            "Neutrophil",
+            "Neutrophils",
+            "Polymorphonuclear neutrophil",
+            "Polymorphonuclear neutrophils",
+            "Neutrophilic granulocyte",
+            "Neutrophilic granulocytes",
+            "PMN",
+            "PMNs"
+          ],
+          [
+            "Monocyte",
+            "Monocytes"
+          ]
+        ],
+        "anyOrder": true,
+        "explain": "The neutrophil and the monocyte both live up to about 24 hours in the blood (singular or plural accepted, any order). The basophil lives under 2 days and the eosinophil about 2 to 5 days."
+      },
+      {
+        "id": "MT14238",
+        "type": "saq",
+        "cat": "MT_cells14-15",
+        "q": "Which white cell's granules take a dark blue to blue-black stain?",
+        "answer": "Basophil",
+        "accept": [
+          "Basophil",
+          "Basophils",
+          "Basophilic granulocyte",
+          "Basophilic granulocytes"
+        ],
+        "explain": "The basophil (also accepted: basophils) has dark blue granules; neutrophil granules stain neutral and eosinophil granules orange to rosy."
+      }
+    ]
+  }
+}

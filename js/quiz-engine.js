@@ -1537,6 +1537,7 @@ document.addEventListener('pointercancel',()=>{ saqPtrDown=false; },true);
 function saqAutoGrade(input, grade){
   input.addEventListener('keydown',e=>{
     if(e.key!=='Enter') return;
+    if(locked || input.disabled || input.readOnly) return; // answered: Enter falls through to the run keys (next question)
     e.preventDefault(); e.stopPropagation();
     input._saqGraded=input.value;
     grade({kb:true});
@@ -1643,7 +1644,9 @@ function submitSaq(k, o){
   const r=saqResult(q, typed);
   if(!r){ saqSoftWrong(input, saqHint(q, typed), o); return; }
   locked=true; answers[current]=Object.assign({text:r.text, correct:true}, r.fill?{fill:r.fill}:{}); onQuestionSolved(q);
+  const hadFocus=document.activeElement===input;
   input.disabled=true; input.classList.add('correct'); input.value=r.text;
+  if(hadFocus) input.blur(); // keys go back to the page, so Enter / → continue
   if(r.fill) saqShowCompleted(input, answers[current]);
   saqSolvedFx(q, o);
 }
@@ -1759,6 +1762,7 @@ function submitSaqBlank(k, o){
   paintSaqBlanks(q,a); document.querySelectorAll('#qText .saq-blank').forEach(sp=>{ const j=+sp.dataset.k; if(a.parts[j]!=null){ sp.textContent=a.parts[j]; sp.classList.add('filled'); } });
   if(a.parts.every(x=>x!=null)){
     a.correct=true; locked=true; onQuestionSolved(q);
+    const fa=document.activeElement; if(fa && fa.classList && fa.classList.contains('saq-input')) fa.blur(); // Enter / → continue
     saqSolvedFx(q, o);
     return;
   }
@@ -3979,7 +3983,13 @@ function kbOptions(){ const o=document.getElementById('options'); return o ? [..
 function kbHighlight(btn){ document.querySelectorAll('#options .opt.kb-hl').forEach(b=>b.classList.remove('kb-hl')); if(btn){ btn.classList.add('kb-hl'); try{ btn.scrollIntoView({block:'nearest'}); }catch(e){} } }
 document.addEventListener('keydown', e=>{
   const tag=(e.target&&e.target.tagName||'').toLowerCase();
-  const typing=tag==='input'||tag==='textarea'||tag==='select'||(e.target&&e.target.isContentEditable);
+  let typing=tag==='input'||tag==='textarea'||tag==='select'||(e.target&&e.target.isContentEditable);
+  /* typed answer boxes: once the question is answered (or the box is locked) the run keys work as usual;
+     while it is open, ← → move between questions only when the box is empty (otherwise they move the caret) */
+  if(typing && tag==='input' && e.target.classList.contains('saq-input') && !e.ctrlKey && !e.metaKey && !e.altKey && !e.shiftKey){
+    if(locked || e.target.disabled || e.target.readOnly) typing=false;
+    else if((e.key==='ArrowLeft'||e.key==='ArrowRight') && !e.target.value) typing=false;
+  }
   if(kbAdv && kbAdvStopKey(e, typing)) return;
   if(!typing && runKeysActive() && !e.ctrlKey && !e.metaKey && !e.altKey && kbLinkKey(e)) return;
   if(e.key==='f'||e.key==='F'){ if(!typing && !e.ctrlKey && !e.metaKey && !e.altKey){ e.preventDefault(); toggleFullscreen(); } }

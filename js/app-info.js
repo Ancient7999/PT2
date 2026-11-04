@@ -6,6 +6,14 @@
 var APP_INFO = {
   releases: [
     {
+      version: '0.34',
+      date: '04/11/2026',
+      changes: [
+        'Medical Terminology: new Cell Specifications card.',
+        'Keyboard navigation fixes for typed questions.'
+      ]
+    },
+    {
       version: '0.33',
       date: '04/11/2026',
       changes: [
