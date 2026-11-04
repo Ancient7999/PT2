@@ -3829,7 +3829,7 @@ function startKbAdvance(){
   host.insertAdjacentElement('afterend', w);
   const fill=w.querySelector('.formula-advance-fill'), t0=performance.now();
   const tick=now=>{ if(!kbAdv) return; const t=Math.min(1,(now-t0)/MS); fill.style.transform='scaleX('+(1-t)+')'; if(t<1) kbAdv.raf=requestAnimationFrame(tick); };
-  kbAdv={t0:performance.now(), wrap:w, raf:requestAnimationFrame(tick), timer:setTimeout(()=>{ if(kbAdv){ clearKbAdvance(); if(quizActive) goNext(); } }, MS)};
+  kbAdv={t0:performance.now(), wrap:w, raf:requestAnimationFrame(tick), timer:setTimeout(()=>{ if(kbAdv){ clearKbAdvance(); document.querySelectorAll('.step-lightbox').forEach(o=>o.click()); /* a full-size picture closes as the run moves on */ if(quizActive) goNext(); } }, MS)};
 }
 /* —— linking questions: arrow keys ——
    The first arrow press shows a focus ring (never on mouse or touch use). ↑ ↓ move within a side,
@@ -3929,7 +3929,19 @@ function kbAdvStopKey(e, typing){
   return true;
 }
 /* touch (tapping, touching a picture, scrolling) never stops the auto-next bar: it keeps moving.
-   Swiping to another question moves on as usual; opening a picture full size stops the bar (see the gallery). */
+   The only thing that stops it is a sideways swipe: once the finger has moved 12px sideways and clearly more sideways
+   than up/down (|dx| > 1.5 × |dy|), even a short swipe that does not change question. Up/down scrolling never stops it. */
+(function wireSwipeStopsBar(){
+  const DEAD=12, RATIO=1.5; let s0=null;
+  document.addEventListener('touchstart', e=>{ s0=(kbAdv && e.touches.length===1)?{x:e.touches[0].clientX, y:e.touches[0].clientY}:null; }, {capture:true, passive:true});
+  document.addEventListener('touchmove', e=>{
+    if(!s0 || !kbAdv || e.touches.length!==1) return;
+    const dx=e.touches[0].clientX-s0.x, dy=e.touches[0].clientY-s0.y;
+    if(Math.abs(dy)>DEAD && Math.abs(dy)*RATIO>=Math.abs(dx)){ s0=null; return; } // a scroll: leave the bar alone for this touch
+    if(Math.abs(dx)>=DEAD && Math.abs(dx)>Math.abs(dy)*RATIO){ s0=null; clearKbAdvance(); }
+  }, {capture:true, passive:true});
+  document.addEventListener('touchend', ()=>{ s0=null; }, {capture:true, passive:true});
+})();
 function isTouchDevice(){ return document.documentElement.getAttribute('data-pointer-input')==='touch' || (navigator.maxTouchPoints||0)>0 || 'ontouchstart' in window; }
 /* leaving a set mid-run (Esc with no bar, or the return button): the small confirmation from the top,
    the same one the cards use. Enter leaves, Esc stays. Results and review screens leave straight away. */
@@ -4259,7 +4271,6 @@ function phoneKeepInputVisible(){
 /* full-size view of a gallery picture (stepped questions with several pictures) */
 (function(){
   function open(img){
-    if(typeof clearKbAdvance==='function') clearKbAdvance(); // looking at a picture full size: no auto-next behind it
     const ov=document.createElement('div'); ov.className='step-lightbox'; ov.setAttribute('role','dialog'); ov.setAttribute('aria-label','Picture, full size');
     ov.innerHTML='<img src="'+img.getAttribute('src')+'" alt="'+(img.getAttribute('alt')||'').replace(/"/g,'&quot;')+'"><button type="button" class="step-lightbox-x" aria-label="Close">✕</button>';
     const close=()=>{ ov.remove(); document.removeEventListener('keydown', key, true); try{ img.focus({preventScroll:true}); }catch(e){} };
