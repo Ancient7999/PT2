@@ -6,6 +6,16 @@
 var APP_INFO = {
   releases: [
     {
+      version: '0.29',
+      date: '04/11/2026',
+      changes: [
+        'Anatomy is now released.',
+        'In Picture Study, choosing a mode on one picture now applies it to every picture.',
+        'On phones, Picture Study now scrolls to the typing box when the keyboard opens.',
+        'The auto-next bar is back on phones.'
+      ]
+    },
+    {
       version: '0.28',
       date: '03/11/2026',
       changes: [
