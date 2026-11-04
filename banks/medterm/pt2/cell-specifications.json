@@ -3,7 +3,7 @@
   "subject": "Medical Terminology",
   "subjectId": "medical_terminology",
   "title": "Cell Specifications - Lectures 14 and 15",
-  "formSize": 38,
+  "formSize": 37,
   "forms": [
     "A"
   ],
@@ -67,7 +67,7 @@
         "id": "MT14204",
         "type": "saq",
         "cat": "MT_cells14-15",
-        "q": "Which granulocyte has dark blue to blue-black granules, takes part in immune surveillance, and releases anticoagulant substances and histamine into inflamed tissue?",
+        "q": "Which short-lived granulocyte, usually living under 2 days, has granules that stain dark blue to blue-black and takes part in immune surveillance?",
         "answer": "Basophil",
         "accept": [
           "Basophil",
@@ -75,7 +75,7 @@
           "Basophilic granulocyte",
           "Basophilic granulocytes"
         ],
-        "explain": "This is the basophil (also accepted: basophils). Its granules stain dark blue, it carries anticoagulant (heparin) and histamine to inflamed tissue, it helps immune surveillance, and it usually lives under 2 days."
+        "explain": "This is the basophil (also accepted: basophils). Its granules stain dark blue, it brings anticoagulant substances to inflamed tissues to prevent clots, it takes part in immune surveillance, and it usually lives under 2 days."
       },
       {
         "id": "MT14205",
@@ -93,7 +93,7 @@
         "id": "MT14206",
         "type": "saq",
         "cat": "MT_cells14-15",
-        "q": "Which agranulocyte has one large nucleus, no granules, and gives rise to three lineages that handle adaptive and innate immune defence?",
+        "q": "Which agranulocyte has one large nucleus, no granules, and gives rise to three lineages that are active in immunity?",
         "answer": "Lymphocyte",
         "accept": [
           "Lymphocyte",
@@ -181,13 +181,17 @@
         "id": "MT14211",
         "type": "saq",
         "cat": "MT_cells14-15",
-        "q": "Which very large bone-marrow cell is the parent that sheds the fragments used in blood clotting?",
+        "q": "Which bone-marrow cell stays in the marrow and produces thrombocytes, its cytoplasm breaking into the fragments that circulate and start clotting?",
         "answer": "Megakaryocyte",
         "accept": [
           "Megakaryocyte",
-          "Megakaryocytes"
+          "Megakaryocytes",
+          "Megakarocyte",
+          "Megakarocytes",
+          "Megakaryocite",
+          "Megakaryocites"
         ],
-        "explain": "This is the megakaryocyte (also accepted: megakaryocytes). It stays in the bone marrow and breaks into platelets (thrombocytes); lymphoblasts, monoblasts and erythroblasts give rise to other cells."
+        "explain": "This is the megakaryocyte (also accepted: megakaryocytes, and the misspelling megakarocyte). It stays in the bone marrow and its cytoplasm fragments into thrombocytes (platelets), the smallest cell fragments, which live 7 to 10 days and are essential for coagulation."
       },
       {
         "id": "MT14212",
@@ -272,7 +276,7 @@
         "id": "MT14215",
         "type": "saq",
         "cat": "MT_cells14-15",
-        "q": "The basophil is a granulocyte with dark blue granules that helps immune surveillance and releases anticoagulants and histamine into inflamed tissue. What is its lifespan?",
+        "q": "The basophil is a granulocyte with dark blue granules that takes part in immune surveillance and brings anticoagulant substances to inflamed tissues. What is its lifespan?",
         "answer": "Under 2 days",
         "accept": [
           "Under 2 days",
@@ -291,7 +295,7 @@
           "1-2 days",
           "1-2"
         ],
-        "explain": "The basophil usually lives under 2 days (accepted as 2 days, less than 2 days or 48 hours). Its granules stain dark blue and it brings anticoagulants and histamine to inflamed tissue."
+        "explain": "The basophil usually lives under 2 days (accepted as 2 days, less than 2 days or 48 hours). Its granules stain dark blue and it brings anticoagulant substances to inflamed tissues."
       },
       {
         "id": "MT14216",
@@ -446,19 +450,28 @@
           ]
         ],
         "anyOrder": true,
-        "explain": "The neutrophil and the monocyte destroy germs by phagocytosis (singular or plural accepted, any order). The eosinophil acts mainly in parasites and allergy, the basophil releases anticoagulants and histamine, and lymphocytes work through T, B and NK cells."
+        "explain": "The neutrophil and the monocyte destroy germs by phagocytosis (singular or plural accepted, any order). The eosinophil acts mainly in parasites and allergy, the basophil brings anticoagulants to inflamed tissues, and lymphocytes work through T, B and NK cells."
       },
       {
         "id": "MT14222",
         "type": "saq",
         "cat": "MT_cells14-15",
-        "q": "Which white cell is the largest leukocyte?",
-        "answer": "Monocyte",
-        "accept": [
-          "Monocyte",
-          "Monocytes"
+        "q": "Name the largest cell in each place. Largest cell in the bone marrow: __________. Largest cell in circulating blood (the largest white blood cell): __________.",
+        "answers": [
+          [
+            "Megakaryocyte",
+            "Megakaryocytes",
+            "Megakarocyte",
+            "Megakarocytes",
+            "Megakaryocite",
+            "Megakaryocites"
+          ],
+          [
+            "Monocyte",
+            "Monocytes"
+          ]
         ],
-        "explain": "The monocyte (also accepted: monocytes) is the largest white blood cell; it has one large nucleus and no granules."
+        "explain": "The megakaryocyte (also accepted: megakaryocytes, megakarocyte) is the largest cell in the bone marrow and stays there, sending only its cytoplasmic fragments, the thrombocytes (platelets), into the blood. The monocyte (also accepted: monocytes) is the largest white blood cell and so the largest cell in circulating blood, with one large nucleus and no granules."
       },
       {
         "id": "MT14223",
@@ -518,7 +531,7 @@
         "id": "MT14226",
         "type": "saq",
         "cat": "MT_cells14-15",
-        "q": "Which white cell releases histamine and anticoagulant substances into inflamed tissue?",
+        "q": "Which white cell brings anticoagulant substances to inflamed tissues, helping prevent blood clots there?",
         "answer": "Basophil",
         "accept": [
           "Basophil",
@@ -526,7 +539,7 @@
           "Basophilic granulocyte",
           "Basophilic granulocytes"
         ],
-        "explain": "The basophil (also accepted: basophils) releases histamine and anticoagulant (heparin) into inflamed tissue."
+        "explain": "The basophil (also accepted: basophils) is the short-lived granulocyte that stains dark blue, takes part in immune surveillance and brings anticoagulant substances to inflamed tissues; neutrophils and monocytes engulf germs and eosinophils rise in parasites and allergy."
       },
       {
         "id": "MT14227",
@@ -758,18 +771,6 @@
         "id": "MT14236",
         "type": "saq",
         "cat": "MT_cells14-15",
-        "q": "Which bone-marrow cell sheds platelets?",
-        "answer": "Megakaryocyte",
-        "accept": [
-          "Megakaryocyte",
-          "Megakaryocytes"
-        ],
-        "explain": "The megakaryocyte (also accepted: megakaryocytes) stays in the bone marrow and fragments into platelets."
-      },
-      {
-        "id": "MT14237",
-        "type": "saq",
-        "cat": "MT_cells14-15",
         "q": "Which two white cells have the shortest lifespan, up to about 24 hours in the blood?",
         "answers": [
           [
@@ -791,7 +792,7 @@
         "explain": "The neutrophil and the monocyte both live up to about 24 hours in the blood (singular or plural accepted, any order). The basophil lives under 2 days and the eosinophil about 2 to 5 days."
       },
       {
-        "id": "MT14238",
+        "id": "MT14237",
         "type": "saq",
         "cat": "MT_cells14-15",
         "q": "Which white cell's granules take a dark blue to blue-black stain?",
