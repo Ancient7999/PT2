@@ -10,7 +10,8 @@ var APP_INFO = {
       date: '04/11/2026',
       changes: [
         'Medical Terminology: new Cell Specifications card.',
-        'Keyboard navigation fixes for typed questions.'
+        'Keyboard navigation fixes for typed questions.',
+        'Typed answers no longer accept misspellings.'
       ]
     },
     {
