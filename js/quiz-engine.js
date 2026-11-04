@@ -3498,6 +3498,8 @@ function renderQuestion(){
   const qText=document.getElementById('qText');
   qText.classList.toggle('is-linking-question',isMatching(q));
   qText.classList.toggle('is-step-question',isStep(q));
+  // linking questions keep visible Back / Next on phones too (dragging the links and swiping would fight)
+  { const qs=document.getElementById('quizScreen'); if(qs) qs.classList.toggle('q-linking', !!isMatching(q)); }
   qText.replaceChildren();
   if(isMatching(q)){
     const icon=document.createElement('span');

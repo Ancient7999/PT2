@@ -786,6 +786,9 @@ html.pt2-phone .pt1q #quizScreen #backBtn,
 html.pt2-phone .pt1q #quizScreen #nextBtn[data-action="next"]{display:none}
 html.pt2-phone .pt1q #quizScreen .nav:not(:has(#nextBtn:not([hidden]):not([data-action="next"]))){display:none}
 html.pt2-phone .pt1q #quizScreen .kbd-hint{display:none}
+/* linking questions: Back / Next stay visible on phones (swiping would fight with drawing the links) */
+html.pt2-phone .pt1q #quizScreen.q-linking .nav{display:flex!important}
+html.pt2-phone .pt1q #quizScreen.q-linking #backBtn,html.pt2-phone .pt1q #quizScreen.q-linking #nextBtn{display:inline-flex!important;align-items:center;justify-content:center}
 html.pt2-phone .pt1q #quizScreen{touch-action:pan-y pinch-zoom}
 /* phones: room under the run so the explanation (and the last choices) can scroll clear of the fixed timer dock */
 html.pt2-phone #quizView{padding-bottom:calc(140px + env(safe-area-inset-bottom,0px))}
