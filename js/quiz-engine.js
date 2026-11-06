@@ -4371,7 +4371,15 @@ function phoneKeepInputVisible(){
   document.addEventListener('keydown', e=>{ if(cur) return; const im=e.target.closest && e.target.closest('.step-zoomable'); if(im && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); e.stopPropagation(); open(im); } });
 })();
 
-/* Count each solve (including each step of a stepped question) */
+function onQuestionSolved(q) {
+  if (isStep(q)) {
+    releasePendingSteps(current);
+    if (boneDone(current)) markSolved(q);
+  } else {
+    markSolved(q);
+  }
+}
+
 (function () {
   var KEY = 'pt2_medphys_solves_v1';
   var orig = onQuestionSolved;
