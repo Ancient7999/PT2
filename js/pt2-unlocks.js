@@ -43,6 +43,54 @@
     { key: 'look:b', icon: '\uD83C\uDF08', label: 'Multicolour Accents', title: 'New setting unlocked', desc: 'Every question solved', cls: 'pt2-lb-open', ok: function (t) { return t.all; } }
   ];
   var UNLOCKS = [], FEATURES = [];
+  /* Medical Physics special track: quiz bank medphys/pt2 + Formulas practice both count.
+     Thresholds unlock site-wide backgrounds (Settings → Backgrounds). */
+  var MEDPHYS_BANK = 'medphys/pt2';
+  var MEDPHYS_COUNT = 'pt2_medphys_solves_v1';
+  var MEDPHYS_SKINS = [
+    { emoji: '\uD83D\uDD2C', at: 150, label: 'Microscope', fam: 'mood-calm', cls: 'mood-calm', bg: 'aurora',
+      quote: { text: 'The important thing in science is not so much to obtain new facts as to discover new ways of thinking about them.', author: 'William Lawrence Bragg' },
+      restQuote: { text: 'Curiosity is the lust of the mind.', author: 'Thomas Hobbes' } },
+    { emoji: '\u269B\uFE0F', at: 280, label: 'Atom', fam: 'mood-fierce', cls: 'mood-electric', bg: 'violet-mist',
+      quote: { text: 'If I have seen further it is by standing on the shoulders of Giants.', author: 'Isaac Newton' },
+      restQuote: { text: 'Truth is ever to be found in simplicity, and not in the multiplicity and confusion of things.', author: 'Isaac Newton' } },
+    { emoji: '\uD83E\uDDF2', at: 400, label: 'Magnet', fam: 'mood-fierce', cls: 'mood-fierce', bg: 'copper-ember',
+      quote: { text: 'Nothing is too wonderful to be true, if it be consistent with the laws of nature.', author: 'Michael Faraday' },
+      restQuote: { text: 'Work, finish, publish.', author: 'Michael Faraday' } },
+    { emoji: '\u2622\uFE0F', at: 500, label: 'Radioactive', fam: 'mood-fierce', cls: 'mood-hot', bg: 'deep-ink',
+      quote: { text: 'Nothing in life is to be feared, it is only to be understood.', author: 'Marie Curie' },
+      restQuote: { text: 'Be less curious about people and more curious about ideas.', author: 'Marie Curie' } },
+    { emoji: '\uD83D\uDCE1', at: 600, label: 'Signal', fam: 'mood-calm', cls: 'mood-focus', bg: 'teal-rift',
+      quote: { text: 'What we know is a drop, what we don\u2019t know is an ocean.', author: 'Isaac Newton' },
+      restQuote: { text: 'Silence is a source of great strength.', author: 'Lao Tzu' } },
+    { emoji: '\uD83C\uDF21\uFE0F', at: 720, label: 'Thermometer', fam: 'mood-calm', cls: 'mood-cozy', bg: 'amber-tide',
+      quote: { text: 'The energy of the universe is constant; the entropy of the universe tends to a maximum.', author: 'Rudolf Clausius' },
+      restQuote: { text: 'Take rest; a field that has rested gives a beautiful crop.', author: 'Ovid' } },
+    { emoji: '\uD83D\uDD2D', at: 850, label: 'Telescope', fam: 'mood-calm', cls: 'mood-daydream', bg: 'summit-amber',
+      quote: { text: 'Astronomy compels the soul to look upwards and leads us from this world to another.', author: 'Plato' },
+      restQuote: { text: 'Look deep into nature, and then you will understand everything better.', author: 'Albert Einstein' } },
+    { emoji: '\uD83C\uDF0C', at: 1000, label: 'Galaxy', fam: 'mood-calm', cls: 'mood-sparkle', bg: 'rib-haze',
+      quote: { text: 'We are a way for the cosmos to know itself.', author: 'Carl Sagan' },
+      restQuote: { text: 'For small creatures such as we, the vastness is bearable only through love.', author: 'Carl Sagan' } }
+  ];
+  var MEDPHYS_FEATURES = [
+    { key: 'bg:bubbles', at: 5, icon: '\uD83E\uDEE7', emoji: '\uD83E\uDEE7', label: 'Bubble background', title: 'New background unlocked',
+      desc: '5 Medical Physics questions solved \u00b7 Settings \u2192 Backgrounds', cls: 'pt2-bg-bubbles-open', bg: 'bubbles',
+      quote: { text: 'In all things of nature there is something of the marvelous.', author: 'Aristotle' },
+      restQuote: { text: 'Adopt the pace of nature: her secret is patience.', author: 'Ralph Waldo Emerson' } },
+    { key: 'bg:particles', at: 50, icon: '\u2728', emoji: '\u2728', label: 'Orbit background', title: 'New background unlocked',
+      desc: '50 Medical Physics questions solved \u00b7 Settings \u2192 Backgrounds', cls: 'pt2-bg-particles-open', bg: 'particles',
+      quote: { text: 'Dwell on the beauty of life. Watch the stars, and see yourself running with them.', author: 'Marcus Aurelius' },
+      restQuote: { text: 'The night is more alive and more richly colored than the day.', author: 'Vincent van Gogh' } }
+  ];
+  MEDPHYS_SKINS.forEach(function (u) {
+    u.w = { week: 'medphys', done: 'Medical Physics' };
+    u.desc = u.at + ' Medical Physics questions solved \u00b7 Settings \u2192 Backgrounds';
+    u.bgKey = 'bg:skin:' + u.bg;
+    UNLOCKS.push(u);
+  });
+  MEDPHYS_FEATURES.forEach(function (f) { FEATURES.push(f); });
+
   WEEKS.forEach(function (w) { w.banks = (Q.weeks && Q.weeks[w.week]) || []; w.ledger = 'pt2_solved_ever_v1:' + w.week; w.unlocks.forEach(function (u) { u.w = w; UNLOCKS.push(u); }); (w.features || []).forEach(function (f) { f.w = w; FEATURES.push(f); }); });
   // emojis that follow the overall solve count (both weeks, repeats included), like the options above
   var TOTAL = { week: 'total', unlocks: [
@@ -217,8 +265,43 @@
   function totalCount(t) { var c = counter(); return c ? (c.base.total | 0) + evSum(c) : t.n; }
   function weekOfBank(bk) { for (var i = 0; i < WEEKS.length; i++) if (WEEKS[i].banks.indexOf(bk) !== -1) return WEEKS[i]; return null; }
   function picWeek() { var w = null; for (var i = 0; i < WEEKS.length; i++) if (WEEKS[i].pictures) w = WEEKS[i]; return w; }
+  function medphysState() {
+    var c = readJSON(MEDPHYS_COUNT, null);
+    return c && typeof c.base === 'number' ? c : null;
+  }
+  function medphysBaseline() {
+    if (medphysState()) return;
+    var distinct = 0;
+    WEEKS.forEach(function (w) {
+      var L = sync(w);
+      Object.keys(L).forEach(function (k) {
+        if (k.indexOf(MEDPHYS_BANK + '|') === 0) distinct++;
+      });
+    });
+    var fp = 0;
+    try { fp = parseInt(lsGet('fp_count:' + MEDPHYS_BANK) || '0', 10) || 0; } catch (e) {}
+    lsSet(MEDPHYS_COUNT, JSON.stringify({ base: distinct + fp, ev: 0, since: Date.now() }));
+  }
+  function medphysBump() {
+    var c = medphysState(); if (!c) return;
+    c.ev = (c.ev | 0) + 1;
+    lsSet(MEDPHYS_COUNT, JSON.stringify(c));
+  }
+  function medphysCount() {
+    var c = medphysState();
+    return c ? (c.base | 0) + (c.ev | 0) : 0;
+  }
+  // Formulas practice correct answer (formula-practice.js)
+  function formulaSolved(key) {
+    if (!READY) return;
+    if (key !== MEDPHYS_BANK && key !== 'medphys/pt2') return;
+    medphysBump();
+    check(false);
+  }
+
   // one question solved in a run (quiz-engine.js), repeats included
   function questionSolved(bk, id) {
+    if (bk === MEDPHYS_BANK) medphysBump();
     if (!READY || !known[bk] || !known[bk][id]) return;
     var w = weekOfBank(bk); if (w) bump(w.week);
   }
@@ -248,7 +331,13 @@
     var touchOnly = false; try { touchOnly = global.matchMedia('(hover: none) and (pointer: coarse)').matches || document.documentElement.getAttribute('data-pointer-input') === 'touch'; } catch (e) {}
     if (u.icon) p.querySelector('.achievement-popup-title').textContent = (touchOnly && u.titleTouch) || u.title || 'New option unlocked';
     p.querySelector('.achievement-popup-name').textContent = u.icon ? ((touchOnly && u.labelTouch) || u.label) : u.emoji + ' ' + u.label;
-    p.querySelector('.achievement-popup-desc').textContent = u.desc || (u.all ? u.w.done : u.at + ' questions solved');
+    var qline = u.quote && u.quote.text ? ('\u201c' + u.quote.text + '\u201d' + (u.quote.author ? (' \u2014 ' + u.quote.author) : '')) : '';
+    var base = u.desc || (u.all ? u.w.done : (u.at != null ? u.at + ' questions solved' : ''));
+    p.querySelector('.achievement-popup-desc').textContent = qline || base;
+    if (qline && base && !u.icon) {
+      /* keep a short threshold hint under the quote via title */
+      p.querySelector('.achievement-popup-desc').title = base;
+    }
     document.body.appendChild(p);
     if (u.key) { try { document.dispatchEvent(new CustomEvent('pt2-popup', { detail: u.key })); } catch (e) {} }
     setTimeout(function () { if (p.parentNode) p.remove(); next(); }, 4500);
@@ -293,6 +382,42 @@
       }); });
     } catch (e) {}
   }
+  /* Focus + rest quotes for Med Physics unlocks (timer + popup). */
+  var MP_QUOTES = {}, MP_REST = {};
+  function registerMpQuotes() {
+    MEDPHYS_SKINS.concat(MEDPHYS_FEATURES).forEach(function (u) {
+      var em = u.emoji || u.icon; if (!em) return;
+      if (u.quote) MP_QUOTES[em] = [u.quote];
+      if (u.restQuote) MP_REST[em] = [u.restQuote];
+    });
+  }
+  registerMpQuotes();
+  function focusQuotes(em) { return MP_QUOTES[em] || null; }
+  function restQuotes(em) { return MP_REST[em] || null; }
+
+  /* On Med Physics unlock: apply accent once, lock emoji + accent, enable background. */
+  function setMoodLock(on) {
+    try { localStorage.setItem('pt2_mood_lock', on ? '1' : '0'); } catch (e) {}
+    try { localStorage.setItem('pt2_accent_lock', on ? '1' : '0'); } catch (e) {}
+    try {
+      document.documentElement.classList.toggle('pt2-mood-locked', !!on);
+      document.documentElement.classList.toggle('pt2-accent-locked', !!on);
+      document.dispatchEvent(new CustomEvent('pt2-mood'));
+      document.dispatchEvent(new CustomEvent('pt2-accent-lock', { detail: !!on }));
+    } catch (e) {}
+  }
+  function celebrateMedphys(u) {
+    if (!u || !(u.bg || u.bgKey || (u.key && String(u.key).indexOf('bg:') === 0))) return;
+    var em = u.emoji || u.icon;
+    if (em && typeof global.applyLiveMood === 'function') {
+      try { global.applyLiveMood(em, { skipQuote: false }); } catch (e) {}
+    }
+    setMoodLock(true);
+    if (u.bg && global.PT2Bg && typeof PT2Bg.select === 'function') {
+      try { PT2Bg.select(u.bg); } catch (e) {}
+    }
+  }
+
   function check(quiet) {
     var got = unlocked(), fresh = [], counts = {};
     WEEKS.forEach(function (w) {
@@ -302,10 +427,30 @@
     });
     var t = tally(); t.n = totalCount(t);
     EXTRAS.forEach(function (f) { if (!got[f.key] && f.ok(t)) { got[f.key] = Date.now(); fresh.push(f); } });
+    var mn = medphysCount();
+    MEDPHYS_FEATURES.forEach(function (f) {
+      if (!got[f.key] && mn >= f.at) { got[f.key] = Date.now(); fresh.push(f); }
+    });
+    MEDPHYS_SKINS.forEach(function (u) {
+      if (!got[u.emoji] && mn >= u.at) {
+        got[u.emoji] = Date.now();
+        if (u.bgKey) got[u.bgKey] = Date.now();
+        fresh.push(u);
+      }
+    });
     TOTAL.unlocks.forEach(function (u) { if (!got[u.emoji] && t.n >= u.at) { got[u.emoji] = Date.now(); fresh.push(u); } });
-    if (fresh.length) { lsSet(GOT, JSON.stringify(got)); if (!quiet) fresh.forEach(function (u) { if (!u.silent) popup(u); }); }
+    if (fresh.length) {
+      lsSet(GOT, JSON.stringify(got));
+      if (!quiet) fresh.forEach(function (u) { if (!u.silent) popup(u); });
+      /* last Med Physics reward in this batch wins (highest tier typically last) */
+      var mp = null;
+      fresh.forEach(function (u) {
+        if (u.bg || u.bgKey || (u.key && String(u.key).indexOf('bg:') === 0)) mp = u;
+      });
+      if (mp && !quiet) celebrateMedphys(mp);
+    }
     decorate();
-    if (fresh.length) { try { document.dispatchEvent(new CustomEvent('pt2-unlocked', { detail: fresh.map(function (u) { return u.emoji || u.key; }) })); } catch (e) {} }
+    if (fresh.length) { try { var keys=[]; fresh.forEach(function (u) { if (u.emoji) keys.push(u.emoji); if (u.key) keys.push(u.key); if (u.bgKey) keys.push(u.bgKey); }); document.dispatchEvent(new CustomEvent('pt2-unlocked', { detail: keys })); } catch (e) {} }
     return { total: t.n, solved: counts, fresh: fresh.map(function (u) { return u.emoji || u.key; }) };
   }
   // the new emojis need a mood entry so choosing them works like any other emoji
@@ -375,5 +520,5 @@
   function labelSolved(set, pic, id, how, fresh) {
     check(false);
   }
-  global.PT2Unlocks = { has: function (k) { return !!unlocked()[k]; }, tally: tally, check: check, pictureSolved: pictureSolved, labelSolved: labelSolved, labelFresh: labelFresh, questionSolved: questionSolved, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? weekCount(w, sync(w)) : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
+  global.PT2Unlocks = { has: function (k) { return !!unlocked()[k]; }, tally: tally, check: check, pictureSolved: pictureSolved, labelSolved: labelSolved, labelFresh: labelFresh, questionSolved: questionSolved, formulaSolved: formulaSolved, medphysCount: medphysCount, focusQuotes: focusQuotes, restQuotes: restQuotes, celebrateMedphys: celebrateMedphys, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? weekCount(w, sync(w)) : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
 })(window);

@@ -5,6 +5,7 @@
   'use strict';
   var root = document.documentElement, KEY = 'pt2_color_owner', busy = false, last = '', ready = false;
   var MOOD_VARS = ['--cyan', '--cyan-bright', '--teal', '--gold', '--accent', '--border', '--mood-glow', '--bg-glow', '--bg', '--bg2'];
+  function accentLocked() { try { return localStorage.getItem('pt2_accent_lock') === '1'; } catch (e) { return false; } }
   function owner() { try { return localStorage.getItem(KEY) || 'mood'; } catch (e) { return 'mood'; } }
   function setOwner(o) { try { localStorage.setItem(KEY, o); } catch (e) {} root.setAttribute('data-color-owner', o); }
   function cs(v) { return getComputedStyle(root).getPropertyValue(v).trim(); }
@@ -54,14 +55,17 @@
     if (!ready) { if (owner() === 'accent') fromAccent(); else fromMood(); return; }
     onMood();
   }
-  function onAccent() { setOwner('accent'); fromAccent(); }
+  function onAccent() { if (accentLocked()) return; setOwner('accent'); fromAccent(); }
   function init() {
     setOwner(owner());
     if (owner() === 'accent') fromAccent(); else fromMood();
     // any accent change not made here (picker, hex box, preset, strength, custom preset) makes the accent win
     new MutationObserver(function () {
       if (busy) return;
-      var a = cs('--accent-0'); if (a && a !== last) { last = a; onAccent(); }
+      var a = cs('--accent-0'); if (a && a !== last) {
+        if (accentLocked()) { last = a; return; }
+        last = a; onAccent();
+      }
     }).observe(root, { attributes: true, attributeFilter: ['style'] });
     var arm = function () { setTimeout(function () { ready = true; }, 600); };
     if (document.readyState === 'complete') arm(); else global.addEventListener('load', arm, { once: true });

@@ -158,6 +158,7 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
     const panel = $('formulaPanel'); panel.classList.add('correct-pulse'); setTimeout(() => panel.classList.remove('correct-pulse'), 650);
     if (typeof spawnConfetti === 'function') { try { spawnConfetti(); } catch (e) {} }
     bump(q.formulaKey, q._formulaVariant);
+    if (window.PT2Unlocks && PT2Unlocks.formulaSolved && cfg) PT2Unlocks.formulaSolved(cfg.key);
     chrome();
     startAdvance();
   }

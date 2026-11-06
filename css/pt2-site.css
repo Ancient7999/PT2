@@ -61,3 +61,23 @@ html.pt2-basic .portal-card:focus-visible{outline:2px solid var(--accent-0)}
 html.pt2-basic #welcome-popup{box-shadow:none}
 #theme-cursor-picker.pt2-basic-off .cursor-skin-grid,#theme-cursor-picker.pt2-basic-off .toggle-container{opacity:.4;pointer-events:none}
 #theme-cursor-picker.pt2-basic-off::after{content:'Basic theme is on, so the normal system cursor is used.';display:block;margin-top:10px;font-size:.78em;color:var(--col-text-muted)}
+
+/* Settings → Backgrounds */
+.pt2-bg-list{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.pt2-bg-opt{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;text-align:left;padding:10px 12px;border-radius:10px;border:1px solid rgba(var(--accent-0-rgb),.28);background:rgba(var(--accent-0-rgb),.06);color:var(--col-text-main,#e5e7eb);cursor:pointer;transition:border-color .15s,background .15s,box-shadow .15s}
+.pt2-bg-opt:hover:not(.locked):not(:disabled){border-color:var(--accent-0);background:rgba(var(--accent-0-rgb),.12);box-shadow:0 0 14px rgba(var(--accent-0-rgb),.22)}
+.pt2-bg-opt.active{border-color:var(--accent-0);background:rgba(var(--accent-0-rgb),.18);box-shadow:0 0 16px rgba(var(--accent-0-rgb),.28)}
+.pt2-bg-opt.locked,.pt2-bg-opt:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(.4)}
+.pt2-bg-opt-name{font-weight:700;font-size:.92em}
+.pt2-bg-opt-hint{font-size:.75em;color:var(--col-text-muted,#94a3b8);line-height:1.35}
+html.pt2-basic #pt2-bg-bubbles-canvas,html.pt2-basic #pt2-bg-orbit-canvas{display:none!important}
+
+/* Med Physics unlock: accent locked with emoji */
+html.pt2-accent-locked #accent-color-picker,
+html.pt2-accent-locked #accent-hex-input,
+html.pt2-accent-locked #accent-strength-slider,
+html.pt2-accent-locked .preset-swatches,
+html.pt2-accent-locked #custom-presets-area,
+html.pt2-accent-locked button[onclick*="resetThemeToDefaults"],
+html.pt2-accent-locked button[onclick*="applyPreset"]{opacity:.4;pointer-events:none;filter:grayscale(.35)}
+html.pt2-mood-locked .mood-pick:not(.active){opacity:.35}

@@ -188,6 +188,7 @@
   function set(k, on) { try { localStorage.setItem(k, on ? '1' : '0'); } catch (e) {} }
   var root = document.documentElement;
   PREFS.forEach(function (p) { root.classList.toggle(p.cls, get(p.key)); });
+  try { root.classList.toggle('pt2-accent-locked', get('pt2_accent_lock')); } catch (e) {}
   global.PT2Prefs = { muted: function () { return get('pt2_pomo_muted'); }, disabled: function () { return get('pt2_pomo_disabled'); },
     // no automatic mood colours while the timer is off or the Timer box is hidden
     moodFrozen: function () { return get('pt2_pomo_disabled') || get('pt2_hide_dock'); },
@@ -235,7 +236,14 @@
   }
   document.addEventListener('click', function (e) {
     var b = e.target && e.target.closest && e.target.closest('#pt2MoodLock'); if (!b) return;
-    e.stopPropagation(); if (lockEmojiOn()) { syncLock(); return; } set('pt2_mood_lock', !get('pt2_mood_lock')); syncLock();
+    e.stopPropagation(); if (lockEmojiOn()) { syncLock(); return; }
+    var next = !get('pt2_mood_lock');
+    set('pt2_mood_lock', next);
+    /* accent lock follows emoji lock (Med Physics unlock sets both) */
+    set('pt2_accent_lock', next);
+    root.classList.toggle('pt2-accent-locked', next);
+    try { document.dispatchEvent(new CustomEvent('pt2-accent-lock', { detail: next })); } catch (err) {}
+    syncLock();
   }, true);
   document.addEventListener('pt2-mood', syncLock);
   document.addEventListener('DOMContentLoaded', syncLock);
