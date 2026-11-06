@@ -276,18 +276,18 @@
 /* —— Symbol and term tooltips (js/study-symbols.js) —— */
 #studyView .md .sym {
   cursor: help;
-  border-bottom: 1px solid rgba(var(--accent-0-rgb), 0.28);
-  border-radius: 0;
-  background: transparent;
+  border-bottom: 1.5px solid rgba(var(--accent-1-rgb), 0.55);
+  border-radius: 2px;
+  background: rgba(var(--accent-1-rgb), 0.08);
   outline: none;
   transition: border-color .15s ease, background-color .15s ease;
 }
-#studyView .md .sym.term { border-bottom-style: dotted; border-bottom-color: rgba(var(--accent-0-rgb), 0.35); }
+#studyView .md .sym.term { border-bottom-style: dotted; border-bottom-color: rgba(var(--accent-1-rgb), 0.65); }
 #studyView .md .sym:hover,
 #studyView .md .sym:focus-visible,
 #studyView .md .sym.sym-on {
-  background: rgba(var(--accent-0-rgb), 0.10);
-  border-bottom-color: var(--accent-0);
+  background: rgba(var(--accent-1-rgb), 0.16);
+  border-bottom-color: var(--accent-1);
 }
 #studyView .md .sym:focus-visible { box-shadow: 0 0 0 2px rgba(var(--accent-0-rgb), 0.4); }
 #studyView .sym-tip {
