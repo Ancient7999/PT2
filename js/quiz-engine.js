@@ -3587,11 +3587,6 @@ function releasePendingSteps(i){
     answers[j]=s.__pendingVal; delete s.__pending; delete s.__pendingVal;
   }
 }
-function onQuestionSolved(q){
-  if(isStep(q)) releasePendingSteps(current);
-  if(isStep(q) && !boneDone(current)) return;
-  markSolved(isStep(q)?q.__bone:q);
-}
 
 /* PT1 3850–3890 (formula branches removed) */
 function selectAnswer(idx){
@@ -4365,4 +4360,18 @@ function phoneKeepInputVisible(){
   }
   document.addEventListener('click', e=>{ const im=e.target.closest && e.target.closest('.step-zoomable'); if(im){ e.preventDefault(); open(im); } });
   document.addEventListener('keydown', e=>{ if(cur) return; const im=e.target.closest && e.target.closest('.step-zoomable'); if(im && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); e.stopPropagation(); open(im); } });
+})();
+
+/* Count each solve (including each step of a stepped question) */
+(function () {
+  var KEY = 'pt2_medphys_solves_v1';
+  var orig = onQuestionSolved;
+  onQuestionSolved = function (q) {
+    try {
+      var o = JSON.parse(localStorage.getItem(KEY) || '{}');
+      o.n = (o.n || 0) + 1;
+      localStorage.setItem(KEY, JSON.stringify(o));
+    } catch (e) {}
+    return orig.apply(this, arguments);
+  };
 })();
