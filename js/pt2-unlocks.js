@@ -175,7 +175,9 @@
       return Promise.all(jobs).then(function () {
         ['week11', 'week12'].forEach(function (wk) { weeks[wk] = weeks[wk].filter(function (bk) { return banks[bk]; }); });
         setQ({ banks: banks, weeks: weeks });
-        READY = true; baseline();
+        READY = true;
+        baseline();
+        medphysBaseline();
       });
     });
   }
