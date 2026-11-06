@@ -154,7 +154,7 @@
     gl = canvas.getContext('webgl', { alpha: true, antialias: true });
     if (!gl) return false;
     var vsSource = 'attribute vec2 a_position;attribute float a_size;attribute float a_alpha;attribute float a_colorIndex;attribute float a_sparkleSpeed;uniform vec2 u_resolution;uniform float u_time;varying float v_alpha;varying float v_colorIndex;varying float v_sparkleSpeed;void main(){vec2 zeroToOne=a_position/u_resolution;vec2 zeroToTwo=zeroToOne*2.0;vec2 clipSpace=zeroToTwo-1.0;gl_Position=vec4(clipSpace*vec2(1,-1),0,1);gl_PointSize=a_size*2.0;v_alpha=a_alpha;v_colorIndex=a_colorIndex;v_sparkleSpeed=a_sparkleSpeed;}';
-    var fsSource = 'precision mediump float;varying float v_alpha;varying float v_colorIndex;varying float v_sparkleSpeed;uniform vec3 u_accentColor;uniform float u_time;void main(){vec2 coord=gl_PointCoord-vec2(0.5);float dist=length(coord);if(dist>0.5)discard;float glow=1.0-(dist*2.0);glow=pow(glow,2.5);vec3 color=u_accentColor;if(v_colorIndex>0.5&&v_colorIndex<1.5)color=vec3(1.0,1.0,1.0);else if(v_colorIndex>1.5&&v_colorIndex<2.5)color=vec3(1.0,0.85,0.85);else if(v_colorIndex>2.5&&v_colorIndex<3.5)color=vec3(1.0,1.0,0.8);else if(v_colorIndex>3.5)color=vec3(0.3,1.0,0.5);float sparkle=1.0;if(v_colorIndex>0.5)sparkle=0.6+0.4*sin(u_time*v_sparkleSpeed);float finalAlpha=v_alpha*glow*sparkle;gl_FragColor=vec4(color,finalAlpha);}';
+    var fsSource = 'precision mediump float;varying float v_alpha;varying float v_colorIndex;varying float v_sparkleSpeed;uniform vec3 u_accentColor;uniform float u_time;void main(){vec2 coord=gl_PointCoord-vec2(0.5);float dist=length(coord);if(dist>0.5)discard;float glow=1.0-(dist*2.0);glow=pow(glow,2.5);vec3 color=u_accentColor;if(v_colorIndex>0.5&&v_colorIndex<1.5)color=vec3(1.0,1.0,1.0);else if(v_colorIndex>1.5&&v_colorIndex<2.5)color=vec3(1.0,0.85,0.85);else if(v_colorIndex>2.5&&v_colorIndex<3.5)color=vec3(1.0,1.0,0.8);else if(v_colorIndex>3.5)color=vec3(0.3,1.0,0.5);float sparkle=1.0;float finalAlpha=v_alpha*glow*sparkle;gl_FragColor=vec4(color,finalAlpha);}';
     var vs = createShader(gl, gl.VERTEX_SHADER, vsSource);
     var fs = createShader(gl, gl.FRAGMENT_SHADER, fsSource);
     program = gl.createProgram();
@@ -238,19 +238,39 @@
     formula.answerFormed = true;
   }
 
-  function renderFrame(now) {
-    if (!running || !gl) return;
-    var dt = Math.min(50, now - lastFrameTime); lastFrameTime = now;
-    var timeScale = dt / 16.67;
-    var cx = canvas.width / 2, cy = canvas.height / 2;
-    var randomFlux = 0.85 + Math.random() * 0.3;
+function renderFrame(now) {
+  if (!running || !gl) return;
+  var dt = Math.min(50, now - lastFrameTime); lastFrameTime = now;
+  var timeScale = dt / 16.67;
+  var cx = canvas.width / 2, cy = canvas.height / 2;
+  var randomFlux = 0.85 + Math.random() * 0.3;
 
-    if (now > nextSpawnTime && now > globalCooldownEnd) {
-      spawnFormula();
-      nextSpawnTime = now + 4000 + Math.random() * 5000;
-    }
+  /* slow growth: count and diameter up to limits */
+  var vmin = Math.min(canvas.width, canvas.height);
+  var grow = Math.min(1, (now - startTime) / 45000);
+  if (particles.length < 2200 && Math.random() < 0.015 * timeScale) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      size: 1.5 + Math.random() * 2.2,
+      baseSize: 1.5 + Math.random() * 2.2,
+      alpha: 0,
+      colorIndex: 0,
+      sparkleSpeed: 0,
+      formulaId: -1,
+      isOrbit: Math.random() < 0.25,
+      angle: Math.random() * Math.PI * 2,
+      radius: Math.random() * (vmin / 2) * (0.4 + grow * 0.6),
+      orbitSpeed: Math.random() * 0.0008 + 0.0003
+    });
+  }
+  particles.forEach(function (p) {
+    if (p.isOrbit) p.radius = Math.min(p.radius + 0.04 * timeScale, vmin * 0.48);
+  });
 
-    activeFormulas.slice().forEach(function (f) {
+  activeFormulas.slice().forEach(function (f) {
       if (!f.answerFormed && now - f.spawnTime > f.answerDelay) assignAnswerParticles(f);
       if (now - f.spawnTime > f.showDuration) {
         f.qParticles.concat(f.aParticles).forEach(function (p) {
@@ -269,17 +289,18 @@
         p.x += dx * p.speed * 12 * timeScale;
         p.y += dy * p.speed * 12 * timeScale;
         p.alpha = Math.min(1, (p.alpha || 0) + 0.02 * timeScale);
-      } else if (p.isOrbit) {
-        p.angle += p.orbitSpeed * randomFlux * timeScale;
-        p.x = cx + Math.cos(p.angle) * p.radius;
-        p.y = cy + Math.sin(p.angle) * p.radius;
-        p.alpha = 0.35 + 0.25 * Math.sin(now * 0.001 + p.angle);
-      } else {
-        p.x += p.vx * timeScale; p.y += p.vy * timeScale;
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-        p.alpha = 0.15 + 0.1 * Math.sin(now * 0.002 + p.x * 0.01);
-      }
+    } else if (p.isOrbit) {
+    p.angle += p.orbitSpeed * timeScale;
+    p.x = cx + Math.cos(p.angle) * p.radius;
+    p.y = cy + Math.sin(p.angle) * p.radius;
+    p.alpha = 0.25 + 0.35 * Math.sin(now * 0.0008 + p.angle * 1.7);
+    } else {
+    p.x += p.vx * timeScale;
+    p.y += p.vy * timeScale;
+    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+    p.alpha = 0.12 + 0.18 * Math.sin(now * 0.0006 + p.x * 0.015);
+    }
     });
 
     var rs = getComputedStyle(document.documentElement);
