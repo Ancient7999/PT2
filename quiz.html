@@ -6,9 +6,9 @@
 <title>Periodic Test 2 · Quiz Interface</title>
 
 <!-- Neutral favicon (default) -->
-<link id="favicon" rel="icon" href="/PT2/favicon.ico" sizes="any">
-<link rel="icon" type="image/x-icon" href="/PT2/icons/neutral.ico">
-<link rel="apple-touch-icon" href="/PT2/icons/neutral.ico">
+<link id="favicon" rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/x-icon" href="icons/neutral.ico">
+<link rel="apple-touch-icon" href="icons/neutral.ico">
 
 <script src="data/bundle.js?v=30"></script>
 <script src="js/app-info.js"></script>
@@ -3127,9 +3127,10 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
     });
   }
 
-  async function openMaterial(m, subject){
+    async function openMaterial(m, subject){
     if(!m || !(m.bank || (Array.isArray(m.lectures) && m.lectures.length))){ portalToast('This material is locked'); return; }
     __activeMaterial = Object.assign({}, m, { subjectName: subject && subject.name });
+    if (typeof setFavicon === 'function') setFavicon(m.id);
     const gate = document.createElement('div');
     gate.id = 'bankBootGate';
     gate.style.cssText = 'position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);z-index:9999;color:#dff;font-family:var(--sans,system-ui);';
@@ -3224,8 +3225,9 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
       // study-only material (notes ready, quiz bank not yet): open, the card itself opens the notes
       const studyOnly = !hasQuiz && !!(m.study && ((Array.isArray(m.study.chapters) && m.study.chapters.length) || m.study.images));
       const locked = subject.locked || m.locked || !(hasQuiz || studyOnly || m.pt2Empty);
-      const openStudy = ()=>{
+        const openStudy = ()=>{
         if(!window.StudyNotes){ portalToast('Study notes are still loading'); return; }
+        if (typeof setFavicon === 'function') setFavicon(m.id);
         StudyNotes.open(Object.assign({}, m, { subjectName: subject && subject.name }), { from:'portalView', openQuiz: hasQuiz ? ()=> openMaterial(m, subject) : null });
       };
       const card = document.createElement('button');
@@ -3462,18 +3464,19 @@ document.getElementById('studyNotesBtn').addEventListener('click', ()=>{
 <script>
 function setFavicon(subjectId) {
   const map = {
-    'medphys-pt2': '/PT2/icons/medphys.ico',
-    'medphys': '/PT2/icons/medphys.ico',
-    'anatomy-pt2': '/PT2/icons/anatomy.ico',
-    'anatomy': '/PT2/icons/anatomy.ico',
-    'medterm-pt2': '/PT2/icons/medterm.ico',
-    'medterm': '/PT2/icons/medterm.ico',
-    'english-pt2': '/PT2/icons/english.ico',
-    'english': '/PT2/icons/english.ico',
+    'medphys-pt2': 'icons/medphys.ico',
+    'medphys': 'icons/medphys.ico',
+    'anatomy-pt2': 'icons/anatomy.ico',
+    'anatomy': 'icons/anatomy.ico',
+    'medterm-pt2': 'icons/medterm.ico',
+    'medterm': 'icons/medterm.ico',
+    'english-pt2': 'icons/english.ico',
+    'english': 'icons/english.ico',
   };
-  const href = map[subjectId] || '/PT2/favicon.ico';
-  const link = document.getElementById('favicon') || document.querySelector('link[rel="icon"]');
-  if (link) link.href = href + '?v=' + Date.now();
+  const href = (map[subjectId] || 'favicon.ico') + '?v=' + Date.now();
+  document.querySelectorAll('link[rel*="icon"]').forEach(link => {
+    link.href = href;
+  });
 }
 
 document.addEventListener('click', function(e) {
