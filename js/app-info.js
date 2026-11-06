@@ -6,6 +6,15 @@
 var APP_INFO = {
   releases: [
     {
+    version: '0.41',
+    date: '06/11/2026',
+    changes: [
+      'Enhanced a few diagrams in Medical Physics interface.',
+      'Fixed sin⁻¹ in the calculator.',
+      'Added tab icons to browsers.',
+      ]
+    }, 
+    {
       version: '0.40',
       date: '06/11/2026',
       changes: [
