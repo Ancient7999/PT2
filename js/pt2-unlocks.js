@@ -25,12 +25,8 @@
       { emoji: '💎', at: 495, label: 'Diamond', fam: 'mood-calm', cls: 'mood-calm' },
       { emoji: '🏆', at: 600, label: 'Champion', fam: 'mood-happy', cls: 'mood-happy' },
       { emoji: '👑', at: 800, label: 'Royal', fam: 'mood-happy', cls: 'mood-happy' },
-      // the literal lock emoji comes with the Lock emoji control (feature:moodLock, same 250); its own pop-up is skipped
-      { emoji: '\uD83D\uDD12', at: 250, silent: true, label: 'Locked', fam: 'mood-calm', cls: 'mood-locked' },
+      { emoji: '\uD83D\uDD12', at: 250, label: 'Locked', fam: 'mood-calm', cls: 'mood-locked' },
       { emoji: '🎓', all: true, label: 'Week 11 Graduate', fam: 'mood-happy', cls: 'mood-happy' }
-    ], features: [
-      // the Lock emoji control in the emoji dropdown: hidden (html:not(.pt2-lock-open)) until 250 questions are solved
-      { key: 'feature:moodLock', icon: '🔒', at: 250, label: 'Lock emoji', cls: 'pt2-lock-open' }
     ] }
     ,{ week: 'week12', history: true, done: 'Every Week 12 question solved', unlocks: [
       { emoji: '😌', all: true, label: 'Calm', fam: 'mood-calm', cls: 'mood-calm' }
@@ -395,76 +391,20 @@
   function focusQuotes(em) { return MP_QUOTES[em] || null; }
   function restQuotes(em) { return MP_REST[em] || null; }
 
-  /* Med Physics unlock: short timed emoji + accent lock (2 min). Expiry clears the lock only. */
-  var MP_LOCK_MS = 2 * 60 * 1000, MP_LOCK_UNTIL = 'pt2_mood_lock_until', _mpLockTimer = null;
-  function mpTimedLockActive() {
-    try {
-      var until = parseInt(lsGet(MP_LOCK_UNTIL) || '0', 10) || 0;
-      if (until && Date.now() >= until) { clearMpLock(false); return false; }
-      return until > Date.now();
-    } catch (e) { return false; }
-  }
-  function mpLockActive() {
-    try {
-      if (mpTimedLockActive()) return true;
-      return lsGet('pt2_mood_lock') === '1';
-    } catch (e) { return false; }
-  }
-  /* Clear only the Med Physics timed lock; leave a user manual lock alone. */
-  function clearMpTimedLock() {
-    if (!mpTimedLockActive()) return;
-    clearMpLock(false);
-  }
-  function clearMpLock(fromTimer) {
-    if (_mpLockTimer) { clearTimeout(_mpLockTimer); _mpLockTimer = null; }
-    try {
-      lsSet('pt2_mood_lock', '0');
-      lsSet('pt2_accent_lock', '0');
-      try { localStorage.removeItem(MP_LOCK_UNTIL); } catch (e) {}
-    } catch (e) {}
-    try {
-      document.documentElement.classList.remove('pt2-mood-locked', 'pt2-accent-locked');
-      document.dispatchEvent(new CustomEvent('pt2-mood'));
-      document.dispatchEvent(new CustomEvent('pt2-accent-lock', { detail: false }));
-    } catch (e) {}
-  }
-  function scheduleMpLockExpiry() {
-    if (_mpLockTimer) { clearTimeout(_mpLockTimer); _mpLockTimer = null; }
-    var until = 0;
-    try { until = parseInt(lsGet(MP_LOCK_UNTIL) || '0', 10) || 0; } catch (e) {}
-    if (!until) return;
-    var left = until - Date.now();
-    if (left <= 0) { clearMpLock(true); return; }
-    _mpLockTimer = setTimeout(function () { clearMpLock(true); }, left);
-  }
-  function setMoodLock(on) {
-    if (!on) { clearMpLock(false); return; }
-    var until = Date.now() + MP_LOCK_MS;
-    try {
-      lsSet('pt2_mood_lock', '1');
-      lsSet('pt2_accent_lock', '1');
-      lsSet(MP_LOCK_UNTIL, String(until));
-    } catch (e) {}
-    try {
-      document.documentElement.classList.add('pt2-mood-locked', 'pt2-accent-locked');
-      document.dispatchEvent(new CustomEvent('pt2-mood'));
-      document.dispatchEvent(new CustomEvent('pt2-accent-lock', { detail: true }));
-    } catch (e) {}
-    scheduleMpLockExpiry();
-  }
+  /* Drop leftover timed-lock keys from older builds (no lock on unlock). */
+  try {
+    localStorage.removeItem('pt2_mood_lock_until');
+  } catch (e) {}
   function celebrateMedphys(u) {
     if (!u || !(u.bg || u.bgKey || (u.key && String(u.key).indexOf('bg:') === 0))) return;
     var em = u.emoji || u.icon;
     if (em && typeof global.applyLiveMood === 'function') {
       try { global.applyLiveMood(em, { skipQuote: false }); } catch (e) {}
     }
-    setMoodLock(true);
     if (u.bg && global.PT2Bg && typeof PT2Bg.select === 'function') {
       try { PT2Bg.select(u.bg); } catch (e) {}
     }
   }
-  /* Resume timer after reload */
-  try { scheduleMpLockExpiry(); } catch (e) {}
 
   function check(quiet) {
     var got = unlocked(), fresh = [], counts = {};
@@ -568,5 +508,5 @@
   function labelSolved(set, pic, id, how, fresh) {
     check(false);
   }
-  global.PT2Unlocks = { has: function (k) { return !!unlocked()[k]; }, tally: tally, check: check, pictureSolved: pictureSolved, labelSolved: labelSolved, labelFresh: labelFresh, questionSolved: questionSolved, formulaSolved: formulaSolved, medphysCount: medphysCount, focusQuotes: focusQuotes, restQuotes: restQuotes, celebrateMedphys: celebrateMedphys, mpLockActive: mpLockActive, mpTimedLockActive: mpTimedLockActive, clearMpLock: clearMpLock, clearMpTimedLock: clearMpTimedLock, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? weekCount(w, sync(w)) : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
+  global.PT2Unlocks = { has: function (k) { return !!unlocked()[k]; }, tally: tally, check: check, pictureSolved: pictureSolved, labelSolved: labelSolved, labelFresh: labelFresh, questionSolved: questionSolved, formulaSolved: formulaSolved, medphysCount: medphysCount, focusQuotes: focusQuotes, restQuotes: restQuotes, celebrateMedphys: celebrateMedphys, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? weekCount(w, sync(w)) : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
 })(window);

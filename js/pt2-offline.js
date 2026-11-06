@@ -183,33 +183,25 @@
     { id: 'pt2HideDock', key: 'pt2_hide_dock', cls: 'pt2-hide-dock' }
   ];
   function get(k) { try { return localStorage.getItem(k) === '1'; } catch (e) { return false; } }
-  // the 🔒 emoji (unlocked with the Lock emoji control) keeps itself: while it is the chosen emoji the lock is forced on
-  function lockEmojiOn() { try { return localStorage.getItem('pt1_live_mood') === '\uD83D\uDD12'; } catch (e) { return false; } }
   function set(k, on) { try { localStorage.setItem(k, on ? '1' : '0'); } catch (e) {} }
   var root = document.documentElement;
+  /* Drop leftover timed unlock locks (until key); free mood/accent only when that timer was set. */
+  try {
+    var until = localStorage.getItem('pt2_mood_lock_until');
+    localStorage.removeItem('pt2_mood_lock_until');
+    if (until) {
+      localStorage.setItem('pt2_mood_lock', '0');
+      localStorage.setItem('pt2_accent_lock', '0');
+    }
+  } catch (e) {}
   PREFS.forEach(function (p) { root.classList.toggle(p.cls, get(p.key)); });
   try { root.classList.toggle('pt2-accent-locked', get('pt2_accent_lock')); } catch (e) {}
   global.PT2Prefs = { muted: function () { return get('pt2_pomo_muted'); }, disabled: function () { return get('pt2_pomo_disabled'); },
     // no automatic mood colours while the timer is off or the Timer box is hidden
     moodFrozen: function () { return get('pt2_pomo_disabled') || get('pt2_hide_dock'); },
-    moodLocked: function () {
-      if (lockEmojiOn()) return true;
-      if (global.PT2Unlocks && typeof PT2Unlocks.mpLockActive === 'function') return !!PT2Unlocks.mpLockActive();
-      try {
-        var until = parseInt(localStorage.getItem('pt2_mood_lock_until') || '0', 10) || 0;
-        if (until && Date.now() >= until) {
-          set('pt2_mood_lock', false); set('pt2_accent_lock', false);
-          try { localStorage.removeItem('pt2_mood_lock_until'); } catch (e) {}
-          root.classList.remove('pt2-mood-locked', 'pt2-accent-locked');
-          return false;
-        }
-        if (until > Date.now()) return true;
-      } catch (e) {}
-      return get('pt2_mood_lock');
-    } };
-  /* Lock emoji control shows only once unlocked (js/pt2-unlocks.js, feature:moodLock); set here so it never flashes.
-     A lock already switched on keeps working while the control is hidden. */
-  try { var gotU = JSON.parse(localStorage.getItem('pt2_emoji_unlocked_v1') || '{}') || {}; root.classList.toggle('pt2-lock-open', !!gotU['feature:moodLock']);
+    moodLocked: function () { return false; },
+    accentLocked: function () { return get('pt2_accent_lock'); } };
+  try { var gotU = JSON.parse(localStorage.getItem('pt2_emoji_unlocked_v1') || '{}') || {};
     root.classList.toggle('pt2-la-open', !!gotU['look:a']); root.classList.toggle('pt2-lb-open', !!gotU['look:b']);
     var lk = JSON.parse(localStorage.getItem('pt2_look_v1') || '{}') || {};
     if (gotU['look:a'] && (lk.fx || lk.e) && !root.classList.contains('pt2-basic')) root.classList.add('pt2-fx');
@@ -238,37 +230,26 @@
     t.addEventListener('change', function () { try { global.localStorage.setItem(BASIC, this.checked ? '1' : '0'); } catch (e) {} applyBasic(); });
     applyBasic();
   });
-  /* Lock emoji (in the emoji dropdown): keeps the chosen emoji; unlocking restores automatic changes */
-  function syncLock() {
-    var forced = lockEmojiOn();
-    var on = forced || (global.PT2Prefs && PT2Prefs.moodLocked()) || get('pt2_mood_lock');
-    var b = document.getElementById('pt2MoodLock');
-    root.classList.toggle('pt2-mood-locked', !!on);
-    root.classList.toggle('pt2-accent-locked', !!on && (get('pt2_accent_lock') || forced));
-    if (!b) return;
-    b.setAttribute('aria-checked', on ? 'true' : 'false');
-    b.classList.toggle('forced', forced); b.setAttribute('aria-disabled', forced ? 'true' : 'false');
-    b.title = forced ? 'Locked by the \uD83D\uDD12 emoji · pick another emoji to change this' : on ? 'Emoji locked · it stays as chosen' : 'Keep this emoji instead of letting it change automatically';
-    var i = b.querySelector('.mood-lock-box'); if (i) i.textContent = on ? '\u2713' : '';
+  /* Settings → Accent Color → Lock accent: keep accent through emoji / automatic colour changes */
+  function syncAccentLock() {
+    var on = get('pt2_accent_lock');
+    root.classList.toggle('pt2-accent-locked', on);
+    root.classList.remove('pt2-mood-locked');
+    var el = document.getElementById('pt2AccentLock');
+    if (el) el.checked = on;
   }
-  document.addEventListener('click', function (e) {
-    var b = e.target && e.target.closest && e.target.closest('#pt2MoodLock'); if (!b) return;
-    e.stopPropagation(); if (lockEmojiOn()) { syncLock(); return; }
-    var next = !(global.PT2Prefs && PT2Prefs.moodLocked());
-    if (!next && global.PT2Unlocks && typeof PT2Unlocks.clearMpLock === 'function') {
-      PT2Unlocks.clearMpLock(false);
-    } else {
-      set('pt2_mood_lock', next);
-      set('pt2_accent_lock', next);
-      if (!next) { try { localStorage.removeItem('pt2_mood_lock_until'); } catch (err) {} }
-      root.classList.toggle('pt2-mood-locked', next);
-      root.classList.toggle('pt2-accent-locked', next);
-      try { document.dispatchEvent(new CustomEvent('pt2-accent-lock', { detail: next })); } catch (err) {}
+  document.addEventListener('change', function (e) {
+    var t = e.target; if (!t || t.id !== 'pt2AccentLock') return;
+    set('pt2_accent_lock', !!t.checked);
+    try { localStorage.removeItem('pt2_mood_lock'); localStorage.removeItem('pt2_mood_lock_until'); } catch (err) {}
+    syncAccentLock();
+    try { document.dispatchEvent(new CustomEvent('pt2-accent-lock', { detail: !!t.checked })); } catch (err) {}
+    if (t.checked && global.PT2Color && typeof PT2Color.onAccent === 'function') {
+      try { PT2Color.onAccent(); } catch (err) {}
     }
-    syncLock();
-  }, true);
-  document.addEventListener('pt2-mood', syncLock);
-  document.addEventListener('DOMContentLoaded', syncLock);
+  });
+  document.addEventListener('DOMContentLoaded', syncAccentLock);
+  syncAccentLock();
   /* quiz order switches in Settings mirror the Quiz settings panel above the banks */
   var MIRROR = {};
   function sync() {

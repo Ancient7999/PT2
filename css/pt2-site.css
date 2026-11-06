@@ -72,12 +72,5 @@ html.pt2-basic #welcome-popup{box-shadow:none}
 .pt2-bg-opt-hint{font-size:.75em;color:var(--col-text-muted,#94a3b8);line-height:1.35}
 html.pt2-basic #pt2-bg-bubbles-canvas,html.pt2-basic #pt2-bg-orbit-canvas{display:none!important}
 
-/* Med Physics unlock: accent locked with emoji */
-html.pt2-accent-locked #accent-color-picker,
-html.pt2-accent-locked #accent-hex-input,
-html.pt2-accent-locked #accent-strength-slider,
-html.pt2-accent-locked .preset-swatches,
-html.pt2-accent-locked #custom-presets-area,
-html.pt2-accent-locked button[onclick*="resetThemeToDefaults"],
-html.pt2-accent-locked button[onclick*="applyPreset"]{opacity:.4;pointer-events:none;filter:grayscale(.35)}
-html.pt2-mood-locked .mood-pick:not(.active){opacity:.35}
+/* Accent lock is automatic-only; pickers stay usable. Optional marker on the lock toggle. */
+html.pt2-accent-locked #pt2AccentLock + .toggle-slider{box-shadow:0 0 0 2px rgba(var(--accent-0-rgb,34,211,238),.35)}

@@ -1,6 +1,7 @@
 /* PT2 colour owner: the mood (Pomodoro timer box) and the theme accent drive the same colours.
    Last change wins: a mood change repaints the accent from the mood, an accent change repaints the
-   mood colours from the accent. The winner is saved, so a reload keeps it. */
+   mood colours from the accent. The winner is saved, so a reload keeps it.
+   Settings → Accent Color → Lock accent: keep the accent through emoji / automatic colour changes. */
 (function (global) {
   'use strict';
   var root = document.documentElement, KEY = 'pt2_color_owner', busy = false, last = '', ready = false;
@@ -24,8 +25,9 @@
     try { if (typeof global.applyCursorSkin === 'function') global.applyCursorSkin(); } catch (e) {}
   }
   function clearMoodOverride() { MOOD_VARS.forEach(function (v) { root.style.removeProperty(v); }); }
-  /* mood wins: accent palette follows the mood's main colour */
+  /* mood wins: accent palette follows the mood's main colour (skipped while accent is locked) */
   function fromMood() {
+    if (accentLocked()) { repaintDeps(); return; }
     busy = true;
     try {
       clearMoodOverride();
@@ -49,27 +51,30 @@
     } finally { last = cs('--accent-0'); busy = false; }
     repaintDeps();
   }
-  function onMood() { setOwner('mood'); fromMood(); }
+  function onMood() { if (accentLocked()) { setOwner('accent'); return; } setOwner('mood'); fromMood(); }
   /* called by the page whenever the mood changes; start-up restores keep the saved winner */
   function moodChanged() {
-    if (!ready) { if (owner() === 'accent') fromAccent(); else fromMood(); return; }
+    if (!ready) {
+      if (accentLocked() || owner() === 'accent') fromAccent();
+      else fromMood();
+      return;
+    }
     onMood();
   }
-  function onAccent() { if (accentLocked()) return; setOwner('accent'); fromAccent(); }
+  /* Manual accent edits always apply; lock only blocks automatic mood→accent sync */
+  function onAccent() { setOwner('accent'); fromAccent(); }
   function init() {
     setOwner(owner());
-    if (owner() === 'accent') fromAccent(); else fromMood();
-    // any accent change not made here (picker, hex box, preset, strength, custom preset) makes the accent win
+    if (accentLocked() || owner() === 'accent') fromAccent(); else fromMood();
     new MutationObserver(function () {
       if (busy) return;
       var a = cs('--accent-0'); if (a && a !== last) {
-        if (accentLocked()) { last = a; return; }
         last = a; onAccent();
       }
     }).observe(root, { attributes: true, attributeFilter: ['style'] });
     var arm = function () { setTimeout(function () { ready = true; }, 600); };
     if (document.readyState === 'complete') arm(); else global.addEventListener('load', arm, { once: true });
   }
-  global.PT2Color = { moodChanged: moodChanged, onMood: onMood, onAccent: onAccent, owner: owner, init: init };
+  global.PT2Color = { moodChanged: moodChanged, onMood: onMood, onAccent: onAccent, owner: owner, accentLocked: accentLocked, init: init };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })(window);

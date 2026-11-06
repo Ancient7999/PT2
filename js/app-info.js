@@ -6,6 +6,15 @@
 var APP_INFO = {
   releases: [
     {
+      version: '0.39',
+      date: '06/11/2026',
+      changes: [
+        'The lock emoji no longer locks emoji or theme picks.',
+        'Settings → Accent Color: lock accent so emoji changes leave it alone.',
+        'Formulas calculator toggle: clickable on PC, quieter border.',
+      ]
+    },
+    {
       version: '0.38',
       date: '06/11/2026',
       changes: [

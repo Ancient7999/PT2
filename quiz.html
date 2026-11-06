@@ -1235,7 +1235,7 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 <link rel="stylesheet" href="css/pt2-look.css?v=5">
 <link rel="stylesheet" href="css/pt2-site.css?v=6">
 <link rel="stylesheet" href="css/vendor/calculator.css?v=1">
-<link rel="stylesheet" href="css/pt2-calculator.css?v=7">
+<link rel="stylesheet" href="css/pt2-calculator.css?v=8">
 </head>
 <body>
 <canvas id="fxCanvas"></canvas>
@@ -1269,7 +1269,6 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
     <div class="mood-tray-sep" aria-hidden="true"></div>
     <div class="mood-tray-tools">
       <div class="pt2-tools-row">
-      <button type="button" class="mood-lock-btn" id="pt2MoodLock" role="checkbox" aria-checked="false" title="Keep this emoji instead of letting it change automatically"><span class="mood-lock-box" aria-hidden="true"></span><span class="mood-lock-txt">Lock emoji</span></button>
       <button type="button" class="mood-cursor-btn" id="cursorRandomBtn" title="Randomize mouse cursor" aria-label="Randomize mouse cursor">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M5 3.5L19.5 11.2l-6.2 1.6 2.9 6.6-2.4 1.1-2.9-6.6L5 18.8V3.5z" fill="currentColor" opacity=".92"/>
@@ -1608,7 +1607,13 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 <div class="setting-item" style="padding-top:20px; position:relative;">
 <div style="font-size:0.75em; font-weight:bold; color:var(--col-text-muted); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; opacity:0.6;">Theme</div>
 <button title="Reset Theme to Defaults" onclick="resetThemeToDefaults()" style="position:absolute; top:20px; right:0; background:transparent; border:1px solid var(--col-error); color:var(--col-error); border-radius:6px; padding:3px 8px; font-size:0.8em; ">↺</button>
-<span class="setting-item-label">Accent Color</span>
+<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:12px;">
+<span class="setting-item-label" style="margin:0;">Accent Color</span>
+<label class="pt2-opt" style="margin:0;gap:10px;cursor:pointer;" title="Keep this accent when emoji or other automatic colours change">
+<span class="pt2-opt-text"><span class="pt2-opt-name" style="font-size:0.85em;">Lock accent</span></span>
+<span class="toggle-switch"><input type="checkbox" id="pt2AccentLock"><span class="toggle-slider"></span></span>
+</label>
+</div>
 <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
 <div class="preset-swatches" style="margin:0; flex-shrink:0;">
 <button class="preset-swatch active-preset" data-hex="#330000" style="background:#330000;" title="Maroon" onclick="applyPreset('#330000', false, 90)"></button>
@@ -2101,12 +2106,6 @@ document.getElementById('moodTray').addEventListener('click', (e)=>{
   e.stopPropagation();
   window.__audioGesture = true;
   unlockAudio();
-  if(window.PT2Prefs && PT2Prefs.moodLocked()){
-    /* emoji locked (incl. Med Physics auto-lock) — keep current face */
-    cancelMoodClose();
-    openMoodTray(true);
-    return;
-  }
   if(typeof moodAutoMode!=='undefined') moodAutoMode = false;
   applyLiveMood(pick.dataset.mood);
   cancelMoodClose();
@@ -2542,47 +2541,14 @@ function pickRandomFrom(pool, avoid){
   const src = opts.length ? opts : pool.slice();
   return src[Math.floor(Math.random()*src.length)];
 }
-/* Manual lock (user toggled on a normal emoji): keep it through pomo mood changes.
-   Timed Med Physics unlock lock: clear, then change emoji.
-   🔒 lock-emoji force: changing emoji strips that permanent power. */
-function manualMoodLockOn(){
-  try {
-    if(localStorage.getItem('pt1_live_mood') === '\uD83D\uDD12') return false;
-    var until = parseInt(localStorage.getItem('pt2_mood_lock_until') || '0', 10) || 0;
-    if(until > Date.now()) return false;
-    return localStorage.getItem('pt2_mood_lock') === '1';
-  } catch(e) { return false; }
-}
-function clearTimedEmojiLockForPomo(){
-  if(window.PT2Unlocks && typeof PT2Unlocks.clearMpTimedLock === 'function'){
-    try { PT2Unlocks.clearMpTimedLock(); } catch(e) {}
-    return;
-  }
-  try {
-    var until = parseInt(localStorage.getItem('pt2_mood_lock_until') || '0', 10) || 0;
-    if(!(until > Date.now())) return;
-    localStorage.setItem('pt2_mood_lock', '0');
-    localStorage.setItem('pt2_accent_lock', '0');
-    localStorage.removeItem('pt2_mood_lock_until');
-  } catch(e) {}
-  try {
-    document.documentElement.classList.remove('pt2-mood-locked', 'pt2-accent-locked');
-    document.dispatchEvent(new CustomEvent('pt2-mood'));
-    document.dispatchEvent(new CustomEvent('pt2-accent-lock', { detail: false }));
-  } catch(e) {}
-}
 function randomizeFocusMood(){
   if(window.PT2Prefs && PT2Prefs.moodFrozen()) return;
-  if(manualMoodLockOn()) return;
-  clearTimedEmojiLockForPomo();
   const next = pickRandomFrom(FOCUS_MOOD_POOL, currentMoodEmoji);
   moodAutoMode = true;
   applyLiveMood(next, {skipQuote:true});
 }
 function randomizeBreakMood(){
   if(window.PT2Prefs && PT2Prefs.moodFrozen()) return;
-  if(manualMoodLockOn()) return;
-  clearTimedEmojiLockForPomo();
   const next = pickRandomFrom(BREAK_MOOD_POOL, currentMoodEmoji);
   moodAutoMode = true;
   applyLiveMood(next, {skipQuote:true});
@@ -3425,7 +3391,7 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
 <script src="js/formula-gen-pt2.js?v=2"></script>
 <script src="js/formula-practice.js?v=6"></script>
 <script src="js/vendor/calculator-core.js?v=1"></script>
-<script src="js/pt2-calculator.js?v=4"></script>
+<script src="js/pt2-calculator.js?v=5"></script>
 <script src="js/study-images.js?v=16"></script>
 <script src="js/label-zoom.js?v=3"></script>
 <script src="js/study-symbols.js?v=2"></script>

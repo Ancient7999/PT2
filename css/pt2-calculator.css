@@ -4,35 +4,47 @@
   align-items:center;
   gap:8px;
 }
+/* Wrapper is pointer-events:none (colorizer); children must opt back in (Settings already does). */
+#settings-wrapper > *{ pointer-events:auto!important; }
 #calc-toggle-btn{
   width:44px!important;
   height:44px!important;
   border-radius:50%!important;
-  background:transparent!important;
-  border:2px solid var(--accent-0)!important;
+  background:rgba(var(--accent-0-rgb),.08)!important;
+  /* Match Settings text button border (not solid accent-0) */
+  border:1px solid rgba(var(--accent-0-rgb),.28)!important;
   color:var(--accent-0)!important;
   cursor:pointer!important;
   display:none!important;
   align-items:center!important;
   justify-content:center!important;
   padding:0!important;
-  transition:box-shadow .3s, background .3s!important;
+  box-shadow:none!important;
+  transition:transform .2s, background .2s, border-color .2s, box-shadow .2s!important;
   margin:0!important;
   flex-shrink:0;
+  position:relative!important;
+  z-index:1;
 }
 body.pt2-formula-calc #calc-toggle-btn{ display:flex!important; }
 #calc-toggle-btn:hover{
-  background:rgba(var(--accent-0-rgb),0.15)!important;
-  box-shadow:0 0 20px rgba(var(--accent-0-rgb),0.7)!important;
+  background:rgba(var(--accent-0-rgb),.14)!important;
+  border-color:rgba(var(--accent-0-rgb),.55)!important;
+  box-shadow:0 0 18px rgba(var(--accent-0-rgb),.28)!important;
 }
 #calc-toggle-btn[aria-pressed="true"]{
-  background:rgba(var(--accent-0-rgb),0.18)!important;
-  box-shadow:0 0 16px rgba(var(--accent-0-rgb),0.55)!important;
+  background:rgba(var(--accent-0-rgb),.18)!important;
+  border-color:rgba(var(--accent-0-rgb),.55)!important;
+  box-shadow:0 0 18px rgba(var(--accent-0-rgb),.28)!important;
 }
+#calc-toggle-btn:active{ transform:scale(.97)!important; }
 #calc-toggle-btn:focus-visible{
   outline:2px solid var(--accent-1)!important;
   outline-offset:3px!important;
 }
+
+/* Extra header room when the calc toggle is visible (desktop) */
+body.pt2-formula-calc{ --pt2-settings-room:9.5rem; }
 
 /* Beta tag next to the calculator brand */
 #calculator-widget .brand-name .calc-beta{
