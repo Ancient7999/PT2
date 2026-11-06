@@ -74,12 +74,14 @@ function apply(id, opts) {
     opt = options()[0];
   }
 
-  stopFx();
-  root.removeAttribute('data-pt2-bg');
-  root.classList.remove('pt2-bg-bubbles', 'pt2-bg-particles', 'pt2-bg-skin');
-  root.removeAttribute('data-skin');
+    stopFx();
+    root.removeAttribute('data-pt2-bg');
+    root.classList.remove('pt2-bg-bubbles', 'pt2-bg-particles', 'pt2-bg-skin');
+    root.removeAttribute('data-skin');
 
-  if (st.id === 'default') {
+    root.setAttribute('data-grid', st.id === 'default' ? 'low' : 'off');
+
+    if (st.id === 'default') {
     root.setAttribute('data-pt2-bg', 'default');
     if (typeof applySkin === 'function') try { applySkin(); } catch (e) {}
     else root.setAttribute('data-skin', 'grid-haze');
