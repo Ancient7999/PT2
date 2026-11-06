@@ -824,12 +824,6 @@ html.pt2-phone .step-gallery,.step-gallery.n2{grid-template-columns:repeat(2,min
 .step-lightbox-nav:disabled{opacity:.25;cursor:default}
 .step-lightbox-n{position:absolute;left:50%;transform:translateX(-50%);bottom:max(12px,env(safe-area-inset-bottom,0px));font:600 .8rem var(--mono,monospace);color:#fff;background:rgba(0,0,0,.45);padding:4px 10px;border-radius:999px;display:none}
 .step-lightbox.multi .step-lightbox-n{display:block}
-.step-lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;display:none}
-.step-lightbox.multi .step-lightbox-nav{display:block}
-.step-lightbox-prev{left:10px}.step-lightbox-next{right:10px}
-.step-lightbox-nav:disabled{opacity:.25;cursor:default}
-.step-lightbox-n{position:absolute;left:50%;transform:translateX(-50%);bottom:max(12px,env(safe-area-inset-bottom,0px));font:600 .8rem var(--mono,monospace);color:#fff;background:rgba(0,0,0,.45);padding:4px 10px;border-radius:999px;display:none}
-.step-lightbox.multi .step-lightbox-n{display:block}
 
 /* Better Unicode math in quiz options and feedback */
 .pt1q .opt,
