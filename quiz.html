@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Periodic Test 2 · Quiz Interface</title>
-<script src="data/bundle.js?v=27"></script>
+<script src="data/bundle.js?v=29"></script>
 <script src="js/app-info.js"></script>
 <script src="js/pt2-offline.js?v=7"></script>
 <script src="js/pt2-look.js?v=4"></script>
@@ -1223,7 +1223,7 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 </style>
 <link rel="stylesheet" href="css/quiz-pt1.css?v=24">
 <link rel="stylesheet" href="css/formula-practice.css?v=2">
-<link rel="stylesheet" href="css/study-pt1.css?v=16">
+<link rel="stylesheet" href="css/study-pt1.css?v=17">
 <link rel="stylesheet" href="css/local-fonts.css">
 <link rel="stylesheet" href="pt1-theme/fonts.css">
 <link rel="stylesheet" href="pt1-theme/theme-vars.css">
@@ -3124,11 +3124,7 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
           '<span class="go">' + (m.pt2Empty ? 'Coming soon' : studyOnly ? (m.study.images ? 'Picture study →' : 'Quiz coming soon · study notes →') : 'Question banks →') + '</span>';
         if(studyOnly) card.classList.add('study-only');
         pt2Go = ()=>{ if(m.pt2Empty){ portalToast('This question bank is not ready yet'); return; } if(studyOnly) openStudy(); else openMaterial(m, subject); };
-        card.addEventListener('click', ()=>{
-          if(m.draft && window.StudyConfirm){
-            StudyConfirm.ask({ title: m.title + ' is a draft', text: m.id==='medphys-pt2' ? 'Coming Soon: these question banks have not been thoroughly checked yet and may not reflect the content selected for the exam.' : m.comingSoon ? 'Coming Soon: this is not the final version yet. Some questions may still change.' : 'This is not the final version. Some questions may still change.', confirm: 'Open anyway', cancel: 'Cancel', icon: 'warn' }).then(ok=>{ if(ok) pt2Go(); });
-          } else pt2Go();
-        });
+        card.addEventListener('click', ()=>{ pt2Go(); });
       }
       // Study notes (PT1 study interface) sit beside the quiz on the same material
       if(!locked && m.study){
@@ -3158,21 +3154,7 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
         sb.title = (m.study.title || 'Study notes');
         sb.addEventListener('click', e=>{
           e.stopPropagation();
-          if (m.draft && window.StudyConfirm) {
-            StudyConfirm.ask({
-              title: m.title + ' is a draft',
-              text: m.id === 'medphys-pt2'
-                ? 'Coming Soon: these question banks have not been thoroughly checked yet and may not reflect the content selected for the exam.'
-                : m.comingSoon
-                  ? 'Coming Soon: this is not the final version yet. Some questions may still change.'
-                  : 'This is not the final version. Some questions may still change.',
-              confirm: 'Open anyway',
-              cancel: 'Cancel',
-              icon: 'warn'
-            }).then(ok => { if (ok) openStudy(); });
-          } else {
-            openStudy();
-          }
+          openStudy();
         });
         wrap.appendChild(sb);
         place(wrap, m);
@@ -3287,31 +3269,20 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
 })();
 
 </script>
-<script src="js/quiz-engine.js?v=45"></script>
+<script src="js/quiz-engine.js?v=46"></script>
 <script src="js/formula-gen-pt2.js?v=2"></script>
-<script src="js/formula-practice.js?v=3"></script>
+<script src="js/formula-practice.js?v=4"></script>
 <script src="js/study-images.js?v=16"></script>
 <script src="js/label-zoom.js?v=3"></script>
 <script src="js/study-symbols.js?v=2"></script>
 <script src="js/study-bone-table.js?v=1"></script>
-<script src="js/study-app.js?v=7"></script>
+<script src="js/study-app.js?v=8"></script>
 <script>
 /* Sets "📖 Study notes" → PT1 study interface for the open material */
 document.getElementById('studyNotesBtn').addEventListener('click', ()=>{
   const m = window.__activeMaterial;
   if(!window.StudyNotes || !m) return;
-  const open = ()=> StudyNotes.open(m, { from:'setsView', openQuiz: ()=> showView('setsView') });
-  if(m.draft && window.StudyConfirm){
-    StudyConfirm.ask({
-      title: (m.title || 'This') + ' is a draft',
-      text: m.comingSoon
-        ? 'Coming Soon: this is not the final version yet. Some pictures or notes may still change.'
-        : 'This is not the final version. Some pictures or notes may still change.',
-      confirm: 'Open anyway',
-      cancel: 'Cancel',
-      icon: 'warn'
-    }).then(ok=>{ if(ok) open(); });
-  } else open();
+  StudyNotes.open(m, { from:'setsView', openQuiz: ()=> showView('setsView') });
 });
 </script>
 <script>

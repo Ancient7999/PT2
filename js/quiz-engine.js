@@ -353,7 +353,7 @@ function buildGroupedCards(all, groups){
     pool.forEach(q=>taken.add(q.__id));
     const filtered=overlap;
     if(filtered) pool=pool.map(q=>cardCopyOf(q, g.hideTags)).filter(Boolean);
-    cards.push({typeOnly:!!g.typeOnly, id:'grp:'+(g.id||g.title||('card'+(i+1))), label:String(g.title||g.id||('Set '+(i+1))), pool, cats:[...set], badges:Array.isArray(g.badges)?g.badges:null, group:g.group||'', hideTags:Array.isArray(g.hideTags)?g.hideTags.slice():[], __filtered:filtered});
+    cards.push({typeOnly:!!g.typeOnly, id:'grp:'+(g.id||g.title||('card'+(i+1))), label:String(g.title||g.id||('Set '+(i+1))), pool, cats:[...set], badges:Array.isArray(g.badges)?g.badges:null, draft:!!g.draft, soon:!!(g.soon||g.comingSoon), group:g.group||'', hideTags:Array.isArray(g.hideTags)?g.hideTags.slice():[], __filtered:filtered});
   });
   if(overlap) return cards;
   const rest=all.filter(q=>!taken.has(q.__id));

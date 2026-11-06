@@ -376,18 +376,7 @@
   document.getElementById('studyBackBtn').addEventListener('click', goBack);
   document.getElementById('studyQuizBtn').addEventListener('click', function () {
     if (!quizOpener) return;
-    const m = currentMaterial;
-    if (m && m.draft && window.StudyConfirm) {
-      StudyConfirm.ask({
-        title: (m.title || 'This') + ' is a draft',
-        text: m.comingSoon
-          ? 'Coming Soon: these question banks have not been thoroughly checked yet and may not reflect the content selected for the exam.'
-          : 'This is not the final version. Some questions may still change.',
-        confirm: 'Open anyway',
-        cancel: 'Cancel',
-        icon: 'warn'
-      }).then(function (ok) { if (ok) quizOpener(); });
-    } else quizOpener();
+    quizOpener();
   });
 
   document.addEventListener('keydown', function (event) {

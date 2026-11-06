@@ -71,11 +71,11 @@ function appendSetsSection(host) {
       const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'card formula-card';
       btn.dataset.card = 'formulas-' + ch.id;
       const extraBadge = (ch.id === 'ch3')
-        ? '<span class="card-badge note-badge amber" title="Told not to be on the exam — practice only">Off-exam</span>'
+        ? '<span class="card-badge note-badge amber" title="Told not to be on the exam">Off-exam</span>'
         : '';
       const badgeHtml = extraBadge ? '<div class="card-badges">' + extraBadge + '</div>' : '';
       const titleWithBadge = '<span class="form-letter">' + ch.title + '</span>' +
-  (extraBadge ? '<span class="card-badge note-badge amber" title="Told not to be on the exam — practice only" style="margin-left:8px">Off-exam</span>' : '');
+  (extraBadge ? '<span class="card-badge note-badge amber" title="Told not to be on the exam" style="margin-left:8px">Off-exam</span>' : '');
 
 btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
   '<div class="card-sub">' + ch.keys.length + ' formulas · ' + ch.subtitle + '</div>' +

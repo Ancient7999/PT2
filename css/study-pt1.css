@@ -276,19 +276,20 @@
 /* —— Symbol and term tooltips (js/study-symbols.js) —— */
 #studyView .md .sym {
   cursor: help;
-  border-bottom: 1px dotted rgba(var(--accent-0-rgb), 0.75);
-  border-radius: 2px;
+  border-bottom: 1px solid rgba(var(--accent-0-rgb), 0.28);
+  border-radius: 0;
+  background: transparent;
   outline: none;
-  transition: background-color .15s ease;
+  transition: border-color .15s ease, background-color .15s ease;
 }
-#studyView .md .sym.term { border-bottom-style: dotted; }
+#studyView .md .sym.term { border-bottom-style: dotted; border-bottom-color: rgba(var(--accent-0-rgb), 0.35); }
 #studyView .md .sym:hover,
 #studyView .md .sym:focus-visible,
 #studyView .md .sym.sym-on {
-  background: rgba(var(--accent-0-rgb), 0.16);
+  background: rgba(var(--accent-0-rgb), 0.10);
   border-bottom-color: var(--accent-0);
 }
-#studyView .md .sym:focus-visible { box-shadow: 0 0 0 2px rgba(var(--accent-0-rgb), 0.55); }
+#studyView .md .sym:focus-visible { box-shadow: 0 0 0 2px rgba(var(--accent-0-rgb), 0.4); }
 #studyView .sym-tip {
   position: fixed; z-index: 2000; left: 0; top: 0;
   max-width: 320px;
@@ -369,7 +370,7 @@
 /* whole-formula tooltips: no dotted underline on letters */
 #studyView .md .sym.fx-formula,#studyView .md .sym.fx-inline{border-bottom:0}
 #studyView .md .sym.fx-inline{padding:0 2px;border-radius:4px}
-#studyView .md .fx-formula:hover,#studyView .md .fx-formula.sym-on,#studyView .md .fx-formula:focus-visible{background:rgba(var(--accent-0-rgb),.12)}
+#studyView .md .fx-formula:hover,#studyView .md .fx-formula.sym-on,#studyView .md .fx-formula:focus-visible{background:rgba(var(--accent-0-rgb),.08)}
 #studyView .sym-tip .tip-f{font-family:"Cambria Math","STIX Two Math",Cambria,Georgia,serif;font-size:1.05rem;color:var(--accent-0);margin-bottom:2px}
 #studyView .sym-tip .tip-m{font-weight:600;margin-bottom:4px}
 #studyView .sym-tip .tip-syms{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:2px;font-size:.84rem;color:var(--text-dim,var(--text))}
@@ -447,6 +448,23 @@
 /* the picture's leader lines and outlines are not focus targets (no browser focus ring on click); their label boxes are */
 #studyView .simg-regions,#studyView .simg-regions *{outline:none}
 
+
+/* Optics / physics diagrams: labels follow the study mood theme (Portal-style CSS variables in SVG). */
+#studyView .optics-diagram{
+  margin: 0.9rem 0 1.2rem;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(var(--accent-0-rgb), 0.22);
+  background: rgba(var(--col-bg-card-rgb), 0.55);
+}
+#studyView .optics-diagram svg text{
+  fill: var(--col-text-main, #e8edf5);
+  font-family: var(--body), system-ui, sans-serif;
+}
+#studyView .optics-diagram svg text[font-family*="Mono"],
+#studyView .optics-diagram svg text[font-family*="mono"]{
+  font-family: var(--mono), ui-monospace, monospace;
+}
 /* —— Anatomy skeleton bone table (interactive) —— */
 #studyView .bone-table-root {
   margin: 1.1em 0 1.4em;

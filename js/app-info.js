@@ -6,11 +6,12 @@
 var APP_INFO = {
   releases: [
     {
-      version: '0.36',
+      version: '0.37',
       date: '06/11/2026',
       changes: [
         'Medical Physics card is available as a draft.',
-        'Medical Physics: new Study Interface with chapter notes.',
+        'Added Study Interface for Medical Physics.',
+        'Study Interface: clearer text and diagrams.',
         'On phones, typed questions now have enough scroll room for the keyboard.'
       ]
     },
