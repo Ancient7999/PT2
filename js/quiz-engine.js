@@ -2529,10 +2529,19 @@ function renderMcq(q, answered){
   (q.options||[]).forEach((opt,i)=>{
     const btn=document.createElement('button');
     btn.className='opt'; btn.type='button'; btn.dataset.key=String.fromCharCode(65+i);
-    btn.textContent=opt; btn.onclick=()=>selectAnswer(i);
+    btn.innerHTML=opt; btn.onclick=()=>selectAnswer(i);
     if(answered){ btn.disabled=true; if(i===q.correct) btn.classList.add('correct'); }
     opts.appendChild(btn);
   });
+  if (window.renderMathInElement) {
+    renderMathInElement(opts, {
+      delimiters: [
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ],
+      throwOnError: false
+    });
+  }
 }
 
 /* MULTI: checkbox-style options (each toggles), a "Select all that apply" hint and a Check
