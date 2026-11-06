@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Periodic Test 2 · Quiz Interface</title>
-<script src="data/bundle.js?v=29"></script>
+<script src="data/bundle.js?v=30"></script>
 <script src="js/app-info.js"></script>
-<script src="js/pt2-offline.js?v=8"></script>
+<script src="js/pt2-offline.js?v=9"></script>
 <script src="js/pt2-look.js?v=4"></script>
 <script>
 (function(){
@@ -1235,7 +1235,11 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 <link rel="stylesheet" href="css/pt2-look.css?v=5">
 <link rel="stylesheet" href="css/pt2-site.css?v=6">
 <link rel="stylesheet" href="css/vendor/calculator.css?v=1">
-<link rel="stylesheet" href="css/pt2-calculator.css?v=8">
+<link rel="stylesheet" href="css/pt2-calculator.css?v=10">
+<!-- Study Interface math (KaTeX): \( \) inline, \[ \] display -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <canvas id="fxCanvas"></canvas>
@@ -2041,7 +2045,7 @@ function applyLiveMood(emoji, opts){
   document.querySelectorAll('.mood-pick').forEach(p=>p.classList.toggle('active', p.dataset.mood===m.emoji));
   try{ localStorage.setItem('pt1_live_mood', m.emoji);
   if(window.StudyCursors && StudyCursors.onMoodChange) StudyCursors.onMoodChange(); }catch(e){}
-  try{ document.dispatchEvent(new CustomEvent('pt2-mood', { detail: m.emoji })); }catch(e){} // 🔒 forces the Lock emoji control on (pt2-offline.js)
+  try{ document.dispatchEvent(new CustomEvent('pt2-mood', { detail: m.emoji })); }catch(e){}
   streams.forEach((s,i)=>{ const cols=moodFxColors(); s.color = (i%2? cols[0] : cols[3]); });
   if(window.__skinsReady){
     if(typeof applySkin==='function') applySkin();
@@ -3396,7 +3400,7 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
 <script src="js/label-zoom.js?v=3"></script>
 <script src="js/study-symbols.js?v=2"></script>
 <script src="js/study-bone-table.js?v=1"></script>
-<script src="js/study-app.js?v=8"></script>
+<script src="js/study-app.js?v=9"></script>
 <script>
 /* Sets "📖 Study notes" → PT1 study interface for the open material */
 document.getElementById('studyNotesBtn').addEventListener('click', ()=>{

@@ -185,14 +185,11 @@
   function get(k) { try { return localStorage.getItem(k) === '1'; } catch (e) { return false; } }
   function set(k, on) { try { localStorage.setItem(k, on ? '1' : '0'); } catch (e) {} }
   var root = document.documentElement;
-  /* Drop leftover timed unlock locks (until key); free mood/accent only when that timer was set. */
+  /* Drop leftover emoji/timed mood-lock flags. Accent lock is only Settings → Lock accent. */
   try {
-    var until = localStorage.getItem('pt2_mood_lock_until');
     localStorage.removeItem('pt2_mood_lock_until');
-    if (until) {
-      localStorage.setItem('pt2_mood_lock', '0');
-      localStorage.setItem('pt2_accent_lock', '0');
-    }
+    localStorage.removeItem('pt2_mood_lock');
+    document.documentElement.classList.remove('pt2-mood-locked');
   } catch (e) {}
   PREFS.forEach(function (p) { root.classList.toggle(p.cls, get(p.key)); });
   try { root.classList.toggle('pt2-accent-locked', get('pt2_accent_lock')); } catch (e) {}

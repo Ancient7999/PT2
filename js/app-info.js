@@ -6,6 +6,15 @@
 var APP_INFO = {
   releases: [
     {
+      version: '0.40',
+      date: '06/11/2026',
+      changes: [
+        'Lock emoji no longer freezes accent colour, strength, or other emoji picks.',
+        'Calculator size adjustments for phones.',
+        'LaTeX text fixes.',
+      ]
+    },
+    {
       version: '0.39',
       date: '06/11/2026',
       changes: [

@@ -257,6 +257,30 @@
   const cache = Object.create(null);
   const listEl = document.getElementById('chapterList');
 
+
+  function renderStudyMath(root) {
+    if (!root) return;
+    var tries = 0;
+    function run() {
+      try {
+        if (typeof renderMathInElement === 'function') {
+          renderMathInElement(root, {
+            delimiters: [
+              { left: '$$', right: '$$', display: true },
+              { left: '\\[', right: '\\]', display: true },
+              { left: '\\(', right: '\\)', display: false }
+            ],
+            throwOnError: false,
+            ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code', 'option']
+          });
+          return;
+        }
+      } catch (e) { return; }
+      if (tries++ < 50) setTimeout(run, 40);
+    }
+    run();
+  }
+
   async function loadMd(src) {
     if (!cache[src]) {
       const res = await fetch(src, { cache: 'no-store' });
@@ -298,16 +322,18 @@
         body.querySelector('.md').innerHTML = '<p style="color:var(--col-text-muted)">Loading…</p>';
         try {
           const md = await loadMd(ch.src);
-          body.querySelector('.md').innerHTML = sanitizeSvgAttrs(renderMarkdown(md));
+          var mdEl = body.querySelector('.md');
+          mdEl.innerHTML = sanitizeSvgAttrs(renderMarkdown(md));
+          renderStudyMath(mdEl);
           // symbol / clinical-term tooltips (catalog study.symbols → data/symbols-*.json)
           if (SYMBOLS && window.StudySymbols) {
-            try { await window.StudySymbols.decorate(body.querySelector('.md'), SYMBOLS, ch.src); } catch (e) { /* notes still readable */ }
+            try { await window.StudySymbols.decorate(mdEl, SYMBOLS, ch.src); } catch (e) { /* notes still readable */ }
           }
           if (window.StudyBoneTable) {
-            try { await window.StudyBoneTable.init(body.querySelector('.md')); } catch (e) { /* table optional */ }
+            try { await window.StudyBoneTable.init(mdEl); } catch (e) { /* table optional */ }
           }
           if (window.StudyFlowDiagram) {
-            try { window.StudyFlowDiagram.init(body.querySelector('.md')); } catch (e) { /* optional */ }
+            try { window.StudyFlowDiagram.init(mdEl); } catch (e) { /* optional */ }
           }
           body.dataset.loaded = '1';
         } catch (err) {

@@ -176,17 +176,82 @@ html.pt2-phone #settings-wrapper #settings-btn.pt2-settings-text{
   white-space:nowrap!important;
 }
 html.pt2-phone #calc-toggle-btn{
-  width:36px!important;
-  height:36px!important;
+  width:30px!important;
+  height:30px!important;
 }
-html.pt2-phone #calc-toggle-btn svg{ width:18px; height:18px; }
+html.pt2-phone #calc-toggle-btn svg{ width:15px; height:15px; }
+
+/* Phone: much smaller Quantifier panel (~55vw max, scaled down) */
+html.pt2-phone #calculator-widget{
+  transform: scale(0.68)!important;
+  transform-origin: top right!important;
+  max-width: min(55vw, 240px)!important;
+}
+html.pt2-phone #calculator-widget .calc-body{
+  width: min(55vw, 240px)!important;
+  max-width: min(55vw, 240px)!important;
+  box-sizing: border-box!important;
+  padding: 10px 9px!important;
+  border-radius: 4px 16px 4px 16px!important;
+}
+html.pt2-phone #calculator-widget .calc-header{ margin-bottom:6px!important; }
+html.pt2-phone #calculator-widget .brand-name{ font-size:7px!important; letter-spacing:0.8px!important; top:-2px!important; }
+html.pt2-phone #calculator-widget .brand-name .calc-beta{ font-size:6px!important; margin-left:3px!important; }
+html.pt2-phone #calculator-widget .solar-panel{
+  width:36px!important;
+  height:18px!important;
+}
+html.pt2-phone #calculator-widget .calc-display{
+  padding:3px 5px 4px!important;
+  margin-bottom:5px!important;
+  min-height:52px!important;
+  border-radius:3px 8px 3px 8px!important;
+}
+html.pt2-phone #calculator-widget .display-status{ font-size:7px!important; margin-bottom:1px!important; }
+html.pt2-phone #calculator-widget .stat-pill{ font-size:6px!important; padding:0 2px!important; }
+html.pt2-phone #calculator-widget .display-expr{ font-size:9px!important; min-height:11px!important; }
+html.pt2-phone #calculator-widget .display-main{ font-size:14px!important; min-height:16px!important; }
+html.pt2-phone #calculator-widget .blk-cursor{ font-size:13px!important; }
+html.pt2-phone #calculator-widget #errMsg{ font-size:7px!important; min-height:10px!important; }
+html.pt2-phone #calculator-widget .calc-buttons{ gap:4px!important; }
+html.pt2-phone #calculator-widget .btn-top-section,
+html.pt2-phone #calculator-widget .btn-top-left,
+html.pt2-phone #calculator-widget .btn-row,
+html.pt2-phone #calculator-widget .btn-row-full{ gap:4px!important; }
+html.pt2-phone #calculator-widget .btn-main-grid{ gap:4px!important; }
+html.pt2-phone #calculator-widget .nav-pad-outer{ width:54px!important; gap:2px!important; }
+html.pt2-phone #calculator-widget .nav-row{ gap:2px!important; }
+html.pt2-phone #calculator-widget .calc-btn{
+  font-size:9px!important;
+  min-height:20px!important;
+  padding:0!important;
+  border-radius:3px 7px 3px 7px!important;
+}
+html.pt2-phone #calculator-widget .btn-num{ font-size:11px!important; }
+html.pt2-phone #calculator-widget .btn-op{ font-size:11px!important; }
+html.pt2-phone #calculator-widget .btn-2nd{ font-size:9px!important; }
+html.pt2-phone #calculator-widget .btn-on{ font-size:8px!important; }
+html.pt2-phone #calculator-widget .lbl2{ font-size:5.5px!important; }
+html.pt2-phone #calculator-widget .lblsub{ font-size:5px!important; }
+html.pt2-phone #calculator-widget .info-btn{
+  width:11px!important;
+  height:11px!important;
+  font-size:7px!important;
+  left:6px!important;
+  top:4px!important;
+}
+html.pt2-phone #calculator-widget .info-popup{
+  max-width: min(50vw, 180px)!important;
+  padding:6px 8px 18px!important;
+  font-size:0.65em!important;
+}
 
 /* Title / header clearance for the fixed Settings cluster (wider when calc toggle is shown) */
 html.pt2-phone{
   --pt2-settings-room:5.75rem;
 }
 html.pt2-phone body.pt2-formula-calc{
-  --pt2-settings-room:8.25rem;
+  --pt2-settings-room:7.5rem;
 }
 html.pt2-phone .portal-wrap h1,
 html.pt2-phone .sets-wrap h1,

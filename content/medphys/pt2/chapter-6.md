@@ -27,9 +27,9 @@ It begins with **combination of lenses** (the end of Chapter 5) because a compou
 
 | Topic | Core Idea |
 |-------|-----------|
-| Combination of lenses | Two lenses act as one: 1 / f = 1 / f₁ + 1 / f₂ − r / (f₁ f₂) |
-| Simple magnifier | Convex lens, object inside F → virtual, erect, magnified image; M = 25 cm/f |
-| Compound microscope | Objective (f_o < 1 cm) + eyepiece; final image virtual, enlarged, inverted |
+| Combination of lenses | Two lenses act as one: \(\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{r}{f_1 f_2}\) |
+| Simple magnifier | Convex lens, object inside F → virtual, erect, magnified image; \(M = 25\,\mathrm{cm}/f\) |
+| Compound microscope | Objective (\(f_o < 1\,\mathrm{cm}\)) + eyepiece; final image virtual, enlarged, inverted |
 | Human eye | Like a camera; cornea does most refraction; image on retina is real and inverted |
 | Near & far point | Near point ≈ 25 cm (18 cm at age 10); far point at infinity |
 | Myopia | Sees near, not far; image in front of retina; concave (minus) lens |
@@ -61,17 +61,19 @@ These applications depend on the same principles of refraction, magnification, a
 
 Two thin lenses of focal lengths *f*₁ and *f*₂, separated by distance *r*, act as a single lens of focal length *f*:
 
-```
-1 / f = 1 / f₁ + 1 / f₂ − r / (f₁ f₂)
-P = P₁ + P₂ − r P₁ P₂
-```
+\[
+\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{r}{f_1 f_2}
+\]
+
+\[
+P = P_1 + P_2 - r P_1 P_2
+\]
 
 If the lenses **touch** (*r* = 0):
 
-```
-1 / f = 1 / f₁ + 1 / f₂
-P = P₁ + P₂
-```
+\[
+\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2}, \qquad P = P_1 + P_2
+\]
 
 **Power reminder:** *P* = 1 / *f* with *f* in **metres**, unit **dioptre (D)**. Convex lenses have **positive** power; concave lenses have **negative** power.
 
@@ -127,9 +129,9 @@ The lens is held close to the eye and the object distance is adjusted until the 
 
 ### Angular Magnification
 
-```
-M = θ / θ₀ = 25 cm / f
-```
+\[
+M = \frac{\theta}{\theta_0} = \frac{25\,\mathrm{cm}}{f}
+\]
 
 - θ₀: angle subtended by the object at the eye when held at 25 cm (without lens)
 - θ: angle subtended by the image when the object is near the focal point of the lens
@@ -174,16 +176,16 @@ A compound microscope achieves high magnification by combining two convex lenses
 
 | Part | Description |
 |------|-------------|
-| **Objective lens** | Very short focal length (f_o < 1 cm); forms the primary magnified image |
-| **Eyepiece** | Focal length f_e of a few centimetres (f_e > f_o); acts as a simple magnifier |
+| **Objective lens** | Very short focal length (\(f_o < 1\,\mathrm{cm}\)); forms the primary magnified image |
+| **Eyepiece** | Focal length \(f_e\) of a few centimetres (\(f_e > f_o\)); acts as a simple magnifier |
 | **Tube length L** | Distance between the two lenses; much greater than either f_o or f_e |
 | **Stage** | Holds the specimen |
 
 ### Image Formation
 
 1. The object is placed **just outside the focal point of the objective** (between F and 2F of the objective).
-2. The objective forms a **real, inverted, and large image I_1** at or just inside the focal point of the eyepiece.
-3. The eyepiece, acting as a simple magnifier, produces a **virtual, enlarged image I_2** of I_1.
+2. The objective forms a **real, inverted, and large image** \(I_1\) at or just inside the focal point of the eyepiece.
+3. The eyepiece, acting as a simple magnifier, produces a **virtual, enlarged image** \(I_2\) of \(I_1\).
 4. The final image remains **inverted** relative to the original object.
 
 <div class="optics-diagram" role="img" aria-label="Compound microscope: the objective makes a real inverted image I1 just inside the eyepiece focus; the eyepiece magnifies it">
@@ -449,7 +451,7 @@ Least distance of distinct vision:
 ### Key Numbers
 
 - Near point: **25 cm** (adult), **≈ 18 cm** (age 10); far point: **infinity**
-- Microscope objective: f_o < 1 cm; eyepiece: a few cm
+- Microscope objective: fₒ < 1 cm; eyepiece: a few cm
 - Refractive index of eye lens: **1.437**
 - Approximate powers: cornea ≈ 43 D, lens ≈ 17–20 D, total eye ≈ 60 D
 - Magnifier examples: f = 5 cm → M = 5; f = 10 cm → M = 2.5

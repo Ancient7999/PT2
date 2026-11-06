@@ -50,9 +50,6 @@ html:not(.pt2-lock-open) #pt2MoodLock{display:none!important}
 .mood-lock-box{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:4px;border:1.5px solid var(--cyan);font-size:11px;font-weight:800;line-height:1;color:#05070c;background:transparent}
 .mood-lock-btn[aria-checked="true"]{border-color:var(--cyan);color:var(--cyan-bright,inherit)}
 .mood-lock-btn[aria-checked="true"] .mood-lock-box{background:var(--cyan)}
-/* forced on by the 🔒 emoji: red check, cannot be switched off while 🔒 is chosen */
-.mood-lock-btn.forced{border-color:#ef4444;color:#ef4444;cursor:not-allowed}
-.mood-lock-btn.forced .mood-lock-box{background:#ef4444!important;border-color:#ef4444;color:#fff}
 
 /* t327u: Week sections on the home menu */
 #materialCards.pt2-weeks{display:block}
@@ -248,19 +245,21 @@ html.pt2-grid-hover .settings-modal{background-color:rgba(8,10,16,.4)!important}
 #materialCards .portal-card:hover:not(.locked){border-color:rgba(255,255,255,.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.36),inset 0 0 22px rgba(var(--accent-0-rgb),.2),0 0 26px var(--mood-glow),0 18px 40px -12px rgba(0,0,0,.6)}
 #materialCards .portal-card.pt2-dim{background:linear-gradient(180deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,0) 50%),linear-gradient(160deg,rgba(255,255,255,.06) 0%,rgba(12,16,26,.58) 60%);border-color:rgba(255,255,255,.14)}
 
-/* 🔒 Locked emoji (css class mood-locked, like the other emoji moods): a dark red look while it is the chosen emoji.
-   Only custom properties and two fixed background layers; picking another emoji removes the class, so the saved
-   theme is never touched. The accent levels are forced over the theme's own (set inline by the colour picker). */
+/* 🔒 Locked emoji look (class mood-locked): dark red mood chrome only.
+   Does NOT force --accent-0…4 — Settings accent + strength stay free unless Accent Color lock is on. */
 html.mood-locked{
   --bg:#0d0405; --bg2:#160608; --bg-glow:rgba(185,28,28,.10); --grid-tint:transparent;
   --accent:#dc2626; --accent-2:#b91c1c; --cyan:#dc2626; --cyan-bright:#f87171; --teal:#991b1b;
   --border:rgba(220,38,38,.42); --mood-glow:rgba(185,28,28,.30); --gold:#fca5a5;
-  --accent-0:#dc2626!important; --accent-0-rgb:220,38,38!important;
-  --accent-1:#b91c1c!important; --accent-1-rgb:185,28,28!important;
-  --accent-2:#991b1b!important; --accent-2-rgb:153,27,27!important;
-  --accent-3:#7f1d1d!important; --accent-3-rgb:127,29,29!important;
-  --accent-4:#ef4444!important; --accent-4-rgb:239,68,68!important;
   --anim-speed:.7; --pulse-ms:2600ms; --transition-ms:420ms; --particle-speed:.55;
+}
+/* Emoji tray stays fully clickable while 🔒 is selected */
+html.mood-locked .mood-pick,
+html.pt2-mood-locked .mood-pick{
+  pointer-events:auto!important;
+  opacity:1!important;
+  filter:none!important;
+  cursor:pointer!important;
 }
 /* background, adapted from the Ember Atlas theme (theme previewer): a faint red grid fading to the edges and soft
    'heat' scanlines. They drift and breathe only with Animation effects on and motion allowed; otherwise they stay still. */
@@ -283,11 +282,6 @@ html.mood-devil{ /* 😈 */
   --bg:#0c0410; --bg2:#150619; --bg-glow:rgba(192,38,211,.09); --grid-tint:transparent;
   --accent:#c026d3; --cyan:#c026d3; --cyan-bright:#e879f9; --teal:#6b21a8;
   --border:rgba(192,38,211,.42); --mood-glow:rgba(192,38,211,.28); --gold:#e879f9;
-  --accent-0:#c026d3!important; --accent-0-rgb:192,38,211!important;
-  --accent-1:#9333ea!important; --accent-1-rgb:147,51,234!important;
-  --accent-2:#be123c!important; --accent-2-rgb:190,18,60!important;
-  --accent-3:#6b21a8!important; --accent-3-rgb:107,33,168!important;
-  --accent-4:#e879f9!important; --accent-4-rgb:232,121,249!important;
   --anim-speed:.75; --pulse-ms:2200ms; --transition-ms:360ms; --particle-speed:.7;
 }
 html.mood-devil:not(.pt2-basic)::before,html.mood-devil:not(.pt2-basic)::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none}
@@ -301,11 +295,6 @@ html.mood-frozen{ /* 🥶 */
   --bg:#03101a; --bg2:#061826; --bg-glow:rgba(56,189,248,.09); --grid-tint:transparent;
   --accent:#38bdf8; --cyan:#38bdf8; --cyan-bright:#bae6fd; --teal:#0284c7;
   --border:rgba(56,189,248,.42); --mood-glow:rgba(56,189,248,.28); --gold:#bae6fd;
-  --accent-0:#38bdf8!important; --accent-0-rgb:56,189,248!important;
-  --accent-1:#0ea5e9!important; --accent-1-rgb:14,165,233!important;
-  --accent-2:#7dd3fc!important; --accent-2-rgb:125,211,252!important;
-  --accent-3:#0284c7!important; --accent-3-rgb:2,132,199!important;
-  --accent-4:#bae6fd!important; --accent-4-rgb:186,230,253!important;
   --anim-speed:.75; --pulse-ms:2200ms; --transition-ms:360ms; --particle-speed:.7;
 }
 html.mood-frozen:not(.pt2-basic)::before,html.mood-frozen:not(.pt2-basic)::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none}
@@ -319,11 +308,6 @@ html.mood-hot{ /* 🥵 */
   --bg:#150703; --bg2:#200b05; --bg-glow:rgba(249,115,22,.09); --grid-tint:transparent;
   --accent:#f97316; --cyan:#f97316; --cyan-bright:#fdba74; --teal:#c2410c;
   --border:rgba(249,115,22,.42); --mood-glow:rgba(249,115,22,.28); --gold:#fdba74;
-  --accent-0:#f97316!important; --accent-0-rgb:249,115,22!important;
-  --accent-1:#ea580c!important; --accent-1-rgb:234,88,12!important;
-  --accent-2:#fb923c!important; --accent-2-rgb:251,146,60!important;
-  --accent-3:#c2410c!important; --accent-3-rgb:194,65,12!important;
-  --accent-4:#fdba74!important; --accent-4-rgb:253,186,116!important;
   --anim-speed:.75; --pulse-ms:2200ms; --transition-ms:360ms; --particle-speed:.7;
 }
 html.mood-hot:not(.pt2-basic)::before,html.mood-hot:not(.pt2-basic)::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none}
@@ -337,11 +321,6 @@ html.mood-ghost{ /* 👻 */
   --bg:#0a0a12; --bg2:#11111c; --bg-glow:rgba(165,180,252,.09); --grid-tint:transparent;
   --accent:#a5b4fc; --cyan:#a5b4fc; --cyan-bright:#e0e7ff; --teal:#6366f1;
   --border:rgba(165,180,252,.42); --mood-glow:rgba(165,180,252,.28); --gold:#e0e7ff;
-  --accent-0:#a5b4fc!important; --accent-0-rgb:165,180,252!important;
-  --accent-1:#818cf8!important; --accent-1-rgb:129,140,248!important;
-  --accent-2:#c4b5fd!important; --accent-2-rgb:196,181,253!important;
-  --accent-3:#6366f1!important; --accent-3-rgb:99,102,241!important;
-  --accent-4:#e0e7ff!important; --accent-4-rgb:224,231,255!important;
   --anim-speed:.75; --pulse-ms:2200ms; --transition-ms:360ms; --particle-speed:.7;
 }
 html.mood-ghost:not(.pt2-basic)::before,html.mood-ghost:not(.pt2-basic)::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none}

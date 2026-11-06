@@ -26,7 +26,7 @@ How light **reflects** from mirrors, how it **bends**, or refracts, when it cros
 | Optical fibres | Core n₁ > cladding n₂; endoscopes |
 | Thin lenses | Convex lenses converge and concave lenses diverge; P = 1/f |
 | Lens / mirror equation | 1/do + 1/di = 1/f; m = hi/ho = −di/do |
-| Combination of lenses | 1 / f = 1 / f₁ + 1 / f₂ − r / (f₁ f₂); in contact: 1 / f = 1 / f₁ + 1 / f₂ |
+| Combination of lenses | \(\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{r}{f_1 f_2}\); in contact: \(\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2}\) |
 
 **Study tip:** for every rule, picture the **ray diagram**. Almost every answer in this chapter comes from three things: the **normal**, the **focal point F**, and the **sign** of a number.
 
@@ -530,17 +530,19 @@ Real image 15 cm in front of the mirror, inverted, half the size. The object at 
 
 Two thin lenses of focal lengths *f*₁ and *f*₂ placed a distance *r* apart have a combined focal length *f* given by:
 
-```
-1 / f = 1 / f₁ + 1 / f₂ − r / (f₁ f₂)
-P = P₁ + P₂ − r P₁ P₂
-```
+\[
+\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{r}{f_1 f_2}
+\]
+
+\[
+P = P_1 + P_2 - r P_1 P_2
+\]
 
 When the lenses are in contact (*r* = 0):
 
-```
-1 / f = 1 / f₁ + 1 / f₂
-P = P₁ + P₂
-```
+\[
+\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2}, \qquad P = P_1 + P_2
+\]
 
 **Notes:**
 - Use consistent units. For the separation formula, *f*₁, *f*₂ and *r* must all be in the same unit (usually metres if working with power, or all cm if staying with focal lengths).
