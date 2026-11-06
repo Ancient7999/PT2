@@ -733,6 +733,9 @@ input,textarea,select,[contenteditable]:not([contenteditable="false"]),
 .chat-msg-body,.chat-input,.selectable-text,
 #studyView .chapter-body .md:not(.simg-chapter),#studyView .chapter-body .md:not(.simg-chapter) *,
 #studyView .simg-caption,#studyView .simg-caption *,#studyView .simg-credit,#studyView .simg-credit *,
+#studyView, #studyView *,
+.pt1q .question, .pt1q .step-stem, .pt1q .opt, .pt1q .options,
+.display-main, .display-main *,
 .pt1q .explanation,.pt1q .feedback.good,.pt1q .feedback.bad{-webkit-user-select:text;user-select:text}
 /* fullscreen button on every view; the " · F" key hint hides on touch devices like the shortcuts HUD */
 html[data-pointer-input="touch"] .fs-key{display:none}
