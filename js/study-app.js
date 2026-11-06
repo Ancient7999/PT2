@@ -30,6 +30,29 @@
   }
 
   function renderMarkdown(md) {
+    const mathPlaceholders = [];
+    md = md
+      .replace(/\\\[([\s\S]*?)\\\]/g, (m, content) => {
+        const id = mathPlaceholders.length;
+        mathPlaceholders.push(`\\[${content}\\]`);
+        return `\uE000MATH${id}\uE001`;
+      })
+      .replace(/\\\(([\s\S]*?)\\\)/g, (m, content) => {
+        const id = mathPlaceholders.length;
+        mathPlaceholders.push(`\\(${content}\\)`);
+        return `\uE000MATH${id}\uE001`;
+      })
+      .replace(/\$\$([\s\S]*?)\$\$/g, (m, content) => {
+        const id = mathPlaceholders.length;
+        mathPlaceholders.push(`$$${content}$$`);
+        return `\uE000MATH${id}\uE001`;
+      })
+      .replace(/\$([^$\n]+)\$/g, (m, content) => {
+        const id = mathPlaceholders.length;
+        mathPlaceholders.push(`$${content}$`);
+        return `\uE000MATH${id}\uE001`;
+      });
+
     const lines = md.replace(/\r\n/g, '\n').split('\n');
     const out = [];
     let i = 0;
@@ -246,7 +269,10 @@
     closeList();
     if (inCode) out.push(fxBlock(codeBuf, codeLang));
     if (inHtmlBlock && htmlBuf.length) out.push(sanitizeSvgAttrs(htmlBuf.join('\n')));
-    return out.join('\n');
+
+    let html = out.join('\n');
+    html = html.replace(/\uE000MATH(\d+)\uE001/g, (_, id) => mathPlaceholders[id]);
+    return html;
   }
 
   /* PT1 CHAPTERS list → now per material (catalog "study.chapters"):
@@ -268,6 +294,7 @@
             delimiters: [
               { left: '$$', right: '$$', display: true },
               { left: '\\[', right: '\\]', display: true },
+              { left: '$', right: '$', display: false },
               { left: '\\(', right: '\\)', display: false }
             ],
             throwOnError: false,
