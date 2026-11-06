@@ -128,7 +128,7 @@ html.pt2-basic #calculator-widget.calc-inactive .calc-body::before{
   opacity: 0.09 !important;
 }
 
-/* —— Drag areas (RSO / ATC-Math): chrome + padding grab; buttons / display interact —— */
+/* —— Drag areas: chrome + padding grab; buttons / display interact —— */
 #calculator-widget{
   cursor: grab;
 }
@@ -150,6 +150,13 @@ html.pt2-basic #calculator-widget.calc-inactive .calc-body::before{
 }
 #calculator-widget .btn-dis{
   cursor: not-allowed;
+}
+
+/* Suppress all system cursors on the calculator when a custom cursor is active */
+html[data-custom-cursor]:not([data-custom-cursor="off"]) #calculator-widget,
+html[data-custom-cursor]:not([data-custom-cursor="off"]) #calculator-widget *,
+html[data-custom-cursor]:not([data-custom-cursor="off"]) #calc-toggle-btn {
+  cursor: none !important;
 }
 
 /* —— Phone chrome: Settings (+ calculator) stay top-right with room; titles do not run under them —— */
