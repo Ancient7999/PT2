@@ -2542,14 +2542,47 @@ function pickRandomFrom(pool, avoid){
   const src = opts.length ? opts : pool.slice();
   return src[Math.floor(Math.random()*src.length)];
 }
+/* Manual lock (user toggled on a normal emoji): keep it through pomo mood changes.
+   Timed Med Physics unlock lock: clear, then change emoji.
+   🔒 lock-emoji force: changing emoji strips that permanent power. */
+function manualMoodLockOn(){
+  try {
+    if(localStorage.getItem('pt1_live_mood') === '\uD83D\uDD12') return false;
+    var until = parseInt(localStorage.getItem('pt2_mood_lock_until') || '0', 10) || 0;
+    if(until > Date.now()) return false;
+    return localStorage.getItem('pt2_mood_lock') === '1';
+  } catch(e) { return false; }
+}
+function clearTimedEmojiLockForPomo(){
+  if(window.PT2Unlocks && typeof PT2Unlocks.clearMpTimedLock === 'function'){
+    try { PT2Unlocks.clearMpTimedLock(); } catch(e) {}
+    return;
+  }
+  try {
+    var until = parseInt(localStorage.getItem('pt2_mood_lock_until') || '0', 10) || 0;
+    if(!(until > Date.now())) return;
+    localStorage.setItem('pt2_mood_lock', '0');
+    localStorage.setItem('pt2_accent_lock', '0');
+    localStorage.removeItem('pt2_mood_lock_until');
+  } catch(e) {}
+  try {
+    document.documentElement.classList.remove('pt2-mood-locked', 'pt2-accent-locked');
+    document.dispatchEvent(new CustomEvent('pt2-mood'));
+    document.dispatchEvent(new CustomEvent('pt2-accent-lock', { detail: false }));
+  } catch(e) {}
+}
 function randomizeFocusMood(){
-  if(window.PT2Prefs && (PT2Prefs.moodFrozen() || PT2Prefs.moodLocked())) return;
+  if(window.PT2Prefs && PT2Prefs.moodFrozen()) return;
+  if(manualMoodLockOn()) return;
+  clearTimedEmojiLockForPomo();
   const next = pickRandomFrom(FOCUS_MOOD_POOL, currentMoodEmoji);
   moodAutoMode = true;
   applyLiveMood(next, {skipQuote:true});
 }
 function randomizeBreakMood(){
-  if(window.PT2Prefs && (PT2Prefs.moodFrozen() || PT2Prefs.moodLocked())) return;
+  if(window.PT2Prefs && PT2Prefs.moodFrozen()) return;
+  if(manualMoodLockOn()) return;
+  clearTimedEmojiLockForPomo();
   const next = pickRandomFrom(BREAK_MOOD_POOL, currentMoodEmoji);
   moodAutoMode = true;
   applyLiveMood(next, {skipQuote:true});

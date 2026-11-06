@@ -27,9 +27,9 @@ It begins with **combination of lenses** (the end of Chapter 5) because a compou
 
 | Topic | Core Idea |
 |-------|-----------|
-| Combination of lenses | Two lenses act as one: \(1/f = 1/f_1 + 1/f_2 - r/(f_1 f_2)\) |
-| Simple magnifier | Convex lens, object inside F → virtual, erect, magnified image; \(M = 25\,\text{cm}/f\) |
-| Compound microscope | Objective (\(f_o < 1\,\text{cm}\)) + eyepiece; final image virtual, enlarged, inverted |
+| Combination of lenses | Two lenses act as one: 1 / f = 1 / f₁ + 1 / f₂ − r / (f₁ f₂) |
+| Simple magnifier | Convex lens, object inside F → virtual, erect, magnified image; M = 25 cm/f |
+| Compound microscope | Objective (f_o < 1 cm) + eyepiece; final image virtual, enlarged, inverted |
 | Human eye | Like a camera; cornea does most refraction; image on retina is real and inverted |
 | Near & far point | Near point ≈ 25 cm (18 cm at age 10); far point at infinity |
 | Myopia | Sees near, not far; image in front of retina; concave (minus) lens |
@@ -59,47 +59,43 @@ These applications depend on the same principles of refraction, magnification, a
 
 ## 3. Combination of Lenses
 
-Two thin lenses of focal lengths \(f_1\) and \(f_2\), separated by distance \(r\), act as a single lens of focal length \(f\):
+Two thin lenses of focal lengths *f*₁ and *f*₂, separated by distance *r*, act as a single lens of focal length *f*:
 
-\[
-\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{r}{f_1 f_2}
-\]
+```
+1 / f = 1 / f₁ + 1 / f₂ − r / (f₁ f₂)
+P = P₁ + P₂ − r P₁ P₂
+```
 
-\[
-P = P_1 + P_2 - r P_1 P_2
-\]
+If the lenses **touch** (*r* = 0):
 
-If the lenses **touch** (\(r = 0\)):
+```
+1 / f = 1 / f₁ + 1 / f₂
+P = P₁ + P₂
+```
 
-\[
-\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2}, \qquad P = P_1 + P_2
-\]
-
-**Power reminder:** \(P = 1/f\) with \(f\) in **metres**, unit **dioptre (D)**. Convex lenses have **positive** power; concave lenses have **negative** power.
+**Power reminder:** *P* = 1 / *f* with *f* in **metres**, unit **dioptre (D)**. Convex lenses have **positive** power; concave lenses have **negative** power.
 
 <div class="optics-diagram" role="img" aria-label="Two lenses a distance r apart act like one lens of focal length f">
 <svg viewBox="0 0 640 292" xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;display:block;max-width:640px;margin:0.6rem auto">
-<line x1="30" y1="130" x2="610" y2="130" stroke="var(--col-text-muted)" stroke-width="1.2" stroke-dasharray="6 4"/><path d="M240,50 Q256,130 240,210 Q224,130 240,50 Z" fill="rgba(var(--accent-1-rgb),0.22)" stroke="var(--accent-1)" stroke-width="2"/><text x="240" y="40" text-anchor="middle" fill="var(--accent-1)" font-family="Outfit,sans-serif" font-size="12" font-weight="600">lens 1: f₁, P₁</text><path d="M400,50 Q416,130 400,210 Q384,130 400,50 Z" fill="rgba(var(--accent-4-rgb),0.22)" stroke="var(--accent-4)" stroke-width="2"/><text x="400" y="40" text-anchor="middle" fill="var(--accent-4)" font-family="Outfit,sans-serif" font-size="12" font-weight="600">lens 2: f₂, P₂</text><line x1="240" y1="236" x2="400" y2="236" stroke="var(--col-text-main)" stroke-width="1.4"/><polygon points="404.8,236 395.2,239.6 395.2,232.4" fill="var(--col-text-main)"/><polygon points="235.2,236 244.8,232.4 244.8,239.6" fill="var(--col-text-main)"/><text x="320" y="230" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12">separation r</text><line x1="240" y1="215" x2="240" y2="242" stroke="var(--col-text-muted)" stroke-width="1"/><line x1="400" y1="215" x2="400" y2="242" stroke="var(--col-text-muted)" stroke-width="1"/><line x1="40" y1="95" x2="240" y2="95" stroke="var(--accent-0)" stroke-width="2"/><polygon points="144.8,95 135.2,98.6 135.2,91.4" fill="var(--accent-0)"/><line x1="240" y1="95" x2="400" y2="114.2" stroke="var(--accent-0)" stroke-width="2"/><polygon points="324.8,105.2 314.8,107.6 315.7,100.5" fill="var(--accent-0)"/><line x1="400" y1="114.2" x2="520" y2="130" stroke="var(--accent-0)" stroke-width="2"/><polygon points="464.8,122.7 454.8,125.1 455.7,117.9" fill="var(--accent-0)"/><line x1="40" y1="165" x2="240" y2="165" stroke="var(--accent-0)" stroke-width="2"/><polygon points="144.8,165 135.2,168.6 135.2,161.4" fill="var(--accent-0)"/><line x1="240" y1="165" x2="400" y2="145.8" stroke="var(--accent-0)" stroke-width="2"/><polygon points="324.8,154.8 315.7,159.5 314.8,152.4" fill="var(--accent-0)"/><line x1="400" y1="145.8" x2="520" y2="130" stroke="var(--accent-0)" stroke-width="2"/><polygon points="464.8,137.3 455.7,142.1 454.8,134.9" fill="var(--accent-0)"/><circle cx="520" cy="130" r="4" fill="var(--accent-0)"/><text x="528" y="120" text-anchor="start" fill="var(--accent-0)" font-family="Outfit,sans-serif" font-size="11">combined focus</text><text x="320" y="262" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12.5">1/f = 1/f₁ + 1/f₂ − r / (f₁ × f₂)</text><text x="320" y="282" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12.5">P = P₁ + P₂ − r P₁ P₂</text>
+<line x1="30" y1="130" x2="610" y2="130" stroke="var(--col-text-muted)" stroke-width="1.2" stroke-dasharray="6 4"/><path d="M240,50 Q256,130 240,210 Q224,130 240,50 Z" fill="rgba(var(--accent-1-rgb),0.22)" stroke="var(--accent-1)" stroke-width="2"/><text x="240" y="40" text-anchor="middle" fill="var(--accent-1)" font-family="Outfit,sans-serif" font-size="12" font-weight="600">lens 1: f₁, P₁</text><path d="M400,50 Q416,130 400,210 Q384,130 400,50 Z" fill="rgba(var(--accent-4-rgb),0.22)" stroke="var(--accent-4)" stroke-width="2"/><text x="400" y="40" text-anchor="middle" fill="var(--accent-4)" font-family="Outfit,sans-serif" font-size="12" font-weight="600">lens 2: f₂, P₂</text><line x1="240" y1="236" x2="400" y2="236" stroke="var(--col-text-main)" stroke-width="1.4"/><polygon points="404.8,236 395.2,239.6 395.2,232.4" fill="var(--col-text-main)"/><polygon points="235.2,236 244.8,232.4 244.8,239.6" fill="var(--col-text-main)"/><text x="320" y="230" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12">separation r</text><line x1="240" y1="215" x2="240" y2="242" stroke="var(--col-text-muted)" stroke-width="1"/><line x1="400" y1="215" x2="400" y2="242" stroke="var(--col-text-muted)" stroke-width="1"/><line x1="40" y1="95" x2="240" y2="95" stroke="var(--accent-0)" stroke-width="2"/><polygon points="144.8,95 135.2,98.6 135.2,91.4" fill="var(--accent-0)"/><line x1="240" y1="95" x2="400" y2="114.2" stroke="var(--accent-0)" stroke-width="2"/><polygon points="324.8,105.2 314.8,107.6 315.7,100.5" fill="var(--accent-0)"/><line x1="400" y1="114.2" x2="520" y2="130" stroke="var(--accent-0)" stroke-width="2"/><polygon points="464.8,122.7 454.8,125.1 455.7,117.9" fill="var(--accent-0)"/><line x1="40" y1="165" x2="240" y2="165" stroke="var(--accent-0)" stroke-width="2"/><polygon points="144.8,165 135.2,168.6 135.2,161.4" fill="var(--accent-0)"/><line x1="240" y1="165" x2="400" y2="145.8" stroke="var(--accent-0)" stroke-width="2"/><polygon points="324.8,154.8 315.7,159.5 314.8,152.4" fill="var(--accent-0)"/><line x1="400" y1="145.8" x2="520" y2="130" stroke="var(--accent-0)" stroke-width="2"/><polygon points="464.8,137.3 455.7,142.1 454.8,134.9" fill="var(--accent-0)"/><circle cx="520" cy="130" r="4" fill="var(--accent-0)"/><text x="528" y="120" text-anchor="start" fill="var(--accent-0)" font-family="Outfit,sans-serif" font-size="11">combined focus</text><text x="320" y="262" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12.5">1 / f = 1 / f₁ + 1 / f₂ − r / (f₁ × f₂)</text><text x="320" y="282" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12.5">P = P₁ + P₂ − r P₁ P₂</text>
 </svg>
 </div>
 
 ### Worked Examples
 
-**Two convex lenses, \(f_1 = 15\,\text{cm}\) and \(f_2 = 25\,\text{cm}\), placed 5 cm apart**
+**Two convex lenses, *f*₁ = 15 cm and *f*₂ = 25 cm, placed 5 cm apart**
 
-\[
-\frac{1}{f} = \frac{1}{15} + \frac{1}{25} - \frac{5}{15 \times 25} = \frac{25 + 15 - 5}{375} = \frac{35}{375}
-\]
-
-\[
-f = \frac{375}{35} \approx 10.7\,\text{cm}
-\]
+```
+1 / f = 1 / 15 + 1 / 25 − 5 / (15 × 25) = (25 + 15 − 5) / 375 = 35 / 375
+f = 375 / 35 ≈ 10.7 cm
+```
 
 **Two lenses of power −1.75 D and +2.25 D in contact**
 
-\[
-P = -1.75 + 2.25 = +0.5\,\text{D}, \qquad f = \frac{1}{0.5} = 2\,\text{m}
-\]
+```
+P = −1.75 + 2.25 = +0.5 D
+f = 1 / 0.5 = 2 m
+```
 
 (The combination is converging.)
 
@@ -115,7 +111,7 @@ When a small object is placed **between the optical centre and the focus (F)** o
 
 ### Working
 
-The lens is held close to the eye and the object distance is adjusted until the image is formed at the **least distance of distinct vision**, \(N = 25\,\text{cm}\), from the eye.
+The lens is held close to the eye and the object distance is adjusted until the image is formed at the **least distance of distinct vision**, N = 25 cm, from the eye.
 
 ### Medical Applications
 
@@ -131,13 +127,13 @@ The lens is held close to the eye and the object distance is adjusted until the 
 
 ### Angular Magnification
 
-\[
-M = \frac{\theta}{\theta_0} = \frac{25\,\text{cm}}{f}
-\]
+```
+M = θ / θ₀ = 25 cm / f
+```
 
-- \(\theta_0\): angle subtended by the object at the eye when held at 25 cm (without lens)
-- \(\theta\): angle subtended by the image when the object is near the focal point of the lens
-- \(f\): focal length in cm
+- θ₀: angle subtended by the object at the eye when held at 25 cm (without lens)
+- θ: angle subtended by the image when the object is near the focal point of the lens
+- f: focal length in cm
 
 A shorter focal length gives higher magnification.
 
@@ -150,17 +146,21 @@ A shorter focal length gives higher magnification.
 
 ### Worked Examples
 
-**\(f = 10\,\text{cm}\)**
+**f = 10 cm**
 
-\[
-M = \frac{25}{10} = 2.5
-\]
 
-**\(f = 5\,\text{cm}\)**
+```
+M = 25 / 10 = 2.5
+```
 
-\[
-M = \frac{25}{5} = 5
-\]
+
+**f = 5 cm**
+
+
+```
+M = 25 / 5 = 5
+```
+
 
 The object appears 5 times larger.
 
@@ -174,16 +174,16 @@ A compound microscope achieves high magnification by combining two convex lenses
 
 | Part | Description |
 |------|-------------|
-| **Objective lens** | Very short focal length (\(f_o < 1\,\text{cm}\)); forms the primary magnified image |
-| **Eyepiece** | Focal length \(f_e\) of a few centimetres (\(f_e > f_o\)); acts as a simple magnifier |
-| **Tube length \(L\)** | Distance between the two lenses; much greater than either \(f_o\) or \(f_e\) |
+| **Objective lens** | Very short focal length (f_o < 1 cm); forms the primary magnified image |
+| **Eyepiece** | Focal length f_e of a few centimetres (f_e > f_o); acts as a simple magnifier |
+| **Tube length L** | Distance between the two lenses; much greater than either f_o or f_e |
 | **Stage** | Holds the specimen |
 
 ### Image Formation
 
 1. The object is placed **just outside the focal point of the objective** (between F and 2F of the objective).
-2. The objective forms a **real, inverted, and large image \(I_1\)** at or just inside the focal point of the eyepiece.
-3. The eyepiece, acting as a simple magnifier, produces a **virtual, enlarged image \(I_2\)** of \(I_1\).
+2. The objective forms a **real, inverted, and large image I_1** at or just inside the focal point of the eyepiece.
+3. The eyepiece, acting as a simple magnifier, produces a **virtual, enlarged image I_2** of I_1.
 4. The final image remains **inverted** relative to the original object.
 
 <div class="optics-diagram" role="img" aria-label="Compound microscope: the objective makes a real inverted image I1 just inside the eyepiece focus; the eyepiece magnifies it">
@@ -240,7 +240,7 @@ Light enters through the **cornea** (transparent front surface) → **aqueous hu
 
 ## 7. Near Point and Far Point
 
-- **Near point:** The closest distance at which the eye can focus clearly. Average adult value is **25 cm**. At age 10 it is typically about **18 cm**. It increases with age as the lens loses flexibility. This 25 cm is the least distance of distinct vision (\(N\)) used in the magnifier formula.
+- **Near point:** The closest distance at which the eye can focus clearly. Average adult value is **25 cm**. At age 10 it is typically about **18 cm**. It increases with age as the lens loses flexibility. This 25 cm is the least distance of distinct vision (N) used in the magnifier formula.
 - **Far point:** The greatest distance at which a relaxed eye can focus. For a normal eye this is taken as **infinity**.
 
 <div class="optics-diagram" role="img" aria-label="Near point and far point of the eye">
@@ -373,7 +373,7 @@ It produces a strong, highly monochromatic, collimated (directional), and cohere
 
 A laser has three main parts:
 
-1. **Active (gain) medium** — the material that produces laser light by stimulated emission (solid, liquid, gas, or semiconductor). Examples: ruby crystal (\(Al_2O_3 + Cr^{3+}\)), He-Ne gas, semiconductor diode.
+1. **Active (gain) medium** — the material that produces laser light by stimulated emission (solid, liquid, gas, or semiconductor). Examples: ruby crystal (Al_2O_3 + Cr^3+), He-Ne gas, semiconductor diode.
 2. **Energy source (pump)** — supplies energy to excite the atoms (flash lamp or electrical pumping).
 3. **Optical cavity (reflecting cavity)** — two mirrors (one fully reflecting ≈ 100 %, one partially reflecting ≈ 95 %) that allow light to bounce back and forth, amplifying it. A small portion exits through the partially reflecting mirror as the laser beam.
 
@@ -429,11 +429,11 @@ Lasers are widely used because they can deliver light energy precisely to a very
 
 ```
 Lenses a distance r apart:
-  1/f = 1/f₁ + 1/f₂ − r / (f₁ f₂)
+  1 / f = 1 / f₁ + 1 / f₂ − r / (f₁ f₂)
   P = P₁ + P₂ − r P₁ P₂
 
 Lenses in contact (r = 0):
-  1/f = 1/f₁ + 1/f₂
+  1 / f = 1 / f₁ + 1 / f₂
   P = P₁ + P₂
 
 Power:
@@ -449,15 +449,15 @@ Least distance of distinct vision:
 ### Key Numbers
 
 - Near point: **25 cm** (adult), **≈ 18 cm** (age 10); far point: **infinity**
-- Microscope objective: \(f_o < 1\,\text{cm}\); eyepiece: a few cm
+- Microscope objective: f_o < 1 cm; eyepiece: a few cm
 - Refractive index of eye lens: **1.437**
 - Approximate powers: cornea ≈ 43 D, lens ≈ 17–20 D, total eye ≈ 60 D
-- Magnifier examples: \(f = 5\,\text{cm}\) → \(M = 5\); \(f = 10\,\text{cm}\) → \(M = 2.5\)
+- Magnifier examples: f = 5 cm → M = 5; f = 10 cm → M = 2.5
 
 ### Key Points to Remember
 
 - Simple magnifier: object **inside F** → virtual, erect, magnified image.
-- Compound microscope: object just **outside \(F_o\)** → objective makes real inverted large \(I_1\); final image virtual, enlarged, still inverted.
+- Compound microscope: object just **outside F_o** → objective makes real inverted large I_1; final image virtual, enlarged, still inverted.
 - Image on retina is real, inverted, and diminished. Cornea performs most of the refraction.
 - **Myopia:** near clear, far blurred → concave (minus) lens.  
   **Hyperopia:** far clear, near blurred → convex (plus) lens.  

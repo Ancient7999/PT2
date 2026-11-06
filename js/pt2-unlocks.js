@@ -395,16 +395,62 @@
   function focusQuotes(em) { return MP_QUOTES[em] || null; }
   function restQuotes(em) { return MP_REST[em] || null; }
 
-  /* On Med Physics unlock: apply accent once, lock emoji + accent, enable background. */
-  function setMoodLock(on) {
-    try { localStorage.setItem('pt2_mood_lock', on ? '1' : '0'); } catch (e) {}
-    try { localStorage.setItem('pt2_accent_lock', on ? '1' : '0'); } catch (e) {}
+  /* Med Physics unlock: short timed emoji + accent lock (2 min). Expiry clears the lock only. */
+  var MP_LOCK_MS = 2 * 60 * 1000, MP_LOCK_UNTIL = 'pt2_mood_lock_until', _mpLockTimer = null;
+  function mpTimedLockActive() {
     try {
-      document.documentElement.classList.toggle('pt2-mood-locked', !!on);
-      document.documentElement.classList.toggle('pt2-accent-locked', !!on);
-      document.dispatchEvent(new CustomEvent('pt2-mood'));
-      document.dispatchEvent(new CustomEvent('pt2-accent-lock', { detail: !!on }));
+      var until = parseInt(lsGet(MP_LOCK_UNTIL) || '0', 10) || 0;
+      if (until && Date.now() >= until) { clearMpLock(false); return false; }
+      return until > Date.now();
+    } catch (e) { return false; }
+  }
+  function mpLockActive() {
+    try {
+      if (mpTimedLockActive()) return true;
+      return lsGet('pt2_mood_lock') === '1';
+    } catch (e) { return false; }
+  }
+  /* Clear only the Med Physics timed lock; leave a user manual lock alone. */
+  function clearMpTimedLock() {
+    if (!mpTimedLockActive()) return;
+    clearMpLock(false);
+  }
+  function clearMpLock(fromTimer) {
+    if (_mpLockTimer) { clearTimeout(_mpLockTimer); _mpLockTimer = null; }
+    try {
+      lsSet('pt2_mood_lock', '0');
+      lsSet('pt2_accent_lock', '0');
+      try { localStorage.removeItem(MP_LOCK_UNTIL); } catch (e) {}
     } catch (e) {}
+    try {
+      document.documentElement.classList.remove('pt2-mood-locked', 'pt2-accent-locked');
+      document.dispatchEvent(new CustomEvent('pt2-mood'));
+      document.dispatchEvent(new CustomEvent('pt2-accent-lock', { detail: false }));
+    } catch (e) {}
+  }
+  function scheduleMpLockExpiry() {
+    if (_mpLockTimer) { clearTimeout(_mpLockTimer); _mpLockTimer = null; }
+    var until = 0;
+    try { until = parseInt(lsGet(MP_LOCK_UNTIL) || '0', 10) || 0; } catch (e) {}
+    if (!until) return;
+    var left = until - Date.now();
+    if (left <= 0) { clearMpLock(true); return; }
+    _mpLockTimer = setTimeout(function () { clearMpLock(true); }, left);
+  }
+  function setMoodLock(on) {
+    if (!on) { clearMpLock(false); return; }
+    var until = Date.now() + MP_LOCK_MS;
+    try {
+      lsSet('pt2_mood_lock', '1');
+      lsSet('pt2_accent_lock', '1');
+      lsSet(MP_LOCK_UNTIL, String(until));
+    } catch (e) {}
+    try {
+      document.documentElement.classList.add('pt2-mood-locked', 'pt2-accent-locked');
+      document.dispatchEvent(new CustomEvent('pt2-mood'));
+      document.dispatchEvent(new CustomEvent('pt2-accent-lock', { detail: true }));
+    } catch (e) {}
+    scheduleMpLockExpiry();
   }
   function celebrateMedphys(u) {
     if (!u || !(u.bg || u.bgKey || (u.key && String(u.key).indexOf('bg:') === 0))) return;
@@ -417,6 +463,8 @@
       try { PT2Bg.select(u.bg); } catch (e) {}
     }
   }
+  /* Resume timer after reload */
+  try { scheduleMpLockExpiry(); } catch (e) {}
 
   function check(quiet) {
     var got = unlocked(), fresh = [], counts = {};
@@ -520,5 +568,5 @@
   function labelSolved(set, pic, id, how, fresh) {
     check(false);
   }
-  global.PT2Unlocks = { has: function (k) { return !!unlocked()[k]; }, tally: tally, check: check, pictureSolved: pictureSolved, labelSolved: labelSolved, labelFresh: labelFresh, questionSolved: questionSolved, formulaSolved: formulaSolved, medphysCount: medphysCount, focusQuotes: focusQuotes, restQuotes: restQuotes, celebrateMedphys: celebrateMedphys, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? weekCount(w, sync(w)) : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
+  global.PT2Unlocks = { has: function (k) { return !!unlocked()[k]; }, tally: tally, check: check, pictureSolved: pictureSolved, labelSolved: labelSolved, labelFresh: labelFresh, questionSolved: questionSolved, formulaSolved: formulaSolved, medphysCount: medphysCount, focusQuotes: focusQuotes, restQuotes: restQuotes, celebrateMedphys: celebrateMedphys, mpLockActive: mpLockActive, mpTimedLockActive: mpTimedLockActive, clearMpLock: clearMpLock, clearMpTimedLock: clearMpTimedLock, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? weekCount(w, sync(w)) : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
 })(window);

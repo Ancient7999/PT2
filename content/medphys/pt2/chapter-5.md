@@ -26,7 +26,7 @@ How light **reflects** from mirrors, how it **bends**, or refracts, when it cros
 | Optical fibres | Core n₁ > cladding n₂; endoscopes |
 | Thin lenses | Convex lenses converge and concave lenses diverge; P = 1/f |
 | Lens / mirror equation | 1/do + 1/di = 1/f; m = hi/ho = −di/do |
-| Combination of lenses | 1/f = 1/f₁ + 1/f₂ − r/(f₁f₂); in contact: 1/f = 1/f₁ + 1/f₂ |
+| Combination of lenses | 1 / f = 1 / f₁ + 1 / f₂ − r / (f₁ f₂); in contact: 1 / f = 1 / f₁ + 1 / f₂ |
 
 **Study tip:** for every rule, picture the **ray diagram**. Almost every answer in this chapter comes from three things: the **normal**, the **focal point F**, and the **sign** of a number.
 
@@ -528,62 +528,49 @@ Real image 15 cm in front of the mirror, inverted, half the size. The object at 
 
 ## 10. Combination of lenses
 
-Two thin lenses of focal lengths \(f_1\) and \(f_2\) placed a distance \(r\) apart have a combined focal length \(f\) given by:
+Two thin lenses of focal lengths *f*₁ and *f*₂ placed a distance *r* apart have a combined focal length *f* given by:
 
-\[
-\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{r}{f_1 f_2}
-\]
+```
+1 / f = 1 / f₁ + 1 / f₂ − r / (f₁ f₂)
+P = P₁ + P₂ − r P₁ P₂
+```
 
-The power of the combination is:
+When the lenses are in contact (*r* = 0):
 
-\[
-P = P_1 + P_2 - r P_1 P_2
-\]
-
-When the lenses are in contact (\(r = 0\)):
-
-\[
-\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2}, \qquad P = P_1 + P_2
-\]
+```
+1 / f = 1 / f₁ + 1 / f₂
+P = P₁ + P₂
+```
 
 **Notes:**
-- Use consistent units. For the separation formula, \(f_1\), \(f_2\) and \(r\) must all be in the same unit (usually metres if working with power, or all cm if staying with focal lengths).
-- Power \(P\) is always in dioptres when \(f\) is in metres.
-- Sign of \(f\) (and therefore \(P\)) follows the usual convention: positive for converging, negative for diverging.
+- Use consistent units. For the separation formula, *f*₁, *f*₂ and *r* must all be in the same unit (usually metres if working with power, or all cm if staying with focal lengths).
+- Power *P* is always in dioptres when *f* is in metres.
+- Sign of *f* (and therefore *P*) follows the usual convention: positive for converging, negative for diverging.
 
 ### Worked examples
 
-**Two convex lenses, \(f_1 = 20\) cm and \(f_2 = 30\) cm, separated by \(r = 10\) cm. Find the equivalent focal length.**
+**Two convex lenses, *f*₁ = 20 cm and *f*₂ = 30 cm, separated by *r* = 10 cm. Find the equivalent focal length.**
 
 Convert to metres for clarity (or keep everything in cm and be careful):
 
-\[
-f_1 = 0.20\,\text{m}, \quad f_2 = 0.30\,\text{m}, \quad r = 0.10\,\text{m}
-\]
+```
+f₁ = 0.20 m,  f₂ = 0.30 m,  r = 0.10 m
+1 / f = 1 / 0.20 + 1 / 0.30 − 0.10 / (0.20 × 0.30) = 5 + 3.333 − 1.667 = 6.666
+f = 1 / 6.666 ≈ 0.150 m = 15.0 cm
+```
 
-\[
-\frac{1}{f} = \frac{1}{0.20} + \frac{1}{0.30} - \frac{0.10}{0.20 \times 0.30} = 5 + 3.333 - \frac{0.10}{0.06} = 8.333 - 1.667 = 6.666
-\]
+**Answer:** approximately 15.0 cm (converging).
 
-\[
-f = \frac{1}{6.666} \approx 0.150\,\text{m} = 15.0\,\text{cm}
-\]
+**Two lenses of power *P*₁ = −2.0 D and *P*₂ = +3.5 D placed in contact. Find the power and focal length of the combination.**
 
-**Answer:** approximately \(15.0\) cm (converging).
+Since *r* = 0:
 
-**Two lenses of power \(P_1 = -2.0\) D and \(P_2 = +3.5\) D placed in contact. Find the power and focal length of the combination.**
+```
+P = P₁ + P₂ = −2.0 + 3.5 = +1.5 D
+f = 1 / P = 1 / 1.5 ≈ 0.667 m = 66.7 cm
+```
 
-Since \(r = 0\):
-
-\[
-P = P_1 + P_2 = -2.0 + 3.5 = +1.5\,\text{D}
-\]
-
-\[
-f = \frac{1}{P} = \frac{1}{1.5} \approx 0.667\,\text{m} = 66.7\,\text{cm}
-\]
-
-**Answer:** \(P = +1.5\) D, \(f \approx 0.667\) m (converging combination).
+**Answer:** *P* = +1.5 D, *f* ≈ 0.667 m (converging combination).
 
 ---
 
@@ -615,8 +602,8 @@ Lens power: P = 1 / f                   ← f in metres; dioptre D = m⁻¹; con
 Thin lens / mirror: 1/do + 1/di = 1/f   ← same equation for both
 Magnification: m = hi / ho = −di / do   ← sign: − inverted, + upright
 Size ratio: M = image size / object size = |m|
-Combination (separated by r): 1/f = 1/f₁ + 1/f₂ − r/(f₁ f₂)
-Combination (in contact, r=0): 1/f = 1/f₁ + 1/f₂ ; P = P₁ + P₂
+Combination (separated by r): 1 / f = 1 / f₁ + 1 / f₂ − r / (f₁ f₂)
+Combination (in contact, r=0): 1 / f = 1 / f₁ + 1 / f₂ ; P = P₁ + P₂
 ```
 
 ### Images at a glance

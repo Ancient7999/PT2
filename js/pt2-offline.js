@@ -192,7 +192,21 @@
   global.PT2Prefs = { muted: function () { return get('pt2_pomo_muted'); }, disabled: function () { return get('pt2_pomo_disabled'); },
     // no automatic mood colours while the timer is off or the Timer box is hidden
     moodFrozen: function () { return get('pt2_pomo_disabled') || get('pt2_hide_dock'); },
-    moodLocked: function () { return get('pt2_mood_lock') || lockEmojiOn(); } };
+    moodLocked: function () {
+      if (lockEmojiOn()) return true;
+      if (global.PT2Unlocks && typeof PT2Unlocks.mpLockActive === 'function') return !!PT2Unlocks.mpLockActive();
+      try {
+        var until = parseInt(localStorage.getItem('pt2_mood_lock_until') || '0', 10) || 0;
+        if (until && Date.now() >= until) {
+          set('pt2_mood_lock', false); set('pt2_accent_lock', false);
+          try { localStorage.removeItem('pt2_mood_lock_until'); } catch (e) {}
+          root.classList.remove('pt2-mood-locked', 'pt2-accent-locked');
+          return false;
+        }
+        if (until > Date.now()) return true;
+      } catch (e) {}
+      return get('pt2_mood_lock');
+    } };
   /* Lock emoji control shows only once unlocked (js/pt2-unlocks.js, feature:moodLock); set here so it never flashes.
      A lock already switched on keeps working while the control is hidden. */
   try { var gotU = JSON.parse(localStorage.getItem('pt2_emoji_unlocked_v1') || '{}') || {}; root.classList.toggle('pt2-lock-open', !!gotU['feature:moodLock']);
@@ -226,8 +240,11 @@
   });
   /* Lock emoji (in the emoji dropdown): keeps the chosen emoji; unlocking restores automatic changes */
   function syncLock() {
-    var forced = lockEmojiOn(), on = forced || get('pt2_mood_lock'), b = document.getElementById('pt2MoodLock');
-    root.classList.toggle('pt2-mood-locked', on);
+    var forced = lockEmojiOn();
+    var on = forced || (global.PT2Prefs && PT2Prefs.moodLocked()) || get('pt2_mood_lock');
+    var b = document.getElementById('pt2MoodLock');
+    root.classList.toggle('pt2-mood-locked', !!on);
+    root.classList.toggle('pt2-accent-locked', !!on && (get('pt2_accent_lock') || forced));
     if (!b) return;
     b.setAttribute('aria-checked', on ? 'true' : 'false');
     b.classList.toggle('forced', forced); b.setAttribute('aria-disabled', forced ? 'true' : 'false');
@@ -237,12 +254,17 @@
   document.addEventListener('click', function (e) {
     var b = e.target && e.target.closest && e.target.closest('#pt2MoodLock'); if (!b) return;
     e.stopPropagation(); if (lockEmojiOn()) { syncLock(); return; }
-    var next = !get('pt2_mood_lock');
-    set('pt2_mood_lock', next);
-    /* accent lock follows emoji lock (Med Physics unlock sets both) */
-    set('pt2_accent_lock', next);
-    root.classList.toggle('pt2-accent-locked', next);
-    try { document.dispatchEvent(new CustomEvent('pt2-accent-lock', { detail: next })); } catch (err) {}
+    var next = !(global.PT2Prefs && PT2Prefs.moodLocked());
+    if (!next && global.PT2Unlocks && typeof PT2Unlocks.clearMpLock === 'function') {
+      PT2Unlocks.clearMpLock(false);
+    } else {
+      set('pt2_mood_lock', next);
+      set('pt2_accent_lock', next);
+      if (!next) { try { localStorage.removeItem('pt2_mood_lock_until'); } catch (err) {} }
+      root.classList.toggle('pt2-mood-locked', next);
+      root.classList.toggle('pt2-accent-locked', next);
+      try { document.dispatchEvent(new CustomEvent('pt2-accent-lock', { detail: next })); } catch (err) {}
+    }
     syncLock();
   }, true);
   document.addEventListener('pt2-mood', syncLock);

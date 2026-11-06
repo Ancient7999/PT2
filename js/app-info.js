@@ -6,6 +6,14 @@
 var APP_INFO = {
   releases: [
     {
+      version: '0.38',
+      date: '06/11/2026',
+      changes: [
+        'LaTeX text fixes.',
+        'Formula and diagram fixes in Medical Physics study interface.',
+      ]
+    },
+    {
       version: '0.37',
       date: '06/11/2026',
       changes: [
