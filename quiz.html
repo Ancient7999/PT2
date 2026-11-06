@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Periodic Test 2 · Quiz Interface</title>
-<script src="data/bundle.js?v=26"></script>
+<script src="data/bundle.js?v=27"></script>
 <script src="js/app-info.js"></script>
 <script src="js/pt2-offline.js?v=7"></script>
 <script src="js/pt2-look.js?v=4"></script>
@@ -310,9 +310,9 @@ html[data-quality="basic"] *::after{
 }
 html[data-quality="basic"] #fxCanvas,
 html[data-quality="basic"] .friend-cursor-aura{display:none!important}
-/* Basic quality: the link-made emoji burst still plays, in slow motion */
+/* Basic quality: the link-made emoji burst still plays at normal speed */
 html[data-quality="basic"] .float-bit{
-  animation:floatBloom calc(var(--dur,1200ms) * 3) linear forwards!important;
+  animation:floatBloom var(--dur,1200ms) linear forwards!important;
   filter:none!important;
 }
 html[data-quality="basic"] .portal-card,
@@ -1223,7 +1223,7 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 </style>
 <link rel="stylesheet" href="css/quiz-pt1.css?v=24">
 <link rel="stylesheet" href="css/formula-practice.css?v=2">
-<link rel="stylesheet" href="css/study-pt1.css?v=15">
+<link rel="stylesheet" href="css/study-pt1.css?v=16">
 <link rel="stylesheet" href="css/local-fonts.css">
 <link rel="stylesheet" href="pt1-theme/fonts.css">
 <link rel="stylesheet" href="pt1-theme/theme-vars.css">
@@ -1231,7 +1231,7 @@ html.mood-sad[data-skin], html.mood-crying[data-skin], html.mood-sleepy[data-ski
 <link rel="stylesheet" href="css/pt2.css?v=9">
 <link rel="stylesheet" href="css/controls.css?v=6">
 <link rel="stylesheet" href="css/pt2-look.css?v=5">
-<link rel="stylesheet" href="css/pt2-site.css?v=3">
+<link rel="stylesheet" href="css/pt2-site.css?v=4">
 </head>
 <body>
 <canvas id="fxCanvas"></canvas>
@@ -3250,7 +3250,11 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
       renderMaterials();
       renderOnline();
       showView('portalView');
-      if(location.hash === '#pictures'){
+      if(location.hash === '#study'){
+        const sub = (catalog.subjects||[]).find(s=>(s.materials||[]).some(x=>x.id==='medphys-pt2')) || (catalog.subjects||[])[0];
+        const mm = sub && (sub.materials||[]).find(x=>x.id==='medphys-pt2');
+        if(mm && window.StudyNotes) StudyNotes.open(Object.assign({}, mm, { subjectName: sub.name }), { from:'portalView', openQuiz: ()=> openMaterial(mm, sub) });
+      } else if(location.hash === '#pictures'){
         const sub = (catalog.subjects||[])[0], mm = sub && sub.materials.find(x=>x.study && x.study.images);
         if(mm && window.StudyNotes) StudyNotes.open(Object.assign({}, mm, { subjectName: sub.name }), { from:'portalView', openQuiz: ()=> openMaterial(mm, sub) });
       }
@@ -3283,13 +3287,14 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
 })();
 
 </script>
-<script src="js/quiz-engine.js?v=44"></script>
+<script src="js/quiz-engine.js?v=45"></script>
 <script src="js/formula-gen-pt2.js?v=2"></script>
 <script src="js/formula-practice.js?v=3"></script>
 <script src="js/study-images.js?v=16"></script>
 <script src="js/label-zoom.js?v=3"></script>
 <script src="js/study-symbols.js?v=2"></script>
-<script src="js/study-app.js?v=6"></script>
+<script src="js/study-bone-table.js?v=1"></script>
+<script src="js/study-app.js?v=7"></script>
 <script>
 /* Sets "📖 Study notes" → PT1 study interface for the open material */
 document.getElementById('studyNotesBtn').addEventListener('click', ()=>{

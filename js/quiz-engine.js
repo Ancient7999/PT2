@@ -2810,8 +2810,6 @@ addEventListener('scroll',relayoutWires,true);
 addEventListener('resize',relayoutWires);
 function celebrateLink(x,y){
   const bits=['😊','😄','🤩','🥳','🌸','🌺','🌼','🌷','💮','✨','🌻','💐'];
-  // Basic quality plays the burst at one-third speed (see index.html CSS).
-  const slow=document.documentElement.getAttribute('data-quality')==='basic'?3:1;
   for(let i=0;i<16;i++){
     const el=document.createElement('span'); el.className='float-bit'; el.textContent=bits[i%bits.length];
     el.style.left=(x+(Math.random()*24-12))+'px'; el.style.top=y+'px';
@@ -2819,7 +2817,7 @@ function celebrateLink(x,y){
     el.style.setProperty('--dur',(900+Math.random()*800)+'ms');
     el.style.setProperty('--scale',(0.75+Math.random()*0.9).toFixed(2));
     el.style.setProperty('--spin',((Math.random()*50)-20)+'deg');
-    document.body.appendChild(el); setTimeout(()=>el.remove(),1900*slow);
+    document.body.appendChild(el); setTimeout(()=>el.remove(),1900);
   }
   spawnFireworkBurst(x, Math.max(40,y-40), 18);
 }
@@ -4256,6 +4254,15 @@ function phoneKeyboardOpen(){
   const vv=window.visualViewport; if(!vv) return false;
   return vv.height < Math.max(phoneVvBase, window.innerHeight)*0.78;
 }
+/* Extra bottom room on the quiz screen so short SAQs can scroll above the on-screen keyboard. */
+function phoneQuizKeyboardPad(on){
+  const screen=document.getElementById('quizScreen'); if(!screen) return;
+  if(!on){ screen.style.paddingBottom=''; return; }
+  const vv=window.visualViewport;
+  const covered=vv?Math.max(0, window.innerHeight-(vv.height+vv.offsetTop)):0;
+  const pad=Math.max(120, Math.ceil(covered+48));
+  screen.style.paddingBottom=pad+'px';
+}
 function phoneKeepInputVisible(){
   const inp=phoneFocusedInput(); if(!inp) return;
   // Picture Study (Med Term and Anatomy): the input just above the keyboard, with as much of its picture as fits above it
@@ -4269,6 +4276,8 @@ function phoneKeepInputVisible(){
     phoneScrollBy(dy); return;
   }
   if(!phoneQuizOn()) return;
+  // typed answer: grow the page so there is room to scroll the box above the keyboard
+  if(inp.classList.contains('saq-input') || inp.closest('.saq-wrap,.saq-multi')) phoneQuizKeyboardPad(true);
   const band=phoneVisibleBand();
   const qt=document.getElementById('qText');
   const qTop=qt?qt.getBoundingClientRect().top:inp.getBoundingClientRect().top;
@@ -4277,6 +4286,15 @@ function phoneKeepInputVisible(){
   let dy=qTop-band.top;
   if(iBottom-dy>band.bottom) dy=iBottom-band.bottom;
   phoneScrollBy(dy);
+  // after the pad changes layout, one more pass once paint settles
+  requestAnimationFrame(()=>{
+    if(!phoneKeyboardOpen() || phoneFocusedInput()!==inp) return;
+    const band2=phoneVisibleBand(), ir=inp.getBoundingClientRect(), qt2=document.getElementById('qText');
+    const qTop2=qt2?qt2.getBoundingClientRect().top:ir.top;
+    let dy2=qTop2-band2.top;
+    if(ir.bottom-dy2>band2.bottom) dy2=ir.bottom-band2.bottom;
+    phoneScrollBy(dy2, true);
+  });
 }
 (function wirePhoneKeyboard(){
   const vv=window.visualViewport; if(!vv) return;
@@ -4286,7 +4304,7 @@ function phoneKeepInputVisible(){
     clearTimeout(t);
     t=setTimeout(()=>{
       if(!isPhoneLayout()) { phoneVvBase=vv.height; return; }
-      if(!phoneKeyboardOpen()) phoneVvBase=vv.height; // keyboard closed: new full height (toolbar show / hide)
+      if(!phoneKeyboardOpen()){ phoneVvBase=vv.height; phoneQuizKeyboardPad(false); } // keyboard closed: new full height (toolbar show / hide)
       if(phoneKeyboardOpen() && phoneFocusedInput()) phoneKeepInputVisible();
       else if(performance.now()-phoneExplainAt<1500) phoneRevealExplanation(); // the keyboard closed after a typed answer
     }, 140); // after the keyboard animation and the browser's own focus scroll have settled

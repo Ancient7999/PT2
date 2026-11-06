@@ -51,7 +51,7 @@
 
 /* Basic theme (html.pt2-basic, Settings → Theme): plainer and lighter. Accent colours still apply. */
 html.pt2-basic *,html.pt2-basic *::before,html.pt2-basic *::after{animation:none!important;transition:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;text-shadow:none!important;box-shadow:none!important}
-html.pt2-basic .float-bit{animation:floatBloom calc(var(--dur,1200ms) * 3) linear forwards!important;filter:none!important}
+html.pt2-basic .float-bit{animation:floatBloom var(--dur,1200ms) linear forwards!important;filter:none!important}
 html.pt2-basic :is(#fxCanvas,#pt2Fx,#pt2Glass,#pt2GridGlow,.friend-cursor-aura,#cursor,.brushCursor){display:none!important}
 html.pt2-basic body{background:var(--bg,#0b0f14)!important}
 html.pt2-basic :is(.portal-card,#materialCards .portal-card,.modal-card,.chat-dock,.timer-dock,.pt2-upd-card,.study-confirm-card){background:var(--col-bg-card,#121820)!important;border-color:rgba(var(--accent-0-rgb),.35)!important}

@@ -175,8 +175,38 @@
             "scope": "Bernoulli to Lasers",
             "draft": true
           },
-          "comingSoon": true,
-          "week": "Week 12"
+          "comingSoon": false,
+          "week": "Week 12",
+          "study": {
+            "title": "Study Interface",
+            "symbols": "data/symbols-medphys.json",
+            "chapters": [
+              {
+                "id": "ch3",
+                "src": "content/medphys/pt2/chapter-3.md",
+                "title": "Chapter 3 · Fluid flow & surface tension",
+                "meta": "Continuity · Bernoulli · viscosity · Poiseuille · Reynolds · Laplace · surface tension"
+              },
+              {
+                "id": "ch4",
+                "src": "content/medphys/pt2/chapter-4.md",
+                "title": "Chapter 4 · Waves, sound & temperature",
+                "meta": "Waves · ultrasound · Doppler · Mach · temperature scales"
+              },
+              {
+                "id": "ch5",
+                "src": "content/medphys/pt2/chapter-5.md",
+                "title": "Chapter 5 · Ray optics",
+                "meta": "Mirrors · refraction · TIR · fibres · thin lenses"
+              },
+              {
+                "id": "ch6",
+                "src": "content/medphys/pt2/chapter-6.md",
+                "title": "Chapter 6 · Optical instruments",
+                "meta": "Lens combinations · magnifier · microscope · eye · myopia & hyperopia · lasers"
+              }
+            ]
+          }
         },
         {
           "id": "studyskills-pt2",

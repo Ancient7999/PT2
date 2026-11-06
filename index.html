@@ -24,8 +24,8 @@
     </button>
     <button type="button" class="ps2-menu-item quiet" id="menuStudy" role="menuitem">
       <span class="ps2-icon">📖</span>
-      <span class="ps2-label">Picture Study
-        <span class="ps2-sub">Medical Terminology pictures · name the structures</span>
+      <span class="ps2-label">Study Interface
+        <span class="ps2-sub">Medical Physics chapter notes · Bernoulli to lasers</span>
       </span>
     </button>
     <button type="button" class="ps2-menu-item neutral" id="menuAbout" role="menuitem" aria-label="Info: how to use, scope and tips">
@@ -56,9 +56,9 @@
       </ul>
     </section>
     <section>
-      <h3>Picture Study</h3>
-      <p>Medical Terminology pictures where every label is a blank. Drag words from the bank onto the boxes or onto the structures themselves, type the names, or show the labels. ↺ Reset starts a picture again.</p>
-      <p>Anatomy has its own Picture Study, opened from the Anatomy card: 3D views and axial, sagittal and coronal sections with a slider.</p>
+      <h3>Study Interface</h3>
+      <p>Medical Physics chapter notes for Chapters 3–6 (fluid flow through optical instruments), with formulas and term tips. Opened from the main menu or from the Medical Physics card.</p>
+      <p>Medical Terminology and Anatomy still have Picture Study on their cards: label the structures on pictures, or browse Anatomy’s 3D views and sections.</p>
     </section>
     <section>
       <h3>Tips</h3>
@@ -124,7 +124,7 @@
     window.location.href = 'quiz.html';
   });
   document.getElementById('menuStudy').addEventListener('click', function(){
-    window.location.href = 'quiz.html#pictures';
+    window.location.href = 'quiz.html#study';
   });
   document.getElementById('menuAbout').addEventListener('click', showAbout);
   document.getElementById('aboutBack').addEventListener('click', showHome);
