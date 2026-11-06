@@ -189,6 +189,8 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
       if (!active()) return;
       const tag = (e.target && e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea') return;
+      // Calculator owns numpad / letter keys while focused (Tab switches back to formulas)
+      if (typeof window.PT2CalcKeysBlocked === 'function' && window.PT2CalcKeysBlocked()) return;
       if (e.key === 'Escape') { e.preventDefault(); leave(); return; }
       if (/^[a-dA-D1-4]$/.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) {
         const i = /\d/.test(e.key) ? +e.key - 1 : e.key.toUpperCase().charCodeAt(0) - 65;

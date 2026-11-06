@@ -12,7 +12,9 @@ var APP_INFO = {
         'Medical Physics card is available as a draft.',
         'Added Study Interface for Medical Physics.',
         'Study Interface: clearer text and diagrams.',
-        'On phones, typed questions now have enough scroll room for the keyboard.'
+        'On phones, typed questions now have enough scroll room for the keyboard.',
+        'Implemented Quantifier-30 Beta calculator.',
+        'Special effects and unlockables for solving Medical Physics questions.',
       ]
     },
     {

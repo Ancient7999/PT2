@@ -24,10 +24,14 @@
   document.body.appendChild(bgDiv);
 
   function clearParticleOverlays() {
+    /* Keep overlay canvases in the stack (mix-blend-mode:screen) as translucent layers.
+       Page WebGL particles stay off; clear any prior bitmap so layers stay empty glass. */
     document.querySelectorAll('.calc-theme-overlay').forEach(function (overlay) {
-      overlay.style.display = 'none';
+      overlay.style.display = '';
       var ctx = overlay.getContext && overlay.getContext('2d');
-      if (ctx) ctx.clearRect(0, 0, overlay.width, overlay.height);
+      if (ctx) {
+        if (overlay.width) ctx.clearRect(0, 0, overlay.width, overlay.height);
+      }
     });
   }
 
@@ -42,10 +46,17 @@
   }
 
   /* Compatibility surface for callers that still query the old layer. */
-  var layerCtl = { particles: false, particleDensity: 0, grid: true, calcOverlays: false };
+  var layerCtl = { particles: false, particleDensity: 0, grid: true, calcOverlays: true };
   function applyLayerVisibility() {
     bgDiv.style.display = layerCtl.grid ? '' : 'none';
-    clearParticleOverlays();
+    if (layerCtl.calcOverlays) clearParticleOverlays();
+    else {
+      document.querySelectorAll('.calc-theme-overlay').forEach(function (overlay) {
+        overlay.style.display = 'none';
+        var ctx = overlay.getContext && overlay.getContext('2d');
+        if (ctx && overlay.width) ctx.clearRect(0, 0, overlay.width, overlay.height);
+      });
+    }
   }
 
   global.refreshParticleColors = function () {};
@@ -57,13 +68,14 @@
         particles: false,
         particleDensity: 0,
         grid: !!layerCtl.grid,
-        calcOverlays: false,
+        calcOverlays: !!layerCtl.calcOverlays,
         count: 0
       };
     },
     setEnabled: function (key, on) {
       if (key === 'grid') layerCtl.grid = !!on;
-      /* particles and particle-backed calculator overlays stay disabled. */
+      if (key === 'calcOverlays') layerCtl.calcOverlays = !!on;
+      /* Page WebGL particles stay disabled. */
       applyLayerVisibility();
     },
     setDensity: function () {
@@ -74,7 +86,9 @@
       if (state && 'grid' in state) layerCtl.grid = !!state.grid;
       layerCtl.particles = false;
       layerCtl.particleDensity = 0;
-      layerCtl.calcOverlays = false;
+      /* CSS translucent overlay canvases stay in the stack; no particle fill. */
+      if (state && 'calcOverlays' in state) layerCtl.calcOverlays = !!state.calcOverlays;
+      else layerCtl.calcOverlays = true;
       applyLayerVisibility();
     }
   };
