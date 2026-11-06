@@ -4807,7 +4807,8 @@
           "The distance measured from the mirror surface to its focal point"
         ],
         "correct": 0,
-        "explain": "The centre of curvature C is the centre of the sphere of which the mirror forms a part. The focal point is where parallel reflected rays meet, the vertex is the midpoint of the mirror surface, and focal length is the distance from the mirror (vertex) to the focal point."
+        "explain": "The centre of curvature C is the centre of the sphere of which the mirror forms a part. The focal point is where parallel reflected rays meet, the vertex is the midpoint of the mirror surface, and focal length is the distance from the mirror (vertex) to the focal point.",
+        "cat": "Chapter 5: Reflection and Mirrors"
       },
       {
         "id": "PHY50070",
@@ -4847,7 +4848,8 @@
           "At the point where the rays reflect back from the surface"
         ],
         "correct": 0,
-        "explain": "A diverging lens spreads parallel rays outward. Projected backward, those rays appear to come from a focal point on the incoming side, so the focal point is virtual."
+        "explain": "A diverging lens spreads parallel rays outward. Projected backward, those rays appear to come from a focal point on the incoming side, so the focal point is virtual.",
+        "cat": "Chapter 5: Thin Lenses"
       },
       {
         "id": "PHY50073",
@@ -4945,7 +4947,8 @@
           "The cladding reflects light back into the body"
         ],
         "correct": 0,
-        "explain": "An endoscope uses one bundle to carry light to the area and another bundle to carry the image back. Many small fibers together form the image seen on the monitor."
+        "explain": "An endoscope uses one bundle to carry light to the area and another bundle to carry the image back. Many small fibers together form the image seen on the monitor.",
+        "cat": "Chapter 5: Optical Fibers and Medical Applications"
       },
       {
         "id": "PHY50079",
@@ -4957,7 +4960,8 @@
           "About 20.00 cm"
         ],
         "correct": 0,
-        "explain": "Using 1/f = 1/12 + 1/20 − 4/(12×20) gives 0.11667, so f ≈ 8.57 cm. About 7.50 cm omits the separation term, and 12.00 cm and 20.00 cm repeat the individual focal lengths."
+        "explain": "Using 1/f = 1/12 + 1/20 − 4/(12×20) gives 0.11667, so f ≈ 8.57 cm. About 7.50 cm omits the separation term, and 12.00 cm and 20.00 cm repeat the individual focal lengths.",
+        "cat": "Chapter 5: Combination of Lenses"
       },
       {
         "id": "PHY50080",
@@ -4969,7 +4973,8 @@
           "A fiber with a high-index core and a lower-index cladding"
         ],
         "correct": 0,
-        "explain": "A thin lens is transparent, refracts light, and has a thickness small compared with its radius of curvature. A spherical mirror, a prism, and an optical fiber are different optical elements."
+        "explain": "A thin lens is transparent, refracts light, and has a thickness small compared with its radius of curvature. A spherical mirror, a prism, and an optical fiber are different optical elements.",
+        "cat": "Chapter 5: Thin Lenses"
       },
       {
         "id": "PHY50081",
@@ -4981,7 +4986,8 @@
           "The path of the incident ray as it approaches the mirror"
         ],
         "correct": 0,
-        "explain": "The normal is perpendicular to the mirror surface at the point of incidence, making 90° with the surface. Angles of incidence and reflection are measured from this normal."
+        "explain": "The normal is perpendicular to the mirror surface at the point of incidence, making 90° with the surface. Angles of incidence and reflection are measured from this normal.",
+        "cat": "Chapter 5: Reflection and Mirrors"
       },
       {
         "id": "PHY50082",
