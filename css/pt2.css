@@ -356,6 +356,7 @@ html[data-pt2-bg]:not([data-pt2-bg="default"]) body::before {
   background-image: none !important;
 }
 
-html[data-pt2-bg]:not([data-pt2-bg="default"]) #el-arquitecto-bg-layer {
+html[data-pt2-bg]:not([data-pt2-bg="default"]) #el-arquitecto-bg-layer,
+html[data-pt2-bg]:not([data-pt2-bg="default"]) #fxCanvas {
   display: none !important;
 }
