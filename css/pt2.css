@@ -336,3 +336,14 @@ html.mood-ghost:not(.pt2-basic)::after{background:radial-gradient(ellipse 45% 30
 @keyframes pt2MoodSnow{to{background-position:0 600px,30px 930px}}
 @keyframes pt2MoodDrift{from{transform:translate(0,0)}to{transform:translate(4vw,-3vh)}}
 @keyframes pt2MoodDrift2{from{transform:translate(0,0)}to{transform:translate(-5vw,2vh)}}
+/* When any non-default background is active, kill the default skin pattern and glows */
+html[data-pt2-bg]:not([data-pt2-bg="default"]) {
+  --skin-pattern: none !important;
+  --skin-pattern-opacity: 0 !important;
+  --grid-tint: transparent !important;
+  --bg-glow: transparent !important;
+}
+
+html[data-pt2-bg]:not([data-pt2-bg="default"]) #el-arquitecto-bg-layer {
+  display: none !important;
+}
