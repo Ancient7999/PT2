@@ -11,7 +11,7 @@ var APP_INFO = {
       changes: [
         'Medical Physics card is available as a draft.',
         'Medical Physics: new Study Interface with chapter notes.',
-        'On phones, typed questions scroll far enough to show the question and the typing box.'
+        'On phones, typed questions now have room to scroll to the typing box.'
       ]
     },
     {
