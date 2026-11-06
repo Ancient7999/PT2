@@ -11,7 +11,7 @@ This chapter covers the physics of fluid flow with emphasis on medical applicati
 | Topic | Core idea |
 |-------|-----------|
 | Fluid & types of flow | Continuously changes shape; laminar (parallel layers) vs turbulent (swirls) |
-| Mass & volume flow rate | ṁ = ρ A v ; Q = A v |
+| Mass & volume flow rate | ṁ = ρ A v ; Q = A v ; also Q = ρ A v (mass flow); ṁ = ρ Q |
 | Continuity equation | ρ₁A₁v₁ = ρ₂A₂v₂ ; for blood A₁v₁ = A₂v₂ (smaller area → higher speed) |
 | Bernoulli's equation | P + ½ρv² + ρgh = constant ; faster flow → lower pressure |
 | Viscosity η | Internal friction; F = η A v / y |
@@ -101,7 +101,7 @@ Mass flow rate = 1060 × 3 × 10⁻⁴ × 0.2 ≈ 0.0636 kg/s
 **How mass flow rate is assembled:**
 - Start from definition: mass passing a cross-section per time → m/t.
 - Mass of a fluid slug is density × volume: m = ρV.
-- That volume is the tube’s cross-section times how far the fluid moves: V = A × ℓ.
+- That volume is the tube’s cross-section times how far the fluid moves: V = A × ℓ, where ℓ is the length (distance the fluid travels in time t, so ℓ/t = v).
 - Distance per time is speed: ℓ/t = v.
 - Combine: mass flow rate = ρ A v. Symbols: ρ = density, A = cross-sectional area, v = speed.
 
@@ -203,8 +203,10 @@ Velocity increases at a carotid stenosis because **area decreases**, so **speed 
 ## 7. Formula sheet — Chapter 3
 
 ```
-Mass flow rate = m / t = ρ A v         ← density × area × speed      [kg/s]
-Volume flow rate Q = A v               ← area × speed, no density    [m³/s]
+Mass flow rate ṁ = ρ A v = ρ Q         ← density × area × speed, or density × volume flow   [kg/s]
+Also written as Q = ρ A v              ← when Q stands for mass flow rate (check units: kg/s)
+Volume flow rate Q = A v               ← area × speed, no density                           [m³/s]
+ṁ = ρ Q                                ← relation between mass and volume flow rates
 Continuity, general: ρ₁ A₁ v₁ = ρ₂ A₂ v₂   ← mass flow conserved
 Continuity, incompressible blood: A₁ v₁ = A₂ v₂   ← volume flow conserved; ρ cancels
 v₂ = A₁ v₁ / A₂                        ← speed in the second section
