@@ -5,6 +5,15 @@
    Keep each block's version and date written the same way as below (the update check reads the first block). */
 var APP_INFO = {
   releases: [
+     {
+    version: '0.42',
+    date: '06/11/2026',
+    changes: [
+      'Default theme effects no longer show in unlocked Medical Physics themes.',
+      'Text selection enabled on questions, answers, calculator and study interface.',
+      'LaTeX text fixes.',
+      ]
+    },
     {
     version: '0.41',
     date: '06/11/2026',
