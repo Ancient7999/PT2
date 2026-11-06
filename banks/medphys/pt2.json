@@ -1434,53 +1434,53 @@
         "cat": "Chapter 3: Poiseuille's Law",
         "q": "Which expression gives the mean velocity of viscous flow through a tube?",
         "options": [
-          "v̄ = ΔP r⁴ / (8 η L)",
-          "v̄ = π ΔP r² / (8 η L)",
-          "v̄ = ΔP r² / (4 η L)",
-          "v̄ = ΔP r² / (8 η L)"
+          "\\(\\bar{v} = \\Delta P r^4 / (8 \\eta L)\\)",
+          "\\(\\bar{v} = \\pi \\Delta P r^2 / (8 \\eta L)\\)",
+          "\\(\\bar{v} = \\Delta P r^2 / (4 \\eta L)\\)",
+          "\\(\\bar{v} = \\Delta P r^2 / (8 \\eta L)\\)"
         ],
         "correct": 3,
-        "explain": "The mean velocity is v̄ = ΔP r² / (8ηL). Multiplying it by the area πr² gives Q = πr⁴ΔP/(8ηL), so the π and the r⁴ belong to the flow rate, not to the velocity. A factor of 4 instead of 8 does not match Poiseuille's result."
+        "explain": "The mean velocity is \\(\\bar{v} = \\Delta P r^2 / (8\\eta L)\\). Multiplying it by the area \\(\\pi r^2\\) gives \\(Q = \\pi r^4 \\Delta P/(8\\eta L)\\), so the \\(\\pi\\) and the \\(r^4\\) belong to the flow rate, not to the velocity. A factor of 4 instead of 8 does not match Poiseuille's result."
       },
       {
-        "id": "PHY30047",
-        "type": "stepped",
-        "cat": "Chapter 3: Poiseuille's Law",
-        "q": "Poiseuille's law can be built from flow rate, tube area and mean velocity. Answer each step.",
-        "explain": "Volume flow rate is area times mean velocity, Q = A v̄. A round tube has A = πr². With v̄ = ΔP r²/(8ηL), Q = πr² × ΔP r²/(8ηL) = πr⁴ΔP/(8ηL), so the two r² factors combine to r⁴. That is why flow depends so strongly on radius.",
-        "steps": [
+      "id": "PHY30047",
+      "type": "stepped",
+      "cat": "Chapter 3: Poiseuille's Law",
+      "q": "Poiseuille's law can be built from flow rate, tube area and mean velocity. Answer each step.",
+      "explain": "Volume flow rate is area times mean velocity, \\(Q = A \\bar{v}\\). A round tube has \\(A = \\pi r^2\\). With \\(\\bar{v} = \\Delta P r^2/(8\\eta L)\\), \\(Q = \\pi r^2 \\times \\Delta P r^2/(8\\eta L) = \\pi r^4 \\Delta P/(8\\eta L)\\), so the two \\(r^2\\) factors combine to \\(r^4\\). That is why flow depends so strongly on radius.",
+      "steps": [
+        {
+          "id": "1",
+          "prompt": "Which relation links volume flow rate to area and mean velocity?",
+          "options": [
+            "\\(Q = \\bar{v} / A\\)",
+            "\\(Q = A \\bar{v}\\)",
+            "\\(Q = A / \\bar{v}\\)",
+            "\\(Q = A \\bar{v}^2\\)"
+          ],
+          "correct": 1
+        },
+        {
+          "id": "2",
+          "prompt": "Given \\(Q = A \\bar{v}\\), what is A for a round tube of radius r?",
+          "options": [
+            "2πr",
+            "πr²/2",
+            "πr²",
+            "4πr²"
+          ],
+          "correct": 2
+        },
           {
-            "id": "1",
-            "prompt": "Which relation links volume flow rate to area and mean velocity?",
-            "options": [
-              "Q = v̄ / A",
-              "Q = A v̄",
-              "Q = A / v̄",
-              "Q = A v̄²"
-            ],
-            "correct": 1
-          },
-          {
-            "id": "2",
-            "prompt": "Given Q = A v̄, what is A for a round tube of radius r?",
-            "options": [
-              "2πr",
-              "πr²/2",
-              "πr²",
-              "4πr²"
-            ],
-            "correct": 2
-          },
-          {
-            "id": "3",
-            "prompt": "Multiplying πr² by ΔP r²/(8ηL) leaves the radius raised to which power?",
-            "options": [
-              "r⁴",
-              "r²",
-              "r³",
-              "r⁸"
-            ],
-            "correct": 0
+          "id": "3",
+          "prompt": "Multiplying πr² by ΔP r²/(8ηL) leaves the radius raised to which power?",
+          "options": [
+            "r⁴",
+            "r²",
+            "r³",
+            "r⁸"
+          ],
+          "correct": 0
           }
         ]
       },
