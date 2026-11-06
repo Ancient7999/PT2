@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Periodic Test 2 · Quiz Interface</title>
+
+<!-- Neutral favicon (default) -->
+<link id="favicon" rel="icon" href="/PT2/favicon.ico" sizes="any">
+<link rel="icon" type="image/x-icon" href="/PT2/icons/neutral.ico">
+<link rel="apple-touch-icon" href="/PT2/icons/neutral.ico">
+
 <script src="data/bundle.js?v=30"></script>
 <script src="js/app-info.js"></script>
 <script src="js/pt2-offline.js?v=9"></script>
@@ -3453,5 +3459,38 @@ document.getElementById('studyNotesBtn').addEventListener('click', ()=>{
 <script src="js/pt2-bg.js?v=2"></script>
 <script src="js/pt2-lines.js?v=2"></script>
 <script src="js/app-update.js?v=4"></script>
+<script>
+function setFavicon(subjectId) {
+  const map = {
+    'medphys-pt2': '/PT2/icons/medphys.ico',
+    'medphys': '/PT2/icons/medphys.ico',
+    'anatomy-pt2': '/PT2/icons/anatomy.ico',
+    'anatomy': '/PT2/icons/anatomy.ico',
+    'medterm-pt2': '/PT2/icons/medterm.ico',
+    'medterm': '/PT2/icons/medterm.ico',
+    'english-pt2': '/PT2/icons/english.ico',
+    'english': '/PT2/icons/english.ico',
+  };
+  const href = map[subjectId] || '/PT2/favicon.ico';
+  const link = document.getElementById('favicon') || document.querySelector('link[rel="icon"]');
+  if (link) link.href = href + '?v=' + Date.now();
+}
+
+document.addEventListener('click', function(e) {
+  const card = e.target.closest('.portal-card, .portal-card-wrap');
+  if (!card) return;
+
+  const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
+
+  if (title.includes('medical physics') || title.includes('medphys')) setFavicon('medphys-pt2');
+  else if (title.includes('anatomy')) setFavicon('anatomy-pt2');
+  else if (title.includes('medical terminology') || title.includes('med term')) setFavicon('medterm-pt2');
+  else if (title.includes('english')) setFavicon('english-pt2');
+}, true);
+
+document.addEventListener('click', function(e) {
+  if (e.target.closest('#portalBackBtn, .back-btn')) setFavicon('');
+});
+</script>
 </body>
 </html>
