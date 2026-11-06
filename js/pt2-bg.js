@@ -63,48 +63,47 @@
     try { if (global.PT2BgOrbit) PT2BgOrbit.stop(); } catch (e) {}
   }
 
-  function apply(id, opts) {
-    var quiet = opts && opts.quiet;
-    var st = { id: id || 'default' };
-    var got = unlocked();
-    var opt = options().filter(function (o) { return o.id === st.id; })[0];
-    if (!opt) st.id = 'default';
-    else if (opt.unlock && !got[opt.unlock] && !(global.PT2Unlocks && PT2Unlocks.has(opt.unlock))) {
-      st.id = 'default';
-      opt = options()[0];
-    }
+function apply(id, opts) {
+  var quiet = opts && opts.quiet;
+  var st = { id: id || 'default' };
+  var got = unlocked();
+  var opt = options().filter(function (o) { return o.id === st.id; })[0];
+  if (!opt) st.id = 'default';
+  else if (opt.unlock && !got[opt.unlock] && !(global.PT2Unlocks && PT2Unlocks.has(opt.unlock))) {
+    st.id = 'default';
+    opt = options()[0];
+  }
 
-    stopFx();
-    root.removeAttribute('data-pt2-bg');
-    root.classList.remove('pt2-bg-bubbles', 'pt2-bg-particles', 'pt2-bg-skin');
+  stopFx();
+  root.removeAttribute('data-pt2-bg');
+  root.classList.remove('pt2-bg-bubbles', 'pt2-bg-particles', 'pt2-bg-skin');
+  root.removeAttribute('data-skin');
 
+  if (st.id === 'default') {
+    root.setAttribute('data-pt2-bg', 'default');
+    if (typeof applySkin === 'function') try { applySkin(); } catch (e) {}
+    else root.setAttribute('data-skin', 'grid-haze');
+  } else {
+    root.setAttribute('data-pt2-bg', st.id);
     if (st.id === 'bubbles') {
-      root.setAttribute('data-pt2-bg', 'bubbles');
       root.classList.add('pt2-bg-bubbles');
       if (global.PT2BgBubbles) PT2BgBubbles.start();
-      if (typeof applySkin === 'function') try { applySkin(); } catch (e) {}
     } else if (st.id === 'particles') {
-      root.setAttribute('data-pt2-bg', 'particles');
       root.classList.add('pt2-bg-particles');
       if (global.PT2BgOrbit) PT2BgOrbit.start();
-      if (typeof applySkin === 'function') try { applySkin(); } catch (e) {}
-    } else if (st.id !== 'default') {
-      root.setAttribute('data-pt2-bg', st.id);
+    } else {
       root.classList.add('pt2-bg-skin');
       root.setAttribute('data-skin', st.id);
-    } else {
-      root.setAttribute('data-pt2-bg', 'default');
-      if (typeof applySkin === 'function') try { applySkin(); } catch (e) {}
-      else root.setAttribute('data-skin', 'grid-haze');
     }
-
-    write(st);
-    paintPicker();
-    if (!quiet) {
-      try { document.dispatchEvent(new CustomEvent('pt2-bg-changed', { detail: st.id })); } catch (e) {}
-    }
-    return st.id;
   }
+
+  write(st);
+  paintPicker();
+  if (!quiet) {
+    try { document.dispatchEvent(new CustomEvent('pt2-bg-changed', { detail: st.id })); } catch (e) {}
+  }
+  return st.id;
+}
 
   function select(id) { return apply(id, { quiet: false }); }
 
@@ -191,19 +190,18 @@
   }
 
   /* Hook applySkin so a chosen skin background is not overwritten by the fixed grid-haze default. */
-  function patchApplySkin() {
-    if (typeof global.applySkin !== 'function' || global.applySkin._pt2Bg) return;
-    var orig = global.applySkin;
-    global.applySkin = function () {
-      var id = current();
-      if (id && id !== 'default' && id !== 'bubbles' && id !== 'particles') {
-        root.setAttribute('data-skin', id);
-        return;
-      }
-      return orig.apply(this, arguments);
-    };
-    global.applySkin._pt2Bg = true;
-  }
+function patchApplySkin() {
+  if (typeof global.applySkin !== 'function' || global.applySkin._pt2Bg) return;
+  var orig = global.applySkin;
+  global.applySkin = function () {
+    var id = current();
+    if (id && id !== 'default') {
+      return;
+    }
+    return orig.apply(this, arguments);
+  };
+  global.applySkin._pt2Bg = true;
+}
 
   global.PT2Bg = {
     select: select,
