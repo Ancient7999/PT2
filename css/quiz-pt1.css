@@ -581,7 +581,7 @@ html[data-pointer-input="touch"] .pt1q .multi-check-key{display:none}
 .label-tools{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .label-progress{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--text-dim)}
 .label-mode{font-size:.8rem}
-.label-stage{position:relative;overflow:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--border);background:#fff;max-width:100%;touch-action:pan-x pan-y pinch-zoom}
+.label-stage{position:relative;overflow:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--border);background:transparent;max-width:100%;touch-action:pan-x pan-y pinch-zoom}
 .label-figure{position:relative;width:calc(100% * var(--lz,1));min-width:0;container-type:inline-size;user-select:none;-webkit-user-select:none}
 .label-figure .label-img{display:block;width:100%;height:auto;pointer-events:none}
 /* label questions in a quiz, PCs only: fit the whole picture in ~52% of the screen height (centred) so the question, picture and
@@ -623,7 +623,7 @@ html:not(.pt2-phone) #quizView .label-wrap>.label-stage[style*="--ar"]{width:min
 .label-ghost{position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%) scale(1.05);box-shadow:0 6px 18px rgba(0,0,0,.35);cursor:grabbing}
 .label-ghost.returning{transition:left .3s ease,top .3s ease,opacity .3s ease;opacity:.4}
 .label-review{margin:6px 0}
-.label-review .label-figure{min-width:0;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:#fff}
+.label-review .label-figure{min-width:0;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:transparent}
 @keyframes labelPop{0%{transform:scale(.85)}60%{transform:scale(1.08)}100%{transform:scale(1)}}
 @keyframes labelPulse{0%,100%{background:rgba(var(--accent-0-rgb),.12)}50%{background:rgba(var(--accent-0-rgb),.3)}}
 @media (prefers-reduced-motion:reduce){.label-slot.locked.just-locked,.label-figure.picking .label-slot.open{animation:none}.label-ghost.returning{transition:none}}
