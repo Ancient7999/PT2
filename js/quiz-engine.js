@@ -1131,6 +1131,42 @@ async function loadBank(path){
   ingestBank(data, path);
   return data;
 }
+/* Append-style: main bank + extraBanks whose cards are appended after the main cards.
+   Catalog material: "extraBanks": ["banks/medphys/diagrams.json"] or [{bank, title?}]. */
+async function loadBankWithExtras(mainPath, extras){
+  if(window.StudyMigrate && typeof StudyMigrate.runAll==='function'){
+    try{ await StudyMigrate.runAll(); }catch(e){ console.warn('[quiz] migration skipped', e); }
+  }
+  const mainRes = await fetch(mainPath, {cache:'no-cache'});
+  if(!mainRes.ok) throw new Error('bank HTTP '+mainRes.status);
+  const main = await mainRes.json();
+  ingestBank(main, mainPath);
+  const extraList = Array.isArray(extras) ? extras : [];
+  for(const ex of extraList){
+    const path = typeof ex === 'string' ? ex : (ex && ex.bank);
+    if(!path) continue;
+    try{
+      const r = await fetch(path, {cache:'no-cache'});
+      if(!r.ok){ console.warn('[quiz] extra bank HTTP '+r.status, path); continue; }
+      const data = await r.json();
+      normalizeBankMatching(data);
+      const qs = buildAllQuestions(data);
+      // Give them a distinct bank key so progress can be tracked separately if desired
+      const bk = bankKeyOfPath(path);
+      qs.forEach(q => { q.__bankKey = bk; });
+      ALLQ.push(...qs);
+      // Build cards from this extra bank and append
+      const prevBANK = BANK, prevKEY = BANK_KEY;
+      BANK = data; BANK_KEY = bk;
+      const extraCards = buildCards(qs);
+      BANK = prevBANK; BANK_KEY = prevKEY;
+      extraCards.forEach(c => { c.bankKey = bk; c.bankPath = path; c.bankData = data; });
+      CARDS.push(...extraCards);
+    }catch(e){ console.warn('[quiz] extra bank failed', path, e); }
+  }
+  updateCounters();
+  renderSets();
+}
 
 (function wireQuizPrefs(){
   ['prefShuffleQ','prefShuffleC','prefLinkFirst'].forEach(id=>{
@@ -2014,7 +2050,10 @@ function labelLight(slot){
 }
 function labelFigureHTML(q, a, review){
   const slots=(a&&a.slots)||{};
-  let h='<div class="label-figure'+(review?' in-review':'')+'"><img class="label-img" src="'+escapeHtml(q.image||'')+'" alt="'+escapeHtml(q.alt||'')+'" draggable="false">'+(review?'':labelLeadersSVG(q));
+  const media = q.svg
+    ? q.svg
+    : '<img class="label-img" src="'+escapeHtml(q.image||'')+'" alt="'+escapeHtml(q.alt||'')+'" draggable="false">';
+  let h='<div class="label-figure'+(review?' in-review':'')+'">'+media+(review?'':labelLeadersSVG(q));
   (q.labels||[]).forEach(l=>{
     const done=slots[l.id]!=null;
     const style='left:'+l.x+'%;top:'+l.y+'%;width:'+l.w+'%;height:'+l.h+'%';
