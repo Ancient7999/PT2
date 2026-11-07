@@ -779,11 +779,10 @@ Re < 2000 → **laminar**. If the speed doubles (for example through a narrowing
 
 <div class="optics-diagram" role="img" aria-label="Surface tension from unbalanced pulls on surface molecules, and capillary rise of water and fall of mercury">
 <svg viewBox="0 0 640 290" xmlns="http://www.w3.org/2000/svg" class="label-img" style="width:100%;height:auto;display:block">
-<!-- LEFT: original-style molecular grid (5 columns x 4 rows) -->
+<!-- LEFT: molecular grid -->
 <rect x="30" y="70" width="250" height="170" fill="rgba(var(--accent-1-rgb),0.16)" stroke="var(--accent-1)" stroke-width="1.5"/>
 <line x1="30" y1="70" x2="280" y2="70" stroke="var(--accent-1)" stroke-width="3"/>
 
-<!-- Grid of molecules -->
 <circle cx="60" cy="86" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/>
 <circle cx="60" cy="130" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/>
 <circle cx="60" cy="174" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/>
@@ -805,13 +804,13 @@ Re < 2000 → **laminar**. If the speed doubles (for example through a narrowing
 <circle cx="252" cy="174" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/>
 <circle cx="252" cy="218" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/>
 
-<!-- Force arrows on an inside molecule (balanced, at ~156,174) -->
+<!-- Force arrows: inside molecule (balanced) at 156,174 -->
 <line x1="165" y1="174" x2="186" y2="174" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="190.2,174 181.8,177.2 181.8,170.8" fill="var(--accent-0)"/>
 <line x1="147" y1="174" x2="126" y2="174" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="121.8,174 130.2,170.8 130.2,177.2" fill="var(--accent-0)"/>
 <line x1="156" y1="165" x2="156" y2="146" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="156,142 152.8,149.2 159.2,149.2" fill="var(--accent-0)"/>
 <line x1="156" y1="183" x2="156" y2="202" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="156,206 152.8,198.8 159.2,198.8" fill="var(--accent-0)"/>
 
-<!-- Force arrows on a surface molecule (net down, at ~156,86) -->
+<!-- Force arrows: surface molecule (net down) at 156,86 -->
 <line x1="165" y1="86" x2="186" y2="86" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="190.2,86 181.8,89.2 181.8,82.8" fill="var(--accent-2)"/>
 <line x1="147" y1="86" x2="126" y2="86" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="121.8,86 130.2,82.8 130.2,89.2" fill="var(--accent-2)"/>
 <line x1="156" y1="95" x2="156" y2="116" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="156,120.2 152.8,111.8 159.2,111.8" fill="var(--accent-2)"/>
@@ -820,30 +819,30 @@ Re < 2000 → **laminar**. If the speed doubles (for example through a narrowing
 <text x="80" y="255" text-anchor="middle" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10">inside: balanced</text>
 <text x="200" y="255" text-anchor="middle" fill="var(--accent-2)" font-family="Outfit,sans-serif" font-size="10">surface: net pull down</text>
 
-<!-- RIGHT: Capillarity matching slides — 2 tubes water, 1 tube mercury -->
-<!-- Water reservoir with 2 tubes -->
+<!-- RIGHT: Capillarity — thicker left tube (lower), thinner right tube (higher) -->
+<!-- Water reservoir -->
 <rect x="300" y="155" width="145" height="75" fill="rgba(var(--accent-1-rgb),0.4)" stroke="var(--accent-1)" stroke-width="1.5"/>
 <text x="372" y="198" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="14" font-weight="600">H₂O</text>
 
-<!-- Water tube 1 -->
-<line x1="325" y1="70" x2="325" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
-<line x1="338" y1="70" x2="338" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
-<path d="M325,98 Q331.5,106 338,98" fill="none" stroke="var(--accent-1)" stroke-width="2"/>
-<rect x="326" y="98" width="11" height="57" fill="rgba(var(--accent-1-rgb),0.6)"/>
+<!-- Water tube 1 (LEFT, thicker, liquid lower ~y=130) -->
+<line x1="318" y1="70" x2="318" y2="230" stroke="var(--col-text-main)" stroke-width="2"/>
+<line x1="340" y1="70" x2="340" y2="230" stroke="var(--col-text-main)" stroke-width="2"/>
+<path d="M318,130 Q329,140 340,130" fill="none" stroke="var(--accent-1)" stroke-width="2.2"/>
+<rect x="319" y="130" width="20" height="25" fill="rgba(var(--accent-1-rgb),0.65)"/>
 
-<!-- Water tube 2 (higher) -->
-<line x1="365" y1="70" x2="365" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
-<line x1="378" y1="70" x2="378" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
-<path d="M365,85 Q371.5,93 378,85" fill="none" stroke="var(--accent-1)" stroke-width="2"/>
-<rect x="366" y="85" width="11" height="70" fill="rgba(var(--accent-1-rgb),0.6)"/>
+<!-- Water tube 2 (RIGHT, thinner, liquid higher ~y=90) -->
+<line x1="368" y1="70" x2="368" y2="230" stroke="var(--col-text-main)" stroke-width="1.4"/>
+<line x1="380" y1="70" x2="380" y2="230" stroke="var(--col-text-main)" stroke-width="1.4"/>
+<path d="M368,90 Q374,98 380,90" fill="none" stroke="var(--accent-1)" stroke-width="1.8"/>
+<rect x="369" y="90" width="10" height="65" fill="rgba(var(--accent-1-rgb),0.6)"/>
 
 <text x="372" y="250" text-anchor="middle" fill="var(--accent-1)" font-family="Outfit,sans-serif" font-size="11">water rises · concave</text>
 
-<!-- Mercury reservoir with 1 tube -->
+<!-- Mercury reservoir -->
 <rect x="470" y="155" width="140" height="75" fill="rgba(var(--accent-4-rgb),0.35)" stroke="var(--accent-4)" stroke-width="1.5"/>
 <text x="540" y="198" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="14" font-weight="600">Hg</text>
 
-<!-- Mercury tube (depressed) -->
+<!-- Mercury tube (depressed, convex) -->
 <line x1="525" y1="70" x2="525" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
 <line x1="538" y1="70" x2="538" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
 <path d="M525,182 Q531.5,174 538,182" fill="none" stroke="var(--accent-4)" stroke-width="2"/>
@@ -886,11 +885,10 @@ A soap film or soap bubble has **two** surfaces. The force is shared across both
 
 <div class="optics-diagram" role="img" aria-label="Surface tension from unbalanced pulls on surface molecules, and capillary rise of water and fall of mercury">
 <svg viewBox="0 0 640 290" xmlns="http://www.w3.org/2000/svg" class="label-img" style="width:100%;height:auto;display:block">
-<!-- LEFT: original-style molecular grid (5 columns x 4 rows) -->
+<!-- LEFT: molecular grid -->
 <rect x="30" y="70" width="250" height="170" fill="rgba(var(--accent-1-rgb),0.16)" stroke="var(--accent-1)" stroke-width="1.5"/>
 <line x1="30" y1="70" x2="280" y2="70" stroke="var(--accent-1)" stroke-width="3"/>
 
-<!-- Grid of molecules -->
 <circle cx="60" cy="86" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/>
 <circle cx="60" cy="130" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/>
 <circle cx="60" cy="174" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/>
@@ -912,13 +910,13 @@ A soap film or soap bubble has **two** surfaces. The force is shared across both
 <circle cx="252" cy="174" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/>
 <circle cx="252" cy="218" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/>
 
-<!-- Force arrows on an inside molecule (balanced, at ~156,174) -->
+<!-- Force arrows: inside molecule (balanced) at 156,174 -->
 <line x1="165" y1="174" x2="186" y2="174" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="190.2,174 181.8,177.2 181.8,170.8" fill="var(--accent-0)"/>
 <line x1="147" y1="174" x2="126" y2="174" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="121.8,174 130.2,170.8 130.2,177.2" fill="var(--accent-0)"/>
 <line x1="156" y1="165" x2="156" y2="146" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="156,142 152.8,149.2 159.2,149.2" fill="var(--accent-0)"/>
 <line x1="156" y1="183" x2="156" y2="202" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="156,206 152.8,198.8 159.2,198.8" fill="var(--accent-0)"/>
 
-<!-- Force arrows on a surface molecule (net down, at ~156,86) -->
+<!-- Force arrows: surface molecule (net down) at 156,86 -->
 <line x1="165" y1="86" x2="186" y2="86" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="190.2,86 181.8,89.2 181.8,82.8" fill="var(--accent-2)"/>
 <line x1="147" y1="86" x2="126" y2="86" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="121.8,86 130.2,82.8 130.2,89.2" fill="var(--accent-2)"/>
 <line x1="156" y1="95" x2="156" y2="116" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="156,120.2 152.8,111.8 159.2,111.8" fill="var(--accent-2)"/>
@@ -927,30 +925,30 @@ A soap film or soap bubble has **two** surfaces. The force is shared across both
 <text x="80" y="255" text-anchor="middle" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10">inside: balanced</text>
 <text x="200" y="255" text-anchor="middle" fill="var(--accent-2)" font-family="Outfit,sans-serif" font-size="10">surface: net pull down</text>
 
-<!-- RIGHT: Capillarity matching slides — 2 tubes water, 1 tube mercury -->
-<!-- Water reservoir with 2 tubes -->
+<!-- RIGHT: Capillarity — thicker left tube (lower), thinner right tube (higher) -->
+<!-- Water reservoir -->
 <rect x="300" y="155" width="145" height="75" fill="rgba(var(--accent-1-rgb),0.4)" stroke="var(--accent-1)" stroke-width="1.5"/>
 <text x="372" y="198" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="14" font-weight="600">H₂O</text>
 
-<!-- Water tube 1 -->
-<line x1="325" y1="70" x2="325" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
-<line x1="338" y1="70" x2="338" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
-<path d="M325,98 Q331.5,106 338,98" fill="none" stroke="var(--accent-1)" stroke-width="2"/>
-<rect x="326" y="98" width="11" height="57" fill="rgba(var(--accent-1-rgb),0.6)"/>
+<!-- Water tube 1 (LEFT, thicker, liquid lower ~y=130) -->
+<line x1="318" y1="70" x2="318" y2="230" stroke="var(--col-text-main)" stroke-width="2"/>
+<line x1="340" y1="70" x2="340" y2="230" stroke="var(--col-text-main)" stroke-width="2"/>
+<path d="M318,130 Q329,140 340,130" fill="none" stroke="var(--accent-1)" stroke-width="2.2"/>
+<rect x="319" y="130" width="20" height="25" fill="rgba(var(--accent-1-rgb),0.65)"/>
 
-<!-- Water tube 2 (higher) -->
-<line x1="365" y1="70" x2="365" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
-<line x1="378" y1="70" x2="378" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
-<path d="M365,85 Q371.5,93 378,85" fill="none" stroke="var(--accent-1)" stroke-width="2"/>
-<rect x="366" y="85" width="11" height="70" fill="rgba(var(--accent-1-rgb),0.6)"/>
+<!-- Water tube 2 (RIGHT, thinner, liquid higher ~y=90) -->
+<line x1="368" y1="70" x2="368" y2="230" stroke="var(--col-text-main)" stroke-width="1.4"/>
+<line x1="380" y1="70" x2="380" y2="230" stroke="var(--col-text-main)" stroke-width="1.4"/>
+<path d="M368,90 Q374,98 380,90" fill="none" stroke="var(--accent-1)" stroke-width="1.8"/>
+<rect x="369" y="90" width="10" height="65" fill="rgba(var(--accent-1-rgb),0.6)"/>
 
 <text x="372" y="250" text-anchor="middle" fill="var(--accent-1)" font-family="Outfit,sans-serif" font-size="11">water rises · concave</text>
 
-<!-- Mercury reservoir with 1 tube -->
+<!-- Mercury reservoir -->
 <rect x="470" y="155" width="140" height="75" fill="rgba(var(--accent-4-rgb),0.35)" stroke="var(--accent-4)" stroke-width="1.5"/>
 <text x="540" y="198" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="14" font-weight="600">Hg</text>
 
-<!-- Mercury tube (depressed) -->
+<!-- Mercury tube (depressed, convex) -->
 <line x1="525" y1="70" x2="525" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
 <line x1="538" y1="70" x2="538" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
 <path d="M525,182 Q531.5,174 538,182" fill="none" stroke="var(--accent-4)" stroke-width="2"/>
