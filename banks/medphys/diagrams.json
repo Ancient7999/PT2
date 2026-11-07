@@ -4,12 +4,16 @@
   "subjectId": "medphys",
   "title": "Diagrams",
   "formSize": 20,
-  "forms": ["A"],
+  "forms": [
+    "A"
+  ],
   "cards": [
     {
       "id": "diagrams",
       "title": "Diagrams",
-      "cats": ["Diagrams"],
+      "cats": [
+        "Diagrams"
+      ],
       "draft": true
     }
   ],
@@ -20,27 +24,61 @@
         "type": "stepped",
         "cat": "Diagrams",
         "q": "Label the diagram, then identify the law/principle and its uses.",
-        "image": "banks/medphys/img/bernoulli-blank.webp",
-        "alt": "Blank diagram illustrating Bernoulli’s principle",
+        "alt": "Blank diagram illustrating Bernoulli\u2019s principle",
         "labels": [
-          { "id": "p1", "answer": "High pressure", "x": 12, "y": 28, "w": 22, "h": 6 },
-          { "id": "v1", "answer": "Low velocity", "x": 12, "y": 42, "w": 22, "h": 6 },
-          { "id": "p2", "answer": "Low pressure", "x": 62, "y": 28, "w": 22, "h": 6 },
-          { "id": "v2", "answer": "High velocity", "x": 62, "y": 42, "w": 22, "h": 6 }
+          {
+            "id": "p1",
+            "answer": "High pressure",
+            "x": 12,
+            "y": 28,
+            "w": 22,
+            "h": 6
+          },
+          {
+            "id": "v1",
+            "answer": "Low velocity",
+            "x": 12,
+            "y": 42,
+            "w": 22,
+            "h": 6
+          },
+          {
+            "id": "p2",
+            "answer": "Low pressure",
+            "x": 62,
+            "y": 28,
+            "w": 22,
+            "h": 6
+          },
+          {
+            "id": "v2",
+            "answer": "High velocity",
+            "x": 62,
+            "y": 42,
+            "w": 22,
+            "h": 6
+          }
         ],
         "steps": [
-          { "id": "labels", "type": "label" },
+          {
+            "id": "labels",
+            "type": "label"
+          },
           {
             "id": "law",
             "type": "saq",
             "prompt": "Which law or principle is shown?",
             "answer": "Bernoulli's principle",
-            "accept": ["Bernoulli's equation", "Bernoulli", "Bernoulli’s principle"]
+            "accept": [
+              "Bernoulli's equation",
+              "Bernoulli",
+              "Bernoulli\u2019s principle"
+            ]
           },
           {
             "id": "uses",
             "type": "multi",
-            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "prompt": "Select all that apply \u2014 medical / clinical uses of this principle.",
             "options": [
               "Blood flow through a narrowed artery (stenosis)",
               "Venturi mask oxygen delivery",
@@ -49,9 +87,14 @@
               "Ultrasound Doppler shift",
               "Lens refraction"
             ],
-            "correct": [0, 1, 2]
+            "correct": [
+              0,
+              1,
+              2
+            ]
           }
-        ]
+        ],
+        "svg": "<svg viewBox=\"0 0 640 280\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<path d=\"M40,150 L230,150 L300,176 L440,176 L510,150 L600,150 L600,230 L510,230 L440,204 L300,204 L230,230 L40,230 Z\" fill=\"rgba(var(--accent-1-rgb),0.18)\" stroke=\"var(--accent-1)\" stroke-width=\"2\"/>\n<line x1=\"70\" y1=\"190\" x2=\"104\" y2=\"190\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"109.4,190 98.6,194.1 98.6,185.9\" fill=\"var(--accent-0)\"/>\n<line x1=\"150\" y1=\"190\" x2=\"184\" y2=\"190\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"189.4,190 178.6,194.1 178.6,185.9\" fill=\"var(--accent-0)\"/>\n<line x1=\"310\" y1=\"190\" x2=\"368\" y2=\"190\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"373.4,190 362.6,194.1 362.6,185.9\" fill=\"var(--accent-0)\"/>\n<line x1=\"370\" y1=\"190\" x2=\"428\" y2=\"190\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"433.4,190 422.6,194.1 422.6,185.9\" fill=\"var(--accent-0)\"/>\n<line x1=\"530\" y1=\"190\" x2=\"564\" y2=\"190\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"569.4,190 558.6,194.1 558.6,185.9\" fill=\"var(--accent-0)\"/>\n<rect x=\"127\" y=\"62\" width=\"16\" height=\"88\" fill=\"rgba(var(--accent-1-rgb),0.45)\"/>\n<line x1=\"127\" y1=\"40\" x2=\"127\" y2=\"150\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.5\"/>\n<line x1=\"143\" y1=\"40\" x2=\"143\" y2=\"150\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.5\"/>\n<rect x=\"362\" y=\"122\" width=\"16\" height=\"54\" fill=\"rgba(var(--accent-1-rgb),0.45)\"/>\n<line x1=\"362\" y1=\"40\" x2=\"362\" y2=\"176\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.5\"/>\n<line x1=\"378\" y1=\"40\" x2=\"378\" y2=\"176\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.5\"/>\n<rect x=\"547\" y=\"62\" width=\"16\" height=\"88\" fill=\"rgba(var(--accent-1-rgb),0.45)\"/>\n<line x1=\"547\" y1=\"40\" x2=\"547\" y2=\"150\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.5\"/>\n<line x1=\"563\" y1=\"40\" x2=\"563\" y2=\"150\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.5\"/>\n<line x1=\"150\" y1=\"62\" x2=\"362\" y2=\"62\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 4\"/>\n<line x1=\"378\" y1=\"122\" x2=\"420\" y2=\"122\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 4\"/>\n</svg>"
       }
     ]
   }
