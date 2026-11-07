@@ -3127,7 +3127,7 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
   }
 
     async function openMaterial(m, subject){
-    if(!m || !(m.bank || (Array.isArray(m.lectures) && m.lectures.length))){ portalToast('This material is locked'); return; }
+    if(!m || !(m.bank || (Array.isArray(m.lectures) && m.lectures.length) || (Array.isArray(m.extraBanks) && m.extraBanks.length))){ portalToast('This material is locked'); return; }
     __activeMaterial = Object.assign({}, m, { subjectName: subject && subject.name });
     if (typeof setFavicon === 'function') setFavicon(m.id);
     const gate = document.createElement('div');
@@ -3137,6 +3137,7 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
     document.body.appendChild(gate);
     try{
       if(Array.isArray(m.lectures) && m.lectures.length) await loadLectureSet(__activeMaterial);
+      else if(Array.isArray(m.extraBanks) && m.extraBanks.length) await loadBankWithExtras(m.bank, m.extraBanks);
       else await loadBank(m.bank);
       gate.remove();
       if(typeof unlockAudio === 'function') unlockAudio();
@@ -3220,7 +3221,7 @@ if(!document.getElementById('globalTimerMode').dataset.q) refreshTimerQuote(true
       cardsEl.appendChild(el);
     };
     materials.forEach(m=>{
-      const hasQuiz = !!(m.bank || (Array.isArray(m.lectures) && m.lectures.length));
+      const hasQuiz = !!(m.bank || (Array.isArray(m.lectures) && m.lectures.length) || (Array.isArray(m.extraBanks) && m.extraBanks.length));
       // study-only material (notes ready, quiz bank not yet): open, the card itself opens the notes
       const studyOnly = !hasQuiz && !!(m.study && ((Array.isArray(m.study.chapters) && m.study.chapters.length) || m.study.images));
       const locked = subject.locked || m.locked || !(hasQuiz || studyOnly || m.pt2Empty);
