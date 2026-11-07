@@ -299,7 +299,9 @@
 
   // one question solved in a run (quiz-engine.js), repeats included
   function questionSolved(bk, id) {
-    if (bk === MEDPHYS_BANK) medphysBump();
+    // medphys bump is done per solved step in quiz-engine onQuestionSolved
+    // (covers both normal questions and every step of a stepped question,
+    // and both medphys/pt2 and medphys/diagrams).
     if (!READY || !known[bk] || !known[bk][id]) return;
     var w = weekOfBank(bk); if (w) bump(w.week);
   }
@@ -510,5 +512,5 @@
   function labelSolved(set, pic, id, how, fresh) {
     check(false);
   }
-  global.PT2Unlocks = { has: function (k) { return !!unlocked()[k]; }, tally: tally, check: check, pictureSolved: pictureSolved, labelSolved: labelSolved, labelFresh: labelFresh, questionSolved: questionSolved, formulaSolved: formulaSolved, medphysCount: medphysCount, focusQuotes: focusQuotes, restQuotes: restQuotes, celebrateMedphys: celebrateMedphys, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? weekCount(w, sync(w)) : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
+  global.PT2Unlocks = { has: function (k) { return !!unlocked()[k]; }, tally: tally, check: check, pictureSolved: pictureSolved, labelSolved: labelSolved, labelFresh: labelFresh, questionSolved: questionSolved, formulaSolved: formulaSolved, medphysBump: medphysBump, medphysCount: medphysCount, focusQuotes: focusQuotes, restQuotes: restQuotes, celebrateMedphys: celebrateMedphys, paginate: paginate, count: function (wk) { var w = weekOf(wk || 'week11'); return w ? weekCount(w, sync(w)) : 0; }, weekDone: function (wk) { var w = weekOf(wk || 'week11'); return !!w && allDone(w, sync(w)); }, list: UNLOCKS, features: FEATURES, isLocked: isLocked };
 })(window);

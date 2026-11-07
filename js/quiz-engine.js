@@ -495,6 +495,7 @@ function expandDeck(deck){
         e.type='label';
         e.labels=Array.isArray(q.labels)?q.labels: (Array.isArray(st.labels)?st.labels:[]);
         e.image=q.image||st.image||'';
+        e.svg=q.svg||st.svg||'';
         e.alt=q.alt||st.alt||'';
         e.credit=q.credit||st.credit||'';
         e.creditUrl=q.creditUrl||st.creditUrl||'';
@@ -515,6 +516,7 @@ function expandDeck(deck){
       // NEW: preserve explicit multi type
       if(st.type==='multi') e.type='multi';
       if(q.image){ e.image=q.image; e.alt=q.alt||''; e.credit=q.credit||''; e.creditUrl=q.creditUrl||''; if(q.imageSize) e.imageSize=q.imageSize; if(Array.isArray(q.images) && q.images.length) e.images=q.images; }
+      if(q.svg) e.svg=q.svg;
       out.push(e);
     });
   });
@@ -1130,42 +1132,6 @@ async function loadBank(path){
   const data=await res.json();
   ingestBank(data, path);
   return data;
-}
-/* Append-style: main bank + extraBanks whose cards are appended after the main cards.
-   Catalog material: "extraBanks": ["banks/medphys/diagrams.json"] or [{bank, title?}]. */
-async function loadBankWithExtras(mainPath, extras){
-  if(window.StudyMigrate && typeof StudyMigrate.runAll==='function'){
-    try{ await StudyMigrate.runAll(); }catch(e){ console.warn('[quiz] migration skipped', e); }
-  }
-  const mainRes = await fetch(mainPath, {cache:'no-cache'});
-  if(!mainRes.ok) throw new Error('bank HTTP '+mainRes.status);
-  const main = await mainRes.json();
-  ingestBank(main, mainPath);
-  const extraList = Array.isArray(extras) ? extras : [];
-  for(const ex of extraList){
-    const path = typeof ex === 'string' ? ex : (ex && ex.bank);
-    if(!path) continue;
-    try{
-      const r = await fetch(path, {cache:'no-cache'});
-      if(!r.ok){ console.warn('[quiz] extra bank HTTP '+r.status, path); continue; }
-      const data = await r.json();
-      normalizeBankMatching(data);
-      const qs = buildAllQuestions(data);
-      // Give them a distinct bank key so progress can be tracked separately if desired
-      const bk = bankKeyOfPath(path);
-      qs.forEach(q => { q.__bankKey = bk; });
-      ALLQ.push(...qs);
-      // Build cards from this extra bank and append
-      const prevBANK = BANK, prevKEY = BANK_KEY;
-      BANK = data; BANK_KEY = bk;
-      const extraCards = buildCards(qs);
-      BANK = prevBANK; BANK_KEY = prevKEY;
-      extraCards.forEach(c => { c.bankKey = bk; c.bankPath = path; c.bankData = data; });
-      CARDS.push(...extraCards);
-    }catch(e){ console.warn('[quiz] extra bank failed', path, e); }
-  }
-  updateCounters();
-  renderSets();
 }
 
 (function wireQuizPrefs(){
@@ -2050,10 +2016,7 @@ function labelLight(slot){
 }
 function labelFigureHTML(q, a, review){
   const slots=(a&&a.slots)||{};
-  const media = q.svg
-    ? q.svg
-    : '<img class="label-img" src="'+escapeHtml(q.image||'')+'" alt="'+escapeHtml(q.alt||'')+'" draggable="false">';
-  let h='<div class="label-figure'+(review?' in-review':'')+'">'+media+(review?'':labelLeadersSVG(q));
+  let h='<div class="label-figure'+(review?' in-review':'')+'"><img class="label-img" src="'+escapeHtml(q.image||'')+'" alt="'+escapeHtml(q.alt||'')+'" draggable="false">'+(review?'':labelLeadersSVG(q));
   (q.labels||[]).forEach(l=>{
     const done=slots[l.id]!=null;
     const style='left:'+l.x+'%;top:'+l.y+'%;width:'+l.w+'%;height:'+l.h+'%';
@@ -4434,17 +4397,12 @@ function onQuestionSolved(q) {
   } else {
     markSolved(q);
   }
+  // Every solved step (and every normal question) counts toward Medical Physics
+  // background unlocks when the active bank is medphys/pt2 or medphys/diagrams.
+  try {
+    var bk = bankId();
+    if (bk === 'medphys/pt2' || bk === 'medphys/diagrams') {
+      if (window.PT2Unlocks && PT2Unlocks.medphysBump) PT2Unlocks.medphysBump();
+    }
+  } catch (e) {}
 }
-
-(function () {
-  var KEY = 'pt2_medphys_solves_v1';
-  var orig = onQuestionSolved;
-  onQuestionSolved = function (q) {
-    try {
-      var o = JSON.parse(localStorage.getItem(KEY) || '{}');
-      o.n = (o.n || 0) + 1;
-      localStorage.setItem(KEY, JSON.stringify(o));
-    } catch (e) {}
-    return orig.apply(this, arguments);
-  };
-})();
