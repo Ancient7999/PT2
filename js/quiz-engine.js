@@ -481,8 +481,6 @@ function expandDeck(deck){
   const out=[], typeOnly=typeOnlyOn();
   deck.forEach(q=>{
     if(!isStepped(q)){ out.push(q); return; }
-    // display order: steps marked showFirst lead (they can be appended to the file with a new
-    // id, so the saved step keys and the per-index choice orders of older steps stay valid)
     const raw=q.steps||[];
     const steps=raw.filter(st=>st&&st.showFirst).concat(raw.filter(st=>!(st&&st.showFirst)));
     steps.forEach((st,k)=>{
@@ -492,11 +490,30 @@ function expandDeck(deck){
         q:q.q, prompt:st.prompt||'', options:st.options||[], correct:st.correct, __perm:st.__perm,
         cat:q.cat, explain:(st&&st.explain)||q.explain
       };
+      // NEW: label step (uses parent image + labels)
+      if(st.type==='label'){
+        e.type='label';
+        e.labels=Array.isArray(q.labels)?q.labels: (Array.isArray(st.labels)?st.labels:[]);
+        e.image=q.image||st.image||'';
+        e.alt=q.alt||st.alt||'';
+        e.credit=q.credit||st.credit||'';
+        e.creditUrl=q.creditUrl||st.creditUrl||'';
+        if(q.imageSize) e.imageSize=q.imageSize;
+        delete e.options; delete e.correct; delete e.__perm;
+        out.push(e);
+        return;
+      }
       if(typeOnly && !isTypedStepDef(st) && st.typeAs && st.typeAs.answer){
         e.type='saq'; e.answer=st.typeAs.answer; e.accept=Array.isArray(st.typeAs.accept)?st.typeAs.accept.slice():[]; e.__stepId+='~t';
         delete e.options; delete e.correct; delete e.__perm;
       }
-      if(isTypedStepDef(st)){ e.type='saq'; e.answer=st.answer; e.accept=Array.isArray(st.accept)?st.accept.slice():[]; if(st.caseSensitive) e.caseSensitive=true; if(st.complete!=null) e.complete=st.complete; delete e.options; delete e.correct; delete e.__perm; }
+      if(isTypedStepDef(st)){
+        e.type='saq'; e.answer=st.answer; e.accept=Array.isArray(st.accept)?st.accept.slice():[];
+        if(st.caseSensitive) e.caseSensitive=true; if(st.complete!=null) e.complete=st.complete;
+        delete e.options; delete e.correct; delete e.__perm;
+      }
+      // NEW: preserve explicit multi type
+      if(st.type==='multi') e.type='multi';
       if(q.image){ e.image=q.image; e.alt=q.alt||''; e.credit=q.credit||''; e.creditUrl=q.creditUrl||''; if(q.imageSize) e.imageSize=q.imageSize; if(Array.isArray(q.images) && q.images.length) e.images=q.images; }
       out.push(e);
     });
