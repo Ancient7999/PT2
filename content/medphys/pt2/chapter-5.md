@@ -6,7 +6,7 @@
 
 ### What this chapter covers
 
-How light **reflects** from mirrors, how it **bends**, or refracts, when it crosses into a new material, how it gets **trapped** inside glass by total internal reflection, the idea behind optical fibres and endoscopes, and how **lenses** form images (including combinations of lenses). It ends with the lens / mirror equation, magnification, and the combination formulas.
+How light **reflects** from mirrors, how it **bends** (refracts) when it crosses into a new material, and how it gets **trapped** inside a denser medium by total internal reflection.
 
 ### Ray optics vs wave optics
 
@@ -23,12 +23,8 @@ How light **reflects** from mirrors, how it **bends**, or refracts, when it cros
 | Refractive index | n = c / v; higher n → slower light |
 | Snell's law | n₁ sin θ₁ = n₂ sin θ₂ |
 | Total internal reflection | Dense → less dense, beyond the critical angle |
-| Optical fibres | Core n₁ > cladding n₂; endoscopes |
-| Thin lenses | Convex lenses converge and concave lenses diverge; P = 1/f |
-| Lens / mirror equation | 1/do + 1/di = 1/f; m = hi/ho = −di/do |
-| Combination of lenses | \(\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{r}{f_1 f_2}\); in contact: \(\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2}\) |
 
-**Study tip:** for every rule, picture the **ray diagram**. Almost every answer in this chapter comes from three things: the **normal**, the **focal point F**, and the **sign** of a number.
+**Study tip:** for every rule, picture the **ray diagram**. Almost every answer comes from the **normal** and the angles measured from it.
 
 ---
 
@@ -297,300 +293,7 @@ If the angle of incidence is **greater than the critical angle**, no light gets 
 
 ---
 
-## 7. Optical fibres & medical endoscopes
-
-### What an optical fibre is
-
-An optical fibre (OF) cable is a **thin, long core (wire) of glassy material**:
-
-- **Core:** the dense central part with a **high** index of refraction, **n₁**.
-- **Cladding:** around the core, with a **low** index of refraction, **n₂**.
-- **n₁ > n₂**, so light hitting the core–cladding wall at a large angle undergoes **TIR** again and again and travels along the fibre.
-- Real cables add a coating, a strength member and an outer jacket for protection.
-
-<div class="optics-diagram" role="img" aria-label="Optical fibre: light zig-zags along the high-index core by total internal reflection at the cladding">
-<svg viewBox="0 0 640 248" xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;display:block;max-width:640px;margin:0.6rem auto">
-<rect x="30" y="70" width="580" height="120" rx="14" fill="rgba(var(--accent-6-rgb),0.14)" stroke="var(--accent-6)" stroke-width="2"/><rect x="30" y="100" width="580" height="60" fill="rgba(var(--accent-1-rgb),0.22)" stroke="var(--accent-1)" stroke-width="1.5"/><line x1="30" y1="145" x2="75" y2="100" stroke="var(--accent-0)" stroke-width="2.4"/><polygon points="55.9,119.1 51.7,128.4 46.6,123.3" fill="var(--accent-0)"/><line x1="75" y1="100" x2="165" y2="160" stroke="var(--accent-0)" stroke-width="2.4"/><polygon points="124,132.7 114,130.3 118,124.3" fill="var(--accent-0)"/><line x1="165" y1="160" x2="255" y2="100" stroke="var(--accent-0)" stroke-width="2.4"/><polygon points="214,127.3 208,135.7 204,129.7" fill="var(--accent-0)"/><line x1="255" y1="100" x2="345" y2="160" stroke="var(--accent-0)" stroke-width="2.4"/><polygon points="304,132.7 294,130.3 298,124.3" fill="var(--accent-0)"/><line x1="345" y1="160" x2="435" y2="100" stroke="var(--accent-0)" stroke-width="2.4"/><polygon points="394,127.3 388,135.7 384,129.7" fill="var(--accent-0)"/><line x1="435" y1="100" x2="525" y2="160" stroke="var(--accent-0)" stroke-width="2.4"/><polygon points="484,132.7 474,130.3 478,124.3" fill="var(--accent-0)"/><line x1="525" y1="160" x2="610" y2="103.3" stroke="var(--accent-0)" stroke-width="2.4"/><polygon points="571.5,129 565.5,137.3 561.5,131.3" fill="var(--accent-0)"/><line x1="610" y1="103.3" x2="632" y2="88.7" stroke="var(--accent-0)" stroke-width="2.4"/><polygon points="632,88.7 626,97 622,91" fill="var(--accent-0)"/><text x="320" y="90" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">cladding · low index n₂</text><text x="320" y="180" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">cladding · low index n₂</text><line x1="140" y1="52" x2="140" y2="100" stroke="var(--col-text-muted)" stroke-width="1.2" stroke-dasharray="3 3"/><text x="148" y="50" text-anchor="start" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12" font-weight="600">core · high index n₁</text><text x="320" y="236" text-anchor="middle" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="11">n₁ > n₂ · the ray hits the wall above the critical angle → TIR at every bounce</text><text x="30" y="24" text-anchor="start" fill="var(--accent-0)" font-family="Outfit,sans-serif" font-size="12">light in</text><text x="610" y="24" text-anchor="end" fill="var(--accent-0)" font-family="Outfit,sans-serif" font-size="12">light out, even round bends</text>
-</svg>
-</div>
-
-### Medical endoscopes
-
-- **Endoscopes** are instruments used to **view the inside of the body** by inserting OF cables, because the fibres are **thin and flexible**.
-- **Total internal reflection is the principle behind endoscopes.**
-- **One bundle** of fibres carries **light** to the area, while **another bundle** carries the **image** of the area back to the monitor.
-- Light is transmitted along the fibre **even if it is not straight**.
-- An image can be formed using **multiple small fibres**. Each fibre carries one small part of the picture.
-- Example: an endoscope passed through the oesophagus into the **stomach**, with the view shown on a TV monitor.
-
-### Other medical uses
-
-Optical fibres are used in **biomedical surgical lasers**, **endoscope lasers** and **microscope lasers**.
-
----
-
-## 8. Thin lenses & ray tracing
-
-### Thin lenses
-
-Thin lenses are **transparent objects with refracting surfaces** whose **thickness is small** compared to their radius of curvature.
-
-| | Convex, converging lens | Concave, diverging lens |
-|---|---|---|
-| Shape | **Thicker at the centre** | **Thinner at the centre**, thicker at the edge |
-| Effect on rays | Brings rays **together**: converge | **Spreads** rays out: diverge |
-| Focal length / power | Positive (+) | Negative (−) |
-| Shapes | Double convex, planoconvex, convex meniscus | Double concave, planoconcave, concave meniscus |
-
-### Focal point of a diverging lens
-
-A diverging, concave lens makes parallel light **diverge**. Its focal point is the point where the diverging rays **would meet if projected back**, on the same side as the incoming light. That is why its focal length is negative.
-
-### Power of a lens
-
-```
-P = 1 / f   ← f in metres
-Unit: dioptre, D      1 D = 1 m⁻¹
-Convex lens: P positive   ·   Concave lens: P negative
-```
-
-**How P is made:** power is just **one over the focal length in metres**. A short focal length bends light strongly, so it has a big power.
-
-### Worked examples
-
-**Power of a lens with f = 30 cm**
-
-```
-f = 30 cm = 0.30 m
-P = 1 / 0.30 = 3.33 D   ← positive → convex lens
-```
-
-**Focal length of a concave lens with P = −5 D**
-
-```
-f = 1 / P = 1 / (−5) = −0.2 m   ← = −20 cm; negative → diverging
-```
-
-### Ray Tracing: The Three Key Rays
-
-Ray tracing for thin lenses is like ray tracing for mirrors. Use the **top of the object** and draw:
-
-1. A ray that comes in **parallel** to the axis → exits **through the focal point**.
-2. A ray that comes in **through the focal point** → exits **parallel** to the axis.
-3. A ray that goes **through the centre** of the lens → goes straight on, **undeflected**.
-
-Where the rays meet, or seem to come from, is the top of the image.
-
-<div class="optics-diagram" role="img" aria-label="Convex lens ray diagram with the three key rays; object beyond 2F gives a real, inverted, smaller image">
-<svg viewBox="0 0 640 302" xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;display:block;max-width:640px;margin:0.6rem auto">
-<line x1="40" y1="150" x2="620" y2="150" stroke="var(--col-text-muted)" stroke-width="1.2" stroke-dasharray="4 4"/><path d="M330,55 Q352,150 330,245 Q308,150 330,55 Z" fill="rgba(var(--accent-6-rgb),0.2)" stroke="var(--accent-6)" stroke-width="2"/><line x1="130" y1="150" x2="130" y2="94" stroke="var(--accent-4)" stroke-width="3"/><polygon points="130,87.4 134.9,100.6 125,100.6" fill="var(--accent-4)"/><text x="130" y="82" text-anchor="middle" fill="var(--accent-4)" font-family="Outfit,sans-serif" font-size="12">object</text><line x1="463.3" y1="150" x2="463.3" y2="187.3" stroke="var(--accent-3)" stroke-width="3"/><polygon points="463.3,193.9 458.4,180.7 468.3,180.7" fill="var(--accent-3)"/><text x="463.3" y="207.3" text-anchor="middle" fill="var(--accent-3)" font-family="Outfit,sans-serif" font-size="12">real image</text><line x1="130" y1="94" x2="330" y2="94" stroke="var(--accent-0)" stroke-width="2"/><polygon points="234.8,94 225.2,97.6 225.2,90.4" fill="var(--accent-0)"/><line x1="330" y1="94" x2="600" y2="283" stroke="var(--accent-0)" stroke-width="2"/><polygon points="468.9,191.3 459,188.7 463.1,182.8" fill="var(--accent-0)"/><line x1="130" y1="94" x2="330" y2="187.3" stroke="var(--accent-1)" stroke-width="2"/><polygon points="234.3,142.7 224.1,141.9 227.2,135.4" fill="var(--accent-1)"/><line x1="330" y1="187.3" x2="600" y2="187.3" stroke="var(--accent-1)" stroke-width="2"/><polygon points="469.8,187.3 460.2,190.9 460.2,183.7" fill="var(--accent-1)"/><line x1="130" y1="94" x2="600" y2="225.6" stroke="var(--accent-2)" stroke-width="2"/><polygon points="369.6,161.1 359.4,162 361.3,155" fill="var(--accent-2)"/><circle cx="170" cy="150" r="3.5" fill="var(--col-text-main)"/><text x="170" y="170" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12" font-weight="600">2F</text><circle cx="250" cy="150" r="3.5" fill="var(--col-text-main)"/><text x="250" y="170" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12" font-weight="600">F</text><circle cx="410" cy="150" r="3.5" fill="var(--col-text-main)"/><text x="410" y="170" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12" font-weight="600">F′</text><circle cx="490" cy="150" r="3.5" fill="var(--col-text-main)"/><text x="490" y="170" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12" font-weight="600">2F′</text><text x="330" y="24" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="13" font-weight="600">Convex, converging lens · the three key rays</text><text x="40" y="262" text-anchor="start" fill="var(--accent-0)" font-family="Space Mono,monospace" font-size="11">1 · parallel → through F′</text><text x="40" y="278" text-anchor="start" fill="var(--accent-1)" font-family="Space Mono,monospace" font-size="11">2 · through F → parallel</text><text x="40" y="294" text-anchor="start" fill="var(--accent-2)" font-family="Space Mono,monospace" font-size="11">3 · through the centre → straight on</text>
-</svg>
-</div>
-
-### Images formed by a convex lens
-
-| Object position | Image position | Real or virtual | Upright or inverted | Size |
-|---|---|---|---|---|
-| Distant object | At F | Real | Inverted | Smaller |
-| At 2F | At 2F, other side | Real | Inverted | Same size |
-| Between 2F and F | Beyond 2F, other side | Real | Inverted | Larger |
-| At F | No image: the refracted rays are parallel | — | — | — |
-| Between F and the lens | Behind the object, on the same side of the lens | Virtual | Upright | Larger |
-
-### Concave lens and convex mirror
-
-For a diverging lens we use the **same three rays**. The image is **always virtual, upright and smaller**, between the object and the lens, wherever the object is.
-
-<div class="optics-diagram" role="img" aria-label="Concave lens: the image is always virtual, upright, smaller, between the object and the lens">
-<svg viewBox="0 0 640 302" xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;display:block;max-width:640px;margin:0.6rem auto">
-<line x1="40" y1="165" x2="620" y2="165" stroke="var(--col-text-muted)" stroke-width="1.2" stroke-dasharray="4 4"/><path d="M314,70 L346,70 Q333,165 346,260 L314,260 Q327,165 314,70 Z" fill="rgba(var(--accent-6-rgb),0.2)" stroke="var(--accent-6)" stroke-width="2"/><line x1="180" y1="165" x2="180" y2="105" stroke="var(--accent-4)" stroke-width="3"/><polygon points="180,98.4 184.9,111.6 175.1,111.6" fill="var(--accent-4)"/><text x="174" y="95" text-anchor="end" fill="var(--accent-4)" font-family="Outfit,sans-serif" font-size="12">object</text><line x1="270" y1="165" x2="270" y2="141" stroke="var(--accent-3)" stroke-width="3" stroke-dasharray="4 3"/><polygon points="270,134.4 274.9,147.6 265.1,147.6" fill="var(--accent-3)"/><text x="276" y="207" text-anchor="middle" fill="var(--accent-3)" font-family="Outfit,sans-serif" font-size="12">virtual image</text><line x1="270" y1="169" x2="274" y2="193" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="2 2"/><line x1="180" y1="105" x2="330" y2="105" stroke="var(--accent-0)" stroke-width="2"/><polygon points="259.8,105 250.2,108.6 250.2,101.4" fill="var(--accent-0)"/><line x1="330" y1="105" x2="411.7" y2="56" stroke="var(--accent-0)" stroke-width="2"/><polygon points="374.9,78 368.6,86.1 364.9,79.9" fill="var(--accent-0)"/><line x1="230" y1="165" x2="330" y2="105" stroke="var(--accent-0)" stroke-width="1.4" stroke-dasharray="5 4"/><line x1="180" y1="105" x2="600" y2="273" stroke="var(--accent-2)" stroke-width="2"/><polygon points="394.5,190.8 384.2,190.6 386.9,183.9" fill="var(--accent-2)"/><circle cx="230" cy="165" r="3.5" fill="var(--col-text-main)"/><text x="230" y="185" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12" font-weight="600">F</text><circle cx="430" cy="165" r="3.5" fill="var(--col-text-main)"/><text x="430" y="185" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12" font-weight="600">F′</text><text x="330" y="22" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="13" font-weight="600">Concave, diverging lens</text><text x="330" y="40" text-anchor="middle" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="11">image: virtual, upright, smaller, between the object and the lens</text><text x="40" y="292" text-anchor="start" fill="var(--col-text-muted)" font-family="Space Mono,monospace" font-size="10.5">parallel ray leaves as if from F, dashed back-line · centre ray goes straight on</text>
-</svg>
-</div>
-
-| Object position | Image position | Real or virtual | Upright or inverted | Size |
-|---|---|---|---|---|
-| Anywhere, concave lens | Between the object and the lens, same side | Virtual | Upright | Smaller |
-| Anywhere, convex mirror | Behind the mirror | Virtual | Upright | Smaller |
-
-**Concave lens and convex mirror always make a virtual, upright and small image**, as in the car side mirror.
-
-### Mirrors and lenses side by side
-
-| Converging | Diverging |
-|---|---|
-| Concave **mirror** · convex **lens** | Convex **mirror** · concave **lens** |
-| f positive | f negative |
-| Real inverted image when the object is beyond F | Always virtual, upright, smaller |
-| Virtual, upright, larger image when the object is inside F | — |
-| Mirror: C = 2f plays the role of the lens's 2F | — |
-
----
-
-## 9. Thin lens equation & magnification
-
-### The thin lens equation
-
-The thin lens equation has the same form as the mirror equation:
-
-```
-1/do + 1/di = 1/f
-do = object distance
-di = image distance
-f  = focal length
-```
-
-```example
-Given do = 15 cm, f = 10 cm
-1/di = 1/10 − 1/15 = 3/30 − 2/30 = 1/30
-di = +30 cm
-```
-
-**How it is used:** put in the two distances you know, with their signs, and solve for the third. Use the **same units** for all three: all cm or all m.
-
-### Magnification
-
-The magnification is:
-
-```
-m = hi / ho = −di / do
-hi = height of the image
-ho = height of the object
-```
-
-```example
-Given do = 15 cm, di = 30 cm, ho = 1 cm
-m = −di / do = −30 / 15 = −2
-hi = m × ho = −2 × 1 = −2 cm → inverted, twice the size
-```
-
-You may also see the simple size form:
-
-```
-M = size of image / size of object
-```
-
-**How they relate:** M is just the **size ratio**, with no sign: M = |m| = |hi| / |ho| = |di| / |do|. The **m** form **carries a sign** that also tells you the orientation:
-
-- **m negative** → image **inverted**, and real for one lens or mirror.
-- **m positive** → image **upright** and virtual.
-- |m| > 1 → **larger**; |m| < 1 → **smaller**; |m| = 1 → **same size**.
-
-### Sign conventions
-
-For lenses, the conventions are slightly different from the mirror ones:
-
-1. The **focal length** is **positive for converging** lenses and **negative for diverging** lenses.
-2. The **height of the image** is **positive if the image is upright** and **negative** when it is inverted.
-
-Also needed to use the equation:
-
-- The **object distance do** is positive for a real object in front of the lens.
-- The **image distance di** is **positive for a real image** on the opposite side of a lens and **negative for a virtual image** on the same side as the object.
-
-For **mirrors**, the same equation works with f **positive for concave** and **negative for convex**, and di positive for a real image in front of the mirror, negative for a virtual image behind it.
-
-### Worked examples
-
-**Object 20 cm in front of a convex lens, f = 10 cm. Image distance?**
-
-```
-1/do + 1/di = 1/f
-1/20 + 1/di = 1/10
-1/di = 1/10 − 1/20 = 2/20 − 1/20 = 1/20
-di = +20 cm
-m = −di/do = −20/20 = −1
-```
-
-di is positive → **real image, 20 cm on the other side**. m = −1 → **inverted, same size**. This matches the table: the object is at **2F**, because 20 cm = 2 × 10 cm, so the image is at 2F, real, inverted, same size.
-
-**Object 10 cm in front of a convex lens, image 20 cm from the lens. Focal length?**
-
-```
-1/f = 1/do + 1/di = 1/10 + 1/20 = 2/20 + 1/20 = 3/20
-f = 20/3 ≈ 6.67 cm
-```
-
-f is positive → converging, as expected for a convex lens. This takes the image as **real**, on the other side, so di = +20 cm. Always follow the sign conventions: if the image were virtual, di would be −20 cm.
-
-### Practice example: mirror
-
-**Object 30 cm in front of a concave mirror, f = 10 cm**
-
-```
-1/di = 1/f − 1/do = 1/10 − 1/30 = 3/30 − 1/30 = 2/30
-di = +15 cm
-m = −di/do = −15/30 = −0.5
-```
-
-Real image 15 cm in front of the mirror, inverted, half the size. The object at 30 cm is beyond C, since r = 20 cm, so the image is between C and F, as the concave mirror table says.
-
----
-
-## 10. Combination of lenses
-
-Two thin lenses of focal lengths *f*₁ and *f*₂ placed a distance *r* apart have a combined focal length *f* given by:
-
-\[
-\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{r}{f_1 f_2}
-\]
-
-\[
-P = P_1 + P_2 - r P_1 P_2
-\]
-
-When the lenses are in contact (*r* = 0):
-
-\[
-\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2}, \qquad P = P_1 + P_2
-\]
-
-**Notes:**
-- Use consistent units. For the separation formula, *f*₁, *f*₂ and *r* must all be in the same unit (usually metres if working with power, or all cm if staying with focal lengths).
-- Power *P* is always in dioptres when *f* is in metres.
-- Sign of *f* (and therefore *P*) follows the usual convention: positive for converging, negative for diverging.
-
-### Worked examples
-
-**Two convex lenses, *f*₁ = 20 cm and *f*₂ = 30 cm, separated by *r* = 10 cm. Find the equivalent focal length.**
-
-Convert to metres for clarity (or keep everything in cm and be careful):
-
-```
-f₁ = 0.20 m,  f₂ = 0.30 m,  r = 0.10 m
-1 / f = 1 / 0.20 + 1 / 0.30 − 0.10 / (0.20 × 0.30) = 5 + 3.333 − 1.667 = 6.666
-f = 1 / 6.666 ≈ 0.150 m = 15.0 cm
-```
-
-**Answer:** approximately 15.0 cm (converging).
-
-**Two lenses of power *P*₁ = −2.0 D and *P*₂ = +3.5 D placed in contact. Find the power and focal length of the combination.**
-
-Since *r* = 0:
-
-```
-P = P₁ + P₂ = −2.0 + 3.5 = +1.5 D
-f = 1 / P = 1 / 1.5 ≈ 0.667 m = 66.7 cm
-```
-
-**Answer:** *P* = +1.5 D, *f* ≈ 0.667 m (converging combination).
-
----
-
-## 11. Clinical / medical links
-
-| Physics | Medicine |
-|---------|----------|
-| Total internal reflection in optical fibres | Endoscopes: view the stomach and other organs without open surgery |
-| Two fibre bundles: light in, image out | Light to the area + picture to the monitor |
-| Fibres carry light round bends | Flexible scopes follow the oesophagus, bowel, airways |
-| Fibres carry laser light | Surgical lasers, endoscope lasers, microscope lasers |
-| Lens power in dioptres: P = 1/f | Glasses and contact lens prescriptions: + for convex, − for concave |
-| Concave mirror, object inside F → upright, magnified | Magnified view when the mirror is close, as in shaving or make-up mirrors |
-| Convex mirror → wide view, smaller image | Car side mirrors and safety mirrors |
-
----
-
-## 12. Formula sheet — Chapter 5
+## 7. Formula sheet — up to Total Internal Reflection
 
 ```
 Reflection: θi = θr                     ← both measured from the normal, at 90° to the surface
@@ -600,35 +303,19 @@ Refractive index: n = c / v             ← c = 3 × 10⁸ m/s; higher n → slo
 Snell's law: n₁ sin θ₁ = n₂ sin θ₂      ← angles from the normal
 Critical angle: sin θc = n₂ / n₁        ← dense (n₁) → rare (n₂), θ₂ = 90°
 TIR: n₁ > n₂ and θ > θc                 ← all light reflects back inside
-Lens power: P = 1 / f                   ← f in metres; dioptre D = m⁻¹; convex +, concave −
-Thin lens / mirror: 1/do + 1/di = 1/f   ← same equation for both
-Magnification: m = hi / ho = −di / do   ← sign: − inverted, + upright
-Size ratio: M = image size / object size = |m|
-Combination (separated by r): 1 / f = 1 / f₁ + 1 / f₂ − r / (f₁ f₂)
-Combination (in contact, r=0): 1 / f = 1 / f₁ + 1 / f₂ ; P = P₁ + P₂
 ```
 
-### Images at a glance
+### Images at a glance (mirrors only)
 
-- Concave mirror / convex lens, object **beyond F** → **real, inverted**; beyond C (2F) smaller, at C (2F) same size, between C (2F) and F larger
-- Concave mirror / convex lens, object **at F** → **no image**, because the rays leave parallel
-- Concave mirror / convex lens, object **inside F** → **virtual, upright, larger**
-- Convex mirror / concave lens, **anywhere** → **virtual, upright, smaller**
 - Plane mirror → **virtual, upright, same size**, do = di
+- Concave mirror, object **beyond F** → **real, inverted**
+- Concave mirror, object **inside F** → **virtual, upright, larger**
+- Convex mirror, **anywhere** → **virtual, upright, smaller**
 
 ### Key Points to Remember
 - Ray optics treats light as straight-line rays; wave optics treats light as a wave.  
 - Every angle is measured from the **normal**, the line at 90° to the surface.  
 - Entering a medium with a higher n, the ray bends **toward** the normal; entering a lower n, it bends **away**.  
 - Total internal reflection needs light going from a **denser to a rarer** medium at an angle **larger than the critical angle**.  
-- Concave **mirrors** and convex **lenses** converge; convex **mirrors** and concave **lenses** diverge.  
-- **Converging: f and P are positive. Diverging: f and P are negative.**  
-- **A negative m means the image is inverted**; a positive m means it is upright.  
-- A convex car mirror gives a smaller image, so objects are closer than they appear.  
-
-### Medical Applications
-- An endoscope uses optical fibres, which work by **total internal reflection**.  
-- One fibre bundle carries **light in**; another carries the **image out**.  
-- Fibres are thin and flexible and still carry light round bends.  
-- Fibres also deliver **surgical laser** light.  
-- Lens prescriptions are given in **dioptres**: + for convex, − for concave lenses.  
+- Concave mirrors converge; convex mirrors diverge.  
+- f = r/2 for spherical mirrors.
