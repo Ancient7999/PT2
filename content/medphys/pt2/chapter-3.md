@@ -824,17 +824,17 @@ Re < 2000 → **laminar**. If the speed doubles (for example through a narrowing
 <rect x="300" y="155" width="145" height="75" fill="rgba(var(--accent-1-rgb),0.4)" stroke="var(--accent-1)" stroke-width="1.5"/>
 <text x="372" y="198" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="14" font-weight="600">H₂O</text>
 
-<!-- Water tube 1 (LEFT): thick (28px), liquid just above reservoir (~y=148) -->
+<!-- Water tube 1 (LEFT): thick (28px), liquid a bit above reservoir (~y=135) -->
 <line x1="312" y1="70" x2="312" y2="230" stroke="var(--col-text-main)" stroke-width="2.2"/>
 <line x1="340" y1="70" x2="340" y2="230" stroke="var(--col-text-main)" stroke-width="2.2"/>
-<path d="M312,148 Q326,158 340,148" fill="none" stroke="var(--accent-1)" stroke-width="2.4"/>
-<rect x="313" y="148" width="26" height="7" fill="rgba(var(--accent-1-rgb),0.7)"/>
+<path d="M312,135 Q326,145 340,135" fill="none" stroke="var(--accent-1)" stroke-width="2.4"/>
+<rect x="313" y="135" width="26" height="20" fill="rgba(var(--accent-1-rgb),0.7)"/>
 
-<!-- Water tube 2 (RIGHT): thin (10px), liquid higher (~y=95) -->
+<!-- Water tube 2 (RIGHT): thin (10px), liquid lower (~y=115) -->
 <line x1="370" y1="70" x2="370" y2="230" stroke="var(--col-text-main)" stroke-width="1.3"/>
 <line x1="380" y1="70" x2="380" y2="230" stroke="var(--col-text-main)" stroke-width="1.3"/>
-<path d="M370,95 Q375,103 380,95" fill="none" stroke="var(--accent-1)" stroke-width="1.6"/>
-<rect x="371" y="95" width="8" height="60" fill="rgba(var(--accent-1-rgb),0.55)"/>
+<path d="M370,115 Q375,123 380,115" fill="none" stroke="var(--accent-1)" stroke-width="1.6"/>
+<rect x="371" y="115" width="8" height="40" fill="rgba(var(--accent-1-rgb),0.55)"/>
 
 <text x="372" y="250" text-anchor="middle" fill="var(--accent-1)" font-family="Outfit,sans-serif" font-size="11">water rises · concave</text>
 
@@ -845,8 +845,8 @@ Re < 2000 → **laminar**. If the speed doubles (for example through a narrowing
 <!-- Mercury tube (depressed) -->
 <line x1="525" y1="70" x2="525" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
 <line x1="538" y1="70" x2="538" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
-<path d="M525,182 Q531.5,174 538,182" fill="none" stroke="var(--accent-4)" stroke-width="2"/>
-<rect x="526" y="182" width="11" height="48" fill="rgba(var(--accent-4-rgb),0.5)"/>
+<path d="M525,170 Q531.5,162 538,170" fill="none" stroke="var(--accent-4)" stroke-width="2"/>
+<rect x="526" y="170" width="11" height="60" fill="rgba(var(--accent-4-rgb),0.5)"/>
 
 <text x="540" y="250" text-anchor="middle" fill="var(--accent-4)" font-family="Outfit,sans-serif" font-size="11">mercury falls · convex</text>
 
@@ -930,17 +930,17 @@ A soap film or soap bubble has **two** surfaces. The force is shared across both
 <rect x="300" y="155" width="145" height="75" fill="rgba(var(--accent-1-rgb),0.4)" stroke="var(--accent-1)" stroke-width="1.5"/>
 <text x="372" y="198" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="14" font-weight="600">H₂O</text>
 
-<!-- Water tube 1 (LEFT): thick (28px), liquid just above reservoir (~y=148) -->
+<!-- Water tube 1 (LEFT): thick (28px), liquid a bit above reservoir (~y=135) -->
 <line x1="312" y1="70" x2="312" y2="230" stroke="var(--col-text-main)" stroke-width="2.2"/>
 <line x1="340" y1="70" x2="340" y2="230" stroke="var(--col-text-main)" stroke-width="2.2"/>
-<path d="M312,148 Q326,158 340,148" fill="none" stroke="var(--accent-1)" stroke-width="2.4"/>
-<rect x="313" y="148" width="26" height="7" fill="rgba(var(--accent-1-rgb),0.7)"/>
+<path d="M312,135 Q326,145 340,135" fill="none" stroke="var(--accent-1)" stroke-width="2.4"/>
+<rect x="313" y="135" width="26" height="20" fill="rgba(var(--accent-1-rgb),0.7)"/>
 
-<!-- Water tube 2 (RIGHT): thin (10px), liquid higher (~y=95) -->
+<!-- Water tube 2 (RIGHT): thin (10px), liquid lower (~y=115) -->
 <line x1="370" y1="70" x2="370" y2="230" stroke="var(--col-text-main)" stroke-width="1.3"/>
 <line x1="380" y1="70" x2="380" y2="230" stroke="var(--col-text-main)" stroke-width="1.3"/>
-<path d="M370,95 Q375,103 380,95" fill="none" stroke="var(--accent-1)" stroke-width="1.6"/>
-<rect x="371" y="95" width="8" height="60" fill="rgba(var(--accent-1-rgb),0.55)"/>
+<path d="M370,115 Q375,123 380,115" fill="none" stroke="var(--accent-1)" stroke-width="1.6"/>
+<rect x="371" y="115" width="8" height="40" fill="rgba(var(--accent-1-rgb),0.55)"/>
 
 <text x="372" y="250" text-anchor="middle" fill="var(--accent-1)" font-family="Outfit,sans-serif" font-size="11">water rises · concave</text>
 
@@ -951,8 +951,8 @@ A soap film or soap bubble has **two** surfaces. The force is shared across both
 <!-- Mercury tube (depressed) -->
 <line x1="525" y1="70" x2="525" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
 <line x1="538" y1="70" x2="538" y2="230" stroke="var(--col-text-main)" stroke-width="1.5"/>
-<path d="M525,182 Q531.5,174 538,182" fill="none" stroke="var(--accent-4)" stroke-width="2"/>
-<rect x="526" y="182" width="11" height="48" fill="rgba(var(--accent-4-rgb),0.5)"/>
+<path d="M525,170 Q531.5,162 538,170" fill="none" stroke="var(--accent-4)" stroke-width="2"/>
+<rect x="526" y="170" width="11" height="60" fill="rgba(var(--accent-4-rgb),0.5)"/>
 
 <text x="540" y="250" text-anchor="middle" fill="var(--accent-4)" font-family="Outfit,sans-serif" font-size="11">mercury falls · convex</text>
 
