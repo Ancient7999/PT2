@@ -813,6 +813,2040 @@
           }
         ],
         "svg": "<svg viewBox=\"0 0 640 274\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<rect x=\"30\" y=\"70\" width=\"250\" height=\"170\" fill=\"rgba(var(--accent-1-rgb),0.16)\" stroke=\"var(--accent-1)\" stroke-width=\"1.5\"/><line x1=\"30\" y1=\"70\" x2=\"280\" y2=\"70\" stroke=\"var(--accent-1)\" stroke-width=\"3\"/><circle cx=\"60\" cy=\"86\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"60\" cy=\"130\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"60\" cy=\"174\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"60\" cy=\"218\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"108\" cy=\"86\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"108\" cy=\"130\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"108\" cy=\"174\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"108\" cy=\"218\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"156\" cy=\"86\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"156\" cy=\"130\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"156\" cy=\"174\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"156\" cy=\"218\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"204\" cy=\"86\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"204\" cy=\"130\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"204\" cy=\"174\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"204\" cy=\"218\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"252\" cy=\"86\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"252\" cy=\"130\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"252\" cy=\"174\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><circle cx=\"252\" cy=\"218\" r=\"8\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><line x1=\"165\" y1=\"174\" x2=\"186\" y2=\"174\" stroke=\"var(--accent-0)\" stroke-width=\"1.6\"/><polygon points=\"190.2,174 181.8,177.2 181.8,170.8\" fill=\"var(--accent-0)\"/><line x1=\"162.4\" y1=\"180.4\" x2=\"177.2\" y2=\"195.2\" stroke=\"var(--accent-0)\" stroke-width=\"1.6\"/><polygon points=\"180.2,198.2 172,194.5 176.5,190\" fill=\"var(--accent-0)\"/><line x1=\"156\" y1=\"183\" x2=\"156\" y2=\"204\" stroke=\"var(--accent-0)\" stroke-width=\"1.6\"/><polygon points=\"156,208.2 152.8,199.8 159.2,199.8\" fill=\"var(--accent-0)\"/><line x1=\"149.6\" y1=\"180.4\" x2=\"134.8\" y2=\"195.2\" stroke=\"var(--accent-0)\" stroke-width=\"1.6\"/><polygon points=\"131.8,198.2 135.5,190 140,194.5\" fill=\"var(--accent-0)\"/><line x1=\"147\" y1=\"174\" x2=\"126\" y2=\"174\" stroke=\"var(--accent-0)\" stroke-width=\"1.6\"/><polygon points=\"121.8,174 130.2,170.8 130.2,177.2\" fill=\"var(--accent-0)\"/><line x1=\"149.6\" y1=\"167.6\" x2=\"134.8\" y2=\"152.8\" stroke=\"var(--accent-0)\" stroke-width=\"1.6\"/><polygon points=\"131.8,149.8 140,153.5 135.5,158\" fill=\"var(--accent-0)\"/><line x1=\"156\" y1=\"165\" x2=\"156\" y2=\"144\" stroke=\"var(--accent-0)\" stroke-width=\"1.6\"/><polygon points=\"156,139.8 159.2,148.2 152.8,148.2\" fill=\"var(--accent-0)\"/><line x1=\"162.4\" y1=\"167.6\" x2=\"177.2\" y2=\"152.8\" stroke=\"var(--accent-0)\" stroke-width=\"1.6\"/><polygon points=\"180.2,149.8 176.5,158 172,153.5\" fill=\"var(--accent-0)\"/><line x1=\"165\" y1=\"86\" x2=\"186\" y2=\"86\" stroke=\"var(--accent-2)\" stroke-width=\"1.6\"/><polygon points=\"190.2,86 181.8,89.2 181.8,82.8\" fill=\"var(--accent-2)\"/><line x1=\"162.4\" y1=\"92.4\" x2=\"177.2\" y2=\"107.2\" stroke=\"var(--accent-2)\" stroke-width=\"1.6\"/><polygon points=\"180.2,110.2 172,106.5 176.5,102\" fill=\"var(--accent-2)\"/><line x1=\"156\" y1=\"95\" x2=\"156\" y2=\"116\" stroke=\"var(--accent-2)\" stroke-width=\"1.6\"/><polygon points=\"156,120.2 152.8,111.8 159.2,111.8\" fill=\"var(--accent-2)\"/><line x1=\"149.6\" y1=\"92.4\" x2=\"134.8\" y2=\"107.2\" stroke=\"var(--accent-2)\" stroke-width=\"1.6\"/><polygon points=\"131.8,110.2 135.5,102 140,106.5\" fill=\"var(--accent-2)\"/><line x1=\"147\" y1=\"86\" x2=\"126\" y2=\"86\" stroke=\"var(--accent-2)\" stroke-width=\"1.6\"/><polygon points=\"121.8,86 130.2,82.8 130.2,89.2\" fill=\"var(--accent-2)\"/><rect x=\"340\" y=\"150\" width=\"120\" height=\"90\" fill=\"rgba(var(--accent-1-rgb),0.3)\"/><path d=\"M340,110 L340,240 L460,240 L460,110\" fill=\"none\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.5\"/><rect x=\"392\" y=\"104\" width=\"16\" height=\"136\" fill=\"rgba(var(--accent-1-rgb),0.55)\"/><line x1=\"392\" y1=\"70\" x2=\"392\" y2=\"232\" stroke=\"var(--col-text-main)\" stroke-width=\"1.4\"/><line x1=\"408\" y1=\"70\" x2=\"408\" y2=\"232\" stroke=\"var(--col-text-main)\" stroke-width=\"1.4\"/><path d=\"M392,104 Q400,112 408,104\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.4\"/><rect x=\"490\" y=\"150\" width=\"120\" height=\"90\" fill=\"rgba(var(--accent-4-rgb),0.3)\"/><path d=\"M490,110 L490,240 L610,240 L610,110\" fill=\"none\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.5\"/><rect x=\"542\" y=\"184\" width=\"16\" height=\"56\" fill=\"rgba(var(--accent-4-rgb),0.55)\"/><line x1=\"542\" y1=\"70\" x2=\"542\" y2=\"232\" stroke=\"var(--col-text-main)\" stroke-width=\"1.4\"/><line x1=\"558\" y1=\"70\" x2=\"558\" y2=\"232\" stroke=\"var(--col-text-main)\" stroke-width=\"1.4\"/><path d=\"M542,184 Q550,176 558,184\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"1.4\"/>\n</svg>"
+      },
+      {
+        "id": "CH4_WAVES",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Longitudinal and transverse waves",
+        "labels": [
+          {
+            "id": "comp",
+            "answer": "Compression",
+            "x": 8.7,
+            "y": 33.4,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "rare",
+            "answer": "Rarefaction",
+            "x": 21.1,
+            "y": 33.4,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "crest",
+            "answer": "Crest",
+            "x": 3.7,
+            "y": 62.7,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "trough",
+            "answer": "Trough",
+            "x": 14.7,
+            "y": 93.5,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Longitudinal and transverse waves",
+            "accept": [
+              "longitudinal",
+              "transverse",
+              "sound waves",
+              "wave types"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Sound is a longitudinal wave",
+              "Light is a transverse wave",
+              "Ultrasound imaging",
+              "ECG electrode placement",
+              "Lens refraction",
+              "Bone density"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 286\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<circle cx=\"40.0\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"40.0\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"40.0\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"40.0\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"56.3\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"56.3\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"56.3\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"56.3\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"71.4\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"71.4\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"71.4\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"71.4\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"84.1\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"84.1\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"84.1\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"84.1\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"93.9\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"93.9\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"93.9\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"93.9\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"100.6\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"100.6\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"100.6\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"100.6\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"104.6\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"104.6\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"104.6\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"104.6\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"106.7\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"106.7\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"106.7\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"106.7\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"108.3\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"108.3\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"108.3\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"108.3\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"110.4\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"110.4\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"110.4\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"110.4\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"114.4\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"114.4\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"114.4\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"114.4\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"121.1\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"121.1\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"121.1\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"121.1\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"130.9\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"130.9\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"130.9\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"130.9\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"143.6\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"143.6\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"143.6\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"143.6\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"158.7\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"158.7\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"158.7\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"158.7\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"175.0\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"175.0\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"175.0\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"175.0\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"191.3\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"191.3\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"191.3\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"191.3\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"206.4\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"206.4\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"206.4\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"206.4\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"219.1\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"219.1\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"219.1\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"219.1\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"228.9\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"228.9\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"228.9\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"228.9\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"235.6\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"235.6\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"235.6\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"235.6\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"239.6\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"239.6\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"239.6\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"239.6\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"241.7\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"241.7\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"241.7\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"241.7\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"243.3\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"243.3\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"243.3\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"243.3\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"245.4\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"245.4\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"245.4\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"245.4\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"249.4\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"249.4\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"249.4\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"249.4\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"256.1\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"256.1\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"256.1\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"256.1\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"265.9\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"265.9\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"265.9\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"265.9\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"278.6\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"278.6\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"278.6\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"278.6\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"293.7\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"293.7\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"293.7\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"293.7\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"310.0\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"310.0\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"310.0\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"310.0\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"326.3\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"326.3\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"326.3\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"326.3\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"341.4\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"341.4\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"341.4\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"341.4\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"354.1\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"354.1\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"354.1\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"354.1\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"363.9\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"363.9\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"363.9\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"363.9\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"370.6\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"370.6\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"370.6\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"370.6\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"374.6\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"374.6\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"374.6\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"374.6\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"376.7\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"376.7\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"376.7\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"376.7\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"378.3\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"378.3\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"378.3\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"378.3\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"380.4\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"380.4\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"380.4\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"380.4\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"384.4\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"384.4\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"384.4\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"384.4\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"391.1\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"391.1\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"391.1\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"391.1\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"400.9\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"400.9\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"400.9\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"400.9\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"413.6\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"413.6\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"413.6\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"413.6\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"428.7\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"428.7\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"428.7\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"428.7\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"445.0\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"445.0\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"445.0\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"445.0\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"461.3\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"461.3\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"461.3\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"461.3\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"476.4\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"476.4\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"476.4\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"476.4\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"489.1\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"489.1\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"489.1\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"489.1\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"498.9\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"498.9\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"498.9\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"498.9\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"505.6\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"505.6\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"505.6\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"505.6\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"509.6\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"509.6\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"509.6\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"509.6\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"511.7\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"511.7\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"511.7\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"511.7\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"513.3\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"513.3\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"513.3\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"513.3\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"515.4\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"515.4\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"515.4\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"515.4\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"519.4\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"519.4\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"519.4\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"519.4\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"526.1\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"526.1\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"526.1\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"526.1\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"535.9\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"535.9\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"535.9\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"535.9\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"548.6\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"548.6\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"548.6\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"548.6\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"563.7\" cy=\"48\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"563.7\" cy=\"60\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"563.7\" cy=\"72\" r=\"2.4\" fill=\"var(--accent-1)\"/><circle cx=\"563.7\" cy=\"84\" r=\"2.4\" fill=\"var(--accent-1)\"/><line x1=\"40\" y1=\"120\" x2=\"600\" y2=\"120\" stroke=\"var(--col-text-main)\" stroke-width=\"1.3\"/><polygon points=\"604.8,120 595.2,123.6 595.2,116.4\" fill=\"var(--col-text-main)\"/><path d=\"M40.0,225.0 L42.8,221.2 L45.6,217.5 L48.4,214.0 L51.2,210.5 L54.0,207.4 L56.8,204.5 L59.6,201.9 L62.4,199.7 L65.2,197.9 L68.0,196.5 L70.8,195.5 L73.6,195.1 L76.4,195.1 L79.2,195.5 L82.0,196.5 L84.8,197.9 L87.6,199.7 L90.4,201.9 L93.2,204.5 L96.0,207.4 L98.8,210.5 L101.6,214.0 L104.4,217.5 L107.2,221.2 L110.0,225.0 L112.8,228.8 L115.6,232.5 L118.4,236.0 L121.2,239.5 L124.0,242.6 L126.8,245.5 L129.6,248.1 L132.4,250.3 L135.2,252.1 L138.0,253.5 L140.8,254.5 L143.6,254.9 L146.4,254.9 L149.2,254.5 L152.0,253.5 L154.8,252.1 L157.6,250.3 L160.4,248.1 L163.2,245.5 L166.0,242.6 L168.8,239.5 L171.6,236.0 L174.4,232.5 L177.2,228.8 L180.0,225.0 L182.8,221.2 L185.6,217.5 L188.4,214.0 L191.2,210.5 L194.0,207.4 L196.8,204.5 L199.6,201.9 L202.4,199.7 L205.2,197.9 L208.0,196.5 L210.8,195.5 L213.6,195.1 L216.4,195.1 L219.2,195.5 L222.0,196.5 L224.8,197.9 L227.6,199.7 L230.4,201.9 L233.2,204.5 L236.0,207.4 L238.8,210.5 L241.6,214.0 L244.4,217.5 L247.2,221.2 L250.0,225.0 L252.8,228.8 L255.6,232.5 L258.4,236.0 L261.2,239.5 L264.0,242.6 L266.8,245.5 L269.6,248.1 L272.4,250.3 L275.2,252.1 L278.0,253.5 L280.8,254.5 L283.6,254.9 L286.4,254.9 L289.2,254.5 L292.0,253.5 L294.8,252.1 L297.6,250.3 L300.4,248.1 L303.2,245.5 L306.0,242.6 L308.8,239.5 L311.6,236.0 L314.4,232.5 L317.2,228.8 L320.0,225.0 L322.8,221.2 L325.6,217.5 L328.4,214.0 L331.2,210.5 L334.0,207.4 L336.8,204.5 L339.6,201.9 L342.4,199.7 L345.2,197.9 L348.0,196.5 L350.8,195.5 L353.6,195.1 L356.4,195.1 L359.2,195.5 L362.0,196.5 L364.8,197.9 L367.6,199.7 L370.4,201.9 L373.2,204.5 L376.0,207.4 L378.8,210.5 L381.6,214.0 L384.4,217.5 L387.2,221.2 L390.0,225.0 L392.8,228.8 L395.6,232.5 L398.4,236.0 L401.2,239.5 L404.0,242.6 L406.8,245.5 L409.6,248.1 L412.4,250.3 L415.2,252.1 L418.0,253.5 L420.8,254.5 L423.6,254.9 L426.4,254.9 L429.2,254.5 L432.0,253.5 L434.8,252.1 L437.6,250.3 L440.4,248.1 L443.2,245.5 L446.0,242.6 L448.8,239.5 L451.6,236.0 L454.4,232.5 L457.2,228.8 L460.0,225.0 L462.8,221.2 L465.6,217.5 L468.4,214.0 L471.2,210.5 L474.0,207.4 L476.8,204.5 L479.6,201.9 L482.4,199.7 L485.2,197.9 L488.0,196.5 L490.8,195.5 L493.6,195.1 L496.4,195.1 L499.2,195.5 L502.0,196.5 L504.8,197.9 L507.6,199.7 L510.4,201.9 L513.2,204.5 L516.0,207.4 L518.8,210.5 L521.6,214.0 L524.4,217.5 L527.2,221.2 L530.0,225.0 L532.8,228.8 L535.6,232.5 L538.4,236.0 L541.2,239.5 L544.0,242.6 L546.8,245.5 L549.6,248.1 L552.4,250.3 L555.2,252.1 L558.0,253.5 L560.8,254.5 L563.6,254.9 L566.4,254.9 L569.2,254.5 L572.0,253.5 L574.8,252.1 L577.6,250.3 L580.4,248.1 L583.2,245.5 L586.0,242.6 L588.8,239.5 L591.6,236.0 L594.4,232.5 L597.2,228.8 L600.0,225.0\" fill=\"none\" stroke=\"var(--accent-0)\" stroke-width=\"2.5\"/>\n</svg>"
+      },
+      {
+        "id": "CH4_WAVEPARTS",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Wave parameters",
+        "labels": [
+          {
+            "id": "lam",
+            "answer": "Wavelength λ",
+            "x": 24.8,
+            "y": 16.6,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "amp",
+            "answer": "Amplitude",
+            "x": 47.9,
+            "y": 38.3,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "crest",
+            "answer": "Crest",
+            "x": 7.9,
+            "y": 27.4,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "trough",
+            "answer": "Trough",
+            "x": 24.8,
+            "y": 76.7,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Wave parameters",
+            "accept": [
+              "wavelength",
+              "amplitude",
+              "wave",
+              "parts of a wave"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Measuring wavelength",
+              "Measuring amplitude",
+              "Ultrasound frequency",
+              "ECG electrode placement",
+              "Lens refraction",
+              "Bone density"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 276\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<line x1=\"40\" y1=\"140\" x2=\"600\" y2=\"140\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\"/><path d=\"M60.0,140.0 L62.6,135.1 L65.2,130.2 L67.8,125.4 L70.4,120.7 L73.0,116.2 L75.6,111.8 L78.2,107.5 L80.8,103.5 L83.4,99.8 L86.0,96.3 L88.6,93.1 L91.2,90.2 L93.8,87.6 L96.4,85.4 L99.0,83.5 L101.6,82.1 L104.2,81.0 L106.8,80.3 L109.4,80.0 L112.0,80.1 L114.6,80.6 L117.2,81.5 L119.8,82.8 L122.4,84.5 L125.0,86.5 L127.6,88.9 L130.2,91.7 L132.8,94.7 L135.4,98.1 L138.0,101.8 L140.6,105.7 L143.2,109.8 L145.8,114.1 L148.4,118.6 L151.0,123.3 L153.6,128.0 L156.2,132.9 L158.8,137.7 L161.4,142.6 L164.0,147.5 L166.6,152.4 L169.2,157.1 L171.8,161.7 L174.4,166.2 L177.0,170.5 L179.6,174.7 L182.2,178.5 L184.8,182.2 L187.4,185.5 L190.0,188.5 L192.6,191.3 L195.2,193.6 L197.8,195.6 L200.4,197.3 L203.0,198.6 L205.6,199.4 L208.2,199.9 L210.8,200.0 L213.4,199.7 L216.0,198.9 L218.6,197.8 L221.2,196.3 L223.8,194.4 L226.4,192.2 L229.0,189.6 L231.6,186.7 L234.2,183.5 L236.8,180.0 L239.4,176.2 L242.0,172.1 L244.6,167.9 L247.2,163.5 L249.8,158.9 L252.4,154.2 L255.0,149.4 L257.6,144.5 L260.2,139.6 L262.8,134.7 L265.4,129.9 L268.0,125.1 L270.6,120.4 L273.2,115.8 L275.8,111.4 L278.4,107.2 L281.0,103.2 L283.6,99.5 L286.2,96.0 L288.8,92.8 L291.4,90.0 L294.0,87.4 L296.6,85.2 L299.2,83.4 L301.8,82.0 L304.4,80.9 L307.0,80.3 L309.6,80.0 L312.2,80.1 L314.8,80.7 L317.4,81.6 L320.0,82.9 L322.6,84.6 L325.2,86.7 L327.8,89.1 L330.4,91.9 L333.0,95.0 L335.6,98.4 L338.2,102.0 L340.8,106.0 L343.4,110.1 L346.0,114.5 L348.6,119.0 L351.2,123.6 L353.8,128.4 L356.4,133.2 L359.0,138.1 L361.6,143.0 L364.2,147.9 L366.8,152.7 L369.4,157.5 L372.0,162.1 L374.6,166.6 L377.2,170.9 L379.8,175.0 L382.4,178.8 L385.0,182.4 L387.6,185.7 L390.2,188.8 L392.8,191.5 L395.4,193.8 L398.0,195.8 L400.6,197.4 L403.2,198.6 L405.8,199.5 L408.4,199.9 L411.0,200.0 L413.6,199.6 L416.2,198.9 L418.8,197.7 L421.4,196.2 L424.0,194.3 L426.6,192.0 L429.2,189.4 L431.8,186.5 L434.4,183.2 L437.0,179.7 L439.6,175.9 L442.2,171.8 L444.8,167.6 L447.4,163.1 L450.0,158.5 L452.6,153.8 L455.2,149.0 L457.8,144.1 L460.4,139.2 L463.0,134.4 L465.6,129.5 L468.2,124.7 L470.8,120.0 L473.4,115.5 L476.0,111.1 L478.6,106.9 L481.2,102.9 L483.8,99.2 L486.4,95.7 L489.0,92.6 L491.6,89.7 L494.2,87.2 L496.8,85.1 L499.4,83.3 L502.0,81.9 L504.6,80.9 L507.2,80.2 L509.8,80.0 L512.4,80.2 L515.0,80.7 L517.6,81.7 L520.2,83.1 L522.8,84.8 L525.4,86.9 L528.0,89.3 L530.6,92.1 L533.2,95.2 L535.8,98.7 L538.4,102.3 L541.0,106.3 L543.6,110.4 L546.2,114.8 L548.8,119.3 L551.4,124.0 L554.0,128.8 L556.6,133.6 L559.2,138.5 L561.8,143.4 L564.4,148.3 L567.0,153.1 L569.6,157.8 L572.2,162.4 L574.8,166.9 L577.4,171.2 L580.0,175.3\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"3\"/><line x1=\"110\" y1=\"62\" x2=\"310\" y2=\"62\" stroke=\"var(--accent-0)\" stroke-width=\"1.6\"/><line x1=\"110\" y1=\"56\" x2=\"110\" y2=\"74\" stroke=\"var(--accent-0)\" stroke-width=\"1.4\"/><line x1=\"310\" y1=\"56\" x2=\"310\" y2=\"74\" stroke=\"var(--accent-0)\" stroke-width=\"1.4\"/><line x1=\"350\" y1=\"140\" x2=\"350\" y2=\"80\" stroke=\"var(--accent-2)\" stroke-width=\"1.8\"/><polygon points=\"350,79.2 353.6,88.8 346.4,88.8\" fill=\"var(--accent-2)\"/><line x1=\"310\" y1=\"80\" x2=\"350\" y2=\"80\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><circle cx=\"110.0\" cy=\"80\" r=\"4\" fill=\"var(--col-text-main)\"/><circle cx=\"210.0\" cy=\"200\" r=\"4\" fill=\"var(--col-text-main)\"/><line x1=\"380\" y1=\"260\" x2=\"560\" y2=\"260\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><polygon points=\"564.8,260 555.2,263.6 555.2,256.4\" fill=\"var(--col-text-main)\"/>\n</svg>"
+      },
+      {
+        "id": "CH4_FREQ",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Sound frequency ranges",
+        "labels": [
+          {
+            "id": "infra",
+            "answer": "Infrasound",
+            "x": 6.8,
+            "y": 49.8,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "aud",
+            "answer": "Audible",
+            "x": 29.9,
+            "y": 49.8,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "ultra",
+            "answer": "Ultrasound",
+            "x": 65.9,
+            "y": 49.8,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Sound frequency ranges",
+            "accept": [
+              "infrasound",
+              "ultrasound",
+              "audible",
+              "frequency ranges"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Medical ultrasound 2–15 MHz",
+              "Infrasound below 20 Hz",
+              "Audible 20 Hz to 20 kHz",
+              "ECG electrode placement",
+              "Lens refraction",
+              "Bone density"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 212\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<rect x=\"50.0\" y=\"90\" width=\"89.44581220189872\" height=\"34\" fill=\"rgba(var(--accent-4-rgb),0.4)\" stroke=\"var(--accent-4)\"/><rect x=\"139.44581220189872\" y=\"90\" width=\"206.25\" height=\"34\" fill=\"rgba(var(--accent-2-rgb),0.4)\" stroke=\"var(--accent-2)\"/><rect x=\"345.6958122018987\" y=\"90\" width=\"254.30418779810128\" height=\"34\" fill=\"rgba(var(--accent-0-rgb),0.35)\" stroke=\"var(--accent-0)\"/><line x1=\"50\" y1=\"124\" x2=\"50\" y2=\"132\" stroke=\"var(--col-text-main)\" stroke-width=\"1.2\"/><line x1=\"118.8\" y1=\"124\" x2=\"118.8\" y2=\"132\" stroke=\"var(--col-text-main)\" stroke-width=\"1.2\"/><line x1=\"187.5\" y1=\"124\" x2=\"187.5\" y2=\"132\" stroke=\"var(--col-text-main)\" stroke-width=\"1.2\"/><line x1=\"256.2\" y1=\"124\" x2=\"256.2\" y2=\"132\" stroke=\"var(--col-text-main)\" stroke-width=\"1.2\"/><line x1=\"325\" y1=\"124\" x2=\"325\" y2=\"132\" stroke=\"var(--col-text-main)\" stroke-width=\"1.2\"/><line x1=\"393.8\" y1=\"124\" x2=\"393.8\" y2=\"132\" stroke=\"var(--col-text-main)\" stroke-width=\"1.2\"/><line x1=\"462.5\" y1=\"124\" x2=\"462.5\" y2=\"132\" stroke=\"var(--col-text-main)\" stroke-width=\"1.2\"/><line x1=\"531.2\" y1=\"124\" x2=\"531.2\" y2=\"132\" stroke=\"var(--col-text-main)\" stroke-width=\"1.2\"/><line x1=\"600\" y1=\"124\" x2=\"600\" y2=\"132\" stroke=\"var(--col-text-main)\" stroke-width=\"1.2\"/><line x1=\"139.4\" y1=\"60\" x2=\"139.4\" y2=\"90\" stroke=\"var(--accent-2)\" stroke-width=\"1.4\" stroke-dasharray=\"3 3\"/><line x1=\"345.7\" y1=\"60\" x2=\"345.7\" y2=\"90\" stroke=\"var(--accent-2)\" stroke-width=\"1.4\" stroke-dasharray=\"3 3\"/><rect x=\"483.1958122018987\" y=\"164\" width=\"60.1604618581793\" height=\"18\" rx=\"4\" fill=\"rgba(var(--accent-6-rgb),0.5)\" stroke=\"var(--accent-6)\"/>\n</svg>"
+      },
+      {
+        "id": "CH4_DOPPLER",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Doppler effect",
+        "labels": [
+          {
+            "id": "ahead",
+            "answer": "Higher pitch ahead",
+            "x": 78.7,
+            "y": 36.3,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "behind",
+            "answer": "Lower pitch behind",
+            "x": 3.7,
+            "y": 36.3,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "src",
+            "answer": "Moving source",
+            "x": 38.9,
+            "y": 57.7,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Doppler effect",
+            "accept": [
+              "Doppler",
+              "Doppler effect",
+              "Doppler shift"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Measuring blood velocity",
+              "Detecting DVT",
+              "Fetal heart monitoring",
+              "ECG electrode placement",
+              "Lens refraction",
+              "Bone density"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 280\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<circle cx=\"290.1\" cy=\"140\" r=\"22\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.6\"/><circle cx=\"280.2\" cy=\"140\" r=\"44\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.6\"/><circle cx=\"270.3\" cy=\"140\" r=\"66\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.6\"/><circle cx=\"260.4\" cy=\"140\" r=\"88\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.6\"/><circle cx=\"250.5\" cy=\"140\" r=\"110\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.6\"/><rect x=\"286\" y=\"131\" width=\"28\" height=\"18\" rx=\"4\" fill=\"var(--accent-0)\"/><line x1=\"316\" y1=\"140\" x2=\"356\" y2=\"140\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"360.8,140 351.2,143.6 351.2,136.4\" fill=\"var(--accent-0)\"/><circle cx=\"555\" cy=\"140\" r=\"9\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"2\"/><circle cx=\"75\" cy=\"140\" r=\"9\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"2\"/>\n</svg>"
+      },
+      {
+        "id": "CH4_SHOCK",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Shock waves",
+        "labels": [
+          {
+            "id": "src",
+            "answer": "Supersonic source",
+            "x": 74.8,
+            "y": 44.1,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "cone",
+            "answer": "Shock wave cone",
+            "x": 15.4,
+            "y": 7.9,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "boom",
+            "answer": "Sonic boom",
+            "x": 2,
+            "y": 87.6,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Shock waves",
+            "accept": [
+              "shock wave",
+              "sonic boom",
+              "Mach number",
+              "shock"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "ESWL for kidney stones",
+              "Sonic boom",
+              "Source faster than sound",
+              "ECG electrode placement",
+              "Lens refraction",
+              "Bone density"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 276\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<circle cx=\"444.0\" cy=\"140\" r=\"38.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.5\"/><circle cx=\"368.0\" cy=\"140\" r=\"76.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.5\"/><circle cx=\"292.0\" cy=\"140\" r=\"114.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.5\"/><circle cx=\"216.0\" cy=\"140\" r=\"152.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.5\"/><circle cx=\"140.0\" cy=\"140\" r=\"190.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.5\"/><line x1=\"520\" y1=\"140\" x2=\"156.3\" y2=\"-70\" stroke=\"var(--accent-0)\" stroke-width=\"2.6\"/><line x1=\"520\" y1=\"140\" x2=\"156.3\" y2=\"350\" stroke=\"var(--accent-0)\" stroke-width=\"2.6\"/><circle cx=\"520\" cy=\"140\" r=\"6\" fill=\"var(--accent-0)\"/><line x1=\"200\" y1=\"240\" x2=\"280\" y2=\"200\" stroke=\"var(--col-text-main)\" stroke-width=\"1.2\" marker-end=\"url(#boomArrow)\"/>\n<defs><marker id=\"boomArrow\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L6,3 L0,6 z\" fill=\"var(--col-text-main)\"/></marker></defs>\n</svg>"
+      },
+      {
+        "id": "CH4_SHOCK2",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Shock wave formation",
+        "labels": [
+          {
+            "id": "pile",
+            "answer": "High pressure",
+            "x": 52.9,
+            "y": 18.9,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "spread",
+            "answer": "Lower pressure",
+            "x": 10.8,
+            "y": 49.1,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "src",
+            "answer": "Source",
+            "x": 73.2,
+            "y": 40.8,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Shock wave formation",
+            "accept": [
+              "shock wave",
+              "wavefronts",
+              "high pressure"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Wavefronts pile up at the source",
+              "High pressure at the front",
+              "ESWL",
+              "ECG electrode placement",
+              "Lens refraction",
+              "Bone density"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 292\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<circle cx=\"478.0\" cy=\"140\" r=\"22.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.3\"/><circle cx=\"456.0\" cy=\"140\" r=\"44.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.3\"/><circle cx=\"434.0\" cy=\"140\" r=\"66.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.3\"/><circle cx=\"412.0\" cy=\"140\" r=\"88.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.3\"/><circle cx=\"390.0\" cy=\"140\" r=\"110.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.3\"/><circle cx=\"368.0\" cy=\"140\" r=\"132.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.3\"/><circle cx=\"346.0\" cy=\"140\" r=\"154.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.3\"/><circle cx=\"324.0\" cy=\"140\" r=\"176.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.3\"/><circle cx=\"302.0\" cy=\"140\" r=\"198.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.3\"/><circle cx=\"280.0\" cy=\"140\" r=\"220.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.3\"/><circle cx=\"258.0\" cy=\"140\" r=\"242.0\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.3\"/><rect x=\"468\" y=\"28\" width=\"28\" height=\"224\" fill=\"rgba(var(--accent-0-rgb),0.28)\"/><circle cx=\"500\" cy=\"140\" r=\"6\" fill=\"var(--accent-0)\"/><line x1=\"508\" y1=\"140\" x2=\"560\" y2=\"140\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"564.8,140 555.2,144 555.2,136\" fill=\"var(--accent-0)\"/>\n</svg>"
+      },
+      {
+        "id": "CH4_ESWL",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "ESWL",
+        "labels": [
+          {
+            "id": "stone",
+            "answer": "Kidney stone",
+            "x": 62.0,
+            "y": 41.1,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "src",
+            "answer": "Shock wave source",
+            "x": 2,
+            "y": 74.9,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "kidney",
+            "answer": "Kidney",
+            "x": 54.5,
+            "y": 68.0,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "ESWL",
+            "accept": [
+              "ESWL",
+              "extracorporeal shock wave",
+              "lithotripsy",
+              "shock wave lithotripsy"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Breaking kidney stones",
+              "Non-invasive treatment",
+              "Focused shock waves",
+              "ECG electrode placement",
+              "Lens refraction",
+              "Bone density"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 290\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<ellipse cx=\"400\" cy=\"130\" rx=\"190\" ry=\"95\" fill=\"rgba(var(--accent-1-rgb),0.12)\" stroke=\"var(--accent-1)\" stroke-width=\"2\"/><ellipse cx=\"400\" cy=\"130\" rx=\"44\" ry=\"62\" fill=\"rgba(var(--accent-2-rgb),0.3)\" stroke=\"var(--accent-2)\" stroke-width=\"2\"/><polygon points=\"392,120 408,116 414,132 400,142 388,134\" fill=\"var(--accent-0)\"/><path d=\"M60,60 Q30,130 60,200\" fill=\"none\" stroke=\"var(--accent-4)\" stroke-width=\"4\"/><rect x=\"196\" y=\"85\" width=\"22\" height=\"90\" rx=\"6\" fill=\"rgba(var(--accent-6-rgb),0.35)\" stroke=\"var(--accent-6)\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"60\" x2=\"398\" y2=\"130\" stroke=\"var(--accent-4)\" stroke-width=\"1.4\" stroke-dasharray=\"6 4\"/><line x1=\"48\" y1=\"95\" x2=\"398\" y2=\"130\" stroke=\"var(--accent-4)\" stroke-width=\"1.4\" stroke-dasharray=\"6 4\"/><line x1=\"45\" y1=\"130\" x2=\"398\" y2=\"130\" stroke=\"var(--accent-4)\" stroke-width=\"1.4\" stroke-dasharray=\"6 4\"/><line x1=\"48\" y1=\"165\" x2=\"398\" y2=\"130\" stroke=\"var(--accent-4)\" stroke-width=\"1.4\" stroke-dasharray=\"6 4\"/><line x1=\"60\" y1=\"200\" x2=\"398\" y2=\"130\" stroke=\"var(--accent-4)\" stroke-width=\"1.4\" stroke-dasharray=\"6 4\"/><path d=\"M118.9,107.2 A54,54 0 0 1 118.9,152.8\" fill=\"none\" stroke=\"var(--accent-4)\" stroke-width=\"1.6\"/><path d=\"M131.6,101.3 A68,68 0 0 1 131.6,158.7\" fill=\"none\" stroke=\"var(--accent-4)\" stroke-width=\"1.6\"/><path d=\"M144.3,95.3 A82,82 0 0 1 144.3,164.7\" fill=\"none\" stroke=\"var(--accent-4)\" stroke-width=\"1.6\"/>\n</svg>"
+      },
+      {
+        "id": "CH4_ZEROTH",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Zeroth law of thermodynamics",
+        "labels": [
+          {
+            "id": "A",
+            "answer": "Body A",
+            "x": 9.2,
+            "y": 70.3,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "B",
+            "answer": "Body B",
+            "x": 74.8,
+            "y": 70.3,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "T",
+            "answer": "Thermometer T",
+            "x": 42.0,
+            "y": 24.5,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Zeroth law of thermodynamics",
+            "accept": [
+              "zeroth law",
+              "zeroth",
+              "thermal equilibrium"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Defining temperature",
+              "Thermometers",
+              "Thermal equilibrium",
+              "ECG electrode placement",
+              "Lens refraction",
+              "Bone density"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 240\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<rect x=\"60\" y=\"142\" width=\"100\" height=\"56\" rx=\"10\" fill=\"rgba(var(--accent-0-rgb),0.3)\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><rect x=\"270\" y=\"32\" width=\"100\" height=\"56\" rx=\"10\" fill=\"rgba(var(--accent-6-rgb),0.3)\" stroke=\"var(--accent-6)\" stroke-width=\"2\"/><rect x=\"480\" y=\"142\" width=\"100\" height=\"56\" rx=\"10\" fill=\"rgba(var(--accent-2-rgb),0.3)\" stroke=\"var(--accent-2)\" stroke-width=\"2\"/><line x1=\"160\" y1=\"150\" x2=\"270\" y2=\"82\" stroke=\"var(--accent-4)\" stroke-width=\"2\"/><line x1=\"480\" y1=\"150\" x2=\"370\" y2=\"82\" stroke=\"var(--accent-4)\" stroke-width=\"2\"/><line x1=\"160\" y1=\"180\" x2=\"480\" y2=\"180\" stroke=\"var(--accent-0)\" stroke-width=\"2.2\" stroke-dasharray=\"7 5\"/>\n</svg>"
+      },
+      {
+        "id": "CH4_ZEROTH2",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Zeroth law of thermodynamics",
+        "labels": [
+          {
+            "id": "T",
+            "answer": "Thermometer T",
+            "x": 2,
+            "y": 33.4,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "A",
+            "answer": "Body A",
+            "x": 2,
+            "y": 50.9,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "B",
+            "answer": "Body B",
+            "x": 17.0,
+            "y": 51.8,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Zeroth law of thermodynamics",
+            "accept": [
+              "zeroth law",
+              "thermosphere",
+              "thermosphere",
+              "thermal equilibrium"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "How a thermometer works",
+              "Defining equal temperature",
+              "No heat flow at equilibrium",
+              "ECG electrode placement",
+              "Lens refraction",
+              "Bone density"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 330\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<rect x=\"20\" y=\"40\" width=\"190\" height=\"170\" rx=\"6\" fill=\"rgba(var(--accent-1-rgb),0.12)\" stroke=\"var(--accent-1)\" stroke-width=\"10\"/><rect x=\"109.0\" y=\"40\" width=\"12\" height=\"170\" fill=\"rgba(var(--accent-1-rgb),0.35)\" stroke=\"var(--accent-1)\" stroke-width=\"1.5\"/><rect x=\"44\" y=\"148\" width=\"36\" height=\"50\" rx=\"3\" fill=\"rgba(var(--accent-3-rgb),0.55)\" stroke=\"var(--accent-3)\" stroke-width=\"1.5\"/><rect x=\"134\" y=\"154\" width=\"52\" height=\"44\" rx=\"3\" fill=\"rgba(var(--accent-5-rgb),0.55)\" stroke=\"var(--accent-5)\" stroke-width=\"1.5\"/><rect x=\"42\" y=\"90\" width=\"40\" height=\"52\" rx=\"4\" fill=\"rgba(var(--accent-6-rgb),0.35)\" stroke=\"var(--accent-6)\" stroke-width=\"1.5\"/><rect x=\"42\" y=\"140\" width=\"40\" height=\"6\" fill=\"var(--accent-0)\"/><rect x=\"225\" y=\"40\" width=\"190\" height=\"170\" rx=\"6\" fill=\"rgba(var(--accent-1-rgb),0.12)\" stroke=\"var(--accent-1)\" stroke-width=\"10\"/><rect x=\"314.0\" y=\"40\" width=\"12\" height=\"170\" fill=\"rgba(var(--accent-1-rgb),0.35)\" stroke=\"var(--accent-1)\" stroke-width=\"1.5\"/><rect x=\"249\" y=\"148\" width=\"36\" height=\"50\" rx=\"3\" fill=\"rgba(var(--accent-3-rgb),0.55)\" stroke=\"var(--accent-3)\" stroke-width=\"1.5\"/><rect x=\"339\" y=\"154\" width=\"52\" height=\"44\" rx=\"3\" fill=\"rgba(var(--accent-5-rgb),0.55)\" stroke=\"var(--accent-5)\" stroke-width=\"1.5\"/><rect x=\"345\" y=\"96\" width=\"40\" height=\"52\" rx=\"4\" fill=\"rgba(var(--accent-6-rgb),0.35)\" stroke=\"var(--accent-6)\" stroke-width=\"1.5\"/><rect x=\"345\" y=\"146\" width=\"40\" height=\"6\" fill=\"var(--accent-0)\"/><rect x=\"430\" y=\"40\" width=\"190\" height=\"170\" rx=\"6\" fill=\"rgba(var(--accent-1-rgb),0.12)\" stroke=\"var(--accent-1)\" stroke-width=\"10\"/><rect x=\"482\" y=\"148\" width=\"36\" height=\"50\" rx=\"3\" fill=\"rgba(var(--accent-3-rgb),0.55)\" stroke=\"var(--accent-3)\" stroke-width=\"1.5\"/><rect x=\"522\" y=\"154\" width=\"52\" height=\"44\" rx=\"3\" fill=\"rgba(var(--accent-5-rgb),0.55)\" stroke=\"var(--accent-5)\" stroke-width=\"1.5\"/><line x1=\"115\" y1=\"215\" x2=\"115\" y2=\"268\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/>\n</svg>"
+      },
+      {
+        "id": "CH4_PHASE",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Phase diagram",
+        "labels": [
+          {
+            "id": "trip",
+            "answer": "Triple point",
+            "x": 31.1,
+            "y": 69.7,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "crit",
+            "answer": "Critical point",
+            "x": 70.8,
+            "y": 13.7,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "temp",
+            "answer": "Temperature axis",
+            "x": 43.6,
+            "y": 93.7,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Phase diagram",
+            "accept": [
+              "phase diagram",
+              "triple point",
+              "critical point",
+              "phase"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Triple point of water",
+              "Defining the Kelvin scale",
+              "Critical point",
+              "ECG electrode placement",
+              "Lens refraction",
+              "Bone density"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 300\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<line x1=\"90\" y1=\"250\" x2=\"570\" y2=\"250\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><line x1=\"90\" y1=\"250\" x2=\"90\" y2=\"40\" stroke=\"var(--col-text-main)\" stroke-width=\"1.5\"/><path d=\"M110,242 Q190,230 240,200\" fill=\"none\" stroke=\"var(--accent-4)\" stroke-width=\"2.5\"/><path d=\"M240,200 Q420,160 510,60\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"2.5\"/><path d=\"M240,200 L218,44\" fill=\"none\" stroke=\"var(--accent-0)\" stroke-width=\"2.5\"/><circle cx=\"240\" cy=\"200\" r=\"6\" fill=\"var(--accent-0)\"/><circle cx=\"510\" cy=\"60\" r=\"5\" fill=\"var(--col-text-main)\"/><line x1=\"90\" y1=\"150\" x2=\"570\" y2=\"150\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/>\n</svg>"
+      },
+      {
+        "id": "CH4_TEMP",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Temperature scales",
+        "labels": [
+          {
+            "id": "K",
+            "answer": "Kelvin",
+            "x": 37.3,
+            "y": 9.4,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "C",
+            "answer": "Celsius",
+            "x": 56.1,
+            "y": 9.4,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "F",
+            "answer": "Fahrenheit",
+            "x": 74.8,
+            "y": 9.4,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Temperature scales",
+            "accept": [
+              "Kelvin",
+              "Celsius",
+              "Fahrenheit",
+              "temperature scales"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Absolute zero",
+              "Body temperature",
+              "Triple point of water",
+              "ECG electrode placement",
+              "Lens refraction",
+              "Bone density"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 290\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<rect x=\"276\" y=\"50\" width=\"28\" height=\"226\" rx=\"14\" fill=\"rgba(var(--accent-1-rgb),0.18)\" stroke=\"var(--accent-1)\" stroke-width=\"2\"/><rect x=\"396\" y=\"50\" width=\"28\" height=\"226\" rx=\"14\" fill=\"rgba(var(--accent-3-rgb),0.18)\" stroke=\"var(--accent-3)\" stroke-width=\"2\"/><rect x=\"516\" y=\"50\" width=\"28\" height=\"226\" rx=\"14\" fill=\"rgba(var(--accent-5-rgb),0.18)\" stroke=\"var(--accent-5)\" stroke-width=\"2\"/><line x1=\"150\" y1=\"70\" x2=\"560\" y2=\"70\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 4\"/><rect x=\"244\" y=\"59\" width=\"92\" height=\"20\" rx=\"5\" fill=\"rgba(var(--accent-1-rgb),0.85)\"/><rect x=\"364\" y=\"59\" width=\"92\" height=\"20\" rx=\"5\" fill=\"rgba(var(--accent-3-rgb),0.85)\"/><rect x=\"484\" y=\"59\" width=\"92\" height=\"20\" rx=\"5\" fill=\"rgba(var(--accent-5-rgb),0.85)\"/><line x1=\"150\" y1=\"112\" x2=\"560\" y2=\"112\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 4\"/><rect x=\"244\" y=\"101\" width=\"92\" height=\"20\" rx=\"5\" fill=\"rgba(var(--accent-0-rgb),0.85)\"/><rect x=\"364\" y=\"101\" width=\"92\" height=\"20\" rx=\"5\" fill=\"rgba(var(--accent-2-rgb),0.85)\"/><rect x=\"484\" y=\"101\" width=\"92\" height=\"20\" rx=\"5\" fill=\"rgba(var(--accent-4-rgb),0.85)\"/><line x1=\"150\" y1=\"150\" x2=\"560\" y2=\"150\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 4\"/><rect x=\"244\" y=\"139\" width=\"92\" height=\"20\" rx=\"5\" fill=\"rgba(var(--accent-0-rgb),0.85)\"/><rect x=\"364\" y=\"139\" width=\"92\" height=\"20\" rx=\"5\" fill=\"rgba(var(--accent-2-rgb),0.85)\"/><rect x=\"484\" y=\"139\" width=\"92\" height=\"20\" rx=\"5\" fill=\"rgba(var(--accent-4-rgb),0.85)\"/><line x1=\"150\" y1=\"182\" x2=\"560\" y2=\"182\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 4\"/><rect x=\"244\" y=\"171\" width=\"92\" height=\"20\" rx=\"5\" fill=\"rgba(var(--accent-0-rgb),0.85)\"/><rect x=\"364\" y=\"171\" width=\"92\" height=\"20\" rx=\"5\" fill=\"rgba(var(--accent-2-rgb),0.85)\"/><rect x=\"484\" y=\"171\" width=\"92\" height=\"20\" rx=\"5\" fill=\"rgba(var(--accent-4-rgb),0.85)\"/><line x1=\"150\" y1=\"262\" x2=\"560\" y2=\"262\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\" stroke-dasharray=\"3 4\"/><rect x=\"244\" y=\"251\" width=\"92\" height=\"20\" rx=\"5\" fill=\"rgba(var(--accent-0-rgb),0.85)\"/><rect x=\"364\" y=\"251\" width=\"92\" height=\"20\" rx=\"5\" fill=\"rgba(var(--accent-2-rgb),0.85)\"/><rect x=\"484\" y=\"251\" width=\"92\" height=\"20\" rx=\"5\" fill=\"rgba(var(--accent-4-rgb),0.85)\"/>\n</svg>"
+      },
+      {
+        "id": "CH5_REFL",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Law of reflection",
+        "labels": [
+          {
+            "id": "i",
+            "answer": "Angle of incidence",
+            "x": 21.9,
+            "y": 18.4,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "r",
+            "answer": "Angle of reflection",
+            "x": 62.1,
+            "y": 18.4,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "n",
+            "answer": "Normal",
+            "x": 42.0,
+            "y": 5.4,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Law of reflection",
+            "accept": [
+              "reflection",
+              "law of reflection",
+              "angle of incidence"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Plane mirrors",
+              "Endoscopes",
+              "i = r",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 560 262\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<rect x=\"80\" y=\"200\" width=\"400\" height=\"14\" fill=\"rgba(var(--accent-6-rgb),0.25)\" stroke=\"var(--accent-6)\" stroke-width=\"2\"/><line x1=\"90\" y1=\"214\" x2=\"80\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"106\" y1=\"214\" x2=\"96\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"122\" y1=\"214\" x2=\"112\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"138\" y1=\"214\" x2=\"128\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"154\" y1=\"214\" x2=\"144\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"170\" y1=\"214\" x2=\"160\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"186\" y1=\"214\" x2=\"176\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"202\" y1=\"214\" x2=\"192\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"218\" y1=\"214\" x2=\"208\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"234\" y1=\"214\" x2=\"224\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"250\" y1=\"214\" x2=\"240\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"266\" y1=\"214\" x2=\"256\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"282\" y1=\"214\" x2=\"272\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"298\" y1=\"214\" x2=\"288\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"314\" y1=\"214\" x2=\"304\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"330\" y1=\"214\" x2=\"320\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"346\" y1=\"214\" x2=\"336\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"362\" y1=\"214\" x2=\"352\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"378\" y1=\"214\" x2=\"368\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"394\" y1=\"214\" x2=\"384\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"410\" y1=\"214\" x2=\"400\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"426\" y1=\"214\" x2=\"416\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"442\" y1=\"214\" x2=\"432\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"458\" y1=\"214\" x2=\"448\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"474\" y1=\"214\" x2=\"464\" y2=\"226\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"280\" y1=\"200\" x2=\"280\" y2=\"30\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.5\" stroke-dasharray=\"6 5\"/><rect x=\"280\" y=\"186\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\"/><line x1=\"175.3\" y1=\"66\" x2=\"280\" y2=\"200\" stroke=\"var(--accent-0)\" stroke-width=\"2.5\"/><polygon points=\"230.6,136.8 221.9,131.5 227.6,127\" fill=\"var(--accent-0)\"/><line x1=\"280\" y1=\"200\" x2=\"384.7\" y2=\"66\" stroke=\"var(--accent-1)\" stroke-width=\"2.5\"/><polygon points=\"335.3,129.2 332.2,139 326.5,134.6\" fill=\"var(--accent-1)\"/><path d=\"M280,140 A60,60 0 0 0 243.1,152.7\" fill=\"none\" stroke=\"var(--accent-0)\" stroke-width=\"1.5\"/><path d=\"M280,140 A60,60 0 0 1 316.9,152.7\" fill=\"none\" stroke=\"var(--accent-1)\" stroke-width=\"1.5\"/>\n</svg>"
+      },
+      {
+        "id": "CH5_MIRROR",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Plane mirror image",
+        "labels": [
+          {
+            "id": "obj",
+            "answer": "Object",
+            "x": 23.7,
+            "y": 78.3,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "img",
+            "answer": "Virtual image",
+            "x": 60.3,
+            "y": 78.3,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "mir",
+            "answer": "Mirror",
+            "x": 42.0,
+            "y": 8.2,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Plane mirror image",
+            "accept": [
+              "plane mirror",
+              "virtual image",
+              "mirror"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Image is virtual and upright",
+              "Image is as far behind as the object is in front",
+              "Laterally inverted",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 600 268\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<line x1=\"300\" y1=\"40\" x2=\"300\" y2=\"230\" stroke=\"var(--accent-6)\" stroke-width=\"4\"/><line x1=\"302\" y1=\"46\" x2=\"312\" y2=\"38\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"302\" y1=\"60\" x2=\"312\" y2=\"52\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"302\" y1=\"74\" x2=\"312\" y2=\"66\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"302\" y1=\"88\" x2=\"312\" y2=\"80\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"302\" y1=\"102\" x2=\"312\" y2=\"94\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"302\" y1=\"116\" x2=\"312\" y2=\"108\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"302\" y1=\"130\" x2=\"312\" y2=\"122\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"302\" y1=\"144\" x2=\"312\" y2=\"136\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"302\" y1=\"158\" x2=\"312\" y2=\"150\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"302\" y1=\"172\" x2=\"312\" y2=\"164\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"302\" y1=\"186\" x2=\"312\" y2=\"178\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"302\" y1=\"200\" x2=\"312\" y2=\"192\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"302\" y1=\"214\" x2=\"312\" y2=\"206\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"302\" y1=\"228\" x2=\"312\" y2=\"220\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"190\" y1=\"200\" x2=\"190\" y2=\"110\" stroke=\"var(--accent-4)\" stroke-width=\"3\"/><polygon points=\"190,103.4 194.9,116.6 185.1,116.6\" fill=\"var(--accent-4)\"/><line x1=\"410\" y1=\"200\" x2=\"410\" y2=\"110\" stroke=\"var(--accent-3)\" stroke-width=\"3\" stroke-dasharray=\"5 4\"/><polygon points=\"410,103.4 414.9,116.6 405.1,116.6\" fill=\"var(--accent-3)\"/><line x1=\"190\" y1=\"110\" x2=\"300\" y2=\"97.1\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"249.8,103 240.7,107.7 239.8,100.5\" fill=\"var(--accent-0)\"/><line x1=\"300\" y1=\"97.1\" x2=\"70\" y2=\"70\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"180.2,83 190.2,80.5 189.3,87.7\" fill=\"var(--accent-0)\"/><line x1=\"300\" y1=\"97.1\" x2=\"410\" y2=\"110\" stroke=\"var(--accent-0)\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><line x1=\"190\" y1=\"198\" x2=\"300\" y2=\"156.6\" stroke=\"var(--accent-1)\" stroke-width=\"2\"/><polygon points=\"249.5,175.6 241.8,182.4 239.2,175.6\" fill=\"var(--accent-1)\"/><line x1=\"300\" y1=\"156.6\" x2=\"70\" y2=\"70\" stroke=\"var(--accent-1)\" stroke-width=\"2\"/><polygon points=\"180.5,111.6 190.8,111.6 188.2,118.4\" fill=\"var(--accent-1)\"/><line x1=\"300\" y1=\"156.6\" x2=\"410\" y2=\"198\" stroke=\"var(--accent-1)\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><ellipse cx=\"60\" cy=\"70\" rx=\"16\" ry=\"9\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"2\"/><circle cx=\"66\" cy=\"70\" r=\"4\" fill=\"var(--col-text-main)\"/><line x1=\"190\" y1=\"240\" x2=\"300\" y2=\"240\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\"/><line x1=\"300\" y1=\"240\" x2=\"410\" y2=\"240\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\"/><line x1=\"190\" y1=\"234\" x2=\"190\" y2=\"246\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\"/><line x1=\"300\" y1=\"234\" x2=\"300\" y2=\"246\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\"/><line x1=\"410\" y1=\"234\" x2=\"410\" y2=\"246\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\"/>\n</svg>"
+      },
+      {
+        "id": "CH5_CURVED",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Curved mirrors",
+        "labels": [
+          {
+            "id": "conc",
+            "answer": "Concave mirror",
+            "x": 17.0,
+            "y": 5.3,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "conv",
+            "answer": "Convex mirror",
+            "x": 69.3,
+            "y": 5.3,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "F",
+            "answer": "Focal point F",
+            "x": 21.7,
+            "y": 48.3,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Curved mirrors",
+            "accept": [
+              "concave mirror",
+              "convex mirror",
+              "focal point",
+              "curved mirror"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Concave mirror focuses parallel rays",
+              "Convex mirror spreads rays",
+              "Dental mirrors",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 312\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<line x1=\"20\" y1=\"140\" x2=\"300\" y2=\"140\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\"/><path d=\"M268.6,50 A200,200 0 0 1 268.6,230\" fill=\"none\" stroke=\"var(--accent-6)\" stroke-width=\"5\"/><line x1=\"30\" y1=\"80\" x2=\"280.8\" y2=\"80\" stroke=\"var(--accent-0)\" stroke-width=\"1.8\"/><polygon points=\"160.2,80 150.6,83.6 150.6,76.4\" fill=\"var(--accent-0)\"/><line x1=\"280.8\" y1=\"80\" x2=\"167.3\" y2=\"155\" stroke=\"var(--accent-1)\" stroke-width=\"1.8\"/><polygon points=\"231.4,112.6 237.4,104.4 241.4,110.4\" fill=\"var(--accent-1)\"/><line x1=\"30\" y1=\"110\" x2=\"287.7\" y2=\"110\" stroke=\"var(--accent-0)\" stroke-width=\"1.8\"/><polygon points=\"163.7,110 154.1,113.6 154.1,106.4\" fill=\"var(--accent-0)\"/><line x1=\"287.7\" y1=\"110\" x2=\"165.6\" y2=\"147.5\" stroke=\"var(--accent-1)\" stroke-width=\"1.8\"/><polygon points=\"234.3,126.4 242.4,120.1 244.5,127\" fill=\"var(--accent-1)\"/><line x1=\"30\" y1=\"170\" x2=\"287.7\" y2=\"170\" stroke=\"var(--accent-0)\" stroke-width=\"1.8\"/><polygon points=\"163.7,170 154.1,173.6 154.1,166.4\" fill=\"var(--accent-0)\"/><line x1=\"287.7\" y1=\"170\" x2=\"165.6\" y2=\"132.5\" stroke=\"var(--accent-1)\" stroke-width=\"1.8\"/><polygon points=\"234.3,153.6 244.5,153 242.4,159.9\" fill=\"var(--accent-1)\"/><line x1=\"30\" y1=\"200\" x2=\"280.8\" y2=\"200\" stroke=\"var(--accent-0)\" stroke-width=\"1.8\"/><polygon points=\"160.2,200 150.6,203.6 150.6,196.4\" fill=\"var(--accent-0)\"/><line x1=\"280.8\" y1=\"200\" x2=\"167.3\" y2=\"125\" stroke=\"var(--accent-1)\" stroke-width=\"1.8\"/><polygon points=\"231.4,167.4 241.4,169.6 237.4,175.6\" fill=\"var(--accent-1)\"/><circle cx=\"90\" cy=\"140\" r=\"4\" fill=\"var(--col-text-main)\"/><circle cx=\"190\" cy=\"140\" r=\"4\" fill=\"var(--col-text-main)\"/><line x1=\"90\" y1=\"146\" x2=\"90\" y2=\"276\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\" stroke-dasharray=\"2 4\"/><line x1=\"190\" y1=\"146\" x2=\"190\" y2=\"276\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\" stroke-dasharray=\"2 4\"/><line x1=\"290\" y1=\"146\" x2=\"290\" y2=\"276\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\" stroke-dasharray=\"2 4\"/><line x1=\"190\" y1=\"244\" x2=\"290\" y2=\"244\" stroke=\"var(--accent-2)\" stroke-width=\"1.6\"/><line x1=\"90\" y1=\"270\" x2=\"290\" y2=\"270\" stroke=\"var(--accent-2)\" stroke-width=\"1.6\"/><line x1=\"340\" y1=\"140\" x2=\"630\" y2=\"140\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\"/><path d=\"M431.4,50 A200,200 0 0 0 431.4,230\" fill=\"none\" stroke=\"var(--accent-6)\" stroke-width=\"5\"/><line x1=\"350\" y1=\"80\" x2=\"419.2\" y2=\"80\" stroke=\"var(--accent-0)\" stroke-width=\"1.8\"/><polygon points=\"389.4,80 379.8,83.6 379.8,76.4\" fill=\"var(--accent-0)\"/><line x1=\"419.2\" y1=\"80\" x2=\"352.5\" y2=\"35.9\" stroke=\"var(--accent-1)\" stroke-width=\"1.8\"/><polygon points=\"381.8,55.3 391.8,57.6 387.9,63.6\" fill=\"var(--accent-1)\"/><line x1=\"419.2\" y1=\"80\" x2=\"510\" y2=\"140\" stroke=\"var(--accent-1)\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\"/><line x1=\"350\" y1=\"110\" x2=\"412.3\" y2=\"110\" stroke=\"var(--accent-0)\" stroke-width=\"1.8\"/><polygon points=\"385.9,110 376.3,113.6 376.3,106.4\" fill=\"var(--accent-0)\"/><line x1=\"412.3\" y1=\"110\" x2=\"335.8\" y2=\"86.5\" stroke=\"var(--accent-1)\" stroke-width=\"1.8\"/><polygon points=\"369.4,96.9 379.7,96.2 377.6,103.1\" fill=\"var(--accent-1)\"/><line x1=\"412.3\" y1=\"110\" x2=\"510\" y2=\"140\" stroke=\"var(--accent-1)\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\"/><line x1=\"350\" y1=\"170\" x2=\"412.3\" y2=\"170\" stroke=\"var(--accent-0)\" stroke-width=\"1.8\"/><polygon points=\"385.9,170 376.3,173.6 376.3,166.4\" fill=\"var(--accent-0)\"/><line x1=\"412.3\" y1=\"170\" x2=\"335.8\" y2=\"193.5\" stroke=\"var(--accent-1)\" stroke-width=\"1.8\"/><polygon points=\"369.4,183.1 377.6,176.9 379.7,183.8\" fill=\"var(--accent-1)\"/><line x1=\"412.3\" y1=\"170\" x2=\"510\" y2=\"140\" stroke=\"var(--accent-1)\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\"/><line x1=\"350\" y1=\"200\" x2=\"419.2\" y2=\"200\" stroke=\"var(--accent-0)\" stroke-width=\"1.8\"/><polygon points=\"389.4,200 379.8,203.6 379.8,196.4\" fill=\"var(--accent-0)\"/><line x1=\"419.2\" y1=\"200\" x2=\"352.5\" y2=\"244.1\" stroke=\"var(--accent-1)\" stroke-width=\"1.8\"/><polygon points=\"381.8,224.7 387.9,216.4 391.8,222.4\" fill=\"var(--accent-1)\"/><line x1=\"419.2\" y1=\"200\" x2=\"510\" y2=\"140\" stroke=\"var(--accent-1)\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\"/><circle cx=\"510\" cy=\"140\" r=\"4\" fill=\"var(--col-text-main)\"/>\n</svg>"
+      },
+      {
+        "id": "CH5_CONCAVE",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Concave mirror image",
+        "labels": [
+          {
+            "id": "obj",
+            "answer": "Object",
+            "x": 45.5,
+            "y": 14.3,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "img",
+            "answer": "Real image",
+            "x": 83.3,
+            "y": 50.3,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "F",
+            "answer": "Focus F",
+            "x": 96.2,
+            "y": 33.4,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Concave mirror image",
+            "accept": [
+              "concave mirror",
+              "real image",
+              "inverted"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Object beyond C gives a real inverted image",
+              "Used in headlights",
+              "Object between F and mirror gives a virtual image",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"140 8 430 335\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<line x1=\"150\" y1=\"130\" x2=\"560\" y2=\"130\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\"/><path d=\"M532,30 Q548,130 532,260\" fill=\"none\" stroke=\"var(--accent-6)\" stroke-width=\"5\"/><line x1=\"230\" y1=\"130\" x2=\"230\" y2=\"70\" stroke=\"var(--accent-4)\" stroke-width=\"3\"/><polygon points=\"230,63.4 234.9,76.6 225.1,76.6\" fill=\"var(--accent-4)\"/><line x1=\"392.4\" y1=\"130\" x2=\"392.4\" y2=\"158.6\" stroke=\"var(--accent-3)\" stroke-width=\"3\"/><polygon points=\"392.4,165.2 387.4,152 397.3,152\" fill=\"var(--accent-3)\"/><line x1=\"230\" y1=\"70\" x2=\"540\" y2=\"70\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"389.8,70 380.2,73.6 380.2,66.4\" fill=\"var(--accent-0)\"/><line x1=\"540\" y1=\"70\" x2=\"322.4\" y2=\"200.6\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"427.1,137.8 433.5,129.7 437.2,135.9\" fill=\"var(--accent-0)\"/><line x1=\"230\" y1=\"70\" x2=\"540\" y2=\"158.6\" stroke=\"var(--accent-1)\" stroke-width=\"2\"/><polygon points=\"389.6,115.6 379.4,116.4 381.4,109.5\" fill=\"var(--accent-1)\"/><line x1=\"540\" y1=\"158.6\" x2=\"322.4\" y2=\"158.6\" stroke=\"var(--accent-1)\" stroke-width=\"2\"/><polygon points=\"426.4,158.6 436,155 436,162.2\" fill=\"var(--accent-1)\"/><line x1=\"230\" y1=\"70\" x2=\"540\" y2=\"239.1\" stroke=\"var(--accent-2)\" stroke-width=\"2\"/><polygon points=\"389.2,156.8 379.1,155.4 382.5,149.1\" fill=\"var(--accent-2)\"/><line x1=\"540\" y1=\"239.1\" x2=\"352.4\" y2=\"136.8\" stroke=\"var(--accent-2)\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><circle cx=\"340\" cy=\"130\" r=\"4\" fill=\"var(--col-text-main)\"/><circle cx=\"440\" cy=\"130\" r=\"4\" fill=\"var(--col-text-main)\"/>\n</svg>"
+      },
+      {
+        "id": "CH5_REFR",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Refraction",
+        "labels": [
+          {
+            "id": "in",
+            "answer": "Incident ray",
+            "x": 22,
+            "y": 37,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "out",
+            "answer": "Refracted ray",
+            "x": 22,
+            "y": 37,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "n",
+            "answer": "Normal",
+            "x": 17.0,
+            "y": 8.5,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Refraction",
+            "accept": [
+              "refraction",
+              "Snell's law",
+              "refractive index"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Light bends toward the normal entering a denser medium",
+              "Lenses",
+              "The eye",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 295\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<rect x=\"10\" y=\"150\" width=\"300\" height=\"110\" fill=\"rgba(var(--accent-1-rgb),0.16)\"/><line x1=\"10\" y1=\"150\" x2=\"310\" y2=\"150\" stroke=\"var(--accent-1)\" stroke-width=\"1.5\"/><line x1=\"160\" y1=\"40\" x2=\"160\" y2=\"260\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.3\" stroke-dasharray=\"6 5\"/><line x1=\"68.1\" y1=\"72.9\" x2=\"160\" y2=\"150\" stroke=\"var(--accent-0)\" stroke-width=\"2.5\"/><polygon points=\"117.7,114.5 108,111.1 112.7,105.6\" fill=\"var(--accent-0)\"/><line x1=\"160\" y1=\"150\" x2=\"229.1\" y2=\"248.1\" stroke=\"var(--accent-0)\" stroke-width=\"2.5\"/><polygon points=\"197.3,203 188.9,197.2 194.7,193.1\" fill=\"var(--accent-0)\"/><path d=\"M160,104 A46,46 0 0 0 124.8,120.4\" fill=\"none\" stroke=\"var(--accent-2)\" stroke-width=\"1.5\"/><path d=\"M160,196 A46,46 0 0 0 186.5,187.6\" fill=\"none\" stroke=\"var(--accent-2)\" stroke-width=\"1.5\"/><rect x=\"330\" y=\"150\" width=\"300\" height=\"110\" fill=\"rgba(var(--accent-1-rgb),0.16)\"/><line x1=\"330\" y1=\"150\" x2=\"630\" y2=\"150\" stroke=\"var(--accent-1)\" stroke-width=\"1.5\"/><line x1=\"480\" y1=\"40\" x2=\"480\" y2=\"260\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.3\" stroke-dasharray=\"6 5\"/><line x1=\"410.9\" y1=\"248.1\" x2=\"480\" y2=\"150\" stroke=\"var(--accent-0)\" stroke-width=\"2.5\"/><polygon points=\"448.2,195.1 445.6,205 439.7,200.9\" fill=\"var(--accent-0)\"/><line x1=\"480\" y1=\"150\" x2=\"571.9\" y2=\"72.9\" stroke=\"var(--accent-0)\" stroke-width=\"2.5\"/><polygon points=\"529.6,108.3 524.6,117.3 520,111.8\" fill=\"var(--accent-0)\"/><path d=\"M480,104 A46,46 0 0 1 515.2,120.4\" fill=\"none\" stroke=\"var(--accent-2)\" stroke-width=\"1.5\"/><path d=\"M480,196 A46,46 0 0 1 453.5,187.6\" fill=\"none\" stroke=\"var(--accent-2)\" stroke-width=\"1.5\"/>\n</svg>"
+      },
+      {
+        "id": "CH5_TIR",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Total internal reflection",
+        "labels": [
+          {
+            "id": "below",
+            "answer": "Below critical angle",
+            "x": 22,
+            "y": 37,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "at",
+            "answer": "At critical angle",
+            "x": 22,
+            "y": 37,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "above",
+            "answer": "Total internal reflection",
+            "x": 22,
+            "y": 37,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Total internal reflection",
+            "accept": [
+              "total internal reflection",
+              "TIR",
+              "critical angle"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Optical fibres",
+              "Endoscopes",
+              "Critical angle",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 266\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<rect x=\"20\" y=\"120\" width=\"200\" height=\"110\" fill=\"rgba(var(--accent-1-rgb),0.16)\"/><line x1=\"20\" y1=\"120\" x2=\"220\" y2=\"120\" stroke=\"var(--accent-1)\" stroke-width=\"1.5\"/><line x1=\"125\" y1=\"40\" x2=\"125\" y2=\"220\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\"/><line x1=\"75\" y1=\"206.6\" x2=\"125\" y2=\"120\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"102.4,159.1 100.7,169.3 94.5,165.7\" fill=\"var(--accent-0)\"/><line x1=\"125\" y1=\"120\" x2=\"200\" y2=\"53.9\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"166.1,83.8 161.3,92.8 156.5,87.4\" fill=\"var(--accent-0)\"/><line x1=\"125\" y1=\"120\" x2=\"175\" y2=\"206.6\" stroke=\"var(--accent-0)\" stroke-width=\"1.2\"/><polygon points=\"152.4,167.5 144.5,160.9 150.7,157.3\" fill=\"var(--accent-0)\"/><path d=\"M125,154 A34,34 0 0 1 108,149.4\" fill=\"none\" stroke=\"var(--accent-2)\" stroke-width=\"1.5\"/><rect x=\"225\" y=\"120\" width=\"200\" height=\"110\" fill=\"rgba(var(--accent-1-rgb),0.16)\"/><line x1=\"225\" y1=\"120\" x2=\"425\" y2=\"120\" stroke=\"var(--accent-1)\" stroke-width=\"1.5\"/><line x1=\"330\" y1=\"40\" x2=\"330\" y2=\"220\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\"/><line x1=\"263.3\" y1=\"194.5\" x2=\"330\" y2=\"120\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"299.9,153.7 296.1,163.2 290.8,158.4\" fill=\"var(--accent-0)\"/><line x1=\"330\" y1=\"120\" x2=\"420\" y2=\"119\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"379.8,119.4 370.2,123.2 370.2,116\" fill=\"var(--accent-0)\"/><line x1=\"330\" y1=\"120\" x2=\"396.7\" y2=\"194.5\" stroke=\"var(--accent-0)\" stroke-width=\"1.2\"/><polygon points=\"366.5,160.8 357.5,156.1 362.8,151.3\" fill=\"var(--accent-0)\"/><path d=\"M330,154 A34,34 0 0 1 307.3,145.3\" fill=\"none\" stroke=\"var(--accent-2)\" stroke-width=\"1.5\"/><rect x=\"430\" y=\"120\" width=\"200\" height=\"110\" fill=\"rgba(var(--accent-1-rgb),0.16)\"/><line x1=\"430\" y1=\"120\" x2=\"630\" y2=\"120\" stroke=\"var(--accent-1)\" stroke-width=\"1.5\"/><line x1=\"535\" y1=\"40\" x2=\"535\" y2=\"220\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\"/><line x1=\"448.4\" y1=\"170\" x2=\"535\" y2=\"120\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"495.9,142.6 489.3,150.5 485.7,144.3\" fill=\"var(--accent-0)\"/><line x1=\"535\" y1=\"120\" x2=\"621.6\" y2=\"170\" stroke=\"var(--accent-1)\" stroke-width=\"2.6\"/><polygon points=\"582.5,147.4 572.3,145.7 575.9,139.5\" fill=\"var(--accent-1)\"/><path d=\"M535,154 A34,34 0 0 1 505.6,137\" fill=\"none\" stroke=\"var(--accent-2)\" stroke-width=\"1.5\"/>\n</svg>"
+      },
+      {
+        "id": "CH5_FIBRE",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Optical fibre",
+        "labels": [
+          {
+            "id": "core",
+            "answer": "Core",
+            "x": 15.1,
+            "y": 17.2,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "clad",
+            "answer": "Cladding",
+            "x": 42.0,
+            "y": 33.3,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "light",
+            "answer": "Light ray",
+            "x": 2,
+            "y": 6.7,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Optical fibre",
+            "accept": [
+              "optical fibre",
+              "fiber",
+              "total internal reflection",
+              "fibre"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Endoscopy",
+              "Transmitting light by TIR",
+              "High-index core",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 248\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<rect x=\"30\" y=\"70\" width=\"580\" height=\"120\" rx=\"14\" fill=\"rgba(var(--accent-6-rgb),0.14)\" stroke=\"var(--accent-6)\" stroke-width=\"2\"/><rect x=\"30\" y=\"100\" width=\"580\" height=\"60\" fill=\"rgba(var(--accent-1-rgb),0.22)\" stroke=\"var(--accent-1)\" stroke-width=\"1.5\"/><line x1=\"30\" y1=\"145\" x2=\"75\" y2=\"100\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"55.9,119.1 51.7,128.4 46.6,123.3\" fill=\"var(--accent-0)\"/><line x1=\"75\" y1=\"100\" x2=\"165\" y2=\"160\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"124,132.7 114,130.3 118,124.3\" fill=\"var(--accent-0)\"/><line x1=\"165\" y1=\"160\" x2=\"255\" y2=\"100\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"214,127.3 208,135.7 204,129.7\" fill=\"var(--accent-0)\"/><line x1=\"255\" y1=\"100\" x2=\"345\" y2=\"160\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"304,132.7 294,130.3 298,124.3\" fill=\"var(--accent-0)\"/><line x1=\"345\" y1=\"160\" x2=\"435\" y2=\"100\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"394,127.3 388,135.7 384,129.7\" fill=\"var(--accent-0)\"/><line x1=\"435\" y1=\"100\" x2=\"525\" y2=\"160\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"484,132.7 474,130.3 478,124.3\" fill=\"var(--accent-0)\"/><line x1=\"525\" y1=\"160\" x2=\"610\" y2=\"103.3\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"571.5,129 565.5,137.3 561.5,131.3\" fill=\"var(--accent-0)\"/><line x1=\"610\" y1=\"103.3\" x2=\"632\" y2=\"88.7\" stroke=\"var(--accent-0)\" stroke-width=\"2.4\"/><polygon points=\"632,88.7 626,97 622,91\" fill=\"var(--accent-0)\"/><line x1=\"140\" y1=\"52\" x2=\"140\" y2=\"100\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/>\n</svg>"
+      },
+      {
+        "id": "CH5_CONVEX",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Convex lens",
+        "labels": [
+          {
+            "id": "obj",
+            "answer": "Object",
+            "x": 12.3,
+            "y": 24.2,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "img",
+            "answer": "Real image",
+            "x": 64.4,
+            "y": 65.6,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "F",
+            "answer": "Focus F",
+            "x": 18.6,
+            "y": 53.3,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Convex lens",
+            "accept": [
+              "convex lens",
+              "converging lens",
+              "real image"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Object beyond 2F gives a real inverted image",
+              "The eye's lens",
+              "Magnifying glass",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 302\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<line x1=\"40\" y1=\"150\" x2=\"620\" y2=\"150\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\"/><path d=\"M330,55 Q352,150 330,245 Q308,150 330,55 Z\" fill=\"rgba(var(--accent-6-rgb),0.2)\" stroke=\"var(--accent-6)\" stroke-width=\"2\"/><line x1=\"130\" y1=\"150\" x2=\"130\" y2=\"94\" stroke=\"var(--accent-4)\" stroke-width=\"3\"/><polygon points=\"130,87.4 134.9,100.6 125,100.6\" fill=\"var(--accent-4)\"/><line x1=\"463.3\" y1=\"150\" x2=\"463.3\" y2=\"187.3\" stroke=\"var(--accent-3)\" stroke-width=\"3\"/><polygon points=\"463.3,193.9 458.4,180.7 468.3,180.7\" fill=\"var(--accent-3)\"/><line x1=\"130\" y1=\"94\" x2=\"330\" y2=\"94\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"234.8,94 225.2,97.6 225.2,90.4\" fill=\"var(--accent-0)\"/><line x1=\"330\" y1=\"94\" x2=\"600\" y2=\"283\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"468.9,191.3 459,188.7 463.1,182.8\" fill=\"var(--accent-0)\"/><line x1=\"130\" y1=\"94\" x2=\"330\" y2=\"187.3\" stroke=\"var(--accent-1)\" stroke-width=\"2\"/><polygon points=\"234.3,142.7 224.1,141.9 227.2,135.4\" fill=\"var(--accent-1)\"/><line x1=\"330\" y1=\"187.3\" x2=\"600\" y2=\"187.3\" stroke=\"var(--accent-1)\" stroke-width=\"2\"/><polygon points=\"469.8,187.3 460.2,190.9 460.2,183.7\" fill=\"var(--accent-1)\"/><line x1=\"130\" y1=\"94\" x2=\"600\" y2=\"225.6\" stroke=\"var(--accent-2)\" stroke-width=\"2\"/><polygon points=\"369.6,161.1 359.4,162 361.3,155\" fill=\"var(--accent-2)\"/><circle cx=\"170\" cy=\"150\" r=\"3.5\" fill=\"var(--col-text-main)\"/><circle cx=\"250\" cy=\"150\" r=\"3.5\" fill=\"var(--col-text-main)\"/><circle cx=\"410\" cy=\"150\" r=\"3.5\" fill=\"var(--col-text-main)\"/><circle cx=\"490\" cy=\"150\" r=\"3.5\" fill=\"var(--col-text-main)\"/>\n</svg>"
+      },
+      {
+        "id": "CH5_CONCAVELENS",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Concave lens",
+        "labels": [
+          {
+            "id": "obj",
+            "answer": "Object",
+            "x": 19.2,
+            "y": 28.5,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "img",
+            "answer": "Virtual image",
+            "x": 35.1,
+            "y": 65.5,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "F",
+            "answer": "Focus F",
+            "x": 27.9,
+            "y": 58.3,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Concave lens",
+            "accept": [
+              "concave lens",
+              "diverging lens",
+              "virtual image"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Always a virtual upright smaller image",
+              "Correcting myopia",
+              "Spreads parallel rays",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 302\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<line x1=\"40\" y1=\"165\" x2=\"620\" y2=\"165\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\"/><path d=\"M314,70 L346,70 Q333,165 346,260 L314,260 Q327,165 314,70 Z\" fill=\"rgba(var(--accent-6-rgb),0.2)\" stroke=\"var(--accent-6)\" stroke-width=\"2\"/><line x1=\"180\" y1=\"165\" x2=\"180\" y2=\"105\" stroke=\"var(--accent-4)\" stroke-width=\"3\"/><polygon points=\"180,98.4 184.9,111.6 175.1,111.6\" fill=\"var(--accent-4)\"/><line x1=\"270\" y1=\"165\" x2=\"270\" y2=\"141\" stroke=\"var(--accent-3)\" stroke-width=\"3\" stroke-dasharray=\"4 3\"/><polygon points=\"270,134.4 274.9,147.6 265.1,147.6\" fill=\"var(--accent-3)\"/><line x1=\"270\" y1=\"169\" x2=\"274\" y2=\"193\" stroke=\"var(--accent-3)\" stroke-width=\"1\" stroke-dasharray=\"2 2\"/><line x1=\"180\" y1=\"105\" x2=\"330\" y2=\"105\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"259.8,105 250.2,108.6 250.2,101.4\" fill=\"var(--accent-0)\"/><line x1=\"330\" y1=\"105\" x2=\"411.7\" y2=\"56\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"374.9,78 368.6,86.1 364.9,79.9\" fill=\"var(--accent-0)\"/><line x1=\"230\" y1=\"165\" x2=\"330\" y2=\"105\" stroke=\"var(--accent-0)\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><line x1=\"180\" y1=\"105\" x2=\"600\" y2=\"273\" stroke=\"var(--accent-2)\" stroke-width=\"2\"/><polygon points=\"394.5,190.8 384.2,190.6 386.9,183.9\" fill=\"var(--accent-2)\"/><circle cx=\"230\" cy=\"165\" r=\"3.5\" fill=\"var(--col-text-main)\"/><circle cx=\"430\" cy=\"165\" r=\"3.5\" fill=\"var(--col-text-main)\"/>\n</svg>"
+      },
+      {
+        "id": "CH6_COMBO",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Combination of lenses",
+        "labels": [
+          {
+            "id": "l1",
+            "answer": "Lens 1",
+            "x": 29.5,
+            "y": 10.7,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "l2",
+            "answer": "Lens 2",
+            "x": 54.5,
+            "y": 10.7,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "eq",
+            "answer": "1/f = 1/f₁ + 1/f₂ − r/(f₁f₂)",
+            "x": 42.0,
+            "y": 86.7,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Combination of lenses",
+            "accept": [
+              "combination of lenses",
+              "lens formula",
+              "power of lenses"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Two lenses act as one",
+              "Power adds with a separation term",
+              "Microscope and telescope",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 292\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<line x1=\"30\" y1=\"130\" x2=\"610\" y2=\"130\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\" stroke-dasharray=\"6 4\"/><path d=\"M240,50 Q256,130 240,210 Q224,130 240,50 Z\" fill=\"rgba(var(--accent-1-rgb),0.22)\" stroke=\"var(--accent-1)\" stroke-width=\"2\"/><path d=\"M400,50 Q416,130 400,210 Q384,130 400,50 Z\" fill=\"rgba(var(--accent-4-rgb),0.22)\" stroke=\"var(--accent-4)\" stroke-width=\"2\"/><line x1=\"240\" y1=\"236\" x2=\"400\" y2=\"236\" stroke=\"var(--col-text-main)\" stroke-width=\"1.4\"/><polygon points=\"404.8,236 395.2,239.6 395.2,232.4\" fill=\"var(--col-text-main)\"/><polygon points=\"235.2,236 244.8,232.4 244.8,239.6\" fill=\"var(--col-text-main)\"/><line x1=\"240\" y1=\"215\" x2=\"240\" y2=\"242\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"400\" y1=\"215\" x2=\"400\" y2=\"242\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"40\" y1=\"95\" x2=\"240\" y2=\"95\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"144.8,95 135.2,98.6 135.2,91.4\" fill=\"var(--accent-0)\"/><line x1=\"240\" y1=\"95\" x2=\"400\" y2=\"114.2\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"324.8,105.2 314.8,107.6 315.7,100.5\" fill=\"var(--accent-0)\"/><line x1=\"400\" y1=\"114.2\" x2=\"520\" y2=\"130\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"464.8,122.7 454.8,125.1 455.7,117.9\" fill=\"var(--accent-0)\"/><line x1=\"40\" y1=\"165\" x2=\"240\" y2=\"165\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"144.8,165 135.2,168.6 135.2,161.4\" fill=\"var(--accent-0)\"/><line x1=\"240\" y1=\"165\" x2=\"400\" y2=\"145.8\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"324.8,154.8 315.7,159.5 314.8,152.4\" fill=\"var(--accent-0)\"/><line x1=\"400\" y1=\"145.8\" x2=\"520\" y2=\"130\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"464.8,137.3 455.7,142.1 454.8,134.9\" fill=\"var(--accent-0)\"/><circle cx=\"520\" cy=\"130\" r=\"4\" fill=\"var(--accent-0)\"/>\n</svg>"
+      },
+      {
+        "id": "CH6_MAG",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Simple magnifier",
+        "labels": [
+          {
+            "id": "obj",
+            "answer": "Object",
+            "x": 37.3,
+            "y": 63.9,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "img",
+            "answer": "Virtual image",
+            "x": 15.3,
+            "y": 13.5,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "F",
+            "answer": "Focus F",
+            "x": 27.9,
+            "y": 63.9,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Simple magnifier",
+            "accept": [
+              "magnifier",
+              "magnifying glass",
+              "simple magnifier"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Object inside the focal length",
+              "Virtual erect magnified image",
+              "Angular magnification",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 284\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<line x1=\"20\" y1=\"170\" x2=\"620\" y2=\"170\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\" stroke-dasharray=\"6 4\"/><path d=\"M380,80 Q396,170 380,260 Q364,170 380,80 Z\" fill=\"rgba(var(--accent-1-rgb),0.22)\" stroke=\"var(--accent-1)\" stroke-width=\"2\"/><circle cx=\"230\" cy=\"170\" r=\"3.5\" fill=\"var(--col-text-main)\"/><circle cx=\"530\" cy=\"170\" r=\"3.5\" fill=\"var(--col-text-main)\"/><line x1=\"290\" y1=\"170\" x2=\"290\" y2=\"124\" stroke=\"var(--accent-0)\" stroke-width=\"3\"/><polygon points=\"290,117.4 294.9,130.6 285.1,130.6\" fill=\"var(--accent-0)\"/><line x1=\"155\" y1=\"170\" x2=\"155\" y2=\"55\" stroke=\"var(--accent-4)\" stroke-width=\"3\" stroke-dasharray=\"6 4\"/><polygon points=\"155,48.4 159.9,61.6 150.1,61.6\" fill=\"var(--accent-4)\"/><line x1=\"290\" y1=\"124\" x2=\"380\" y2=\"124\" stroke=\"var(--accent-2)\" stroke-width=\"2\"/><polygon points=\"339.8,124 330.2,127.6 330.2,120.4\" fill=\"var(--accent-2)\"/><line x1=\"380\" y1=\"124\" x2=\"530\" y2=\"170\" stroke=\"var(--accent-2)\" stroke-width=\"2\"/><polygon points=\"459.6,148.4 449.4,149 451.5,142.2\" fill=\"var(--accent-2)\"/><line x1=\"530\" y1=\"170\" x2=\"590\" y2=\"188.4\" stroke=\"var(--accent-2)\" stroke-width=\"2\"/><polygon points=\"564.6,180.6 554.4,181.2 556.5,174.4\" fill=\"var(--accent-2)\"/><line x1=\"380\" y1=\"124\" x2=\"155\" y2=\"55\" stroke=\"var(--accent-4)\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\"/><line x1=\"290\" y1=\"124\" x2=\"380\" y2=\"170\" stroke=\"var(--accent-2)\" stroke-width=\"2\"/><polygon points=\"339.3,149.2 329.1,148 332.4,141.6\" fill=\"var(--accent-2)\"/><line x1=\"380\" y1=\"170\" x2=\"550\" y2=\"256.9\" stroke=\"var(--accent-2)\" stroke-width=\"2\"/><polygon points=\"469.3,215.6 459.1,214.5 462.4,208.1\" fill=\"var(--accent-2)\"/><line x1=\"380\" y1=\"170\" x2=\"155\" y2=\"55\" stroke=\"var(--accent-4)\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\"/><path d=\"M548,90 Q570,110 548,130\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"2\"/>\n</svg>"
+      },
+      {
+        "id": "CH6_MICRO",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Compound microscope",
+        "labels": [
+          {
+            "id": "obj",
+            "answer": "Objective",
+            "x": 22,
+            "y": 37,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "eye",
+            "answer": "Eyepiece",
+            "x": 73.2,
+            "y": 7.6,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "I1",
+            "answer": "Image I₁",
+            "x": 62.9,
+            "y": 70.0,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Compound microscope",
+            "accept": [
+              "compound microscope",
+              "microscope",
+              "objective",
+              "eyepiece"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Objective makes a real inverted image",
+              "Eyepiece magnifies it",
+              "Final image is virtual and inverted",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 282\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<line x1=\"20\" y1=\"110\" x2=\"620\" y2=\"110\" stroke=\"var(--col-text-muted)\" stroke-width=\"1.2\" stroke-dasharray=\"6 4\"/><path d=\"M110,55 Q126,110 110,165 Q94,110 110,55 Z\" fill=\"rgba(var(--accent-1-rgb),0.22)\" stroke=\"var(--accent-1)\" stroke-width=\"2\"/><path d=\"M520,40 Q536,110 520,180 Q504,110 520,40 Z\" fill=\"rgba(var(--accent-4-rgb),0.22)\" stroke=\"var(--accent-4)\" stroke-width=\"2\"/><circle cx=\"65\" cy=\"110\" r=\"3\" fill=\"var(--col-text-main)\"/><circle cx=\"450\" cy=\"110\" r=\"3\" fill=\"var(--col-text-main)\"/><line x1=\"58.4\" y1=\"110\" x2=\"58.4\" y2=\"98\" stroke=\"var(--accent-0)\" stroke-width=\"2.5\"/><polygon points=\"58.4,91.4 63.4,104.6 53.4,104.6\" fill=\"var(--accent-0)\"/><line x1=\"461.8\" y1=\"110\" x2=\"461.8\" y2=\"191.8\" stroke=\"var(--accent-2)\" stroke-width=\"2.5\"/><polygon points=\"461.8,198.4 456.9,185.2 466.8,185.2\" fill=\"var(--accent-2)\"/><line x1=\"58.4\" y1=\"98\" x2=\"110\" y2=\"98\" stroke=\"var(--accent-0)\" stroke-width=\"1.6\"/><polygon points=\"89,98 79.4,101.6 79.4,94.4\" fill=\"var(--accent-0)\"/><line x1=\"110\" y1=\"98\" x2=\"461.8\" y2=\"191.8\" stroke=\"var(--accent-0)\" stroke-width=\"1.6\"/><polygon points=\"290.5,146.1 280.3,147.2 282.2,140.2\" fill=\"var(--accent-0)\"/><line x1=\"58.4\" y1=\"98\" x2=\"110\" y2=\"110\" stroke=\"var(--accent-0)\" stroke-width=\"1.6\"/><polygon points=\"88.9,105.1 78.7,106.4 80.3,99.4\" fill=\"var(--accent-0)\"/><line x1=\"110\" y1=\"110\" x2=\"461.8\" y2=\"191.8\" stroke=\"var(--accent-0)\" stroke-width=\"1.6\"/><polygon points=\"290.6,152 280.4,153.3 282,146.3\" fill=\"var(--accent-0)\"/><line x1=\"110\" y1=\"236\" x2=\"520\" y2=\"236\" stroke=\"var(--col-text-main)\" stroke-width=\"1.3\"/><polygon points=\"524.8,236 515.2,239.6 515.2,232.4\" fill=\"var(--col-text-main)\"/><polygon points=\"105.2,236 114.8,232.4 114.8,239.6\" fill=\"var(--col-text-main)\"/><line x1=\"110\" y1=\"226\" x2=\"110\" y2=\"246\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"520\" y1=\"226\" x2=\"520\" y2=\"246\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><path d=\"M588,92 Q610,110 588,128\" fill=\"none\" stroke=\"var(--col-text-main)\" stroke-width=\"2\"/>\n</svg>"
+      },
+      {
+        "id": "CH6_EYE",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "The human eye",
+        "labels": [
+          {
+            "id": "cor",
+            "answer": "Cornea",
+            "x": 14.8,
+            "y": 16.3,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "lens",
+            "answer": "Crystalline lens",
+            "x": 14.8,
+            "y": 77.0,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "ret",
+            "answer": "Retina",
+            "x": 66.1,
+            "y": 13.3,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "iris",
+            "answer": "Iris and pupil",
+            "x": 14.8,
+            "y": 54.0,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "The human eye",
+            "accept": [
+              "eye",
+              "cornea",
+              "retina",
+              "lens"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Cornea does most of the refraction",
+              "Lens fine-tunes the focus",
+              "Image forms on the retina",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 270\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<circle cx=\"330\" cy=\"140\" r=\"105\" fill=\"rgba(var(--accent-1-rgb),0.1)\" stroke=\"var(--accent-1)\" stroke-width=\"2.5\"/><path d=\"M243,78 Q191,140 243,202\" fill=\"rgba(var(--accent-4-rgb),0.25)\" stroke=\"var(--accent-4)\" stroke-width=\"2.5\"/><ellipse cx=\"267\" cy=\"140\" rx=\"14\" ry=\"38\" fill=\"rgba(var(--accent-2-rgb),0.4)\" stroke=\"var(--accent-2)\" stroke-width=\"2\"/><line x1=\"255\" y1=\"80\" x2=\"255\" y2=\"100\" stroke=\"var(--accent-5)\" stroke-width=\"5\"/><line x1=\"255\" y1=\"180\" x2=\"255\" y2=\"200\" stroke=\"var(--accent-5)\" stroke-width=\"5\"/><path d=\"M363.9,47 A99,99 0 0 1 363.9,233\" fill=\"none\" stroke=\"var(--accent-0)\" stroke-width=\"5\"/><line x1=\"435\" y1=\"150\" x2=\"495\" y2=\"170\" stroke=\"var(--accent-3)\" stroke-width=\"6\"/><line x1=\"217\" y1=\"110\" x2=\"150\" y2=\"48\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"251\" y1=\"118\" x2=\"150\" y2=\"96\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"255\" y1=\"90\" x2=\"150\" y2=\"150\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"271\" y1=\"170\" x2=\"150\" y2=\"212\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"360\" y1=\"180\" x2=\"470\" y2=\"250\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"429\" y1=\"100\" x2=\"470\" y2=\"40\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/><line x1=\"485\" y1=\"167\" x2=\"470\" y2=\"200\" stroke=\"var(--col-text-muted)\" stroke-width=\"1\"/>\n</svg>"
+      },
+      {
+        "id": "CH6_NEAR",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Near and far point",
+        "labels": [
+          {
+            "id": "near",
+            "answer": "Near point",
+            "x": 13.9,
+            "y": 62.2,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "far",
+            "answer": "Far point",
+            "x": 83.4,
+            "y": 39.7,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "old",
+            "answer": "Presbyopia",
+            "x": 51.4,
+            "y": 62.2,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Near and far point",
+            "accept": [
+              "near point",
+              "far point",
+              "presbyopia",
+              "accommodation"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Near point moves away with age",
+              "Presbyopia",
+              "Normal near point is 25 cm",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 178\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<line x1=\"60\" y1=\"90\" x2=\"600\" y2=\"90\" stroke=\"var(--col-text-main)\" stroke-width=\"1.4\"/><polygon points=\"604.8,90 595.2,93.6 595.2,86.4\" fill=\"var(--col-text-main)\"/><line x1=\"140\" y1=\"82\" x2=\"140\" y2=\"98\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><line x1=\"220\" y1=\"82\" x2=\"220\" y2=\"98\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><line x1=\"380\" y1=\"82\" x2=\"380\" y2=\"98\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/>\n</svg>"
+      },
+      {
+        "id": "CH6_MYOPIA",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Myopia",
+        "labels": [
+          {
+            "id": "focus",
+            "answer": "Focus in front of retina",
+            "x": 57.6,
+            "y": 78.6,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "rays",
+            "answer": "Parallel rays",
+            "x": 6.8,
+            "y": 26.4,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "corr",
+            "answer": "Concave lens corrects it",
+            "x": 13.9,
+            "y": 93.0,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Myopia",
+            "accept": [
+              "myopia",
+              "nearsightedness",
+              "short-sightedness",
+              "concave lens"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Far objects focus in front of the retina",
+              "Corrected with a concave lens",
+              "Minus lens",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 272\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<circle cx=\"420\" cy=\"120\" r=\"80\" fill=\"rgba(var(--accent-1-rgb),0.1)\" stroke=\"var(--accent-1)\" stroke-width=\"2\"/><ellipse cx=\"360\" cy=\"120\" rx=\"10\" ry=\"32\" fill=\"rgba(var(--accent-2-rgb),0.4)\" stroke=\"var(--accent-2)\" stroke-width=\"1.6\"/><path d=\"M458,54.2 A76,76 0 0 1 458,185.8\" fill=\"none\" stroke=\"var(--accent-0)\" stroke-width=\"4\"/><line x1=\"40\" y1=\"94\" x2=\"360\" y2=\"94\" stroke=\"var(--accent-4)\" stroke-width=\"2\"/><polygon points=\"154.8,94 145.2,97.6 145.2,90.4\" fill=\"var(--accent-4)\"/><line x1=\"360\" y1=\"94\" x2=\"508\" y2=\"136.8\" stroke=\"var(--accent-4)\" stroke-width=\"2\"/><line x1=\"40\" y1=\"146\" x2=\"360\" y2=\"146\" stroke=\"var(--accent-4)\" stroke-width=\"2\"/><polygon points=\"154.8,146 145.2,149.6 145.2,142.4\" fill=\"var(--accent-4)\"/><line x1=\"360\" y1=\"146\" x2=\"508\" y2=\"103.2\" stroke=\"var(--accent-4)\" stroke-width=\"2\"/><circle cx=\"450\" cy=\"120\" r=\"5\" fill=\"var(--accent-0)\"/><path d=\"M109,242 L127,242 Q120,256 127,270 L109,270 Q116,256 109,242 Z\" fill=\"rgba(var(--accent-6-rgb),0.22)\" stroke=\"var(--accent-6)\" stroke-width=\"2\"/>\n</svg>"
+      },
+      {
+        "id": "CH6_HYPER",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Hyperopia",
+        "labels": [
+          {
+            "id": "focus",
+            "answer": "Focus behind the retina",
+            "x": 57.6,
+            "y": 78.6,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "rays",
+            "answer": "Rays from a near object",
+            "x": 6.8,
+            "y": 26.4,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "corr",
+            "answer": "Convex lens corrects it",
+            "x": 13.9,
+            "y": 93.0,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Hyperopia",
+            "accept": [
+              "hyperopia",
+              "farsightedness",
+              "long-sightedness",
+              "convex lens"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Near objects would focus behind the retina",
+              "Corrected with a convex lens",
+              "Plus lens",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 272\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<circle cx=\"420\" cy=\"120\" r=\"80\" fill=\"rgba(var(--accent-1-rgb),0.1)\" stroke=\"var(--accent-1)\" stroke-width=\"2\"/><ellipse cx=\"360\" cy=\"120\" rx=\"10\" ry=\"32\" fill=\"rgba(var(--accent-2-rgb),0.4)\" stroke=\"var(--accent-2)\" stroke-width=\"1.6\"/><path d=\"M458,54.2 A76,76 0 0 1 458,185.8\" fill=\"none\" stroke=\"var(--accent-0)\" stroke-width=\"4\"/><line x1=\"40\" y1=\"120\" x2=\"360\" y2=\"94\" stroke=\"var(--accent-4)\" stroke-width=\"2\"/><polygon points=\"154.8,110.7 145.5,115 144.9,107.9\" fill=\"var(--accent-4)\"/><line x1=\"360\" y1=\"94\" x2=\"496\" y2=\"113\" stroke=\"var(--accent-4)\" stroke-width=\"2\"/><line x1=\"40\" y1=\"120\" x2=\"360\" y2=\"146\" stroke=\"var(--accent-4)\" stroke-width=\"2\"/><polygon points=\"154.8,129.3 144.9,132.1 145.5,125\" fill=\"var(--accent-4)\"/><line x1=\"360\" y1=\"146\" x2=\"496\" y2=\"127\" stroke=\"var(--accent-4)\" stroke-width=\"2\"/><circle cx=\"546\" cy=\"120\" r=\"5\" fill=\"var(--accent-0)\"/><line x1=\"496\" y1=\"120\" x2=\"546\" y2=\"120\" stroke=\"var(--accent-0)\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><path d=\"M118,242 Q134,256 118,270 Q102,256 118,242 Z\" fill=\"rgba(var(--accent-6-rgb),0.22)\" stroke=\"var(--accent-6)\" stroke-width=\"2\"/>\n</svg>"
+      },
+      {
+        "id": "CH6_LASERLIGHT",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Laser light",
+        "labels": [
+          {
+            "id": "las",
+            "answer": "Laser light",
+            "x": 42.0,
+            "y": 10.0,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "ord",
+            "answer": "Ordinary light",
+            "x": 42.0,
+            "y": 49.2,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Laser light",
+            "accept": [
+              "laser",
+              "monochromatic",
+              "coherent",
+              "laser light"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Monochromatic",
+              "Coherent",
+              "Used in surgery",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 230\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<!-- Simplified representation of coherent vs incoherent waves -->\n\n<path d=\"M40,70 L80,70 L120,55 L160,70 L200,70 L240,55 L280,70 L320,70 L360,55 L400,70 L440,70 L480,55 L520,70 L560,70 L600,55\" fill=\"none\" stroke=\"var(--accent-0)\" stroke-width=\"2.5\"/>\n\n<path d=\"M40,160 L70,175 L100,145 L130,170 L160,140 L190,165 L220,150 L250,175 L280,145 L310,160 L340,140 L370,170 L400,155 L430,175 L460,145 L490,165 L520,150 L550,170 L580,145 L610,160\" fill=\"none\" stroke=\"var(--accent-4)\" stroke-width=\"2\"/>\n</svg>"
+      },
+      {
+        "id": "CH6_LASERPARTS",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "alt": "Laser components",
+        "labels": [
+          {
+            "id": "med",
+            "answer": "Active medium",
+            "x": 42.0,
+            "y": 63.4,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "pump",
+            "answer": "Energy source",
+            "x": 42.0,
+            "y": 4.5,
+            "w": 24,
+            "h": 7
+          },
+          {
+            "id": "cav",
+            "answer": "Reflecting cavity",
+            "x": 42.0,
+            "y": 90.5,
+            "w": 24,
+            "h": 7
+          }
+        ],
+        "steps": [
+          {
+            "id": "labels",
+            "type": "label"
+          },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Laser components",
+            "accept": [
+              "laser",
+              "active medium",
+              "optical cavity",
+              "pump"
+            ]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Active medium",
+              "Energy source (pump)",
+              "Reflecting cavity",
+              "ECG electrode placement",
+              "Bone density",
+              "Measuring blood glucose"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "svg": "<svg viewBox=\"0 0 640 214\" xmlns=\"http://www.w3.org/2000/svg\" class=\"label-img\" style=\"width:100%;height:auto;display:block\">\n<rect x=\"150\" y=\"70\" width=\"340\" height=\"84\" rx=\"12\" fill=\"rgba(var(--accent-1-rgb),0.22)\" stroke=\"var(--accent-1)\" stroke-width=\"2\"/><rect x=\"130\" y=\"60\" width=\"12\" height=\"100\" fill=\"var(--accent-4)\"/><rect x=\"498\" y=\"60\" width=\"12\" height=\"100\" fill=\"rgba(var(--accent-4-rgb),0.55)\"/><line x1=\"180\" y1=\"110\" x2=\"220\" y2=\"110\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"224.8,110 215.2,113.6 215.2,106.4\" fill=\"var(--accent-0)\"/><line x1=\"240\" y1=\"110\" x2=\"280\" y2=\"110\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"284.8,110 275.2,113.6 275.2,106.4\" fill=\"var(--accent-0)\"/><line x1=\"300\" y1=\"110\" x2=\"340\" y2=\"110\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"344.8,110 335.2,113.6 335.2,106.4\" fill=\"var(--accent-0)\"/><line x1=\"360\" y1=\"110\" x2=\"400\" y2=\"110\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"404.8,110 395.2,113.6 395.2,106.4\" fill=\"var(--accent-0)\"/><line x1=\"420\" y1=\"110\" x2=\"460\" y2=\"110\" stroke=\"var(--accent-0)\" stroke-width=\"2\"/><polygon points=\"464.8,110 455.2,113.6 455.2,106.4\" fill=\"var(--accent-0)\"/><line x1=\"512\" y1=\"110\" x2=\"610\" y2=\"110\" stroke=\"var(--accent-0)\" stroke-width=\"5\"/><polygon points=\"617.2,110 602.8,115.4 602.8,104.6\" fill=\"var(--accent-0)\"/><rect x=\"200\" y=\"22\" width=\"240\" height=\"14\" rx=\"7\" fill=\"rgba(var(--accent-2-rgb),0.35)\" stroke=\"var(--accent-2)\" stroke-width=\"1.5\"/><line x1=\"240\" y1=\"38\" x2=\"240\" y2=\"64\" stroke=\"var(--accent-2)\" stroke-width=\"1.6\" stroke-dasharray=\"4 3\"/><polygon points=\"240,70.8 236.4,61.2 243.6,61.2\" fill=\"var(--accent-2)\"/><line x1=\"320\" y1=\"38\" x2=\"320\" y2=\"64\" stroke=\"var(--accent-2)\" stroke-width=\"1.6\" stroke-dasharray=\"4 3\"/><polygon points=\"320,70.8 316.4,61.2 323.6,61.2\" fill=\"var(--accent-2)\"/><line x1=\"400\" y1=\"38\" x2=\"400\" y2=\"64\" stroke=\"var(--accent-2)\" stroke-width=\"1.6\" stroke-dasharray=\"4 3\"/><polygon points=\"400,70.8 396.4,61.2 403.6,61.2\" fill=\"var(--accent-2)\"/>\n</svg>"
       }
     ]
   }
