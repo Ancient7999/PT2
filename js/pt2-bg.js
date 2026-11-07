@@ -79,11 +79,15 @@ function apply(id, opts) {
     root.classList.remove('pt2-bg-bubbles', 'pt2-bg-particles', 'pt2-bg-skin');
     root.removeAttribute('data-skin');
 
-    if (st.id === 'default') {
+if (st.id === 'default' || st.id === 'bubbles' || st.id === 'particles') {
+  if (st.id === 'default') {
     root.classList.remove('pt2-no-grid');
-    } else {
+  } else {
     root.classList.add('pt2-no-grid');
-    }
+  }
+} else {
+  root.classList.remove('pt2-no-grid');
+}
 
     if (st.id === 'default') {
     root.setAttribute('data-pt2-bg', 'default');
