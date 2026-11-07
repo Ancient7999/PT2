@@ -1611,6 +1611,7 @@ function saqAutoGrade(input, grade){
 }
 /* picture on a stepped question (shown on every step), with its license caption */
 function stepFigureHTML(q, review){
+  if(q && q.svg && !q.image) return '<figure class="step-figure'+(review?' in-review':'')+'">'+q.svg+'</figure>';
   if(!q || !q.image) return '';
   // several pictures of the same bone: side by side (4 across on PCs, 2 × 2 on phones), tap one to see it full size
   if(Array.isArray(q.images) && q.images.length>1){
