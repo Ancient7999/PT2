@@ -169,24 +169,24 @@
           "locked": false,
           "draft": false,
           "formulas": {
-            "gen": "Pt2FormulaGen",
-            "key": "medphys/pt2",
-            "title": "Formulas · Periodic Test 2",
-            "scope": "Bernoulli to Lasers",
-            "draft": true
-          },
+          "gen": "Pt2FormulaGen",
+          "key": "medphys/pt2",
+          "title": "Formulas · Periodic Test 2",
+          "scope": "Bernoulli to Lasers",
+          "draft": true
+        },
           "comingSoon": false,
           "week": "Week 12",
           "study": {
-            "title": "Study Interface",
-            "symbols": "data/symbols-medphys.json",
-            "chapters": [
-              {
-                "id": "ch3",
-                "src": "content/medphys/pt2/chapter-3.md",
-                "title": "Chapter 3 · Fluid flow & surface tension",
-                "meta": "Continuity · Bernoulli · viscosity · Poiseuille · Reynolds · Laplace · surface tension"
-              },
+          "title": "Study Interface",
+          "symbols": "data/symbols-medphys.json",
+          "chapters": [
+            {
+              "id": "ch3",
+              "src": "content/medphys/pt2/chapter-3.md",
+              "title": "Chapter 3 · Fluid flow & surface tension",
+              "meta": "Continuity · Bernoulli · viscosity · Poiseuille · Reynolds · Laplace · surface tension"
+            },
               {
                 "id": "ch4",
                 "src": "content/medphys/pt2/chapter-4.md",
@@ -207,6 +207,16 @@
               }
             ]
           }
+        },
+        {
+          "id": "medphys-diagrams",
+          "title": "Medical Physics · Diagrams",
+          "subtitle": "Label · law/principle · uses",
+          "bank": "banks/medphys/diagrams.json",
+          "locked": false,
+          "draft": true,
+          "comingSoon": false,
+          "week": "Week 12"
         },
         {
           "id": "studyskills-pt2",
