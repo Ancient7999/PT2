@@ -5,7 +5,17 @@
    Keep each block's version and date written the same way as below (the update check reads the first block). */
 var APP_INFO = {
   releases: [
-     {
+   {
+   version: '0.43',
+   date: '07/11/2026',
+   changes: [
+     'New Diagrams quiz covering Chapters 3 to 6 in Medical Physics.',
+     'Removed Non-PT2 contents from Chapter 5 and formulas questions from Chapter 3.',
+     'Diagram enhancements in the study notes of Medical Physics.'
+     'Note: Medical Physics section is still in draft mode, it could get more updates before it is finalized.'
+      ]
+    },
+    {
     version: '0.42',
     date: '06/11/2026',
     changes: [
