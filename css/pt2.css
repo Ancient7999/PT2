@@ -337,8 +337,8 @@ html.mood-ghost:not(.pt2-basic)::after{background:radial-gradient(ellipse 45% 30
 @keyframes pt2MoodDrift{from{transform:translate(0,0)}to{transform:translate(4vw,-3vh)}}
 @keyframes pt2MoodDrift2{from{transform:translate(0,0)}to{transform:translate(-5vw,2vh)}}
 
-/* When any non-default background is active, kill the default skin pattern and glows */
-html[data-pt2-bg]:not([data-pt2-bg="default"]) {
+html[data-pt2-bg="bubbles"],
+html[data-pt2-bg="particles"] {
   --skin-pattern: none !important;
   --skin-pattern-opacity: 0 !important;
   --grid-tint: transparent !important;
@@ -347,16 +347,21 @@ html[data-pt2-bg]:not([data-pt2-bg="default"]) {
   --skin-mid: transparent !important;
 }
 
-html[data-pt2-bg]:not([data-pt2-bg="default"]) body {
+html[data-pt2-bg="bubbles"] body,
+html[data-pt2-bg="particles"] body {
   background-image: none !important;
 }
 
-html[data-pt2-bg]:not([data-pt2-bg="default"]) body::before {
+html[data-pt2-bg="bubbles"] body::before,
+html[data-pt2-bg="particles"] body::before {
   opacity: 0 !important;
   background-image: none !important;
+  content: none !important;
 }
 
-html[data-pt2-bg]:not([data-pt2-bg="default"]) #el-arquitecto-bg-layer,
-html[data-pt2-bg]:not([data-pt2-bg="default"]) #fxCanvas {
+html[data-pt2-bg="bubbles"] #el-arquitecto-bg-layer,
+html[data-pt2-bg="particles"] #el-arquitecto-bg-layer,
+html[data-pt2-bg="bubbles"] #fxCanvas,
+html[data-pt2-bg="particles"] #fxCanvas {
   display: none !important;
 }
