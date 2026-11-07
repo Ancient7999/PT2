@@ -23,7 +23,7 @@
             },
             {
               "id": "unit3-imperatives",
-              "title": "Unit 3: Imperatives and Let’s",
+              "title": "Unit 3: Imperatives and Let\u2019s",
               "bank": "banks/english/pt2/unit3-imperatives.json",
               "status": "ready",
               "draft": false
@@ -66,7 +66,7 @@
           "lectures": [
             {
               "id": "lec09",
-              "title": "Lecture 9 – Combining Forms (Part 2 of 2)",
+              "title": "Lecture 9 \u2013 Combining Forms (Part 2 of 2)",
               "bank": "banks/medterm/pt2/lecture-09.json",
               "status": "ready",
               "draft": false,
@@ -74,14 +74,14 @@
             },
             {
               "id": "lec10",
-              "title": "Lecture 10 – Disease, Abbreviation, Pharmaceutical, Treatment & Dental Terms",
+              "title": "Lecture 10 \u2013 Disease, Abbreviation, Pharmaceutical, Treatment & Dental Terms",
               "bank": "banks/medterm/pt2/lecture-10.json",
               "status": "ready",
               "draft": false
             },
             {
               "id": "lec11",
-              "title": "Lecture 11 – Musculoskeletal System",
+              "title": "Lecture 11 \u2013 Musculoskeletal System",
               "bank": "banks/medterm/pt2/lecture-11.json",
               "status": "ready",
               "draft": false,
@@ -96,21 +96,21 @@
             },
             {
               "id": "lec12-13",
-              "title": "Lectures 12 & 13 – Cardiovascular System",
+              "title": "Lectures 12 & 13 \u2013 Cardiovascular System",
               "bank": "banks/medterm/pt2/lecture-12-13.json",
               "status": "ready",
               "draft": false
             },
             {
               "id": "lec14-15",
-              "title": "Lectures 14 & 15 – Blood & Lymphatic System",
+              "title": "Lectures 14 & 15 \u2013 Blood & Lymphatic System",
               "bank": "banks/medterm/pt2/lecture-14-15.json",
               "status": "ready",
               "draft": false
             },
             {
               "id": "lec16-17",
-              "title": "Lectures 16 & 17 – Respiratory System",
+              "title": "Lectures 16 & 17 \u2013 Respiratory System",
               "bank": "banks/medterm/pt2/lecture-16-17.json",
               "status": "ready",
               "draft": false
@@ -153,7 +153,7 @@
               "text": "Human Atlas by ashemag",
               "href": "https://github.com/ashemag/human-atlas"
             },
-            ", which is built on BodyParts3D © DBCLS and licensed under ",
+            ", which is built on BodyParts3D \u00a9 DBCLS and licensed under ",
             {
               "text": "CC BY 4.0",
               "href": "https://creativecommons.org/licenses/by/4.0/"
@@ -169,54 +169,47 @@
           "locked": false,
           "draft": false,
           "formulas": {
-          "gen": "Pt2FormulaGen",
-          "key": "medphys/pt2",
-          "title": "Formulas · Periodic Test 2",
-          "scope": "Bernoulli to Lasers",
-          "draft": true
-        },
+            "gen": "Pt2FormulaGen",
+            "key": "medphys/pt2",
+            "title": "Formulas \u00b7 Periodic Test 2",
+            "scope": "Bernoulli to Lasers",
+            "draft": true
+          },
           "comingSoon": false,
           "week": "Week 12",
           "study": {
-          "title": "Study Interface",
-          "symbols": "data/symbols-medphys.json",
-          "chapters": [
-            {
-              "id": "ch3",
-              "src": "content/medphys/pt2/chapter-3.md",
-              "title": "Chapter 3 · Fluid flow & surface tension",
-              "meta": "Continuity · Bernoulli · viscosity · Poiseuille · Reynolds · Laplace · surface tension"
-            },
+            "title": "Study Interface",
+            "symbols": "data/symbols-medphys.json",
+            "chapters": [
+              {
+                "id": "ch3",
+                "src": "content/medphys/pt2/chapter-3.md",
+                "title": "Chapter 3 \u00b7 Fluid flow & surface tension",
+                "meta": "Continuity \u00b7 Bernoulli \u00b7 viscosity \u00b7 Poiseuille \u00b7 Reynolds \u00b7 Laplace \u00b7 surface tension"
+              },
               {
                 "id": "ch4",
                 "src": "content/medphys/pt2/chapter-4.md",
-                "title": "Chapter 4 · Waves, sound & temperature",
-                "meta": "Waves · ultrasound · Doppler · Mach · temperature scales"
+                "title": "Chapter 4 \u00b7 Waves, sound & temperature",
+                "meta": "Waves \u00b7 ultrasound \u00b7 Doppler \u00b7 Mach \u00b7 temperature scales"
               },
               {
                 "id": "ch5",
                 "src": "content/medphys/pt2/chapter-5.md",
-                "title": "Chapter 5 · Ray optics",
-                "meta": "Mirrors · refraction · TIR · fibres · thin lenses"
+                "title": "Chapter 5 \u00b7 Ray optics",
+                "meta": "Mirrors \u00b7 refraction \u00b7 TIR \u00b7 fibres \u00b7 thin lenses"
               },
               {
                 "id": "ch6",
                 "src": "content/medphys/pt2/chapter-6.md",
-                "title": "Chapter 6 · Optical instruments",
-                "meta": "Lens combinations · magnifier · microscope · eye · myopia & hyperopia · lasers"
+                "title": "Chapter 6 \u00b7 Optical instruments",
+                "meta": "Lens combinations \u00b7 magnifier \u00b7 microscope \u00b7 eye \u00b7 myopia & hyperopia \u00b7 lasers"
               }
             ]
-          }
-        },
-        {
-          "id": "medphys-diagrams",
-          "title": "Medical Physics · Diagrams",
-          "subtitle": "Label · law/principle · uses",
-          "bank": "banks/medphys/diagrams.json",
-          "locked": false,
-          "draft": true,
-          "comingSoon": false,
-          "week": "Week 12"
+          },
+          "extraBanks": [
+            "banks/medphys/diagrams.json"
+          ]
         },
         {
           "id": "studyskills-pt2",
@@ -227,37 +220,37 @@
           "lectures": [
             {
               "id": "lec5",
-              "title": "Lecture 5 – Teamwork and Small Group Learning",
+              "title": "Lecture 5 \u2013 Teamwork and Small Group Learning",
               "bank": "banks/studyskills/pt2/lecture-5-teamwork-and-small-group-learning.json",
               "status": "ready"
             },
             {
               "id": "lec6",
-              "title": "Lecture 6 – Adult and Independent Learning",
+              "title": "Lecture 6 \u2013 Adult and Independent Learning",
               "bank": "banks/studyskills/pt2/lecture-6-adult-independent-learning.json",
               "status": "ready"
             },
             {
               "id": "lec7",
-              "title": "Lecture 7 – Tips for Good Study Habits",
+              "title": "Lecture 7 \u2013 Tips for Good Study Habits",
               "bank": "banks/studyskills/pt2/lecture-7-tips-for-studying.json",
               "status": "ready"
             },
             {
               "id": "lec8",
-              "title": "Lecture 8 – Effective Note-Taking Strategies",
+              "title": "Lecture 8 \u2013 Effective Note-Taking Strategies",
               "bank": "banks/studyskills/pt2/lecture-8-note-taking-strategies.json",
               "status": "ready"
             },
             {
               "id": "lec9",
-              "title": "Lecture 9 – Boosting Memory and Increasing Concentration",
+              "title": "Lecture 9 \u2013 Boosting Memory and Increasing Concentration",
               "bank": "banks/studyskills/pt2/lecture-9-memory-concentration.json",
               "status": "ready"
             },
             {
               "id": "lec10",
-              "title": "Lecture 10 – Strengthening Comprehension",
+              "title": "Lecture 10 \u2013 Strengthening Comprehension",
               "bank": "banks/studyskills/pt2/lecture-10-comprehension.json",
               "status": "ready"
             }
