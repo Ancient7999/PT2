@@ -3,8 +3,8 @@
   "subject": "Medical Physics",
   "subjectId": "medphys",
   "title": "Periodic Test 2",
-  "source": "Medical Physics question banks chapter-3-fluids-flow-rheological-and-surface-tension (114), chapter-4-waves-and-thermal-properties (93), chapter-5-ray-optics (115), chapter-6-optical-instruments-and-medical-applications (88), mixed-chapters (22)",
-  "formSize": 432,
+  "source": "Medical Physics question banks chapter-3-fluids-flow-rheological-and-surface-tension (114), chapter-4-waves-and-thermal-properties (93), chapter-5-ray-optics (67, up to TIR), chapter-6-optical-instruments-and-medical-applications (88), mixed-chapters (22)",
+  "formSize": 372,
   "forms": [
     "A"
   ],
@@ -42,11 +42,7 @@
       "cats": [
         "Chapter 5: Reflection and Mirrors",
         "Chapter 5: Refraction and Snell's Law",
-        "Chapter 5: Total Internal Reflection",
-        "Chapter 5: Optical Fibers and Medical Applications",
-        "Chapter 5: Thin Lenses",
-        "Chapter 5: Combination of Lenses",
-        "Chapter 5: Refraction and Lenses"
+        "Chapter 5: Total Internal Reflection"
       ],
       "draft": true
     },
@@ -213,20 +209,6 @@
         "explain": "When density is constant, it cancels and continuity reduces to area times speed. The general form still contains density, and the inverted ratios do not conserve volume flow."
       },
       {
-        "id": "PHY00109",
-        "type": "mcq",
-        "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
-        "q": "A blood vessel narrows from A₁ = 2.0×10⁻⁴ m² (v₁ = 0.40 m/s) to A₂ = 1.0×10⁻⁴ m². What is the new speed if the blood is incompressible?",
-        "options": [
-          "0.20 m/s",
-          "0.40 m/s",
-          "0.80 m/s",
-          "1.60 m/s"
-        ],
-        "correct": 2,
-        "explain": "Area times speed is constant, so 2.0×10⁻⁴ × 0.40 = 1.0×10⁻⁴ × v₂. That gives v₂ = 0.80 m/s. Halving the area doubles the speed."
-      },
-      {
         "id": "PHY00117",
         "type": "mcq",
         "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
@@ -311,20 +293,6 @@
         "explain": "Mass flow rate is ρAv; volume flow rate is Av. Density appears only in the mass version. They are not the same, and mass flow is in kg/s."
       },
       {
-        "id": "PHY00192",
-        "type": "mcq",
-        "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
-        "q": "Blood flows through a vessel of cross-sectional area 3.0×10⁻⁴ m² at 0.30 m/s. The vessel narrows to 1.0×10⁻⁴ m². What is the new speed, if the fluid is incompressible?",
-        "options": [
-          "2.7 m/s",
-          "0.10 m/s",
-          "0.30 m/s",
-          "0.90 m/s"
-        ],
-        "correct": 3,
-        "explain": "Continuity for an incompressible fluid gives A1 v1 = A2 v2, so v2 = 3.0×10⁻⁴ × 0.30 / 1.0×10⁻⁴ = 0.90 m/s. 0.10 m/s inverts the area ratio, 0.30 m/s assumes speed is unchanged, and 2.7 m/s uses a ratio of 9."
-      },
-      {
         "id": "PHY00193",
         "type": "mcq",
         "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
@@ -381,20 +349,6 @@
         "explain": "If nothing is added or removed, the flow rate into one section equals the flow rate out of the next. Temperature, diameter, and speed can all change along the path."
       },
       {
-        "id": "PHY00200",
-        "type": "mcq",
-        "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
-        "q": "The cross-section of an incompressible vessel falls by a factor of 5. By what factor does the speed rise, in steady flow?",
-        "options": [
-          "By a factor of 2",
-          "By a factor of 5",
-          "By a factor of 10",
-          "By a factor of 25"
-        ],
-        "correct": 1,
-        "explain": "For an incompressible fluid, area times speed is constant, so speed rises by the same factor that area falls. A drop by 5 raises speed by 5, not by 2, 10, or 25."
-      },
-      {
         "id": "PHY00202",
         "type": "mcq",
         "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
@@ -437,20 +391,6 @@
         "explain": "Speed rises because the narrower area must carry the same flow, so area times speed stays constant. Hooke, Pascal and Archimedes do not set that speed."
       },
       {
-        "id": "PHY00211",
-        "type": "mcq",
-        "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
-        "q": "Blood flows at 0.20 m/s through a vessel of area 0.030 m². The vessel narrows to 0.010 m². What is the new speed, if the blood is incompressible?",
-        "options": [
-          "0.30 m/s",
-          "0.60 m/s",
-          "1.2 m/s",
-          "2.4 m/s"
-        ],
-        "correct": 1,
-        "explain": "Area times speed is constant, so 0.030 × 0.20 = 0.010 × v₂. That gives v₂ = 0.60 m/s."
-      },
-      {
         "id": "PHY00237",
         "type": "mcq",
         "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
@@ -463,20 +403,6 @@
         ],
         "correct": 0,
         "explain": "Mass divided by time is the kilogram per second. Cubic metre per second is volume flow rate. Kilogram metre per second is momentum, and the newton-second is impulse (not mass flow rate)."
-      },
-      {
-        "id": "PHY90001",
-        "type": "mcq",
-        "cat": "Chapter 3: Mass Flow Rate and Equation of Continuity",
-        "q": "A vessel narrows from 0.08 m² to 0.02 m². Upstream speed is 0.4 m/s. Downstream speed?",
-        "options": [
-          "1.6 m/s",
-          "0.10 m/s",
-          "0.40 m/s",
-          "8.0 m/s"
-        ],
-        "correct": 0,
-        "explain": "A₁v₁ = A₂v₂, so v₂ = 0.08 × 0.4 / 0.02 = 1.6 m/s. Quartering the area quadruples the speed."
       },
       {
         "id": "PHY30001",
@@ -631,34 +557,6 @@
         ],
         "correct": 0,
         "explain": "Doppler ultrasound detects the frequency shift of reflected sound waves to determine both the speed and the direction of moving blood. Viscosity, density, wall tension, thickness, temperature, and absolute pressure are not the primary outputs of the Doppler method."
-      },
-      {
-        "id": "PHY30009",
-        "type": "mcq",
-        "cat": "Chapter 3: Bernoulli's Equation",
-        "q": "Water (density 1000 kg/m³) speeds up from 2 m/s to 4 m/s in a horizontal pipe. By how much does the pressure drop?",
-        "options": [
-          "6000 Pa",
-          "4000 Pa",
-          "8000 Pa",
-          "2000 Pa"
-        ],
-        "correct": 0,
-        "explain": "At constant height Bernoulli reduces to P₁ − P₂ = ½ ρ (v₂² − v₁²). Substituting gives ½ × 1000 × (16 − 4) = 6000 Pa. The values 4000 Pa, 8000 Pa, and 2000 Pa result from omitting the one-half factor, doubling the difference of squares, or using only one of the squared velocities."
-      },
-      {
-        "id": "PHY30010",
-        "type": "mcq",
-        "cat": "Chapter 3: Bernoulli's Equation",
-        "q": "Fluid of density 1050 kg/m³ rises 1.5 m at constant speed. What is the approximate pressure drop due to the height change?",
-        "options": [
-          "15435 Pa",
-          "10290 Pa",
-          "20580 Pa",
-          "7718 Pa"
-        ],
-        "correct": 0,
-        "explain": "At constant speed the kinetic terms cancel and P₁ − P₂ = ρ g Δh = 1050 × 9.8 × 1.5 ≈ 15435 Pa. The other figures come from using water density, doubling the height, or halving the product."
       },
       {
         "id": "PHY30011",
@@ -1443,44 +1341,44 @@
         "explain": "The mean velocity is \\(\\bar{v} = \\Delta P r^2 / (8\\eta L)\\). Multiplying it by the area \\(\\pi r^2\\) gives \\(Q = \\pi r^4 \\Delta P/(8\\eta L)\\), so the \\(\\pi\\) and the \\(r^4\\) belong to the flow rate, not to the velocity. A factor of 4 instead of 8 does not match Poiseuille's result."
       },
       {
-      "id": "PHY30047",
-      "type": "stepped",
-      "cat": "Chapter 3: Poiseuille's Law",
-      "q": "Poiseuille's law can be built from flow rate, tube area and mean velocity. Answer each step.",
-      "explain": "Volume flow rate is area times mean velocity, \\(Q = A \\bar{v}\\). A round tube has \\(A = \\pi r^2\\). With \\(\\bar{v} = \\Delta P r^2/(8\\eta L)\\), \\(Q = \\pi r^2 \\times \\Delta P r^2/(8\\eta L) = \\pi r^4 \\Delta P/(8\\eta L)\\), so the two \\(r^2\\) factors combine to \\(r^4\\). That is why flow depends so strongly on radius.",
-      "steps": [
-        {
-          "id": "1",
-          "prompt": "Which relation links volume flow rate to area and mean velocity?",
-          "options": [
-            "\\(Q = \\bar{v} / A\\)",
-            "\\(Q = A \\bar{v}\\)",
-            "\\(Q = A / \\bar{v}\\)",
-            "\\(Q = A \\bar{v}^2\\)"
-          ],
-          "correct": 1
-        },
-        {
-          "id": "2",
-          "prompt": "Given \\(Q = A \\bar{v}\\), what is A for a round tube of radius r?",
-          "options": [
-            "2πr",
-            "πr²/2",
-            "πr²",
-            "4πr²"
-          ],
-          "correct": 2
-        },
+        "id": "PHY30047",
+        "type": "stepped",
+        "cat": "Chapter 3: Poiseuille's Law",
+        "q": "Poiseuille's law can be built from flow rate, tube area and mean velocity. Answer each step.",
+        "explain": "Volume flow rate is area times mean velocity, \\(Q = A \\bar{v}\\). A round tube has \\(A = \\pi r^2\\). With \\(\\bar{v} = \\Delta P r^2/(8\\eta L)\\), \\(Q = \\pi r^2 \\times \\Delta P r^2/(8\\eta L) = \\pi r^4 \\Delta P/(8\\eta L)\\), so the two \\(r^2\\) factors combine to \\(r^4\\). That is why flow depends so strongly on radius.",
+        "steps": [
           {
-          "id": "3",
-          "prompt": "Multiplying πr² by ΔP r²/(8ηL) leaves the radius raised to which power?",
-          "options": [
-            "r⁴",
-            "r²",
-            "r³",
-            "r⁸"
-          ],
-          "correct": 0
+            "id": "1",
+            "prompt": "Which relation links volume flow rate to area and mean velocity?",
+            "options": [
+              "\\(Q = \\bar{v} / A\\)",
+              "\\(Q = A \\bar{v}\\)",
+              "\\(Q = A / \\bar{v}\\)",
+              "\\(Q = A \\bar{v}^2\\)"
+            ],
+            "correct": 1
+          },
+          {
+            "id": "2",
+            "prompt": "Given \\(Q = A \\bar{v}\\), what is A for a round tube of radius r?",
+            "options": [
+              "2πr",
+              "πr²/2",
+              "πr²",
+              "4πr²"
+            ],
+            "correct": 2
+          },
+          {
+            "id": "3",
+            "prompt": "Multiplying πr² by ΔP r²/(8ηL) leaves the radius raised to which power?",
+            "options": [
+              "r⁴",
+              "r²",
+              "r³",
+              "r⁸"
+            ],
+            "correct": 0
           }
         ]
       },
@@ -4074,258 +3972,6 @@
         "explain": "Diamond has a very high refractive index of 2.42, which gives it a small critical angle of about 24.4 degrees. Light entering the diamond undergoes total internal reflection many times before exiting, creating the characteristic sparkle. Density is not the cause. A low refractive index would allow light to escape rather than trap it. Absorption would reduce brightness rather than enhance it."
       },
       {
-        "id": "PHY50029",
-        "type": "mcq",
-        "cat": "Chapter 5: Optical Fibers and Medical Applications",
-        "q": "An optical fiber consists of a central core surrounded by a cladding. Which statement correctly describes their refractive indices?",
-        "options": [
-          "The core has a lower refractive index than the cladding",
-          "The core has a higher refractive index than the cladding",
-          "The core and cladding have the same refractive index",
-          "The core has zero refractive index"
-        ],
-        "correct": 1,
-        "explain": "For total internal reflection to occur within the fiber, light must travel from a denser medium into a less dense medium. Therefore the core must have a higher refractive index than the cladding. This traps light in the core and allows it to propagate along the fiber with minimal loss. Equal refractive indices would allow light to escape, and a zero refractive index is physically impossible for a material medium."
-      },
-      {
-        "id": "PHY50030",
-        "type": "mcq",
-        "cat": "Chapter 5: Optical Fibers and Medical Applications",
-        "q": "In a medical endoscope, total internal reflection is used to:",
-        "options": [
-          "Generate X-rays for imaging internal body structures",
-          "Carry light in and images out of the body for viewing",
-          "Measure the temperature of internal organs being treated",
-          "Deliver drugs to specific internal tissues being treated"
-        ],
-        "correct": 1,
-        "explain": "An endoscope uses bundles of optical fibers. One bundle carries light from an external source into the body to illuminate the area being examined. Another bundle carries the reflected light, forming an image that is transmitted back to a monitor. Total internal reflection keeps the light confined within the fibers even when they bend. Endoscopes do not generate X-rays, measure temperature, or deliver drugs by this mechanism."
-      },
-      {
-        "id": "PHY50031",
-        "type": "mcq",
-        "cat": "Chapter 5: Optical Fibers and Medical Applications",
-        "q": "Which property of optical fibers makes them suitable for use in endoscopes?",
-        "options": [
-          "They are rigid and can follow only straight paths",
-          "They are flexible and can follow curved paths",
-          "They are opaque and can block unwanted light",
-          "They are self-luminous and can generate light"
-        ],
-        "correct": 1,
-        "explain": "Optical fibers are thin and flexible, so they can be inserted into the body and guided through curved passages such as the esophagus and stomach. Light is transmitted along the fiber by total internal reflection even when the fiber is bent. Rigid fibers would not be able to navigate body passages. Fibers do not block light; they guide it. They do not generate light on their own; they carry light from an external source."
-      },
-      {
-        "id": "PHY50032",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "A convex lens is:",
-        "options": [
-          "Thicker at the edges than at the centre, and it diverges light",
-          "Thicker at the centre than at the edges, and it converges light",
-          "Thicker at the edges than at the centre, and it converges light",
-          "Thicker at the centre than at the edges, and it diverges light"
-        ],
-        "correct": 1,
-        "explain": "A convex lens is thicker in the middle and thinner at the edges. Parallel rays of light passing through it are brought together, or converged, at the focal point. A concave lens is thinner in the middle and thicker at the edges, and it causes parallel rays to diverge. The options that mix thickness with the wrong behavior for that shape are incorrect."
-      },
-      {
-        "id": "PHY50033",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "A concave lens is:",
-        "options": [
-          "Thicker at the centre than at the edges, and it converges light",
-          "Thicker at the edges than at the centre, and it diverges light",
-          "Thicker at the centre than at the edges, and it diverges light",
-          "Thicker at the edges than at the centre, and it converges light"
-        ],
-        "correct": 1,
-        "explain": "A concave lens is thinner in the middle and thicker at the edges. Parallel rays of light passing through it are spread apart, or diverged, as if they originated from a virtual focal point. A convex lens is thicker in the middle and converges light. The options that mix thickness with the wrong behavior for that shape are incorrect."
-      },
-      {
-        "id": "PHY50034",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "The power P of a lens is defined as:",
-        "options": [
-          "P = 1 / f",
-          "P = 1 / f²",
-          "P = f / 2",
-          "P = 2 / f"
-        ],
-        "correct": 0,
-        "explain": "Lens power is the reciprocal of the focal length in metres: P = 1 / f. The unit is the dioptre, which is 1 m⁻¹. The line 'P = 1 / f²' squares the focal length in the denominator. The line 'P = f / 2' halves the focal length instead of taking its reciprocal. The line 'P = 2 / f' doubles the reciprocal."
-      },
-      {
-        "id": "PHY50035",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "The SI unit of lens power is the:",
-        "options": [
-          "Newton",
-          "Joule",
-          "Dioptre",
-          "Watt"
-        ],
-        "correct": 2,
-        "explain": "Lens power is measured in dioptres, D, where 1 D = 1 m⁻¹. The dioptre is the reciprocal of the focal length in metres. The newton is a unit of force, the joule is a unit of energy, and the watt is a unit of mechanical power."
-      },
-      {
-        "id": "PHY50036",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "The power of a convex lens is taken as ______, while the power of a concave lens is taken as ______.",
-        "options": [
-          "negative; positive",
-          "positive; negative",
-          "zero; positive",
-          "positive; zero"
-        ],
-        "correct": 1,
-        "explain": "A convex lens converges light and has a positive focal length, so its power is positive. A concave lens diverges light and has a negative focal length, so its power is negative. This sign convention is used in ophthalmology, where a prescription might read +2.0 D for a converging lens or -1.5 D for a diverging lens."
-      },
-      {
-        "id": "PHY50037",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "A lens has a focal length of 30 cm. What is its power?",
-        "options": [
-          "0.30 D",
-          "3.33 D",
-          "30 D",
-          "33.3 D"
-        ],
-        "correct": 1,
-        "explain": "The power is P = 1 / f, where f must be in meters. Converting 30 cm to 0.30 m gives P = 1 / 0.30 = 3.33 D. The line '0.30 D' uses the focal length in meters as the power itself, '30 D' uses centimeters without converting, and '33.3 D' multiplies by 100 instead of dividing."
-      },
-      {
-        "id": "PHY50038",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "A concave lens has a power of -5 D. What is its focal length?",
-        "options": [
-          "-0.20 m",
-          "-5.00 m",
-          "-0.05 m",
-          "-20.0 m"
-        ],
-        "correct": 0,
-        "explain": "Rearranging P = 1 / f gives f = 1 / P. Substituting P = -5 D gives f = 1 / (-5) = -0.20 m. The negative sign confirms the lens is diverging. The line '-5.00 m' repeats the power as the focal length, '-0.05 m' divides 0.25 by 5, and '-20.0 m' multiplies instead of dividing."
-      },
-      {
-        "id": "PHY50039",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "Which of the following is a correct ray-tracing rule for a thin convex lens?",
-        "options": [
-          "A ray parallel to the axis passes through the focal point after refraction",
-          "A ray through the focal point emerges parallel to the axis before refraction",
-          "A ray through the centre of the lens is deviated by 90 degrees",
-          "A ray parallel to the axis is reflected back along its original path"
-        ],
-        "correct": 0,
-        "explain": "For a thin convex lens, a ray parallel to the axis refracts through the focal point, a ray through the focal point emerges parallel to the axis, and a ray through the centre passes undeflected. The other lines reverse the order, claim a 90° bend at the centre, or describe reflection."
-      },
-      {
-        "id": "PHY50040",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "For a concave lens, the image formed is always:",
-        "options": [
-          "Real, inverted, and smaller than the object",
-          "Virtual, upright, and smaller than the object",
-          "Real, upright, and larger than the object",
-          "Virtual, inverted, and larger than the object"
-        ],
-        "correct": 1,
-        "explain": "A concave lens diverges incoming rays, so they never converge to form a real image. The image seen through a concave lens is always virtual, upright, and reduced in size compared with the object. A convex mirror shares these image properties. The options containing real or inverted describe images that a concave lens cannot form."
-      },
-      {
-        "id": "PHY50041",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "The thin lens equation relating object distance d_o, image distance d_i, and focal length f is:",
-        "options": [
-          "1 / d_o + 1 / d_i = 1 / f",
-          "1 / d_o - 1 / d_i = 1 / f",
-          "1 / d_o + 1 / d_i = f",
-          "1 / d_o × 1 / d_i = 1 / f"
-        ],
-        "correct": 0,
-        "explain": "The thin lens equation is 1 / d_o + 1 / d_i = 1 / f, the same form as the mirror equation. The line '1 / d_o - 1 / d_i = 1 / f' uses subtraction instead of addition. The line '1 / d_o + 1 / d_i = f' places the focal length outside the reciprocal. The line '1 / d_o × 1 / d_i = 1 / f' multiplies the reciprocals instead of adding them."
-      },
-      {
-        "id": "PHY50042",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "Object at 20 cm; convex lens f=10 cm. Find dᵢ.",
-        "options": [
-          "6.7 cm",
-          "10 cm",
-          "20 cm",
-          "30 cm"
-        ],
-        "correct": 2,
-        "explain": "Using the thin lens equation 1 / d_o + 1 / d_i = 1 / f, substitute d_o = 20 cm and f = 10 cm. Then 1 / 20 + 1 / d_i = 1 / 10, so 1 / d_i = 1 / 10 - 1 / 20 = 2 / 20 - 1 / 20 = 1 / 20. Therefore d_i = 20 cm. The image forms at 20 cm on the opposite side of the lens, real and inverted. The line '6.7 cm' comes from adding the reciprocals instead of subtracting, '10 cm' repeats the focal length, and '30 cm' adds the object distance and focal length."
-      },
-      {
-        "id": "PHY50043",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "Object at 10 cm; image at 20 cm. Find f.",
-        "options": [
-          "6.7 cm",
-          "10 cm",
-          "15 cm",
-          "30 cm"
-        ],
-        "correct": 0,
-        "explain": "Using the thin lens equation 1 / f = 1 / d_o + 1 / d_i, substitute d_o = 10 cm and d_i = 20 cm. Then 1 / f = 1 / 10 + 1 / 20 = 2 / 20 + 1 / 20 = 3 / 20, so f = 20 / 3 ≈ 6.7 cm. The line '10 cm' uses only the object distance, '15 cm' averages the two distances, and '30 cm' adds them."
-      },
-      {
-        "id": "PHY50044",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "The magnification m of a lens is given by:",
-        "options": [
-          "m = h_i / h_o = d_i / d_o",
-          "m = h_i / h_o = -d_i / d_o",
-          "m = h_o / h_i = -d_o / d_i",
-          "m = h_i / h_o = d_o / d_i"
-        ],
-        "correct": 1,
-        "explain": "Magnification is the ratio of image height to object height, and it also equals the negative ratio of image distance to object distance: m = h_i / h_o = -d_i / d_o. The negative sign indicates that a real image is inverted relative to the object. The line 'm = h_i / h_o = d_i / d_o' omits the negative sign. The line 'm = h_o / h_i = -d_o / d_i' inverts the height ratio and the distance ratio. The line 'm = h_i / h_o = d_o / d_i' uses the wrong distance ratio."
-      },
-      {
-        "id": "PHY50045",
-        "type": "mcq",
-        "cat": "Chapter 5: Combination of Lenses",
-        "q": "Two thin lenses are placed in contact with each other. The power P of their combination is given by:",
-        "options": [
-          "P = P₁ × P₂",
-          "P = P₁ - P₂",
-          "P = P₁ + P₂",
-          "P = (P₁ + P₂) / 2"
-        ],
-        "correct": 2,
-        "explain": "When two thin lenses are in contact, their powers add directly: P = P₁ + P₂. This follows from the reciprocal relationship between focal length and power, since 1 / f = 1 / f₁ + 1 / f₂ when the lenses are in contact. The line 'P = P₁ × P₂' multiplies the powers, 'P = P₁ - P₂' subtracts them, and 'P = (P₁ + P₂) / 2' averages them."
-      },
-      {
-        "id": "PHY50046",
-        "type": "mcq",
-        "cat": "Chapter 5: Combination of Lenses",
-        "q": "Two lenses with powers -1.75 D and +2.25 D are placed in contact. What is the power of the combination?",
-        "options": [
-          "+0.50 D",
-          "+4.00 D",
-          "-4.00 D",
-          "-0.50 D"
-        ],
-        "correct": 0,
-        "explain": "For lenses in contact, the powers add: P = P₁ + P₂ = (-1.75) + (+2.25) = +0.50 D. The positive result means the combination acts as a weak converging lens. The line '+4.00 D' adds the absolute values, '-4.00 D' negates that sum, and '-0.50 D' subtracts the larger from the smaller and keeps the wrong sign."
-      },
-      {
         "id": "PHY50047",
         "type": "matching",
         "cat": "Chapter 5: Reflection and Mirrors",
@@ -4384,138 +4030,6 @@
         "explain": "A plane mirror gives a virtual, upright, same-size image. A convex mirror and a concave lens give virtual, upright, diminished images. A concave mirror with the object inside F gives a virtual, upright, magnified image; with the object outside F it gives a real, inverted image. A real, upright, larger image matches none."
       },
       {
-        "id": "PHY50048",
-        "type": "matching",
-        "cat": "Chapter 5: Refraction and Lenses",
-        "q": "Match each formula to the quantity it defines or the relationship it expresses.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "n = c / v"
-          },
-          {
-            "id": "2",
-            "text": "n₁ sin θ₁ = n₂ sin θ₂"
-          },
-          {
-            "id": "3",
-            "text": "sin θc = n₂ / n₁"
-          },
-          {
-            "id": "4",
-            "text": "P = 1 / f"
-          },
-          {
-            "id": "5",
-            "text": "1 / d_o + 1 / d_i = 1 / f"
-          },
-          {
-            "id": "6",
-            "text": "m = -d_i / d_o"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "The index of refraction from the speed of light in vacuum and in the medium."
-          },
-          {
-            "id": "B",
-            "text": "The relationship between the angles of incidence and refraction at a boundary."
-          },
-          {
-            "id": "C",
-            "text": "The critical angle for total internal reflection."
-          },
-          {
-            "id": "D",
-            "text": "The power of a lens from its focal length."
-          },
-          {
-            "id": "E",
-            "text": "The thin lens equation relating object distance, image distance, and focal length."
-          },
-          {
-            "id": "F",
-            "text": "The magnification of a lens from image and object distances."
-          }
-        ],
-        "correct_pairs": {
-          "1": "A",
-          "2": "B",
-          "3": "C",
-          "4": "D",
-          "5": "E",
-          "6": "F"
-        },
-        "explain": "The index of refraction is defined as the ratio of the speed of light in vacuum to its speed in the medium. Snell's law relates the angles of incidence and refraction to the refractive indices of the two media. The critical angle formula gives the angle of incidence at which the angle of refraction becomes 90 degrees. Lens power is the reciprocal of the focal length in meters. The thin lens equation relates object distance, image distance, and focal length. Magnification is the negative ratio of image distance to object distance."
-      },
-      {
-        "id": "PHY50049",
-        "type": "matching",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "Match each lens shape to its category.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "Double convex"
-          },
-          {
-            "id": "2",
-            "text": "Planoconvex"
-          },
-          {
-            "id": "3",
-            "text": "Convex meniscus"
-          },
-          {
-            "id": "4",
-            "text": "Double concave"
-          },
-          {
-            "id": "5",
-            "text": "Planoconcave"
-          },
-          {
-            "id": "6",
-            "text": "Concave meniscus"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "Converging lens"
-          },
-          {
-            "id": "B",
-            "text": "Diverging lens"
-          }
-        ],
-        "correct_pairs": {
-          "1": "A",
-          "2": "A",
-          "3": "A",
-          "4": "B",
-          "5": "B",
-          "6": "B"
-        },
-        "explain": "Lenses that are thicker at the centre than at the edges are converging and have positive power. Double convex, planoconvex, and convex meniscus all belong to this group. Lenses that are thinner at the centre than at the edges are diverging and have negative power. Double concave, planoconcave, and concave meniscus all belong to this group."
-      },
-      {
-        "id": "PHY50050",
-        "type": "mcq",
-        "cat": "Chapter 5: Combination of Lenses",
-        "q": "Two lenses f₁ and f₂ are separated by r. Which formula gives 1/f?",
-        "options": [
-          "1 / f = 1 / f₁ + 1 / f₂",
-          "1 / f = 1 / f₁ + 1 / f₂ - r / (f₁ × f₂)",
-          "1 / f = 1 / f₁ + 1 / f₂ + r / (f₁ × f₂)",
-          "1 / f = 1 / f₁ - 1 / f₂"
-        ],
-        "correct": 1,
-        "explain": "For separated lenses, 1/f = 1/f1 + 1/f2 − r/(f1f2), and P = P1 + P2 − rP1P2. Omitting the separation term applies when the lenses touch. Adding the term uses the wrong sign, and subtracting the powers does not follow the formula."
-      },
-      {
         "id": "PHY50051",
         "type": "mcq",
         "cat": "Chapter 5: Total Internal Reflection",
@@ -4542,106 +4056,6 @@
         ],
         "correct": 1,
         "explain": "A mirage forms when air near the hot road is warmer and less dense than the air above it. Light traveling downward through this gradient bends gradually until it exceeds the critical angle and undergoes total internal reflection, returning upward to the observer. The observer sees an apparent reflection of the sky, which looks like water. There is no actual water layer, diffraction is not the cause, and absorption would darken the road rather than produce the mirage."
-      },
-      {
-        "id": "PHY50053",
-        "type": "stepped",
-        "cat": "Chapter 5: Thin Lenses",
-        "group": "convex-lens-image-pos",
-        "groupOrder": 1,
-        "q": "A convex lens forms images that depend on object position. At each step choose the correct description.",
-        "steps": [
-          {
-            "id": "1",
-            "prompt": "Given that an object at 2F gives a real, inverted, same-size image at 2F, what image forms when the object is between 2F and F?",
-            "options": [
-              "Real, inverted, same size as the object, at 2F on the other side",
-              "Real, inverted, larger than the object, beyond 2F",
-              "Virtual, upright, larger than the object, on the same side",
-              "No image, because the refracted rays are parallel"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "2",
-            "prompt": "Object between 2F and F. What image is formed?",
-            "options": [
-              "Real, inverted, larger than the object, beyond 2F on the other side",
-              "Real, inverted, same size as the object, at 2F",
-              "Virtual, upright, smaller than the object, between object and lens",
-              "Real, upright, smaller than the object, between F and 2F"
-            ],
-            "correct": 0
-          },
-          {
-            "id": "3",
-            "prompt": "Given that an object between 2F and F gives a real, inverted, enlarged image beyond 2F, what image forms when the object is between F and the lens?",
-            "options": [
-              "Virtual, upright, larger than the object, on the same side of the lens",
-              "Real, inverted, larger than the object, on the far side of the lens",
-              "Virtual, inverted, smaller than the object, on the far side of the lens",
-              "No image, because the rays leave the lens parallel to each other"
-            ],
-            "correct": 0
-          }
-        ],
-        "explain": "When the object is at 2F the image is real, inverted and the same size, also at 2F on the opposite side. When the object is between 2F and F the image is real, inverted and larger, beyond 2F. When the object is between F and the lens the image is virtual, upright and larger, on the same side as the object. The remaining lines name the image properties that belong to other object positions."
-      },
-      {
-        "id": "PHY50054",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "When an object is placed exactly at the focal point of a convex lens, the image is:",
-        "options": [
-          "Real, inverted, and the same size as the object",
-          "Virtual, upright, and larger than the object",
-          "Not formed, because the refracted rays are parallel",
-          "Real, inverted, and larger than the object"
-        ],
-        "correct": 2,
-        "explain": "When the object is at the focal point of a convex lens, the rays that pass through the focal point before the lens leave parallel to the axis, and the parallel rays leave through the other focal point. The rays never meet, so no image is formed. The lines that describe a real inverted image or a virtual upright image belong to other object positions."
-      },
-      {
-        "id": "PHY50055",
-        "type": "mcq",
-        "cat": "Chapter 5: Optical Fibers and Medical Applications",
-        "q": "In an optical fiber the core and cladding must satisfy which relation so that total internal reflection can occur?",
-        "options": [
-          "The refractive index of the core is greater than the refractive index of the cladding",
-          "The refractive index of the core is less than the refractive index of the cladding",
-          "The refractive index of the core equals the refractive index of the cladding",
-          "The refractive index of the cladding is twice the refractive index of the core"
-        ],
-        "correct": 0,
-        "explain": "Total internal reflection inside the fiber requires light to travel from a denser medium into a less dense medium. Therefore the core (n₁) must have a higher refractive index than the cladding (n₂). The lines that reverse the inequality, set the indices equal, or invent a factor of two prevent the critical-angle condition from being met."
-      },
-      {
-        "id": "PHY50056",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "For a single thin lens the image distance di is taken as positive when the image is:",
-        "options": [
-          "Real and on the opposite side of the lens from the object",
-          "Virtual and on the same side of the lens as the object",
-          "Real and on the same side of the lens as the object",
-          "Virtual and on the opposite side of the lens from the object"
-        ],
-        "correct": 0,
-        "explain": "The sign convention used with the thin-lens equation takes a real image (rays actually converge) as positive image distance, and that image lies on the opposite side of the lens from the object. A virtual image (rays only appear to diverge from a point on the object side) has a negative image distance. The remaining lines reverse the side or the real/virtual classification."
-      },
-      {
-        "id": "PHY50057",
-        "type": "mcq",
-        "cat": "Chapter 5: Combination of Lenses",
-        "q": "Lenses f₁=20 cm and f₂=30 cm are 10 cm apart. Which 1/f expression is correct?",
-        "options": [
-          "1/f = 1/20 + 1/30 - 10/(20 × 30)",
-          "1/f = 1/20 + 1/30 + 10/(20 × 30)",
-          "1/f = 1/20 + 1/30",
-          "1/f = 1/20 - 1/30"
-        ],
-        "correct": 0,
-        "explain": "The separated-lens formula is 1/f = 1/f1 + 1/f2 − r/(f1f2). Substituting gives 1/20 + 1/30 − 10/(20×30). Adding the separation term uses the wrong sign, omitting it applies when the lenses touch, and subtracting focal lengths does not follow the formula."
       },
       {
         "id": "PHY50058",
@@ -4742,20 +4156,6 @@
         "explain": "Beyond the critical angle, total internal reflection returns the ray to the denser medium. Refraction away occurs below critical, refraction along the boundary occurs at critical, and return toward normal is not the above-critical case."
       },
       {
-        "id": "PHY50065",
-        "type": "mcq",
-        "cat": "Chapter 5: Optical Fibers and Medical Applications",
-        "q": "Light rays are guided through optical fiber cables by which effect?",
-        "options": [
-          "Total internal reflection in fibers",
-          "Regular reflection from plane mirrors",
-          "Refraction at two medium boundaries",
-          "Refraction by thin convex lenses"
-        ],
-        "correct": 0,
-        "explain": "Optical fibers guide light by total internal reflection inside the fiber. Regular reflection needs mirror surfaces, boundary refraction transmits light, and lens refraction focuses rather than confines."
-      },
-      {
         "id": "PHY50066",
         "type": "mcq",
         "cat": "Chapter 5: Refraction and Snell's Law",
@@ -4825,91 +4225,6 @@
         "explain": "A real image can be received on a screen and is inverted. Upright images are virtual in the mirror cases taught, virtual is the opposite of real, and same size depends on object position."
       },
       {
-        "id": "PHY50071",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "A distant object is imaged by a convex lens. Where does the image form?",
-        "options": [
-          "At the focal point on the opposite side",
-          "At twice the focal length on the opposite side",
-          "Between the lens and the focal point on the same side",
-          "At the centre of the lens"
-        ],
-        "correct": 0,
-        "explain": "Rays from a distant object arrive nearly parallel and converge at the focal point, giving a real, inverted, smaller image. Twice the focal length belongs to an object at 2F, and the same-side and centre positions do not fit."
-      },
-      {
-        "id": "PHY50072",
-        "q": "Where is the focal point of a diverging lens located?",
-        "options": [
-          "On the incoming side, where the rays appear to start",
-          "On the opposite side, where the refracted rays actually converge",
-          "At the optical centre of the lens itself",
-          "At the point where the rays reflect back from the surface"
-        ],
-        "correct": 0,
-        "explain": "A diverging lens spreads parallel rays outward. Projected backward, those rays appear to come from a focal point on the incoming side, so the focal point is virtual.",
-        "cat": "Chapter 5: Thin Lenses"
-      },
-      {
-        "id": "PHY50073",
-        "type": "matching",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "Match each ray used in concave-lens ray tracing to its path.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "Ray parallel to the principal axis"
-          },
-          {
-            "id": "2",
-            "text": "Ray directed toward the far focal point"
-          },
-          {
-            "id": "3",
-            "text": "Ray aimed at the centre of the lens"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "Diverges as if it came from the near focal point on the object side"
-          },
-          {
-            "id": "B",
-            "text": "Exits parallel to the principal axis"
-          },
-          {
-            "id": "C",
-            "text": "Passes through undeflected"
-          },
-          {
-            "id": "D",
-            "text": "Reflects back along the incoming path"
-          }
-        ],
-        "correct_pairs": {
-          "1": "A",
-          "2": "B",
-          "3": "C"
-        },
-        "explain": "For a concave lens, a parallel ray diverges as if from the near focal point on the object side. A ray toward the far focal point exits parallel to the axis. A ray through the centre passes undeflected."
-      },
-      {
-        "id": "PHY50074",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "Where is the image formed by a concave lens relative to the object?",
-        "options": [
-          "Between the object and the lens",
-          "Beyond the object on the same side",
-          "On the opposite side beyond the focal point",
-          "At the focal point on the opposite side"
-        ],
-        "correct": 0,
-        "explain": "A concave lens gives a virtual, upright, diminished image between the object and the lens. Beyond the object, opposite-side, and opposite focal-point positions do not match a diverging lens."
-      },
-      {
         "id": "PHY50076",
         "type": "mcq",
         "cat": "Chapter 5: Reflection and Mirrors",
@@ -4924,59 +4239,6 @@
         "explain": "Magnification is the size of the image divided by the size of the object. A plane mirror gives an image the same size as the object, so its magnification is 1."
       },
       {
-        "id": "PHY50077",
-        "type": "mcq",
-        "cat": "Chapter 5: Optical Fibers and Medical Applications",
-        "q": "Optical fibers are used in which biomedical laser applications?",
-        "options": [
-          "Surgical, endoscope, and microscope lasers",
-          "Dermatology, endoscope, and microscope lasers",
-          "Surgical, retinal photocoagulation, and microscope lasers",
-          "Surgical, endoscope, and LASIK lasers"
-        ],
-        "correct": 0,
-        "explain": "Fiber-guided laser types are surgical, endoscope, and microscope lasers. Dermatology, retinal photocoagulation, and LASIK are laser applications too, but they are not the fiber-guided laser types named here."
-      },
-      {
-        "id": "PHY50078",
-        "q": "How is an image formed through an endoscope's fiber bundle?",
-        "options": [
-          "Many small fibers together carry the image",
-          "One single fiber carries light and the image",
-          "A tip lens stores the image for later viewing",
-          "The cladding reflects light back into the body"
-        ],
-        "correct": 0,
-        "explain": "An endoscope uses one bundle to carry light to the area and another bundle to carry the image back. Many small fibers together form the image seen on the monitor.",
-        "cat": "Chapter 5: Optical Fibers and Medical Applications"
-      },
-      {
-        "id": "PHY50079",
-        "q": "Two convex lenses of focal lengths 12 cm and 20 cm are 4 cm apart. What is the combination focal length?",
-        "options": [
-          "About 8.57 cm",
-          "About 7.50 cm",
-          "About 12.00 cm",
-          "About 20.00 cm"
-        ],
-        "correct": 0,
-        "explain": "Using 1/f = 1/12 + 1/20 − 4/(12×20) gives 0.11667, so f ≈ 8.57 cm. About 7.50 cm omits the separation term, and 12.00 cm and 20.00 cm repeat the individual focal lengths.",
-        "cat": "Chapter 5: Combination of Lenses"
-      },
-      {
-        "id": "PHY50080",
-        "q": "What is a thin lens?",
-        "options": [
-          "A transparent refracting surface thin compared with its radius",
-          "A spherical mirror that has a small reflecting surface area",
-          "A prism that disperses white light into its component colours",
-          "A fiber with a high-index core and a lower-index cladding"
-        ],
-        "correct": 0,
-        "explain": "A thin lens is transparent, refracts light, and has a thickness small compared with its radius of curvature. A spherical mirror, a prism, and an optical fiber are different optical elements.",
-        "cat": "Chapter 5: Thin Lenses"
-      },
-      {
         "id": "PHY50081",
         "q": "What is the normal to a mirror surface?",
         "options": [
@@ -4988,20 +4250,6 @@
         "correct": 0,
         "explain": "The normal is perpendicular to the mirror surface at the point of incidence, making 90° with the surface. Angles of incidence and reflection are measured from this normal.",
         "cat": "Chapter 5: Reflection and Mirrors"
-      },
-      {
-        "id": "PHY50082",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "In the thin-lens sign convention, image height is positive when the image is:",
-        "options": [
-          "Upright",
-          "Inverted",
-          "Real",
-          "Virtual"
-        ],
-        "correct": 0,
-        "explain": "Image height is positive when the image is upright and negative when it is inverted. Real and virtual describe where the image forms, not the sign of its height."
       },
       {
         "id": "PHY50083",
@@ -5030,62 +4278,6 @@
         ],
         "correct": 0,
         "explain": "Using 1/di = 1/f − 1/do = 1/15 − 1/40 = 5/120 gives di = +24 cm, so the image is real and 24 cm in front of the mirror. 10.9 cm adds the reciprocals instead of subtracting, 40 cm repeats the object distance, and 30 cm uses twice the focal length."
-      },
-      {
-        "id": "PHY50085",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "An object is 24 cm in front of a convex lens with f = 8 cm. Find the image distance.",
-        "options": [
-          "12 cm on the opposite side",
-          "6 cm on the opposite side",
-          "24 cm on the same side",
-          "32 cm on the opposite side"
-        ],
-        "correct": 0,
-        "explain": "Using 1/di = 1/f − 1/do = 1/8 − 1/24 = 2/24 gives di = +12 cm, a real image on the opposite side. 6 cm adds the reciprocals instead of subtracting, 24 cm repeats the object distance, and 32 cm adds f and do."
-      },
-      {
-        "id": "PHY50086",
-        "type": "mcq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "Convex lens: object at 24 cm, real image at 12 cm. Find m.",
-        "options": [
-          "−0.5",
-          "+0.5",
-          "−2",
-          "+2"
-        ],
-        "correct": 0,
-        "explain": "m = −di/do = −12/24 = −0.5, so the image is inverted and half the size. +0.5 drops the minus sign, and −2 and +2 invert the distance ratio."
-      },
-      {
-        "id": "PHY50087",
-        "type": "mcq",
-        "cat": "Chapter 5: Combination of Lenses",
-        "q": "Two lenses of power +4.0 D and +2.0 D are 0.25 m apart. Find the power of the combination.",
-        "options": [
-          "+4.0 D",
-          "+6.0 D",
-          "−2.0 D",
-          "+8.0 D"
-        ],
-        "correct": 0,
-        "explain": "P = P1 + P2 − rP1P2 = 6.0 − 0.25×8.0 = +4.0 D. +6.0 D omits the separation term, −2.0 D subtracts the full product without r, and +8.0 D adds the term."
-      },
-      {
-        "id": "PHY50088",
-        "type": "mcq",
-        "cat": "Chapter 5: Combination of Lenses",
-        "q": "Two lenses of power −1.50 D and +2.75 D are in contact. Find the combination power.",
-        "options": [
-          "+1.25 D",
-          "−1.25 D",
-          "+4.25 D",
-          "−4.25 D"
-        ],
-        "correct": 0,
-        "explain": "In contact, P = P1 + P2 = −1.50 + 2.75 = +1.25 D, a weak converging combination. −1.25 D reverses the sign, and ±4.25 D adds the magnitudes instead of the signed powers."
       },
       {
         "id": "PHY50089",
@@ -5214,20 +4406,6 @@
         "explain": "At C, the image also forms at C, real, inverted and the same size. At F and smaller describes a distant object, beyond C and larger describes an object between C and F, and the virtual upright larger image needs the object inside F."
       },
       {
-        "id": "PHY50098",
-        "type": "mcq",
-        "cat": "Chapter 5: Combination of Lenses",
-        "q": "Two convex lenses of focal lengths 10 cm and 15 cm are 3 cm apart. Find f.",
-        "options": [
-          "6.82 cm",
-          "6 cm",
-          "12.5 cm",
-          "25 cm"
-        ],
-        "correct": 0,
-        "explain": "1/f = 1/10 + 1/15 − 3/(10×15) = 0.14667, so f ≈ 6.82 cm."
-      },
-      {
         "id": "PHY50099",
         "type": "saq",
         "cat": "Chapter 5: Total Internal Reflection",
@@ -5248,17 +4426,6 @@
         "explain": "The critical angle is the angle of incidence for which the refracted ray emerges along the surface at 90°. Beyond it, total internal reflection occurs."
       },
       {
-        "id": "PHY50101",
-        "type": "saq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "What is the SI unit of lens power?",
-        "answer": "Dioptre",
-        "accept": [
-          "D"
-        ],
-        "explain": "Lens power is measured in dioptres, where 1 D = 1 m⁻¹, the reciprocal of the focal length in metres."
-      },
-      {
         "id": "PHY50102",
         "type": "saq",
         "cat": "Chapter 5: Refraction and Snell's Law",
@@ -5266,24 +4433,6 @@
         "answer": "Snell's law",
         "accept": [],
         "explain": "Snell's law states n₁ sin θ₁ = n₂ sin θ₂, with both angles measured from the normal at the boundary."
-      },
-      {
-        "id": "PHY50103",
-        "type": "saq",
-        "cat": "Chapter 5: Optical Fibers and Medical Applications",
-        "q": "What is the name for the high-index central part of an optical fibre?",
-        "answer": "Core",
-        "accept": [],
-        "explain": "The core is the dense central part of the fibre with the higher refractive index, surrounded by the lower-index cladding."
-      },
-      {
-        "id": "PHY50104",
-        "type": "saq",
-        "cat": "Chapter 5: Optical Fibers and Medical Applications",
-        "q": "What is the name for the low-index layer around an optical fibre's core?",
-        "answer": "Cladding",
-        "accept": [],
-        "explain": "The cladding surrounds the core with a lower refractive index, so light inside the core undergoes total internal reflection."
       },
       {
         "id": "PHY50105",
@@ -5328,33 +4477,6 @@
         "explain": "A virtual image is formed where reflected rays only appear to come from; light does not actually pass through it, so it cannot be caught on a screen."
       },
       {
-        "id": "PHY50109",
-        "type": "stepped",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "A lens and its focal point are named in turn. Type each answer.",
-        "steps": [
-          {
-            "id": "1",
-            "type": "saq",
-            "prompt": "Type the name of the lens that is thicker at the centre than at the edges.",
-            "answer": "Convex lens",
-            "accept": [
-              "Converging lens"
-            ]
-          },
-          {
-            "id": "2",
-            "type": "saq",
-            "prompt": "Given a convex lens, type the name of the point where parallel rays converge.",
-            "answer": "Focal point",
-            "accept": [
-              "Focus"
-            ]
-          }
-        ],
-        "explain": "A convex lens is thicker at the centre and converges parallel rays. The point where they meet is the focal point, on the opposite side of the lens."
-      },
-      {
         "id": "PHY50110",
         "type": "stepped",
         "cat": "Chapter 5: Reflection and Mirrors",
@@ -5391,26 +4513,6 @@
         "explain": "A convex mirror gives a wider field of view because its image is smaller. It always forms a virtual, upright, diminished image behind the mirror."
       },
       {
-        "id": "PHY50112",
-        "type": "saq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "What other name is used for a convex lens?",
-        "answer": "Converging lens",
-        "accept": [
-          "Converging"
-        ],
-        "explain": "A convex lens is thicker at the centre and brings parallel rays together, so it is also called a converging lens, with positive focal length and power."
-      },
-      {
-        "id": "PHY50113",
-        "type": "saq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "What sign does the power of a convex lens take?",
-        "answer": "Positive",
-        "accept": [],
-        "explain": "A convex lens converges light and has a positive focal length, so P = 1/f is positive; a concave lens gives a negative power."
-      },
-      {
         "id": "PHY50114",
         "type": "saq",
         "cat": "Chapter 5: Reflection and Mirrors",
@@ -5418,17 +4520,6 @@
         "answer": "Negative",
         "accept": [],
         "explain": "Concave mirrors take positive focal length and convex mirrors negative focal length in the mirror equation, matching their converging and diverging behaviour."
-      },
-      {
-        "id": "PHY50115",
-        "type": "saq",
-        "cat": "Chapter 5: Thin Lenses",
-        "q": "Which converging lens shape is curved on one side and flat on the other?",
-        "answer": "Planoconvex",
-        "accept": [
-          "Planoconvex lens"
-        ],
-        "explain": "Planoconvex is one of the three converging shapes, with one curved and one flat surface. The others are double convex and convex meniscus."
       },
       {
         "id": "PHY50116",
@@ -7078,134 +6169,6 @@
         "explain": "Bernoulli lowers pressure as flow speeds up. Continuity speeds flow in a narrower lumen. Poiseuille makes radius dominant. Reynolds flags swirling murmurs. Doppler tracks moving blood. Surface tension contracts the surface."
       },
       {
-        "id": "PHY90006",
-        "type": "matching",
-        "cat": "Mixed Chapters: Cross-Chapter",
-        "q": "Match each principle to the medical technology that relies on it.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "Total internal reflection"
-          },
-          {
-            "id": "2",
-            "text": "Thin-lens power"
-          },
-          {
-            "id": "3",
-            "text": "Stimulated emission"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "Trapped light steers a flexible scope"
-          },
-          {
-            "id": "B",
-            "text": "Curvature bends rays to a focus"
-          },
-          {
-            "id": "C",
-            "text": "Coherent beam seals or cuts tissue"
-          }
-        ],
-        "correct_pairs": {
-          "1": "A",
-          "2": "B",
-          "3": "C"
-        },
-        "explain": "Trapped light guides an endoscope. Lens curvature focuses corrective and instrumental rays. Stimulated emission gives the laser beam."
-      },
-      {
-        "id": "PHY90007",
-        "type": "matching",
-        "cat": "Mixed Chapters: Cross-Chapter",
-        "q": "Match each physical quantity to its SI unit.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "Viscosity"
-          },
-          {
-            "id": "2",
-            "text": "Surface tension"
-          },
-          {
-            "id": "3",
-            "text": "Lens power"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "pascal-second"
-          },
-          {
-            "id": "B",
-            "text": "newton per metre"
-          },
-          {
-            "id": "C",
-            "text": "dioptre"
-          },
-          {
-            "id": "D",
-            "text": "joule"
-          }
-        ],
-        "correct_pairs": {
-          "1": "A",
-          "2": "B",
-          "3": "C"
-        },
-        "explain": "Viscosity is pascal-second, surface tension newton per metre, and lens power dioptre. Joule is energy."
-      },
-      {
-        "id": "PHY90008",
-        "type": "matching",
-        "cat": "Mixed Chapters: Cross-Chapter",
-        "q": "Match each formula to what it calculates.",
-        "leftItems": [
-          {
-            "id": "1",
-            "text": "n = c/v"
-          },
-          {
-            "id": "2",
-            "text": "P = 1/f"
-          },
-          {
-            "id": "3",
-            "text": "Q = πr⁴ΔP/8ηL"
-          }
-        ],
-        "rightItems": [
-          {
-            "id": "A",
-            "text": "Index of refraction"
-          },
-          {
-            "id": "B",
-            "text": "Lens power"
-          },
-          {
-            "id": "C",
-            "text": "Viscous tube flow"
-          },
-          {
-            "id": "D",
-            "text": "Wave speed"
-          }
-        ],
-        "correct_pairs": {
-          "1": "A",
-          "2": "B",
-          "3": "C"
-        },
-        "explain": "n = c/v is the refractive index, P = 1/f lens power, and the r⁴ form is viscous tube flow. Wave speed is v = λf."
-      },
-      {
         "id": "PHY90010",
         "type": "saq",
         "cat": "Mixed Chapters: Linking and Short Answers",
@@ -7386,20 +6349,6 @@
         "explain": "Viscosity η is resistance to shear between adjacent layers, in pascal-seconds."
       },
       {
-        "id": "PHY90024",
-        "type": "saq",
-        "cat": "Mixed Chapters: Linking and Short Answers",
-        "q": "Which quantity is the inverse of focal length in metres?",
-        "answer": "Lens power",
-        "accept": [
-          "lens power",
-          "Power of a lens",
-          "power of a lens",
-          "P"
-        ],
-        "explain": "Lens power P = 1 / f, measured in dioptres, positive for convex and negative for concave."
-      },
-      {
         "id": "PHY90026",
         "type": "stepped",
         "cat": "Mixed Chapters: Linking and Short Answers",
@@ -7494,31 +6443,6 @@
               "deep vein thrombosis",
               "Deep venous thrombosis"
             ]
-          }
-        ]
-      },
-      {
-        "id": "PHY90029",
-        "type": "stepped",
-        "cat": "Mixed Chapters: Linking and Short Answers",
-        "q": "Thin-lens optics has two named medical instruments. Type one at each step.",
-        "explain": "A simple magnifier is one convex lens for skin and dental views. A compound microscope stacks two convex lenses for blood-cell and histopathology work.",
-        "steps": [
-          {
-            "id": "1",
-            "type": "saq",
-            "prompt": "Type the single convex-lens instrument used to enlarge skin lesions or dental views.",
-            "answer": "Simple magnifier",
-            "accept": [
-              "Magnifying glass"
-            ]
-          },
-          {
-            "id": "2",
-            "type": "saq",
-            "prompt": "Given the Simple magnifier, type the two-convex-lens instrument used for blood-cell and histopathology work.",
-            "answer": "Compound microscope",
-            "accept": []
           }
         ]
       },
