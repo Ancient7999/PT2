@@ -1134,6 +1134,37 @@ async function loadBank(path){
   return data;
 }
 
+async function loadBankWithExtras(mainPath, extraPaths){
+  if(window.StudyMigrate && typeof StudyMigrate.runAll==='function'){
+    try{ await StudyMigrate.runAll(); }catch(e){ console.warn('[quiz] migration skipped', e); }
+  }
+  const res=await fetch(mainPath,{cache:'no-cache'});
+  if(!res.ok) throw new Error('bank HTTP '+res.status);
+  const data=await res.json();
+
+  const extras=await Promise.all((extraPaths||[]).map(async p=>{
+    const r=await fetch(p,{cache:'no-cache'});
+    if(!r.ok) throw new Error('extra bank HTTP '+r.status+' '+p);
+    return r.json();
+  }));
+
+  extras.forEach(extra=>{
+    if(!extra || !extra.bank) return;
+    Object.keys(extra.bank).forEach(form=>{
+      if(!data.bank[form]) data.bank[form]=[];
+      if(Array.isArray(extra.bank[form])){
+        data.bank[form]=data.bank[form].concat(extra.bank[form]);
+      }
+    });
+    if(Array.isArray(extra.cards)){
+      data.cards=(data.cards||[]).concat(extra.cards);
+    }
+  });
+
+  ingestBank(data, mainPath);
+  return data;
+}
+
 (function wireQuizPrefs(){
   ['prefShuffleQ','prefShuffleC','prefLinkFirst'].forEach(id=>{
     const el=document.getElementById(id);
@@ -4126,7 +4157,7 @@ if(document.fonts&&document.fonts.ready){
 })();
 placeSettingsGear();
 
-window.StudyQuiz={ isAnswered, leaveRun, labelFit, labelFitWire, labelZoneTarget, DROP_RADIUS, DROP_EXIT, loadBank, ingestBank, startRun, resumeRun, goSets, goPortal, renderSets, refreshSetsCards,
+window.StudyQuiz={ isAnswered, leaveRun, labelFit, labelFitWire, labelZoneTarget, DROP_RADIUS, DROP_EXIT, loadBank, loadBankWithExtras, ingestBank, startRun, resumeRun, goSets, goPortal, renderSets, refreshSetsCards,
   get bankKey(){ return BANK_KEY; }, get cards(){ return CARDS; }, get questions(){ return questions; }, get answers(){ return answers; },
   get current(){ return current; }, get active(){ return quizActive; }, jumpToQuestion, selectAnswer, submitSaq, toggleMulti, submitMulti, isMulti, saqMatches, saqHint, orderShuffle, goNext, goBack, idReport:()=>ID_REPORT, get lectureSet(){ return LECTURE_SET; } };
 
