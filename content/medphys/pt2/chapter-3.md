@@ -778,8 +778,61 @@ Re < 2000 → **laminar**. If the speed doubles (for example through a narrowing
 </div>
 
 <div class="optics-diagram" role="img" aria-label="Surface tension from unbalanced pulls on surface molecules, and capillary rise of water and fall of mercury">
-<svg viewBox="0 0 640 274" xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;display:block;max-width:640px;margin:0.6rem auto">
-<rect x="30" y="70" width="250" height="170" fill="rgba(var(--accent-1-rgb),0.16)" stroke="var(--accent-1)" stroke-width="1.5"/><line x1="30" y1="70" x2="280" y2="70" stroke="var(--accent-1)" stroke-width="3"/><circle cx="60" cy="86" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="60" cy="130" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="60" cy="174" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="60" cy="218" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="108" cy="86" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="108" cy="130" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="108" cy="174" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="108" cy="218" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="156" cy="86" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="156" cy="130" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="156" cy="174" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="156" cy="218" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="204" cy="86" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="204" cy="130" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="204" cy="174" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="204" cy="218" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="252" cy="86" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="252" cy="130" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="252" cy="174" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><circle cx="252" cy="218" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/><line x1="165" y1="174" x2="186" y2="174" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="190.2,174 181.8,177.2 181.8,170.8" fill="var(--accent-0)"/><line x1="162.4" y1="180.4" x2="177.2" y2="195.2" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="180.2,198.2 172,194.5 176.5,190" fill="var(--accent-0)"/><line x1="156" y1="183" x2="156" y2="204" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="156,208.2 152.8,199.8 159.2,199.8" fill="var(--accent-0)"/><line x1="149.6" y1="180.4" x2="134.8" y2="195.2" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="131.8,198.2 135.5,190 140,194.5" fill="var(--accent-0)"/><line x1="147" y1="174" x2="126" y2="174" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="121.8,174 130.2,170.8 130.2,177.2" fill="var(--accent-0)"/><line x1="149.6" y1="167.6" x2="134.8" y2="152.8" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="131.8,149.8 140,153.5 135.5,158" fill="var(--accent-0)"/><line x1="156" y1="165" x2="156" y2="144" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="156,139.8 159.2,148.2 152.8,148.2" fill="var(--accent-0)"/><line x1="162.4" y1="167.6" x2="177.2" y2="152.8" stroke="var(--accent-0)" stroke-width="1.6"/><polygon points="180.2,149.8 176.5,158 172,153.5" fill="var(--accent-0)"/><line x1="165" y1="86" x2="186" y2="86" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="190.2,86 181.8,89.2 181.8,82.8" fill="var(--accent-2)"/><line x1="162.4" y1="92.4" x2="177.2" y2="107.2" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="180.2,110.2 172,106.5 176.5,102" fill="var(--accent-2)"/><line x1="156" y1="95" x2="156" y2="116" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="156,120.2 152.8,111.8 159.2,111.8" fill="var(--accent-2)"/><line x1="149.6" y1="92.4" x2="134.8" y2="107.2" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="131.8,110.2 135.5,102 140,106.5" fill="var(--accent-2)"/><line x1="147" y1="86" x2="126" y2="86" stroke="var(--accent-2)" stroke-width="1.6"/><polygon points="121.8,86 130.2,82.8 130.2,89.2" fill="var(--accent-2)"/><text x="155" y="46" text-anchor="middle" fill="var(--accent-2)" font-family="Outfit,sans-serif" font-size="11">surface molecule: pulled sideways and down</text><text x="155" y="60" text-anchor="middle" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10.5">→ the surface acts like a stretched skin</text><text x="155" y="262" text-anchor="middle" fill="var(--accent-0)" font-family="Outfit,sans-serif" font-size="11">inside: pulled equally in all directions</text><rect x="340" y="150" width="120" height="90" fill="rgba(var(--accent-1-rgb),0.3)"/><path d="M340,110 L340,240 L460,240 L460,110" fill="none" stroke="var(--col-text-muted)" stroke-width="1.5"/><rect x="392" y="104" width="16" height="136" fill="rgba(var(--accent-1-rgb),0.55)"/><line x1="392" y1="70" x2="392" y2="232" stroke="var(--col-text-main)" stroke-width="1.4"/><line x1="408" y1="70" x2="408" y2="232" stroke="var(--col-text-main)" stroke-width="1.4"/><path d="M392,104 Q400,112 408,104" fill="none" stroke="var(--col-text-main)" stroke-width="1.4"/><text x="400" y="262" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">water rises, concave top</text><rect x="490" y="150" width="120" height="90" fill="rgba(var(--accent-4-rgb),0.3)"/><path d="M490,110 L490,240 L610,240 L610,110" fill="none" stroke="var(--col-text-muted)" stroke-width="1.5"/><rect x="542" y="184" width="16" height="56" fill="rgba(var(--accent-4-rgb),0.55)"/><line x1="542" y1="70" x2="542" y2="232" stroke="var(--col-text-main)" stroke-width="1.4"/><line x1="558" y1="70" x2="558" y2="232" stroke="var(--col-text-main)" stroke-width="1.4"/><path d="M542,184 Q550,176 558,184" fill="none" stroke="var(--col-text-main)" stroke-width="1.4"/><text x="550" y="262" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">mercury falls, convex top</text><text x="475" y="40" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="13" font-weight="600">Capillarity in thin tubes</text><text x="155" y="22" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="13" font-weight="600">Surface tension: T = F/L</text>
+<svg viewBox="0 0 640 290" xmlns="http://www.w3.org/2000/svg" width="100%" style="height:auto;display:block;max-width:640px;margin:0.6rem auto">
+<text x="320" y="22" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="14" font-weight="600">Surface tension and capillarity</text>
+
+<!-- LEFT: surface molecules -->
+<rect x="16" y="70" width="230" height="155" fill="rgba(var(--accent-1-rgb),0.1)" stroke="var(--accent-1)" stroke-width="1.5" rx="6"/>
+<text x="131" y="60" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="12" font-weight="600">Surface molecules</text>
+
+<!-- Inside molecule (balanced) -->
+<circle cx="70" cy="155" r="8" fill="none" stroke="var(--col-text-main)" stroke-width="1.5"/>
+<line x1="70" y1="155" x2="70" y2="138" stroke="var(--accent-0)" stroke-width="1.3"/><polygon points="70,134 67.5,141 72.5,141" fill="var(--accent-0)"/>
+<line x1="70" y1="155" x2="70" y2="172" stroke="var(--accent-0)" stroke-width="1.3"/><polygon points="70,176 67.5,169 72.5,169" fill="var(--accent-0)"/>
+<line x1="70" y1="155" x2="53" y2="155" stroke="var(--accent-0)" stroke-width="1.3"/><polygon points="49,155 56,152.5 56,157.5" fill="var(--accent-0)"/>
+<line x1="70" y1="155" x2="87" y2="155" stroke="var(--accent-0)" stroke-width="1.3"/><polygon points="91,155 84,152.5 84,157.5" fill="var(--accent-0)"/>
+<text x="70" y="195" text-anchor="middle" fill="var(--col-text-muted)" font-family="Outfit,sans-serif" font-size="10">inside: balanced</text>
+
+<!-- Surface molecule (net downward) -->
+<circle cx="175" cy="105" r="8" fill="none" stroke="var(--accent-2)" stroke-width="1.6"/>
+<line x1="175" y1="105" x2="162" y2="118" stroke="var(--accent-2)" stroke-width="1.4"/><polygon points="159,121 165,117 167,122" fill="var(--accent-2)"/>
+<line x1="175" y1="105" x2="188" y2="118" stroke="var(--accent-2)" stroke-width="1.4"/><polygon points="191,121 185,117 183,122" fill="var(--accent-2)"/>
+<line x1="175" y1="105" x2="175" y2="120" stroke="var(--accent-2)" stroke-width="1.4"/><polygon points="175,124 172.5,117 177.5,117" fill="var(--accent-2)"/>
+<text x="175" y="140" text-anchor="middle" fill="var(--accent-2)" font-family="Outfit,sans-serif" font-size="10">surface: net pull down</text>
+<text x="131" y="215" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">T = F / L</text>
+
+<!-- RIGHT: Capillarity — 2 tubes water, 1 tube mercury (matches slides) -->
+<!-- Water reservoir -->
+<rect x="270" y="155" width="160" height="75" fill="rgba(var(--accent-1-rgb),0.4)" stroke="var(--accent-1)" stroke-width="1.5"/>
+<text x="350" y="198" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="15" font-weight="600">H₂O</text>
+
+<!-- Water tube 1 -->
+<line x1="305" y1="75" x2="305" y2="230" stroke="var(--col-text-main)" stroke-width="1.6"/>
+<line x1="318" y1="75" x2="318" y2="230" stroke="var(--col-text-main)" stroke-width="1.6"/>
+<path d="M305,100 Q311.5,108 318,100" fill="none" stroke="var(--accent-1)" stroke-width="2"/>
+<rect x="306" y="100" width="11" height="55" fill="rgba(var(--accent-1-rgb),0.65)"/>
+
+<!-- Water tube 2 (higher) -->
+<line x1="355" y1="75" x2="355" y2="230" stroke="var(--col-text-main)" stroke-width="1.6"/>
+<line x1="368" y1="75" x2="368" y2="230" stroke="var(--col-text-main)" stroke-width="1.6"/>
+<path d="M355,88 Q361.5,96 368,88" fill="none" stroke="var(--accent-1)" stroke-width="2"/>
+<rect x="356" y="88" width="11" height="67" fill="rgba(var(--accent-1-rgb),0.65)"/>
+
+<text x="350" y="248" text-anchor="middle" fill="var(--accent-1)" font-family="Outfit,sans-serif" font-size="11">water rises · concave</text>
+
+<!-- Mercury reservoir -->
+<rect x="460" y="155" width="150" height="75" fill="rgba(var(--accent-4-rgb),0.35)" stroke="var(--accent-4)" stroke-width="1.5"/>
+<text x="535" y="198" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="15" font-weight="600">Hg</text>
+
+<!-- Mercury tube (depressed) -->
+<line x1="520" y1="75" x2="520" y2="230" stroke="var(--col-text-main)" stroke-width="1.6"/>
+<line x1="533" y1="75" x2="533" y2="230" stroke="var(--col-text-main)" stroke-width="1.6"/>
+<path d="M520,185 Q526.5,177 533,185" fill="none" stroke="var(--accent-4)" stroke-width="2"/>
+<rect x="521" y="185" width="11" height="45" fill="rgba(var(--accent-4-rgb),0.5)"/>
+
+<text x="535" y="248" text-anchor="middle" fill="var(--accent-4)" font-family="Outfit,sans-serif" font-size="11">mercury falls · convex</text>
+
+<text x="320" y="278" text-anchor="middle" fill="var(--col-text-main)" font-family="Outfit,sans-serif" font-size="11">h = 2γ cos θ / (ρ g r) · water: adhesion > cohesion · Hg: cohesion > adhesion</text>
 </svg>
 </div>
 
