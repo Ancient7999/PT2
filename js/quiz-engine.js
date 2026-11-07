@@ -453,9 +453,11 @@ function permuteChoices(q, doShuffle){
   return q;
 }
 function applyPerm(q, perm){
-  const n=(q.options||[]).length;
+  const opts=q && q.options;
+  if(!Array.isArray(opts)) return q; // label / typed steps have no options
+  const n=opts.length;
   if(!Array.isArray(perm) || perm.length!==n || perm.some(x=>!(x>=0&&x<n)) || new Set(perm).size!==n) return permuteChoices(q,false);
-  const orig=q.options.slice(), origCorrect=q.correct;
+  const orig=opts.slice(), origCorrect=q.correct;
   q.options=perm.map(i=>orig[i]);
   q.correct=Array.isArray(origCorrect)?origCorrect.map(c=>perm.indexOf(c)).sort((a,b)=>a-b):perm.indexOf(origCorrect);
   q.__perm=perm.slice();
@@ -811,7 +813,10 @@ function restoreRun(run){
       const order=(arr,ids)=>{ if(!Array.isArray(ids)) return arr; const m={}; arr.forEach(x=>{ m[x.id]=x; }); const out=ids.map(id=>m[id]).filter(Boolean); arr.forEach(x=>{ if(!out.includes(x)) out.push(x); }); return out; };
       q.leftItems=order(q.leftItems||[], d.L); q.rightItems=order(q.rightItems||[], d.R);
     } else if(isStepped(q)){
-      (q.steps||[]).forEach((st,k)=>{ if(!isTypedStepDef(st)) applyPerm(st, d.steps&&d.steps[k]); });
+    (q.steps||[]).forEach((st,k)=>{
+    if(!isTypedStepDef(st) && Array.isArray(st.options) && st.options.length)
+      applyPerm(st, d.steps&&d.steps[k]);
+        });
     } else if(isLabel(q)){
       q.__chips=Array.isArray(d.chips)?d.chips.slice():shuffle((q.labels||[]).map(l=>l.id));
     } else if(isOrder(q)){
@@ -2047,7 +2052,10 @@ function labelLight(slot){
 }
 function labelFigureHTML(q, a, review){
   const slots=(a&&a.slots)||{};
-  let h='<div class="label-figure'+(review?' in-review':'')+'"><img class="label-img" src="'+escapeHtml(q.image||'')+'" alt="'+escapeHtml(q.alt||'')+'" draggable="false">'+(review?'':labelLeadersSVG(q));
+  const media=q.svg
+    ? q.svg
+    : '<img class="label-img" src="'+escapeHtml(q.image||'')+'" alt="'+escapeHtml(q.alt||'')+'" draggable="false">';
+  let h='<div class="label-figure'+(review?' in-review':'')+'">'+media+(review?'':labelLeadersSVG(q));
   (q.labels||[]).forEach(l=>{
     const done=slots[l.id]!=null;
     const style='left:'+l.x+'%;top:'+l.y+'%;width:'+l.w+'%;height:'+l.h+'%';
@@ -2076,7 +2084,7 @@ function renderLabel(q, ans){
   labelSelectedChip=null;
   const wrap=document.createElement('div'); wrap.className='label-wrap'+(labelTyping?' is-typing':'');
   let h='<div class="label-tools"><span class="label-progress" id="labelProgress">'+k+' / '+n+' labels</span>';
-  if(!a.correct) h+='<button type="button" class="nav-btn label-mode" id="labelModeBtn" aria-pressed="'+(labelTyping?'true':'false')+'">'+(labelTyping?'✋ drag labels':'⌨ type labels')+'</button>';
+  if(!a.correct) h+='<button type="button" class="nav-btn label-mode" id="labelModeBtn" aria-pressed="'+(labelTyping?'true':'false')+'">'+(labelTyping?'Word bank':'Type')+'</button>';
   h+='</div><div class="label-stage">'+labelFigureHTML(q,a,false)+'</div>';
   if(q.credit) h+='<div class="label-credit">Image: '+escapeHtml(q.credit)+(q.creditUrl?' <a href="'+escapeHtml(q.creditUrl)+'" target="_blank" rel="noopener">source</a>':'')+'</div>';
   if(!labelTyping && !a.correct){
@@ -2089,9 +2097,18 @@ function renderLabel(q, ans){
   opts.appendChild(wrap);
   labelFitWire(wrap.querySelector('.label-figure'), q.labels);
   // picture's aspect ratio on the stage, so PCs can fit the whole figure in the screen height (css: .label-stage[style*="--ar"])
-  { const im=wrap.querySelector('.label-img'), st=wrap.querySelector('.label-stage');
-    const setAr=()=>{ if(im && st && im.naturalWidth && im.naturalHeight) st.style.setProperty('--ar', (im.naturalWidth/im.naturalHeight).toFixed(4)); };
-    if(im){ if(im.complete) setAr(); else im.addEventListener('load', setAr, {once:true}); } }
+{ const im=wrap.querySelector('.label-img'), st=wrap.querySelector('.label-stage');
+  const setAr=()=>{
+    if(!im || !st) return;
+    let ar=0;
+    if(im.tagName==='IMG' && im.naturalWidth && im.naturalHeight) ar=im.naturalWidth/im.naturalHeight;
+    else {
+      const vb=(im.getAttribute&&im.getAttribute('viewBox')||'').trim().split(/\s+/);
+      if(vb.length===4 && +vb[2] && +vb[3]) ar=+vb[2]/+vb[3];
+    }
+    if(ar) st.style.setProperty('--ar', ar.toFixed(4));
+  };
+  if(im){ if(im.tagName==='SVG' || im.complete) setAr(); else im.addEventListener('load', setAr, {once:true}); } }
   const mb=wrap.querySelector('#labelModeBtn');
   if(mb) mb.addEventListener('click',()=>{ labelTyping=!labelTyping; try{ localStorage.setItem('sp_label_mode_v1', labelTyping?'type':'drag'); }catch(e){} renderQuestion(); });
   wrap.querySelectorAll('.label-chip').forEach(chip=>{
