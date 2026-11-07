@@ -492,20 +492,20 @@ function expandDeck(deck){
         q:q.q, prompt:st.prompt||'', options:st.options||[], correct:st.correct, __perm:st.__perm,
         cat:q.cat, explain:(st&&st.explain)||q.explain
       };
-      // NEW: label step (uses parent image + labels)
-      if(st.type==='label'){
-        e.type='label';
-        e.labels=Array.isArray(q.labels)?q.labels: (Array.isArray(st.labels)?st.labels:[]);
-        e.image=q.image||st.image||'';
-        e.svg=q.svg||st.svg||'';
-        e.alt=q.alt||st.alt||'';
-        e.credit=q.credit||st.credit||'';
-        e.creditUrl=q.creditUrl||st.creditUrl||'';
-        if(q.imageSize) e.imageSize=q.imageSize;
-        delete e.options; delete e.correct; delete e.__perm;
-        out.push(e);
-        return;
-      }
+if(st.type==='label'){
+  e.type='label';
+  e.labels=Array.isArray(q.labels)?q.labels: (Array.isArray(st.labels)?st.labels:[]);
+  e.image=q.image||st.image||'';
+  e.svg=q.svg||st.svg||'';
+  e.alt=q.alt||st.alt||'';
+  e.credit=q.credit||st.credit||'';
+  e.creditUrl=q.creditUrl||st.creditUrl||'';
+  if(q.imageSize) e.imageSize=q.imageSize;
+  e.__chips=shuffle((e.labels||[]).map(l=>l.id));
+  delete e.options; delete e.correct; delete e.__perm;
+  out.push(e);
+  return;
+}
       if(typeOnly && !isTypedStepDef(st) && st.typeAs && st.typeAs.answer){
         e.type='saq'; e.answer=st.typeAs.answer; e.accept=Array.isArray(st.typeAs.accept)?st.typeAs.accept.slice():[]; e.__stepId+='~t';
         delete e.options; delete e.correct; delete e.__perm;
@@ -2063,11 +2063,11 @@ function labelFigureHTML(q, a, review){
       h+='<div class="label-slot locked'+(done?'':' missed')+'" data-id="'+escapeHtml(l.id)+'" style="'+style+'"><span class="label-slot-text">'+escapeHtml(done?slots[l.id]:l.answer)+'</span></div>';
     } else if(done){
       h+='<div class="label-slot locked" data-id="'+escapeHtml(l.id)+'" style="'+style+'"><span class="label-slot-text">'+escapeHtml(slots[l.id])+'</span></div>';
-    } else if(labelTyping){
-      h+='<div class="label-slot typing" data-id="'+escapeHtml(l.id)+'" style="'+style+'"><input class="label-input" name="quiz-label-answer" type="text" data-form-type="other" data-lpignore="true" data-1p-ignore autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" aria-label="Label '+escapeHtml(l.id)+'"><div class="label-echo" aria-live="polite"></div></div>';
-    } else {
-      h+='<div class="label-slot open" data-id="'+escapeHtml(l.id)+'" style="'+style+'" role="button" tabindex="0" aria-label="Empty label"></div>';
-    }
+} else if(labelTyping && !isStep(q)){
+  h+='<div class="label-slot typing" data-id="'+escapeHtml(l.id)+'" style="'+style+'"><input class="label-input" name="quiz-label-answer" type="text" data-form-type="other" data-lpignore="true" data-1p-ignore autocomplete="off" spellcheck="false" autocapitalize="sentences" autocorrect="off" aria-label="Label '+escapeHtml(l.id)+'"><div class="label-echo" aria-live="polite"></div></div>';
+} else {
+  h+='<div class="label-slot open" data-id="'+escapeHtml(l.id)+'" style="'+style+'" role="button" tabindex="0" aria-label="Empty label"></div>';
+}
   });
   return h+'</div>';
 }
@@ -2082,12 +2082,13 @@ function renderLabel(q, ans){
   const a=(ans && ans.slots)?ans:{slots:{},correct:false};
   const n=(q.labels||[]).length, k=labelDoneCount(q,a);
   labelSelectedChip=null;
-  const wrap=document.createElement('div'); wrap.className='label-wrap'+(labelTyping?' is-typing':'');
+  const typing=labelTyping && !isStep(q);
+  const wrap=document.createElement('div'); wrap.className='label-wrap'+(typing?' is-typing':'');
   let h='<div class="label-tools"><span class="label-progress" id="labelProgress">'+k+' / '+n+' labels</span>';
-  if(!a.correct) h+='<button type="button" class="nav-btn label-mode" id="labelModeBtn" aria-pressed="'+(labelTyping?'true':'false')+'">'+(labelTyping?'Word bank':'Type')+'</button>';
+  if(!a.correct && !isStep(q)) h+='<button type="button" class="nav-btn label-mode" id="labelModeBtn" aria-pressed="'+(typing?'true':'false')+'">'+(typing?'Word bank':'Type')+'</button>';
   h+='</div><div class="label-stage">'+labelFigureHTML(q,a,false)+'</div>';
   if(q.credit) h+='<div class="label-credit">Image: '+escapeHtml(q.credit)+(q.creditUrl?' <a href="'+escapeHtml(q.creditUrl)+'" target="_blank" rel="noopener">source</a>':'')+'</div>';
-  if(!labelTyping && !a.correct){
+  if(!typing && !a.correct){
     // one chip per label that is still open (two "Pulmonary Veins" slots → two chips)
     h+='<div class="label-bank" id="labelBank" aria-label="Word bank">';
     labelChipOrder(q).forEach(id=>{ const l=q.labels.find(x=>x.id===id); if(!l || a.slots[l.id]!=null) return; h+='<button type="button" class="label-chip" data-for="'+escapeHtml(l.id)+'" data-text="'+escapeHtml(l.answer)+'">'+escapeHtml(l.answer)+'</button>'; });
