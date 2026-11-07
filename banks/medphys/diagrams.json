@@ -1,0 +1,58 @@
+{
+  "id": "medphys-diagrams",
+  "subject": "Medical Physics",
+  "subjectId": "medphys",
+  "title": "Diagrams",
+  "formSize": 20,
+  "forms": ["A"],
+  "cards": [
+    {
+      "id": "diagrams",
+      "title": "Diagrams",
+      "cats": ["Diagrams"],
+      "draft": true
+    }
+  ],
+  "bank": {
+    "A": [
+      {
+        "id": "DIAG001",
+        "type": "stepped",
+        "cat": "Diagrams",
+        "q": "Label the diagram, then identify the law/principle and its uses.",
+        "image": "banks/medphys/img/bernoulli-blank.webp",
+        "alt": "Blank diagram illustrating Bernoulli’s principle",
+        "labels": [
+          { "id": "p1", "answer": "High pressure", "x": 12, "y": 28, "w": 22, "h": 6 },
+          { "id": "v1", "answer": "Low velocity", "x": 12, "y": 42, "w": 22, "h": 6 },
+          { "id": "p2", "answer": "Low pressure", "x": 62, "y": 28, "w": 22, "h": 6 },
+          { "id": "v2", "answer": "High velocity", "x": 62, "y": 42, "w": 22, "h": 6 }
+        ],
+        "steps": [
+          { "id": "labels", "type": "label" },
+          {
+            "id": "law",
+            "type": "saq",
+            "prompt": "Which law or principle is shown?",
+            "answer": "Bernoulli's principle",
+            "accept": ["Bernoulli's equation", "Bernoulli", "Bernoulli’s principle"]
+          },
+          {
+            "id": "uses",
+            "type": "multi",
+            "prompt": "Select all that apply — medical / clinical uses of this principle.",
+            "options": [
+              "Blood flow through a narrowed artery (stenosis)",
+              "Venturi mask oxygen delivery",
+              "Risk of aneurysm rupture",
+              "ECG electrode placement",
+              "Ultrasound Doppler shift",
+              "Lens refraction"
+            ],
+            "correct": [0, 1, 2]
+          }
+        ]
+      }
+    ]
+  }
+}
