@@ -178,7 +178,7 @@ A compound microscope achieves high magnification by combining two convex lenses
 |------|-------------|
 | **Objective lens** | Very short focal length (\(f_o < 1\,\mathrm{cm}\)); forms the primary magnified image |
 | **Eyepiece** | Focal length \(f_e\) of a few centimetres (\(f_e > f_o\)); acts as a simple magnifier |
-| **Tube length L** | Distance between the two lenses; much greater than either f_o or f_e |
+| **Tube length L** | Distance between the two lenses; much greater than either \(f_o\) or \(f_e\) |
 | **Stage** | Holds the specimen |
 
 ### Image Formation
@@ -459,7 +459,7 @@ Least distance of distinct vision:
 ### Key Points to Remember
 
 - Simple magnifier: object **inside F** → virtual, erect, magnified image.
-- Compound microscope: object just **outside F_o** → objective makes real inverted large I_1; final image virtual, enlarged, still inverted.
+- Compound microscope: object just **outside \(F_o\)** → objective makes real inverted large \(I_1\); final image virtual, enlarged, still inverted.
 - Image on retina is real, inverted, and diminished. Cornea performs most of the refraction.
 - **Myopia:** near clear, far blurred → concave (minus) lens.  
   **Hyperopia:** far clear, near blurred → convex (plus) lens.  

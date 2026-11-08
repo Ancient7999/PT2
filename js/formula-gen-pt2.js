@@ -97,13 +97,34 @@
       formulaKey: meta.key, _formulaVariant: meta.variant,
       formulaHint: meta.hint, formulaMap: meta.map || [], formulaPlugIn: meta.plug || '',
       formulaSteps: meta.steps || [], formulaName: md.name, formulaEq: md.description,
+      formulaWorked: meta.worked || null,
       __formulaMode: true
     };
   }
+  /* the specific case of a ± formula, shown between the original formula and the rearranged one */
+  const WORKED_CASE = {
+    dopplerSource: {
+      0: { note: 'Source moves towards the listener: take the minus sign, v − v_S, so f′ is higher than f.' },
+      1: { note: 'Source moves away from the listener: take the plus sign, v + v_S, so f′ is lower than f.' },
+      2: { note: 'Source moves towards the listener: take the minus sign, then solve for v_S.', eq: 'f′ = f × v / (v − v_S)' }
+    }
+  };
   /** Common finish: steps = [formula, plug-in, result]. */
   function done(key, variant, q, hint, map, plug, ans, unit, digits, extra, explainTail) {
     const res = fmtWithUnit(ans, unit, digits);
-    return pack({ key: key, variant: variant, q: q, hint: hint, map: map, plug: plug,
+    // worked help for "Show formula": the generator's own givens, formula, rearranged form and numbers
+    const base = FORMULA_METADATA[key].description, lhs = String(hint).split('=')[0].trim();
+    const branch = WORKED_CASE[key] && WORKED_CASE[key][variant];
+    const worked = {
+      caseNote: branch ? branch.note : '',
+      branch: branch && branch.eq && branch.eq !== hint ? branch.eq : '',
+      givens: (map || []).map(function (l) { const p = String(l).split(' → '); return p.length === 2 ? p[1] + ' = ' + p[0] : String(l); }),
+      equation: base,
+      rearranged: hint !== base ? hint : '',
+      substitution: lhs + ' = ' + plug,
+      result: lhs + ' = ' + res
+    };
+    return pack({ key: key, variant: variant, q: q, hint: hint, map: map, plug: plug, worked: worked,
       steps: [hint, '= ' + plug, '= ' + res],
       explain: hint + ' = ' + plug + ' = ' + res + '.' + (explainTail ? ' ' + explainTail : ''),
       built: buildOpts(ans, unit, digits, extra) });

@@ -590,7 +590,8 @@
             "caseSensitive": true
           }
         ],
-        "explain": "Viscosity is a fluid's resistance to shear deformation or flow, caused by internal friction between adjacent layers; it relates shear stress to velocity gradient, τ = η(dv/dy). Its SI unit is the pascal-second, Pa·s."
+        "explain": "Viscosity is a fluid's resistance to shear deformation or flow, caused by internal friction between adjacent layers; it relates shear stress to velocity gradient, τ = η(dv/dy). Its SI unit is the pascal-second, Pa·s.",
+        "lawPanel": "viscosity"
       },
       {
         "id": "PHY30012",
@@ -1272,7 +1273,18 @@
         "explain": "Flow rate scales with the fourth power of radius, so doubling the radius multiplies flow by 16. The smaller multipliers correspond to lower powers and are incorrect.",
         "formula": {
           "chapter": "ch3",
-          "key": "poiseuille"
+          "key": "poiseuille",
+          "worked": {
+            "equation": "Q = π r⁴ ΔP / (8 η L)",
+            "rearranged": "Q ∝ r⁴, so Q₂ / Q₁ = (r₂ / r₁)⁴",
+            "givens": [
+              "r₁ = 1 mm",
+              "r₂ = 2 mm",
+              "ΔP, η, L unchanged"
+            ],
+            "substitution": "Q₂ / Q₁ = (2 mm / 1 mm)⁴ = 2⁴",
+            "result": "Q₂ / Q₁ = 16, so 16 times the original rate"
+          }
         }
       },
       {
@@ -1515,7 +1527,17 @@
         "explain": "1 dyne/cm = 10⁻³ N/m, because 1 dyne = 10⁻⁵ N and 1 cm = 10⁻² m. So 72 dyne/cm = 72 × 10⁻³ N/m = 0.072 N/m, close to the value for water at room temperature.",
         "formula": {
           "chapter": "ch3",
-          "key": "surfaceTensionUnits"
+          "key": "surfaceTensionUnits",
+          "worked": {
+            "equation": "1 dyne/cm = 10⁻³ N/m",
+            "rearranged": "",
+            "givens": [
+              "γ = 72 dyne/cm",
+              "1 dyne = 10⁻⁵ N, 1 cm = 10⁻² m"
+            ],
+            "substitution": "γ = 72 × 10⁻³ N/m",
+            "result": "γ = 0.072 N/m"
+          }
         }
       },
       {
@@ -2169,7 +2191,16 @@
         "explain": "Time period is the inverse of frequency, so T = 1 / f = 1 / 50 Hz = 0.02 s. This means one complete cycle takes 0.02 seconds. The line 50 s confuses period with frequency, 0.5 s uses an incorrect division, and 2 s is the inverse of 0.5 Hz rather than 50 Hz.",
         "formula": {
           "chapter": "ch4",
-          "key": "periodFreq"
+          "key": "periodFreq",
+          "worked": {
+            "equation": "T = 1 / f",
+            "rearranged": "",
+            "givens": [
+              "f = 50 Hz"
+            ],
+            "substitution": "T = 1 / 50 Hz",
+            "result": "T = 0.02 s"
+          }
         }
       },
       {
@@ -2201,7 +2232,17 @@
         "explain": "Using the wave equation v = f × λ, the wavelength is λ = v / f. Substituting the values gives λ = 343 m/s / 512 Hz ≈ 0.67 m. The line 1.49 m divides frequency by velocity, 175,616 m multiplies the values, and 0.33 m uses half the velocity.",
         "formula": {
           "chapter": "ch4",
-          "key": "waveSpeed"
+          "key": "waveSpeed",
+          "worked": {
+            "equation": "v = f λ",
+            "rearranged": "λ = v / f",
+            "givens": [
+              "v = 343 m/s",
+              "f = 512 Hz"
+            ],
+            "substitution": "λ = 343 m/s / 512 Hz",
+            "result": "λ ≈ 0.67 m"
+          }
         }
       },
       {
@@ -2219,7 +2260,17 @@
         "explain": "Rearranging the wave equation v = f × λ gives f = v / λ. Substituting the values gives f = 340 m/s / 0.5 m = 680 Hz. The line 170 Hz divides by 2 instead of 0.5, 340 Hz ignores the wavelength, and 0.0015 Hz inverts the division.",
         "formula": {
           "chapter": "ch4",
-          "key": "waveSpeed"
+          "key": "waveSpeed",
+          "worked": {
+            "equation": "v = f λ",
+            "rearranged": "f = v / λ",
+            "givens": [
+              "v = 340 m/s",
+              "λ = 0.5 m"
+            ],
+            "substitution": "f = 340 m/s / 0.5 m",
+            "result": "f = 680 Hz"
+          }
         }
       },
       {
@@ -2249,24 +2300,6 @@
         ],
         "correct": 2,
         "explain": "The speed of sound is generally greatest in solids, less in liquids, and least in gases. This is because the particles in a solid are packed more closely together, allowing them to transmit the vibrational energy more quickly. Steel is a solid, so sound travels faster in it than in water or air. Sound cannot travel in a vacuum at all."
-      },
-      {
-        "id": "PHY40014",
-        "type": "mcq",
-        "cat": "Chapter 4: Waves and Oscillations",
-        "q": "The speed of sound in air at 0°C is 331 m/s. What is its approximate speed at 20°C?",
-        "options": [
-          "331 m/s",
-          "343 m/s",
-          "1482 m/s",
-          "965 m/s"
-        ],
-        "correct": 1,
-        "explain": "The speed of sound in air increases with temperature. At 0°C it is 331 m/s, and at 20°C it rises to approximately 343 m/s. The line 331 m/s repeats the value at 0°C, 1482 m/s is the speed of sound in water at 20°C, and 965 m/s is the speed of sound in helium.",
-        "formula": {
-          "chapter": "ch4",
-          "key": "soundSpeedTemp"
-        }
       },
       {
         "id": "PHY40015",
@@ -2470,41 +2503,41 @@
         "cat": "Chapter 4: Doppler Effect",
         "q": "If either the detector or the source is moving, the emitted frequency f and detected frequency f' are related by which equation?",
         "options": [
-          "f' = f × ((v + v_D) / (v + v_S))",
-          "f' = f × ((v ± v_D) / (v ± v_S))",
-          "f' = f × ((v - v_D) / (v - v_S))",
-          "f' = f × (v / (v ± v_S))"
+          "f' = f × ((v + \\(v_D\\)) / (v + \\(v_S\\)))",
+          "f' = f × ((v ± \\(v_D\\)) / (v ± \\(v_S\\)))",
+          "f' = f × ((v - \\(v_D\\)) / (v - \\(v_S\\)))",
+          "f' = f × (v / (v ± \\(v_S\\)))"
         ],
         "correct": 1,
-        "explain": "The general Doppler formula accounts for motion of both the detector and the source: f' = f × ((v ± v_D) / (v ± v_S)), where v is the speed of sound, v_D is the speed of the detector, and v_S is the speed of the source. The signs are chosen according to whether each is moving toward or away from the other. The other options either fix one of the speeds at zero or use incorrect sign combinations."
+        "explain": "The general Doppler formula accounts for motion of both the detector and the source: f' = f × ((v ± \\(v_D\\)) / (v ± \\(v_S\\))), where v is the speed of sound, \\(v_D\\) is the speed of the detector, and \\(v_S\\) is the speed of the source. The signs are chosen according to whether each is moving toward or away from the other. The other options either fix one of the speeds at zero or use incorrect sign combinations."
       },
       {
         "id": "PHY40030",
         "type": "mcq",
         "cat": "Chapter 4: Doppler Effect",
-        "q": "A source of sound moves with speed v_S toward a stationary observer. If v is the speed of sound in air, which formula gives the observed frequency f'?",
+        "q": "A source of sound moves with speed \\(v_S\\) toward a stationary observer. If v is the speed of sound in air, which formula gives the observed frequency f'?",
         "options": [
-          "f' = f × (v / (v - v_S))",
-          "f' = f × (v / (v + v_S))",
-          "f' = f × ((v - v_S) / v)",
-          "f' = f × ((v + v_S) / v)"
+          "f' = f × (v / (v - \\(v_S\\)))",
+          "f' = f × (v / (v + \\(v_S\\)))",
+          "f' = f × ((v - \\(v_S\\)) / v)",
+          "f' = f × ((v + \\(v_S\\)) / v)"
         ],
         "correct": 0,
-        "explain": "When the source moves toward a stationary observer, the observed frequency is higher than the emitted frequency. The formula uses a minus sign in the denominator to represent the source catching up to the waves it emits, compressing them. The formula is f' = f × (v / (v - v_S)). A plus sign in the denominator would describe a receding source, and the other forms are incorrect arrangements."
+        "explain": "When the source moves toward a stationary observer, the observed frequency is higher than the emitted frequency. The formula uses a minus sign in the denominator to represent the source catching up to the waves it emits, compressing them. The formula is f' = f × (v / (v - \\(v_S\\))). A plus sign in the denominator would describe a receding source, and the other forms are incorrect arrangements."
       },
       {
         "id": "PHY40031",
         "type": "mcq",
         "cat": "Chapter 4: Doppler Effect",
-        "q": "A source of sound moves with speed v_S away from a stationary observer. If v is the speed of sound in air, which formula gives the observed frequency f'?",
+        "q": "A source of sound moves with speed \\(v_S\\) away from a stationary observer. If v is the speed of sound in air, which formula gives the observed frequency f'?",
         "options": [
-          "f' = f × (v / (v - v_S))",
-          "f' = f × (v / (v + v_S))",
-          "f' = f × ((v - v_S) / v)",
-          "f' = f × ((v + v_S) / v)"
+          "f' = f × (v / (v - \\(v_S\\)))",
+          "f' = f × (v / (v + \\(v_S\\)))",
+          "f' = f × ((v - \\(v_S\\)) / v)",
+          "f' = f × ((v + \\(v_S\\)) / v)"
         ],
         "correct": 1,
-        "explain": "When the source moves away from a stationary observer, the observed frequency is lower than the emitted frequency. The formula uses a plus sign in the denominator to represent the waves being stretched out behind the receding source. The formula is f' = f × (v / (v + v_S)). A minus sign in the denominator would describe an approaching source, and the other forms are incorrect arrangements."
+        "explain": "When the source moves away from a stationary observer, the observed frequency is lower than the emitted frequency. The formula uses a plus sign in the denominator to represent the waves being stretched out behind the receding source. The formula is f' = f × (v / (v + \\(v_S\\))). A minus sign in the denominator would describe an approaching source, and the other forms are incorrect arrangements."
       },
       {
         "id": "PHY40032",
@@ -2512,13 +2545,13 @@
         "cat": "Chapter 4: Doppler Effect",
         "q": "A stationary source emits sound at frequency f. An observer moves toward the source with speed v_D. If v is the speed of sound, which formula gives the observed frequency?",
         "options": [
-          "f' = f × (v / (v - v_D))",
-          "f' = f × ((v + v_D) / v)",
-          "f' = f × ((v - v_D) / v)",
-          "f' = f × (v / (v + v_D))"
+          "f' = f × (v / (v - \\(v_D\\)))",
+          "f' = f × ((v + \\(v_D\\)) / v)",
+          "f' = f × ((v - \\(v_D\\)) / v)",
+          "f' = f × (v / (v + \\(v_D\\)))"
         ],
         "correct": 1,
-        "explain": "When the observer moves toward a stationary source, the observer encounters more wavefronts per second, so the observed frequency is higher. The formula places the detector speed in the numerator with a plus sign: f' = f × ((v + v_D) / v). If the observer moved away, the numerator would use a minus sign. The other options incorrectly place the detector speed in the denominator or use the wrong sign."
+        "explain": "When the observer moves toward a stationary source, the observer encounters more wavefronts per second, so the observed frequency is higher. The formula places the detector speed in the numerator with a plus sign: f' = f × ((v + \\(v_D\\)) / v). If the observer moved away, the numerator would use a minus sign. The other options incorrectly place the detector speed in the denominator or use the wrong sign."
       },
       {
         "id": "PHY40033",
@@ -2532,7 +2565,7 @@
           "At a speed equal to the speed of light"
         ],
         "correct": 2,
-        "explain": "Shock waves are generated when a source travels at a speed greater than the speed of sound in the medium, meaning v_S > v. This is supersonic speed. The wavefronts lag behind the source and pile up, forming a cone-shaped shock wave. The resulting sonic boom is heard when this wave reaches an observer. A source moving at exactly the speed of sound does not produce a shock wave, and no object with mass can travel at the speed of light."
+        "explain": "Shock waves are generated when a source travels at a speed greater than the speed of sound in the medium, meaning \\(v_S\\) > v. This is supersonic speed. The wavefronts lag behind the source and pile up, forming a cone-shaped shock wave. The resulting sonic boom is heard when this wave reaches an observer. A source moving at exactly the speed of sound does not produce a shock wave, and no object with mass can travel at the speed of light."
       },
       {
         "id": "PHY40034",
@@ -2546,7 +2579,7 @@
           "The amplitude of the wave to the speed of sound"
         ],
         "correct": 1,
-        "explain": "The Mach number (M_a) is a dimensionless quantity that compares the speed of an object moving through a fluid to the local speed of sound. It is defined as M_a = v_S / v, where v_S is the speed of the source and v is the speed of sound. An aircraft flying at Mach 2 is traveling at twice the speed of sound."
+        "explain": "The Mach number (\\(M_a\\)) is a dimensionless quantity that compares the speed of an object moving through a fluid to the local speed of sound. It is defined as \\(M_a\\) = \\(v_S\\) / v, where \\(v_S\\) is the speed of the source and v is the speed of sound. An aircraft flying at Mach 2 is traveling at twice the speed of sound."
       },
       {
         "id": "PHY40035",
@@ -2563,7 +2596,17 @@
         "explain": "The Mach number is the source speed divided by the speed of sound, so the source speed is M × v = 2.3 × 340 m/s = 782 m/s. 148 m/s divides instead of multiplying, 342 m/s adds 2.3 to 340, and 680 m/s is Mach 2.",
         "formula": {
           "chapter": "ch4",
-          "key": "mach"
+          "key": "mach",
+          "worked": {
+            "equation": "Ma = v_S / v",
+            "rearranged": "v_S = Ma × v",
+            "givens": [
+              "Ma = 2.3",
+              "v = 340 m/s"
+            ],
+            "substitution": "v_S = 2.3 × 340 m/s",
+            "result": "v_S = 782 m/s"
+          }
         }
       },
       {
@@ -2600,13 +2643,13 @@
         "cat": "Chapter 4: Shock Waves",
         "q": "Which Mach number range corresponds to supersonic waves?",
         "options": [
-          "M_a = 0",
-          "M_a < 1",
-          "M_a = 1",
-          "M_a > 1"
+          "\\(M_a\\) = 0",
+          "\\(M_a\\) < 1",
+          "\\(M_a\\) = 1",
+          "\\(M_a\\) > 1"
         ],
         "correct": 3,
-        "explain": "Supersonic conditions occur when the speed of the source exceeds the speed of sound, which corresponds to M_a > 1. M_a = 0 describes a stationary source, and M_a < 1 describes subsonic speeds. M_a = 1 is the sonic speed, at which the source travels exactly at the speed of sound."
+        "explain": "Supersonic conditions occur when the speed of the source exceeds the speed of sound, which corresponds to \\(M_a\\) > 1. \\(M_a\\) = 0 describes a stationary source, and \\(M_a\\) < 1 describes subsonic speeds. \\(M_a\\) = 1 is the sonic speed, at which the source travels exactly at the speed of sound."
       },
       {
         "id": "PHY40039",
@@ -2685,15 +2728,24 @@
         "q": "A patient has a body temperature of 39°C. What is this temperature in degrees Fahrenheit?",
         "options": [
           "102.2 °F",
-          "99.0 °F",
+          "99 °F",
           "107.6 °F",
           "93.2 °F"
         ],
         "correct": 0,
-        "explain": "To convert from Celsius to Fahrenheit, the formula is T_F = (9/5) × T_C + 32. Substituting 39°C gives T_F = (9/5) × 39 + 32 = 70.2 + 32 = 102.2°F. The line 99.0°F uses 37°C, 107.6°F uses an incorrect multiplier, and 93.2°F uses an incorrect conversion.",
+        "explain": "To convert from Celsius to Fahrenheit, the formula is \\(T_F\\) = (9/5) × \\(T_C\\) + 32. Substituting 39°C gives \\(T_F\\) = (9/5) × 39 + 32 = 70.2 + 32 = 102.2°F. 99°F is close to normal body temperature (37°C = 98.6°F), while 107.6°F and 93.2°F correspond to 42°C and 34°C.",
         "formula": {
           "chapter": "ch4",
-          "key": "tempConvert"
+          "key": "tempConvert",
+          "worked": {
+            "equation": "T_F = (9/5) T_C + 32",
+            "rearranged": "",
+            "givens": [
+              "T_C = 39 °C"
+            ],
+            "substitution": "T_F = (9/5) × 39 + 32 = 70.2 + 32",
+            "result": "T_F = 102.2 °F"
+          }
         }
       },
       {
@@ -2708,10 +2760,19 @@
           "300 K"
         ],
         "correct": 1,
-        "explain": "The conversion from Celsius to Kelvin is T_K = T_C + 273. Substituting 15°C gives T_K = 15 + 273 = 288 K. The line 258 K subtracts 15 from 273 instead of adding, 273 K ignores the Celsius value, and 300 K uses an incorrect offset.",
+        "explain": "The conversion from Celsius to Kelvin is \\(T_K\\) = \\(T_C\\) + 273. Substituting 15°C gives \\(T_K\\) = 15 + 273 = 288 K. The line 258 K subtracts 15 from 273 instead of adding, 273 K ignores the Celsius value, and 300 K uses an incorrect offset.",
         "formula": {
           "chapter": "ch4",
-          "key": "tempConvert"
+          "key": "tempConvert",
+          "worked": {
+            "equation": "T_K = T_C + 273",
+            "rearranged": "",
+            "givens": [
+              "T_C = 15 °C"
+            ],
+            "substitution": "T_K = 15 + 273",
+            "result": "T_K = 288 K"
+          }
         }
       },
       {
@@ -2726,10 +2787,19 @@
           "300°C"
         ],
         "correct": 0,
-        "explain": "The conversion from Kelvin to Celsius is T_C = T_K - 273. Substituting 300 K gives T_C = 300 - 273 = 27°C. The line 573°C adds 273 instead of subtracting, 27 K incorrectly labels the result as Kelvin, and 300°C ignores the offset entirely.",
+        "explain": "The conversion from Kelvin to Celsius is \\(T_C\\) = \\(T_K\\) - 273. Substituting 300 K gives \\(T_C\\) = 300 - 273 = 27°C. The line 573°C adds 273 instead of subtracting, 27 K incorrectly labels the result as Kelvin, and 300°C ignores the offset entirely.",
         "formula": {
           "chapter": "ch4",
-          "key": "tempConvert"
+          "key": "tempConvert",
+          "worked": {
+            "equation": "T_K = T_C + 273",
+            "rearranged": "T_C = T_K − 273",
+            "givens": [
+              "T_K = 300 K"
+            ],
+            "substitution": "T_C = 300 − 273",
+            "result": "T_C = 27 °C"
+          }
         }
       },
       {
@@ -2744,24 +2814,33 @@
           "-273°"
         ],
         "correct": 2,
-        "explain": "The Celsius and Fahrenheit scales coincide at -40°, where T_C = T_F = -40. This can be verified by setting T_C = T_F in the conversion formula T_F = (9/5) × T_C + 32 and solving for the temperature, which gives -40. The other options are reference points on one scale or the other but not points of coincidence."
+        "explain": "The Celsius and Fahrenheit scales coincide at -40°, where \\(T_C\\) = \\(T_F\\) = -40. This can be verified by setting \\(T_C\\) = \\(T_F\\) in the conversion formula \\(T_F\\) = (9/5) × \\(T_C\\) + 32 and solving for the temperature, which gives -40. The other options are reference points on one scale or the other but not points of coincidence."
       },
       {
         "id": "PHY40048",
         "type": "mcq",
         "cat": "Chapter 4: Heat and Thermal Properties",
-        "q": "Normal body temperature is 37.0°C. What is this in degrees Fahrenheit?",
+        "q": "Normal body temperature is 37°C. What is this in degrees Fahrenheit?",
         "options": [
           "98.6 °F",
           "100.4 °F",
-          "95.0 °F",
-          "104.0 °F"
+          "95 °F",
+          "104 °F"
         ],
         "correct": 0,
-        "explain": "Using the conversion T_F = (9/5) × T_C + 32, substituting 37.0°C gives T_F = (9/5) × 37.0 + 32 = 66.6 + 32 = 98.6°F. The line 100.4°F corresponds to 38°C, 95.0°F corresponds to 35°C, and 104.0°F corresponds to 40°C.",
+        "explain": "Using the conversion \\(T_F\\) = (9/5) × \\(T_C\\) + 32, substituting 37°C gives \\(T_F\\) = (9/5) × 37 + 32 = 66.6 + 32 = 98.6°F. The line 100.4°F corresponds to 38°C, 95°F corresponds to 35°C, and 104°F corresponds to 40°C.",
         "formula": {
           "chapter": "ch4",
-          "key": "tempConvert"
+          "key": "tempConvert",
+          "worked": {
+            "equation": "T_F = (9/5) T_C + 32",
+            "rearranged": "",
+            "givens": [
+              "T_C = 37 °C"
+            ],
+            "substitution": "T_F = (9/5) × 37 + 32 = 66.6 + 32",
+            "result": "T_F = 98.6 °F"
+          }
         }
       },
       {
@@ -2895,7 +2974,7 @@
           },
           {
             "id": "4",
-            "text": "M_a = v_S / v"
+            "text": "\\(M_a\\) = \\(v_S\\) / v"
           }
         ],
         "rightItems": [
@@ -2926,7 +3005,7 @@
           "3": "A",
           "4": "C"
         },
-        "explain": "The equation v = f × λ relates wave velocity to frequency and wavelength. The equation T = 1 / f gives the time period from the frequency. The equation v = √(B / ρ) gives the speed of sound in a medium from its bulk modulus and density. The Mach number M_a = v_S / v is the ratio of the source speed to the speed of sound. The remaining option describes the Doppler effect, which is expressed by a different formula."
+        "explain": "The equation v = f × λ relates wave velocity to frequency and wavelength. The equation T = 1 / f gives the time period from the frequency. The equation v = √(B / ρ) gives the speed of sound in a medium from its bulk modulus and density. The Mach number \\(M_a\\) = \\(v_S\\) / v is the ratio of the source speed to the speed of sound. The remaining option describes the Doppler effect, which is expressed by a different formula."
       },
       {
         "id": "PHY40053",
@@ -2973,10 +3052,10 @@
             "id": "1",
             "prompt": "The source moves toward the stationary observer. Which formula gives the observed frequency?",
             "options": [
-              "f' = f × (v / (v - v_S))",
-              "f' = f × (v / (v + v_S))",
-              "f' = f × ((v - v_S) / v)",
-              "f' = f × ((v + v_S) / v)"
+              "f' = f × (v / (v - \\(v_S\\)))",
+              "f' = f × (v / (v + \\(v_S\\)))",
+              "f' = f × ((v - \\(v_S\\)) / v)",
+              "f' = f × ((v + \\(v_S\\)) / v)"
             ],
             "correct": 0
           },
@@ -2984,15 +3063,15 @@
             "id": "2",
             "prompt": "The source now moves away from the stationary observer. Which formula gives the observed frequency?",
             "options": [
-              "f' = f × (v / (v + v_S))",
-              "f' = f × (v / (v - v_S))",
-              "f' = f × ((v + v_S) / v)",
-              "f' = f × ((v - v_S) / v)"
+              "f' = f × (v / (v + \\(v_S\\)))",
+              "f' = f × (v / (v - \\(v_S\\)))",
+              "f' = f × ((v + \\(v_S\\)) / v)",
+              "f' = f × ((v - \\(v_S\\)) / v)"
             ],
             "correct": 0
           }
         ],
-        "explain": "When the source approaches a stationary observer the waves are compressed, so the denominator uses a minus sign: f' = f × (v / (v - v_S)). When the source recedes the waves are stretched, so the denominator uses a plus sign: f' = f × (v / (v + v_S)). Placing the source speed in the numerator or reversing the sign each fails to match the direction of motion."
+        "explain": "When the source approaches a stationary observer the waves are compressed, so the denominator uses a minus sign: f' = f × (v / (v - \\(v_S\\))). When the source recedes the waves are stretched, so the denominator uses a plus sign: f' = f × (v / (v + \\(v_S\\))). Placing the source speed in the numerator or reversing the sign each fails to match the direction of motion."
       },
       {
         "id": "PHY40055",
@@ -3004,7 +3083,7 @@
         "steps": [
           {
             "id": "1",
-            "prompt": "M_a < 1 belongs to which class?",
+            "prompt": "\\(M_a\\) < 1 belongs to which class?",
             "options": [
               "Subsonic",
               "Transonic",
@@ -3015,7 +3094,7 @@
           },
           {
             "id": "2",
-            "prompt": "M_a ≈ 1 belongs to which class?",
+            "prompt": "\\(M_a\\) ≈ 1 belongs to which class?",
             "options": [
               "Transonic",
               "Hypersonic",
@@ -3026,7 +3105,7 @@
           },
           {
             "id": "3",
-            "prompt": "M_a > 1 belongs to which class?",
+            "prompt": "\\(M_a\\) > 1 belongs to which class?",
             "options": [
               "Supersonic",
               "Hypersonic",
@@ -3036,7 +3115,7 @@
             "correct": 0
           }
         ],
-        "explain": "M_a < 1 means the source is slower than sound and is subsonic (M_a = 0 would be a source at rest). M_a ≈ 1 is the sonic boundary and is called transonic. M_a > 1 means the source is faster than sound and is supersonic. The remaining lines name the other speed classes."
+        "explain": "\\(M_a\\) < 1 means the source is slower than sound and is subsonic (\\(M_a\\) = 0 would be a source at rest). \\(M_a\\) ≈ 1 is the sonic boundary and is called transonic. \\(M_a\\) > 1 means the source is faster than sound and is supersonic. The remaining lines name the other speed classes."
       },
       {
         "id": "PHY40056",
@@ -3247,7 +3326,17 @@
         "explain": "Wavelength equals speed divided by frequency. Using 1500 m/s and 3.8 × 10⁶ Hz gives 3.95 × 10⁻⁴ m, or 0.39 mm. Other choices shift the decimal point.",
         "formula": {
           "chapter": "ch4",
-          "key": "waveSpeed"
+          "key": "waveSpeed",
+          "worked": {
+            "equation": "v = f λ",
+            "rearranged": "λ = v / f",
+            "givens": [
+              "v = 1.5 km/s = 1500 m/s",
+              "f = 3.8 MHz = 3.8 × 10⁶ Hz"
+            ],
+            "substitution": "λ = 1500 m/s / (3.8 × 10⁶ Hz)",
+            "result": "λ ≈ 3.95 × 10⁻⁴ m ≈ 0.39 mm"
+          }
         }
       },
       {
@@ -3363,7 +3452,16 @@
         "explain": "Using TF = 9/5 TC + 32 gives 63 + 32 = 95 °F. The other values omit the offset, add wrongly, or repeat the Celsius number.",
         "formula": {
           "chapter": "ch4",
-          "key": "tempConvert"
+          "key": "tempConvert",
+          "worked": {
+            "equation": "T_F = (9/5) T_C + 32",
+            "rearranged": "",
+            "givens": [
+              "T_C = 35 °C"
+            ],
+            "substitution": "T_F = (9/5) × 35 + 32 = 63 + 32",
+            "result": "T_F = 95 °F"
+          }
         }
       },
       {
@@ -3484,10 +3582,10 @@
         "cat": "Chapter 4: Doppler Effect",
         "q": "If both the source and the detector move toward each other, which formula gives the detected frequency?",
         "options": [
-          "f' = f × ((v + v_D) / (v - v_S))",
-          "f' = f × ((v - v_D) / (v + v_S))",
-          "f' = f × (v / (v - v_S))",
-          "f' = f × (v / (v + v_S))"
+          "f' = f × ((v + \\(v_D\\)) / (v - \\(v_S\\)))",
+          "f' = f × ((v - \\(v_D\\)) / (v + \\(v_S\\)))",
+          "f' = f × (v / (v - \\(v_S\\)))",
+          "f' = f × (v / (v + \\(v_S\\)))"
         ],
         "correct": 0,
         "explain": "When both move toward each other, the detector speed is added in the numerator and the source speed is subtracted in the denominator. The other formulas describe different motion combinations."
@@ -3661,7 +3759,16 @@
         "explain": "Angles of incidence and reflection are measured from the normal. A ray at 35 degrees to the surface is at 90 − 35 = 55 degrees to the normal, so the angle of incidence is 55 degrees and, by the law of reflection, so is the angle of reflection. 35 degrees is the angle from the surface, 70 degrees doubles it, and 145 degrees is 180 − 35.",
         "formula": {
           "chapter": "ch5",
-          "key": "reflectionLaw"
+          "key": "reflectionLaw",
+          "worked": {
+            "equation": "\\(\\theta_r = \\theta_i\\), with both angles measured from the normal",
+            "rearranged": "The normal is at 90° to the mirror surface, so \\(\\theta_i\\) = 90° − (angle to the surface)",
+            "givens": [
+              "angle between the ray and the mirror surface = 35° (measured from the surface, not the normal)"
+            ],
+            "substitution": "\\(\\theta_i\\) = 90° − 35° = 55°",
+            "result": "\\(\\theta_r = \\theta_i\\) = 55°"
+          }
         }
       },
       {
@@ -3777,7 +3884,16 @@
         "explain": "Rearranging f = r / 2 gives r = 2f. Substituting f = 25 cm gives r = 2 × 25 = 50 cm. The line '12.5 cm' halves the focal length instead of doubling it, '25 cm' repeats the focal length, and '100 cm' quadruples it.",
         "formula": {
           "chapter": "ch5",
-          "key": "mirrorFocal"
+          "key": "mirrorFocal",
+          "worked": {
+            "equation": "f = r / 2",
+            "rearranged": "r = 2f",
+            "givens": [
+              "f = 25 cm"
+            ],
+            "substitution": "r = 2 × 25 cm",
+            "result": "r = 50 cm"
+          }
         }
       },
       {
@@ -3795,7 +3911,16 @@
         "explain": "Using f = r / 2, substituting r = 40 cm gives f = 40 / 2 = 20 cm. The line '80 cm' doubles the radius instead of halving it, '40 cm' repeats the radius, and '10 cm' quarters it.",
         "formula": {
           "chapter": "ch5",
-          "key": "mirrorFocal"
+          "key": "mirrorFocal",
+          "worked": {
+            "equation": "f = r / 2",
+            "rearranged": "",
+            "givens": [
+              "r = 40 cm"
+            ],
+            "substitution": "f = 40 cm / 2",
+            "result": "f = 20 cm"
+          }
         }
       },
       {
@@ -3883,7 +4008,17 @@
         "explain": "Using n = c / v, substituting c = 3 × 10⁸ m/s and v = 2 × 10⁸ m/s gives n = (3 × 10⁸) / (2 × 10⁸) = 1.5. The line '0.67' inverts the ratio, '2.0' uses the speed in the medium divided by 10⁸ without dividing by c, and '3.0' uses the vacuum speed divided by 10⁸ without dividing by v.",
         "formula": {
           "chapter": "ch5",
-          "key": "refractiveIndex"
+          "key": "refractiveIndex",
+          "worked": {
+            "equation": "n = c / v",
+            "rearranged": "",
+            "givens": [
+              "c = 3 × 10⁸ m/s",
+              "v = 2 × 10⁸ m/s"
+            ],
+            "substitution": "n = (3 × 10⁸) / (2 × 10⁸)",
+            "result": "n = 1.5"
+          }
         }
       },
       {
@@ -3940,6 +4075,17 @@
             "target": "t2",
             "precision": 1,
             "answerValue": 22.082413194472252
+          },
+          "worked": {
+            "equation": "n₁ sin θ₁ = n₂ sin θ₂",
+            "rearranged": "sin θ₂ = n₁ sin θ₁ / n₂",
+            "givens": [
+              "n₁ = 1",
+              "n₂ = 1.33",
+              "θ₁ = 30°"
+            ],
+            "substitution": "sin θ₂ = (1 × sin 30°) / 1.33 = 0.5 / 1.33 ≈ 0.376",
+            "result": "θ₂ = sin⁻¹(0.376) ≈ 22.1°"
           }
         }
       },
@@ -3969,6 +4115,17 @@
             "target": "n2",
             "precision": 2,
             "answerValue": 1.4142135623730951
+          },
+          "worked": {
+            "equation": "n₁ sin θ₁ = n₂ sin θ₂",
+            "rearranged": "n₂ = n₁ sin θ₁ / sin θ₂",
+            "givens": [
+              "n₁ = 1",
+              "θ₁ = 45°",
+              "θ₂ = 30°"
+            ],
+            "substitution": "n₂ = (1 × sin 45°) / sin 30° = 0.707 / 0.5",
+            "result": "n₂ ≈ 1.41"
           }
         }
       },
@@ -4068,6 +4225,16 @@
             "target": "t1",
             "precision": 1,
             "answerValue": 41.810314895778596
+          },
+          "worked": {
+            "equation": "sin θc = n₂ / n₁",
+            "rearranged": "θc = sin⁻¹(n₂ / n₁)",
+            "givens": [
+              "n₁ = 1.5",
+              "n₂ = 1.0"
+            ],
+            "substitution": "sin θc = 1.0 / 1.5 ≈ 0.667",
+            "result": "θc ≈ 41.8°"
           }
         }
       },
@@ -4242,7 +4409,17 @@
         "explain": "Index equals vacuum speed divided by medium speed, so v = 3 × 10⁸ / 2.4 = 1.25 × 10⁸ m/s. Other choices multiply, repeat, or misuse the index.",
         "formula": {
           "chapter": "ch5",
-          "key": "refractiveIndex"
+          "key": "refractiveIndex",
+          "worked": {
+            "equation": "n = c / v",
+            "rearranged": "v = c / n",
+            "givens": [
+              "n = 2.4",
+              "c = 3 × 10⁸ m/s"
+            ],
+            "substitution": "v = (3 × 10⁸ m/s) / 2.4",
+            "result": "v = 1.25 × 10⁸ m/s"
+          }
         }
       },
       {
@@ -4398,7 +4575,17 @@
         "explain": "Using 1/di = 1/f − 1/do = 1/15 − 1/40 = 5/120 gives di = +24 cm, so the image is real and 24 cm in front of the mirror. 10.9 cm adds the reciprocals instead of subtracting, 40 cm repeats the object distance, and 30 cm uses twice the focal length.",
         "formula": {
           "chapter": "ch5",
-          "key": "mirrorEquation"
+          "key": "mirrorEquation",
+          "worked": {
+            "equation": "1/f = 1/d_o + 1/d_i",
+            "rearranged": "1/d_i = 1/f − 1/d_o",
+            "givens": [
+              "f = 15 cm",
+              "d_o = 40 cm"
+            ],
+            "substitution": "1/d_i = 1/15 − 1/40 = 8/120 − 3/120 = 5/120",
+            "result": "d_i = +24 cm (real image, in front of the mirror)"
+          }
         }
       },
       {
@@ -4416,7 +4603,17 @@
         "explain": "v = c/n = 3 × 10⁸ / 1.8 ≈ 1.67 × 10⁸ m/s, slower than in vacuum. 5.4 × 10⁸ multiplies instead of dividing, 1.8 × 10⁸ treats the index as a speed, and 1.67 × 10⁶ misplaces the decimal.",
         "formula": {
           "chapter": "ch5",
-          "key": "refractiveIndex"
+          "key": "refractiveIndex",
+          "worked": {
+            "equation": "n = c / v",
+            "rearranged": "v = c / n",
+            "givens": [
+              "n = 1.8",
+              "c = 3 × 10⁸ m/s"
+            ],
+            "substitution": "v = (3 × 10⁸ m/s) / 1.8",
+            "result": "v ≈ 1.67 × 10⁸ m/s"
+          }
         }
       },
       {
@@ -4445,6 +4642,16 @@
             "target": "t1",
             "precision": 1,
             "answerValue": 38.68218745348944
+          },
+          "worked": {
+            "equation": "sin θc = n₂ / n₁",
+            "rearranged": "θc = sin⁻¹(n₂ / n₁)",
+            "givens": [
+              "n₁ = 1.6",
+              "n₂ = 1 (air)"
+            ],
+            "substitution": "sin θc = 1 / 1.6 = 0.625",
+            "result": "θc ≈ 38.7°"
           }
         }
       },
@@ -4553,7 +4760,8 @@
         "q": "What does TIR stand for?",
         "answer": "Total internal reflection",
         "accept": [],
-        "explain": "TIR stands for total internal reflection, where light travelling from a denser to a rarer medium reflects back inside when the angle of incidence exceeds the critical angle."
+        "explain": "TIR stands for total internal reflection, where light travelling from a denser to a rarer medium reflects back inside when the angle of incidence exceeds the critical angle.",
+        "lawPanel": "tir"
       },
       {
         "id": "PHY50100",
@@ -4564,7 +4772,8 @@
         "accept": [
           "θc"
         ],
-        "explain": "The critical angle is the angle of incidence for which the refracted ray emerges along the surface at 90°. Beyond it, total internal reflection occurs."
+        "explain": "The critical angle is the angle of incidence for which the refracted ray emerges along the surface at 90°. Beyond it, total internal reflection occurs.",
+        "lawPanel": "criticalAngle"
       },
       {
         "id": "PHY50102",
@@ -4573,7 +4782,8 @@
         "q": "Which law relates n₁ sin θ₁ to n₂ sin θ₂?",
         "answer": "Snell's law",
         "accept": [],
-        "explain": "Snell's law states n₁ sin θ₁ = n₂ sin θ₂, with both angles measured from the normal at the boundary."
+        "explain": "Snell's law states n₁ sin θ₁ = n₂ sin θ₂, with both angles measured from the normal at the boundary.",
+        "lawPanel": "snell"
       },
       {
         "id": "PHY50105",
@@ -4584,7 +4794,8 @@
         "accept": [
           "Refractive index"
         ],
-        "explain": "The index of refraction compares the speed of light in vacuum to its speed in the medium; a higher value means slower light."
+        "explain": "The index of refraction compares the speed of light in vacuum to its speed in the medium; a higher value means slower light.",
+        "lawPanel": "refractiveIndex"
       },
       {
         "id": "PHY50106",
@@ -4772,7 +4983,17 @@
         "explain": "For a relaxed eye the object sits at the focal point and the image is at infinity, so M = 25 cm / f, where 25 cm is the near point N. With f = 5 cm, M = 25 / 5 = 5. The other values come from using a different focal length or misapplying the formula.",
         "formula": {
           "chapter": "ch6",
-          "key": "simpleMagnifier"
+          "key": "simpleMagnifier",
+          "worked": {
+            "equation": "M = N / f (relaxed eye, image at infinity)",
+            "rearranged": "",
+            "givens": [
+              "N = 25 cm (near point)",
+              "f = 5 cm"
+            ],
+            "substitution": "M = 25 cm / 5 cm",
+            "result": "M = 5"
+          }
         }
       },
       {
@@ -4857,7 +5078,7 @@
           "Equal to the difference of the focal lengths"
         ],
         "correct": 1,
-        "explain": "The two lenses are separated by a distance L that is much greater than either the objective focal length f_o or the eyepiece focal length f_e. This separation allows the real image formed by the objective to fall at or near the focal point of the eyepiece. The other options do not describe the typical arrangement of a compound microscope."
+        "explain": "The two lenses are separated by a distance L that is much greater than either the objective focal length \\(f_o\\) or the eyepiece focal length f_e. This separation allows the real image formed by the objective to fall at or near the focal point of the eyepiece. The other options do not describe the typical arrangement of a compound microscope."
       },
       {
         "id": "PHY60013",
@@ -5544,7 +5765,16 @@
         "explain": "The radius of curvature is twice the focal length: r = 2f = 2 × 25 = 50 cm. 12.5 cm halves f instead of doubling it, 25 cm is f itself, and 100 cm doubles it twice.",
         "formula": {
           "chapter": "ch6",
-          "key": "mirrorFocal"
+          "key": "mirrorFocal",
+          "worked": {
+            "equation": "f = r / 2",
+            "rearranged": "r = 2f",
+            "givens": [
+              "f = 25 cm"
+            ],
+            "substitution": "r = 2 × 25 cm",
+            "result": "r = 50 cm"
+          }
         }
       },
       {
@@ -6315,7 +6545,15 @@
           "5": "E",
           "6": "F"
         },
-        "explain": "Bernoulli lowers pressure as flow speeds up. Continuity speeds flow in a narrower lumen. Poiseuille makes radius dominant. Reynolds flags swirling murmurs. Doppler tracks moving blood. Surface tension contracts the surface."
+        "explain": "Bernoulli lowers pressure as flow speeds up. Continuity speeds flow in a narrower lumen. Poiseuille makes radius dominant. Reynolds flags swirling murmurs. Doppler tracks moving blood. Surface tension contracts the surface.",
+        "lawPanel": [
+          "bernoulli",
+          "continuity",
+          "poiseuille",
+          "reynolds",
+          "doppler",
+          "surfaceTension"
+        ]
       },
       {
         "id": "PHY90010",
@@ -6335,7 +6573,8 @@
           "Bernoulli's Law",
           "Bernoulli law"
         ],
-        "explain": "Bernoulli's Equation is P + ½ρv² + ρgh = constant for ideal steady flow."
+        "explain": "Bernoulli's Equation is P + ½ρv² + ρgh = constant for ideal steady flow.",
+        "lawPanel": "bernoulli"
       },
       {
         "id": "PHY90011",
@@ -6353,7 +6592,8 @@
           "Poiseuille principle",
           "Poiseuille Principle"
         ],
-        "explain": "Poiseuille's Law is Q = πr⁴ΔP / 8ηL, so radius dominates flow."
+        "explain": "Poiseuille's Law is Q = πr⁴ΔP / 8ηL, so radius dominates flow.",
+        "lawPanel": "poiseuille"
       },
       {
         "id": "PHY90012",
@@ -6371,7 +6611,8 @@
           "Laplace principle",
           "Laplace Principle"
         ],
-        "explain": "Laplace's Law for a thin cylinder is T = P r, with stress σ = P r / t."
+        "explain": "Laplace's Law for a thin cylinder is T = P r, with stress σ = P r / t.",
+        "lawPanel": "laplace"
       },
       {
         "id": "PHY90013",
@@ -6384,7 +6625,8 @@
           "Reynolds number",
           "Re"
         ],
-        "explain": "Reynolds Number is Re = ρvD / η, predicting laminar or turbulent flow."
+        "explain": "Reynolds Number is Re = ρvD / η, predicting laminar or turbulent flow.",
+        "lawPanel": "reynolds"
       },
       {
         "id": "PHY90014",
@@ -6399,7 +6641,8 @@
           "Equation of continuity",
           "Equation of Continuity"
         ],
-        "explain": "The Continuity Equation conserves flow rate when density is constant."
+        "explain": "The Continuity Equation conserves flow rate when density is constant.",
+        "lawPanel": "continuity"
       },
       {
         "id": "PHY90015",
@@ -6417,7 +6660,8 @@
           "Snell principle",
           "Snell Principle"
         ],
-        "explain": "Snell's Law governs refraction at a boundary between two media."
+        "explain": "Snell's Law governs refraction at a boundary between two media.",
+        "lawPanel": "snell"
       },
       {
         "id": "PHY90016",
@@ -6430,7 +6674,8 @@
           "TIR",
           "tir"
         ],
-        "explain": "Total internal reflection needs denser-to-rarer travel and incidence above the critical angle."
+        "explain": "Total internal reflection needs denser-to-rarer travel and incidence above the critical angle.",
+        "lawPanel": "tir"
       },
       {
         "id": "PHY90017",
@@ -6445,7 +6690,8 @@
           "Doppler's effect",
           "Doppler's Effect"
         ],
-        "explain": "The Doppler Effect raises detected frequency on approach and lowers it on recession."
+        "explain": "The Doppler Effect raises detected frequency on approach and lowers it on recession.",
+        "lawPanel": "doppler"
       },
       {
         "id": "PHY90020",
@@ -6459,7 +6705,8 @@
           "refractive index",
           "n"
         ],
-        "explain": "Index of refraction is n = c / v; a higher n means slower light."
+        "explain": "Index of refraction is n = c / v; a higher n means slower light.",
+        "lawPanel": "refractiveIndex"
       },
       {
         "id": "PHY90021",
@@ -6471,7 +6718,8 @@
           "critical angle",
           "θc"
         ],
-        "explain": "At the critical angle, refraction is 90°; beyond it, total internal reflection occurs."
+        "explain": "At the critical angle, refraction is 90°; beyond it, total internal reflection occurs.",
+        "lawPanel": "criticalAngle"
       },
       {
         "id": "PHY90022",
@@ -6483,7 +6731,8 @@
           "surface tension",
           "γ"
         ],
-        "explain": "Surface tension is force per length from cohesive forces, T = F / L."
+        "explain": "Surface tension is force per length from cohesive forces, T = F / L.",
+        "lawPanel": "surfaceTension"
       },
       {
         "id": "PHY90023",
@@ -6495,7 +6744,8 @@
           "viscosity",
           "η"
         ],
-        "explain": "Viscosity η is resistance to shear between adjacent layers, in pascal-seconds."
+        "explain": "Viscosity η is resistance to shear between adjacent layers, in pascal-seconds.",
+        "lawPanel": "viscosity"
       },
       {
         "id": "PHY90026",
@@ -6531,7 +6781,8 @@
               "echocardiogram"
             ]
           }
-        ]
+        ],
+        "lawPanel": "bernoulli"
       },
       {
         "id": "PHY90027",
@@ -6557,7 +6808,8 @@
             "answer": "Polycythemia",
             "accept": []
           }
-        ]
+        ],
+        "lawPanel": "poiseuille"
       },
       {
         "id": "PHY90028",
@@ -6593,7 +6845,8 @@
               "Deep venous thrombosis"
             ]
           }
-        ]
+        ],
+        "lawPanel": "doppler"
       },
       {
         "id": "PHY90030",
@@ -6621,6 +6874,87 @@
             ]
           }
         ]
+      },
+      {
+        "id": "PHY90031",
+        "type": "matching",
+        "cat": "Mixed Chapters: Linking and Short Answers",
+        "q": "Water and mercury in a clean glass capillary tube: match each property to the correct comparison.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Cohesion compared with adhesion to glass"
+          },
+          {
+            "id": "2",
+            "text": "Surface tension"
+          },
+          {
+            "id": "3",
+            "text": "Wetting of glass"
+          },
+          {
+            "id": "4",
+            "text": "Meniscus shape"
+          },
+          {
+            "id": "5",
+            "text": "Level in a capillary tube"
+          },
+          {
+            "id": "6",
+            "text": "Contact angle with glass"
+          },
+          {
+            "id": "7",
+            "text": "Density"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Water: adhesion is stronger; mercury: cohesion is stronger"
+          },
+          {
+            "id": "B",
+            "text": "Much higher for mercury than for water"
+          },
+          {
+            "id": "C",
+            "text": "Water wets it; mercury does not"
+          },
+          {
+            "id": "D",
+            "text": "Water concave; mercury convex"
+          },
+          {
+            "id": "E",
+            "text": "Water rises; mercury falls below the outside level"
+          },
+          {
+            "id": "F",
+            "text": "Water below 90°; mercury above 90°"
+          },
+          {
+            "id": "G",
+            "text": "Mercury is much denser than water"
+          },
+          {
+            "id": "H",
+            "text": "The same for both liquids"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G"
+        },
+        "explain": "Wetting depends on the balance between cohesion and adhesion to glass, not on surface tension alone: for water adhesion wins, so it wets clean glass with a contact angle below 90°, curves into a concave meniscus and rises; for mercury cohesion wins, so it does not wet glass, its contact angle is above 90°, its meniscus is convex and cos θ < 0 in h = 2γ cos θ / (ρ g r) makes it fall. Mercury's strong cohesion also gives it a much higher surface tension, and it is far denser than water.",
+        "lawPanel": "surfaceTension"
       }
     ]
   },
@@ -6636,10 +6970,237 @@
     "surfaceTensionUnits": {
       "name": "Surface tension units",
       "description": "1 dyne/cm = 10⁻³ N/m"
+    }
+  },
+  "lawPanels": {
+    "bernoulli": {
+      "title": "Bernoulli's equation",
+      "definition": "For an ideal fluid (steady, incompressible, non-viscous, streamline flow), the total mechanical energy per unit volume stays constant: pressure energy + kinetic energy + potential energy = constant. As fluid velocity increases, fluid pressure decreases, and vice versa.",
+      "equation": "P + ½ρv² + ρgh = constant\nP₁ + ½ρv₁² + ρgh₁ = P₂ + ½ρv₂² + ρgh₂",
+      "symbols": [
+        "P = pressure (Pa)",
+        "ρ = density of the fluid (kg/m³)",
+        "v = velocity of the fluid (m/s)",
+        "g = acceleration due to gravity, 9.8 m/s²",
+        "h = height above a reference level (m)"
+      ],
+      "uses": [
+        "Venturi mask",
+        "Doppler echocardiography",
+        "Blood flow through arteries and heart valves"
+      ],
+      "diagram": {
+        "src": "content/medphys/pt2/chapter-3.md",
+        "label": "Bernoulli along a rising pipe: pressure, kinetic and potential energy per volume add to the same total"
+      },
+      "source": "content/medphys/pt2/chapter-3.md"
     },
-    "soundSpeedTemp": {
-      "name": "Sound speed and temperature",
-      "description": "v ≈ 331 + 0.6 T_C (m/s, air)"
+    "poiseuille": {
+      "title": "Poiseuille's law",
+      "definition": "Poiseuille's law describes the flow of a viscous fluid through a cylindrical tube: the volume flow rate is proportional to the fourth power of the radius and to the pressure difference, and inversely proportional to the viscosity and the length of the tube.",
+      "equation": "Q = π r⁴ ΔP / (8 η L)",
+      "symbols": [
+        "Q = volume flow rate (m³/s)",
+        "r = radius of the tube (m)",
+        "ΔP = pressure difference between the two ends (Pa)",
+        "η = viscosity of the fluid (Pa·s)",
+        "L = length of the tube (m)"
+      ],
+      "uses": [
+        "IV infusion",
+        "Polycythemia (raised blood viscosity)",
+        "Blood circulation through arteries and veins"
+      ],
+      "diagram": {
+        "src": "content/medphys/pt2/chapter-3.md",
+        "label": "Poiseuille flow through a tube of radius R and length L, and how halving R cuts the flow to one sixteenth"
+      },
+      "source": "content/medphys/pt2/chapter-3.md"
+    },
+    "laplace": {
+      "title": "Laplace's law",
+      "definition": "Laplace's law links the pressure inside a vessel, its radius, and the tension in its wall: wall tension increases directly with pressure and radius.",
+      "equation": "T = P × r\nσ = P r / t",
+      "symbols": [
+        "T = wall tension (N/m)",
+        "P = pressure inside the vessel (Pa)",
+        "r = radius (m)",
+        "σ = wall stress (Pa)",
+        "t = wall thickness (m)"
+      ],
+      "uses": [
+        "Aneurysm: a bulge with a larger radius carries more wall tension"
+      ],
+      "diagram": {
+        "src": "content/medphys/pt2/chapter-3.md",
+        "label": "Laplace law in a vessel: wall tension grows with pressure and radius; an aneurysm bulges out on one side of the wall with a much larger radius"
+      },
+      "source": "content/medphys/pt2/chapter-3.md"
+    },
+    "reynolds": {
+      "title": "Reynolds number",
+      "definition": "The Reynolds number, Re, compares inertial force to viscous force and tells you the type of flow: below 2000 laminar (streamline), above 2000 turbulent. Re has no units.",
+      "equation": "Re = inertial force / viscous force\nRe = ρ v D / η",
+      "symbols": [
+        "ρ = density of the fluid",
+        "v = velocity",
+        "D = diameter of the tube",
+        "η = viscosity"
+      ],
+      "uses": [
+        "Type of blood flow in an artery"
+      ],
+      "diagram": {
+        "src": "content/medphys/pt2/chapter-3.md",
+        "label": "Reynolds number scale: below 2000 laminar, above 2000 turbulent"
+      },
+      "source": "content/medphys/pt2/chapter-3.md"
+    },
+    "continuity": {
+      "title": "Equation of continuity",
+      "definition": "If no fluid is added or removed between two sections of a tube, flow rate is conserved. For an incompressible fluid such as blood, a narrower area means a larger speed so that A₁v₁ = A₂v₂.",
+      "equation": "ρ₁A₁v₁ = ρ₂A₂v₂\nA₁v₁ = A₂v₂ (incompressible)",
+      "symbols": [
+        "A = cross-sectional area (m²)",
+        "v = speed (m/s)",
+        "ρ = density (kg/m³)"
+      ],
+      "uses": [
+        "Faster blood flow at a stenosis"
+      ],
+      "diagram": {
+        "src": "content/medphys/pt2/chapter-3.md",
+        "label": "Continuity: narrower tube means faster flow; pressure drops as shown by the columns"
+      },
+      "source": "content/medphys/pt2/chapter-3.md"
+    },
+    "snell": {
+      "title": "Snell's law",
+      "definition": "When light crosses the boundary between two media it changes direction (refraction); the product of the index and the sine of the angle from the normal stays the same across the boundary. Going into a higher n the ray bends toward the normal; into a lower n, away from it.",
+      "equation": "n₁ sin θ₁ = n₂ sin θ₂",
+      "symbols": [
+        "n₁, n₂ = refractive indices of the two media",
+        "θ₁ = angle of incidence, from the normal",
+        "θ₂ = angle of refraction, from the normal"
+      ],
+      "uses": [],
+      "diagram": {
+        "src": "content/medphys/pt2/chapter-5.md",
+        "label": "Refraction: entering a higher-index medium the ray bends toward the normal; leaving it, away from the normal"
+      },
+      "source": "content/medphys/pt2/chapter-5.md"
+    },
+    "tir": {
+      "title": "Total internal reflection",
+      "definition": "If the angle of incidence is greater than the critical angle, no light gets out: the ray reflects back into the denser medium. Two conditions: light travels from higher n to lower n, and the angle of incidence is greater than θc.",
+      "equation": "sin θc = n₂ / n₁   (n₁ > n₂)",
+      "symbols": [
+        "θc = critical angle",
+        "n₁ = denser medium",
+        "n₂ = rarer medium"
+      ],
+      "uses": [
+        "Optical fibre cables",
+        "Binoculars (prisms)",
+        "Mirages and the sparkle of diamonds"
+      ],
+      "diagram": {
+        "src": "content/medphys/pt2/chapter-5.md",
+        "label": "Total internal reflection: below, at and above the critical angle"
+      },
+      "source": "content/medphys/pt2/chapter-5.md"
+    },
+    "doppler": {
+      "title": "Doppler effect",
+      "definition": "The Doppler effect is the change in the frequency, an increase or a decrease, of sound, light or other waves when the source and the observer move towards or away from each other.",
+      "equation": "f′ = f × (v ± \\(v_D\\)) / (v ± \\(v_S\\))",
+      "symbols": [
+        "f = emitted frequency",
+        "f′ = detected frequency",
+        "v = speed of sound in air",
+        "\\(v_S\\) = speed of the source",
+        "\\(v_D\\) = speed of the detector (observer)"
+      ],
+      "uses": [
+        "Doppler echocardiography",
+        "Deep vein thrombosis detection"
+      ],
+      "diagram": {
+        "src": "content/medphys/pt2/chapter-4.md",
+        "label": "Doppler effect: a moving source bunches wavefronts ahead, giving a higher pitch, and spreads them behind, giving a lower pitch"
+      },
+      "source": "content/medphys/pt2/chapter-4.md"
+    },
+    "refractiveIndex": {
+      "title": "Index of refraction",
+      "definition": "The index of refraction, also called the refractive index, compares the speed of light in vacuum to its speed in the medium. n ≥ 1 and has no units; higher n means slower light.",
+      "equation": "n = c / v",
+      "symbols": [
+        "c = speed of light in vacuum = 3 × 10⁸ m/s",
+        "v = speed of light in the medium"
+      ],
+      "uses": [],
+      "diagram": {
+        "src": "content/medphys/pt2/chapter-5.md",
+        "label": "Refraction: entering a higher-index medium the ray bends toward the normal; leaving it, away from the normal"
+      },
+      "source": "content/medphys/pt2/chapter-5.md"
+    },
+    "criticalAngle": {
+      "title": "Critical angle",
+      "definition": "The critical angle, θc, is the angle of incidence (going from a denser to a rarer medium) at which the angle of refraction becomes 90°, so the refracted ray skims along the surface.",
+      "equation": "n₁ sin θc = n₂ sin 90°\nsin θc = n₂ / n₁   (n₁ > n₂)",
+      "symbols": [
+        "n₁ = denser medium",
+        "n₂ = rarer medium"
+      ],
+      "uses": [
+        "Above θc: total internal reflection"
+      ],
+      "diagram": {
+        "src": "content/medphys/pt2/chapter-5.md",
+        "label": "Total internal reflection: below, at and above the critical angle"
+      },
+      "source": "content/medphys/pt2/chapter-5.md"
+    },
+    "surfaceTension": {
+      "title": "Surface tension",
+      "definition": "Surface tension is the property of a liquid surface that makes it behave like a stretched elastic membrane; it is the force acting per unit length along the surface of a liquid, from cohesive forces between liquid molecules.",
+      "equation": "T = F / L",
+      "symbols": [
+        "T = surface tension (N/m)",
+        "F = force (N)",
+        "L = length (m)"
+      ],
+      "uses": [
+        "Pulmonary surfactant keeps alveoli open",
+        "Capillarity"
+      ],
+      "diagram": {
+        "src": "content/medphys/pt2/chapter-3.md",
+        "label": "Surface tension from unbalanced pulls on surface molecules, and capillary rise of water and fall of mercury"
+      },
+      "source": "content/medphys/pt2/chapter-3.md"
+    },
+    "viscosity": {
+      "title": "Viscosity",
+      "definition": "Viscosity (η) is the resistance of a fluid to shear deformation or flow, caused by internal friction between adjacent fluid layers.",
+      "equation": "F = η A v / y\nF / A = η × (v / y)",
+      "symbols": [
+        "F = force (N)",
+        "A = plate area (m²)",
+        "v = plate velocity (m/s)",
+        "y = layer thickness (m)",
+        "η = viscosity (Pa·s)"
+      ],
+      "uses": [
+        "Polycythemia and anemia change blood viscosity"
+      ],
+      "diagram": {
+        "src": "content/medphys/pt2/chapter-3.md",
+        "label": "Viscosity: a force F drags the top plate at speed v over a fluid layer of thickness y; layers move slower near the fixed plate"
+      },
+      "source": "content/medphys/pt2/chapter-3.md"
     }
   }
 }

@@ -850,3 +850,22 @@ html.pt2-phone .step-gallery,.step-gallery.n2{grid-template-columns:repeat(2,min
 .pt2-no-saq-hints .pt1q .saq-echo{display:none!important}
 .pt1q .saq-hint-toggle{flex-basis:100%;display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-size:12px;color:var(--text-dim);cursor:pointer;user-select:none;width:max-content}
 .pt1q .saq-hint-toggle input{accent-color:var(--accent-0);margin:0}
+/* Law / principle card under a solved Mixed Chapters question */
+.law-panel{margin-top:12px;padding:12px 14px;border-radius:12px;border:1px solid rgba(var(--accent-0-rgb),.28);background:rgba(var(--accent-0-rgb),.06);color:var(--text);font-family:var(--body);box-sizing:border-box;max-width:100%;overflow-wrap:anywhere;text-align:left;animation:stepRecapIn .35s ease both}
+.law-panel .law-title{font-weight:700;font-size:1.05rem;margin-bottom:6px;color:var(--accent-0)}
+.law-panel .law-sub{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;opacity:.7;margin:8px 0 2px}
+.law-panel .law-def{margin:0}
+.law-panel .law-eq{margin:8px 0 0;padding:8px 10px;border-radius:8px;background:rgba(0,0,0,.18);font-family:var(--mono),ui-monospace,monospace;white-space:pre-wrap;font-size:.95rem}
+.law-panel .law-list{margin:0;padding-left:1.2em}
+.law-panel .law-diagram:empty{display:none}
+.law-panel .optics-diagram{margin:10px 0 4px;padding:8px 10px;border-radius:12px;border:1px solid rgba(var(--accent-0-rgb),.22);background:transparent}
+.law-panel .optics-diagram svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.law-panel .optics-diagram svg text{fill:var(--col-text-main,#e8edf5);font-family:var(--body),system-ui,sans-serif}
+@media (prefers-reduced-motion:reduce){.law-panel{animation:none}}
+.law-panel.law-multi .law-card+.law-card{margin-top:14px;padding-top:12px;border-top:1px solid rgba(var(--accent-0-rgb),.2)}
+/* keyboard handed back to the questions (Tab from the calculator): show where the keys now go */
+#mainPanel:focus-visible,#formulaPanel:focus-visible{outline:2px solid rgba(var(--accent-0-rgb),.55);outline-offset:3px}
+#mainPanel:focus:not(:focus-visible),#formulaPanel:focus:not(:focus-visible){outline:none}
+/* key hint for Tab (calculator ⇄ question) only while the calculator is open */
+.kbd-calc-only{display:none}
+body.pt2-calc-shown .kbd-calc-only{display:inline}

@@ -61,7 +61,7 @@ test('a saved chapter run does not bring back questions that moved to Mixed Chap
   for (const q of moved) assert.ok(!kept.some(d => d.id === q.id), q.id);
 });
 
-const CALC = { ch3: ['PHY30041','PHY30052'], ch4: ['PHY40008','PHY40014','PHY40010','PHY40011','PHY40035','PHY40044','PHY40045','PHY40046','PHY40048','PHY40066','PHY40074'],
+const CALC = { ch3: ['PHY30041','PHY30052'], ch4: ['PHY40008','PHY40010','PHY40011','PHY40035','PHY40044','PHY40045','PHY40046','PHY40048','PHY40066','PHY40074'],
   ch5: ['PHY50002','PHY50010','PHY50011','PHY50017','PHY50020','PHY50021','PHY50027','PHY50062','PHY50084','PHY50089','PHY50090'],
   ch6: ['PHY60006','PHY60046'] };
 // numbers in the question but recall, units, trends or naming: these stay in the chapters
@@ -107,13 +107,13 @@ test('formula practice serves the chapter bank questions first, each once, then 
   assert.equal(q.options[q.correct], orig.options[orig.correct]); assert.equal(q.q, orig.q);
 });
 
-test('final routing: 26 calculations; chapter card sizes', () => {
+test('final routing: 25 calculations; chapter card sizes', () => {
   const { all, cards } = cardsOf(fileBank);
-  assert.equal(all.filter(q => q.formula).length, 26);
+  assert.equal(all.filter(q => q.formula).length, 25);
   const size = l => cards.find(c => c.label.startsWith(l)).pool.length;
-  assert.deepEqual([size('Chapter 3'), size('Chapter 4'), size('Chapter 5'), size('Chapter 6'), size('Mixed')], [95, 82, 45, 70, 54]);
+  assert.deepEqual([size('Chapter 3'), size('Chapter 4'), size('Chapter 5'), size('Chapter 6'), size('Mixed')], [95, 82, 45, 70, 55]);
   const per = ch => all.filter(q => q.formula && q.formula.chapter === ch).length;
-  assert.deepEqual([per('ch3'), per('ch4'), per('ch5'), per('ch6')], [2, 11, 11, 2]);
+  assert.deepEqual([per('ch3'), per('ch4'), per('ch5'), per('ch6')], [2, 10, 11, 2]);
 });
 test('registered optics diagrams: exact givens, answer matches the correct choice at its precision', () => {
   const { all } = cardsOf(fileBank);
@@ -128,10 +128,12 @@ test('registered optics diagrams: exact givens, answer matches the correct choic
     if (d.kind === 'snell') assert.ok(Math.abs(v.n1 * Math.sin(v.t1 * R) - v.n2 * Math.sin(v.t2 * R)) < 1e-9);
     else assert.ok(Math.abs(Math.sin(v.t1 * R) - v.n2 / v.n1) < 1e-9);
   }
-  for (const k of ['surfaceTensionUnits', 'soundSpeedTemp']) assert.ok(fileBank.formulaNames[k].description);
+  for (const k of ['surfaceTensionUnits']) assert.ok(fileBank.formulaNames[k].description);
+  // the unsupported v ≈ 331 + 0.6 T_C question and its hint are gone
+  assert.ok(!fileBank.bank.A.some(q => q.id === 'PHY40014')); assert.ok(!('soundSpeedTemp' in fileBank.formulaNames));
 });
 
-test('extra banks (Diagrams) keep their typed stepped questions; Mixed stays 54', async () => {
+test('extra banks (Diagrams) keep their typed stepped questions; Mixed stays 55', async () => {
   const main = JSON.parse(JSON.stringify(fileBank)), extra = JSON.parse(fs.readFileSync(path.join(root, 'banks/medphys/diagrams.json'), 'utf8'));
   let ingested = null;
   const ctx = { console, fetch: async p => ({ ok: true, json: async () => JSON.parse(JSON.stringify(p === 'main' ? main : extra)) }),
@@ -142,7 +144,7 @@ test('extra banks (Diagrams) keep their typed stepped questions; Mixed stays 54'
   assert.ok(!fileBank.bank.A.some(q => q.__extra), 'main questions untouched');
   const { ctx: e, cards } = cardsOf(ingested);
   const mixed = cards.find(c => c.label === 'Mixed Chapters'), dia = cards.find(c => c.label === 'Diagrams');
-  assert.equal(mixed.pool.length, 54); assert.ok(!mixed.pool.some(q => q.__extra));
+  assert.equal(mixed.pool.length, 55); assert.ok(!mixed.pool.some(q => q.__extra));
   const extraIds = new Set(extra.bank.A.map(q => q.id));
   const placed = cards.flatMap(c => c.pool).filter(q => extraIds.has(q.id));
   assert.equal(placed.length, extra.bank.A.length, 'every Diagrams question still placed once');
@@ -159,5 +161,5 @@ test('formula card count includes bank-only formulas', () => {
   const fc = ctx.FormulaPractice.formulaCount;
   assert.equal(fc({ id: 'ch5', keys: ['refractiveIndex', 'snell', 'criticalAngle'] }), 6); // + law of reflection, mirror equation, mirror focal length
   assert.equal(fc({ id: 'ch3', keys: ['poiseuille', 'surfaceTension'] }), 3); // + surface tension units
-  assert.equal(fc({ id: 'ch4', keys: ['waveSpeed', 'periodFreq', 'mach', 'tempConvert'] }), 5); // + sound speed and temperature
+  assert.equal(fc({ id: 'ch4', keys: ['waveSpeed', 'periodFreq', 'mach', 'tempConvert'] }), 4); // the 331 + 0.6 T_C bank-only formula was removed
 });
