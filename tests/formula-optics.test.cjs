@@ -308,3 +308,12 @@ test('a bank optics question gets the same gated drawing; bank-only formulas joi
   tap(at('normal'));tap(at('incident',30,-1));tap(at('refracted',goal.t2,1));
   assert.equal(next.disabled,false);assert.equal(fp.totalAnswered(),before+1);
 });
+test('question stems, step prompts and the step recap render math',()=>{
+  const src=fs.readFileSync(path.join(__dirname,'..','js/quiz-engine.js'),'utf8');
+  const body=src.slice(src.indexOf('\nfunction renderQuestion('),src.indexOf('\n}',src.indexOf('\nfunction renderQuestion(')));
+  assert.ok(body.indexOf("pr.append(txt);")<body.indexOf('renderMathIn(qText);'),'prompt built before rendering');
+  const recap=src.slice(src.indexOf('\nfunction renderStepRecap('),src.indexOf('\nfunction renderQuestion('));
+  assert.match(recap,/renderMathIn\(document\.getElementById\('stepRecap'\)\);/);
+  const bank=JSON.parse(fs.readFileSync(path.join(__dirname,'..','banks/medphys/pt2.json'),'utf8'));
+  const q=bank.bank.A.find(x=>x.id==='PHY30047');assert.ok(q.steps.some(s=>/\\\(Q = A \\bar\{v\}\\\)/.test(s.prompt)),'fixture prompt uses \\( \\)');
+});
