@@ -6,6 +6,14 @@
 var APP_INFO = {
   releases: [
    {
+   version: '0.44',
+   date: '08/11/2026',
+   changes: [
+     'Add interactive optics diagrams to formula practice.',
+     'LaTeX text fixes.',
+      ]
+    },
+   {
    version: '0.43',
    date: '07/11/2026',
    changes: [

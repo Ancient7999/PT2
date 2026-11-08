@@ -138,6 +138,10 @@
   /* the Settings text button sits on the same line as the Fullscreen button of the open view */
   function alignSettings() {
     var w = document.getElementById('settings-wrapper'); if (!w) return;
+    // Phone chrome is viewport-fixed; desktop alignment uses document coordinates.
+    var phone = document.documentElement.classList.contains('pt2-phone') ||
+      (global.matchMedia && global.matchMedia('(pointer: coarse) and (max-width: 768px), (pointer: coarse) and (max-height: 500px)').matches);
+    if (phone) { w.style.removeProperty('top'); return; }
     var f = [].slice.call(document.querySelectorAll('[data-fs]')).filter(function (x) { return x.offsetParent; })[0];
     if (!f) { w.style.removeProperty('top'); return; }
     var top = Math.round(f.getBoundingClientRect().top + global.scrollY);

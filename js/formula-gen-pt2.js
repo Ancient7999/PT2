@@ -301,6 +301,12 @@ function genBernoulli() {
     return done('refractiveIndex', v, m.name.charAt(0).toUpperCase() + m.name.slice(1) + ' has n = ' + m.n + '. What is the speed of light in it? (c = 3 × 10⁸ m/s)', 'v = c / n', [mapLine('3 × 10⁸ m/s', 'c'), mapLine(String(m.n), 'n')], '3 × 10⁸ / ' + m.n, sp, 'm/s', 3, [C_LIGHT * m.n]);
   }
 
+  // Sketch data uses exactly the givens printed in the question, including rounding.
+  function withDiagram(question, kind, values, target, precision) {
+    question.formulaDiagram = { kind: kind, values: values, target: target, precision: precision };
+    return question;
+  }
+
   function genSnell() {
     const v = randInt(0, 2);
     for (;;) {
@@ -309,16 +315,16 @@ function genBernoulli() {
       const s2 = n1 * Math.sin(t1 * D2R) / n2; if (s2 >= 0.98) continue; // no refracted ray (total internal reflection): roll again
       const t2 = Math.asin(s2) * R2D; const a = into ? 'air into ' + m.name : m.name + ' into air';
       const mn = [mapLine(String(n1), 'n₁'), mapLine(String(n2), 'n₂')];
-      if (v === 0) return done('snell', v, 'Light passes from ' + a + ' (n₁ = ' + n1 + ', n₂ = ' + n2 + ') at ' + t1 + '° to the normal. What is the angle of refraction?', 'θ₂ = sin⁻¹(n₁ sin θ₁ / n₂)', mn.concat(mapLine(t1 + '°', 'θ₁')), 'sin⁻¹(' + n1 + ' · sin ' + t1 + '° / ' + n2 + ')', t2, '°', 1, [t1 * n1 / n2 === t2 ? t1 : t1, Math.asin(Math.min(0.999, n2 * Math.sin(t1 * D2R) / n1 * 0.5 + 0.1)) * R2D, 90 - t2]);
-      if (v === 1) { if (!into) continue; return done('snell', v, 'Light in air hits a material at ' + t1 + '° to the normal and refracts at ' + t2.toFixed(1) + '°. What is the refractive index of the material? (no unit)', 'n₂ = n₁ sin θ₁ / sin θ₂', [mapLine('1', 'n₁'), mapLine(t1 + '°', 'θ₁'), mapLine(t2.toFixed(1) + '°', 'θ₂')], '1 · sin ' + t1 + '° / sin ' + t2.toFixed(1) + '°', Math.sin(t1 * D2R) / Math.sin(t2.toFixed(1) * D2R), '', 3, [Math.sin(t2 * D2R) / Math.sin(t1 * D2R), t1 / t2 * 1.4]); }
-      return done('snell', v, 'Light passes from ' + a + ' (n₁ = ' + n1 + ', n₂ = ' + n2 + ') and refracts at ' + t2.toFixed(1) + '° to the normal. What was the angle of incidence?', 'θ₁ = sin⁻¹(n₂ sin θ₂ / n₁)', mn.concat(mapLine(t2.toFixed(1) + '°', 'θ₂')), 'sin⁻¹(' + n2 + ' · sin ' + t2.toFixed(1) + '° / ' + n1 + ')', Math.asin(Math.min(1, n2 * Math.sin(t2.toFixed(1) * D2R) / n1)) * R2D, '°', 1, [t2 * 0.5 + 5, 90 - t1]);
+      if (v === 0) return withDiagram(done('snell', v, 'Light passes from ' + a + ' (n₁ = ' + n1 + ', n₂ = ' + n2 + ') at ' + t1 + '° to the normal. What is the angle of refraction?', 'θ₂ = sin⁻¹(n₁ sin θ₁ / n₂)', mn.concat(mapLine(t1 + '°', 'θ₁')), 'sin⁻¹(' + n1 + ' · sin ' + t1 + '° / ' + n2 + ')', t2, '°', 1, [t1 * n1 / n2 === t2 ? t1 : t1, Math.asin(Math.min(0.999, n2 * Math.sin(t1 * D2R) / n1 * 0.5 + 0.1)) * R2D, 90 - t2]), 'snell', { n1: n1, n2: n2, t1: t1 }, 't2', 1);
+      if (v === 1) { if (!into) continue; return withDiagram(done('snell', v, 'Light in air hits a material at ' + t1 + '° to the normal and refracts at ' + t2.toFixed(1) + '°. What is the refractive index of the material? (no unit)', 'n₂ = n₁ sin θ₁ / sin θ₂', [mapLine('1', 'n₁'), mapLine(t1 + '°', 'θ₁'), mapLine(t2.toFixed(1) + '°', 'θ₂')], '1 · sin ' + t1 + '° / sin ' + t2.toFixed(1) + '°', Math.sin(t1 * D2R) / Math.sin(t2.toFixed(1) * D2R), '', 3, [Math.sin(t2 * D2R) / Math.sin(t1 * D2R), t1 / t2 * 1.4]), 'snell', { n1: n1, t1: t1, t2: Number(t2.toFixed(1)) }, 'n2', 3); }
+      return withDiagram(done('snell', v, 'Light passes from ' + a + ' (n₁ = ' + n1 + ', n₂ = ' + n2 + ') and refracts at ' + t2.toFixed(1) + '° to the normal. What was the angle of incidence?', 'θ₁ = sin⁻¹(n₂ sin θ₂ / n₁)', mn.concat(mapLine(t2.toFixed(1) + '°', 'θ₂')), 'sin⁻¹(' + n2 + ' · sin ' + t2.toFixed(1) + '° / ' + n1 + ')', Math.asin(Math.min(1, n2 * Math.sin(t2.toFixed(1) * D2R) / n1)) * R2D, '°', 1, [t2 * 0.5 + 5, 90 - t1]), 'snell', { n1: n1, n2: n2, t2: Number(t2.toFixed(1)) }, 't1', 1);
     }
   }
 
   function genCriticalAngle() {
     const v = randInt(0, 1), m = pick(MEDIA); const n2 = 1; const tc = Math.asin(n2 / m.n) * R2D;
-    if (v === 0) return done('criticalAngle', v, 'What is the critical angle for light going from ' + m.name + ' (n₁ = ' + m.n + ') into air (n₂ = 1)?', 'θc = sin⁻¹(n₂ / n₁)', [mapLine(String(m.n), 'n₁'), mapLine('1', 'n₂')], 'sin⁻¹(1 / ' + m.n + ')', tc, '°', 1, [90 - tc, Math.acos(1 / m.n) * R2D + 3, tc / 2]);
-    return done('criticalAngle', v, 'Light going from a material into air has a critical angle of ' + tc.toFixed(1) + '°. What is the refractive index of the material? (no unit)', 'n₁ = n₂ / sin θc', [mapLine('1', 'n₂'), mapLine(tc.toFixed(1) + '°', 'θc')], '1 / sin ' + tc.toFixed(1) + '°', 1 / Math.sin(tc.toFixed(1) * D2R), '', 3, [Math.sin(tc * D2R), 1 / Math.cos(tc * D2R)]);
+    if (v === 0) return withDiagram(done('criticalAngle', v, 'What is the critical angle for light going from ' + m.name + ' (n₁ = ' + m.n + ') into air (n₂ = 1)?', 'θc = sin⁻¹(n₂ / n₁)', [mapLine(String(m.n), 'n₁'), mapLine('1', 'n₂')], 'sin⁻¹(1 / ' + m.n + ')', tc, '°', 1, [90 - tc, Math.acos(1 / m.n) * R2D + 3, tc / 2]), 'critical', { n1: m.n, n2: n2, t2: 90 }, 't1', 1);
+    return withDiagram(done('criticalAngle', v, 'Light going from a material into air has a critical angle of ' + tc.toFixed(1) + '°. What is the refractive index of the material? (no unit)', 'n₁ = n₂ / sin θc', [mapLine('1', 'n₂'), mapLine(tc.toFixed(1) + '°', 'θc')], '1 / sin ' + tc.toFixed(1) + '°', 1 / Math.sin(tc.toFixed(1) * D2R), '', 3, [Math.sin(tc * D2R), 1 / Math.cos(tc * D2R)]), 'critical', { n2: n2, t1: Number(tc.toFixed(1)), t2: 90 }, 'n1', 3);
   }
 
   function genMirrorFocal() {

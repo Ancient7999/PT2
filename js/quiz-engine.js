@@ -1680,7 +1680,7 @@ function saqSoftWrong(input, msg, o){
 function saqSolvedFx(q, o){
   const ec=document.getElementById('saqEcho'); if(ec) ec.remove();
   const fb=document.getElementById('feedback');
-  fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
+  fb.className='feedback good'; fb.textContent=correctFeedbackText(q); renderMathIn(fb);
   renderStepRecap(); // a typed last step shows the series recap at once, like a choice step
   document.getElementById('mainPanel').classList.add('correct-pulse');
   setTimeout(()=>document.getElementById('mainPanel').classList.remove('correct-pulse'),650);
@@ -2291,7 +2291,7 @@ function labelLock(l, text, slot){
   if(k>=n){
   a.correct=true; locked=true; onQuestionSolved(q);
   rewardCorrect(2);
-  fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
+  fb.className='feedback good'; fb.textContent=correctFeedbackText(q); renderMathIn(fb);
     const mb=document.getElementById('labelModeBtn'); if(mb) mb.remove();
     const bank=document.getElementById('labelBank'); if(bank) bank.remove();
     document.getElementById('mainPanel').classList.add('correct-pulse');
@@ -2576,7 +2576,7 @@ function checkOrder(){
   if(k>=n){
   a.correct=true; locked=true; onQuestionSolved(q);
   rewardCorrect(2);
-  fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
+  fb.className='feedback good'; fb.textContent=correctFeedbackText(q); renderMathIn(fb);
     const act=document.querySelector('.order-actions'); if(act) act.remove();
     document.getElementById('mainPanel').classList.add('correct-pulse');
     setTimeout(()=>document.getElementById('mainPanel').classList.remove('correct-pulse'),650);
@@ -2602,8 +2602,12 @@ function renderMcq(q, answered){
     if(answered){ btn.disabled=true; if(i===q.correct) btn.classList.add('correct'); }
     opts.appendChild(btn);
   });
-  if (window.renderMathInElement) {
-    renderMathInElement(opts, {
+  renderMathIn(opts);
+}
+/* KaTeX auto-render for \\( \\) and \\[ \\] inside an element (options, explanations). */
+function renderMathIn(el){
+  if (el && window.renderMathInElement) {
+    renderMathInElement(el, {
       delimiters: [
         {left: '\\(', right: '\\)', display: false},
         {left: '\\[', right: '\\]', display: true}
@@ -2680,7 +2684,7 @@ function toggleMulti(idx, fromKb){
     locked=true; a.correct=true; delete a.wrong; onQuestionSolved(q);
     document.querySelectorAll('#options .multi-opt').forEach(o=>{ const k=+o.dataset.idx; o.disabled=true; o.classList.remove('multi-wrong'); o.classList.add(q.correct.includes(k)?'correct':'multi-not'); });
     const fb=document.getElementById('feedback');
-    fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
+    fb.className='feedback good'; fb.textContent=correctFeedbackText(q); renderMathIn(fb);
     document.getElementById('mainPanel').classList.add('correct-pulse');
     setTimeout(()=>document.getElementById('mainPanel').classList.remove('correct-pulse'),650);
     pt1Confetti(); rewardCorrect(); afterAnswerProgress();
@@ -2713,7 +2717,7 @@ function submitMulti(){
   locked=true; a.correct=true; delete a.wrong; onQuestionSolved(q);
   document.querySelectorAll('#options .multi-opt').forEach(o=>{ const k=+o.dataset.idx; o.disabled=true; o.classList.remove('multi-wrong'); o.classList.add(q.correct.includes(k)?'correct':'multi-not'); });
   const act=document.querySelector('#options .multi-actions'); if(act) act.remove();
-  fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
+  fb.className='feedback good'; fb.textContent=correctFeedbackText(q); renderMathIn(fb);
   document.getElementById('mainPanel').classList.add('correct-pulse');
   setTimeout(()=>document.getElementById('mainPanel').classList.remove('correct-pulse'),650);
   pt1Confetti();
@@ -3301,7 +3305,7 @@ function onDrawUp(ev){
         cur.correct=true; cur.checked=true; answers[current]=cur; locked=true; onQuestionSolved(q);
         updateClearDrawingsButton(q,cur);
         const fb=document.getElementById('feedback');
-        fb.className='feedback good'; fb.textContent='✓ '+(q.explain||'');
+        fb.className='feedback good'; fb.textContent='✓ '+(q.explain||''); renderMathIn(fb);
         document.getElementById('mainPanel').classList.add('correct-pulse');
         setTimeout(()=>document.getElementById('mainPanel').classList.remove('correct-pulse'),650);
         pt1Confetti(); rewardCorrect(); afterAnswerProgress();
@@ -3642,7 +3646,7 @@ function renderQuestion(){
   else if(isMulti(q)) renderMulti(q, answers[current]);
   else renderMcq(q, answered);
   const fb=document.getElementById('feedback');
-  if(answered){ fb.className='feedback good'; fb.textContent=correctFeedbackText(q); }
+  if(answered){ fb.className='feedback good'; fb.textContent=correctFeedbackText(q); renderMathIn(fb); }
   else { fb.className='feedback idle'; fb.textContent=''; }
   renderStepRecap();
   document.getElementById('backBtn').disabled=(prevTarget()<0);
@@ -3686,7 +3690,7 @@ function selectAnswer(idx){
   }
   locked=true; answers[current]=idx; onQuestionSolved(q);
   document.querySelectorAll('.opt').forEach((o,i)=>{ o.disabled=true; if(i===idx) o.classList.add('correct'); });
-  fb.className='feedback good'; fb.textContent=correctFeedbackText(q);
+  fb.className='feedback good'; fb.textContent=correctFeedbackText(q); renderMathIn(fb);
   renderStepRecap();
   document.getElementById('mainPanel').classList.add('correct-pulse');
   setTimeout(()=>document.getElementById('mainPanel').classList.remove('correct-pulse'),650);
