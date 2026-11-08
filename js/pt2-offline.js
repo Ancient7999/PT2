@@ -189,20 +189,18 @@
   function get(k) { try { return localStorage.getItem(k) === '1'; } catch (e) { return false; } }
   function set(k, on) { try { localStorage.setItem(k, on ? '1' : '0'); } catch (e) {} }
   var root = document.documentElement;
-  /* Drop leftover emoji/timed mood-lock flags. Accent lock is only Settings → Lock accent. */
-  try {
-    localStorage.removeItem('pt2_mood_lock_until');
-    localStorage.removeItem('pt2_mood_lock');
-    document.documentElement.classList.remove('pt2-mood-locked');
-  } catch (e) {}
+  /* Drop the leftover timed-lock flag. Settings → Accent Color has Lock accent and (once the 🔒 emoji is
+     unlocked) Lock emoji, saved as pt2_mood_lock: it keeps the chosen emoji through automatic changes. */
+  try { localStorage.removeItem('pt2_mood_lock_until'); } catch (e) {}
   PREFS.forEach(function (p) { root.classList.toggle(p.cls, get(p.key)); });
   try { root.classList.toggle('pt2-accent-locked', get('pt2_accent_lock')); } catch (e) {}
   global.PT2Prefs = { muted: function () { return get('pt2_pomo_muted'); }, disabled: function () { return get('pt2_pomo_disabled'); },
     // no automatic mood colours while the timer is off or the Timer box is hidden
     moodFrozen: function () { return get('pt2_pomo_disabled') || get('pt2_hide_dock'); },
-    moodLocked: function () { return false; },
+    moodLocked: function () { return get('pt2_mood_lock'); },
     accentLocked: function () { return get('pt2_accent_lock'); } };
   try { var gotU = JSON.parse(localStorage.getItem('pt2_emoji_unlocked_v1') || '{}') || {};
+    root.classList.toggle('pt2-lock-open', !!gotU['\uD83D\uDD12']); // Lock emoji comes with the 🔒 emoji (set early: no flash)
     root.classList.toggle('pt2-la-open', !!gotU['look:a']); root.classList.toggle('pt2-lb-open', !!gotU['look:b']);
     var lk = JSON.parse(localStorage.getItem('pt2_look_v1') || '{}') || {};
     if (gotU['look:a'] && (lk.fx || lk.e) && !root.classList.contains('pt2-basic')) root.classList.add('pt2-fx');
@@ -235,14 +233,18 @@
   function syncAccentLock() {
     var on = get('pt2_accent_lock');
     root.classList.toggle('pt2-accent-locked', on);
-    root.classList.remove('pt2-mood-locked');
     var el = document.getElementById('pt2AccentLock');
     if (el) el.checked = on;
+    var m = get('pt2_mood_lock');
+    root.classList.toggle('pt2-mood-locked', m);
+    var me = document.getElementById('pt2EmojiLock');
+    if (me) me.checked = m;
   }
   document.addEventListener('change', function (e) {
-    var t = e.target; if (!t || t.id !== 'pt2AccentLock') return;
+    var t = e.target; if (!t) return;
+    if (t.id === 'pt2EmojiLock') { set('pt2_mood_lock', !!t.checked); syncAccentLock(); return; }
+    if (t.id !== 'pt2AccentLock') return;
     set('pt2_accent_lock', !!t.checked);
-    try { localStorage.removeItem('pt2_mood_lock'); localStorage.removeItem('pt2_mood_lock_until'); } catch (err) {}
     syncAccentLock();
     try { document.dispatchEvent(new CustomEvent('pt2-accent-lock', { detail: !!t.checked })); } catch (err) {}
     if (t.checked && global.PT2Color && typeof PT2Color.onAccent === 'function') {
@@ -251,6 +253,11 @@
   });
   document.addEventListener('DOMContentLoaded', syncAccentLock);
   syncAccentLock();
+  /* a newly unlocked theme switches both locks off so it can be applied (js/pt2-unlocks.js celebrateMedphys) */
+  global.PT2Prefs.clearLocks = function () {
+    set('pt2_accent_lock', false); set('pt2_mood_lock', false); syncAccentLock();
+    try { document.dispatchEvent(new CustomEvent('pt2-accent-lock', { detail: false })); } catch (err) {}
+  };
   /* quiz order switches in Settings mirror the Quiz settings panel above the banks */
   var MIRROR = {};
   function sync() {

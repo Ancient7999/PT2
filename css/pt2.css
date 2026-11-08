@@ -42,7 +42,7 @@ html.pt2-no-grid:not([data-skin]) #el-arquitecto-bg-layer{display:none!important
 .sets-wrap h1{background:linear-gradient(120deg,var(--cyan-bright) 0%,var(--cyan) 40%,color-mix(in srgb,var(--cyan) 65%,#000) 75%,var(--cyan-bright) 100%)!important;-webkit-background-clip:text!important;background-clip:text!important}
 
 /* Lock emoji stays hidden until it is unlocked (html.pt2-lock-open) */
-html:not(.pt2-lock-open) #pt2MoodLock{display:none!important}
+html:not(.pt2-lock-open) #pt2MoodLock,html:not(.pt2-lock-open) .pt2-emoji-lock-opt{display:none!important}
 /* t325u: Lock emoji is a checkbox-style control, left of the Change cursor button */
 .mood-tray-tools .pt2-tools-row{display:flex;align-items:center;justify-content:center;gap:.6rem}
 .mood-lock-btn{display:inline-flex;align-items:center;gap:7px;padding:5px 10px 5px 7px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text-dim,inherit);font:inherit;font-family:var(--body,inherit);font-size:.78rem;line-height:1.2;cursor:pointer}
@@ -192,7 +192,7 @@ html.pt2-grid-hover .settings-modal{background-color:rgba(8,10,16,.4)!important}
 #pt2-unlock-popup{position:fixed;top:80px;right:20px;z-index:2147483000;max-width:320px;padding:14px 18px;border-radius:12px;
   background:linear-gradient(135deg,color-mix(in srgb,var(--accent-0) 92%,transparent),color-mix(in srgb,var(--accent-1,var(--accent-0)) 88%,transparent));
   border:2px solid var(--accent-0);box-shadow:0 8px 32px rgba(0,0,0,.6),0 0 24px rgba(var(--accent-0-rgb),.45);color:#14110a;
-  animation:pt2UnlockIn .4s ease-out,pt2UnlockOut .5s ease-in 3.9s forwards}
+  animation:pt2UnlockIn .4s ease-out,pt2UnlockOut .5s ease-in 12.9s forwards}
 #pt2-unlock-popup .achievement-popup-content{display:flex;align-items:center;gap:12px}
 #pt2-unlock-popup .achievement-popup-icon{font-size:2em;text-shadow:0 2px 8px rgba(0,0,0,.35)}
 #pt2-unlock-popup .achievement-popup-title{font-size:.7em;text-transform:uppercase;letter-spacing:1px;opacity:.85;margin-bottom:2px;font-family:var(--mono)}

@@ -30,12 +30,12 @@ function fakeDom() {
 }
 function engine(bank, { fetchText = '' } = {}) {
   const dom = fakeDom(), math = [];
-  const ctx = { window: {}, BANK: bank, questions: [], answers: [], current: 0, quizActive: true, document: dom.document,
+  const ctx = { window: {}, isTypedStep: () => true, isMatching: q => !!(q && q.leftItems), clearKbAdvance() {}, BANK: bank, questions: [], answers: [], current: 0, quizActive: true, document: dom.document,
     renderMathIn: el => math.push(el), escapeHtml: s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'),
     isAnswered: (a, q) => !!a && (a === true || a.correct === true || a === q.correct),
     fetch: () => Promise.resolve({ ok: true, text: () => Promise.resolve(fetchText) }) };
   vm.createContext(ctx);
-  vm.runInContext(src.match(/\nconst LAW_DIAGRAMS=.*\n/)[0] + ['isStep','lawPanelsFor','lawPanelFor','lawPanelReady','lawPanelHTML','lawDiagramFrom','lawDiagram','renderLawPanel'].map(grab).join('\n'), ctx);
+  vm.runInContext(src.match(/\nconst LAW_DIAGRAMS=.*\n/)[0] + src.match(/\nconst HAS_DIAGRAM=.*\n/)[0] + 'const LESSON_SRC={};' + ['isStep','lawPanelsFor','lawPanelFor','lessonsFor','lawPanelReady','lessonExcerpt','lessonSource','lessonMarkdown','lessonHTMLFrom','lawPanelHTML','lawDiagramFrom','lawDiagram','renderLawPanel'].map(grab).join('\n'), ctx);
   return { ctx, dom, math };
 }
 
@@ -75,7 +75,7 @@ test('stepped question: only after the last step', () => {
 });
 test('navigation removes it; going Back to a solved question restores it; unmapped questions show none', () => {
   const { ctx, dom } = engine(fileBank);
-  const a = fileBank.bank.A.find(x => x.id === 'PHY90015'), b = fileBank.bank.A.find(x => x.id === 'PHY90030');
+  const a = fileBank.bank.A.find(x => x.id === 'PHY90015'), b = fileBank.bank.A.find(x => x.id === 'PHY40078'); // a chapter question: no card, no lesson
   ctx.questions = [a, b]; ctx.answers = [{ correct: true }, { correct: true }];
   ctx.renderLawPanel(); assert.ok(dom.byId.lawPanel);
   ctx.current = 1; ctx.renderLawPanel(); assert.equal(dom.byId.lawPanel, undefined);

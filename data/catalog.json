@@ -173,7 +173,7 @@
             "key": "medphys/pt2",
             "title": "Formulas \u00b7 Periodic Test 2",
             "scope": "Bernoulli to Lasers",
-            "draft": true
+            "draft": false
           },
           "comingSoon": false,
           "week": "Week 12",
@@ -204,6 +204,12 @@
                 "src": "content/medphys/pt2/chapter-6.md",
                 "title": "Chapter 6 \u00b7 Optical instruments",
                 "meta": "Lens combinations \u00b7 magnifier \u00b7 microscope \u00b7 eye \u00b7 myopia & hyperopia \u00b7 lasers"
+              },
+              {
+                "id": "mixed",
+                "src": "content/medphys/pt2/mixed.md",
+                "title": "Mixed \u00b7 Definitions, units & uses",
+                "meta": "Summary of Chapters 3\u20136 \u00b7 definitions \u00b7 SI & CGS units \u00b7 medical uses"
               }
             ]
           },

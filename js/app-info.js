@@ -6,6 +6,14 @@
 var APP_INFO = {
   releases: [
    {
+   version: '0.47',
+   date: '08/11/2026',
+   changes: [
+     'Enhanced user experience.',
+     'Finalized Medical Physics section.',
+      ]
+    },
+   {
    version: '0.461',
    date: '08/11/2026',
    changes: [

@@ -98,3 +98,19 @@ test('PHY50002 reflection: law, angles from the normal, surface → normal conve
     assert.deepEqual(rowsFor({ formulaWorked: w }, 3).map(r => r.label), ['Formula', 'Rearrange', 'Given', 'Substitute', 'Result']);
   }
 });
+test('t113 thin lens: reciprocal row in cm⁻¹, result is the distance; 1/d_i and d_o render as subscripts', () => {
+  const g = gen();
+  for (let k = 0; k < 200; k++) {
+    const q = g.generateQuestion(['thinLens']); const w = q.formulaWorked;
+    const L = w.result.split(' = ')[0];
+    assert.match(L, /^(d_i|d_o|f)$/, 'result labels the distance, never 1/x: ' + w.result);
+    assert.match(w.substitution, /^1\/(d_i|d_o|f) = .* cm⁻¹, so (d_i|d_o|f) = 1 \/ \(/);
+    assert.doesNotMatch(w.result, /^1\//);
+  }
+  const src = require('fs').readFileSync(require('path').join(__dirname, '..', 'js', 'quiz-engine.js'), 'utf8');
+  const ctx = {}; require('vm').runInNewContext(src.match(/\nconst MATH_SEG=.*\n/)[0] + src.match(/\nconst SUB_TOKEN=.*\n/)[0] + src.match(/\nfunction mathSubscripts[\s\S]*?\n}\n/)[0] + ';this.ms=mathSubscripts', ctx);
+  assert.equal(ctx.ms('1/d_i = 1/f − 1/d_o'), '1/\\(d_i\\) = 1/f − 1/\\(d_o\\)');
+  assert.equal(ctx.ms('n_core > n_cladding'), '\\(n_{\\mathrm{core}}\\) > \\(n_{\\mathrm{cladding}}\\)');
+  assert.equal(ctx.ms('pt2_hide_quotes'), 'pt2_hide_quotes');
+  assert.equal(ctx.ms('\\(Q_V\\)'), '\\(Q_V\\)');
+});

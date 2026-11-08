@@ -297,6 +297,8 @@ function buildAllQuestions(data){
       let id=qid(q,i);
       if(seen[id]){ seen[id]++; dups.push(id); id=id+'~'+seen[id]; } else seen[id]=1;
       copy.__id=id;
+      // a label box drawn past the picture's edge (e.g. x + w > 100) would widen the page: keep every box inside
+      if(Array.isArray(copy.labels)) copy.labels=copy.labels.map(labelInBounds);
       out.push(copy);
     });
   });
@@ -490,7 +492,10 @@ function expandDeck(deck){
   deck.forEach(q=>{
     if(!isStepped(q)){ out.push(q); return; }
     const raw=q.steps||[];
-    const steps=raw.filter(st=>st&&st.showFirst).concat(raw.filter(st=>!(st&&st.showFirst)));
+    const ordered=raw.filter(st=>st&&st.showFirst).concat(raw.filter(st=>!(st&&st.showFirst)));
+    // a typed step marked "inline" right after a label step is asked under that diagram, on the same page
+    const inlineOf=new Map();
+    const steps=ordered.filter((st,k)=>{ const prev=ordered[k-1]; if(st && st.inline && isTypedStepDef(st) && prev && prev.type==='label' && !inlineOf.has(prev)){ inlineOf.set(prev, st); return false; } return true; });
     steps.forEach((st,k)=>{
       const e={
         __step:true, __id:q.__id, __boneId:q.__id, __stepIdx:k, __stepCount:steps.length,
@@ -509,6 +514,8 @@ if(st.type==='label'){
   if(q.imageSize) e.imageSize=q.imageSize;
   e.__chips=shuffle((e.labels||[]).map(l=>l.id));
   delete e.options; delete e.correct; delete e.__perm;
+  const nm=inlineOf.get(st);
+  if(nm) e.__name={id:String(nm.id!=null?nm.id:'name'), q:q.q, prompt:nm.prompt||'', ask:nm.ask||'', answer:nm.answer, accept:Array.isArray(nm.accept)?nm.accept.slice():[], caseSensitive:!!nm.caseSensitive};
   out.push(e);
   return;
 }
@@ -750,13 +757,13 @@ function serializeAnswers(){
     if(answers[i]==null && q.__pending!=null){ out[entryKey(q)]=q.__pending; return; }
     const a=answers[i];
     if(!isAnswered(a,q) && !(isMatching(q) && a && ((a.wires&&a.wires.length)||Object.keys(a.pairs||{}).length))
-       && !(isLabel(q) && a && a.slots && Object.keys(a.slots).length)
+       && !(isLabel(q) && a && ((a.slots && Object.keys(a.slots).length) || a.name))
        && !(isOrder(q) && a && Array.isArray(a.order))
        && !(isSaqMulti(q) && a && Array.isArray(a.parts) && a.parts.some(x=>x!=null))) return;
     if(isMatching(q)) out[entryKey(q)]={pairs:Object.assign({},a.pairs||{}), correct:!!a.correct, wires:(a.wires||[]).map(w=>Object.assign({},w,{points:(w.points||[]).map(p=>({x:+p.x.toFixed(1),y:+p.y.toFixed(1)}))}))};
     else if(isSaqMulti(q)) out[entryKey(q)]={parts:a.parts.slice(), correct:!!a.correct}; // solved blanks too
     else if(isSaq(q)) out[entryKey(q)]=Object.assign({text:String(a.text||''), correct:true}, a.fill?{fill:a.fill}:{});
-    else if(isLabel(q)) out[entryKey(q)]={slots:Object.assign({},a.slots), correct:!!a.correct}; // partial progress too, per label id
+    else if(isLabel(q)) out[entryKey(q)]=Object.assign({slots:Object.assign({},a.slots||{}), correct:!!a.correct}, a.name?{name:Object.assign({}, a.name)}:{}); // partial progress too, per label id (and the name under the diagram)
     else if(isOrder(q)) out[entryKey(q)]={order:a.order.slice(), locked:Object.keys(a.locked||{}).filter(k=>a.locked[k]), correct:!!a.correct};
     else if(isMulti(q)) out[entryKey(q)]={sel:(a.sel||[]).map(k=>(q.__perm&&q.__perm[k]!=null)?q.__perm[k]:k), correct:true}; // original option indexes
     else out[entryKey(q)]=(q.__perm&&q.__perm[a]!=null)?q.__perm[a]:a;
@@ -880,10 +887,16 @@ function restoreRun(run){
     }
     if(isLabel(q)){
       // keep only slots that still exist and still hold a right answer
-      if(a && typeof a==='object' && a.slots && typeof a.slots==='object'){
-        const slots={}; (q.labels||[]).forEach(l=>{ const t=a.slots[l.id]; if(t!=null && labelMatches(l, t)) slots[l.id]=String(t); });
-        if(Object.keys(slots).length) answers[i]={slots, correct:Object.keys(slots).length===(q.labels||[]).length};
+      const slots={};
+      if(a && typeof a==='object' && a.slots && typeof a.slots==='object')
+        (q.labels||[]).forEach(l=>{ const t=a.slots[l.id]; if(t!=null && labelMatches(l, t)) slots[l.id]=String(t); });
+      // the name under the diagram (or, from a run saved when it was its own step, that step's answer)
+      let name=null;
+      if(q.__name){
+        const old=ans[q.__id+'#'+q.__name.id], src=(a && a.name) || (old && typeof old==='object' && old.correct ? old : null);
+        if(src && saqMatches(q.__name, src.text)) name=Object.assign({text:String(src.text)}, src.fill&&src.fill.text?{fill:{text:String(src.fill.text), at:src.fill.at==='start'?'start':'end'}}:{});
       }
+      if(Object.keys(slots).length || name){ answers[i]={slots, correct:false}; if(name) answers[i].name=name; answers[i].correct=labelAllDone(q, answers[i]); }
       return;
     }
     // Choice / step answers are saved as one original option index. Anything else
@@ -1886,7 +1899,110 @@ function labelState(i){
   if(a && typeof a==='object' && a.slots) return a;
   const st={slots:{}, correct:false}; answers[i]=st; return st;
 }
+/* label box in % of the picture, moved (not shrunk) so it lies wholly inside 0–100 on both axes */
+function labelInBounds(l){
+  if(!l || typeof l!=='object' || !isFinite(l.x) || !isFinite(l.y) || !isFinite(l.w) || !isFinite(l.h)) return l;
+  const w=Math.min(+l.w, 100), h=Math.min(+l.h, 100);
+  const x=Math.max(0, Math.min(100-w, +l.x)), y=Math.max(0, Math.min(100-h, +l.y));
+  if(x===l.x && y===l.y && w===l.w && h===l.h) return l;
+  return Object.assign({}, l, {x:+x.toFixed(2), y:+y.toFixed(2), w, h});
+}
+/* —— answer mask on a quiz diagram ——
+   Until the page is solved, printed words in the drawing that would give a field (or the answer under the diagram)
+   away are covered: the bank marks whole captions with data-quiz-hide, and every word or phrase that is a target
+   answer (or an accepted form of it) is blanked inside the text nodes only, never in attributes or ids. Captions a
+   field sits on (data-under-label) stay hidden on the quiz figure; the full drawing stays in the study notes. */
+function labelMaskTerms(q){
+  const list=[];
+  (q.labels||[]).forEach(l=>labelCands(l).forEach(t=>list.push(t)));
+  if(q.__name) saqAccepts(q.__name).forEach(t=>list.push(t));
+  const seen=new Set();
+  return list.map(t=>String(t).replace(/\s*\([^)]*\)\s*$/,'').replace(/[\u2018\u2019]/g,"'").trim())
+    .filter(t=>t.length>=3 && !/^[\d\s.,°−-]+$/.test(t) && !seen.has(t.toLowerCase()) && seen.add(t.toLowerCase()))
+    .sort((a,b)=>b.length-a.length);
+}
+function labelMaskRegex(terms){
+  if(!terms.length) return null;
+  const esc=t=>t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/'/g,"['\u2019]").replace(/\s+/g,'\\s+');
+  return new RegExp('(^|[^\\p{L}\\p{N}])('+terms.map(esc).join('|')+')(?=$|[^\\p{L}\\p{N}])','giu');
+}
+/* captions marked data-quiz-hide="later" state an answer to a LATER step of the same diagram (its select-all
+   question), so they stay hidden until every later step of that series is answered; study notes show them always */
+function labelLaterPending(q){
+  const i=questions.indexOf(q); if(i<0) return false;
+  for(let j=i+1;j<questions.length && questions[j].__step && questions[j].__id===q.__id;j++) if(!isAnswered(answers[j],questions[j])) return true;
+  return false;
+}
+function labelMaskApply(fig, q, on){
+  if(!fig) return;
+  fig.classList.toggle('quiz-masked', !!on);
+  fig.classList.toggle('quiz-masked-later', !!on || labelLaterPending(q));
+  const svg=fig.querySelector('svg.label-img'); if(!svg) return;
+  const nodes=[]; const walk=n=>{ n.childNodes.forEach(c=>{ if(c.nodeType===3) nodes.push(c); else if(c.nodeType===1) walk(c); }); };
+  svg.querySelectorAll('text').forEach(walk);
+  const re=on?labelMaskRegex(labelMaskTerms(q)):null;
+  nodes.forEach(n=>{
+    if(n.__orig==null) n.__orig=n.nodeValue;
+    n.nodeValue=re ? n.__orig.replace(re,(m,pre,w)=>pre+'▪▪▪') : n.__orig;
+  });
+}
 function labelDoneCount(q, a){ return (q.labels||[]).filter(l=>a && a.slots && a.slots[l.id]!=null).length; }
+/* a label step may carry a typed question under its diagram (q.__name, from an "inline" step): the page is solved
+   only when every label is placed AND that answer is right, in either order */
+function labelAllDone(q, a){ return !!a && labelDoneCount(q,a)>=(q.labels||[]).length && (!q.__name || !!(a.name && a.name.text!=null)); }
+function labelFinish(q, a){
+  a.correct=true; locked=true; onQuestionSolved(q);
+  labelMaskApply(document.querySelector('#options .label-figure'), q, false);
+  rewardCorrect(2);
+  const fb=document.getElementById('feedback');
+  fb.className='feedback good'; fb.textContent=correctFeedbackText(q); renderMathIn(fb);
+  const mb=document.getElementById('labelModeBtn'); if(mb) mb.remove();
+  const bank=document.getElementById('labelBank'); if(bank) bank.remove();
+  document.querySelectorAll('#options .label-name .saq-echo, #options .label-name .saq-hint-toggle').forEach(x=>x.remove());
+  document.getElementById('mainPanel').classList.add('correct-pulse');
+  setTimeout(()=>document.getElementById('mainPanel').classList.remove('correct-pulse'),650);
+  pt1Confetti();
+  if(q.__name) renderStepRecap();
+  afterAnswerProgress();
+}
+function labelNameHTML(q, a){
+  const n=q.__name; if(!n) return '';
+  return '<div class="label-name saq-wrap" id="labelName"><div class="label-name-prompt" id="labelNamePrompt">'+escapeHtml(n.prompt)+'</div></div>';
+}
+function mountLabelName(wrap, q, a){
+  const host=wrap.querySelector('#labelName'); if(!host) return;
+  const n=q.__name, done=!!(a && a.name);
+  const input=saqInputEl('saqInput','saqAnswer', n.prompt);
+  input.setAttribute('aria-describedby','labelNamePrompt');
+  host.appendChild(input);
+  if(done){ input.value=a.name.text; input.disabled=true; input.classList.add('correct'); saqShowCompleted(input, a.name); return; }
+  const qi=current;
+  saqAutoGrade(input, o=>{ if(current===qi) submitLabelName(o); });
+  saqAttachEcho(host, input, ()=>({answer:null, accept:saqAccepts(n), caseSensitive:n.caseSensitive}), 'saqEcho');
+  host.appendChild(saqHintToggle());
+}
+function submitLabelName(o){
+  o=o||{};
+  if(!quizActive || locked) return;
+  const q=questions[current]; if(!isLabel(q) || !q.__name) return;
+  const input=document.getElementById('saqInput'); if(!input || input.disabled) return;
+  const typed=input.value;
+  if(!saqNorm(typed)){ if(!o.blur) input.focus(); return; }
+  const r=saqResult(q.__name, typed);
+  if(!r){ saqSoftWrong(input, saqHint(q.__name, typed), o); return; }
+  const a=labelState(current);
+  a.name=Object.assign({text:r.text}, r.fill?{fill:r.fill}:{});
+  const hadFocus=document.activeElement===input;
+  input.disabled=true; input.classList.add('correct'); input.value=r.text;
+  if(hadFocus) input.blur();
+  if(r.fill) saqShowCompleted(input, a.name);
+  document.querySelectorAll('#options .label-name .saq-echo, #options .label-name .saq-hint-toggle').forEach(x=>x.remove());
+  if(labelAllDone(q, a)){ labelFinish(q, a); return; }
+  const fb=document.getElementById('feedback');
+  const left=(q.labels||[]).length-labelDoneCount(q,a);
+  fb.className='feedback good'; fb.textContent='✓ answer right · now place the '+left+' remaining label'+(left===1?'':'s');
+  renderNav(); updateCounters(); saveRunState();
+}
 /* Typing echo: compare with the answer (or accepted form) that shares the longest exact
    prefix; every character that differs there (wrong letter or wrong case) is marked. */
 function labelEchoHTML(l, typed){
@@ -2067,7 +2183,7 @@ function labelLeadersSVG(q){
   const ls=(q.labels||[]).filter(l=>labelAnchors(l).length);
   if(!ls.length) return '';
   return '<svg class="label-leaders" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">'+ls.map(l=>
-    '<g class="label-leader" data-id="'+escapeHtml(l.id)+'">'+labelAnchors(l).map(a=>{
+    '<g class="label-leader'+(l.leader==='show'?' shown':'')+'" data-id="'+escapeHtml(l.id)+'">'+labelAnchors(l).map(a=>{
       const st=(a.from && isFinite(a.from.x) && isFinite(a.from.y)) ? [a.from.x,a.from.y] : labelLeaderStart({x:l.x,y:l.y,w:l.w,h:l.h,anchor:a});
       const pts=[st].concat((Array.isArray(a.via)?a.via:[]).filter(v=>v&&isFinite(v.x)&&isFinite(v.y)).map(v=>[v.x,v.y])).concat([[a.x,a.y]]);
       return '<polyline points="'+pts.map(p=>p[0]+','+p[1]).join(' ')+'"/><line class="label-leader-dot" x1="'+a.x+'" y1="'+a.y+'" x2="'+a.x+'" y2="'+a.y+'"/>';
@@ -2116,8 +2232,9 @@ function renderLabel(q, ans){
   let h='<div class="label-tools"><span class="label-progress" id="labelProgress">'+k+' / '+n+' labels</span>';
   if(!a.correct && !isStep(q)) h+='<button type="button" class="nav-btn label-mode" id="labelModeBtn" aria-pressed="'+(typing?'true':'false')+'">'+(typing?'Word bank':'Type')+'</button>';
   h+='</div><div class="label-stage">'+labelFigureHTML(q,a,false)+'</div>';
+  h+=labelNameHTML(q,a);
   if(q.credit) h+='<div class="label-credit">Image: '+escapeHtml(q.credit)+(q.creditUrl?' <a href="'+escapeHtml(q.creditUrl)+'" target="_blank" rel="noopener">source</a>':'')+'</div>';
-  if(!typing && !a.correct){
+  if(!typing && !a.correct && k<n){
     // one chip per label that is still open (two "Pulmonary Veins" slots → two chips)
     h+='<div class="label-bank" id="labelBank" aria-label="Word bank">';
     labelChipOrder(q).forEach(id=>{ const l=q.labels.find(x=>x.id===id); if(!l || a.slots[l.id]!=null) return; h+='<button type="button" class="label-chip" data-for="'+escapeHtml(l.id)+'" data-text="'+escapeHtml(l.answer)+'">'+escapeHtml(l.answer)+'</button>'; });
@@ -2125,6 +2242,8 @@ function renderLabel(q, ans){
   }
   wrap.innerHTML=h;
   opts.appendChild(wrap);
+  mountLabelName(wrap, q, a);
+  labelMaskApply(wrap.querySelector('.label-figure'), q, !a.correct);
   labelFitWire(wrap.querySelector('.label-figure'), q.labels);
   // picture's aspect ratio on the stage, so PCs can fit the whole figure in the screen height (css: .label-stage[style*="--ar"])
 { const im=wrap.querySelector('.label-img'), st=wrap.querySelector('.label-stage');
@@ -2316,16 +2435,13 @@ function labelLock(l, text, slot){
   const n=q.labels.length, k=labelDoneCount(q,a);
   const pr=document.getElementById('labelProgress'); if(pr) pr.textContent=k+' / '+n+' labels';
   const fb=document.getElementById('feedback');
+  if(k>=n && labelAllDone(q, a)){ labelFinish(q, a); return; }
   if(k>=n){
-  a.correct=true; locked=true; onQuestionSolved(q);
-  rewardCorrect(2);
-  fb.className='feedback good'; fb.textContent=correctFeedbackText(q); renderMathIn(fb);
-    const mb=document.getElementById('labelModeBtn'); if(mb) mb.remove();
+    // every label placed, the question under the diagram still open: the word bank goes, the answer box takes the focus
     const bank=document.getElementById('labelBank'); if(bank) bank.remove();
-    document.getElementById('mainPanel').classList.add('correct-pulse');
-    setTimeout(()=>document.getElementById('mainPanel').classList.remove('correct-pulse'),650);
-    pt1Confetti();
-    afterAnswerProgress();
+    fb.className='feedback good'; fb.textContent='✓ all '+n+' labels · now answer the question under the diagram';
+    renderNav(); updateCounters(); saveRunState();
+    const ni=document.querySelector('#labelName input.saq-input'); if(ni) try{ ni.focus({preventScroll:true}); }catch(e){}
     return;
   }
   fb.className='feedback good'; fb.textContent='✓ '+k+' of '+n+' labels';
@@ -2636,9 +2752,9 @@ function renderMcq(q, answered){
 /* plain subscripts typed as T_C, v_S, d_o… become inline LaTeX for KaTeX; text already inside
    \( \), \[ \] or $ $ is left alone (display only: stored answers and grading never go through this) */
 const MATH_SEG=/(\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]|\$\$[\s\S]*?\$\$|\$[^$\n]+\$)/;
-const SUB_TOKEN=/(^|[^\\\w\/.\-])([A-Za-z]_(?:\{[^}]*\}|[A-Za-z0-9]{1,3}))(?![\w\/.\-])/g;
+const SUB_TOKEN=/(^|[^\\\w.\-])([A-Za-z]_(?:\{[^}]*\}|[A-Za-z0-9]{1,9}))(?![\w\-]|\.\w)/g; // also after a fraction bar (1/d_i) and before a full stop
 function mathSubscripts(s){
-  return String(s==null?'':s).split(MATH_SEG).map((part,i)=>i%2 ? part : part.replace(SUB_TOKEN,(m,pre,tok)=>pre+'\\('+tok+'\\)')).join('');
+  return String(s==null?'':s).split(MATH_SEG).map((part,i)=>i%2 ? part : part.replace(SUB_TOKEN,(m,pre,tok)=>pre+'\\('+tok.replace(/_([A-Za-z]{3,})$/,'_{\\mathrm{$1}}')+'\\)')).join('');
 }
 function renderMathIn(el){
   if (el && window.renderMathInElement) {
@@ -3613,8 +3729,8 @@ function stepRecapHTML(i, inReview){
   const a=boneStart(i), b=boneEnd(i);
   let h='<div class="step-recap'+(inReview?' in-review':'')+'"'+(inReview?'':' id="stepRecap"')+' role="group" aria-label="Series recap"><div class="step-recap-title">Series recap</div><ol class="step-recap-list">';
   for(let j=a;j<=b;j++){
-    const s=questions[j], ans=isTypedStep(s)?saqAccepts(s)[0]:(s.options||[])[s.correct];
-    h+='<li class="step-recap-item'+(j===i?' is-current':'')+'"><div class="step-recap-label"><span class="step-recap-num">Step '+(s.__stepIdx+1)+'</span><span class="step-recap-prompt">'+escapeHtml(s.prompt||'')+'</span></div>'
+    const s=questions[j], ans=s.__name?saqAccepts(s.__name)[0]:(isTypedStep(s)?saqAccepts(s)[0]:(s.options||[])[s.correct]);
+    h+='<li class="step-recap-item'+(j===i?' is-current':'')+'"><div class="step-recap-label"><span class="step-recap-num">Step '+(s.__stepIdx+1)+'</span><span class="step-recap-prompt">'+escapeHtml(s.__name?s.__name.prompt:(s.prompt||''))+'</span></div>'
       +'<div class="step-recap-answer"><span class="step-recap-check" aria-hidden="true">✓</span><span class="step-recap-text">'+escapeHtml(ans==null?'':String(ans))+'</span></div></li>';
     if(j<b) h+='<li class="step-recap-arrow" aria-hidden="true"><svg viewBox="0 0 16 22" width="16" height="22"><path d="M8 1v17M3 13l5 6 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></li>';
   }
@@ -3640,10 +3756,65 @@ function lawPanelsFor(q){
   return keys.filter(k=>reg[k]).map(k=>({key:k, p:reg[k]}));
 }
 function lawPanelFor(q){ return lawPanelsFor(q)[0]||null; }
+/* Lessons (bank "lessons", question "lessons": [keys]): the full course lesson on each concept the
+   question answered, shown under the law card once the whole question is solved correctly. A lesson
+   has its own key points ("points", markdown) and the matching study-notes sections ("notes":
+   [{src, heading}]), cut from the notes by their exact heading. */
+function lessonsFor(q){
+  const raw=q && ((q.__bone && q.__bone.lessons) || q.lessons);
+  const keys=Array.isArray(raw)?raw:(raw?[raw]:[]);
+  const reg=(BANK && BANK.lessons)||{};
+  return keys.filter(k=>reg[k]).map(k=>({key:k, l:reg[k]}));
+}
 function lawPanelReady(i){
-  const q=questions[i]; if(!q || !lawPanelsFor(q).length) return false;
+  const q=questions[i]; if(!q || (!lawPanelsFor(q).length && !lessonsFor(q).length)) return false;
   if(isStep(q) && q.__stepIdx!==q.__stepCount-1) return false;
+  // a choice question counts only when the chosen option is the correct one
+  if(!isTypedStep(q) && !isMatching(q) && typeof q.correct==='number' && typeof answers[i]==='number' && answers[i]!==q.correct) return false;
   return isAnswered(answers[i], q);
+}
+/* one notes section: from its heading line to the next heading of the same or a higher level
+   (code fences are skipped, so a "#" inside a code block never ends it) */
+function lessonExcerpt(md, heading){
+  const lines=String(md||'').split('\n'), lv=(heading.match(/^#+/)||[''])[0].length;
+  const at=lines.findIndex(x=>x.trim()===heading); if(at<0 || !lv) return '';
+  let fence=false, end=lines.length;
+  for(let k=at+1;k<lines.length;k++){
+    if(/^\s*```/.test(lines[k])) fence=!fence;
+    if(fence) continue;
+    const m=lines[k].match(/^(#+)\s/); if(m && m[1].length<=lv){ end=k; break; }
+  }
+  return lines.slice(at+1, end).join('\n').replace(/\n---\s*$/,'').trim();
+}
+const LESSON_SRC={};
+function lessonSource(src){
+  const sb=(typeof window!=='undefined' && window.studyBundle) || null;
+  if(sb && typeof sb[src]==='string') return sb[src];
+  if(!LESSON_SRC[src]) LESSON_SRC[src]=fetch(src).then(r=>r.ok?r.text():'').catch(()=>'');
+  return LESSON_SRC[src];
+}
+const HAS_DIAGRAM=/class="optics-diagram"|<svg[\s>]|<img[\s>]/;
+/* markdown of a whole lesson, or a promise of it while a notes file is still loading; a study diagram
+   already shown on the law card (same aria-label) is left out */
+function lessonMarkdown(l, skipLabels){
+  const parts=(l.notes||[]).map(n=>lessonSource(n.src));
+  const build=texts=>{
+    let md=(l.points&&l.points.length?'## Key ideas\n\n'+l.points.join('\n\n')+'\n\n':'');
+    (l.notes||[]).forEach((n,k)=>{ let x=lessonExcerpt(texts[k], n.heading); if(!x) return;
+      (skipLabels||[]).forEach(lb=>{ const d=lawDiagramFrom(x, lb); if(d) x=x.replace(d,''); });
+      md+='## '+n.heading.replace(/^#+\s*/,'').replace(/^\d+(\.\d+)*\.?\s*/,'')+'\n\n'+x+'\n\n'; });
+    // sample exam questions with model answers: a definition, a why question and a relationship question
+    const KIND={define:'Definition question', why:'Why question', relation:'Relationship question'};
+    if(Array.isArray(l.exam) && l.exam.length){
+      md+='## Exam practice\n\n'+l.exam.map(e=>'### '+(KIND[e.kind]||'Question')+'\n\n**Question:** '+e.q+'\n\n**Model answer:** '+e.a).join('\n\n')+'\n\n';
+    }
+    return md;
+  };
+  return parts.some(p=>typeof p!=='string') ? Promise.all(parts).then(build) : build(parts);
+}
+function lessonHTMLFrom(md){
+  if(window.StudyNotes && typeof StudyNotes.renderMarkdown==='function'){ try{ return StudyNotes.renderMarkdown(md); }catch(e){} }
+  return '<pre class="lesson-plain">'+escapeHtml(md)+'</pre>';
 }
 function lawPanelHTML(p){
   const list=(t,a)=>a&&a.length?'<div class="law-sub">'+t+'</div><ul class="law-list">'+a.map(x=>'<li>'+escapeHtml(x)+'</li>').join('')+'</ul>':'';
@@ -3672,18 +3843,27 @@ function lawDiagram(src, label){
 function renderLawPanel(){
   const old=document.getElementById('lawPanel'); if(old) old.remove();
   if(!quizActive || !lawPanelReady(current)) return;
-  const list=lawPanelsFor(questions[current]);
+  const list=lawPanelsFor(questions[current]), lessons=lessonsFor(questions[current]);
   const after=document.getElementById('stepRecap')||document.getElementById('feedback'); if(!after) return;
-  const box=document.createElement('section'); box.id='lawPanel'; box.className='law-panel'+(list.length>1?' law-multi':'');
+  const box=document.createElement('section'); box.id='lawPanel'; box.className='law-panel'+(list.length+lessons.length>1?' law-multi':'');
   box.dataset.law=list.map(x=>x.key).join(' ');
-  box.setAttribute('aria-label', list.map(x=>x.p.title).join(', '));
-  box.innerHTML=list.map(x=>'<div class="law-card" data-law="'+x.key+'">'+lawPanelHTML(x.p)+'</div>').join('');
+  box.setAttribute('aria-label', list.map(x=>x.p.title).concat(lessons.map(x=>'Lesson: '+x.l.title)).join(', '));
+  box.innerHTML=list.map(x=>'<div class="law-card" data-law="'+x.key+'">'+lawPanelHTML(x.p)+'</div>').join('')
+    +lessons.map(x=>'<div class="law-card lesson-card" data-lesson="'+x.key+'"><div class="law-title">Lesson: '+escapeHtml(x.l.title)+'</div><div class="lesson-body md"></div></div>').join('');
   after.insertAdjacentElement('afterend', box);
   renderMathIn(box);
-  const qi=current, slots=box.querySelectorAll('.law-diagram');
+  const qi=current;
+  const skip=list.map(x=>x.p.diagram && x.p.diagram.label).filter(Boolean);
+  lessons.forEach(x=>{
+    const body=box.querySelector('.lesson-card[data-lesson="'+x.key+'"] .lesson-body'); if(!body) return;
+    const put=md=>{ if(!box.isConnected || current!==qi) return; body.innerHTML=lessonHTMLFrom(md); renderMathIn(body); if(HAS_DIAGRAM.test(md)) clearKbAdvance(); };
+    const md=lessonMarkdown(x.l, skip); if(typeof md==='string') put(md); else md.then(put);
+  });
+  const slots=box.querySelectorAll('.law-diagram');
   list.forEach((x,n)=>{ if(x.p.diagram) lawDiagram(x.p.diagram.src, x.p.diagram.label).then(h=>{
     const d=slots[n]; if(!h || !d || !box.isConnected || current!==qi) return;
     d.innerHTML=h;
+    clearKbAdvance(); // a diagram arrived: stop any countdown
   }); });
 }
 function renderQuestion(){
@@ -3731,7 +3911,7 @@ function renderQuestion(){
   }
   renderNav();
   updateCounters();
-  document.getElementById('catTag').textContent=(isMatching(q)?'linking · ':((isStep(q)&&!isSingleStep(q))?'stepped · ':(isSaq(q)?'short answer · ':(isLabel(q)?'labeling · ':(isOrder(q)?'ordering · ':(isMulti(q)?'select all · ':''))))))+((q.cat||q.__form||'').toString().replace(/_/g,' '));
+  document.getElementById('catTag').textContent=(isMatching(q)?'linking · ':((isStep(q)&&!isSingleStep(q))?'stepped · ':(isSaq(q)?'short answer · ':(isLabel(q)?'labeling · ':(isOrder(q)?'ordering · ':(isMulti(q)?'select all · ':''))))))+(()=>{ const c=(q.cat||q.__form||'').toString().replace(/_/g,' '); return (q.__name && !isAnswered(answers[current], q)) ? c.split(':')[0] : c; })();
   const opts=document.getElementById('options'); opts.innerHTML='';
   const answered=isAnswered(answers[current], q);
   locked=answered;
@@ -3869,7 +4049,7 @@ function resultItemHTML(q,i){
   }
   if(isLabel(q)){
     const a=answers[i], n=(q.labels||[]).length, k=labelDoneCount(q,a);
-    return '<div class="rq">'+(i+1)+'. '+underlineHTML(q.q)+'</div><div class="rline '+(k===n?'rok':'rbad')+'">Labels placed: '+k+' / '+n+'</div><div class="label-review">'+labelFigureHTML(q,a,true)+'</div><div class="rex">'+escapeHtml(q.explain||'')+'</div>';
+    return '<div class="rq">'+(i+1)+'. '+underlineHTML(q.q)+'</div><div class="rline '+(k===n?'rok':'rbad')+'">Labels placed: '+k+' / '+n+'</div><div class="label-review">'+labelFigureHTML(q,a,true)+'</div>'+(q.__name?'<div class="rstep">'+escapeHtml(q.__name.prompt)+'</div><div class="rline '+(a&&a.name?'rok':'rbad')+'">Your answer: '+(a&&a.name?saqDoneHTML(a.name):'—')+'</div><div class="rline rok">Answer: '+escapeHtml(saqAccepts(q.__name)[0]||'')+'</div>':'')+'<div class="rex">'+escapeHtml(q.explain||'')+'</div>';
   }
   if(isMulti(q)){
     const a=answers[i], ok=!!(a&&a.correct), opts=q.options||[];
@@ -4070,8 +4250,20 @@ function runKeysActive(){
 /* after a correct answer (keys, click or tap): the formula-practice depleting bar, then auto-advance (skipped when the form is complete) */
 let kbAdv=null;
 function clearKbAdvance(){ if(!kbAdv) return; const k=kbAdv; kbAdv=null; cancelAnimationFrame(k.raf); clearTimeout(k.timer); if(k.wrap.isConnected) k.wrap.remove(); }
+/* no auto-next on a question that shows a diagram (a drawn svg figure, or a post-answer law card with
+   its study-notes diagram, which loads later): the student reads it and moves on with Next / Enter.
+   Worked out from the current question each time, so it never carries over to the next one. */
+function showsDiagram(q){
+  if(!q) return false;
+  if(q.svg || (q.__bone && q.__bone.svg)) return true;
+  if(!lawPanelReady(current)) return false;
+  if(lawPanelsFor(q).some(x=>x.p && x.p.diagram)) return true;
+  // a lesson still loading counts as a diagram, so the countdown never races it
+  return lessonsFor(q).some(x=>{ const md=lessonMarkdown(x.l); return typeof md!=='string' || HAS_DIAGRAM.test(md); });
+}
 function startKbAdvance(){
   clearKbAdvance();
+  if(showsDiagram(questions[current])) return;
   const host=document.getElementById('feedback'); if(!host) return;
   let MS=3200; // formula practice's ADVANCE_MS
   try{ if(window.PT2Look && typeof PT2Look.advanceMs==='function') MS=PT2Look.advanceMs(MS)||MS; }catch(er){}
