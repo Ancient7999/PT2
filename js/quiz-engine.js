@@ -3618,6 +3618,7 @@ function renderStepRecap(){
   if(!html) return;
   const fb=document.getElementById('feedback'); if(!fb) return;
   fb.insertAdjacentHTML('afterend', html);
+  renderMathIn(document.getElementById('stepRecap'));
 }
 function renderQuestion(){
   hideMatchPairTip();
@@ -3656,6 +3657,7 @@ function renderQuestion(){
     qb.innerHTML=q.badges.map(b=>noteBadgeHTML(b)).join('');
     if(qb.innerHTML) qText.prepend(qb);
   }
+  renderMathIn(qText); // question stems and step prompts
   updateSolvedProgress();
   // Reveal red marks for earlier unanswered questions when the user lands on the final question
   if(questions.length>0 && current===questions.length-1 && !allQuestionsAnswered()){
