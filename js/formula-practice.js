@@ -4,15 +4,14 @@
  * in data/catalog.json. The sets then shows a "Formulas" section with one card.
  * Flow (same as PT1): generated multiple-choice item; a wrong answer greys that option and
  * shows the formula, then more working on each further wrong answer; "Show formula" reveals
- * it on request; after a correct answer a bar empties and the next item comes from the
- * least-answered formula; "New question" during the wait picks a random formula.
+ * it on request. Next generates a question from the least-answered formula; Back
+ * reviews this session. Relevant solved questions reveal an interactive ray sketch.
  * Counts are kept per material in localStorage (fp_count:<key>, fp_family:<key>).
  */
 (function () {
   'use strict';
-  const ADVANCE_MS = 3200;
   let cfg = null, gen = null, q = null, keys = [], curKey = '', wrong = 0, hintLevel = 0, locked = false;
-  let advTimer = null, advRaf = null, clock = null, started = 0;
+  let clock = null, started = 0, diagram = null, history = [], historyIndex = -1;
 
   const $ = id => document.getElementById(id);
   function ls(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
@@ -92,6 +91,7 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
     const mat = window.__activeMaterial; const c = configFor(mat); if (!c) return;
     cfg = c; gen = window[c.gen];
     keys = (ks && ks.length) ? ks.slice() : gen.allKeys();
+    history = []; historyIndex = -1;
     $('formulaTitle').textContent = (c.title || 'Formulas');
     started = Date.now(); clearInterval(clock);
     clock = setInterval(() => { const e = Math.floor((Date.now() - started) / 1000); $('formulaElapsed').textContent = String(Math.floor(e / 60)).padStart(2, '0') + ':' + String(e % 60).padStart(2, '0'); }, 1000);
@@ -100,13 +100,31 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
     next(false);
   }
   function next(random) {
-    clearAdvance();
     wrong = 0; hintLevel = 0; locked = false;
     q = random ? gen.generateQuestion(keys) : gen.generateQuestion([leastKey()]);
+    history = history.slice(0, historyIndex + 1);
+    history.push({ question: q, solved: false }); historyIndex++;
     curKey = q.formulaKey;
     render();
   }
+  function back() {
+    if (historyIndex <= 0) return;
+    const entry = history[--historyIndex]; q = entry.question; locked = entry.solved;
+    wrong = 0; hintLevel = 0; curKey = q.formulaKey; render();
+  }
+  function solvedUI() {
+    const btns = document.querySelectorAll('#formulaOptions .opt');
+    btns.forEach((b, k) => { b.disabled = true; if (k === q.correct) b.classList.add('correct'); });
+    const fb = $('formulaFeedback'); fb.className = 'feedback good'; fb.textContent = '✓ ' + (q.explain || '');
+    if (diagram) { $('formulaDiagram').hidden = false; diagram.complete(); }
+    $('formulaWorkspace').classList.toggle('has-diagram', !!diagram);
+  }
   function render() {
+    if (diagram) diagram.destroy();
+    diagram = window.FormulaDiagram ? FormulaDiagram.mount($('formulaDiagram'), q, () => select(q.correct)) : null;
+    $('formulaDiagram').hidden = true;
+    $('formulaWorkspace').classList.remove('has-diagram');
+    $('formulaBackBtn').disabled = historyIndex <= 0;
     $('formulaQText').textContent = q.q;
     const opts = $('formulaOptions'); opts.innerHTML = '';
     q.options.forEach((o, i) => {
@@ -116,6 +134,7 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
     const fb = $('formulaFeedback'); fb.className = 'feedback idle'; fb.textContent = '';
     $('formulaHintBox').classList.remove('show');
     setShowUsed(false);
+    if (locked) solvedUI();
     chrome();
   }
   function chrome() {
@@ -153,38 +172,28 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
       return;
     }
     locked = true;
-    btns.forEach((b, k) => { b.disabled = true; if (k === i) b.classList.add('correct'); });
-    fb.className = 'feedback good'; fb.textContent = '✓ ' + (q.explain || '');
+    history[historyIndex].solved = true;
+    solvedUI();
     const panel = $('formulaPanel'); panel.classList.add('correct-pulse'); setTimeout(() => panel.classList.remove('correct-pulse'), 650);
     if (typeof spawnConfetti === 'function') { try { spawnConfetti(); } catch (e) {} }
     bump(q.formulaKey, q._formulaVariant);
     if (window.PT2Unlocks && PT2Unlocks.formulaSolved && cfg) PT2Unlocks.formulaSolved(cfg.key);
     chrome();
-    startAdvance();
-  }
-  function setWaiting(on) { $('formulaView').classList.toggle('formula-waiting', !!on); $('formulaAdvanceWrap').setAttribute('aria-hidden', on ? 'false' : 'true'); }
-  function clearAdvance() {
-    clearTimeout(advTimer); advTimer = null; if (advRaf) cancelAnimationFrame(advRaf); advRaf = null;
-    setWaiting(false); const f = $('formulaAdvanceFill'); if (f) { f.style.transition = 'none'; f.style.transform = 'scaleX(1)'; }
-  }
-  function startAdvance() {
-    clearAdvance(); setWaiting(true);
-    const t0 = performance.now(); const fill = $('formulaAdvanceFill');
-    function finish() { const was = $('formulaView').classList.contains('formula-waiting'); clearAdvance(); if (was && active()) next(false); }
-    function tick(now) { const t = Math.min(1, (now - t0) / ADVANCE_MS); fill.style.transform = 'scaleX(' + (1 - t) + ')'; if (t >= 1) { finish(); return; } advRaf = requestAnimationFrame(tick); }
-    advRaf = requestAnimationFrame(tick);
-    advTimer = setTimeout(() => { if ($('formulaView').classList.contains('formula-waiting')) finish(); }, ADVANCE_MS + 160);
+
   }
   function active() { const v = $('formulaView'); return !!(v && v.classList.contains('active')); }
   function leave() {
-    clearAdvance(); clearInterval(clock); q = null;
+    clearInterval(clock);
+    if (diagram) diagram.destroy(); diagram = null; q = null;
+    $('formulaWorkspace').classList.remove('has-diagram');
     if (window.StudyQuiz && StudyQuiz.renderSets) StudyQuiz.renderSets();
     if (typeof showView === 'function') showView('setsView');
   }
 
   function wire() {
     $('formulaShowBtn').addEventListener('click', () => { if (q && !$('formulaShowBtn').disabled) reveal(Math.max(1, hintLevel || 1)); });
-    $('formulaRollBtn').addEventListener('click', () => { if (q && $('formulaView').classList.contains('formula-waiting')) next(true); });
+    $('formulaRollBtn').addEventListener('click', () => { if (q) next(false); });
+    $('formulaBackBtn').addEventListener('click', back);
     $('formulaSetsBtn').addEventListener('click', leave);
     window.addEventListener('keydown', e => {
       if (!active()) return;
@@ -201,5 +210,5 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire); else wire();
 
-  window.FormulaPractice = { appendSetsSection, start, next: () => next(true), get question() { return q; }, get active() { return active(); }, leave, totalAnswered: () => cfg ? total() : 0 };
+  window.FormulaPractice = { appendSetsSection, start, next: () => next(false), back, get question() { return q; }, get active() { return active(); }, leave, totalAnswered: () => cfg ? total() : 0 };
 })();

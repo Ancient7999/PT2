@@ -58,6 +58,7 @@
   function closeCalc() {
     var w = calcEl(); if (!w) return;
     w.style.display = 'none';
+    window.lastInputTarget = 'answer';
     w.classList.remove('pt2-calc-sheet', 'mobile-docked');
     document.body.classList.remove('pt2-calc-open');
     if (typeof window.updateInputTargets === 'function') window.updateInputTargets();
@@ -86,6 +87,18 @@
     if (w0) w0.classList.remove('pt2-calc-sheet', 'mobile-docked');
     document.body.classList.remove('pt2-calc-open');
 
+    // Pointer ownership covers the whole widget and every outside surface.
+    function ownInput(event) {
+      var w = calcEl();
+      var inside = !!(w && w.style.display === 'block' && w.contains(event.target));
+      window.lastInputTarget = inside ? 'calc' : 'answer';
+      var active = document.activeElement;
+      if (event.type === 'pointerdown' && active && active !== document.body &&
+          (inside ? !w.contains(active) : w && w.contains(active))) active.blur();
+      if (typeof window.updateInputTargets === 'function') window.updateInputTargets();
+    }
+    document.addEventListener('pointerdown', ownInput, true);
+    document.addEventListener('focusin', ownInput, true);
     syncToggleVisibility();
     syncPressed();
     var btn = document.getElementById('calc-toggle-btn');
