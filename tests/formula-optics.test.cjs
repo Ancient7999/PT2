@@ -31,6 +31,7 @@ function environment() {
     querySelectorAll(s) { return query(this,s); }
     querySelector(s) { return this.querySelectorAll(s)[0] || null; }
     focus() { document.activeElement=this; dispatch('focusin',this); }
+    getBoundingClientRect() { return {left:0,top:0,width:560,height:320}; }
     blur() { document.activeElement=document.body; }
     click() { if(!this.disabled) dispatch('click',this); }
   }
@@ -70,14 +71,6 @@ function environment() {
   function flush(){const work=[...frames.values()];frames.clear();work.forEach(f=>f(16));}
   return {context,document,load,add,dispatch,flush,frames,timers,storage};
 }
-function diagramFixture(kind='critical',target='t1') {
-  const e=environment();e.load('js/formula-diagram.js');
-  const answer=Math.asin(1/1.5)*180/Math.PI;
-  const q={answerValue:answer,formulaDiagram:{kind,values:{n1:1.5,n2:1,t2:90},target,precision:1}};
-  const host=e.add('host');let awards=0;
-  const d=e.context.FormulaDiagram.mount(host,q,()=>awards++);
-  return {...e,q,host,d,awards:()=>awards};
-}
 test('Snell geometry, reflection, normal incidence, critical grazing and TIR',()=>{
   const e=environment();e.load('js/formula-diagram.js');const {trace}=e.context.FormulaDiagram;
   assert.ok(Math.abs(trace(1,1.33,30).t2-22.0824)<0.001);
@@ -87,14 +80,6 @@ test('Snell geometry, reflection, normal incidence, critical grazing and TIR',()
   assert.equal(trace(1.5,1,tc).mode,'grazing');assert.equal(trace(1.5,1,tc).t2,90);
   assert.equal(trace(1.5,1,tc+0.1).mode,'tir');assert.equal(trace(1.5,1,60).t2,null);
   for(const bad of [[0,1,20],[1,0,20],[1,1,-1],[1,1,91],[NaN,1,20]])assert.equal(trace(...bad),null);
-});
-test('numeric validation rejects blank, nonfinite and out-of-domain values; precision matches display',()=>{
-  const e=environment();e.load('js/formula-diagram.js');const {parse,accepts}=e.context.FormulaDiagram;
-  for(const raw of ['', ' ', 'Infinity','NaN','-1','91'])assert.equal(parse('t1',raw),null);
-  assert.equal(parse('n1','0'),null);assert.equal(parse('n1','-1'),null);
-  assert.equal(parse('t1','0'),0);assert.equal(parse('t1','90'),90);
-  assert.ok(accepts(41.8,41.8103149,1));assert.ok(!accepts(41.7,41.8103149,1));
-  assert.ok(accepts(1.333,4/3,3));assert.ok(!accepts(1.33,4/3,3));
 });
 test('all generated optics variants supply only exact printed givens and reconstruct the answer',()=>{
   const e=environment();e.load('js/formula-gen-pt2.js');const gen=e.context.Pt2FormulaGen;const variants=new Set();
@@ -108,30 +93,6 @@ test('all generated optics variants supply only exact printed givens and reconst
   }
   assert.equal(variants.size,5);assert.equal(gen.generateQuestion(['waveSpeed']).formulaDiagram,undefined);
 });
-test('diagram starts unsolved, previews input, rejects mistakes, locks correctly once and cancels pending frames',()=>{
-  const e=diagramFixture(),input=e.document.getElementById('fd-t1'),form=e.host.querySelector('form');
-  assert.equal(input.value,'');assert.equal(input.readOnly,false);
-  assert.equal(e.document.getElementById('fd-n1').readOnly,true);
-  const ray=e.host.querySelectorAll('g').find(n=>n.getAttribute('data-ray')==='incident');
-  assert.equal(ray.style.visibility,'hidden');
-  input.value='30';e.dispatch('input',input);e.flush();assert.equal(ray.style.transform,'rotate(-30deg)');
-  e.dispatch('submit',form);assert.equal(e.awards(),0);assert.equal(input.getAttribute('aria-invalid'),'true');
-  input.value='41.8';e.dispatch('input',input);e.dispatch('submit',form);
-  assert.equal(e.awards(),1);assert.equal(input.readOnly,true);assert.equal(form.querySelector('button').disabled,true);
-  e.dispatch('submit',form);e.d.complete();assert.equal(e.awards(),1);
-  e.dispatch('input',input);assert.ok(e.frames.size);e.d.destroy();assert.equal(e.frames.size,0);assert.equal(e.host.hidden,true);
-});
-test('exploration preserves question locks and hides transmitted ray in TIR',()=>{
-  const e=diagramFixture();e.d.complete();
-  const fixed=e.document.getElementById('fd-t1').value,angle=e.document.getElementById('fd-explore-angle');
-  angle.value='60';e.dispatch('input',angle);e.flush();
-  const transmitted=e.host.querySelectorAll('g').find(n=>n.getAttribute('data-ray')==='refracted');
-  assert.equal(transmitted.style.visibility,'hidden');assert.equal(e.document.getElementById('fd-t1').value,fixed);
-  const critical=e.host.querySelectorAll('button').find(n=>n.textContent==='At critical angle');
-  critical.click();e.flush();assert.equal(transmitted.style.visibility,'visible');assert.equal(transmitted.style.transform,'rotate(-90deg)');
-  angle.value='-2';e.dispatch('input',angle);assert.equal(angle.getAttribute('aria-invalid'),'true');
-  assert.equal(e.awards(),0);
-});
 function practiceFixture() {
   const e=environment();
   for(const id of ['formulaWorkspace','formulaBackBtn','formulaView','formulaTitle','formulaElapsed','formulaQText','formulaDiagram','formulaOptions','formulaFeedback','formulaHintBox','formulaHintText','formulaShowBtn','formulaFamilyStrip','formulaStatus','formulaPanel','formulaAdvanceWrap','formulaAdvanceFill','formulaRollBtn','formulaSetsBtn'])e.add(id);
@@ -139,31 +100,6 @@ function practiceFixture() {
   e.context.__activeMaterial={formulas:{gen:'Pt2FormulaGen',key:'test'}};
   e.load('js/formula-gen-pt2.js');e.load('js/formula-diagram.js');e.load('js/formula-practice.js');return e;
 }
-test('numeric and MCQ completion share progress, retain green answer state and wait for explicit next',()=>{
-  const e=practiceFixture();e.context.FormulaPractice.start(['criticalAngle']);
-  const q=e.context.FormulaPractice.question,input=e.document.getElementById('fd-'+q.formulaDiagram.target);
-  assert.equal(e.document.getElementById('formulaDiagram').hidden,true);
-  e.document.getElementById('formulaOptions').children[q.correct].click();
-  assert.equal(e.document.getElementById('formulaDiagram').hidden,false);
-  assert.ok(e.document.getElementById('formulaWorkspace').classList.contains('has-diagram'));
-  assert.equal(input.readOnly,true);
-  assert.equal(e.context.FormulaPractice.totalAnswered(),1);
-  const options=e.document.getElementById('formulaOptions').children;
-  assert.ok(options[q.correct].classList.contains('correct'));assert.ok(options.every(n=>n.disabled));
-  options[q.correct].click();assert.equal(e.context.FormulaPractice.totalAnswered(),1);
-  assert.ok(!e.document.getElementById('formulaView').classList.contains('formula-waiting'));
-  assert.ok(![...e.timers.values()].some(t=>t.ms>=3200));
-  const hint=e.document.getElementById('fd-hint');
-  const hintButton=e.document.getElementById('formulaDiagram').querySelectorAll('button').find(b=>b.textContent==='Diagram hint');
-  assert.equal(hint.hidden,true);hintButton.click();assert.equal(hint.hidden,false);
-  e.document.getElementById('formulaRollBtn').click();assert.notEqual(e.context.FormulaPractice.question.id,q.id);
-  assert.equal(e.document.getElementById('formulaDiagram').hidden,true);
-  e.document.getElementById('formulaBackBtn').click();assert.equal(e.context.FormulaPractice.question.id,q.id);
-  assert.equal(e.document.getElementById('formulaDiagram').hidden,false);
-  assert.equal(e.context.FormulaPractice.totalAnswered(),1);
-  assert.ok(e.document.getElementById('formulaOptions').children[q.correct].classList.contains('correct'));
-  e.context.FormulaPractice.leave();assert.equal(e.document.getElementById('formulaDiagram').hidden,true);
-});
 test('MCQ-only formulas use explicit Next and Back without automatic advance',()=>{
   const e=practiceFixture();e.context.FormulaPractice.start(['waveSpeed']);
   e.document.getElementById('formulaOptions').children[e.context.FormulaPractice.question.correct].click();
@@ -219,4 +155,156 @@ test('explanations render math after a correct answer',()=>{
   p.context.FormulaPractice.start(['waveSpeed']);const q=p.context.FormulaPractice.question;
   p.document.querySelectorAll('#formulaOptions .opt')[q.correct].click();
   assert.ok(hit.includes(p.document.getElementById('formulaFeedback')));
+});
+
+const RAD=Math.PI/180;
+function at(name,a,s=1){ // client point for a line at angle a from the normal (fixture rect = viewBox)
+  const r=100,t=a*RAD; if(name==='normal')return {clientX:280+r*Math.sin(t),clientY:160-r*Math.cos(t)};
+  return {clientX:280+s*r*Math.sin(t),clientY:160+(name==='refracted'?1:-1)*r*Math.cos(t)};
+}
+function drawFixture(family='snell'){
+  const e=environment();e.load('js/formula-gen-pt2.js');e.load('js/formula-diagram.js');
+  const q=e.context.Pt2FormulaGen.generateQuestion([family]);const host=e.add('host');let done=0;
+  const d=e.context.FormulaDiagram.mount(host,q,()=>done++);const svg=host.querySelector('svg');
+  const goal=e.context.FormulaDiagram.targets(q);
+  const g=k=>host.querySelectorAll('g').find(n=>n.getAttribute('data-line')===k);
+  const drag=(name,path)=>{e.dispatch('pointerdown',svg,{pointerId:1,...path[0]});path.slice(1).forEach(p=>e.dispatch('pointermove',svg,{pointerId:1,...p}));e.dispatch('pointerup',svg,{pointerId:1,...path[path.length-1]});};
+  const ghost=()=>host.querySelector('.fd-ghost').style.visibility;
+  return {...e,q,host,d,svg,goal,g,drag,ghost,done:()=>done,
+    button:t=>host.querySelectorAll('button').find(b=>b.textContent===t),status:()=>host.querySelector('.fd-status').textContent};
+}
+test('Snell geometry, critical grazing and TIR',()=>{
+  const e=environment();e.load('js/formula-diagram.js');const t=e.context.FormulaDiagram.trace;
+  assert.ok(Math.abs(t(1,1.5,30).t2-19.47122)<1e-4);assert.equal(t(1.5,1,90/1).mode,'tir');
+  assert.equal(t(1.5,1,Math.asin(1/1.5)/RAD).t2,90);assert.equal(t(1,1.5,0).t2,0);
+});
+test('snap band: ghost appears near the target, pull locks exact angle, outside stays free',()=>{
+  const e=environment();e.load('js/formula-diagram.js');const F=e.context.FormulaDiagram,goal={t1:30,t2:19.47};
+  let g=F.guide('incident',{a:30+F.GHOST+1,s:-1},goal,null);assert.equal(g.ghost,false);assert.equal(g.snapped,false);
+  g=F.guide('incident',{a:30+F.GHOST-1,s:-1},goal,null);assert.equal(g.ghost,true);assert.equal(g.snapped,false);assert.equal(g.line.a,30+F.GHOST-1);
+  g=F.guide('incident',{a:30+F.SNAP-0.5,s:-1},goal,null);assert.equal(g.snapped,true);assert.equal(g.line.a,30);assert.equal(g.line.s,-1);
+  g=F.guide('refracted',{a:19,s:-1},goal,-1);assert.equal(g.ghost,false,'same side as incident is wrong');
+  g=F.guide('refracted',{a:22,s:1},goal,-1);assert.equal(g.snapped,true);assert.equal(g.line.a,19.47);
+  assert.equal(F.guide('normal',{a:9},goal).snapped,true);assert.equal(F.guide('normal',{a:14},goal).snapped,false);
+});
+test('drawing starts empty, steps unlock in order, release on guide locks, completion fires once',()=>{
+  const e=drawFixture('snell');const {goal}=e;
+  assert.equal(e.g('normal').style.visibility,'hidden');assert.equal(e.g('incident').style.visibility,'hidden');
+  assert.equal(e.button('Incident ray').disabled,true);
+  e.dispatch('pointerdown',e.svg,{pointerId:1,...at('normal',40)});e.dispatch('pointermove',e.svg,{pointerId:1,...at('normal',40)});
+  assert.equal(e.ghost(),'hidden');
+  e.dispatch('pointermove',e.svg,{pointerId:1,...at('normal',12)});assert.equal(e.ghost(),'visible');
+  e.dispatch('pointerup',e.svg,{pointerId:1,...at('normal',12)});assert.ok(!e.g('normal').classList.contains('fd-locked'),'released outside snap stays adjustable');
+  e.drag('normal',[at('normal',12),at('normal',5)]);assert.ok(e.g('normal').classList.contains('fd-locked'));
+  assert.equal(e.button('Incident ray').disabled,false);
+  e.drag('incident',[at('incident',goal.t1+25,-1)]);assert.ok(!e.g('incident').classList.contains('fd-locked'));
+  e.button('Check diagram').click();assert.match(e.status(),/closer to the normal/);
+  e.drag('incident',[at('incident',goal.t1+3,-1)]);assert.ok(e.g('incident').classList.contains('fd-locked'));
+  e.drag('refracted',[at('refracted',goal.t2,-1)]);assert.ok(!e.g('refracted').classList.contains('fd-locked'),'wrong side never snaps');
+  e.button('Check diagram').click();assert.match(e.status(),/other side of the normal/);
+  assert.equal(e.done(),0);
+  e.drag('refracted',[at('refracted',goal.t2+2,1)]);assert.equal(e.done(),1);assert.equal(e.d.done,true);
+  e.button('Check diagram').click();e.drag('refracted',[at('refracted',goal.t2,1)]);assert.equal(e.done(),1);
+  const s=e.d.getState();assert.ok(s.locked.normal&&s.locked.incident&&s.locked.refracted);assert.equal(s.refracted.a,goal.t2);
+});
+test('critical angle: refracted ray must graze the boundary on the far side',()=>{
+  const e=drawFixture('criticalAngle');const {goal}=e;assert.equal(goal.t2,90);
+  e.drag('normal',[at('normal',0)]);e.drag('incident',[at('incident',goal.t1,1)]);
+  e.drag('refracted',[at('refracted',60,-1)]);assert.equal(e.done(),0);
+  e.button('Check diagram').click();assert.match(e.status(),/along the boundary/);
+  e.drag('refracted',[at('refracted',86,-1)]);assert.equal(e.done(),1);
+});
+test('keyboard handles rotate in steps, snap and lock; hint reveals only the next step',()=>{
+  const e=drawFixture('snell');const handle=k=>e.host.querySelectorAll('circle').find(c=>c.getAttribute('data-handle')===k);
+  const hintEl=e.host.querySelector('#fd-hint');e.button('Diagram hint').click();
+  assert.equal(hintEl.hidden,false);assert.match(hintEl.textContent,/perpendicular/);assert.doesNotMatch(hintEl.textContent,/θ₂/);
+  const press=(k,key,shift=false)=>e.dispatch('keydown',handle(k),{key,shiftKey:shift});
+  press('normal','ArrowLeft');assert.equal(e.d.getState().normal.a,34);
+  for(let i=0;i<6;i++)press('normal','ArrowLeft',true);assert.ok(e.g('normal').classList.contains('fd-locked'));
+  e.button('Diagram hint').click();assert.match(hintEl.textContent,/θ₁/);
+  for(let i=0;i<40&&!e.d.getState().locked.incident;i++)press('incident',e.goal.t1>45?'ArrowUp':'ArrowDown');
+  assert.ok(e.d.getState().locked.incident);assert.equal(e.d.getState().incident.a,e.goal.t1);
+});
+test('MCQ reveals an unsolved drawing; Next waits; credit once; Back restores drawing',()=>{
+  const e=practiceFixture();e.context.FormulaPractice.start(['snell']);
+  const q=e.context.FormulaPractice.question,dia=e.document.getElementById('formulaDiagram'),next=e.document.getElementById('formulaRollBtn');
+  assert.equal(dia.hidden,true);
+  e.document.getElementById('formulaOptions').children[q.correct].click();
+  assert.equal(dia.hidden,false);assert.ok(e.document.getElementById('formulaWorkspace').classList.contains('has-diagram'));
+  assert.equal(dia.querySelectorAll('g').filter(g=>g.style.visibility==='visible').length,0,'nothing pre-drawn');
+  assert.equal(dia.querySelectorAll('input').length,0);
+  assert.equal(next.disabled,true);assert.equal(e.context.FormulaPractice.totalAnswered(),0);
+  next.click();assert.equal(e.context.FormulaPractice.question.id,q.id);
+  const goal=e.context.FormulaDiagram.targets(q),svg=dia.querySelector('svg');
+  const drag=p=>{e.dispatch('pointerdown',svg,{pointerId:1,...p});e.dispatch('pointerup',svg,{pointerId:1,...p});};
+  drag(at('normal',0));drag(at('incident',goal.t1,-1));
+  assert.equal(e.context.FormulaPractice.totalAnswered(),0);
+  drag(at('refracted',goal.t2,1));
+  assert.equal(next.disabled,false);assert.equal(e.context.FormulaPractice.totalAnswered(),1);
+  next.click();assert.notEqual(e.context.FormulaPractice.question.id,q.id);
+  e.document.getElementById('formulaBackBtn').click();assert.equal(e.context.FormulaPractice.question.id,q.id);
+  const d2=e.document.getElementById('formulaDiagram');
+  assert.equal(d2.hidden,false);assert.equal(d2.querySelectorAll('.fd-locked').length,3);
+  assert.equal(next.disabled,false);assert.equal(e.context.FormulaPractice.totalAnswered(),1);
+  e.document.getElementById('formulaOptions').children[q.correct].click();assert.equal(e.context.FormulaPractice.totalAnswered(),1);
+});
+test('quiz options are scoped to the quiz; leaving formulas clears its options',()=>{
+  const src=fs.readFileSync(path.join(__dirname,'..','js/quiz-engine.js'),'utf8');
+  assert.doesNotMatch(src,/document\.querySelectorAll\('\.opt'\)/);
+  assert.match(src,/document\.querySelectorAll\('#options \.opt'\)\.forEach\(\(o,i\)=>\{ o\.disabled=true; if\(i===idx\) o\.classList\.add\('correct'\)/);
+  const html=fs.readFileSync(path.join(__dirname,'..','quiz.html'),'utf8');
+  assert.ok(html.indexOf('id="formulaOptions"')<html.indexOf('id="options"'),'formula options come first in the page');
+  const e=practiceFixture();e.context.FormulaPractice.start(['waveSpeed']);
+  e.document.getElementById('formulaOptions').children[e.context.FormulaPractice.question.correct].click();
+  e.context.FormulaPractice.leave();assert.equal(e.document.getElementById('formulaOptions').children.length,0);
+});
+test('index labels keep up to 3 decimals',()=>{
+  const e=environment();e.load('js/formula-diagram.js');const host=e.add('host');
+  e.context.FormulaDiagram.mount(host,{formulaDiagram:{kind:'critical',values:{n1:1.461,n2:1,t2:90},target:'t1',precision:1},answerValue:43.2},()=>{});
+  const t=host.querySelectorAll('text').map(n=>n.textContent);assert.ok(t.includes('Medium 1 · n₁ = 1.461'));assert.ok(t.includes('Medium 2 · n₂ = 1'));
+});
+test('keyboard path starts from the visible tool button and focuses a visible handle',()=>{
+  const e=drawFixture('snell');const handle=k=>e.host.querySelectorAll('circle').find(c=>c.getAttribute('data-handle')===k);
+  const tool=e.button('Normal');assert.equal(e.g('normal').style.visibility,'hidden');
+  e.dispatch('keydown',tool,{key:'ArrowLeft'});
+  assert.equal(e.g('normal').style.visibility,'visible');assert.equal(e.document.activeElement,handle('normal'));
+  assert.equal(e.ghost(),'hidden','starter is off target');assert.equal(e.d.getState().normal.a,34);
+  for(let i=0;i<6;i++)e.dispatch('keydown',e.document.activeElement,{key:'ArrowLeft',shiftKey:true});
+  assert.ok(e.d.getState().locked.normal);
+  const inc=e.button('Incident ray');inc.click();
+  assert.equal(e.g('incident').style.visibility,'visible');assert.equal(e.document.activeElement,handle('incident'));
+  assert.ok(Math.abs(e.d.getState().incident.a-e.goal.t1)>=e.context.FormulaDiagram.GHOST);assert.equal(e.d.getState().locked.incident,undefined);
+});
+test('pointercancel ends the drag without locking and keeps the raw line adjustable',()=>{
+  const e=drawFixture('snell');
+  e.dispatch('pointerdown',e.svg,{pointerId:1,...at('normal',30)});e.dispatch('pointermove',e.svg,{pointerId:1,...at('normal',4)});
+  assert.equal(e.ghost(),'visible');
+  e.dispatch('pointercancel',e.svg,{pointerId:1,...at('normal',4)});
+  assert.equal(e.d.getState().locked.normal,undefined);assert.ok(Math.abs(e.d.getState().normal.a-4)<1e-6,'raw, not snapped');
+  assert.equal(e.ghost(),'hidden');assert.equal(e.done(),0);
+  e.dispatch('pointermove',e.svg,{pointerId:1,...at('normal',40)});assert.ok(Math.abs(e.d.getState().normal.a-4)<1e-6,'drag ended');
+  e.drag('normal',[at('normal',2)]);assert.ok(e.d.getState().locked.normal);
+});
+
+test('a bank optics question gets the same gated drawing; bank-only formulas join the strip',()=>{
+  const e=practiceFixture();
+  const bank=JSON.parse(fs.readFileSync(path.join(__dirname,'..','banks/medphys/pt2.json'),'utf8'));
+  const reg=bank.bank.A.filter(q=>q.formula).map(q=>({...q,__id:q.id}));
+  e.context.StudyQuiz={formulaBank:()=>({questions:reg,names:bank.formulaNames})};
+  e.context.FormulaPractice.start(['refractiveIndex','snell','criticalAngle'],'ch5');
+  const fp=e.context.FormulaPractice,next=e.document.getElementById('formulaRollBtn');
+  const strip=()=>e.document.getElementById('formulaFamilyStrip').children.map(c=>c.textContent);
+  assert.ok(strip().some(t=>t.startsWith('Law of reflection')));assert.ok(strip().some(t=>t.startsWith('Mirror equation')));
+  let guard=0;while(fp.question.bankId!=='PHY50020'&&guard++<20){e.document.getElementById('formulaOptions').children[fp.question.correct].click();next.click();}
+  const q=fp.question,orig=reg.find(x=>x.id==='PHY50020');
+  assert.equal(q.q,orig.q);assert.equal(q.options[q.correct],orig.options[orig.correct]);
+  const before=fp.totalAnswered();
+  e.document.getElementById('formulaOptions').children[q.correct].click();
+  const dia=e.document.getElementById('formulaDiagram');assert.equal(dia.hidden,false);
+  assert.equal(next.disabled,true);assert.equal(fp.totalAnswered(),before);
+  const goal=e.context.FormulaDiagram.targets(q);assert.ok(Math.abs(goal.t2-22.08)<0.01);
+  const svg=dia.querySelector('svg'),tap=p=>{e.dispatch('pointerdown',svg,{pointerId:1,...p});e.dispatch('pointerup',svg,{pointerId:1,...p});};
+  const at=(n,a,s)=>{const t=a*Math.PI/180;return n==='normal'?{clientX:280,clientY:60}:{clientX:280+s*100*Math.sin(t),clientY:160+(n==='refracted'?1:-1)*100*Math.cos(t)};};
+  tap(at('normal'));tap(at('incident',30,-1));tap(at('refracted',goal.t2,1));
+  assert.equal(next.disabled,false);assert.equal(fp.totalAnswered(),before+1);
 });

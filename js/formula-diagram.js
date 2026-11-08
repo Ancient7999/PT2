@@ -1,37 +1,68 @@
-/* Opt-in ray sketches for formula practice. Geometry follows the portal's SVG diagrams. */
+/* Assessed ray drawing for formula practice. After the choice is correct, the student draws the
+   normal, the incident ray and the refracted ray from the incidence point. Lines follow the
+   pointer; near the right angle a ghost guide appears and the line is pulled onto it, and a
+   line released on the guide locks. Geometry follows the portal's SVG diagrams. */
 (function (global) {
   'use strict';
-  const RAD = Math.PI / 180;
-  const LABELS = { n1: 'n₁', n2: 'n₂', t1: 'θ₁', t2: 'θ₂' };
-  const NS = 'http://www.w3.org/2000/svg';
-  function valid(key, value) {
-    return Number.isFinite(value) && (key[0] === 'n' ? value > 0 : value >= 0 && value <= 90);
-  }
-  function parse(key, raw) {
-    if (String(raw).trim() === '') return null;
-    const n = Number(raw);
-    return valid(key, n) ? n : null;
-  }
-  function accepts(value, answer, precision) {
-    return Number.isFinite(value) && Math.abs(value - answer) <= 0.5 * Math.pow(10, -precision) + 1e-9;
-  }
+  const RAD = Math.PI / 180, NS = 'http://www.w3.org/2000/svg';
+  const W = 560, H = 320, OX = 280, OY = 160, LEN = 128;
+  const GHOST = 18, SNAP = 8, NORMAL_SNAP = 10; // degrees from the target
+  const STEPS = ['normal', 'incident', 'refracted'];
+  const NAMES = { normal: 'Normal', incident: 'Incident ray', refracted: 'Refracted ray' };
   function trace(n1, n2, t1) {
-    if (!valid('n1', n1) || !valid('n2', n2) || !valid('t1', t1)) return null;
-    const sin2 = n1 * Math.sin(t1 * RAD) / n2;
-    const critical = n1 > n2 ? Math.asin(n2 / n1) / RAD : null;
+    if (!(n1 > 0 && n2 > 0 && t1 >= 0 && t1 <= 90)) return null;
+    const sin2 = n1 * Math.sin(t1 * RAD) / n2, critical = n1 > n2 ? Math.asin(n2 / n1) / RAD : null;
     if (sin2 > 1 + 1e-10) return { t1: t1, reflected: t1, t2: null, critical: critical, mode: 'tir' };
     const grazing = Math.abs(sin2 - 1) <= 1e-10;
-    return { t1: t1, reflected: t1, t2: grazing ? 90 : Math.asin(sin2) / RAD, critical: critical,
-      mode: grazing ? 'grazing' : 'refraction' };
+    return { t1: t1, reflected: t1, t2: grazing ? 90 : Math.asin(sin2) / RAD, critical: critical, mode: grazing ? 'grazing' : 'refraction' };
   }
-  function number(n, digits) { return Number(n.toFixed(digits)).toString(); }
-  function mount(host, question, onCorrect) {
+  /* Required angles from the normal: θ₁ in medium 1 (top), θ₂ in medium 2 (bottom). */
+  function targets(question) {
+    const m = question.formulaDiagram, v = Object.assign({}, m.values);
+    v[m.target] = question.answerValue;
+    if (m.kind === 'critical') return { kind: 'critical', n1: v.n1, n2: v.n2, t1: Math.asin(v.n2 / v.n1) / RAD, t2: 90 };
+    return { kind: 'snell', n1: v.n1, n2: v.n2, t1: v.t1, t2: v.t2 };
+  }
+  /* Pointer position → line state. Normal: tilt from vertical. Rays: angle from the normal and side (−1 left, 1 right). */
+  function lineFrom(name, x, y) {
+    const dx = x - OX, dy = y - OY;
+    if (name === 'normal') { const a = Math.abs(Math.atan2(dx, -dy) / RAD); return { a: Math.min(a, 180 - a) }; }
+    const down = name === 'refracted';
+    return { a: Math.atan2(Math.abs(dx), down ? dy : -dy) / RAD, s: dx < 0 ? -1 : 1 };
+  }
+  /* Distance in degrees from the correct line, or Infinity on the wrong side. */
+  function error(name, line, goal, incidentSide) {
+    if (!line) return Infinity;
+    if (name === 'normal') return line.a;
+    if (name === 'incident') return Math.abs(line.a - goal.t1);
+    if (incidentSide != null && goal.t2 > 0.5 && line.s !== -incidentSide) return Infinity;
+    return Math.abs(line.a - goal.t2);
+  }
+  function snapLimit(name) { return name === 'normal' ? NORMAL_SNAP : SNAP; }
+  /* Magnetic pull: inside the snap band the line takes the exact target angle. */
+  function guide(name, line, goal, incidentSide) {
+    const e = error(name, line, goal, incidentSide);
+    const out = { line: line, ghost: e <= GHOST, snapped: e <= snapLimit(name) };
+    if (out.snapped) out.line = name === 'normal' ? { a: 0 } : { a: name === 'incident' ? goal.t1 : goal.t2, s: name === 'refracted' && incidentSide != null ? -incidentSide : line.s };
+    return out;
+  }
+  function endpoint(name, line) {
+    const t = line.a * RAD;
+    if (name === 'normal') return { x: OX + LEN * Math.sin(t), y: OY - LEN * Math.cos(t) };
+    const s = line.s || 1, dir = name === 'refracted' ? 1 : -1;
+    return { x: OX + s * LEN * Math.sin(t), y: OY + dir * LEN * Math.cos(t) };
+  }
+  function fmt(n) { return Number(n.toFixed(1)).toString(); }
+  function idx(n) { return Number(n.toFixed(3)).toString(); }
+  function mount(host, question, onComplete, saved) {
     host.replaceChildren();
     const meta = question.formulaDiagram;
-    host.hidden = !meta;
+    host.hidden = true;
     if (!meta) return null;
-    let solved = false, explored = false, pending = null;
-    const values = Object.assign({}, meta.values), fields = {};
+    const goal = targets(question);
+    const state = { normal: null, incident: null, refracted: null, locked: {}, hint: 0 };
+    if (saved) { STEPS.forEach(k => { if (saved[k]) state[k] = Object.assign({}, saved[k]); }); Object.assign(state.locked, saved.locked); state.hint = saved.hint || 0; }
+    let tool = null, drag = null, ghostFor = null, finished = STEPS.every(k => state.locked[k]);
     function el(tag, attrs, parent, text) {
       const node = document.createElement(tag);
       Object.keys(attrs || {}).forEach(k => node.setAttribute(k, attrs[k]));
@@ -44,139 +75,197 @@
       if (text != null) node.textContent = text;
       parent.appendChild(node); return node;
     }
-    el('div', { class: 'fd-heading' }, host, meta.kind === 'critical' ? 'Critical-angle sketch' : 'Ray sketch');
-    const caption = el('p', { class: 'fd-caption', id: 'formulaSketchCaption' }, host,
-      'Angles are measured from the normal. Explore the solved sketch below.');
-    const svg = svgEl('svg', { viewBox: '0 0 560 320', class: 'fd-svg', role: 'img',
-      'aria-labelledby': 'formulaSketchTitle formulaSketchDescription' }, host);
-    svgEl('title', { id: 'formulaSketchTitle' }, svg, 'Incident, reflected and refracted rays');
-    const description = svgEl('desc', { id: 'formulaSketchDescription' }, svg);
-    svgEl('line', { x1: 20, y1: 160, x2: 540, y2: 160, class: 'fd-interface' }, svg);
-    svgEl('line', { x1: 280, y1: 38, x2: 280, y2: 286, class: 'fd-normal' }, svg);
-    svgEl('text', { x: 280, y: 24, 'text-anchor': 'middle', class: 'fd-label' }, svg, 'Normal');
-    const medium1 = svgEl('text', { x: 24, y: 44, class: 'fd-label' }, svg);
-    const medium2 = svgEl('text', { x: 24, y: 282, class: 'fd-label' }, svg);
-    // Stable SVG groups rotate about the incidence point for smooth updates.
-    function ray(name, base, incoming, dashed) {
-      const g = svgEl('g', { class: 'fd-ray fd-' + name, 'data-ray': name }, svg);
-      svgEl('line', { x1: 280, y1: 160, x2: 280, y2: base, 'stroke-dasharray': dashed ? '6 5' : 'none' }, g);
-      const y = base < 160 ? 82 : 238;
-      svgEl('path', { d: incoming ? 'M275 ' + (y - 7) + ' L280 ' + y + ' L285 ' + (y - 7) :
-        'M275 ' + (y + (base < 160 ? 7 : -7)) + ' L280 ' + y + ' L285 ' + (y + (base < 160 ? 7 : -7)) }, g);
+    el('div', { class: 'fd-heading' }, host, goal.kind === 'critical' ? 'Draw the critical-angle diagram' : 'Draw the ray diagram');
+    el('p', { class: 'fd-caption', id: 'fd-task' }, host, 'Pick a line, then drag from the incidence point. Lines lock when they reach their place.');
+    const tools = el('div', { class: 'fd-tools', role: 'group', 'aria-label': 'Drawing tools' }, host);
+    const toolButtons = {};
+    STEPS.forEach(k => {
+      const b = el('button', { type: 'button', class: 'nav-btn fd-tool', 'data-tool': k, 'aria-pressed': 'false' }, tools, NAMES[k]);
+      b.addEventListener('click', () => choose(k, true));
+      b.addEventListener('keydown', ev => { if (/^Arrow/.test(ev.key)) { ev.preventDefault(); choose(k, true); if (tool === k) key(k, ev); } });
+      toolButtons[k] = b;
+    });
+    const svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'fd-svg fd-draw', role: 'group', 'aria-labelledby': 'fd-title', 'aria-describedby': 'fd-task' }, host);
+    svgEl('title', { id: 'fd-title' }, svg, 'Ray drawing area');
+    svgEl('line', { x1: 20, y1: OY, x2: 540, y2: OY, class: 'fd-interface' }, svg);
+    svgEl('text', { x: 24, y: 44, class: 'fd-label' }, svg, 'Medium 1 · n₁ = ' + idx(goal.n1));
+    svgEl('text', { x: 24, y: 300, class: 'fd-label' }, svg, 'Medium 2 · n₂ = ' + idx(goal.n2));
+    svgEl('text', { x: 536, y: OY - 8, 'text-anchor': 'end', class: 'fd-label fd-dim' }, svg, 'Boundary');
+    const ghost = svgEl('line', { class: 'fd-ghost', x1: OX, y1: OY, x2: OX, y2: OY }, svg);
+    const parts = {};
+    STEPS.forEach(k => {
+      const g = svgEl('g', { class: 'fd-line fd-' + k, 'data-line': k }, svg);
+      const line = svgEl('line', { x1: OX, y1: OY, x2: OX, y2: OY }, g);
+      const twin = k === 'normal' ? svgEl('line', { x1: OX, y1: OY, x2: OX, y2: OY }, g) : null;
+      const arrow = k === 'normal' ? null : svgEl('path', { class: 'fd-arrow' }, g);
+      const handle = svgEl('circle', { r: 13, class: 'fd-handle', tabindex: '0', role: 'slider', 'aria-label': NAMES[k] + ' angle from the normal',
+        'aria-valuemin': '0', 'aria-valuemax': k === 'normal' ? '90' : '180', 'data-handle': k }, g);
+      handle.addEventListener('pointerdown', ev => { if (!state.locked[k]) { choose(k); start(ev); } });
+      handle.addEventListener('keydown', ev => key(k, ev));
+      parts[k] = { g: g, line: line, twin: twin, arrow: arrow, handle: handle };
+    });
+    const readout = svgEl('text', { x: OX + 14, y: OY - 14, class: 'fd-label fd-readout' }, svg);
+    svgEl('circle', { cx: OX, cy: OY, r: 5, class: 'fd-origin' }, svg);
+    const status = el('p', { class: 'fd-caption fd-status', role: 'status', 'aria-live': 'polite' }, host);
+    const actions = el('div', { class: 'fd-actions' }, host);
+    const check = el('button', { type: 'button', class: 'nav-btn primary' }, actions, 'Check diagram');
+    const hintButton = el('button', { type: 'button', class: 'nav-btn', 'aria-controls': 'fd-hint' }, actions, 'Diagram hint');
+    const hint = el('p', { id: 'fd-hint', class: 'fd-caption fd-hint' }, host); hint.hidden = true;
+    check.addEventListener('click', checkAll);
+    hintButton.addEventListener('click', () => { state.hint++; showHint(); });
+
+    function incidentSide() { return state.locked.incident && state.incident ? state.incident.s : null; }
+    function nextStep() { return STEPS.find(k => !state.locked[k]) || null; }
+    function available(k) { const i = STEPS.indexOf(k); return STEPS.slice(0, i).every(p => state.locked[p]); }
+    function choose(k, focus) {
+      if (finished || state.locked[k]) return;
+      if (!available(k)) { status.textContent = 'Draw the ' + NAMES[nextStep()].toLowerCase() + ' first.'; return; }
+      tool = k; paint();
+      if (focus) {
+        if (!state[k]) place(k, start0(k));
+        paint(); status.textContent = NAMES[k] + ' selected · drag it into place, or use the arrow keys on its handle.';
+        parts[k].handle.focus && parts[k].handle.focus();
+      }
+    }
+    function point(ev) {
+      const r = svg.getBoundingClientRect();
+      return { x: (ev.clientX - r.left) * W / (r.width || W), y: (ev.clientY - r.top) * H / (r.height || H) };
+    }
+    function place(k, raw) {
+      const g = guide(k, raw, goal, incidentSide());
+      state[k] = g.line; ghostFor = g.ghost && !state.locked[k] ? k : null;
       return g;
     }
-    const incident = ray('incident', 48, true), reflected = ray('reflected', 48, false, true), refracted = ray('refracted', 272, false);
-    const arc1 = svgEl('path', { class: 'fd-arc fd-incident', fill: 'none' }, svg);
-    const arc2 = svgEl('path', { class: 'fd-arc fd-refracted', fill: 'none' }, svg);
-    svgEl('text', { x: 245, y: 128, class: 'fd-label' }, svg, 'θ₁');
-    svgEl('text', { x: 308, y: 202, class: 'fd-label' }, svg, 'θ₂');
-    const rayStatus = el('p', { class: 'fd-caption', 'aria-live': 'polite' }, host);
-    const form = el('form', { class: 'fd-form', 'aria-describedby': caption.id }, host);
-    const grid = el('div', { class: 'fd-fields' }, form);
-    ['n1', 'n2', 't1', 't2'].forEach(key => {
-      const label = el('label', { class: 'fd-field', for: 'fd-' + key }, grid);
-      const target = key === meta.target;
-      el('span', {}, label, LABELS[key] + (key[0] === 't' ? ' (°)' : ' (index)'));
-      const input = el('input', { id: 'fd-' + key, type: 'number', inputmode: 'decimal', step: 'any',
-        min: key[0] === 'n' ? '0.000001' : '0', 'aria-describedby': 'fd-state-' + key }, label);
-      if (key[0] === 't') input.max = '90';
-      input.readOnly = !target;
-      input.required = target;
-      if (!target) input.value = String(values[key]);
-      const state = el('span', { class: 'fd-field-state', id: 'fd-state-' + key }, label, target ? 'Find and lock · ' + meta.precision + ' d.p.' : 'Given · locked');
-      fields[key] = { input: input, state: state };
-    });
-    const check = el('button', { type: 'submit', class: 'nav-btn' }, form, 'Check & lock');
-    const feedback = el('p', { class: 'fd-caption', role: 'status' }, form);
-    const explore = el('div', { class: 'fd-explore' }, host); explore.hidden = true;
-    el('label', { for: 'fd-explore-angle', class: 'fd-heading' }, explore, 'Explore incidence (°)');
-    el('p', { class: 'fd-caption' }, explore, 'Question values stay locked. Change this angle to compare refraction and reflection.');
-    const exploreControls = el('div', { class: 'fd-explore-controls' }, explore);
-    const angle = el('input', { type: 'number', id: 'fd-explore-angle', min: '0', max: '90', step: 'any', inputmode: 'decimal' }, exploreControls);
-    const slider = el('input', { type: 'range', min: '0', max: '90', step: '0.1', 'aria-label': 'Explore incidence in degrees' }, exploreControls);
-    const criticalButton = el('button', { type: 'button', class: 'nav-btn' }, explore, 'At critical angle');
-    const reset = el('button', { type: 'button', class: 'nav-btn' }, explore, 'Question sketch');
-    const hintButton = el('button', { type: 'button', class: 'nav-btn', 'aria-expanded': 'false', 'aria-controls': 'fd-hint' }, host, 'Diagram hint');
-    const hint = el('p', { id: 'fd-hint', class: 'fd-caption fd-hint' }, host,
-      meta.kind === 'critical' ? 'Draw the boundary and its perpendicular normal. At θc, the refracted ray runs along the boundary (θ₂ = 90°). A larger incidence angle gives total internal reflection; the reflected angle equals the incident angle.' :
-        'Draw the boundary and its perpendicular normal. Mark θ₁ and θ₂ from the normal, using n₁ sin θ₁ = n₂ sin θ₂. The ray bends toward the normal in the higher-index medium. Draw the reflected ray with θr = θ₁.');
-    hint.hidden = true;
-    hintButton.addEventListener('click', () => { hint.hidden = !hint.hidden; hintButton.setAttribute('aria-expanded', String(!hint.hidden)); });
-    function rotate(g, degrees) {
-      g.style.visibility = degrees == null ? 'hidden' : 'visible';
-      if (degrees != null) g.style.transform = 'rotate(' + degrees + 'deg)';
+    function start(ev) {
+      if (!tool || finished) return;
+      ev.preventDefault && ev.preventDefault();
+      try { svg.setPointerCapture && svg.setPointerCapture(ev.pointerId); } catch (e) {}
+      drag = { k: tool, raw: state[tool] }; move(ev);
     }
-    function arc(path, t, bottom) {
-      if (t == null || t === 0) { path.setAttribute('d', ''); return; }
-      const r = 45, x = 280 + (bottom ? 1 : -1) * r * Math.sin(t * RAD);
-      const y = 160 + (bottom ? 1 : -1) * r * Math.cos(t * RAD);
-      path.setAttribute('d', 'M280 ' + (160 + (bottom ? r : -r)) + ' A45 45 0 0 0 ' + x + ' ' + y);
+    function move(ev) {
+      if (!drag) return;
+      const p = point(ev); if (Math.hypot(p.x - OX, p.y - OY) < 6) return;
+      drag.raw = lineFrom(drag.k, p.x, p.y);
+      const g = place(drag.k, drag.raw);
+      paint(g.snapped);
     }
-    function draw() {
-      const shown = Object.assign({}, values);
-      const candidate = parse(meta.target, fields[meta.target].input.value);
-      if (!solved && candidate != null) shown[meta.target] = candidate;
-      const physical = solved && explored ? trace(values.n1, values.n2, Number(angle.value)) : null;
-      const t1 = physical ? physical.t1 : shown.t1, t2 = physical ? physical.t2 : shown.t2;
-      rotate(incident, t1 == null ? null : -t1);
-      rotate(reflected, t1 == null ? null : t1);
-      rotate(refracted, t2 == null ? null : -t2);
-      arc(arc1, t1, false); arc(arc2, t2, true);
-      medium1.textContent = 'Medium 1 · n₁ = ' + (shown.n1 == null ? '?' : number(shown.n1, 3));
-      medium2.textContent = 'Medium 2 · n₂ = ' + (shown.n2 == null ? '?' : number(shown.n2, 3));
-      svg.classList.toggle('fd-trial', !solved);
-      let text;
-      if (!solved) text = 'Trial sketch · check your value to confirm the rays. Dashed ray: reflection, θr = θ₁.';
-      else if (physical) text = physical.mode === 'tir' ? 'Total internal reflection · θr = ' + number(t1, 1) + '° · no transmitted ray.' :
-        (physical.mode === 'grazing' ? 'At the critical angle · ' : 'Refraction · ') + 'θ₁ = θr = ' + number(t1, 1) + '° · θ₂ = ' + number(t2, 1) + '°.';
-      else text = 'Question sketch · θ₁ = θr = ' + number(values.t1, 1) + '° · θ₂ = ' + number(values.t2, 1) + '°.';
-      rayStatus.textContent = text;
-      description.textContent = text + ' ' + medium1.textContent + '. ' + medium2.textContent + '.';
+    function end(ev) {
+      if (!drag) return;
+      const k = drag.k; drag = null; ghostFor = null;
+      try { svg.releasePointerCapture && svg.releasePointerCapture(ev.pointerId); } catch (e) {}
+      settle(k);
     }
-    function queueDraw() {
-      if (pending != null) cancelAnimationFrame(pending);
-      pending = requestAnimationFrame(() => { pending = null; draw(); });
+    /* An interrupted gesture keeps the raw line, adjustable, and never locks. */
+    function cancel(ev) {
+      if (!drag) return;
+      const k = drag.k; state[k] = drag.raw || null; drag = null; ghostFor = null;
+      try { svg.releasePointerCapture && svg.releasePointerCapture(ev.pointerId); } catch (e) {}
+      paint();
     }
-    fields[meta.target].input.addEventListener('input', () => {
-      fields[meta.target].input.removeAttribute('aria-invalid'); feedback.textContent = ''; queueDraw();
-    });
-    function complete() {
-      if (solved) return;
-      solved = true;
-      values[meta.target] = question.answerValue;
-      const target = fields[meta.target];
-      target.input.value = number(question.answerValue, meta.precision);
-      target.input.readOnly = true; target.state.textContent = 'Correct · locked';
-      check.disabled = true; check.hidden = true; feedback.textContent = 'Values locked. Explore the rays or continue to the next question.';
-      explore.hidden = false;
-      angle.value = slider.value = String(values.t1);
-      criticalButton.hidden = !(values.n1 > values.n2);
-      draw();
+    function settle(k) {
+      if (state[k] && error(k, state[k], goal, incidentSide()) < 1e-6) lock(k);
+      else { paint(); if (state[k]) status.textContent = NAMES[k] + ' placed · adjust it or check the diagram.'; }
     }
-    form.addEventListener('submit', event => {
-      event.preventDefault(); if (solved) return;
-      const input = fields[meta.target].input, value = parse(meta.target, input.value);
-      if (value == null || !accepts(value, question.answerValue, meta.precision)) {
-        input.setAttribute('aria-invalid', 'true');
-        feedback.textContent = value == null ? 'Enter a valid ' + (meta.target[0] === 'n' ? 'positive index.' : 'angle from 0° to 90°.') : 'Try again. Use the givens and round to ' + meta.precision + ' decimal ' + (meta.precision === 1 ? 'place.' : 'places.');
-        return;
-      }
-      complete(); onCorrect();
-    });
-    function changeAngle(source) {
-      const value = parse('t1', source.value);
-      source.setAttribute('aria-invalid', value == null ? 'true' : 'false');
-      if (value == null) return;
-      angle.value = String(value); slider.value = String(value); explored = true; queueDraw();
+    function lock(k) {
+      state.locked[k] = true; ghostFor = null;
+      const n = nextStep(); tool = n;
+      status.textContent = NAMES[k] + ' locked.' + (n ? ' Next: ' + NAMES[n].toLowerCase() + '.' : '');
+      hint.hidden = true; state.hint = 0;
+      if (!n) { finished = true; status.textContent = 'Diagram complete.'; paint(); if (onComplete) onComplete(); return; }
+      paint();
     }
-    angle.addEventListener('input', () => changeAngle(angle));
-    slider.addEventListener('input', () => changeAngle(slider));
-    criticalButton.addEventListener('click', () => {
-      angle.value = String(trace(values.n1, values.n2, values.t1).critical); changeAngle(angle);
-    });
-    reset.addEventListener('click', () => { explored = false; angle.value = slider.value = String(values.t1); draw(); });
-    draw();
-    return { complete: complete, destroy: () => { if (pending != null) cancelAnimationFrame(pending); host.replaceChildren(); host.hidden = true; } };
+    function key(k, ev) {
+      if (state.locked[k] || finished) return;
+      const step = ev.shiftKey ? 5 : 1;
+      const delta = { ArrowLeft: -step, ArrowDown: -step, ArrowRight: step, ArrowUp: step }[ev.key];
+      if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); settle(k); return; }
+      if (delta == null) return;
+      ev.preventDefault(); choose(k); if (tool !== k) return;
+      const cur = state[k] || start0(k);
+      let raw = k === 'normal' ? { a: Math.max(0, Math.min(90, cur.a + delta)) } : { a: Math.max(0, Math.min(k === 'refracted' ? 120 : 90, cur.a + delta)), s: cur.s };
+      place(k, raw); paint(); if (error(k, state[k], goal, incidentSide()) < 1e-6) lock(k);
+    }
+    /* Keyboard starting line, well away from the answer. */
+    function start0(k) {
+      if (k === 'normal') return { a: 35 };
+      const t = k === 'incident' ? goal.t1 : goal.t2, s = k === 'incident' ? -1 : -(incidentSide() || -1);
+      return { a: t > 45 ? t - 30 : t + 30, s: s };
+    }
+    function issue(k) {
+      const line = state[k];
+      if (!line) return 'Draw the ' + NAMES[k].toLowerCase() + '.';
+      if (k === 'normal') return 'Normal: make it perpendicular to the boundary.';
+      if (k === 'refracted' && goal.t2 > 0.5 && line.s !== -incidentSide()) return 'Refracted ray: it continues on the other side of the normal.';
+      const want = k === 'incident' ? goal.t1 : goal.t2, sym = k === 'incident' ? 'θ₁' : 'θ₂';
+      if (k === 'refracted' && goal.kind === 'critical') return 'Refracted ray: at the critical angle it runs along the boundary.';
+      return NAMES[k] + ': ' + (line.a > want ? 'move it closer to the normal' : 'tilt it further from the normal') + ' · ' + sym + ' is measured from the normal.';
+    }
+    function checkAll() {
+      if (finished) return;
+      STEPS.forEach(k => { if (!state.locked[k] && available(k) && state[k] && error(k, state[k], goal, incidentSide()) <= snapLimit(k)) lock(k); });
+      if (finished) return;
+      const k = nextStep(); status.textContent = issue(k); tool = k; paint();
+    }
+    function showHint() {
+      const k = nextStep(); if (!k) return;
+      const lvl = state.hint, t1 = fmt(goal.t1), t2 = fmt(goal.t2);
+      const toward = goal.n2 > goal.n1 ? 'toward' : 'away from';
+      const lines = {
+        normal: ['The normal is perpendicular to the boundary at the incidence point.', 'Drag straight up from the dot.'],
+        incident: ['Use the incidence angle from the question: θ₁ = ' + t1 + '°, measured from the normal.', 'Draw it in medium 1, coming down to the dot.'],
+        refracted: goal.kind === 'critical'
+          ? ['At the critical angle the refracted ray grazes the boundary (θ₂ = 90°).', 'Drag along the boundary on the far side of the normal.']
+          : ['The refracted ray crosses into medium 2 on the far side of the normal.', 'It bends ' + toward + ' the normal: θ₂ = ' + t2 + '°.']
+      }[k];
+      hint.textContent = lines.slice(0, Math.min(lines.length, lvl)).join(' ');
+      hint.hidden = false;
+    }
+    function paint(snapped) {
+      STEPS.forEach(k => {
+        const p = parts[k], line = state[k];
+        p.g.style.visibility = line ? 'visible' : 'hidden';
+        p.g.classList.toggle('fd-locked', !!state.locked[k]);
+        p.g.classList.toggle('fd-active', tool === k && !state.locked[k]);
+        p.g.classList.toggle('fd-snapped', !!snapped && drag && drag.k === k);
+        p.handle.setAttribute('tabindex', state.locked[k] || finished ? '-1' : '0');
+        p.handle.setAttribute('aria-disabled', String(!!state.locked[k]));
+        if (!line) { p.handle.setAttribute('cx', OX); p.handle.setAttribute('cy', OY); return; }
+        const e = endpoint(k, line);
+        p.line.setAttribute('x2', e.x); p.line.setAttribute('y2', e.y);
+        p.handle.setAttribute('cx', e.x); p.handle.setAttribute('cy', e.y);
+        p.handle.setAttribute('aria-valuenow', fmt(line.a));
+        p.handle.setAttribute('aria-valuetext', fmt(line.a) + '° from the normal' + (state.locked[k] ? ', locked' : ''));
+        if (p.twin) { p.twin.setAttribute('x2', 2 * OX - e.x); p.twin.setAttribute('y2', 2 * OY - e.y); }
+        if (p.arrow) {
+          // Arrowhead at the midpoint pointing along the light's travel.
+          const inc = k === 'incident', ux = (inc ? OX - e.x : e.x - OX) / LEN, uy = (inc ? OY - e.y : e.y - OY) / LEN;
+          const mx = (OX + e.x) / 2, my = (OY + e.y) / 2, px = -uy, py = ux;
+          p.arrow.setAttribute('d', 'M' + (mx - 8 * ux + 6 * px) + ' ' + (my - 8 * uy + 6 * py) + ' L' + mx + ' ' + my + ' L' + (mx - 8 * ux - 6 * px) + ' ' + (my - 8 * uy - 6 * py));
+        }
+      });
+      if (ghostFor) {
+        const target = guide(ghostFor, { a: ghostFor === 'normal' ? 0 : ghostFor === 'incident' ? goal.t1 : goal.t2, s: state[ghostFor].s }, goal, incidentSide()).line;
+        const e = endpoint(ghostFor, target); ghost.setAttribute('x2', e.x); ghost.setAttribute('y2', e.y); ghost.style.visibility = 'visible';
+      } else ghost.style.visibility = 'hidden';
+      const live = drag ? drag.k : tool;
+      readout.textContent = live && state[live] && live !== 'normal' ? (live === 'incident' ? 'θ₁ ' : 'θ₂ ') + Math.round(state[live].a) + '°' : '';
+      STEPS.forEach(k => { const b = toolButtons[k]; b.setAttribute('aria-pressed', String(tool === k)); b.disabled = finished || !!state.locked[k] || !available(k); b.classList.toggle('done', !!state.locked[k]); });
+      check.disabled = finished; hintButton.disabled = finished;
+      svg.classList.toggle('fd-complete', finished);
+    }
+    svg.addEventListener('pointerdown', ev => { if (!drag) start(ev); });
+    svg.addEventListener('pointermove', move);
+    svg.addEventListener('pointerup', end);
+    svg.addEventListener('pointercancel', cancel);
+    tool = finished ? null : nextStep();
+    if (finished) status.textContent = 'Diagram complete.';
+    paint();
+    return {
+      show: () => { host.hidden = false; },
+      get done() { return finished; },
+      getState: () => JSON.parse(JSON.stringify({ normal: state.normal, incident: state.incident, refracted: state.refracted, locked: state.locked, hint: state.hint })),
+      destroy: () => { drag = null; host.replaceChildren(); host.hidden = true; }
+    };
   }
-  global.FormulaDiagram = { mount: mount, trace: trace, parse: parse, accepts: accepts };
+  global.FormulaDiagram = { mount: mount, trace: trace, targets: targets, lineFrom: lineFrom, guide: guide, error: error, GHOST: GHOST, SNAP: SNAP };
 })(typeof window !== 'undefined' ? window : globalThis);

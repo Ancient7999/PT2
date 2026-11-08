@@ -341,15 +341,21 @@ function cardCopyOf(q, hide){
   if(steps.length===q.steps.length) return q;
   const c=Object.assign({}, q); c.steps=steps; return c;
 }
+function isTypedQuestion(q){ return isSaq(q) || (isStepped(q) && Array.isArray(q.steps) && q.steps.some(isTypedStepDef)); }
 function buildGroupedCards(all, groups){
   const norm=c=>catLabelOf(c==null||c===''?'general':c);
   const cards=[], taken=new Set(), overlap=!!(BANK && BANK.cardsOverlap);
+  // a group with "typed": true holds every typed-answer question (short answers, and stepped questions with a typed step)
+  const typedHome=groups.some(g=>g && g.typed===true);
+  // calculation questions registered with "formula": {chapter, key} live in the Formulas section
+  all=all.filter(q=>!q.formula);
   groups.forEach((g,i)=>{
     const set=new Set((g.cats||[]).map(norm));
     // a group may also name whole bank forms (forms:["A"]) — used when one category spans several cards
     const fset=new Set((g.forms||[]).map(String));
     const tset=new Set((g.tags||[]).map(String));
-    let pool=all.filter(q=>(overlap || !taken.has(q.__id)) && (set.has(norm(q.cat)) || fset.has(String(q.__form)) || (Array.isArray(q.tags) && q.tags.some(t=>tset.has(String(t))))));
+    let pool=all.filter(q=>(overlap || !taken.has(q.__id)) && (typedHome && isTypedQuestion(q) && !q.__extra ? g.typed===true :
+      (set.has(norm(q.cat)) || fset.has(String(q.__form)) || (Array.isArray(q.tags) && q.tags.some(t=>tset.has(String(t)))))));
     pool.forEach(q=>taken.add(q.__id));
     const filtered=overlap;
     if(filtered) pool=pool.map(q=>cardCopyOf(q, g.hideTags)).filter(Boolean);
@@ -804,9 +810,11 @@ function loadRunState(cardId){
 function restoreRun(run){
   const byId={}; ALLQ.forEach(q=>{ byId[q.__id]=q; });
   if(runCard && runCard.__filtered && Array.isArray(runCard.pool)) runCard.pool.forEach(q=>{ byId[q.__id]=q; });
+  // only questions the card still holds (a question that moved to another card is not brought back)
+  const inCard=runCard && Array.isArray(runCard.pool) ? new Set(runCard.pool.map(q=>q.__id)) : null;
   const deck=[];
   run.deck.forEach(d=>{
-    const base=byId[d.id];
+    const base=inCard && !inCard.has(d.id) ? null : byId[d.id];
     if(!base) return;
     const q=JSON.parse(JSON.stringify(base));
     if(isMatching(q)){
@@ -1158,7 +1166,8 @@ async function loadBankWithExtras(mainPath, extraPaths){
     Object.keys(extra.bank).forEach(form=>{
       if(!data.bank[form]) data.bank[form]=[];
       if(Array.isArray(extra.bank[form])){
-        data.bank[form]=data.bank[form].concat(extra.bank[form]);
+        // extra banks keep their own cards: the main bank's "typed" routing does not take their questions
+        data.bank[form]=data.bank[form].concat(extra.bank[form].map(q=>Object.assign({}, q, {__extra:true})));
       }
     });
     if(Array.isArray(extra.cards)){
@@ -1643,6 +1652,28 @@ function saqInputEl(id, name, label){
   input.placeholder='Type your answer'; input.setAttribute('aria-label',label||'Your answer');
   return input;
 }
+/* Typing hints switch: one saved preference for every short answer (on by default). */
+const SAQ_HINTS_KEY='pt2_saq_hints_off';
+function saqHintsOff(){ try{ return localStorage.getItem(SAQ_HINTS_KEY)==='1'; }catch(e){ return false; } }
+function applySaqHints(){ document.documentElement.classList.toggle('pt2-no-saq-hints', saqHintsOff()); }
+function saqHintToggle(){
+  const lb=document.createElement('label'); lb.className='saq-hint-toggle';
+  lb.innerHTML='<input type="checkbox"><span>Disable typing hints</span>';
+  const cb=lb.querySelector('input'); cb.checked=saqHintsOff();
+  // keep the focus in the answer box, so the switch never grades a half-typed answer
+  lb.addEventListener('pointerdown', e=>e.preventDefault());
+  lb.addEventListener('mousedown', e=>e.preventDefault());
+  cb.addEventListener('change', ()=>{ try{ localStorage.setItem(SAQ_HINTS_KEY, cb.checked?'1':'0'); }catch(_){} applySaqHints(); });
+  applySaqHints();
+  return lb;
+}
+/* Typing echo under a typed answer box, shared by every short-answer input (same as labeling). */
+function saqAttachEcho(host, input, cands, id){
+  const echo=document.createElement('div'); echo.className='label-echo saq-echo'; if(id) echo.id=id; echo.setAttribute('aria-live','polite');
+  host.appendChild(echo);
+  input.addEventListener('input',()=>{ echo.innerHTML=input.disabled?'':labelEchoHTML(cands(), input.value); });
+  return echo;
+}
 function renderSaq(q, ans){
   if(isSaqMulti(q)) return renderSaqMulti(q, ans);
   const opts=document.getElementById('options');
@@ -1657,14 +1688,9 @@ function renderSaq(q, ans){
   wrap.append(input);
   opts.appendChild(wrap);
   if(done) saqShowCompleted(input, ans);
-  // typed step in a stepped question: the labeling highlighter under the box
-  // (each wrong letter is marked in the accent colour as you type)
-  if(isTypedStep(q) && !done){
-    const echo=document.createElement('div'); echo.className='label-echo saq-echo'; echo.id='saqEcho'; echo.setAttribute('aria-live','polite');
-    wrap.appendChild(echo);
-    const cand={answer:q.answer, accept:q.accept, caseSensitive:q.caseSensitive};
-    input.addEventListener('input',()=>{ echo.innerHTML=labelEchoHTML(cand, input.value); });
-  }
+  // the labeling highlighter under the box (each wrong letter is marked in the accent colour as you type)
+  if(!done) saqAttachEcho(wrap, input, ()=>({answer:null, accept:saqAccepts(q), caseSensitive:q.caseSensitive}), 'saqEcho');
+  if(!done) wrap.appendChild(saqHintToggle());
   if(!done && quizActive) setTimeout(()=>{ if(document.activeElement!==input && document.getElementById('quizView').classList.contains('active')) try{ input.focus({preventScroll:true}); }catch(e){} },0);
 }
 function saqSoftWrong(input, msg, o){
@@ -1678,7 +1704,7 @@ function saqSoftWrong(input, msg, o){
   if(!(o && o.blur)) input.select(); // a blur grade never pulls the focus back
 }
 function saqSolvedFx(q, o){
-  const ec=document.getElementById('saqEcho'); if(ec) ec.remove();
+  document.querySelectorAll('#options .saq-echo, #options .saq-hint-toggle').forEach(ec=>ec.remove());
   const fb=document.getElementById('feedback');
   fb.className='feedback good'; fb.textContent=correctFeedbackText(q); renderMathIn(fb);
   renderStepRecap(); // a typed last step shows the series recap at once, like a choice step
@@ -1785,9 +1811,11 @@ function renderSaqMulti(q, ans){
     const qi=current;
     saqAutoGrade(input, o=>{ if(current===qi) submitSaq(k, o); });
     row.append(num,ctx,input);
+    if(!done) saqAttachEcho(row, input, ()=>({answer:null, accept:saqBlankHintAlts(q,k,saqMultiState(qi).parts), caseSensitive:q.caseSensitive}));
     list.appendChild(row);
   });
   wrap.append(list);
+  if(!a.correct) wrap.appendChild(saqHintToggle());
   opts.appendChild(wrap);
   paintSaqBlanks(q,a);
   if(!a.correct && quizActive) setTimeout(()=>{ const f=wrap.querySelector('input.saq-input:not(:disabled)'); if(f && document.activeElement!==f && document.getElementById('quizView').classList.contains('active')) try{ f.focus({preventScroll:true}); }catch(e){} },0);
@@ -1796,7 +1824,7 @@ function submitSaqBlank(k, o){
   o=o||{};
   const q=questions[current], a=saqMultiState(current);
   const inputs=[...document.querySelectorAll('.saq-multi input.saq-input')];
-  const lockPart=(j,text)=>{ a.parts[j]=text; const inp=inputs[j]; if(inp){ inp.value=text; inp.disabled=true; inp.classList.add('correct'); } };
+  const lockPart=(j,text)=>{ a.parts[j]=text; const inp=inputs[j]; if(inp){ inp.value=text; inp.disabled=true; inp.classList.add('correct'); const ec=inp.parentNode&&inp.parentNode.querySelector('.saq-echo'); if(ec) ec.remove(); } };
   const check=j=>{
     const inp=inputs[j]; if(!inp || inp.disabled) return 'skip';
     const typed=inp.value; if(!saqNorm(typed)) return 'empty';
@@ -3689,7 +3717,7 @@ function selectAnswer(idx){
     return;
   }
   locked=true; answers[current]=idx; onQuestionSolved(q);
-  document.querySelectorAll('.opt').forEach((o,i)=>{ o.disabled=true; if(i===idx) o.classList.add('correct'); });
+  document.querySelectorAll('#options .opt').forEach((o,i)=>{ o.disabled=true; if(i===idx) o.classList.add('correct'); });
   fb.className='feedback good'; fb.textContent=correctFeedbackText(q); renderMathIn(fb);
   renderStepRecap();
   document.getElementById('mainPanel').classList.add('correct-pulse');
@@ -4180,7 +4208,7 @@ if(document.fonts&&document.fonts.ready){
 })();
 placeSettingsGear();
 
-window.StudyQuiz={ isAnswered, leaveRun, labelFit, labelFitWire, labelZoneTarget, DROP_RADIUS, DROP_EXIT, loadBank, loadBankWithExtras, ingestBank, startRun, resumeRun, goSets, goPortal, renderSets, refreshSetsCards,
+window.StudyQuiz={ formulaBank:()=>({questions:ALLQ.filter(q=>q.formula), names:(BANK&&BANK.formulaNames)||{}}), isAnswered, leaveRun, labelFit, labelFitWire, labelZoneTarget, DROP_RADIUS, DROP_EXIT, loadBank, loadBankWithExtras, ingestBank, startRun, resumeRun, goSets, goPortal, renderSets, refreshSetsCards,
   get bankKey(){ return BANK_KEY; }, get cards(){ return CARDS; }, get questions(){ return questions; }, get answers(){ return answers; },
   get current(){ return current; }, get active(){ return quizActive; }, jumpToQuestion, selectAnswer, submitSaq, toggleMulti, submitMulti, isMulti, saqMatches, saqHint, orderShuffle, goNext, goBack, idReport:()=>ID_REPORT, get lectureSet(){ return LECTURE_SET; } };
 

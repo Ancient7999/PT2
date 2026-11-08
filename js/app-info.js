@@ -6,10 +6,18 @@
 var APP_INFO = {
   releases: [
    {
+   version: '0.45',
+   date: '08/11/2026',
+   changes: [
+     'Medical Physics SAQs moved to the Mixed Chapters card.',
+     'UI fixes.',
+      ]
+    },
+   {
    version: '0.44',
    date: '08/11/2026',
    changes: [
-     'Add interactive optics diagrams to formula practice.',
+     'Interactive diagrams in Medical Physics Chapter 5 formulas.',
      'LaTeX text fixes.',
       ]
     },

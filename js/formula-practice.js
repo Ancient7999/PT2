@@ -11,7 +11,7 @@
 (function () {
   'use strict';
   let cfg = null, gen = null, q = null, keys = [], curKey = '', wrong = 0, hintLevel = 0, locked = false;
-  let clock = null, started = 0, diagram = null, history = [], historyIndex = -1;
+  let bankQueue = [], bankKeys = [], clock = null, started = 0, diagram = null, history = [], historyIndex = -1;
 
   const $ = id => document.getElementById(id);
   function ls(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
@@ -21,7 +21,22 @@
   function total() { const n = parseInt(ls(countKey()) || '0', 10); return n > 0 ? n : 0; }
   function families() { try { return JSON.parse(ls(familyKey()) || '{}') || {}; } catch (e) { return {}; } }
   function famCount(k) { const m = families(); return (m[k] && m[k].total) || 0; }
-  function famTitle(k) { const md = gen && gen.FORMULA_METADATA[k]; return (md && md.name) || k || 'Formulas'; }
+  function famTitle(k) { const md = (gen && gen.FORMULA_METADATA[k]) || bankNames()[k]; return (md && md.name) || k || 'Formulas'; }
+  /* Calculation questions from the bank, registered per chapter with "formula": {chapter, key}. */
+  function bankSource() { return (window.StudyQuiz && typeof StudyQuiz.formulaBank === 'function') ? StudyQuiz.formulaBank() : { questions: [], names: {} }; }
+  function bankNames() { return bankSource().names || {}; }
+  function bankFor(chId) { return chId ? bankSource().questions.filter(b => b.formula && b.formula.chapter === chId) : []; }
+  /* formulas on a chapter card: generated ones plus bank-only ones */
+  function formulaCount(ch) { const ks = ch.keys.slice(); bankFor(ch.id).forEach(b => { if (ks.indexOf(b.formula.key) < 0) ks.push(b.formula.key); }); return ks.length; }
+  function fromBank(b) {
+    const key = b.formula.key, md = (gen && gen.FORMULA_METADATA[key]) || bankNames()[key] || {};
+    const order = b.options.map((_, i) => i).sort(() => Math.random() - 0.5);
+    return { id: b.__id || b.id, bankId: b.id, q: b.q, options: order.map(i => b.options[i]), correct: order.indexOf(b.correct),
+      explain: b.explain || '', formulaKey: key, formulaEq: md.description || '', _formulaVariant: 'bank',
+      // registered optics givens: the same drawing task as generated questions
+      formulaDiagram: b.formula.diagram ? { kind: b.formula.diagram.kind, values: Object.assign({}, b.formula.diagram.values), target: b.formula.diagram.target, precision: b.formula.diagram.precision } : undefined,
+      answerValue: b.formula.diagram ? b.formula.diagram.answerValue : undefined };
+  }
   function bump(k, variant) {
     const m = families(); if (!m[k]) m[k] = { total: 0, byVariant: {} };
     m[k].total++; const vk = String(variant == null ? 0 : variant); m[k].byVariant[vk] = (m[k].byVariant[vk] || 0) + 1;
@@ -77,9 +92,9 @@ function appendSetsSection(host) {
   (extraBadge ? '<span class="card-badge note-badge amber" title="Told not to be on the exam" style="margin-left:8px">Off-exam</span>' : '');
 
 btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
-  '<div class="card-sub">' + ch.keys.length + ' formulas · ' + ch.subtitle + '</div>' +
+  '<div class="card-sub">' + formulaCount(ch) + ' formulas' + (bankFor(ch.id).length ? ' · ' + bankFor(ch.id).length + ' bank questions' : '') + ' · ' + ch.subtitle + '</div>' +
   '<div class="card-stats"><div class="card-pct">' + total() + ' answered</div></div>';
-      btn.addEventListener('click', () => start(ch.keys));
+      btn.addEventListener('click', () => start(ch.keys, ch.id));
       grid.appendChild(btn);
     });
   }
@@ -87,7 +102,9 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
 }
 
   /* —— run —— */
-  function start(ks) {
+  function start(ks, chId) {
+    bankQueue = bankFor(chId).slice();
+    bankKeys = bankQueue.map(b => b.formula.key).filter((k, i, a) => a.indexOf(k) === i);
     const mat = window.__activeMaterial; const c = configFor(mat); if (!c) return;
     cfg = c; gen = window[c.gen];
     keys = (ks && ks.length) ? ks.slice() : gen.allKeys();
@@ -101,14 +118,15 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
   }
   function next(random) {
     wrong = 0; hintLevel = 0; locked = false;
-    q = random ? gen.generateQuestion(keys) : gen.generateQuestion([leastKey()]);
+    saveDrawing(); q = bankQueue.length ? fromBank(bankQueue.shift()) : random ? gen.generateQuestion(keys) : gen.generateQuestion([leastKey()]);
     history = history.slice(0, historyIndex + 1);
-    history.push({ question: q, solved: false }); historyIndex++;
+    history.push({ question: q, solved: false, drawing: null, credited: false }); historyIndex++;
     curKey = q.formulaKey;
     render();
   }
   function back() {
     if (historyIndex <= 0) return;
+    saveDrawing();
     const entry = history[--historyIndex]; q = entry.question; locked = entry.solved;
     wrong = 0; hintLevel = 0; curKey = q.formulaKey; render();
   }
@@ -116,12 +134,33 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
     const btns = document.querySelectorAll('#formulaOptions .opt');
     btns.forEach((b, k) => { b.disabled = true; if (k === q.correct) b.classList.add('correct'); });
     const fb = $('formulaFeedback'); fb.className = 'feedback good'; fb.textContent = '✓ ' + (q.explain || ''); if (typeof renderMathIn === 'function') renderMathIn(fb);
-    if (diagram) { $('formulaDiagram').hidden = false; diagram.complete(); }
+    if (diagram) diagram.show();
     $('formulaWorkspace').classList.toggle('has-diagram', !!diagram);
+    gateNext();
+  }
+  /* A question with a diagram counts once the drawing is complete; Next waits for it. */
+  function pending() { return !!(locked && diagram && !diagram.done); }
+  function gateNext() {
+    const b = $('formulaRollBtn'); b.disabled = pending();
+    b.title = b.disabled ? 'Finish the diagram to continue' : '';
+  }
+  function saveDrawing() { if (diagram && history[historyIndex]) history[historyIndex].drawing = diagram.getState(); }
+  function credit() {
+    const entry = history[historyIndex]; if (!entry || entry.credited) return;
+    entry.credited = true;
+    bump(q.formulaKey, q._formulaVariant);
+    if (window.PT2Unlocks && PT2Unlocks.formulaSolved && cfg) PT2Unlocks.formulaSolved(cfg.key);
+    chrome();
+  }
+  function drawingDone() {
+    saveDrawing(); gateNext(); credit();
+    const panel = $('formulaPanel'); panel.classList.add('correct-pulse'); setTimeout(() => panel.classList.remove('correct-pulse'), 650);
+    if (typeof spawnConfetti === 'function') { try { spawnConfetti(); } catch (e) {} }
   }
   function render() {
     if (diagram) diagram.destroy();
-    diagram = window.FormulaDiagram ? FormulaDiagram.mount($('formulaDiagram'), q, () => select(q.correct)) : null;
+    const entry = history[historyIndex];
+    diagram = window.FormulaDiagram ? FormulaDiagram.mount($('formulaDiagram'), q, drawingDone, entry && entry.drawing) : null;
     $('formulaDiagram').hidden = true;
     $('formulaWorkspace').classList.remove('has-diagram');
     $('formulaBackBtn').disabled = historyIndex <= 0;
@@ -134,12 +173,13 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
     const fb = $('formulaFeedback'); fb.className = 'feedback idle'; fb.textContent = '';
     $('formulaHintBox').classList.remove('show');
     setShowUsed(false);
-    if (locked) solvedUI();
+    if (locked) solvedUI(); else gateNext();
     chrome();
   }
   function chrome() {
     const strip = $('formulaFamilyStrip'); strip.innerHTML = '';
-    keys.forEach(k => {
+    // bank-only formulas (no generator) are listed too, but never generated
+    keys.concat(bankKeys.filter(k => keys.indexOf(k) < 0)).forEach(k => {
       const s = document.createElement('span'); s.className = 'ff-title' + (k === curKey ? ' active' : '');
       const n = famCount(k); s.textContent = famTitle(k) + ' ' + n; s.title = famTitle(k) + ' · ' + n + ' answered';
       strip.appendChild(s);
@@ -176,15 +216,13 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
     solvedUI();
     const panel = $('formulaPanel'); panel.classList.add('correct-pulse'); setTimeout(() => panel.classList.remove('correct-pulse'), 650);
     if (typeof spawnConfetti === 'function') { try { spawnConfetti(); } catch (e) {} }
-    bump(q.formulaKey, q._formulaVariant);
-    if (window.PT2Unlocks && PT2Unlocks.formulaSolved && cfg) PT2Unlocks.formulaSolved(cfg.key);
-    chrome();
-
+    if (!diagram) credit(); else chrome();
   }
   function active() { const v = $('formulaView'); return !!(v && v.classList.contains('active')); }
   function leave() {
     clearInterval(clock);
     if (diagram) diagram.destroy(); diagram = null; q = null;
+    $('formulaOptions').innerHTML = ''; $('formulaFeedback').className = 'feedback idle'; $('formulaFeedback').textContent = '';
     $('formulaWorkspace').classList.remove('has-diagram');
     if (window.StudyQuiz && StudyQuiz.renderSets) StudyQuiz.renderSets();
     if (typeof showView === 'function') showView('setsView');
@@ -192,7 +230,7 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
 
   function wire() {
     $('formulaShowBtn').addEventListener('click', () => { if (q && !$('formulaShowBtn').disabled) reveal(Math.max(1, hintLevel || 1)); });
-    $('formulaRollBtn').addEventListener('click', () => { if (q) next(false); });
+    $('formulaRollBtn').addEventListener('click', () => { if (q && !pending()) { saveDrawing(); next(false); } });
     $('formulaBackBtn').addEventListener('click', back);
     $('formulaSetsBtn').addEventListener('click', leave);
     window.addEventListener('keydown', e => {
@@ -210,5 +248,5 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire); else wire();
 
-  window.FormulaPractice = { appendSetsSection, start, next: () => next(false), back, get question() { return q; }, get active() { return active(); }, leave, totalAnswered: () => cfg ? total() : 0 };
+  window.FormulaPractice = { formulaCount, appendSetsSection, start, next: () => next(false), back, get question() { return q; }, get active() { return active(); }, leave, totalAnswered: () => cfg ? total() : 0 };
 })();
