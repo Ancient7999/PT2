@@ -295,7 +295,8 @@ test('a bank optics question gets the same gated drawing; bank-only formulas joi
   const fp=e.context.FormulaPractice,next=e.document.getElementById('formulaRollBtn');
   const strip=()=>e.document.getElementById('formulaFamilyStrip').children.map(c=>c.textContent);
   assert.ok(strip().some(t=>t.startsWith('Law of reflection')));assert.ok(strip().some(t=>t.startsWith('Mirror equation')));
-  let guard=0;while(fp.question.bankId!=='PHY50020'&&guard++<20){e.document.getElementById('formulaOptions').children[fp.question.correct].click();next.click();}
+  // Next mixes bank and generated questions (least-solved first), so step on until the bank item comes up
+  let guard=0;while(fp.question.bankId!=='PHY50020'&&guard++<200)fp.next();
   const q=fp.question,orig=reg.find(x=>x.id==='PHY50020');
   assert.equal(q.q,orig.q);assert.equal(q.options[q.correct],orig.options[orig.correct]);
   const before=fp.totalAnswered();

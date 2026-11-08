@@ -65,7 +65,7 @@ const CALC = { ch3: ['PHY30041','PHY30052'], ch4: ['PHY40008','PHY40010','PHY400
   ch5: ['PHY50002','PHY50010','PHY50011','PHY50017','PHY50020','PHY50021','PHY50027','PHY50062','PHY50084','PHY50089','PHY50090'],
   ch6: ['PHY60006','PHY60046'] };
 // numbers in the question but recall, units, trends or naming: these stay in the chapters
-const STAY = ['PHY30029','PHY30047','PHY30055','PHY40015','PHY40016','PHY40017','PHY40020','PHY40021','PHY40025','PHY40049','PHY40053','PHY40055','PHY40082','PHY50004','PHY50068','PHY50100','PHY50106','PHY60037'];
+const STAY = ['PHY30029','PHY30047','PHY30055','PHY40015','PHY40016','PHY40020','PHY40021','PHY40025','PHY40049','PHY40053','PHY40055','PHY40082','PHY50004','PHY50100','PHY50106','PHY60037'];
 for (const [name, bank] of [['bank file', fileBank], ['offline bundle', bundle['banks/medphys/pt2.json']]]) {
   test(name + ': calculation registry moves exactly the listed questions to the Formulas section', () => {
     const { all, cards } = cardsOf(bank);
@@ -113,7 +113,7 @@ test('final routing: 25 calculations; chapter card sizes', () => {
   const { all, cards } = cardsOf(fileBank);
   assert.equal(all.filter(q => q.formula).length, 25);
   const size = l => cards.find(c => c.label.startsWith(l)).pool.length;
-  assert.deepEqual([size('Chapter 3'), size('Chapter 4'), size('Chapter 5'), size('Chapter 6'), size('Mixed')], [95, 82, 45, 70, 55]);
+  assert.deepEqual([size('Chapter 3'), size('Chapter 4'), size('Chapter 5'), size('Chapter 6'), size('Mixed')], [95, 79, 44, 69, 58]);
   const per = ch => all.filter(q => q.formula && q.formula.chapter === ch).length;
   assert.deepEqual([per('ch3'), per('ch4'), per('ch5'), per('ch6')], [2, 10, 11, 2]);
 });
@@ -135,7 +135,7 @@ test('registered optics diagrams: exact givens, answer matches the correct choic
   assert.ok(!fileBank.bank.A.some(q => q.id === 'PHY40014')); assert.ok(!('soundSpeedTemp' in fileBank.formulaNames));
 });
 
-test('extra banks (Diagrams) keep their typed stepped questions; Mixed stays 55', async () => {
+test('extra banks (Diagrams) keep their typed stepped questions; Mixed stays 58', async () => {
   const main = JSON.parse(JSON.stringify(fileBank)), extra = JSON.parse(fs.readFileSync(path.join(root, 'banks/medphys/diagrams.json'), 'utf8'));
   let ingested = null;
   const ctx = { console, fetch: async p => ({ ok: true, json: async () => JSON.parse(JSON.stringify(p === 'main' ? main : extra)) }),
@@ -146,7 +146,7 @@ test('extra banks (Diagrams) keep their typed stepped questions; Mixed stays 55'
   assert.ok(!fileBank.bank.A.some(q => q.__extra), 'main questions untouched');
   const { ctx: e, cards } = cardsOf(ingested);
   const mixed = cards.find(c => c.label === 'Mixed Chapters'), dia = cards.find(c => c.label === 'Diagrams');
-  assert.equal(mixed.pool.length, 55); assert.ok(!mixed.pool.some(q => q.__extra));
+  assert.equal(mixed.pool.length, 58); assert.ok(!mixed.pool.some(q => q.__extra));
   const extraIds = new Set(extra.bank.A.map(q => q.id));
   const placed = cards.flatMap(c => c.pool).filter(q => extraIds.has(q.id));
   assert.equal(placed.length, extra.bank.A.length, 'every Diagrams question still placed once');
@@ -165,3 +165,17 @@ test('formula card count includes bank-only formulas', () => {
   assert.equal(fc({ id: 'ch3', keys: ['poiseuille', 'surfaceTension'] }), 3); // + surface tension units
   assert.equal(fc({ id: 'ch4', keys: ['waveSpeed', 'periodFreq', 'mach', 'tempConvert'] }), 4); // the 331 + 0.6 T_C bank-only formula was removed
 });
+// runtime routing with the Diagrams extra bank merged exactly as loadBankWithExtras does (bank file and offline bundle)
+for (const [name, main, dg] of [['bank file', fileBank, JSON.parse(fs.readFileSync(path.join(root, 'banks/medphys/diagrams.json'), 'utf8'))],
+  ['offline bundle', bundle['banks/medphys/pt2.json'], bundle['banks/medphys/diagrams.json']]]) {
+  test(name + ': merged runtime cards: all 39 diagrams in Diagrams only, chapter cards unchanged', () => {
+    const data = JSON.parse(JSON.stringify(main));
+    data.bank.A = data.bank.A.concat(dg.bank.A.map(q => Object.assign({}, q, { __extra: true })));
+    data.cards = data.cards.concat(dg.cards);
+    const { cards } = cardsOf(data);
+    const size = l => cards.find(c => c.label.startsWith(l)).pool.length;
+    assert.deepEqual([size('Chapter 3'), size('Chapter 4'), size('Chapter 5'), size('Chapter 6'), size('Mixed'), size('Diagrams')], [95, 79, 44, 69, 58, 39]);
+    const dIds = new Set(dg.bank.A.map(q => q.id));
+    for (const c of cards) if (c.label !== 'Diagrams') assert.equal(c.pool.filter(q => dIds.has(q.id)).length, 0, c.label);
+  });
+}

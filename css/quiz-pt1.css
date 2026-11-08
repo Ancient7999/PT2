@@ -501,6 +501,8 @@ html.bg-edit-hide-glows body{
 
 /* —— PORTAL: short-answer (saq) questions — same look as PT1 options —— */
 .pt1q .saq-wrap{display:flex;gap:12px;align-items:stretch;flex-wrap:wrap}
+.pt1q .label-name{margin-top:14px}
+.pt1q .label-name .label-name-prompt{flex:1 0 100%;font-weight:600;color:var(--text)}
 .pt1q .saq-input{flex:1 1 260px;min-width:0;font-family:var(--font-choice,var(--body));font-size:1.12rem;line-height:1.45;color:var(--text);padding:16px 18px;border-radius:14px;border:1px solid rgba(var(--accent-0-rgb),.28);border-left:3px solid rgba(var(--accent-0-rgb),.42);background:linear-gradient(165deg,rgba(var(--accent-0-rgb),.08) 0%,rgba(10,14,22,.62) 48%,rgba(8,10,16,.82) 100%);box-shadow:0 8px 22px -16px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.04);transition:border-color .2s ease,box-shadow .2s ease,background .2s ease;cursor:text}
 .pt1q .saq-input::placeholder{color:var(--text-dim);opacity:.8}
 .pt1q .saq-input:focus{outline:none;border-color:rgba(var(--accent-0-rgb),.6);border-left-color:var(--accent-0);box-shadow:0 0 0 3px rgba(var(--accent-0-rgb),.18),0 0 20px rgba(var(--accent-0-rgb),.22)}
@@ -599,7 +601,14 @@ html:not(.pt2-phone) #quizView .label-wrap>.label-stage[style*="--ar"]{width:min
 .label-slot.open.drop-over,.label-slot.open:focus-visible{outline:3px solid var(--accent-0);outline-offset:1px;background:rgba(var(--accent-0-rgb),.28)}
 .label-slot.open.drop-over{border-style:solid;border-color:var(--accent-0);box-shadow:0 0 0 4px rgba(var(--accent-0-rgb),.35),0 0 16px 4px rgba(var(--accent-0-rgb),.55);z-index:3}
 .label-ghost.snapped{transition:left .09s ease-out,top .09s ease-out;outline:2px solid var(--accent-0);outline-offset:2px}
-.label-slot.locked{border:2px solid var(--success);background:color-mix(in srgb,var(--success) 22%,#fff);font-weight:700;color:#0f3d2c;padding:0 3px}
+/* a placed word: green text in its own field, no fill — the field keeps its size and position */
+.label-slot.locked{border:1.5px solid color-mix(in srgb,var(--success) 55%,transparent);background:transparent;box-shadow:none;font-weight:700;color:var(--success);padding:0 3px;text-shadow:0 0 3px var(--bg,#0b0f17),0 0 1px var(--bg,#0b0f17)}
+/* quiz answer mask: captions that name an answer wait until the page is solved; captions under a field stay hidden */
+.label-figure.quiz-masked [data-quiz-hide],.label-figure [data-under-label]{visibility:hidden}
+.label-figure.quiz-masked-later [data-quiz-hide="later"]{visibility:hidden}
+/* leader lines the bank keeps on (crest, trough, focus dot …): always drawn, brighter while the field is hovered */
+.label-leader.shown polyline,.label-leader.shown line{opacity:.8;stroke-width:1.6px}
+.label-leader.shown .label-leader-dot{stroke-width:6px}
 .label-slot.locked.just-locked{animation:labelPop .45s ease}
 .label-slot.locked.missed{border-color:var(--error,#f87171);background:color-mix(in srgb,var(--error,#f87171) 16%,#fff);color:#5b1515}
 .label-slot-text{overflow:visible;text-overflow:clip;white-space:nowrap;max-width:none}
@@ -849,7 +858,11 @@ html.pt2-phone .step-gallery,.step-gallery.n2{grid-template-columns:repeat(2,min
 .pt1q .saq-blank-row .saq-echo{grid-column:1 / -1}
 .pt2-no-saq-hints .pt1q .saq-echo{display:none!important}
 .pt1q .saq-hint-toggle{flex-basis:100%;display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-size:12px;color:var(--text-dim);cursor:pointer;user-select:none;width:max-content}
-.pt1q .saq-hint-toggle input{accent-color:var(--accent-0);margin:0}
+.pt1q .saq-hint-toggle input{-webkit-appearance:none;appearance:none;flex:none;width:16px;height:16px;margin:0;border-radius:5px;cursor:pointer;background:rgba(var(--accent-0-rgb),.1) center/11px 11px no-repeat;border:1px solid rgba(var(--accent-0-rgb),.45);transition:border-color .2s ease,background-color .2s ease}
+/* same tick as the select-all-that-apply options (accent gradient, dark ✓) */
+.pt1q .saq-hint-toggle:hover input{border-color:var(--accent-0)}
+.pt1q .saq-hint-toggle input:checked{border-color:var(--accent-1);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.2 6.4 4.9 9 9.8 3.2' fill='none' stroke='%230a0e17' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"),linear-gradient(135deg,var(--accent-0),var(--accent-1));background-size:11px 11px,100% 100%}
+.pt1q .saq-hint-toggle input:focus-visible{outline:2px solid var(--accent-1);outline-offset:2px}
 /* Law / principle card under a solved Mixed Chapters question */
 .law-panel{margin-top:12px;padding:12px 14px;border-radius:12px;border:1px solid rgba(var(--accent-0-rgb),.28);background:rgba(var(--accent-0-rgb),.06);color:var(--text);font-family:var(--body);box-sizing:border-box;max-width:100%;overflow-wrap:anywhere;text-align:left;animation:stepRecapIn .35s ease both}
 .law-panel .law-title{font-weight:700;font-size:1.05rem;margin-bottom:6px;color:var(--accent-0)}
@@ -869,3 +882,9 @@ html.pt2-phone .step-gallery,.step-gallery.n2{grid-template-columns:repeat(2,min
 /* key hint for Tab (calculator ⇄ question) only while the calculator is open */
 .kbd-calc-only{display:none}
 body.pt2-calc-shown .kbd-calc-only{display:inline}
+/* full lessons under a solved Mixed question (study-notes styling is shared from css/study-pt1.css) */
+.law-panel .lesson-card .lesson-body{margin-top:4px;line-height:1.55}
+.law-panel .lesson-card .lesson-body h2{font-size:1rem;margin:14px 0 6px;color:var(--accent-1)}
+.law-panel .lesson-card .lesson-body h3{font-size:.92rem;margin:12px 0 4px}
+.law-panel .lesson-card .lesson-body table{width:100%;border-collapse:collapse;font-size:.88rem;margin:8px 0;display:block;overflow-x:auto}
+.law-panel .lesson-card .lesson-body th,.law-panel .lesson-card .lesson-body td{border:1px solid rgba(var(--accent-0-rgb),.22);padding:5px 8px;text-align:left;vertical-align:top}

@@ -111,49 +111,49 @@
 }
 #studyView .chapter-card.open .chapter-body { display: block; }
 
-#studyView .md { line-height: 1.68; font-size: 1.05rem; animation: studyFadeIn 0.35s ease; }
+#studyView .md,.law-panel .lesson-body.md{ line-height: 1.68; font-size: 1.05rem; animation: studyFadeIn 0.35s ease; }
 @keyframes studyFadeIn {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
-#studyView .md h1, #studyView .md h2, #studyView .md h3, #studyView .md h4 {
+#studyView .md h1, #studyView .md h2, #studyView .md h3, #studyView .md h4,.law-panel .lesson-body.md h1,.law-panel .lesson-body.md h2,.law-panel .lesson-body.md h3,.law-panel .lesson-body.md h4{
   font-family: var(--head); font-weight: 400; line-height: 1.25;
   margin: 1.35em 0 0.55em;
 }
-#studyView .md h1 { font-size: 1.85rem; margin-top: 0.6em; color: var(--accent-0); }
-#studyView .md h2 { font-size: 1.4rem; color: var(--accent-0); }
-#studyView .md h3 { font-size: 1.18rem; color: var(--accent-1); font-style: italic; }
-#studyView .md h4 { font-size: 1.05rem; color: var(--col-gold); }
-#studyView .md p, #studyView .md li { color: var(--col-text-main); }
-#studyView .md ul, #studyView .md ol { margin: 8px 0 8px 22px; }
-#studyView .md li { margin-bottom: 5px; }
-#studyView .md a { color: var(--accent-1); }
-#studyView .md strong { color: var(--accent-0); font-weight: 600; }
-#studyView .md em { color: var(--accent-1); font-style: italic; }
-#studyView .md code, #studyView .md pre { font-family: var(--mono); font-size: 0.9em; }
-#studyView .md code {
+#studyView .md h1,.law-panel .lesson-body.md h1{ font-size: 1.85rem; margin-top: 0.6em; color: var(--accent-0); }
+#studyView .md h2,.law-panel .lesson-body.md h2{ font-size: 1.4rem; color: var(--accent-0); }
+#studyView .md h3,.law-panel .lesson-body.md h3{ font-size: 1.18rem; color: var(--accent-1); font-style: italic; }
+#studyView .md h4,.law-panel .lesson-body.md h4{ font-size: 1.05rem; color: var(--col-gold); }
+#studyView .md p, #studyView .md li,.law-panel .lesson-body.md p,.law-panel .lesson-body.md li{ color: var(--col-text-main); }
+#studyView .md ul, #studyView .md ol,.law-panel .lesson-body.md ul,.law-panel .lesson-body.md ol{ margin: 8px 0 8px 22px; }
+#studyView .md li,.law-panel .lesson-body.md li{ margin-bottom: 5px; }
+#studyView .md a,.law-panel .lesson-body.md a{ color: var(--accent-1); }
+#studyView .md strong,.law-panel .lesson-body.md strong{ color: var(--accent-0); font-weight: 600; }
+#studyView .md em,.law-panel .lesson-body.md em{ color: var(--accent-1); font-style: italic; }
+#studyView .md code, #studyView .md pre,.law-panel .lesson-body.md code,.law-panel .lesson-body.md pre{ font-family: var(--mono); font-size: 0.9em; }
+#studyView .md code,.law-panel .lesson-body.md code{
   background: rgba(0,0,0,0.45); border: 1px solid var(--border);
   border-radius: 4px; padding: 0.12em 0.4em; color: var(--accent-0);
 }
-#studyView .md pre {
+#studyView .md pre,.law-panel .lesson-body.md pre{
   background: rgba(0,0,0,0.45); border: 1px solid var(--border);
   border-left: 3px solid var(--accent-0); border-radius: 0 4px 4px 0;
   padding: 14px 20px; overflow-x: auto; white-space: pre-wrap;
   margin: 14px 0; color: var(--accent-0); line-height: 1.7;
 }
-#studyView .md pre code { background: none; border: none; padding: 0; color: inherit; }
-#studyView .md table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 0.95rem; display: block; overflow-x: auto; }
-#studyView .md th, #studyView .md td { border: 1px solid var(--border); padding: 9px 12px; text-align: left; vertical-align: top; }
-#studyView .md th {
+#studyView .md pre code,.law-panel .lesson-body.md pre code{ background: none; border: none; padding: 0; color: inherit; }
+#studyView .md table,.law-panel .lesson-body.md table{ width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 0.95rem; display: block; overflow-x: auto; }
+#studyView .md th, #studyView .md td,.law-panel .lesson-body.md th,.law-panel .lesson-body.md td{ border: 1px solid var(--border); padding: 9px 12px; text-align: left; vertical-align: top; }
+#studyView .md th,.law-panel .lesson-body.md th{
   font-family: var(--mono); font-size: 0.78rem; color: var(--accent-0);
   background: rgba(0,0,0,0.35); letter-spacing: 0.04em;
 }
-#studyView .md blockquote {
+#studyView .md blockquote,.law-panel .lesson-body.md blockquote{
   margin: 1em 0; padding: 0.35em 0 0.35em 1em;
   border-left: 3px solid var(--accent-0); color: var(--col-text-muted);
   background: linear-gradient(90deg, rgba(var(--accent-0-rgb), 0.06), transparent);
 }
-#studyView .md hr { border: none; border-top: 1px solid rgba(var(--accent-0-rgb), 0.22); margin: 1.6em 0; }
+#studyView .md hr,.law-panel .lesson-body.md hr{ border: none; border-top: 1px solid rgba(var(--accent-0-rgb), 0.22); margin: 1.6em 0; }
 
 #studyView .phase-diagram {
   margin: 1.2em 0; padding: 12px;
@@ -168,7 +168,7 @@
   #studyView .chapter-toggle .meta { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  #studyView .study-header h1, #studyView .md { animation: none; }
+  #studyView .study-header h1, #studyView .md,.law-panel .lesson-body.md{ animation: none; }
 }
 
 /* —— portal entry points —— */
@@ -274,7 +274,8 @@
 @media (prefers-reduced-motion:reduce){#studyView .simg-name.just-locked{animation:none}}
 
 /* —— Symbol and term tooltips (js/study-symbols.js) —— */
-#studyView .md .sym {
+#studyView .md .sym,/* —— Symbol and term tooltips (js/study-symbols.js) —— */
+.law-panel .lesson-body.md .sym{
   cursor: help;
   border-bottom: 1.5px solid rgba(var(--accent-1-rgb), 0.55);
   border-radius: 2px;
@@ -282,14 +283,14 @@
   outline: none;
   transition: border-color .15s ease, background-color .15s ease;
 }
-#studyView .md .sym.term { border-bottom-style: dotted; border-bottom-color: rgba(var(--accent-1-rgb), 0.65); }
+#studyView .md .sym.term,.law-panel .lesson-body.md .sym.term{ border-bottom-style: dotted; border-bottom-color: rgba(var(--accent-1-rgb), 0.65); }
 #studyView .md .sym:hover,
 #studyView .md .sym:focus-visible,
-#studyView .md .sym.sym-on {
+#studyView .md .sym.sym-on,.law-panel .lesson-body.md .sym:hover,.law-panel .lesson-body.md .sym:focus-visible,.law-panel .lesson-body.md .sym.sym-on{
   background: rgba(var(--accent-1-rgb), 0.16);
   border-bottom-color: var(--accent-1);
 }
-#studyView .md .sym:focus-visible { box-shadow: 0 0 0 2px rgba(var(--accent-0-rgb), 0.4); }
+#studyView .md .sym:focus-visible,.law-panel .lesson-body.md .sym:focus-visible{ box-shadow: 0 0 0 2px rgba(var(--accent-0-rgb), 0.4); }
 #studyView .sym-tip {
   position: fixed; z-index: 2000; left: 0; top: 0;
   max-width: 320px;
@@ -347,34 +348,36 @@
 #studyView .label-figure .label-slot.locked.wrapped .label-slot-text{white-space:normal;overflow-wrap:anywhere;line-height:1.1}
 
 /* —— formula cards (study notes) —— */
-#studyView .md .fx-box{display:flex;flex-direction:column;gap:10px;margin:18px auto;padding:16px;max-width:760px;border:1px solid rgba(var(--accent-0-rgb),.32);border-radius:16px;background:linear-gradient(160deg,rgba(var(--accent-0-rgb),.08),rgba(0,0,0,.35));box-shadow:0 8px 24px rgba(0,0,0,.25)}
-#studyView .md .fx-row{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 14px;border-radius:12px;background:rgba(0,0,0,.28);border:1px solid rgba(var(--accent-0-rgb),.14);text-align:center;min-width:0}
-#studyView .md .fx-row.fx-text{background:transparent;border-style:dashed;padding:8px 12px}
-#studyView .md .fx-title{font:600 .78rem/1.2 var(--body,system-ui),system-ui,sans-serif;letter-spacing:.02em;color:var(--accent-1);text-transform:none;opacity:.95}
-#studyView .md .fx-formula{font-family:"Cambria Math","STIX Two Math","STIX Two Text","Latin Modern Math","Cambria",Georgia,"Times New Roman",serif;font-size:1.3em;line-height:1.5;letter-spacing:normal;font-weight:400;color:var(--text);max-width:100%;overflow-x:auto;overflow-y:hidden;padding:2px 6px;border-radius:8px;cursor:help;display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:0 .15em;border-bottom:0}
-#studyView .md .fx-formula i,#studyView .md .fx-inline i{font-style:italic}
-#studyView .md .fx-op{padding:0 .25em;color:var(--accent-0)}
-#studyView .md .fx-frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 .15em;line-height:1.25}
-#studyView .md .fx-num{padding:0 .3em .08em;border-bottom:1.5px solid currentColor}
-#studyView .md .fx-den{padding:.08em .3em 0}
-#studyView .md .fx-plain{font:400 .95rem/1.5 var(--body,system-ui),system-ui,sans-serif;color:var(--text-dim,var(--text));letter-spacing:normal}
-#studyView .md .fx-note{font:400 .84rem/1.4 var(--body,system-ui),system-ui,sans-serif;color:var(--text-dim,var(--text));letter-spacing:normal}
-#studyView .md .fx-note::before{content:"→ ";color:var(--accent-0)}
-#studyView .md .fx-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:2px}
-#studyView .md .fx-chip{font:400 .8rem/1.3 var(--body,system-ui),system-ui,sans-serif;letter-spacing:normal;padding:4px 10px;border-radius:999px;border:1px solid rgba(var(--accent-0-rgb),.28);background:rgba(var(--accent-0-rgb),.08);color:var(--text)}
-#studyView .md .fx-chip-sym{font-family:"Cambria Math","STIX Two Math",Cambria,Georgia,serif;font-size:1.05em;color:var(--accent-0)}
-#studyView .md .fx-example{display:flex;flex-direction:column;gap:4px;margin:-6px auto 18px;padding:12px 16px 14px;max-width:760px;border-radius:0 0 14px 14px;border:1px solid rgba(var(--accent-0-rgb),.22);border-top:0;background:rgba(var(--accent-0-rgb),.05);font:400 .95rem/1.55 var(--body,system-ui),system-ui,sans-serif;letter-spacing:normal;color:var(--text)}
-#studyView .md .fx-example-head{font:700 .72rem/1 var(--body,system-ui),sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-0);margin-bottom:4px}
-#studyView .md .fx-ex-line{overflow-wrap:anywhere}
-#studyView .md .fx-ex-line:last-child{font-weight:600;color:var(--accent-1)}
+#studyView .md .fx-box,/* —— formula cards (study notes) —— */
+.law-panel .lesson-body.md .fx-box{display:flex;flex-direction:column;gap:10px;margin:18px auto;padding:16px;max-width:760px;border:1px solid rgba(var(--accent-0-rgb),.32);border-radius:16px;background:linear-gradient(160deg,rgba(var(--accent-0-rgb),.08),rgba(0,0,0,.35));box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#studyView .md .fx-row,.law-panel .lesson-body.md .fx-row{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 14px;border-radius:12px;background:rgba(0,0,0,.28);border:1px solid rgba(var(--accent-0-rgb),.14);text-align:center;min-width:0}
+#studyView .md .fx-row.fx-text,.law-panel .lesson-body.md .fx-row.fx-text{background:transparent;border-style:dashed;padding:8px 12px}
+#studyView .md .fx-title,.law-panel .lesson-body.md .fx-title{font:600 .78rem/1.2 var(--body,system-ui),system-ui,sans-serif;letter-spacing:.02em;color:var(--accent-1);text-transform:none;opacity:.95}
+#studyView .md .fx-formula,.law-panel .lesson-body.md .fx-formula{font-family:"Cambria Math","STIX Two Math","STIX Two Text","Latin Modern Math","Cambria",Georgia,"Times New Roman",serif;font-size:1.3em;line-height:1.5;letter-spacing:normal;font-weight:400;color:var(--text);max-width:100%;overflow-x:auto;overflow-y:hidden;padding:2px 6px;border-radius:8px;cursor:help;display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:0 .15em;border-bottom:0}
+#studyView .md .fx-formula i,#studyView .md .fx-inline i,.law-panel .lesson-body.md .fx-formula i,.law-panel .lesson-body.md .fx-inline i{font-style:italic}
+#studyView .md .fx-op,.law-panel .lesson-body.md .fx-op{padding:0 .25em;color:var(--accent-0)}
+#studyView .md .fx-frac,.law-panel .lesson-body.md .fx-frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 .15em;line-height:1.25}
+#studyView .md .fx-num,.law-panel .lesson-body.md .fx-num{padding:0 .3em .08em;border-bottom:1.5px solid currentColor}
+#studyView .md .fx-den,.law-panel .lesson-body.md .fx-den{padding:.08em .3em 0}
+#studyView .md .fx-plain,.law-panel .lesson-body.md .fx-plain{font:400 .95rem/1.5 var(--body,system-ui),system-ui,sans-serif;color:var(--text-dim,var(--text));letter-spacing:normal}
+#studyView .md .fx-note,.law-panel .lesson-body.md .fx-note{font:400 .84rem/1.4 var(--body,system-ui),system-ui,sans-serif;color:var(--text-dim,var(--text));letter-spacing:normal}
+#studyView .md .fx-note::before,.law-panel .lesson-body.md .fx-note::before{content:"→ ";color:var(--accent-0)}
+#studyView .md .fx-legend,.law-panel .lesson-body.md .fx-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:2px}
+#studyView .md .fx-chip,.law-panel .lesson-body.md .fx-chip{font:400 .8rem/1.3 var(--body,system-ui),system-ui,sans-serif;letter-spacing:normal;padding:4px 10px;border-radius:999px;border:1px solid rgba(var(--accent-0-rgb),.28);background:rgba(var(--accent-0-rgb),.08);color:var(--text)}
+#studyView .md .fx-chip-sym,.law-panel .lesson-body.md .fx-chip-sym{font-family:"Cambria Math","STIX Two Math",Cambria,Georgia,serif;font-size:1.05em;color:var(--accent-0)}
+#studyView .md .fx-example,.law-panel .lesson-body.md .fx-example{display:flex;flex-direction:column;gap:4px;margin:-6px auto 18px;padding:12px 16px 14px;max-width:760px;border-radius:0 0 14px 14px;border:1px solid rgba(var(--accent-0-rgb),.22);border-top:0;background:rgba(var(--accent-0-rgb),.05);font:400 .95rem/1.55 var(--body,system-ui),system-ui,sans-serif;letter-spacing:normal;color:var(--text)}
+#studyView .md .fx-example-head,.law-panel .lesson-body.md .fx-example-head{font:700 .72rem/1 var(--body,system-ui),sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-0);margin-bottom:4px}
+#studyView .md .fx-ex-line,.law-panel .lesson-body.md .fx-ex-line{overflow-wrap:anywhere}
+#studyView .md .fx-ex-line:last-child,.law-panel .lesson-body.md .fx-ex-line:last-child{font-weight:600;color:var(--accent-1)}
 /* whole-formula tooltips: no dotted underline on letters */
-#studyView .md .sym.fx-formula,#studyView .md .sym.fx-inline{border-bottom:0}
-#studyView .md .sym.fx-inline{padding:0 2px;border-radius:4px}
-#studyView .md .fx-formula:hover,#studyView .md .fx-formula.sym-on,#studyView .md .fx-formula:focus-visible{background:rgba(var(--accent-0-rgb),.08)}
+#studyView .md .sym.fx-formula,#studyView .md .sym.fx-inline,/* whole-formula tooltips: no dotted underline on letters */
+.law-panel .lesson-body.md .sym.fx-formula,.law-panel .lesson-body.md .sym.fx-inline{border-bottom:0}
+#studyView .md .sym.fx-inline,.law-panel .lesson-body.md .sym.fx-inline{padding:0 2px;border-radius:4px}
+#studyView .md .fx-formula:hover,#studyView .md .fx-formula.sym-on,#studyView .md .fx-formula:focus-visible,.law-panel .lesson-body.md .fx-formula:hover,.law-panel .lesson-body.md .fx-formula.sym-on,.law-panel .lesson-body.md .fx-formula:focus-visible{background:rgba(var(--accent-0-rgb),.08)}
 #studyView .sym-tip .tip-f{font-family:"Cambria Math","STIX Two Math",Cambria,Georgia,serif;font-size:1.05rem;color:var(--accent-0);margin-bottom:2px}
 #studyView .sym-tip .tip-m{font-weight:600;margin-bottom:4px}
 #studyView .sym-tip .tip-syms{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:2px;font-size:.84rem;color:var(--text-dim,var(--text))}
-@media (max-width:480px){#studyView .md .fx-box{padding:10px;border-radius:12px}#studyView .md .fx-row{padding:10px 8px}#studyView .md .fx-formula{font-size:1.15em}}
+@media (max-width:480px){#studyView .md .fx-box,.law-panel .lesson-body.md .fx-box{padding:10px;border-radius:12px}#studyView .md .fx-row,.law-panel .lesson-body.md .fx-row{padding:10px 8px}#studyView .md .fx-formula,.law-panel .lesson-body.md .fx-formula{font-size:1.15em}}
 .simg-figure .label-slot.typing:focus-within{z-index:6}
 
 /* Anatomy view stacks: view buttons, live leader lines, cut slider on the right */

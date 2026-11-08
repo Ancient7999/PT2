@@ -115,18 +115,23 @@
     // worked help for "Show formula": the generator's own givens, formula, rearranged form and numbers
     const base = FORMULA_METADATA[key].description, lhs = String(hint).split('=')[0].trim();
     const branch = WORKED_CASE[key] && WORKED_CASE[key][variant];
+    // a reciprocal form (1/d_i = …): the numbers give 1/d_i in unit⁻¹ first, then its inverse is the distance asked for
+    const recip = /^1\s*\/\s*(.+)$/.exec(lhs), inner = recip && /^1 \/ \((.*)\)$/.exec(String(plug));
+    const target = recip ? recip[1].trim() : lhs;
+    const sub = inner ? lhs + ' = ' + inner[1] + ' = ' + fmtWithUnit(1 / ans, unit ? unit + '⁻¹' : '', digits) + ', so ' + target + ' = ' + plug : lhs + ' = ' + plug;
+    const resLine = target + ' = ' + res;
     const worked = {
       caseNote: branch ? branch.note : '',
       branch: branch && branch.eq && branch.eq !== hint ? branch.eq : '',
       givens: (map || []).map(function (l) { const p = String(l).split(' → '); return p.length === 2 ? p[1] + ' = ' + p[0] : String(l); }),
       equation: base,
       rearranged: hint !== base ? hint : '',
-      substitution: lhs + ' = ' + plug,
-      result: lhs + ' = ' + res
+      substitution: sub,
+      result: resLine
     };
     return pack({ key: key, variant: variant, q: q, hint: hint, map: map, plug: plug, worked: worked,
-      steps: [hint, '= ' + plug, '= ' + res],
-      explain: hint + ' = ' + plug + ' = ' + res + '.' + (explainTail ? ' ' + explainTail : ''),
+      steps: inner ? [hint, sub, resLine] : [hint, '= ' + plug, '= ' + res],
+      explain: (inner ? sub + ' = ' + res : hint + ' = ' + plug + ' = ' + res) + '.' + (explainTail ? ' ' + explainTail : ''),
       built: buildOpts(ans, unit, digits, extra) });
   }
 

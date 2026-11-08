@@ -316,7 +316,7 @@
   function isLocked(e) { var u = byEmoji(e); return !!(u && !unlocked()[e]); }
 
   /* the unlock pop-up: PT2's achievement pop-up, in the accent colour */
-  var queue = [], showing = false;
+  var queue = [], showing = false, UNLOCK_POPUP_MS = 13500;
   function popup(u) { queue.push(u); if (!showing) next(); }
   function next() {
     var u = queue.shift(); if (!u) { showing = false; return; }
@@ -340,7 +340,8 @@
     }
     document.body.appendChild(p);
     if (u.key) { try { document.dispatchEvent(new CustomEvent('pt2-popup', { detail: u.key })); } catch (e) {} }
-    setTimeout(function () { if (p.parentNode) p.remove(); next(); }, 4500);
+    // shown 3× as long as before (4.5 s → 13.5 s); css/pt2.css starts the fade-out 0.6 s before this
+    setTimeout(function () { if (p.parentNode) p.remove(); next(); }, UNLOCK_POPUP_MS);
   }
 
   /* picker: a locked emoji is not shown at all; it appears only once unlocked */
@@ -348,6 +349,7 @@
   function decorate0() {
     var got = unlocked();
     FEATURES.concat(EXTRAS).forEach(function (f) { document.documentElement.classList.toggle(f.cls, !!got[f.key]); });
+    document.documentElement.classList.toggle('pt2-lock-open', !!got['\uD83D\uDD12']); // Settings → Lock emoji
     // the results screen (the end-of-set "how did that set feel?" stamp row) and the answer review screen offer an
     // unlockable emoji only once it is unlocked; stamps already saved on cards are not touched and still show
     document.querySelectorAll('#finalScreen [data-mood], #reviewScreen [data-mood]').forEach(function (btn) {
@@ -402,6 +404,7 @@
   function celebrateMedphys(u) {
     if (!u || !(u.bg || u.bgKey || (u.key && String(u.key).indexOf('bg:') === 0))) return;
     var em = u.emoji || u.icon;
+    if (global.PT2Prefs && typeof PT2Prefs.clearLocks === 'function') { try { PT2Prefs.clearLocks(); } catch (e) {} }
     if (em && typeof global.applyLiveMood === 'function') {
       try { global.applyLiveMood(em, { skipQuote: false }); } catch (e) {}
     }

@@ -22,7 +22,7 @@
         "Chapter 3: Surface Tension",
         "Chapter 3: Clinical Applications"
       ],
-      "draft": true
+      "draft": false
     },
     {
       "id": "ch4",
@@ -34,7 +34,7 @@
         "Chapter 4: Heat and Thermal Properties",
         "Chapter 4: Ultrasound Imaging"
       ],
-      "draft": true
+      "draft": false
     },
     {
       "id": "ch5",
@@ -44,7 +44,7 @@
         "Chapter 5: Refraction and Snell's Law",
         "Chapter 5: Total Internal Reflection"
       ],
-      "draft": true
+      "draft": false
     },
     {
       "id": "ch6",
@@ -54,7 +54,7 @@
         "Chapter 6: Vision Defects",
         "Chapter 6: Lasers"
       ],
-      "draft": true
+      "draft": false
     },
     {
       "id": "mixed",
@@ -63,7 +63,7 @@
         "Mixed Chapters: Cross-Chapter",
         "Mixed Chapters: Linking and Short Answers"
       ],
-      "draft": true,
+      "draft": false,
       "typed": true
     }
   ],
@@ -403,7 +403,7 @@
           "N·s"
         ],
         "correct": 0,
-        "explain": "Mass divided by time is the kilogram per second. Cubic metre per second is volume flow rate. Kilogram metre per second is momentum, and the newton-second is impulse (not mass flow rate)."
+        "explain": "Mass divided by time is the kilogram per second. Cubic metre per second is volume flow rate. Kilogram metre per second is momentum, and the newton-second is impulse (not mass flow rate). In CGS the same quantity is in grams per second, g/s (1 kg/s = 1000 g/s); it has no special named unit."
       },
       {
         "id": "PHY30001",
@@ -563,7 +563,7 @@
         "id": "PHY30011",
         "type": "stepped",
         "cat": "Chapter 3: Viscosity",
-        "q": "Define viscosity and give its SI unit.",
+        "q": "Define viscosity and give its SI and CGS units.",
         "steps": [
           {
             "id": "1",
@@ -585,13 +585,63 @@
               "N·s/m²",
               "N·s·m⁻²",
               "pascal-second",
-              "Pascal-second"
+              "Pascal-second",
+              "Pa*s",
+              "Pa x s",
+              "Pa×s",
+              "Pas",
+              "N.s/m2",
+              "N.s/m²",
+              "Ns/m2",
+              "Ns/m²",
+              "N s/m2",
+              "N s/m²",
+              "N*s/m2",
+              "N*s/m²",
+              "N x s/m2",
+              "pascal second",
+              "Pascal second",
+              "pascal*second",
+              "Pascal*second",
+              "pascal x second",
+              "Pascal x second",
+              "pascal×second",
+              "Pascal×second",
+              "kg m-1 s-1",
+              "kg·m⁻¹·s⁻¹",
+              "kg/(m·s)",
+              "kg/m·s",
+              "kg/m s",
+              "kg x m^-1 s^-1",
+              "kg*m^-1 s^-1",
+              "kg x m-1 s-1",
+              "kg*m-1 s-1",
+              "kg x m⁻¹ s⁻¹",
+              "kg*m⁻¹ s⁻¹",
+              "kg x m^-1*s^-1",
+              "kg*m^-1*s^-1"
+            ],
+            "caseSensitive": true
+          },
+          {
+            "id": "3",
+            "type": "saq",
+            "prompt": "What is the CGS unit of viscosity?",
+            "answer": "poise",
+            "accept": [
+              "Poise",
+              "P",
+              "poise (P)",
+              "Poise (P)"
             ],
             "caseSensitive": true
           }
         ],
-        "explain": "Viscosity is a fluid's resistance to shear deformation or flow, caused by internal friction between adjacent layers; it relates shear stress to velocity gradient, τ = η(dv/dy). Its SI unit is the pascal-second, Pa·s.",
-        "lawPanel": "viscosity"
+        "explain": "Viscosity is a fluid's resistance to shear deformation or flow, caused by internal friction between adjacent layers; it relates shear stress to velocity gradient, τ = η(dv/dy). Its SI unit is the pascal-second, Pa·s (1 Pa·s = 1 N·s·m⁻² = 1 kg·m⁻¹·s⁻¹), and its CGS unit is the poise, P (1 P = 1 g·cm⁻¹·s⁻¹ = 1 dyne·s/cm²), so 1 Pa·s = 10 P and 1 P = 0.1 Pa·s.",
+        "lawPanel": "viscosity",
+        "lessons": [
+          "viscosity"
+        ]
       },
       {
         "id": "PHY30012",
@@ -622,7 +672,7 @@
           0,
           1
         ],
-        "explain": "Dynamic viscosity is pressure times time, so Pa·s and its equivalent N·s·m⁻² are correct; in base units it is kg·m⁻¹·s⁻¹. The unit kg·m⁻¹·s⁻² is the pascal itself, and Pa·s⁻¹ divides by time instead of multiplying."
+        "explain": "Dynamic viscosity is pressure times time, so Pa·s and its equivalent N·s·m⁻² are correct; in base units it is kg·m⁻¹·s⁻¹. The unit kg·m⁻¹·s⁻² is the pascal itself, and Pa·s⁻¹ divides by time instead of multiplying. In CGS, dynamic viscosity is measured in poise (P): 1 P = 1 g·cm⁻¹·s⁻¹ = 0.1 Pa·s, so 1 Pa·s = 10 P."
       },
       {
         "id": "PHY30014",
@@ -1486,17 +1536,34 @@
       },
       {
         "id": "PHY30050",
-        "type": "mcq",
+        "type": "stepped",
         "cat": "Chapter 3: Surface Tension",
-        "q": "Which is the SI unit of surface tension?",
-        "options": [
-          "N/m²",
-          "N·m",
-          "N/m",
-          "Pa·s"
+        "q": "Surface tension has a unit in each system. Choose the unit at each step.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "Which is the SI unit of surface tension?",
+            "options": [
+              "N/m²",
+              "N·m",
+              "N/m",
+              "Pa·s"
+            ],
+            "correct": 2
+          },
+          {
+            "id": "2",
+            "prompt": "Which is the CGS unit of surface tension?",
+            "options": [
+              "dyne/cm",
+              "dyne/cm²",
+              "poise",
+              "erg"
+            ],
+            "correct": 0
+          }
         ],
-        "correct": 2,
-        "explain": "Surface tension is force per unit length, γ = F/L, so its SI unit is N/m. N/m² is the pascal, used for pressure and stress, N·m is the unit of work or torque, and Pa·s is the unit of viscosity."
+        "explain": "Surface tension is force per unit length, γ = F/L, so its SI unit is N/m and its CGS unit is dyne/cm (1 dyne/cm = 10⁻³ N/m). N/m² is the pascal and dyne/cm² is its CGS counterpart, both for pressure and stress; N·m and the erg are units of work or energy; Pa·s and the poise are the SI and CGS units of viscosity."
       },
       {
         "id": "PHY30051",
@@ -1510,7 +1577,7 @@
           "J/m"
         ],
         "correct": 1,
-        "explain": "1 N/m = 1 N·m/m² = 1 J/m², so surface tension can also be read as surface energy per unit area. J/m³ is energy per volume, W/m² is intensity, and J/m equals the newton."
+        "explain": "1 N/m = 1 N·m/m² = 1 J/m², so surface tension can also be read as surface energy per unit area. J/m³ is energy per volume, W/m² is intensity, and J/m equals the newton. In CGS the same equivalence holds: 1 dyne/cm = 1 erg/cm², and 1 dyne/cm = 10⁻³ N/m."
       },
       {
         "id": "PHY30052",
@@ -1807,7 +1874,7 @@
           "kg/s"
         ],
         "correct": 0,
-        "explain": "The CGS unit of viscosity is the poise. The pascal-second is the SI viscosity unit. N/m is the unit of surface tension, and kg/s is mass flow rate, not viscosity."
+        "explain": "The CGS unit of viscosity is the poise. The pascal-second is the SI viscosity unit. N/m is the unit of surface tension, and kg/s is mass flow rate, not viscosity. The two are linked by 1 P = 1 g·cm⁻¹·s⁻¹ = 0.1 Pa·s, so 1 Pa·s = 10 P."
       },
       {
         "id": "PHY30064",
@@ -1986,7 +2053,11 @@
           "Common carotid arteries",
           "Common carotids"
         ],
-        "explain": "Doppler ultrasound is listed for measuring blood flow in the carotid arteries, for deep vein thrombosis, for fetal circulation and for cardiac valve assessment."
+        "explain": "Doppler ultrasound is listed for measuring blood flow in the carotid arteries, for deep vein thrombosis, for fetal circulation and for cardiac valve assessment.",
+        "lessons": [
+          "doppler",
+          "bernoulli"
+        ]
       },
       {
         "id": "PHY30076",
@@ -1994,8 +2065,13 @@
         "cat": "Chapter 3: Bernoulli's Equation",
         "q": "Which mask uses Bernoulli's principle to deliver a controlled oxygen concentration?",
         "answer": "Venturi mask",
-        "accept": [],
-        "explain": "The Venturi mask forces oxygen through a narrow opening, so the fast jet lowers pressure and entrains a fixed ratio of room air."
+        "accept": [
+          "Venturi"
+        ],
+        "explain": "The Venturi mask forces oxygen through a narrow opening, so the fast jet lowers pressure and entrains a fixed ratio of room air.",
+        "lessons": [
+          "bernoulli"
+        ]
       },
       {
         "id": "PHY30077",
@@ -2006,7 +2082,11 @@
         "accept": [
           "Polycythaemia"
         ],
-        "explain": "Polycythemia raises red cell concentration, so viscosity, vascular resistance and thrombosis risk all rise. Anemia is the opposite: fewer red cells, lower viscosity, faster circulation."
+        "explain": "Polycythemia raises red cell concentration, so viscosity, vascular resistance and thrombosis risk all rise. Anemia is the opposite: fewer red cells, lower viscosity, faster circulation.",
+        "lessons": [
+          "viscosity",
+          "poiseuille"
+        ]
       },
       {
         "id": "PHY30078",
@@ -2019,7 +2099,10 @@
           "Neonatal RDS",
           "RDS"
         ],
-        "explain": "Without surfactant, surface tension stays high, so the pressure P = 2T/r needed to keep each alveolus open is too great and breathing becomes difficult."
+        "explain": "Without surfactant, surface tension stays high, so the pressure P = 2T/r needed to keep each alveolus open is too great and breathing becomes difficult.",
+        "lessons": [
+          "surfaceTension"
+        ]
       },
       {
         "id": "PHY30079",
@@ -2028,21 +2111,56 @@
         "q": "In F = ηAv/y, what is the name of the quantity v/y?",
         "answer": "Velocity gradient",
         "accept": [],
-        "explain": "The layer at the moving plate travels at v and the layer at the fixed plate does not move, so speed changes steadily across the gap. That rate of change, v/y, is the velocity gradient."
+        "explain": "The layer at the moving plate travels at v and the layer at the fixed plate does not move, so speed changes steadily across the gap. That rate of change, v/y, is the velocity gradient.",
+        "lessons": [
+          "viscosity"
+        ]
       },
       {
         "id": "PHY30080",
-        "type": "saq",
+        "type": "stepped",
         "cat": "Chapter 3: Surface Tension",
-        "q": "Which SI unit measures surface tension? Give the symbol.",
-        "answer": "N/m",
-        "accept": [
-          "N m⁻¹",
-          "Nxm⁻¹",
-          "N.m⁻¹",
-          "N*m⁻¹"
+        "q": "Surface tension has a unit in each system. Give the symbol at each step.",
+        "steps": [
+          {
+            "id": "1",
+            "type": "saq",
+            "prompt": "Which SI unit measures surface tension? Give the symbol.",
+            "answer": "N/m",
+            "accept": [
+              "N m⁻¹",
+              "Nxm⁻¹",
+              "N.m⁻¹",
+              "N*m⁻¹",
+              "Nm⁻¹",
+              "N m-1",
+              "Nm-1",
+              "N/m",
+              "newton/meter",
+              "Newton/meter",
+              "newton per meter",
+              "Newton per meter",
+              "N per m",
+              "N/meter"
+            ]
+          },
+          {
+            "id": "2",
+            "type": "saq",
+            "prompt": "Which CGS unit measures surface tension? Give the symbol.",
+            "answer": "dyne/cm",
+            "accept": [
+              "dyn/cm",
+              "dyne cm⁻¹",
+              "dyn cm⁻¹",
+              "dyne/centimetre"
+            ]
+          }
         ],
-        "explain": "Surface tension is force per unit length, T = F/L, so its SI unit is N/m, which is also J/m², energy per unit area. The CGS unit is dyne/cm."
+        "explain": "Surface tension is force per unit length, T = F/L. In SI that is newtons per metre, N/m, which is also J/m², energy per unit area. In CGS it is dynes per centimetre, dyne/cm, which is also erg/cm². Since 1 dyne = 10⁻⁵ N and 1 cm = 10⁻² m, 1 dyne/cm = 10⁻³ N/m; water at room temperature is about 0.072 N/m, or 72 dyne/cm.",
+        "lessons": [
+          "surfaceTension"
+        ]
       },
       {
         "id": "PHY30081",
@@ -2054,7 +2172,11 @@
           "Doppler echo",
           "Doppler echocardiogram"
         ],
-        "explain": "Doppler echocardiography uses the frequency shift of reflected sound to measure blood velocity, and from that the pressure gradient across a stenotic valve."
+        "explain": "Doppler echocardiography uses the frequency shift of reflected sound to measure blood velocity, and from that the pressure gradient across a stenotic valve.",
+        "lessons": [
+          "bernoulli",
+          "doppler"
+        ]
       },
       {
         "id": "PHY30082",
@@ -2065,7 +2187,11 @@
         "accept": [
           "Murmur"
         ],
-        "explain": "High velocity through a narrowed valve produces turbulent flow, and the turbulence generates an audible heart murmur heard with a stethoscope."
+        "explain": "High velocity through a narrowed valve produces turbulent flow, and the turbulence generates an audible heart murmur heard with a stethoscope.",
+        "lessons": [
+          "flowTypes",
+          "reynolds"
+        ]
       },
       {
         "id": "PHY30083",
@@ -2076,7 +2202,10 @@
         "accept": [
           "TIA"
         ],
-        "explain": "A constricted carotid or vertebral artery speeds the blood up by continuity, lowers pressure by Bernoulli and cuts flow by Poiseuille, so too little blood reaches the brain for a time."
+        "explain": "A constricted carotid or vertebral artery speeds the blood up by continuity, lowers pressure by Bernoulli and cuts flow by Poiseuille, so too little blood reaches the brain for a time.",
+        "lessons": [
+          "tia"
+        ]
       },
       {
         "id": "PHY40001",
@@ -2328,34 +2457,6 @@
         ],
         "correct": 1,
         "explain": "The speed of sound in air at 20°C is 343 m/s. Helium at 965 m/s and hydrogen at 1284 m/s are both much higher. This is because these gases have very low density, and since speed is proportional to the square root of bulk modulus divided by density, a lower density raises the speed. The values 965 m/s and 1284 m/s are also lower than the speed of sound in water, which is 1482 m/s, but the comparison asked here is against air."
-      },
-      {
-        "id": "PHY40017",
-        "type": "mcq",
-        "cat": "Chapter 4: Waves and Oscillations",
-        "q": "The speed of sound in seawater at 20°C and 3.5% salinity is:",
-        "options": [
-          "1402 m/s",
-          "1482 m/s",
-          "1522 m/s",
-          "5941 m/s"
-        ],
-        "correct": 2,
-        "explain": "The speed of sound in seawater at 20°C and 3.5% salinity is 1522 m/s. This is slightly higher than the speed in fresh water at the same temperature, which is 1482 m/s, because dissolved salts increase the bulk modulus of the water. The value 1402 m/s is for fresh water at 0°C, and 5941 m/s is the speed of sound in steel."
-      },
-      {
-        "id": "PHY40018",
-        "type": "mcq",
-        "cat": "Chapter 4: Waves and Oscillations",
-        "q": "The speed of sound in steel is approximately:",
-        "options": [
-          "343 m/s",
-          "5941 m/s",
-          "6000 m/s",
-          "6420 m/s"
-        ],
-        "correct": 1,
-        "explain": "Steel is a solid with a high bulk modulus and moderate density, giving a speed of sound of approximately 5941 m/s. The value 343 m/s is for air at 20°C. The values 6000 m/s and 6420 m/s are the speeds of sound in granite and aluminum, two other solids. The high speed in steel reflects the strong intermolecular forces that allow rapid transmission of vibrational energy."
       },
       {
         "id": "PHY40019",
@@ -3508,17 +3609,34 @@
       },
       {
         "id": "PHY40078",
-        "type": "mcq",
+        "type": "stepped",
         "cat": "Chapter 4: Waves and Oscillations",
-        "q": "What is the SI unit of wavelength?",
-        "options": [
-          "Metre (m)",
-          "Hertz (Hz)",
-          "Second (s)",
-          "Newton (N)"
+        "q": "Wavelength has a unit in each system. Choose the unit at each step.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "What is the SI unit of wavelength?",
+            "options": [
+              "Metre (m)",
+              "Hertz (Hz)",
+              "Second (s)",
+              "Newton (N)"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "What is the CGS unit of wavelength?",
+            "options": [
+              "Centimetre (cm)",
+              "Hertz (Hz)",
+              "Second (s)",
+              "Dyne (dyn)"
+            ],
+            "correct": 0
+          }
         ],
-        "correct": 0,
-        "explain": "The SI unit of wavelength is the metre (m). Hertz is frequency, second is time, and newton is force."
+        "explain": "Wavelength is a length, the distance between two neighbouring crests (or compressions), so its SI unit is the metre (m) and its CGS unit is the centimetre (cm), with 1 m = 100 cm. Hertz is the unit of frequency, the second is the unit of time, and the dyne is the CGS unit of force (1 dyne = 10⁻⁵ N)."
       },
       {
         "id": "PHY40079",
@@ -3547,20 +3665,6 @@
         ],
         "correct": 0,
         "explain": "A pure sine wave consists of a single fundamental frequency. A sawtooth wave is a complex wave composed of a fundamental frequency and integer harmonics."
-      },
-      {
-        "id": "PHY40081",
-        "type": "mcq",
-        "cat": "Chapter 4: Waves and Oscillations",
-        "q": "Which list correctly ranks the speed of sound in these solids from highest to lowest?",
-        "options": [
-          "Aluminum, granite, steel",
-          "Steel, granite, aluminum",
-          "Granite, steel, aluminum",
-          "Aluminum, steel, granite"
-        ],
-        "correct": 0,
-        "explain": "The speed of sound is 6420 m/s in aluminum, 6000 m/s in granite, and 5941 m/s in steel."
       },
       {
         "id": "PHY40082",
@@ -4479,20 +4583,6 @@
         "explain": "Light from the fish travels from denser water into rarer air and bends away from the normal. The backward extension of the emerging rays places the apparent image closer to the surface."
       },
       {
-        "id": "PHY50068",
-        "type": "mcq",
-        "cat": "Chapter 5: Refraction and Snell's Law",
-        "q": "Which medium has a refractive index of 1.36?",
-        "options": [
-          "Ethyl alcohol",
-          "Water",
-          "Fused quartz",
-          "Crown glass"
-        ],
-        "correct": 0,
-        "explain": "Ethyl alcohol has n = 1.36. Water is 1.33, fused quartz is 1.46, and crown glass is 1.52."
-      },
-      {
         "id": "PHY50069",
         "q": "What is the centre of curvature of a spherical mirror?",
         "options": [
@@ -4572,19 +4662,19 @@
           "30 cm behind the mirror"
         ],
         "correct": 0,
-        "explain": "Using 1/di = 1/f − 1/do = 1/15 − 1/40 = 5/120 gives di = +24 cm, so the image is real and 24 cm in front of the mirror. 10.9 cm adds the reciprocals instead of subtracting, 40 cm repeats the object distance, and 30 cm uses twice the focal length.",
+        "explain": "Using 1/\\(d_i\\) = 1/f − 1/\\(d_o\\) = 1/15 − 1/40 = 5/120 gives \\(d_i\\) = +24 cm, so the image is real and 24 cm in front of the mirror. 10.9 cm adds the reciprocals instead of subtracting, 40 cm repeats the object distance, and 30 cm uses twice the focal length.",
         "formula": {
           "chapter": "ch5",
           "key": "mirrorEquation",
           "worked": {
-            "equation": "1/f = 1/d_o + 1/d_i",
-            "rearranged": "1/d_i = 1/f − 1/d_o",
+            "equation": "1/f = 1/\\(d_o\\) + 1/\\(d_i\\)",
+            "rearranged": "1/\\(d_i\\) = 1/f − 1/\\(d_o\\)",
             "givens": [
               "f = 15 cm",
-              "d_o = 40 cm"
+              "\\(d_o\\) = 40 cm"
             ],
-            "substitution": "1/d_i = 1/15 − 1/40 = 8/120 − 3/120 = 5/120",
-            "result": "d_i = +24 cm (real image, in front of the mirror)"
+            "substitution": "1/\\(d_i\\) = 1/15 − 1/40 = 8/120 − 3/120 = 5/120",
+            "result": "\\(d_i\\) = +24 cm (real image, in front of the mirror)"
           }
         }
       },
@@ -4703,13 +4793,13 @@
         "cat": "Chapter 5: Reflection and Mirrors",
         "q": "In the mirror equation, which sign convention is used?",
         "options": [
-          "f positive for concave; di positive for real image",
-          "f positive for convex; di positive for virtual image",
-          "f negative for concave; di positive for real image",
-          "f positive for concave; di negative for real image"
+          "f positive for concave; \\(d_i\\) positive for real image",
+          "f positive for convex; \\(d_i\\) positive for virtual image",
+          "f negative for concave; \\(d_i\\) positive for real image",
+          "f positive for concave; \\(d_i\\) negative for real image"
         ],
         "correct": 0,
-        "explain": "Concave mirrors take positive f, convex mirrors negative f, and a real image in front of the mirror takes positive di. The other lines flip the mirror type, the f sign, or the di sign."
+        "explain": "Concave mirrors take positive f, convex mirrors negative f, and a real image in front of the mirror takes positive \\(d_i\\). The other lines flip the mirror type, the f sign, or the \\(d_i\\) sign."
       },
       {
         "id": "PHY50095",
@@ -4761,19 +4851,25 @@
         "answer": "Total internal reflection",
         "accept": [],
         "explain": "TIR stands for total internal reflection, where light travelling from a denser to a rarer medium reflects back inside when the angle of incidence exceeds the critical angle.",
-        "lawPanel": "tir"
+        "lawPanel": "tir",
+        "lessons": [
+          "tir"
+        ]
       },
       {
         "id": "PHY50100",
         "type": "saq",
         "cat": "Chapter 5: Total Internal Reflection",
-        "q": "Which angle gives an angle of refraction of 90° at a denser-to-rarer boundary?",
+        "q": "What is the name of the angle of incidence at which the angle of refraction is 90° to the normal when light passes from an optically denser to an optically rarer medium?",
         "answer": "Critical angle",
         "accept": [
           "θc"
         ],
         "explain": "The critical angle is the angle of incidence for which the refracted ray emerges along the surface at 90°. Beyond it, total internal reflection occurs.",
-        "lawPanel": "criticalAngle"
+        "lawPanel": "criticalAngle",
+        "lessons": [
+          "tir"
+        ]
       },
       {
         "id": "PHY50102",
@@ -4783,7 +4879,10 @@
         "answer": "Snell's law",
         "accept": [],
         "explain": "Snell's law states n₁ sin θ₁ = n₂ sin θ₂, with both angles measured from the normal at the boundary.",
-        "lawPanel": "snell"
+        "lawPanel": "snell",
+        "lessons": [
+          "snell"
+        ]
       },
       {
         "id": "PHY50105",
@@ -4795,7 +4894,10 @@
           "Refractive index"
         ],
         "explain": "The index of refraction compares the speed of light in vacuum to its speed in the medium; a higher value means slower light.",
-        "lawPanel": "refractiveIndex"
+        "lawPanel": "refractiveIndex",
+        "lessons": [
+          "refractiveIndex"
+        ]
       },
       {
         "id": "PHY50106",
@@ -4804,7 +4906,10 @@
         "q": "What is the name for the line at 90° to a mirror surface at the point of incidence?",
         "answer": "Normal",
         "accept": [],
-        "explain": "The normal is perpendicular to the mirror surface, and angles of incidence and reflection are measured from it."
+        "explain": "The normal is perpendicular to the mirror surface, and angles of incidence and reflection are measured from it.",
+        "lessons": [
+          "reflection"
+        ]
       },
       {
         "id": "PHY50107",
@@ -4815,7 +4920,10 @@
         "accept": [
           "P"
         ],
-        "explain": "The pole P is the central point of the mirror surface; focal length is measured from it to the focal point."
+        "explain": "The pole P is the central point of the mirror surface; focal length is measured from it to the focal point.",
+        "lessons": [
+          "sphericalMirrors"
+        ]
       },
       {
         "id": "PHY50108",
@@ -4826,7 +4934,10 @@
         "accept": [
           "Virtual"
         ],
-        "explain": "A virtual image is formed where reflected rays only appear to come from; light does not actually pass through it, so it cannot be caught on a screen."
+        "explain": "A virtual image is formed where reflected rays only appear to come from; light does not actually pass through it, so it cannot be caught on a screen.",
+        "lessons": [
+          "reflection"
+        ]
       },
       {
         "id": "PHY50110",
@@ -4851,7 +4962,10 @@
             "accept": []
           }
         ],
-        "explain": "A concave mirror reflects from its inside surface. Its focal length is the distance from the pole to the focal point, half the radius of curvature."
+        "explain": "A concave mirror reflects from its inside surface. Its focal length is the distance from the pole to the focal point, half the radius of curvature.",
+        "lessons": [
+          "sphericalMirrors"
+        ]
       },
       {
         "id": "PHY50111",
@@ -4862,7 +4976,10 @@
         "accept": [
           "Convex"
         ],
-        "explain": "A convex mirror gives a wider field of view because its image is smaller. It always forms a virtual, upright, diminished image behind the mirror."
+        "explain": "A convex mirror gives a wider field of view because its image is smaller. It always forms a virtual, upright, diminished image behind the mirror.",
+        "lessons": [
+          "sphericalMirrors"
+        ]
       },
       {
         "id": "PHY50114",
@@ -4871,7 +4988,10 @@
         "q": "What sign does the focal length of a convex mirror take in the mirror equation?",
         "answer": "Negative",
         "accept": [],
-        "explain": "Concave mirrors take positive focal length and convex mirrors negative focal length in the mirror equation, matching their converging and diverging behaviour."
+        "explain": "Concave mirrors take positive focal length and convex mirrors negative focal length in the mirror equation, matching their converging and diverging behaviour.",
+        "lessons": [
+          "sphericalMirrors"
+        ]
       },
       {
         "id": "PHY50116",
@@ -4896,7 +5016,10 @@
             "accept": []
           }
         ],
-        "explain": "A convex mirror diverges light, so its image is virtual, upright and smaller than the object, behind the mirror between the mirror and F."
+        "explain": "A convex mirror diverges light, so its image is virtual, upright and smaller than the object, behind the mirror between the mirror and F.",
+        "lessons": [
+          "sphericalMirrors"
+        ]
       },
       {
         "id": "PHY60001",
@@ -5093,20 +5216,6 @@
         ],
         "correct": 1,
         "explain": "The human eye resembles a camera. It has an adjustable lens, an iris that acts as an aperture, and a retina that acts as the film or sensor. Light enters through the cornea and is focused by the lens onto the retina. A telescope, microscope, or magnifying glass has different optical arrangements."
-      },
-      {
-        "id": "PHY60014",
-        "type": "mcq",
-        "cat": "Chapter 6: Optical Instruments",
-        "q": "The refractive index of the crystalline lens material in the human eye is approximately:",
-        "options": [
-          "1.00",
-          "1.33",
-          "1.437",
-          "2.42"
-        ],
-        "correct": 2,
-        "explain": "The refractive index of the lens material is about 1.437. This is higher than water (1.33) and air (1.00), allowing the lens to refract light. Diamond has a much higher index of 2.42. The lens works together with the cornea, which provides most of the eye's refractive power."
       },
       {
         "id": "PHY60015",
@@ -6314,7 +6423,10 @@
         "accept": [
           "Light amplification by stimulated emission of radiation"
         ],
-        "explain": "LASER stands for Light Amplification by Stimulated Emission of Radiation. The key process is stimulated emission, which amplifies light."
+        "explain": "LASER stands for Light Amplification by Stimulated Emission of Radiation. The key process is stimulated emission, which amplifies light.",
+        "lessons": [
+          "lasers"
+        ]
       },
       {
         "id": "PHY60075",
@@ -6325,7 +6437,10 @@
         "accept": [
           "accommodation"
         ],
-        "explain": "Accommodation is the process where ciliary muscles contract or relax, changing the lens thickness to focus on near or distant objects."
+        "explain": "Accommodation is the process where ciliary muscles contract or relax, changing the lens thickness to focus on near or distant objects.",
+        "lessons": [
+          "eye"
+        ]
       },
       {
         "id": "PHY60076",
@@ -6334,7 +6449,10 @@
         "q": "What is the clear liquid located behind the cornea called?",
         "answer": "Aqueous humor",
         "accept": [],
-        "explain": "The aqueous humor is the clear liquid behind the cornea, located in front of the pupil and the crystalline lens."
+        "explain": "The aqueous humor is the clear liquid behind the cornea, located in front of the pupil and the crystalline lens.",
+        "lessons": [
+          "eye"
+        ]
       },
       {
         "id": "PHY60077",
@@ -6345,7 +6463,10 @@
         "accept": [
           "presbyopia"
         ],
-        "explain": "Presbyopia is the age-related loss of accommodation, making it difficult to focus on near objects. It is corrected with convex lenses."
+        "explain": "Presbyopia is the age-related loss of accommodation, making it difficult to focus on near objects. It is corrected with convex lenses.",
+        "lessons": [
+          "visionDefects"
+        ]
       },
       {
         "id": "PHY60078",
@@ -6356,7 +6477,10 @@
         "accept": [
           "Least distance of distinct vision"
         ],
-        "explain": "The near point is the closest distance at which the eye can focus clearly, averaging about 25 cm for a normal adult."
+        "explain": "The near point is the closest distance at which the eye can focus clearly, averaging about 25 cm for a normal adult.",
+        "lessons": [
+          "eye"
+        ]
       },
       {
         "id": "PHY60079",
@@ -6365,7 +6489,10 @@
         "q": "Which vision defect is caused by irregular curvature of the cornea?",
         "answer": "Astigmatism",
         "accept": [],
-        "explain": "Astigmatism is caused by irregular curvature of the cornea, leading to blurred or distorted vision. It is corrected with cylindrical lenses."
+        "explain": "Astigmatism is caused by irregular curvature of the cornea, leading to blurred or distorted vision. It is corrected with cylindrical lenses.",
+        "lessons": [
+          "visionDefects"
+        ]
       },
       {
         "id": "PHY60080",
@@ -6378,7 +6505,10 @@
           "Concave",
           "Diverging"
         ],
-        "explain": "Myopia is corrected with a concave or diverging lens, which spreads the incoming rays slightly before they enter the eye."
+        "explain": "Myopia is corrected with a concave or diverging lens, which spreads the incoming rays slightly before they enter the eye.",
+        "lessons": [
+          "visionDefects"
+        ]
       },
       {
         "id": "PHY60081",
@@ -6389,7 +6519,10 @@
         "accept": [
           "Gain medium"
         ],
-        "explain": "The active medium is the material that amplifies light by stimulated emission. Examples include ruby crystals, He-Ne gas, and semiconductors."
+        "explain": "The active medium is the material that amplifies light by stimulated emission. Examples include ruby crystals, He-Ne gas, and semiconductors.",
+        "lessons": [
+          "lasers"
+        ]
       },
       {
         "id": "PHY60082",
@@ -6398,7 +6531,10 @@
         "q": "What is the opening in the iris that allows light to enter the eye called?",
         "answer": "Pupil",
         "accept": [],
-        "explain": "The pupil is the opening in the iris that allows light to enter the eye. The iris controls the size of this opening."
+        "explain": "The pupil is the opening in the iris that allows light to enter the eye. The iris controls the size of this opening.",
+        "lessons": [
+          "eye"
+        ]
       },
       {
         "id": "PHY60083",
@@ -6407,7 +6543,10 @@
         "q": "Which gel-like substance fills the main body of the eyeball behind the lens?",
         "answer": "Vitreous humor",
         "accept": [],
-        "explain": "The vitreous humor is the gel-like substance that fills the main body of the eyeball behind the crystalline lens."
+        "explain": "The vitreous humor is the gel-like substance that fills the main body of the eyeball behind the crystalline lens.",
+        "lessons": [
+          "eye"
+        ]
       },
       {
         "id": "PHY60084",
@@ -6419,7 +6558,10 @@
           "Cylindrical lenses",
           "Cylindrical"
         ],
-        "explain": "Astigmatism is corrected using a cylindrical lens, which compensates for the uneven curvature of the cornea."
+        "explain": "Astigmatism is corrected using a cylindrical lens, which compensates for the uneven curvature of the cornea.",
+        "lessons": [
+          "visionDefects"
+        ]
       },
       {
         "id": "PHY60085",
@@ -6430,7 +6572,10 @@
         "accept": [
           "Laser-Assisted in situ Keratomileusis"
         ],
-        "explain": "LASIK stands for Laser-Assisted in situ Keratomileusis. It uses a laser to reshape the cornea to correct myopia and hyperopia."
+        "explain": "LASIK stands for Laser-Assisted in situ Keratomileusis. It uses a laser to reshape the cornea to correct myopia and hyperopia.",
+        "lessons": [
+          "lasers"
+        ]
       },
       {
         "id": "PHY60086",
@@ -6442,7 +6587,10 @@
           "Nearsightedness",
           "Short-sightedness"
         ],
-        "explain": "Myopia, or nearsightedness, occurs when the eye has excessive optical power or is too long, focusing distant images in front of the retina."
+        "explain": "Myopia, or nearsightedness, occurs when the eye has excessive optical power or is too long, focusing distant images in front of the retina.",
+        "lessons": [
+          "visionDefects"
+        ]
       },
       {
         "id": "PHY60087",
@@ -6454,7 +6602,10 @@
           "Farsightedness",
           "Long-sightedness"
         ],
-        "explain": "Hyperopia, or farsightedness, occurs when the eye has insufficient optical power or is too short, focusing near images behind the retina."
+        "explain": "Hyperopia, or farsightedness, occurs when the eye has insufficient optical power or is too short, focusing near images behind the retina.",
+        "lessons": [
+          "visionDefects"
+        ]
       },
       {
         "id": "PHY60088",
@@ -6467,7 +6618,10 @@
           "Convex",
           "Converging"
         ],
-        "explain": "Hyperopia is corrected with a convex or converging lens, which adds positive optical power to help focus near objects onto the retina."
+        "explain": "Hyperopia is corrected with a convex or converging lens, which adds positive optical power to help focus near objects onto the retina.",
+        "lessons": [
+          "visionDefects"
+        ]
       },
       {
         "id": "PHY60089",
@@ -6478,7 +6632,10 @@
         "accept": [
           "Old-age vision"
         ],
-        "explain": "Presbyopia is the age-related loss of accommodation, making it difficult to focus on near objects. It is corrected with convex reading glasses."
+        "explain": "Presbyopia is the age-related loss of accommodation, making it difficult to focus on near objects. It is corrected with convex reading glasses.",
+        "lessons": [
+          "visionDefects"
+        ]
       },
       {
         "id": "PHY90005",
@@ -6553,6 +6710,14 @@
           "reynolds",
           "doppler",
           "surfaceTension"
+        ],
+        "lessons": [
+          "bernoulli",
+          "continuity",
+          "poiseuille",
+          "reynolds",
+          "doppler",
+          "surfaceTension"
         ]
       },
       {
@@ -6574,7 +6739,10 @@
           "Bernoulli law"
         ],
         "explain": "Bernoulli's Equation is P + ½ρv² + ρgh = constant for ideal steady flow.",
-        "lawPanel": "bernoulli"
+        "lawPanel": "bernoulli",
+        "lessons": [
+          "bernoulli"
+        ]
       },
       {
         "id": "PHY90011",
@@ -6593,7 +6761,10 @@
           "Poiseuille Principle"
         ],
         "explain": "Poiseuille's Law is Q = πr⁴ΔP / 8ηL, so radius dominates flow.",
-        "lawPanel": "poiseuille"
+        "lawPanel": "poiseuille",
+        "lessons": [
+          "poiseuille"
+        ]
       },
       {
         "id": "PHY90012",
@@ -6612,7 +6783,10 @@
           "Laplace Principle"
         ],
         "explain": "Laplace's Law for a thin cylinder is T = P r, with stress σ = P r / t.",
-        "lawPanel": "laplace"
+        "lawPanel": "laplace",
+        "lessons": [
+          "laplace"
+        ]
       },
       {
         "id": "PHY90013",
@@ -6626,7 +6800,10 @@
           "Re"
         ],
         "explain": "Reynolds Number is Re = ρvD / η, predicting laminar or turbulent flow.",
-        "lawPanel": "reynolds"
+        "lawPanel": "reynolds",
+        "lessons": [
+          "reynolds"
+        ]
       },
       {
         "id": "PHY90014",
@@ -6642,7 +6819,10 @@
           "Equation of Continuity"
         ],
         "explain": "The Continuity Equation conserves flow rate when density is constant.",
-        "lawPanel": "continuity"
+        "lawPanel": "continuity",
+        "lessons": [
+          "continuity"
+        ]
       },
       {
         "id": "PHY90015",
@@ -6661,7 +6841,10 @@
           "Snell Principle"
         ],
         "explain": "Snell's Law governs refraction at a boundary between two media.",
-        "lawPanel": "snell"
+        "lawPanel": "snell",
+        "lessons": [
+          "snell"
+        ]
       },
       {
         "id": "PHY90016",
@@ -6675,7 +6858,10 @@
           "tir"
         ],
         "explain": "Total internal reflection needs denser-to-rarer travel and incidence above the critical angle.",
-        "lawPanel": "tir"
+        "lawPanel": "tir",
+        "lessons": [
+          "tir"
+        ]
       },
       {
         "id": "PHY90017",
@@ -6691,13 +6877,16 @@
           "Doppler's Effect"
         ],
         "explain": "The Doppler Effect raises detected frequency on approach and lowers it on recession.",
-        "lawPanel": "doppler"
+        "lawPanel": "doppler",
+        "lessons": [
+          "doppler"
+        ]
       },
       {
         "id": "PHY90020",
         "type": "saq",
         "cat": "Mixed Chapters: Linking and Short Answers",
-        "q": "Which ratio is light speed in vacuum over speed in the medium?",
+        "q": "What is the name of the quantity defined as the speed of light in vacuum divided by its speed in a medium?",
         "answer": "Index of refraction",
         "accept": [
           "index of refraction",
@@ -6706,20 +6895,26 @@
           "n"
         ],
         "explain": "Index of refraction is n = c / v; a higher n means slower light.",
-        "lawPanel": "refractiveIndex"
+        "lawPanel": "refractiveIndex",
+        "lessons": [
+          "refractiveIndex"
+        ]
       },
       {
         "id": "PHY90021",
         "type": "saq",
         "cat": "Mixed Chapters: Linking and Short Answers",
-        "q": "Which angle makes the refracted ray emerge at 90 degrees?",
+        "q": "What is the name of the angle of incidence in the denser medium for which the refracted ray, passing into the less optically dense medium, travels at 90° to the normal?",
         "answer": "Critical angle",
         "accept": [
           "critical angle",
           "θc"
         ],
         "explain": "At the critical angle, refraction is 90°; beyond it, total internal reflection occurs.",
-        "lawPanel": "criticalAngle"
+        "lawPanel": "criticalAngle",
+        "lessons": [
+          "tir"
+        ]
       },
       {
         "id": "PHY90022",
@@ -6732,7 +6927,10 @@
           "γ"
         ],
         "explain": "Surface tension is force per length from cohesive forces, T = F / L.",
-        "lawPanel": "surfaceTension"
+        "lawPanel": "surfaceTension",
+        "lessons": [
+          "surfaceTension"
+        ]
       },
       {
         "id": "PHY90023",
@@ -6745,7 +6943,10 @@
           "η"
         ],
         "explain": "Viscosity η is resistance to shear between adjacent layers, in pascal-seconds.",
-        "lawPanel": "viscosity"
+        "lawPanel": "viscosity",
+        "lessons": [
+          "viscosity"
+        ]
       },
       {
         "id": "PHY90026",
@@ -6782,7 +6983,11 @@
             ]
           }
         ],
-        "lawPanel": "bernoulli"
+        "lawPanel": "bernoulli",
+        "lessons": [
+          "bernoulli",
+          "doppler"
+        ]
       },
       {
         "id": "PHY90027",
@@ -6794,7 +6999,7 @@
           {
             "id": "1",
             "type": "saq",
-            "prompt": "Type the delivery system whose design follows the radius-flow relation in Poiseuille's Law.",
+            "prompt": "Type the drip delivery system whose design follows the radius-flow relation in Poiseuille's Law.",
             "answer": "IV infusion",
             "accept": [
               "Intravenous infusion",
@@ -6809,7 +7014,11 @@
             "accept": []
           }
         ],
-        "lawPanel": "poiseuille"
+        "lawPanel": "poiseuille",
+        "lessons": [
+          "poiseuille",
+          "viscosity"
+        ]
       },
       {
         "id": "PHY90028",
@@ -6846,7 +7055,10 @@
             ]
           }
         ],
-        "lawPanel": "doppler"
+        "lawPanel": "doppler",
+        "lessons": [
+          "doppler"
+        ]
       },
       {
         "id": "PHY90030",
@@ -6873,6 +7085,9 @@
               "Laser assisted in situ keratomileusis"
             ]
           }
+        ],
+        "lessons": [
+          "lasers"
         ]
       },
       {
@@ -6954,7 +7169,244 @@
           "7": "G"
         },
         "explain": "Wetting depends on the balance between cohesion and adhesion to glass, not on surface tension alone: for water adhesion wins, so it wets clean glass with a contact angle below 90°, curves into a concave meniscus and rises; for mercury cohesion wins, so it does not wet glass, its contact angle is above 90°, its meniscus is convex and cos θ < 0 in h = 2γ cos θ / (ρ g r) makes it fall. Mercury's strong cohesion also gives it a much higher surface tension, and it is far denser than water.",
-        "lawPanel": "surfaceTension"
+        "lawPanel": "surfaceTension",
+        "lessons": [
+          "surfaceTension"
+        ]
+      },
+      {
+        "id": "PHY90032",
+        "type": "stepped",
+        "cat": "Mixed Chapters: Cross-Chapter",
+        "q": "Spherical mirrors (Chapter 5) and thin lenses in air (Chapter 6) can be paired by what they do to a beam of parallel rays. Choose the answer at each step.",
+        "steps": [
+          {
+            "id": "1",
+            "prompt": "A beam of rays parallel to the principal axis strikes a concave mirror. After reflection the rays:",
+            "options": [
+              "Converge to a real focus in front of the mirror",
+              "Spread out as if coming from a virtual focus behind the mirror",
+              "Stay parallel and travel back along their own paths",
+              "Pass through the mirror and meet behind it"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "2",
+            "prompt": "Which of these does the same thing to parallel rays as a concave mirror, but by refraction instead of reflection?",
+            "options": [
+              "Convex lens",
+              "Concave lens",
+              "Flat glass plate",
+              "Plane mirror"
+            ],
+            "correct": 0
+          },
+          {
+            "id": "3",
+            "prompt": "A beam of rays parallel to the principal axis strikes a convex mirror. After reflection the rays:",
+            "options": [
+              "Converge to a real focus in front of the mirror",
+              "Spread out as if coming from a virtual focus behind the mirror",
+              "Stay parallel and travel back along their own paths",
+              "Pass through the mirror and meet behind it"
+            ],
+            "correct": 1
+          },
+          {
+            "id": "4",
+            "prompt": "Which of these does the same thing to parallel rays as a convex mirror, but by refraction instead of reflection?",
+            "options": [
+              "Convex lens",
+              "Concave lens",
+              "Flat glass plate",
+              "Plane mirror"
+            ],
+            "correct": 1
+          },
+          {
+            "id": "5",
+            "prompt": "Why is the concave mirror paired with the convex lens by ray behaviour, not by the image they form?",
+            "options": [
+              "Each can form a real or a virtual image, depending on where the object is placed",
+              "Both always form a real, inverted image",
+              "Both always form a virtual, upright image",
+              "A mirror and a lens can never form the same kind of image"
+            ],
+            "correct": 0
+          }
+        ],
+        "explain": "Mirrors reflect light and lenses refract it, but both can be grouped by what they do to parallel rays. A concave mirror and a convex lens are converging: parallel rays are brought together at a real principal focus (in front of the mirror, or on the far side of the lens). A convex mirror and a concave lens are diverging: parallel rays spread out after reflection or refraction, and only their backward extensions meet, at a virtual focus (behind the mirror, or on the incoming side of the lens). That is why the concave mirror and the convex lens take a positive focal length, while the convex mirror and the concave lens take a negative one. The pairing is by ray behaviour, not by always forming the same image: a converging mirror or lens gives a real, inverted image when the object is beyond the focus, and a virtual, upright, magnified image when the object is inside the focus. A diverging mirror or lens always gives a virtual, upright, smaller image of a real object.",
+        "lessons": [
+          "sphericalMirrors",
+          "lenses"
+        ]
+      },
+      {
+        "id": "PHY90033",
+        "type": "matching",
+        "cat": "Mixed Chapters: Cross-Chapter",
+        "q": "Match each quantity, in the stated unit system, to its unit.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "SI unit of dynamic viscosity"
+          },
+          {
+            "id": "2",
+            "text": "SI unit of surface tension"
+          },
+          {
+            "id": "3",
+            "text": "SI unit of pressure"
+          },
+          {
+            "id": "4",
+            "text": "SI unit of force"
+          },
+          {
+            "id": "5",
+            "text": "SI unit of density"
+          },
+          {
+            "id": "6",
+            "text": "SI unit of volume flow rate"
+          },
+          {
+            "id": "7",
+            "text": "SI unit of mass flow rate"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Pa·s"
+          },
+          {
+            "id": "B",
+            "text": "N/m"
+          },
+          {
+            "id": "C",
+            "text": "Pa (N/m²)"
+          },
+          {
+            "id": "D",
+            "text": "N (kg·m/s²)"
+          },
+          {
+            "id": "E",
+            "text": "kg/m³"
+          },
+          {
+            "id": "F",
+            "text": "m³/s"
+          },
+          {
+            "id": "G",
+            "text": "kg/s"
+          },
+          {
+            "id": "H",
+            "text": "kg·m/s"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G"
+        },
+        "explain": "Each SI unit follows from the defining formula. Dynamic viscosity η is shear stress divided by velocity gradient, so it is pressure times time, Pa·s (= N·s/m² = kg·m⁻¹·s⁻¹). Surface tension is force per unit length, T = F/L, so N/m (= J/m²), while pressure is force per unit area, P = F/A, so the pascal, Pa = N/m². Force itself, F = ma, is the newton, N = kg·m/s², and density, ρ = m/V, is kg/m³. Volume flow rate, written here \\(Q_V = A v\\) (area times speed), is m³/s, and mass flow rate Q = ρAv, mass per time, is kg/s, so the two flow rates differ by the density factor; check the unit to tell which flow rate is meant. kg·m/s is momentum, not any of these.",
+        "lessons": [
+          "units"
+        ]
+      },
+      {
+        "id": "PHY90034",
+        "type": "matching",
+        "cat": "Mixed Chapters: Cross-Chapter",
+        "q": "Match each quantity, in the stated unit system, to its unit.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "CGS unit of dynamic viscosity"
+          },
+          {
+            "id": "2",
+            "text": "CGS unit of surface tension"
+          },
+          {
+            "id": "3",
+            "text": "CGS unit of force"
+          },
+          {
+            "id": "4",
+            "text": "CGS unit of pressure"
+          },
+          {
+            "id": "5",
+            "text": "CGS unit of density"
+          },
+          {
+            "id": "6",
+            "text": "CGS unit of volume flow rate"
+          },
+          {
+            "id": "7",
+            "text": "CGS unit of mass flow rate"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "poise (P)"
+          },
+          {
+            "id": "B",
+            "text": "dyne/cm"
+          },
+          {
+            "id": "C",
+            "text": "dyne (g·cm/s²)"
+          },
+          {
+            "id": "D",
+            "text": "dyne/cm²"
+          },
+          {
+            "id": "E",
+            "text": "g/cm³"
+          },
+          {
+            "id": "F",
+            "text": "cm³/s"
+          },
+          {
+            "id": "G",
+            "text": "g/s"
+          },
+          {
+            "id": "H",
+            "text": "stokes (St)"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G"
+        },
+        "explain": "CGS units are built from the centimetre, gram and second. The dyne is the force that gives 1 g an acceleration of 1 cm/s², so 1 dyne = 1 g·cm/s² = 10⁻⁵ N. Dynamic viscosity is measured in poise, 1 P = 1 g·cm⁻¹·s⁻¹ = 1 dyne·s/cm² = 0.1 Pa·s; the stokes (1 St = 1 cm²/s) is instead the unit of kinematic viscosity, ν = η/ρ, so it is not the answer for dynamic viscosity. Surface tension is force per length, dyne/cm (= 10⁻³ N/m), while pressure is force per area, dyne/cm² (= 0.1 Pa). Density is g/cm³ (1 g/cm³ = 1000 kg/m³; water is about 1 g/cm³), volume flow rate is cm³/s (= 10⁻⁶ m³/s) and mass flow rate is g/s (= 10⁻³ kg/s).",
+        "lessons": [
+          "units"
+        ]
       }
     ]
   },
@@ -6965,7 +7417,7 @@
     },
     "mirrorEquation": {
       "name": "Mirror equation",
-      "description": "1/d_o + 1/d_i = 1/f"
+      "description": "1/\\(d_o\\) + 1/\\(d_i\\) = 1/f"
     },
     "surfaceTensionUnits": {
       "name": "Surface tension units",
@@ -7201,6 +7653,772 @@
         "label": "Viscosity: a force F drags the top plate at speed v over a fluid layer of thickness y; layers move slower near the fixed plate"
       },
       "source": "content/medphys/pt2/chapter-3.md"
+    }
+  },
+  "lessons": {
+    "viscosity": {
+      "title": "Viscosity",
+      "points": [
+        "### Units of viscosity, step by step",
+        "Start from the defining relation for the two-plate picture: the viscous force is \\(F = \\eta A v / y\\), so \\(\\eta = \\dfrac{F}{A}\\cdot\\dfrac{y}{v}\\). Here \\(F/A\\) is the shear stress and \\(v/y\\) is the **velocity gradient** (how fast the speed changes across the layers).",
+        "1. Shear stress \\(F/A\\) is a force per area: newtons per square metre, **N/m²**, which has its own name, the **pascal (Pa)**.",
+        "2. The velocity gradient \\(v/y\\) is (m/s) ÷ m = **1/s**, so dividing by it multiplies by seconds.",
+        "3. So \\(\\eta\\) has unit **Pa × s = Pa·s**, the *pascal-second*. Written with the newton instead of the pascal (1 Pa = 1 N/m²) it is **N·s/m²** (also N·s·m⁻²).",
+        "4. Writing the newton in SI base units (1 N = 1 kg·m/s²): N·s/m² = (kg·m/s²)·s/m² = **kg/(m·s)**, also written kg·m⁻¹·s⁻¹.",
+        "These are **not three different units**: SI has one unit of viscosity, and Pa·s, N·s/m² and kg/(m·s) are the same unit written with a named derived unit (Pa), with another derived unit (N), or only with the base units kg, m and s. Pa·s is the usual name. When the denominator has two units, keep them together: kg/(m·s) means kg ÷ (m × s). Typed without brackets, *kg/m·s* is read the same way here as a shorthand, but kg·s/m would be a different, wrong dimension.",
+        "**CGS comparison:** the CGS unit is the **poise (P)**, 1 P = 1 g/(cm·s) = 1 dyne·s/cm². Since 1 g = 10⁻³ kg and 1 cm = 10⁻² m, 1 P = 10⁻³ kg / (10⁻² m · s) = **0.1 Pa·s**, so **1 Pa·s = 10 P**. Water at about 20 °C is close to 1 × 10⁻³ Pa·s = 1 centipoise (cP).",
+        "**Dynamic vs kinematic viscosity:** η (this lesson) is *dynamic* viscosity. Kinematic viscosity is \\(\\nu = \\eta/\\rho\\), in m²/s (CGS: the stokes, 1 St = 1 cm²/s); it is a different quantity."
+      ],
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-3.md",
+          "heading": "## 3. Viscosity"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define viscosity.",
+          "a": "Viscosity is the internal friction of a fluid: its resistance to flow, or to shear deformation, caused by the friction between adjacent layers moving at different speeds. Its SI unit is the pascal-second (Pa·s) and its CGS unit is the poise (P), with 1 P = 0.1 Pa·s."
+        },
+        {
+          "kind": "why",
+          "q": "Why can the SI unit of viscosity be written as Pa·s, N·s/m² and kg/(m·s)?",
+          "a": "Because η = (F/A)·(y/v): F/A is a pressure in N/m² = Pa and y/v is a time in s, so η is in Pa·s. Replacing Pa by N/m² gives N·s/m², and replacing N by kg·m/s² gives kg/(m·s). They are one unit written with different named units."
+        },
+        {
+          "kind": "relation",
+          "q": "How does viscosity relate to the viscous force and to flow in a tube?",
+          "a": "The viscous force is F = ηAv/y, so F ∝ η for the same area A and velocity gradient v/y. In a tube, Poiseuille's law Q = πr⁴ΔP/(8ηL) gives Q ∝ 1/η: doubling the viscosity (for example in polycythemia) halves the flow for the same pressure difference, radius and length."
+        }
+      ]
+    },
+    "bernoulli": {
+      "title": "Bernoulli's equation and its medical uses",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-3.md",
+          "heading": "## 2. Bernoulli's equation & its medical applications"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "State Bernoulli's principle.",
+          "a": "For an ideal (incompressible, non-viscous) fluid in steady streamline flow, the sum of the pressure, the kinetic energy per unit volume and the potential energy per unit volume is constant along a streamline: P + ½ρv² + ρgh = constant. Where the fluid moves faster, its pressure is lower."
+        },
+        {
+          "kind": "why",
+          "q": "Why does a Venturi mask draw in room air?",
+          "a": "Oxygen is forced through a narrow opening, so its speed rises; by Bernoulli's principle its pressure drops below the surrounding air pressure, and that pressure difference pulls in (entrains) a fixed ratio of room air, giving a controlled oxygen concentration."
+        },
+        {
+          "kind": "relation",
+          "q": "How are speed and pressure related in Bernoulli's equation at the same height?",
+          "a": "With h constant, P + ½ρv² = constant, so a rise in speed gives a fall in pressure: P₁ − P₂ = ½ρ(v₂² − v₁²). The pressure drop grows with the square of the speed, which is why Doppler echocardiography can estimate a valve pressure gradient from the measured blood speed."
+        }
+      ]
+    },
+    "continuity": {
+      "title": "Flow rates and the equation of continuity",
+      "points": [
+        "**Naming the two flow rates:** the course writes **mass flow rate** as \\(Q = \\rho A v\\) (also written ṁ), in kg/s, and **volume flow rate** as \\(A v\\), in m³/s. In this lesson the volume flow rate is labelled \\(Q_V = A v\\) to keep the two apart; they are linked by \\(Q = \\rho\\,Q_V\\).",
+        "**Units from the formula:** \\(\\rho A v\\) → (kg/m³)·(m²)·(m/s) = kg/s; \\(A v\\) → m²·(m/s) = m³/s. In CGS the same steps give g/s and cm³/s (1 g/s = 10⁻³ kg/s, 1 cm³/s = 10⁻⁶ m³/s); neither has a special named unit."
+      ],
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-3.md",
+          "heading": "## 4. Mass flow rate & volume flow rate"
+        },
+        {
+          "src": "content/medphys/pt2/chapter-3.md",
+          "heading": "## 5. Equation of continuity"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "State the equation of continuity.",
+          "a": "For a steady flow of an incompressible fluid (constant density) through a tube, the volume passing any cross-section per second is the same everywhere: A₁v₁ = A₂v₂. It follows from conservation of mass, ρA₁v₁ = ρA₂v₂."
+        },
+        {
+          "kind": "why",
+          "q": "Why does blood speed up at a stenosis?",
+          "a": "The same volume of blood must pass every cross-section each second (continuity). At the narrowing the area A is smaller, so the speed v must be larger to keep A v constant."
+        },
+        {
+          "kind": "relation",
+          "q": "How are mass flow rate and volume flow rate related?",
+          "a": "Mass flow rate is Q = ρAv in kg/s; volume flow rate is Av in m³/s. They differ by the density: mass flow rate = ρ × volume flow rate. For a fixed flow, v ∝ 1/A, so halving the area doubles the speed."
+        }
+      ]
+    },
+    "poiseuille": {
+      "title": "Poiseuille's law",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-3.md",
+          "heading": "## 4. Poiseuille's law & its medical applications"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "State Poiseuille's law.",
+          "a": "For steady laminar flow of a viscous fluid through a cylindrical tube, the volume flow rate is Q = πr⁴ΔP/(8ηL), where r is the radius, ΔP the pressure difference between the ends, η the viscosity and L the length."
+        },
+        {
+          "kind": "why",
+          "q": "Why does a small narrowing of a vessel cause a large drop in flow?",
+          "a": "Flow depends on the fourth power of the radius, Q ∝ r⁴, so halving the radius reduces the flow to 1/16 of its value for the same pressure difference; resistance rises in the same proportion."
+        },
+        {
+          "kind": "relation",
+          "q": "How does flow depend on each quantity in Poiseuille's law?",
+          "a": "Q ∝ r⁴, Q ∝ ΔP, Q ∝ 1/η and Q ∝ 1/L. Wider, shorter tubes, a bigger pressure difference and a less viscous fluid all increase flow, which is why IV infusion sets use the cannula size and bag height to control the rate."
+        }
+      ]
+    },
+    "tia": {
+      "title": "Bernoulli and Poiseuille together: TIA",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-3.md",
+          "heading": "## 5. Applications of Bernoulli and Poiseuille: TIA"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define a transient ischemic attack (TIA).",
+          "a": "A TIA is a temporary lack of blood supply to part of the brain, often caused by narrowing of a neck (carotid) artery, which produces short-lived stroke-like symptoms."
+        },
+        {
+          "kind": "why",
+          "q": "Why can a narrowed carotid artery cause a TIA?",
+          "a": "At the narrowing the blood speeds up (continuity), its pressure falls (Bernoulli), and the much higher resistance of the narrow segment sharply reduces flow (Poiseuille, Q ∝ r⁴), so the brain temporarily receives too little blood."
+        },
+        {
+          "kind": "relation",
+          "q": "How do continuity, Bernoulli and Poiseuille link in a stenosis?",
+          "a": "Smaller area → higher speed (A₁v₁ = A₂v₂) → lower pressure (P + ½ρv² constant) → smaller radius → much lower flow (Q ∝ r⁴). Each law explains one step of the chain."
+        }
+      ]
+    },
+    "laplace": {
+      "title": "Laplace's law",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-3.md",
+          "heading": "## 6. Laplace's law — tension in vessel walls"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "State Laplace's law for a cylindrical vessel.",
+          "a": "The tension in the wall of a cylindrical vessel is proportional to the pressure inside it and to its radius: T = P r (for a sphere, T = P r / 2)."
+        },
+        {
+          "kind": "why",
+          "q": "Why is an aneurysm at risk of rupture as it enlarges?",
+          "a": "By Laplace's law the wall tension is T = P r, so as the aneurysm bulges and its radius grows much larger than the normal radius, the tension in its wall rises a lot for the same blood pressure; the wall stress σ = P r / t rises too, weakening the wall and making rupture more likely."
+        },
+        {
+          "kind": "relation",
+          "q": "How do wall tension, pressure and radius relate?",
+          "a": "T ∝ P at a fixed radius and T ∝ r at a fixed pressure: doubling the radius doubles the wall tension. Dividing by the wall thickness gives the wall stress, σ = P r / t. For a sphere such as an alveolus, T = P r / 2, the same as P = 2T / r."
+        }
+      ]
+    },
+    "flowTypes": {
+      "title": "Streamline and turbulent flow",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-3.md",
+          "heading": "## 3. Types of fluid flow"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define streamline (laminar) flow.",
+          "a": "Streamline or laminar flow is smooth, orderly flow in which the fluid moves in parallel layers; in a vessel the speed is highest in the centre and lowest at the wall, giving a roughly parabolic velocity profile."
+        },
+        {
+          "kind": "why",
+          "q": "Why does turbulent flow through a narrowed valve produce a murmur?",
+          "a": "Above a certain speed, or at an irregular or sudden narrowing, the layers break up into swirls and eddies; this disordered flow vibrates the surrounding tissue and produces the audible sound heard as a heart murmur."
+        },
+        {
+          "kind": "relation",
+          "q": "How is the type of flow related to speed and vessel shape?",
+          "a": "Higher speed, larger diameter and irregular or suddenly narrowed vessels push flow from laminar towards turbulent; turbulence increases energy loss and resistance. The Reynolds number Re = ρvD/η measures this tendency."
+        }
+      ]
+    },
+    "reynolds": {
+      "title": "Reynolds number",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-3.md",
+          "heading": "## 7. Reynolds number"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define the Reynolds number.",
+          "a": "The Reynolds number is a dimensionless number that compares inertial forces to viscous forces in a flowing fluid, Re = ρvD/η, and tells whether the flow is laminar or turbulent."
+        },
+        {
+          "kind": "why",
+          "q": "Why does a high Reynolds number mean turbulent flow?",
+          "a": "Re is inertia ÷ viscosity. When Re is high, the fluid's momentum (ρvD) dominates the internal friction (η) that keeps the layers ordered, so disturbances grow into swirls and eddies."
+        },
+        {
+          "kind": "relation",
+          "q": "How does the Reynolds number depend on its variables, and what are the limits?",
+          "a": "Re ∝ ρ, Re ∝ v, Re ∝ D and Re ∝ 1/η. Below about 2000 the flow is laminar; above about 2000 it tends to become turbulent. Re has no units."
+        }
+      ]
+    },
+    "surfaceTension": {
+      "title": "Surface tension, capillarity and surfactant",
+      "points": [
+        "### Units of surface tension, step by step",
+        "Surface tension is force per length, \\(T = F/L\\): N ÷ m = **N/m**. Multiplying top and bottom by metres gives N·m/m² = **J/m²**, so it is also surface energy per area. In base units, (kg·m/s²)/m = **kg/s²**. All three are the same SI unit.",
+        "**CGS:** dyne ÷ cm = **dyne/cm** (= erg/cm²). Since 1 dyne = 10⁻⁵ N and 1 cm = 10⁻² m, 1 dyne/cm = 10⁻⁵/10⁻² N/m = **10⁻³ N/m**; water ≈ 0.072 N/m ≈ 72 dyne/cm.",
+        "### Water and mercury in glass: cause before effect",
+        "1. **Cause:** compare adhesion (liquid–glass attraction) with cohesion (liquid–liquid attraction). Water: adhesion wins. Mercury: cohesion wins.",
+        "2. **Contact angle θ** follows from that balance: water wets clean glass, θ < 90°; mercury does not wet it, θ > 90°.",
+        "3. **Meniscus:** θ < 90° curves the surface up at the walls (concave, water); θ > 90° bulges it up in the middle (convex, mercury).",
+        "4. **Rise or fall:** in \\(h = 2\\gamma\\cos\\theta/(\\rho g r)\\), cos θ > 0 for water so h > 0 (rises); cos θ < 0 for mercury so h < 0 (falls). Surface tension γ, density ρ and radius r set **how far**, not which way: mercury's large γ and large ρ change the size of the drop, and a narrower tube gives a bigger rise or fall."
+      ],
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-3.md",
+          "heading": "## 8. Surface tension & its medical applications"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define surface tension.",
+          "a": "Surface tension is the property of a liquid surface that makes it behave like a stretched elastic membrane, due to cohesive forces between the liquid molecules. It is the force per unit length acting along the surface, T = F/L, with SI unit N/m (= J/m²) and CGS unit dyne/cm (1 dyne/cm = 10⁻³ N/m)."
+        },
+        {
+          "kind": "why",
+          "q": "Why does water rise in a glass capillary while mercury falls?",
+          "a": "Water's adhesion to glass is stronger than its cohesion, so it wets the glass (contact angle below 90°), forms a concave meniscus and cos θ > 0 makes it rise. Mercury's cohesion is stronger than its adhesion, so it does not wet the glass (contact angle above 90°), forms a convex meniscus and cos θ < 0 makes it fall."
+        },
+        {
+          "kind": "relation",
+          "q": "How does capillary height depend on the tube and the liquid?",
+          "a": "h = 2γ cos θ/(ρ g r): h ∝ γ, h ∝ 1/ρ and h ∝ 1/r, while the sign of cos θ sets the direction. A narrower tube gives a larger rise (or fall). For alveoli, P = 2T/r: surfactant lowers T so less pressure keeps small alveoli open."
+        }
+      ]
+    },
+    "doppler": {
+      "title": "The Doppler effect",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-4.md",
+          "heading": "## 7. Doppler effect"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define the Doppler effect.",
+          "a": "The Doppler effect is the change in the observed frequency of a wave when the source and the observer move relative to each other: the frequency rises when they approach and falls when they move apart."
+        },
+        {
+          "kind": "why",
+          "q": "Why can Doppler ultrasound measure blood speed?",
+          "a": "Moving red blood cells reflect the ultrasound; because they move relative to the probe, the reflected frequency is shifted, and the size of the shift depends on the blood speed, so measuring the shift gives the speed (as in Doppler echocardiography and the detection of DVT)."
+        },
+        {
+          "kind": "relation",
+          "q": "How is the frequency shift related to motion?",
+          "a": "The shift grows with the relative speed: approach raises the observed frequency, recession lowers it, and with no relative motion there is no shift. The size of the shift is set by the speeds of the source and observer compared with the speed of the wave."
+        }
+      ]
+    },
+    "reflection": {
+      "title": "Reflection, the normal and real vs virtual images",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-5.md",
+          "heading": "## 2. Reflection & plane mirrors"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define the normal in reflection.",
+          "a": "The normal is an imaginary line at 90° to the reflecting surface at the point where the ray strikes it; the angles of incidence and reflection are measured from the normal, not from the surface."
+        },
+        {
+          "kind": "why",
+          "q": "Why is the image in a plane mirror virtual?",
+          "a": "The reflected rays do not actually meet behind the mirror; they only appear to come from a point behind it when traced backwards, so no light passes through the image and it cannot be caught on a screen."
+        },
+        {
+          "kind": "relation",
+          "q": "How are the incident ray, reflected ray and normal related?",
+          "a": "They lie in the same plane, the incident and reflected rays are on opposite sides of the normal, and the angle of incidence equals the angle of reflection, θi = θr. For a plane mirror the image distance equals the object distance."
+        }
+      ]
+    },
+    "sphericalMirrors": {
+      "title": "Spherical mirrors: pole, centre, focus and images",
+      "points": [
+        "**The pole (P)**, also called the vertex, is the **centre point of the mirror's reflecting surface**. It is a point *on* the mirror. Do not confuse it with the **centre of curvature (C)**, the centre of the sphere the mirror is cut from, which lies off the mirror at a distance r (the radius of curvature).",
+        "**The principal axis** is the straight line through **P and C**. The **focus (F)** lies on it, halfway between P and C, so f = r/2.",
+        "**P is the reference point for distances:** the focal length f, the radius of curvature r, the object distance \\(d_o\\) and the image distance \\(d_i\\) are all measured **from the pole** along the principal axis.",
+        "**The normal at the pole:** the normal at any point of a spherical mirror lies along the radius through C, so at P the normal is the principal axis itself. A ray hitting P therefore reflects at the same angle on the other side of the axis.",
+        "**Signs (mirror equation 1/f = 1/\\(d_o\\) + 1/\\(d_i\\)):** f is positive for a concave (converging) mirror and negative for a convex (diverging) mirror; \\(d_i\\) is positive for a real image and negative for a virtual image."
+      ],
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-5.md",
+          "heading": "## 3. Spherical mirrors"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define the pole of a spherical mirror.",
+          "a": "The pole (P), or vertex, is the centre point of the mirror's reflecting surface. It lies on the mirror and on the principal axis, and it is the point from which the focal length, radius of curvature, object distance and image distance are measured."
+        },
+        {
+          "kind": "why",
+          "q": "Why is the pole different from the centre of curvature?",
+          "a": "The pole is a point on the mirror surface, while the centre of curvature (C) is the centre of the sphere the mirror is part of, a distance r away from the mirror; the principal axis joins the two, and the focus F lies halfway between them."
+        },
+        {
+          "kind": "relation",
+          "q": "How are the pole, focus and centre of curvature related?",
+          "a": "They all lie on the principal axis, with PF = f and PC = r, and f = r/2 (r = 2f). A concave mirror has a real focus in front of it (f positive); a convex mirror has a virtual focus behind it (f negative)."
+        }
+      ]
+    },
+    "refractiveIndex": {
+      "title": "Index of refraction",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-5.md",
+          "heading": "## 4. Index of refraction"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define the refractive index (index of refraction).",
+          "a": "The refractive index of a medium is the ratio of the speed of light in vacuum to its speed in the medium, n = c/v. It has no units and is at least 1 (exactly 1 in vacuum)."
+        },
+        {
+          "kind": "why",
+          "q": "Why is the refractive index never less than 1?",
+          "a": "Light travels fastest in vacuum, so its speed v in any medium is at most c; since n = c/v, n is at least 1."
+        },
+        {
+          "kind": "relation",
+          "q": "How is refractive index related to the speed of light and optical density?",
+          "a": "n ∝ 1/v: a higher n means slower light and an optically denser medium (water n ≈ 1.33, crown glass ≈ 1.52, diamond ≈ 2.42). It enters Snell's law, n₁ sin θ₁ = n₂ sin θ₂."
+        }
+      ]
+    },
+    "snell": {
+      "title": "Refraction and Snell's law",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-5.md",
+          "heading": "## 5. Refraction & Snell's law"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "State Snell's law.",
+          "a": "When light passes from one medium into another, n₁ sin θ₁ = n₂ sin θ₂, where n₁ and n₂ are the refractive indices and θ₁ and θ₂ are the angles of incidence and refraction measured from the normal."
+        },
+        {
+          "kind": "why",
+          "q": "Why does light bend towards the normal when it enters a denser medium?",
+          "a": "It slows down in the medium with the higher refractive index; with n₂ > n₁, Snell's law gives sin θ₂ < sin θ₁, so the refracted ray makes a smaller angle with the normal."
+        },
+        {
+          "kind": "relation",
+          "q": "How are the angles and refractive indices related?",
+          "a": "sin θ₁ / sin θ₂ = n₂ / n₁ = v₁ / v₂. A ray along the normal (θ₁ = 0) is not bent; going from denser to rarer the ray bends away from the normal, which leads to the critical angle."
+        }
+      ]
+    },
+    "tir": {
+      "title": "Critical angle and total internal reflection",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-5.md",
+          "heading": "## 6. Total internal reflection"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define the critical angle.",
+          "a": "The critical angle is the angle of incidence in the optically denser medium for which the angle of refraction into the rarer medium is 90° to the normal, so the refracted ray travels along the boundary."
+        },
+        {
+          "kind": "why",
+          "q": "Why does total internal reflection happen only from a denser to a rarer medium?",
+          "a": "Only then does the refracted ray bend away from the normal, reaching 90° at the critical angle; beyond it no refraction is possible and all the light is reflected back into the denser medium. From rarer to denser the ray bends towards the normal and can always refract."
+        },
+        {
+          "kind": "relation",
+          "q": "How is the critical angle related to the refractive indices?",
+          "a": "From Snell's law with θ₂ = 90°, sin θc = n₂/n₁ (for n₁ > n₂); into air, sin θc = 1/n. A larger n gives a smaller critical angle. TIR (used in optical fibres and endoscopes) needs incidence greater than θc."
+        }
+      ]
+    },
+    "lenses": {
+      "title": "Lenses and lens power",
+      "points": [
+        "A **convex (converging) lens** brings parallel rays together at a real focus on the far side and has **positive** power; a **concave (diverging) lens** spreads them as if from a virtual focus on the incoming side and has **negative** power. Power is \\(P = 1/f\\) with f in metres; its unit, the **dioptre (D)**, is the same as m⁻¹ (no separate CGS name)."
+      ],
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-6.md",
+          "heading": "## 3. Combination of Lenses"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define the power of a lens.",
+          "a": "The power of a lens is the reciprocal of its focal length in metres, P = 1/f, measured in dioptres (D); 1 D = 1 m⁻¹. Convex lenses have positive power and concave lenses negative power."
+        },
+        {
+          "kind": "why",
+          "q": "Why is a concave lens called diverging?",
+          "a": "It refracts parallel rays so that they spread out, and they only appear to come from a virtual focus on the incoming side; a convex lens instead brings parallel rays to a real focus."
+        },
+        {
+          "kind": "relation",
+          "q": "How do focal length and power relate, and how do lenses combine?",
+          "a": "P = 1/f, so a shorter focal length means a stronger lens (f = 0.5 m → 2 D). For thin lenses in contact the powers add, P = P₁ + P₂, which is how a corrective lens adds to the eye's power."
+        }
+      ]
+    },
+    "eye": {
+      "title": "The human eye, accommodation, near and far point",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-6.md",
+          "heading": "## 6. The Human Eye"
+        },
+        {
+          "src": "content/medphys/pt2/chapter-6.md",
+          "heading": "## 7. Near Point and Far Point"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define accommodation.",
+          "a": "Accommodation is the process by which the ciliary muscles change the shape, and so the focal length, of the eye's lens so that objects at different distances are focused on the retina."
+        },
+        {
+          "kind": "why",
+          "q": "Why does the cornea do most of the focusing?",
+          "a": "Light bends most where the change in refractive index is largest, at the air–cornea boundary, giving the cornea about 43 dioptres; the lens adds a smaller, adjustable amount (about 17–20 D) through accommodation."
+        },
+        {
+          "kind": "relation",
+          "q": "How are the near point and far point related to accommodation?",
+          "a": "The near point is the closest distance at which the eye can focus clearly, using maximum accommodation (about 25 cm for a normal adult eye); the far point is the farthest, with the lens relaxed (infinity for a normal eye). Loss of accommodation moves the near point farther away."
+        }
+      ]
+    },
+    "visionDefects": {
+      "title": "Vision defects and their correction",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-6.md",
+          "heading": "## 8. Vision Defects and Their Correction"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define myopia.",
+          "a": "Myopia (near-sightedness) is a vision defect in which near objects are seen clearly but distant objects are blurred, because the image of a distant object forms in front of the retina; it is corrected with a diverging (concave) lens."
+        },
+        {
+          "kind": "why",
+          "q": "Why does a concave lens correct myopia while a convex lens corrects hyperopia?",
+          "a": "A myopic eye converges light too strongly, so a diverging lens with negative power spreads the rays slightly before they enter the eye; a hyperopic eye converges too weakly, so a converging lens with positive power adds the missing focusing."
+        },
+        {
+          "kind": "relation",
+          "q": "How are the four defects related to their causes and corrections?",
+          "a": "Myopia: image in front of the retina → concave lens. Hyperopia: image behind the retina → convex lens. Presbyopia: age-related loss of accommodation → convex (reading) lenses. Astigmatism: irregular corneal curvature → cylindrical lens."
+        }
+      ]
+    },
+    "lasers": {
+      "title": "Lasers and their medical applications",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-6.md",
+          "heading": "## 10. Lasers"
+        },
+        {
+          "src": "content/medphys/pt2/chapter-6.md",
+          "heading": "## 11. Applications of Lasers"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define a laser.",
+          "a": "LASER stands for Light Amplification by Stimulated Emission of Radiation: a device in which an active medium, pumped by an energy source and placed in an optical cavity, amplifies light by stimulated emission to give a monochromatic, coherent, highly directional and intense beam."
+        },
+        {
+          "kind": "why",
+          "q": "Why can a laser act as a bloodless knife in microsurgery?",
+          "a": "Its beam can be focused to a very small spot of high intensity that cuts tissue precisely while the heat seals (coagulates) small blood vessels, so there is little bleeding."
+        },
+        {
+          "kind": "relation",
+          "q": "How do the parts of a laser relate to its light?",
+          "a": "The pump supplies energy to the active medium, the active medium produces light by stimulated emission, and the mirrors of the optical cavity bounce it back and forth to amplify it before part leaves as the beam. In LASIK this precision is used to reshape the cornea for myopia and hyperopia."
+        }
+      ]
+    },
+    "units": {
+      "title": "SI and CGS units built from the formulas",
+      "points": [
+        "**Base and derived units.** SI has base units such as the metre (m), kilogram (kg) and second (s); CGS uses the centimetre, gram and second. Every other unit is **derived** by putting the base units through the defining formula, and some derived units get their own names (newton, pascal; dyne, poise). That is why one quantity can be written several ways: Pa·s, N·s/m² and kg/(m·s) are the same SI unit.",
+        "| Quantity | Formula | SI unit | CGS unit | Link |\n|---|---|---|---|---|\n| Force | F = m a | N = kg·m/s² | dyne = g·cm/s² | 1 dyne = 10⁻⁵ N |\n| Pressure | P = F / A | Pa = N/m² | dyne/cm² | 1 dyne/cm² = 0.1 Pa |\n| Density | ρ = m / V | kg/m³ | g/cm³ | 1 g/cm³ = 1000 kg/m³ |\n| Dynamic viscosity | η = (F/A)·(y/v) | Pa·s = kg/(m·s) | poise, P = g/(cm·s) | 1 P = 0.1 Pa·s |\n| Surface tension | T = F / L | N/m = J/m² | dyne/cm | 1 dyne/cm = 10⁻³ N/m |\n| Mass flow rate | Q = ρ A v | kg/s | g/s | 1 g/s = 10⁻³ kg/s |\n| Volume flow rate | \\(Q_V = A v\\) | m³/s | cm³/s | 1 cm³/s = 10⁻⁶ m³/s |",
+        "**Working one out:** pressure is force ÷ area, so in CGS it is dyne ÷ cm² = dyne/cm²; converting, 10⁻⁵ N ÷ 10⁻⁴ m² = 0.1 N/m² = 0.1 Pa. Viscosity is pressure × time (shear stress ÷ velocity gradient), so CGS gives dyne·s/cm², which is the poise.",
+        "**Common confusions:** pressure (N/m²) and surface tension (N/m) differ by one metre: area vs length. Mass flow (kg/s) and volume flow (m³/s) differ by the density. The **stokes** (cm²/s) is the CGS unit of *kinematic* viscosity ν = η/ρ, not of dynamic viscosity. kg·m/s is momentum. Refractive index and Reynolds number are ratios with no unit, and lens power in dioptres is simply m⁻¹."
+      ],
+      "notes": [],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define a derived unit, using viscosity as an example.",
+          "a": "A derived unit is built from base units through the formula that defines the quantity. Viscosity η = (F/A)·(y/v) gives Pa·s in SI (= N·s/m² = kg/(m·s)) and the poise in CGS (= g/(cm·s)), with 1 P = 0.1 Pa·s."
+        },
+        {
+          "kind": "why",
+          "q": "Why are N/m and N/m² not the same unit?",
+          "a": "N/m is force per length (surface tension) while N/m² is force per area (pressure, the pascal); they differ by a factor of one metre, so they measure different quantities."
+        },
+        {
+          "kind": "relation",
+          "q": "How does a unit conversion follow from the base units?",
+          "a": "Replace each base unit: for pressure, 1 dyne/cm² = 10⁻⁵ N ÷ 10⁻⁴ m² = 0.1 Pa; for density, 1 g/cm³ = 10⁻³ kg ÷ 10⁻⁶ m³ = 1000 kg/m³; for mass flow, 1 g/s = 10⁻³ kg/s."
+        }
+      ]
+    },
+    "waves": {
+      "title": "Waves: types, parts and v = λf",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-4.md",
+          "heading": "## 2. Waves and oscillations"
+        },
+        {
+          "src": "content/medphys/pt2/chapter-4.md",
+          "heading": "## 3. Frequency, wavelength & wave velocity"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define wavelength and amplitude.",
+          "a": "Wavelength (λ) is the length of one cycle: the distance between two neighbouring identical points of a wave, such as crest to crest. Amplitude (A) is the height of the wave above its rest position, the undisturbed state."
+        },
+        {
+          "kind": "why",
+          "q": "Why can sound not travel through a vacuum, while light can?",
+          "a": "Sound is a mechanical, longitudinal wave: it is passed on by particles of a medium pushing their neighbours, making compressions and rarefactions. A vacuum has no particles to do this. Light is an electromagnetic wave, which needs no medium and travels through vacuum at 3 × 10⁸ m/s."
+        },
+        {
+          "kind": "relation",
+          "q": "How are wave speed, frequency and wavelength related?",
+          "a": "In one period T the wave moves forward one wavelength, so v = λ / T = λf. At a fixed speed f ∝ 1/λ: a higher frequency means a shorter wavelength. Intensity is a separate idea: I ∝ A², so doubling the amplitude gives 4 × the intensity."
+        }
+      ]
+    },
+    "soundRanges": {
+      "title": "Sound frequency ranges and ultrasound",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-4.md",
+          "heading": "## 5. Sound frequency ranges"
+        },
+        {
+          "src": "content/medphys/pt2/chapter-4.md",
+          "heading": "## 6. Ultrasound imaging"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define infrasound, audible sound and ultrasound.",
+          "a": "Infrasound has frequencies below 20 Hz, audible sound (the range of human hearing) is 20 Hz to 20 000 Hz, and ultrasound is above 20 000 Hz. Medical ultrasound uses frequencies in the MHz range, millions of hertz."
+        },
+        {
+          "kind": "why",
+          "q": "Why does medical imaging use ultrasound rather than audible sound?",
+          "a": "Ultrasound has a very high frequency and so, at the same speed in tissue, a very short wavelength (v = λf). Short wavelengths resolve small structures, and the sound is above hearing, so it can be sent into the body and its echoes used to build an image."
+        },
+        {
+          "kind": "relation",
+          "q": "How does the ultrasound frequency chosen relate to the depth being imaged?",
+          "a": "Higher MHz frequencies give finer detail but are absorbed faster, so they suit superficial structures (e.g. 10–15 MHz for thyroid, breast, musculoskeletal). Lower frequencies reach deeper organs with less detail. So frequency trades detail against depth."
+        }
+      ]
+    },
+    "shockWaves": {
+      "title": "Shock waves, Mach number and ESWL",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-4.md",
+          "heading": "## 8. Shock waves & Mach number"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define a shock wave and the Mach number.",
+          "a": "A shock wave is the cone-shaped, very large-amplitude wave front formed when a source moves faster than the speed of sound (vₛ > v), with the source at the tip of the cone. The Mach number is Ma = vₛ / v, how many times faster than sound the source moves."
+        },
+        {
+          "kind": "why",
+          "q": "Why is a sonic boom heard when a shock wave reaches you?",
+          "a": "A supersonic source outruns its own wave fronts, so the fronts pile up along the edge of a cone instead of spreading ahead of it. That piled-up front has an unusually large pressure amplitude, and its sudden arrival at the ear is heard as a sonic boom."
+        },
+        {
+          "kind": "relation",
+          "q": "How are shock waves used to treat kidney stones (ESWL)?",
+          "a": "Extracorporeal shock wave lithotripsy makes strong, short, high-pressure pulses outside the body. They pass in through a water cushion or gel and are focused on the stone, found by X-ray or ultrasound. Many shocks break it into small pieces that leave in the urine, with no skin incision."
+        }
+      ]
+    },
+    "zerothLaw": {
+      "title": "The zeroth law of thermodynamics",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-4.md",
+          "heading": "## 9. The zeroth law of thermodynamics"
+        }
+      ],
+      "points": [
+        "**Thermal equilibrium** means the bodies are at the **same temperature**, so **no net heat flows** between them.",
+        "A **conducting wall** lets heat pass, so two bodies touching through it reach the same temperature; an **insulating wall** blocks heat, so they cannot.",
+        "The law makes **temperature** a meaningful, measurable quantity: any body (a thermometer) that is in equilibrium with A and with B tells us A and B are at the same temperature **without** them touching.",
+        "**Clinical link:** a clinical thermometer is left in contact with the patient until it stops changing — that is, until it is in thermal equilibrium — and only then is its reading the patient's temperature."
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "State the zeroth law of thermodynamics.",
+          "a": "If bodies A and B are each in thermal equilibrium with a third body T, then A and B are in thermal equilibrium with each other. Thermal equilibrium means they are at the same temperature, so no heat flows between them."
+        },
+        {
+          "kind": "why",
+          "q": "Why does nothing happen when A and B are finally allowed to touch?",
+          "a": "T showed the same reading against A and against B, so A and B were already at the same temperature. Heat only flows from a hotter to a colder body, so with no temperature difference no heat flows and nothing changes when the insulating wall is removed."
+        },
+        {
+          "kind": "relation",
+          "q": "How does the zeroth law relate to measuring a patient's temperature?",
+          "a": "The thermometer plays the part of body T: it is held in contact until it reaches thermal equilibrium with the patient, so it is at the patient's temperature and its reading can be trusted. Without the law, a thermometer reading would not tell us anything about another body."
+        }
+      ]
+    },
+    "temperature": {
+      "title": "Temperature scales, triple point and the phase diagram",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-4.md",
+          "heading": "## 10. Temperature scales: Kelvin, Celsius & Fahrenheit"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define the triple point of water.",
+          "a": "The triple point is the single temperature and pressure at which solid ice, liquid water and water vapour all coexist in equilibrium. For water it is 273.16 K (0.01 °C) at about 611.657 Pa, about 0.6 kPa."
+        },
+        {
+          "kind": "why",
+          "q": "Why is the triple point used as a fixed point rather than the normal boiling point?",
+          "a": "Boiling and freezing points shift with pressure: water boils at 100 °C only at 1 atm. The triple point happens at only one temperature and one pressure, so it is exactly reproducible and is used to define the Kelvin scale."
+        },
+        {
+          "kind": "relation",
+          "q": "How are the Kelvin, Celsius and Fahrenheit scales related?",
+          "a": "T(K) = T(°C) + 273.15 and T(°F) = 9/5 T(°C) + 32. So body temperature 37 °C = 310.15 K = 98.6 °F, water freezes at 0 °C = 273.15 K = 32 °F, and absolute zero is 0 K = −273.15 °C = −459.67 °F."
+        }
+      ]
+    },
+    "magnifier": {
+      "title": "The simple magnifier",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-6.md",
+          "heading": "## 4. The Simple Magnifier (Magnifying Glass)"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define a simple magnifier.",
+          "a": "A simple magnifier is a convex lens of short focal length used to give a magnified image of a small object. The object is placed between the optical centre and the focus F, giving a virtual, erect, magnified image on the same side as the object."
+        },
+        {
+          "kind": "why",
+          "q": "Why must the object be inside the focal length of the lens?",
+          "a": "Inside F the rays leave the lens diverging, so they never meet on the far side: the eye traces them back to a virtual, upright, enlarged image. At F the rays come out parallel and no image forms; beyond F the lens makes a real, inverted image instead."
+        },
+        {
+          "kind": "relation",
+          "q": "How is the angular magnification related to the focal length?",
+          "a": "M = θ / θ₀ = 25 cm / f, with the image at the near point N = 25 cm. A shorter focal length gives a higher magnification. It is used to examine skin lesions, in dental inspection and to read small medical scales and labels."
+        }
+      ]
+    },
+    "microscope": {
+      "title": "The compound microscope",
+      "notes": [
+        {
+          "src": "content/medphys/pt2/chapter-6.md",
+          "heading": "## 5. The Compound Microscope"
+        }
+      ],
+      "exam": [
+        {
+          "kind": "define",
+          "q": "Define the objective and the eyepiece of a compound microscope.",
+          "a": "The objective is the convex lens nearest the specimen, with a very short focal length (fₒ < 1 cm), which forms the first, real magnified image I₁. The eyepiece is a convex lens of a few centimetres focal length (fₑ > fₒ) that acts as a simple magnifier on I₁."
+        },
+        {
+          "kind": "why",
+          "q": "Why is the final image of a compound microscope inverted?",
+          "a": "The objective forms a real, inverted image I₁ of the object. The eyepiece, used as a simple magnifier, makes a virtual image of I₁ the same way up as I₁. So the final image I₂ stays inverted relative to the original object."
+        },
+        {
+          "kind": "relation",
+          "q": "How do the two lenses work together to give high magnification?",
+          "a": "The object sits just outside Fₒ, so the objective makes an enlarged real image I₁ at or just inside Fₑ; the eyepiece then magnifies I₁ again into a virtual image. The total magnification is the product of the two, which is why it is used for blood cells, histopathology and microbiology."
+        }
+      ]
     }
   }
 }
