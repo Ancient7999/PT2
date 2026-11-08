@@ -63,7 +63,8 @@
         "Mixed Chapters: Cross-Chapter",
         "Mixed Chapters: Linking and Short Answers"
       ],
-      "draft": true
+      "draft": true,
+      "typed": true
     }
   ],
   "bank": {
@@ -1268,7 +1269,11 @@
           "2 times the original rate"
         ],
         "correct": 0,
-        "explain": "Flow rate scales with the fourth power of radius, so doubling the radius multiplies flow by 16. The smaller multipliers correspond to lower powers and are incorrect."
+        "explain": "Flow rate scales with the fourth power of radius, so doubling the radius multiplies flow by 16. The smaller multipliers correspond to lower powers and are incorrect.",
+        "formula": {
+          "chapter": "ch3",
+          "key": "poiseuille"
+        }
       },
       {
         "id": "PHY30042",
@@ -1507,7 +1512,11 @@
           "0.072 N/m"
         ],
         "correct": 3,
-        "explain": "1 dyne/cm = 10⁻³ N/m, because 1 dyne = 10⁻⁵ N and 1 cm = 10⁻² m. So 72 dyne/cm = 72 × 10⁻³ N/m = 0.072 N/m, close to the value for water at room temperature."
+        "explain": "1 dyne/cm = 10⁻³ N/m, because 1 dyne = 10⁻⁵ N and 1 cm = 10⁻² m. So 72 dyne/cm = 72 × 10⁻³ N/m = 0.072 N/m, close to the value for water at room temperature.",
+        "formula": {
+          "chapter": "ch3",
+          "key": "surfaceTensionUnits"
+        }
       },
       {
         "id": "PHY30053",
@@ -2157,7 +2166,11 @@
           "2 s"
         ],
         "correct": 1,
-        "explain": "Time period is the inverse of frequency, so T = 1 / f = 1 / 50 Hz = 0.02 s. This means one complete cycle takes 0.02 seconds. The line 50 s confuses period with frequency, 0.5 s uses an incorrect division, and 2 s is the inverse of 0.5 Hz rather than 50 Hz."
+        "explain": "Time period is the inverse of frequency, so T = 1 / f = 1 / 50 Hz = 0.02 s. This means one complete cycle takes 0.02 seconds. The line 50 s confuses period with frequency, 0.5 s uses an incorrect division, and 2 s is the inverse of 0.5 Hz rather than 50 Hz.",
+        "formula": {
+          "chapter": "ch4",
+          "key": "periodFreq"
+        }
       },
       {
         "id": "PHY40009",
@@ -2185,7 +2198,11 @@
           "0.33 m"
         ],
         "correct": 0,
-        "explain": "Using the wave equation v = f × λ, the wavelength is λ = v / f. Substituting the values gives λ = 343 m/s / 512 Hz ≈ 0.67 m. The line 1.49 m divides frequency by velocity, 175,616 m multiplies the values, and 0.33 m uses half the velocity."
+        "explain": "Using the wave equation v = f × λ, the wavelength is λ = v / f. Substituting the values gives λ = 343 m/s / 512 Hz ≈ 0.67 m. The line 1.49 m divides frequency by velocity, 175,616 m multiplies the values, and 0.33 m uses half the velocity.",
+        "formula": {
+          "chapter": "ch4",
+          "key": "waveSpeed"
+        }
       },
       {
         "id": "PHY40011",
@@ -2199,7 +2216,11 @@
           "0.0015 Hz"
         ],
         "correct": 1,
-        "explain": "Rearranging the wave equation v = f × λ gives f = v / λ. Substituting the values gives f = 340 m/s / 0.5 m = 680 Hz. The line 170 Hz divides by 2 instead of 0.5, 340 Hz ignores the wavelength, and 0.0015 Hz inverts the division."
+        "explain": "Rearranging the wave equation v = f × λ gives f = v / λ. Substituting the values gives f = 340 m/s / 0.5 m = 680 Hz. The line 170 Hz divides by 2 instead of 0.5, 340 Hz ignores the wavelength, and 0.0015 Hz inverts the division.",
+        "formula": {
+          "chapter": "ch4",
+          "key": "waveSpeed"
+        }
       },
       {
         "id": "PHY40012",
@@ -2241,7 +2262,11 @@
           "965 m/s"
         ],
         "correct": 1,
-        "explain": "The speed of sound in air increases with temperature. At 0°C it is 331 m/s, and at 20°C it rises to approximately 343 m/s. The line 331 m/s repeats the value at 0°C, 1482 m/s is the speed of sound in water at 20°C, and 965 m/s is the speed of sound in helium."
+        "explain": "The speed of sound in air increases with temperature. At 0°C it is 331 m/s, and at 20°C it rises to approximately 343 m/s. The line 331 m/s repeats the value at 0°C, 1482 m/s is the speed of sound in water at 20°C, and 965 m/s is the speed of sound in helium.",
+        "formula": {
+          "chapter": "ch4",
+          "key": "soundSpeedTemp"
+        }
       },
       {
         "id": "PHY40015",
@@ -2535,7 +2560,11 @@
           "782 m/s"
         ],
         "correct": 3,
-        "explain": "The Mach number is the source speed divided by the speed of sound, so the source speed is M × v = 2.3 × 340 m/s = 782 m/s. 148 m/s divides instead of multiplying, 342 m/s adds 2.3 to 340, and 680 m/s is Mach 2."
+        "explain": "The Mach number is the source speed divided by the speed of sound, so the source speed is M × v = 2.3 × 340 m/s = 782 m/s. 148 m/s divides instead of multiplying, 342 m/s adds 2.3 to 340, and 680 m/s is Mach 2.",
+        "formula": {
+          "chapter": "ch4",
+          "key": "mach"
+        }
       },
       {
         "id": "PHY40036",
@@ -2661,7 +2690,11 @@
           "93.2 °F"
         ],
         "correct": 0,
-        "explain": "To convert from Celsius to Fahrenheit, the formula is T_F = (9/5) × T_C + 32. Substituting 39°C gives T_F = (9/5) × 39 + 32 = 70.2 + 32 = 102.2°F. The line 99.0°F uses 37°C, 107.6°F uses an incorrect multiplier, and 93.2°F uses an incorrect conversion."
+        "explain": "To convert from Celsius to Fahrenheit, the formula is T_F = (9/5) × T_C + 32. Substituting 39°C gives T_F = (9/5) × 39 + 32 = 70.2 + 32 = 102.2°F. The line 99.0°F uses 37°C, 107.6°F uses an incorrect multiplier, and 93.2°F uses an incorrect conversion.",
+        "formula": {
+          "chapter": "ch4",
+          "key": "tempConvert"
+        }
       },
       {
         "id": "PHY40045",
@@ -2675,7 +2708,11 @@
           "300 K"
         ],
         "correct": 1,
-        "explain": "The conversion from Celsius to Kelvin is T_K = T_C + 273. Substituting 15°C gives T_K = 15 + 273 = 288 K. The line 258 K subtracts 15 from 273 instead of adding, 273 K ignores the Celsius value, and 300 K uses an incorrect offset."
+        "explain": "The conversion from Celsius to Kelvin is T_K = T_C + 273. Substituting 15°C gives T_K = 15 + 273 = 288 K. The line 258 K subtracts 15 from 273 instead of adding, 273 K ignores the Celsius value, and 300 K uses an incorrect offset.",
+        "formula": {
+          "chapter": "ch4",
+          "key": "tempConvert"
+        }
       },
       {
         "id": "PHY40046",
@@ -2689,7 +2726,11 @@
           "300°C"
         ],
         "correct": 0,
-        "explain": "The conversion from Kelvin to Celsius is T_C = T_K - 273. Substituting 300 K gives T_C = 300 - 273 = 27°C. The line 573°C adds 273 instead of subtracting, 27 K incorrectly labels the result as Kelvin, and 300°C ignores the offset entirely."
+        "explain": "The conversion from Kelvin to Celsius is T_C = T_K - 273. Substituting 300 K gives T_C = 300 - 273 = 27°C. The line 573°C adds 273 instead of subtracting, 27 K incorrectly labels the result as Kelvin, and 300°C ignores the offset entirely.",
+        "formula": {
+          "chapter": "ch4",
+          "key": "tempConvert"
+        }
       },
       {
         "id": "PHY40047",
@@ -2717,7 +2758,11 @@
           "104.0 °F"
         ],
         "correct": 0,
-        "explain": "Using the conversion T_F = (9/5) × T_C + 32, substituting 37.0°C gives T_F = (9/5) × 37.0 + 32 = 66.6 + 32 = 98.6°F. The line 100.4°F corresponds to 38°C, 95.0°F corresponds to 35°C, and 104.0°F corresponds to 40°C."
+        "explain": "Using the conversion T_F = (9/5) × T_C + 32, substituting 37.0°C gives T_F = (9/5) × 37.0 + 32 = 66.6 + 32 = 98.6°F. The line 100.4°F corresponds to 38°C, 95.0°F corresponds to 35°C, and 104.0°F corresponds to 40°C.",
+        "formula": {
+          "chapter": "ch4",
+          "key": "tempConvert"
+        }
       },
       {
         "id": "PHY40049",
@@ -3199,7 +3244,11 @@
           "39 mm"
         ],
         "correct": 0,
-        "explain": "Wavelength equals speed divided by frequency. Using 1500 m/s and 3.8 × 10⁶ Hz gives 3.95 × 10⁻⁴ m, or 0.39 mm. Other choices shift the decimal point."
+        "explain": "Wavelength equals speed divided by frequency. Using 1500 m/s and 3.8 × 10⁶ Hz gives 3.95 × 10⁻⁴ m, or 0.39 mm. Other choices shift the decimal point.",
+        "formula": {
+          "chapter": "ch4",
+          "key": "waveSpeed"
+        }
       },
       {
         "id": "PHY40067",
@@ -3311,7 +3360,11 @@
           "35 °F"
         ],
         "correct": 0,
-        "explain": "Using TF = 9/5 TC + 32 gives 63 + 32 = 95 °F. The other values omit the offset, add wrongly, or repeat the Celsius number."
+        "explain": "Using TF = 9/5 TC + 32 gives 63 + 32 = 95 °F. The other values omit the offset, add wrongly, or repeat the Celsius number.",
+        "formula": {
+          "chapter": "ch4",
+          "key": "tempConvert"
+        }
       },
       {
         "id": "PHY40075",
@@ -3605,7 +3658,11 @@
           "145 degrees"
         ],
         "correct": 1,
-        "explain": "Angles of incidence and reflection are measured from the normal. A ray at 35 degrees to the surface is at 90 − 35 = 55 degrees to the normal, so the angle of incidence is 55 degrees and, by the law of reflection, so is the angle of reflection. 35 degrees is the angle from the surface, 70 degrees doubles it, and 145 degrees is 180 − 35."
+        "explain": "Angles of incidence and reflection are measured from the normal. A ray at 35 degrees to the surface is at 90 − 35 = 55 degrees to the normal, so the angle of incidence is 55 degrees and, by the law of reflection, so is the angle of reflection. 35 degrees is the angle from the surface, 70 degrees doubles it, and 145 degrees is 180 − 35.",
+        "formula": {
+          "chapter": "ch5",
+          "key": "reflectionLaw"
+        }
       },
       {
         "id": "PHY50003",
@@ -3717,7 +3774,11 @@
           "100 cm"
         ],
         "correct": 2,
-        "explain": "Rearranging f = r / 2 gives r = 2f. Substituting f = 25 cm gives r = 2 × 25 = 50 cm. The line '12.5 cm' halves the focal length instead of doubling it, '25 cm' repeats the focal length, and '100 cm' quadruples it."
+        "explain": "Rearranging f = r / 2 gives r = 2f. Substituting f = 25 cm gives r = 2 × 25 = 50 cm. The line '12.5 cm' halves the focal length instead of doubling it, '25 cm' repeats the focal length, and '100 cm' quadruples it.",
+        "formula": {
+          "chapter": "ch5",
+          "key": "mirrorFocal"
+        }
       },
       {
         "id": "PHY50011",
@@ -3731,7 +3792,11 @@
           "10 cm"
         ],
         "correct": 1,
-        "explain": "Using f = r / 2, substituting r = 40 cm gives f = 40 / 2 = 20 cm. The line '80 cm' doubles the radius instead of halving it, '40 cm' repeats the radius, and '10 cm' quarters it."
+        "explain": "Using f = r / 2, substituting r = 40 cm gives f = 40 / 2 = 20 cm. The line '80 cm' doubles the radius instead of halving it, '40 cm' repeats the radius, and '10 cm' quarters it.",
+        "formula": {
+          "chapter": "ch5",
+          "key": "mirrorFocal"
+        }
       },
       {
         "id": "PHY50012",
@@ -3815,7 +3880,11 @@
           "3.0"
         ],
         "correct": 1,
-        "explain": "Using n = c / v, substituting c = 3 × 10⁸ m/s and v = 2 × 10⁸ m/s gives n = (3 × 10⁸) / (2 × 10⁸) = 1.5. The line '0.67' inverts the ratio, '2.0' uses the speed in the medium divided by 10⁸ without dividing by c, and '3.0' uses the vacuum speed divided by 10⁸ without dividing by v."
+        "explain": "Using n = c / v, substituting c = 3 × 10⁸ m/s and v = 2 × 10⁸ m/s gives n = (3 × 10⁸) / (2 × 10⁸) = 1.5. The line '0.67' inverts the ratio, '2.0' uses the speed in the medium divided by 10⁸ without dividing by c, and '3.0' uses the vacuum speed divided by 10⁸ without dividing by v.",
+        "formula": {
+          "chapter": "ch5",
+          "key": "refractiveIndex"
+        }
       },
       {
         "id": "PHY50018",
@@ -3857,7 +3926,22 @@
           "60.0 degrees"
         ],
         "correct": 0,
-        "explain": "Using n1 sin θ1 = n2 sin θ2 gives sin θ2 = (1 × sin 30°)/1.33 = 0.376, so θ2 ≈ 22.1°. The ray bends toward the normal in the denser medium. 30° repeats the incident angle; 45° and 60° are larger than incidence and would mean bending away."
+        "explain": "Using n1 sin θ1 = n2 sin θ2 gives sin θ2 = (1 × sin 30°)/1.33 = 0.376, so θ2 ≈ 22.1°. The ray bends toward the normal in the denser medium. 30° repeats the incident angle; 45° and 60° are larger than incidence and would mean bending away.",
+        "formula": {
+          "chapter": "ch5",
+          "key": "snell",
+          "diagram": {
+            "kind": "snell",
+            "values": {
+              "n1": 1,
+              "n2": 1.33,
+              "t1": 30
+            },
+            "target": "t2",
+            "precision": 1,
+            "answerValue": 22.082413194472252
+          }
+        }
       },
       {
         "id": "PHY50021",
@@ -3871,7 +3955,22 @@
           "2.00"
         ],
         "correct": 1,
-        "explain": "Using Snell's law with air as medium 1 and glass as medium 2, n₁ sin θ₁ = n₂ sin θ₂. Substituting n₁ = 1, θ₁ = 45 degrees, and θ₂ = 30 degrees gives 1 × sin 45° = n₂ × sin 30°, so n₂ = sin 45° / sin 30° = 0.707 / 0.5 = 1.41. The line '1.00' would mean no refraction occurred, '1.73' is the tangent of 60 degrees, and '2.00' is twice the correct value."
+        "explain": "Using Snell's law with air as medium 1 and glass as medium 2, n₁ sin θ₁ = n₂ sin θ₂. Substituting n₁ = 1, θ₁ = 45 degrees, and θ₂ = 30 degrees gives 1 × sin 45° = n₂ × sin 30°, so n₂ = sin 45° / sin 30° = 0.707 / 0.5 = 1.41. The line '1.00' would mean no refraction occurred, '1.73' is the tangent of 60 degrees, and '2.00' is twice the correct value.",
+        "formula": {
+          "chapter": "ch5",
+          "key": "snell",
+          "diagram": {
+            "kind": "snell",
+            "values": {
+              "n1": 1,
+              "t1": 45,
+              "t2": 30
+            },
+            "target": "n2",
+            "precision": 2,
+            "answerValue": 1.4142135623730951
+          }
+        }
       },
       {
         "id": "PHY50022",
@@ -3955,7 +4054,22 @@
           "60.0 degrees"
         ],
         "correct": 1,
-        "explain": "Using sin θc = n₂ / n₁, substituting n₂ = 1.0 and n₁ = 1.5 gives sin θc = 1.0 / 1.5 = 0.667. Taking the inverse sine gives θc ≈ 41.8 degrees. At angles greater than 41.8 degrees, total internal reflection occurs. The line '30 degrees' gives a sine of 0.5, '48.6 degrees' gives a sine of 0.75, and '60 degrees' gives a sine of 0.866."
+        "explain": "Using sin θc = n₂ / n₁, substituting n₂ = 1.0 and n₁ = 1.5 gives sin θc = 1.0 / 1.5 = 0.667. Taking the inverse sine gives θc ≈ 41.8 degrees. At angles greater than 41.8 degrees, total internal reflection occurs. The line '30 degrees' gives a sine of 0.5, '48.6 degrees' gives a sine of 0.75, and '60 degrees' gives a sine of 0.866.",
+        "formula": {
+          "chapter": "ch5",
+          "key": "criticalAngle",
+          "diagram": {
+            "kind": "critical",
+            "values": {
+              "n1": 1.5,
+              "n2": 1,
+              "t2": 90
+            },
+            "target": "t1",
+            "precision": 1,
+            "answerValue": 41.810314895778596
+          }
+        }
       },
       {
         "id": "PHY50028",
@@ -4125,7 +4239,11 @@
           "7.20 × 10⁸ m/s"
         ],
         "correct": 0,
-        "explain": "Index equals vacuum speed divided by medium speed, so v = 3 × 10⁸ / 2.4 = 1.25 × 10⁸ m/s. Other choices multiply, repeat, or misuse the index."
+        "explain": "Index equals vacuum speed divided by medium speed, so v = 3 × 10⁸ / 2.4 = 1.25 × 10⁸ m/s. Other choices multiply, repeat, or misuse the index.",
+        "formula": {
+          "chapter": "ch5",
+          "key": "refractiveIndex"
+        }
       },
       {
         "id": "PHY50063",
@@ -4277,7 +4395,11 @@
           "30 cm behind the mirror"
         ],
         "correct": 0,
-        "explain": "Using 1/di = 1/f − 1/do = 1/15 − 1/40 = 5/120 gives di = +24 cm, so the image is real and 24 cm in front of the mirror. 10.9 cm adds the reciprocals instead of subtracting, 40 cm repeats the object distance, and 30 cm uses twice the focal length."
+        "explain": "Using 1/di = 1/f − 1/do = 1/15 − 1/40 = 5/120 gives di = +24 cm, so the image is real and 24 cm in front of the mirror. 10.9 cm adds the reciprocals instead of subtracting, 40 cm repeats the object distance, and 30 cm uses twice the focal length.",
+        "formula": {
+          "chapter": "ch5",
+          "key": "mirrorEquation"
+        }
       },
       {
         "id": "PHY50089",
@@ -4291,7 +4413,11 @@
           "1.67 × 10⁶ m/s"
         ],
         "correct": 0,
-        "explain": "v = c/n = 3 × 10⁸ / 1.8 ≈ 1.67 × 10⁸ m/s, slower than in vacuum. 5.4 × 10⁸ multiplies instead of dividing, 1.8 × 10⁸ treats the index as a speed, and 1.67 × 10⁶ misplaces the decimal."
+        "explain": "v = c/n = 3 × 10⁸ / 1.8 ≈ 1.67 × 10⁸ m/s, slower than in vacuum. 5.4 × 10⁸ multiplies instead of dividing, 1.8 × 10⁸ treats the index as a speed, and 1.67 × 10⁶ misplaces the decimal.",
+        "formula": {
+          "chapter": "ch5",
+          "key": "refractiveIndex"
+        }
       },
       {
         "id": "PHY50090",
@@ -4305,7 +4431,22 @@
           "90°"
         ],
         "correct": 0,
-        "explain": "sin θc = 1/1.6 = 0.625, so θc ≈ 38.7°. 51.3° is the complementary angle measured from the surface, 30° is a lower arbitrary angle, and 90° is the refraction angle at the critical angle, not the critical angle itself."
+        "explain": "sin θc = 1/1.6 = 0.625, so θc ≈ 38.7°. 51.3° is the complementary angle measured from the surface, 30° is a lower arbitrary angle, and 90° is the refraction angle at the critical angle, not the critical angle itself.",
+        "formula": {
+          "chapter": "ch5",
+          "key": "criticalAngle",
+          "diagram": {
+            "kind": "critical",
+            "values": {
+              "n1": 1.6,
+              "n2": 1,
+              "t2": 90
+            },
+            "target": "t1",
+            "precision": 1,
+            "answerValue": 38.68218745348944
+          }
+        }
       },
       {
         "id": "PHY50091",
@@ -4628,7 +4769,11 @@
           "50"
         ],
         "correct": 0,
-        "explain": "For a relaxed eye the object sits at the focal point and the image is at infinity, so M = 25 cm / f, where 25 cm is the near point N. With f = 5 cm, M = 25 / 5 = 5. The other values come from using a different focal length or misapplying the formula."
+        "explain": "For a relaxed eye the object sits at the focal point and the image is at infinity, so M = 25 cm / f, where 25 cm is the near point N. With f = 5 cm, M = 25 / 5 = 5. The other values come from using a different focal length or misapplying the formula.",
+        "formula": {
+          "chapter": "ch6",
+          "key": "simpleMagnifier"
+        }
       },
       {
         "id": "PHY60007",
@@ -5396,7 +5541,11 @@
           "100 cm"
         ],
         "correct": 2,
-        "explain": "The radius of curvature is twice the focal length: r = 2f = 2 × 25 = 50 cm. 12.5 cm halves f instead of doubling it, 25 cm is f itself, and 100 cm doubles it twice."
+        "explain": "The radius of curvature is twice the focal length: r = 2f = 2 × 25 = 50 cm. 12.5 cm halves f instead of doubling it, 25 cm is f itself, and 100 cm doubles it twice.",
+        "formula": {
+          "chapter": "ch6",
+          "key": "mirrorFocal"
+        }
       },
       {
         "id": "PHY60047",
@@ -6474,5 +6623,23 @@
         ]
       }
     ]
+  },
+  "formulaNames": {
+    "reflectionLaw": {
+      "name": "Law of reflection",
+      "description": "θᵢ = θᵣ (from the normal)"
+    },
+    "mirrorEquation": {
+      "name": "Mirror equation",
+      "description": "1/d_o + 1/d_i = 1/f"
+    },
+    "surfaceTensionUnits": {
+      "name": "Surface tension units",
+      "description": "1 dyne/cm = 10⁻³ N/m"
+    },
+    "soundSpeedTemp": {
+      "name": "Sound speed and temperature",
+      "description": "v ≈ 331 + 0.6 T_C (m/s, air)"
+    }
   }
 }
