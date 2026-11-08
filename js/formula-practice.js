@@ -115,7 +115,7 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
   function solvedUI() {
     const btns = document.querySelectorAll('#formulaOptions .opt');
     btns.forEach((b, k) => { b.disabled = true; if (k === q.correct) b.classList.add('correct'); });
-    const fb = $('formulaFeedback'); fb.className = 'feedback good'; fb.textContent = '✓ ' + (q.explain || '');
+    const fb = $('formulaFeedback'); fb.className = 'feedback good'; fb.textContent = '✓ ' + (q.explain || ''); if (typeof renderMathIn === 'function') renderMathIn(fb);
     if (diagram) { $('formulaDiagram').hidden = false; diagram.complete(); }
     $('formulaWorkspace').classList.toggle('has-diagram', !!diagram);
   }

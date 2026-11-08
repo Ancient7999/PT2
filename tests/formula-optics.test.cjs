@@ -206,3 +206,17 @@ test('settings alignment clears document top on phones and retains desktop align
   e.document.documentElement.classList.remove('pt2-phone');e.dispatch('click',e.document.body);
   for(const {f} of [...e.timers.values()])f();assert.equal(wrapper.style.top,'90px');
 });
+test('explanations render math after a correct answer',()=>{
+  const src=fs.readFileSync(path.join(__dirname,'..','js/quiz-engine.js'),'utf8');
+  const lines=src.split('\n').filter(l=>/feedback good'; fb\.textContent=(correctFeedbackText\(q\)|'✓ '\+\(q\.explain)/.test(l));
+  assert.ok(lines.length>=6);for(const l of lines)assert.match(l,/renderMathIn\(fb\)/);
+  const e=environment();const seen=[];
+  e.context.renderMathInElement=(el,o)=>seen.push([el,o.delimiters.map(d=>d.left)]);
+  vm.runInContext(src.match(/function renderMathIn\(el\)\{[\s\S]*?\n\}\n/)[0],e.context);
+  const el=e.document.createElement('div');e.context.renderMathIn(el);
+  assert.equal(seen[0][0],el);assert.equal(seen[0][1].join(' '),'\\( \\[');
+  const p=practiceFixture();const hit=[];p.context.renderMathIn=el=>hit.push(el);
+  p.context.FormulaPractice.start(['waveSpeed']);const q=p.context.FormulaPractice.question;
+  p.document.querySelectorAll('#formulaOptions .opt')[q.correct].click();
+  assert.ok(hit.includes(p.document.getElementById('formulaFeedback')));
+});
