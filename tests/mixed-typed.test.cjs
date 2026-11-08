@@ -83,7 +83,7 @@ for (const [name, bank] of [['bank file', fileBank], ['offline bundle', bundle['
     for (const id of STAY) assert.ok(pooled.has(id), id + ' stays in a card');
   });
 }
-test('formula practice serves the chapter bank questions first, each once, then generated ones', () => {
+test('formula practice serves every chapter bank question once per session, alongside generated ones', () => {
   const src2 = fs.readFileSync(path.join(root, 'js/formula-practice.js'), 'utf8');
   const els = {}; const mk = id => (els[id] ||= { id, textContent: '', innerHTML: '', className: '', disabled: false, hidden: false, children: [], title: '',
     classList: { add() {}, remove() {}, toggle() {}, contains: () => false }, appendChild(c) { this.children.push(c); }, addEventListener() {}, replaceChildren() { this.children = []; } });
@@ -100,9 +100,11 @@ test('formula practice serves the chapter bank questions first, each once, then 
   vm.runInContext(src2, ctx);
   const fp = ctx.FormulaPractice, seen = [];
   fp.start(['refractiveIndex', 'snell', 'criticalAngle'], 'ch5');
-  for (let i = 0; i < 14; i++) { seen.push(fp.question.bankId || null); fp.next(); }
-  assert.deepEqual(seen.slice(0, 11).sort(), CALC.ch5.slice().sort());
-  assert.deepEqual(seen.slice(11), [null, null, null]);
+  // nothing solved yet: every family ties, so bank and generated questions mix; each bank question once
+  for (let i = 0; i < 80; i++) { seen.push(fp.question.bankId || null); fp.next(); }
+  const banked = seen.filter(Boolean);
+  assert.deepEqual(banked.slice().sort(), CALC.ch5.slice().sort()); assert.equal(new Set(banked).size, banked.length);
+  assert.ok(seen.includes(null));
   fp.start(['snell'], 'ch5'); const q = fp.question, orig = all.find(x => x.id === q.bankId);
   assert.equal(q.options[q.correct], orig.options[orig.correct]); assert.equal(q.q, orig.q);
 });

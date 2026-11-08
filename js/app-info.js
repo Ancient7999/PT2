@@ -6,6 +6,13 @@
 var APP_INFO = {
   releases: [
    {
+   version: '0.461',
+   date: '08/11/2026',
+   changes: [
+     'Medical Physics formulas now prioritize the least-solved formula in each section.',
+      ]
+    },
+   {
    version: '0.46',
    date: '08/11/2026',
    changes: [
