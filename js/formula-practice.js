@@ -43,11 +43,21 @@
     m[k].total++; const vk = String(variant == null ? 0 : variant); m[k].byVariant[vk] = (m[k].byVariant[vk] || 0) + 1;
     ls(familyKey(), JSON.stringify(m)); ls(countKey(), String(total() + 1));
   }
-  function leastKey() {
-    const m = families(); let min = Infinity;
-    keys.forEach(k => { const t = (m[k] && m[k].total) || 0; if (t < min) min = t; });
-    const c = keys.filter(k => (((m[k] && m[k].total) || 0) === min));
-    return c[Math.floor(Math.random() * c.length)] || keys[0];
+  /* Next: the least-solved formula of this section first (solved = credited, so a shown, wrong or
+     Back-reviewed question does not count). A family can be picked while it has a generator or a bank
+     question not yet served this session; its bank questions come first, each once, then generated ones.
+     Ties are broken at random. */
+  function eligibleFamilies() {
+    const out = keys.filter(k => gen && gen.QUESTION_GENERATORS && gen.QUESTION_GENERATORS[k]);
+    bankQueue.forEach(b => { if (out.indexOf(b.formula.key) < 0) out.push(b.formula.key); });
+    return out;
+  }
+  function pickFamily(random) {
+    const fams = eligibleFamilies(); if (!fams.length) return keys[0];
+    if (random) return fams[Math.floor(Math.random() * fams.length)];
+    let min = Infinity; fams.forEach(k => { const c = famCount(k); if (c < min) min = c; });
+    const c = fams.filter(k => famCount(k) === min);
+    return c[Math.floor(Math.random() * c.length)];
   }
   function configFor(mat) { return mat && mat.formulas && window[mat.formulas.gen] ? mat.formulas : null; }
 
@@ -119,7 +129,9 @@ btn.innerHTML = '<div class="card-top">' + titleWithBadge + '</div>' +
   }
   function next(random) {
     wrong = 0; hintLevel = 0; locked = false;
-    saveDrawing(); q = bankQueue.length ? fromBank(bankQueue.shift()) : random ? gen.generateQuestion(keys) : gen.generateQuestion([leastKey()]);
+    saveDrawing();
+    const fam = pickFamily(random), bi = bankQueue.findIndex(b => b.formula.key === fam);
+    q = bi >= 0 ? fromBank(bankQueue.splice(bi, 1)[0]) : gen.generateQuestion([fam]);
     history = history.slice(0, historyIndex + 1);
     history.push({ question: q, solved: false, drawing: null, credited: false }); historyIndex++;
     curKey = q.formulaKey;
