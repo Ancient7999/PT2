@@ -20,7 +20,7 @@ Chapter 4 has two parts. **Waves and oscillation:** what a wave is, sound waves,
 | Doppler effect | Moving source or observer changes the heard frequency |
 | Shock waves | Source faster than sound; Mach number Ma = vₛ / v |
 | Zeroth law | Same temperature → thermal equilibrium, no heat flow |
-| Temperature scales | T_K = T_C + 273; T_F = (9/5)T_C + 32 |
+| Temperature scales | \(T_K\) = \(T_C\) + 273; \(T_F\) = (9/5)\(T_C\) + 32 |
 
 **Study tip:** almost every number problem here uses **one** formula: v = λf, a temperature conversion, or the Doppler formula. Write the formula first, then put in the numbers with SI units: Hz, m and m/s.
 
@@ -258,8 +258,8 @@ v = speed of sound in air,  v_S = speed of the source,  v_D = speed of the detec
 ```
 
 **How to pick the signs:** moving **towards** each other must make f′ **bigger**; moving **apart** must make f′ **smaller**.
-- Observer moving **towards** the source → **+ v_D** on top; **away** → **− v_D**.
-- Source moving **towards** the observer → **− v_S** on the bottom; **away** → **+ v_S**.
+- Observer moving **towards** the source → **+ \(v_D\)** on top; **away** → **− \(v_D\)**.
+- Source moving **towards** the observer → **− \(v_S\)** on the bottom; **away** → **+ \(v_S\)**.
 
 **Source and detector moving towards each other**, with both signs chosen to raise f′:
 
@@ -277,15 +277,15 @@ All the cases:
 
 | Situation | Top: detector | Bottom: source | Effect on f′ |
 |---|---|---|---|
-| Detector moves **towards** the source | v **+** v_D | | f′ higher |
-| Detector moves **away** from the source | v **−** v_D | | f′ lower |
-| Source moves **towards** the detector | | v **−** v_S | f′ higher |
-| Source moves **away** from the detector | | v **+** v_S | f′ lower |
-| Detector or source **at rest** | v, since v_D = 0 | v, since v_S = 0 | no change from that body |
+| Detector moves **towards** the source | v **+** \(v_D\) | | f′ higher |
+| Detector moves **away** from the source | v **−** \(v_D\) | | f′ lower |
+| Source moves **towards** the detector | | v **−** \(v_S\) | f′ higher |
+| Source moves **away** from the detector | | v **+** \(v_S\) | f′ lower |
+| Detector or source **at rest** | v, since \(v_D\) = 0 | v, since \(v_S\) = 0 | no change from that body |
 
-In this example the **source** is the moving **ambulance**, with speed v_S, and the **detector** is the **person standing** on the street, at rest, so v_D = 0.
+In this example the **source** is the moving **ambulance**, with speed \(v_S\), and the **detector** is the **person standing** on the street, at rest, so \(v_D\) = 0.
 
-Observer at rest, so v_D = 0:
+Observer at rest, so \(v_D\) = 0:
 
 ```
 A) Source moving TOWARDS the observer:   f′ = f × v / (v − v_S)    → f′ > f
@@ -298,7 +298,7 @@ B) Source moving AWAY from the observer:  f′ = f × v / (v + v_S)    → f′ 
 
 ### Practice example
 
-An ambulance siren has f = 700 Hz and moves at v_S = 30 m/s. The speed of sound is v = 343 m/s, and the observer is at rest.
+An ambulance siren has f = 700 Hz and moves at \(v_S\) = 30 m/s. The speed of sound is v = 343 m/s, and the observer is at rest.
 
 ```
 Approaching:  f′ = 700 × 343 / (343 − 30) = 700 × 343 / 313 ≈ 767 Hz
@@ -482,7 +482,7 @@ Celsius to Fahrenheit:  T_F = (9/5) T_C + 32
 Fahrenheit to Celsius:  T_C = (5/9)(T_F − 32)
 ```
 
-**How T_F = (9/5)T_C + 32 is made:** water freezes at 0 °C = 32 °F and boils at 100 °C = 212 °F. So 100 Celsius degrees cover 180 Fahrenheit degrees: each °C step is **180/100 = 9/5** °F steps, and the Fahrenheit scale **starts 32 higher**. The reverse formula just undoes these two steps.
+**How \(T_F\) = (9/5)\(T_C\) + 32 is made:** water freezes at 0 °C = 32 °F and boils at 100 °C = 212 °F. So 100 Celsius degrees cover 180 Fahrenheit degrees: each °C step is **180/100 = 9/5** °F steps, and the Fahrenheit scale **starts 32 higher**. The reverse formula just undoes these two steps.
 
 ### Worked examples
 

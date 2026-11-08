@@ -2633,6 +2633,13 @@ function renderMcq(q, answered){
   renderMathIn(opts);
 }
 /* KaTeX auto-render for \\( \\) and \\[ \\] inside an element (options, explanations). */
+/* plain subscripts typed as T_C, v_S, d_o… become inline LaTeX for KaTeX; text already inside
+   \( \), \[ \] or $ $ is left alone (display only: stored answers and grading never go through this) */
+const MATH_SEG=/(\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]|\$\$[\s\S]*?\$\$|\$[^$\n]+\$)/;
+const SUB_TOKEN=/(^|[^\\\w\/.\-])([A-Za-z]_(?:\{[^}]*\}|[A-Za-z0-9]{1,3}))(?![\w\/.\-])/g;
+function mathSubscripts(s){
+  return String(s==null?'':s).split(MATH_SEG).map((part,i)=>i%2 ? part : part.replace(SUB_TOKEN,(m,pre,tok)=>pre+'\\('+tok+'\\)')).join('');
+}
 function renderMathIn(el){
   if (el && window.renderMathInElement) {
     renderMathInElement(el, {
@@ -3017,6 +3024,7 @@ function renderMatching(q, ans){
   leftCol.appendChild(leftList); rightCol.appendChild(rightList);
   board.appendChild(leftCol); board.appendChild(rightCol);
   stage.appendChild(board); stage.appendChild(svg); opts.appendChild(stage);
+  renderMathIn(opts); // terms and meanings may carry formulas
   requestAnimationFrame(()=>{ rebuildMissingWires(q, ans); (ans.wires||[]).forEach(refitWire); paintWires(svg, ans.wires||[]); });
   const actions=document.createElement('div'); actions.className='match-actions';
   const clear=document.createElement('button');
@@ -3615,10 +3623,68 @@ function stepRecapHTML(i, inReview){
 function renderStepRecap(){
   const old=document.getElementById('stepRecap'); if(old) old.remove();
   const html=quizActive && questions[current] ? stepRecapHTML(current) : '';
-  if(!html) return;
+  if(!html){ renderLawPanel(); return; }
   const fb=document.getElementById('feedback'); if(!fb) return;
   fb.insertAdjacentHTML('afterend', html);
   renderMathIn(document.getElementById('stepRecap'));
+  renderLawPanel();
+}
+/* Law / principle card (bank "lawPanels", question "lawPanel": key): definition, equation and the
+   study-notes diagram, shown once the whole question is solved (a stepped question: its last step). */
+const LAW_DIAGRAMS={};
+/* one key, or a list for a question that covers several principles (e.g. a matching question) */
+function lawPanelsFor(q){
+  const raw=q && ((q.__bone && q.__bone.lawPanel) || q.lawPanel);
+  const keys=Array.isArray(raw)?raw:(raw?[raw]:[]);
+  const reg=(BANK && BANK.lawPanels)||{};
+  return keys.filter(k=>reg[k]).map(k=>({key:k, p:reg[k]}));
+}
+function lawPanelFor(q){ return lawPanelsFor(q)[0]||null; }
+function lawPanelReady(i){
+  const q=questions[i]; if(!q || !lawPanelsFor(q).length) return false;
+  if(isStep(q) && q.__stepIdx!==q.__stepCount-1) return false;
+  return isAnswered(answers[i], q);
+}
+function lawPanelHTML(p){
+  const list=(t,a)=>a&&a.length?'<div class="law-sub">'+t+'</div><ul class="law-list">'+a.map(x=>'<li>'+escapeHtml(x)+'</li>').join('')+'</ul>':'';
+  return '<div class="law-title">'+escapeHtml(p.title)+'</div>'
+    +'<p class="law-def"><span class="law-sub">Definition</span> '+escapeHtml(p.definition)+'</p>'
+    +(p.equation?'<div class="law-eq">'+escapeHtml(p.equation)+'</div>':'')
+    +'<div class="law-diagram"></div>'
+    +list('Symbols', p.symbols)+list('Uses', p.uses);
+}
+/* the diagram is the one in the study notes, found by its exact aria-label; the bundled copy of the
+   notes (data/bundle.js) is read first, so it does not need the network */
+function lawDiagramFrom(md, label){
+  const i=md.indexOf('<div class="optics-diagram" role="img" aria-label="'+label+'"'); if(i<0) return '';
+  const j=md.indexOf('</div>', i); return j<0?'':md.slice(i, j+6);
+}
+function lawDiagram(src, label){
+  const k=src+'|'+label;
+  if(!LAW_DIAGRAMS[k]){
+    const sb=(typeof window!=='undefined' && window.studyBundle) || null;
+    const local=sb && typeof sb[src]==='string' ? lawDiagramFrom(sb[src], label) : '';
+    LAW_DIAGRAMS[k]=local ? Promise.resolve(local)
+      : fetch(src).then(r=>r.ok?r.text():'').then(md=>lawDiagramFrom(md, label)).catch(()=>'');
+  }
+  return LAW_DIAGRAMS[k];
+}
+function renderLawPanel(){
+  const old=document.getElementById('lawPanel'); if(old) old.remove();
+  if(!quizActive || !lawPanelReady(current)) return;
+  const list=lawPanelsFor(questions[current]);
+  const after=document.getElementById('stepRecap')||document.getElementById('feedback'); if(!after) return;
+  const box=document.createElement('section'); box.id='lawPanel'; box.className='law-panel'+(list.length>1?' law-multi':'');
+  box.dataset.law=list.map(x=>x.key).join(' ');
+  box.setAttribute('aria-label', list.map(x=>x.p.title).join(', '));
+  box.innerHTML=list.map(x=>'<div class="law-card" data-law="'+x.key+'">'+lawPanelHTML(x.p)+'</div>').join('');
+  after.insertAdjacentElement('afterend', box);
+  renderMathIn(box);
+  const qi=current, slots=box.querySelectorAll('.law-diagram');
+  list.forEach((x,n)=>{ if(x.p.diagram) lawDiagram(x.p.diagram.src, x.p.diagram.label).then(h=>{
+    const d=slots[n]; if(!h || !d || !box.isConnected || current!==qi) return;
+    d.innerHTML=h;
+  }); });
 }
 function renderQuestion(){
   hideMatchPairTip();
@@ -3832,7 +3898,7 @@ function fillResults(list){
     div.innerHTML=resultItemHTML(q,i);
     list.appendChild(div);
     if(isLabel(q)){ const f=div.querySelector('.label-figure'); if(f) labelFitWire(f, q.labels); }
-  });
+  });  renderMathIn(list);
 }
 function elapsedLabel(){
   const e=runElapsedSec();
@@ -3934,6 +4000,63 @@ document.addEventListener('keydown', e=>{
   e.preventDefault();
   try{ const sel=getSelection(); if(sel) sel.removeAllRanges(); }catch(er){}
 }, true);
+
+/* —— Tab stays in the question area during an active quiz or formula run while the calculator is closed
+   (open, Tab switches between calculator and questions as before). Not on menus, results or study pages,
+   and never while a dialog or the settings are open. —— */
+function kbShown(el){ if(!el) return false; const cs=getComputedStyle(el); return cs.display!=='none' && cs.visibility!=='hidden' && el.getClientRects().length>0; }
+function calcOpen(){ const c=document.getElementById('calculator-widget'); return !!(c && c.style.display==='block'); }
+function tabScope(){
+  if(document.querySelector('.modal-overlay.show, .study-confirm-card, [aria-modal="true"].show') && [...document.querySelectorAll('.modal-overlay.show, .study-confirm-card')].some(kbShown)) return null;
+  const sm=document.getElementById('settings-modal'); if(sm && kbShown(sm)) return null;
+  const fv=document.getElementById('formulaView');
+  if(fv && fv.classList.contains('active')) return document.getElementById('formulaPanel');
+  if(typeof runKeysActive==='function' && runKeysActive()) return document.getElementById('mainPanel');
+  return null;
+}
+function tabStops(scope){
+  return [...scope.querySelectorAll('button,input,select,textarea,a[href],[tabindex]:not([tabindex="-1"])')]
+    .filter(el=>!el.disabled && el.tabIndex>=0 && kbShown(el));
+}
+/* where keys should land when the questions take the keyboard back from the calculator */
+function questionFocusTarget(scope){
+  const saq=[...scope.querySelectorAll('.saq-input')].find(el=>!el.disabled && !el.readOnly && kbShown(el));
+  if(saq) return saq;
+  const dg=scope.querySelector('#formulaDiagram:not([hidden])');
+  if(dg && window.FormulaPractice && window.FormulaPractice.drawingPending && window.FormulaPractice.drawingPending()){
+    const t=dg.querySelector('.fd-tool[aria-pressed="true"]:not(:disabled)') || tabStops(dg)[0]; if(t) return t;
+  }
+  if(!scope.hasAttribute('tabindex')) scope.setAttribute('tabindex','-1');
+  return scope; // choices: ↑ ↓ / numbers / Enter work from the panel, like after a click on it
+}
+function calcTab(e, scope){
+  const w=document.getElementById('calculator-widget');
+  e.preventDefault(); e.stopPropagation(); // the calculator's own Tab only moved focus to a hidden field
+  if(window.lastInputTarget==='calc'){
+    window.lastInputTarget='answer';
+    const t=questionFocusTarget(scope); try{ t.focus({preventScroll:true}); }catch(er){ t.focus(); }
+  } else {
+    window.lastInputTarget='calc';
+    const ae=document.activeElement; if(ae && ae!==document.body && !w.contains(ae)) ae.blur();
+    const d=document.getElementById('calcDisplay');
+    if(d){ if(!d.hasAttribute('tabindex')) d.setAttribute('tabindex','-1'); try{ d.focus({preventScroll:true}); }catch(er){} }
+  }
+  if(typeof window.updateInputTargets==='function') window.updateInputTargets();
+  return true;
+}
+function tabKey(e){
+  if(e.key!=='Tab' || e.ctrlKey || e.metaKey || e.altKey) return false;
+  const scope=tabScope(); if(!scope) return false;
+  if(calcOpen()) return calcTab(e, scope);
+  const stops=tabStops(scope); if(!stops.length) return false;
+  const i=stops.indexOf(document.activeElement);
+  // a text field or dropdown outside the area keeps normal Tab; anything else (footer, emoji) comes back in
+  const ae=document.activeElement;
+  if(i<0 && ae && ae!==document.body && !scope.contains(ae) && ae.closest && ae.closest('input,textarea,select,[contenteditable]:not([contenteditable="false"])')) return false;
+  const n=i<0 ? (e.shiftKey?stops.length-1:0) : (i+(e.shiftKey?-1:1)+stops.length)%stops.length;
+  e.preventDefault(); stops[n].focus(); return true;
+}
+window.addEventListener('keydown', tabKey, true);
 
 /* —— keyboard (PT1 3977–3987 + portal Esc) ——
    FIX: Enter only works inside an active run, and not while a button or link
@@ -4475,6 +4598,9 @@ function phoneKeepInputVisible(){
 })();
 
 function onQuestionSolved(q) {
+  // the law / principle card follows every solve path (matching, order, label, typed...); the panel
+  // itself checks that the whole question is solved, so a part-done question shows nothing
+  setTimeout(()=>{ try{ renderLawPanel(); }catch(e){} }, 0);
   if (isStep(q)) {
     releasePendingSteps(current);
     if (boneDone(current)) markSolved(q);

@@ -69,3 +69,9 @@ html.pt2-phone #formulaView .ff-title{font-size:.62rem;padding:2px 6px}
 #formulaView .fd-status{min-height:1.5em;color:var(--text)}
 @media(max-width:520px){#formulaView .formula-diagram{padding:10px}#formulaView .fd-label{font-size:14px}}
 @media(prefers-reduced-motion:reduce){#formulaView .fd-handle{transition:none}}
+/* worked help rows (Show formula) */
+#formulaHintText .fh-row{display:grid;grid-template-columns:minmax(5.5em,auto) 1fr;gap:4px 12px;align-items:baseline;padding:4px 0}
+#formulaHintText .fh-row+.fh-row{border-top:1px dashed rgba(var(--accent-0-rgb),.2)}
+#formulaHintText .fh-step{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim)}
+#formulaHintText .fh-math{white-space:pre-line;overflow-wrap:anywhere}
+@media (max-width:480px){#formulaHintText .fh-row{grid-template-columns:1fr}}

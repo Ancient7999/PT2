@@ -6,6 +6,16 @@
 var APP_INFO = {
   releases: [
    {
+   version: '0.46',
+   date: '08/11/2026',
+   changes: [
+     'Added more Medical Physics law definitions and diagrams to Mixed Chapters card.',
+     'Added formula guidance to "Show formula" button.',
+     'Reframed keyboard controls in formulas section.',
+     'Calculator improvements.',
+      ]
+    },
+   {
    version: '0.45',
    date: '08/11/2026',
    changes: [

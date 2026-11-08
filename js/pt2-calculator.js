@@ -38,10 +38,16 @@
   }
 
   function syncPressed() {
+    syncCalcShown();
     var btn = document.getElementById('calc-toggle-btn');
     var w = calcEl();
     if (!btn || !w) return;
     btn.setAttribute('aria-pressed', w.style.display === 'block' ? 'true' : 'false');
+  }
+  /* the "Tab move focus" key hint shows only while the calculator is on screen, in any section */
+  function syncCalcShown() {
+    var w = calcEl();
+    document.body.classList.toggle('pt2-calc-shown', !!(w && w.style.display === 'block'));
   }
 
   function openCalc() {

@@ -16,7 +16,7 @@ This chapter covers the physics of fluid flow with emphasis on medical applicati
 | Bernoulli's equation | P + ½ρv² + ρgh = constant ; faster flow → lower pressure |
 | Viscosity η | Internal friction; F = η A v / y |
 | Poiseuille's law | Q = π r⁴ ΔP / (8 η L) ; flow ∝ r⁴ |
-| Laplace's law | Wall tension T = P × r (or P_t R / t) ; larger radius or pressure → higher tension |
+| Laplace's law | Wall tension T = P × r (or \(P_t\) R / t) ; larger radius or pressure → higher tension |
 | Reynolds number | Re = ρ v D / η ; <2000 laminar, >2000 turbulent |
 | Surface tension | T = F / L ; surfactant lowers T so alveoli stay open |
 
