@@ -259,6 +259,13 @@
               "title": "Lecture 10 \u2013 Strengthening Comprehension",
               "bank": "banks/studyskills/pt2/lecture-10-comprehension.json",
               "status": "ready"
+            },
+            {
+              "id": "mixed-studyskills-lec5-10",
+              "title": "Mixed Study Skills \u2013 Lectures 5 to 10",
+              "bank": "banks/studyskills/pt2/mixed-5-10.json",
+              "status": "ready",
+              "draft": false
             }
           ],
           "comingSoon": false,
