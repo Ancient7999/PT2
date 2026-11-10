@@ -6,6 +6,13 @@
 var APP_INFO = {
   releases: [
    {
+   version: '0.471',
+   date: '10/11/2026',
+   changes: [
+      'Added mixed section for Study Skills.'
+      ]
+    },
+   {
    version: '0.47',
    date: '08/11/2026',
    changes: [
