@@ -1,0 +1,2385 @@
+{
+  "id": "mixed-studyskills-lec5-10",
+  "subject": "Study Skills",
+  "subjectId": "study_skills",
+  "title": "Mixed Study Skills – Lectures 5 to 10",
+  "formSize": 46,
+  "forms": [
+    "A"
+  ],
+  "bank": {
+    "A": [
+      {
+        "id": "SSPT210001",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match each adult learning principle to its application examples.",
+        "explain": "Principles 1-4 with their tips.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Adults are autonomous and self-directed"
+          },
+          {
+            "id": "2",
+            "text": "Adults bring a wealth of background knowledge"
+          },
+          {
+            "id": "3",
+            "text": "Adults are goal-oriented"
+          },
+          {
+            "id": "4",
+            "text": "Adults are relevancy-oriented"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Take responsibility, set own goals, diagnose needs, manage time"
+          },
+          {
+            "id": "B",
+            "text": "Let teachers know background, identify causal connections, associate with known"
+          },
+          {
+            "id": "C",
+            "text": "Ask what to expect and how it meets goals, keep eyes on goals, verify achievement"
+          },
+          {
+            "id": "D",
+            "text": "Ask how applied in future role, make connections to goals, commit to apply practically"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        }
+      },
+      {
+        "id": "SSPT210002",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match remaining adult learning principles to application examples.",
+        "explain": "Principles 5-8 with tips.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Adults are intrinsically and extrinsically motivated"
+          },
+          {
+            "id": "2",
+            "text": "Adults learn best when active participants"
+          },
+          {
+            "id": "3",
+            "text": "Adults learn more effectively with timely constructive feedback"
+          },
+          {
+            "id": "4",
+            "text": "Adults have different learning preferences/styles"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Determine practical benefits, challenge self, do not just attune to assessment"
+          },
+          {
+            "id": "B",
+            "text": "Engage in problem-solving, questioning, sharing; actively participate in groups; practice skills"
+          },
+          {
+            "id": "C",
+            "text": "Seek feedback from teachers and peers; reflect on strengths/weaknesses for development"
+          },
+          {
+            "id": "D",
+            "text": "Evaluate preferences, vary methods, medical students prefer multiple styles"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        }
+      },
+      {
+        "id": "SSPT210003",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match Forming stage elements.",
+        "explain": "Forming feelings, behaviors, tasks, tutor.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Feelings in Forming"
+          },
+          {
+            "id": "2",
+            "text": "Behaviors in Forming"
+          },
+          {
+            "id": "3",
+            "text": "Team Tasks in Forming"
+          },
+          {
+            "id": "4",
+            "text": "Tutor in Forming"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Excited and eager, high positive expectations, some anxiety"
+          },
+          {
+            "id": "B",
+            "text": "Lots of questions reflecting excitement and uncertainty"
+          },
+          {
+            "id": "C",
+            "text": "Create team with clear structure, goals, and roles to build trust"
+          },
+          {
+            "id": "D",
+            "text": "Setup guidelines, Directive"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        }
+      },
+      {
+        "id": "SSPT210004",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match Storming stage elements.",
+        "explain": "Storming feelings, behaviors, tasks, tutor.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Feelings in Storming"
+          },
+          {
+            "id": "2",
+            "text": "Behaviors in Storming"
+          },
+          {
+            "id": "3",
+            "text": "Team Tasks in Storming"
+          },
+          {
+            "id": "4",
+            "text": "Tutor in Storming"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Frustration or anger with the team's progress or process"
+          },
+          {
+            "id": "B",
+            "text": "Less polite, Disagreements"
+          },
+          {
+            "id": "C",
+            "text": "Calling for the team to refocus on its goals; developing task-related and conflict management skills"
+          },
+          {
+            "id": "D",
+            "text": "Manage conflict, Still Directive"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        }
+      },
+      {
+        "id": "SSPT210005",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match Norming stage elements.",
+        "explain": "Norming feelings, behaviors, tasks, tutor.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Feelings in Norming"
+          },
+          {
+            "id": "2",
+            "text": "Behaviors in Norming"
+          },
+          {
+            "id": "3",
+            "text": "Team Tasks in Norming"
+          },
+          {
+            "id": "4",
+            "text": "Tutor in Norming"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Increasing acceptance of others; constructive criticism possible and welcomed"
+          },
+          {
+            "id": "B",
+            "text": "More meaningful communication; refocus on ground rules and practices"
+          },
+          {
+            "id": "C",
+            "text": "Increase in productivity; appropriate time for evaluation of processes and productivity"
+          },
+          {
+            "id": "D",
+            "text": "Participative; help group move to perform stage"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        }
+      },
+      {
+        "id": "SSPT210006",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match Performing stage elements.",
+        "explain": "Performing feelings, behaviors, tasks.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Feelings in Performing"
+          },
+          {
+            "id": "2",
+            "text": "Behaviors in Performing"
+          },
+          {
+            "id": "3",
+            "text": "Team Tasks in Performing"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Satisfaction in progress; attached to the team as greater than the sum of its parts"
+          },
+          {
+            "id": "B",
+            "text": "Can-do attitude; offers to assist; roles more fluid; differences appreciated"
+          },
+          {
+            "id": "C",
+            "text": "Significant progress towards goals; accomplishments measured and celebrated"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        }
+      },
+      {
+        "id": "SSPT210007",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match definitions related to team and teamwork.",
+        "explain": "Key definitions.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "What is a team?"
+          },
+          {
+            "id": "2",
+            "text": "What is teamwork?"
+          },
+          {
+            "id": "3",
+            "text": "Team vs group"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "A group of people who work together cooperatively to achieve a common goal"
+          },
+          {
+            "id": "B",
+            "text": "The ability to cooperate and communicate effectively with others to achieve a common goal"
+          },
+          {
+            "id": "C",
+            "text": "A team is a group of individuals, but a group of individuals is not necessarily a team"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        }
+      },
+      {
+        "id": "SSPT210008",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match small group definition and importance.",
+        "explain": "Small group details.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Small Group definition"
+          },
+          {
+            "id": "2",
+            "text": "Why important 1"
+          },
+          {
+            "id": "3",
+            "text": "Why important 2"
+          },
+          {
+            "id": "4",
+            "text": "Why important 3"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Group of eight to 12 learners facilitated by a teacher; learner-centered free discussion"
+          },
+          {
+            "id": "B",
+            "text": "Developing positive and informed attitudes to collaborative work"
+          },
+          {
+            "id": "C",
+            "text": "Developing skills in problem-solving, teamwork, evaluating and decision-making"
+          },
+          {
+            "id": "D",
+            "text": "Providing opportunity for more active involvement"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        }
+      },
+      {
+        "id": "SSPT210009",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match independent learning process steps.",
+        "explain": "What students take increasing responsibility for.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "1- Identify needs-to-know"
+          },
+          {
+            "id": "2",
+            "text": "2- Search for information"
+          },
+          {
+            "id": "3",
+            "text": "3- Learn with minimum supervision"
+          },
+          {
+            "id": "4",
+            "text": "4- Solve own problems"
+          },
+          {
+            "id": "5",
+            "text": "5- Assess own learning"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Identifying their own needs-to-know"
+          },
+          {
+            "id": "B",
+            "text": "Searching for relevant information and gaining knowledge on their own"
+          },
+          {
+            "id": "C",
+            "text": "Learning on their own with minimum supervision"
+          },
+          {
+            "id": "D",
+            "text": "Actively seeking ways to solve their own problems and difficulties"
+          },
+          {
+            "id": "E",
+            "text": "Assessing their own learning to see if needs-to-know are met"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E"
+        }
+      },
+      {
+        "id": "SSPT210010",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match pedagogy and andragogy.",
+        "explain": "Definitions and etymology.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Pedagogy"
+          },
+          {
+            "id": "2",
+            "text": "Andragogy"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Educating children; Ped (child) + agogos (lead) = Leading Children"
+          },
+          {
+            "id": "B",
+            "text": "Helping adults learn; Andro (adult) + agogos (lead) = Leading Adults"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B"
+        }
+      },
+      {
+        "id": "SSPT210011",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match study habit tips for deep processing.",
+        "explain": "Elaboration, layering, practice exams.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Use elaboration"
+          },
+          {
+            "id": "2",
+            "text": "Organize by layering"
+          },
+          {
+            "id": "3",
+            "text": "Use practice exams/questions"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Link to what you already know, reorganize with charts/outlines, vivid visualization, act out"
+          },
+          {
+            "id": "B",
+            "text": "Learn major concepts first, then categories, then headings and sub-headings"
+          },
+          {
+            "id": "C",
+            "text": "Use questions to show where you need to read more; look at right and wrong answers"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        }
+      },
+      {
+        "id": "SSPT210012",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match each SQ4R step to its purpose.",
+        "explain": "Survey gets the overview. Question turns headings into questions. Read looks for answers paragraph by paragraph. Record uses notetaking. Recite recalls from memory. Review consolidates later.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "1- Survey"
+          },
+          {
+            "id": "2",
+            "text": "2- Question"
+          },
+          {
+            "id": "3",
+            "text": "3- Read"
+          },
+          {
+            "id": "4",
+            "text": "4- Record"
+          },
+          {
+            "id": "5",
+            "text": "5- Recite"
+          },
+          {
+            "id": "6",
+            "text": "6- Review"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Skim headings, introduction, summary and visuals to get the big picture"
+          },
+          {
+            "id": "B",
+            "text": "Turn headings into questions that guide reading"
+          },
+          {
+            "id": "C",
+            "text": "Read the information one paragraph at a time while looking for answers"
+          },
+          {
+            "id": "D",
+            "text": "Select a form of notetaking to record the information"
+          },
+          {
+            "id": "E",
+            "text": "Close the book and recite the important information from memory in your own words"
+          },
+          {
+            "id": "F",
+            "text": "Return to the material periodically to consolidate retention"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F"
+        }
+      },
+      {
+        "id": "SSPT210013",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match note-taking phases detailed.",
+        "explain": "Before, during, after actions.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "1- Before Class actions"
+          },
+          {
+            "id": "2",
+            "text": "2- During Class actions"
+          },
+          {
+            "id": "3",
+            "text": "3- After Class actions"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Read assigned material; review previous notes; sit near front center; new page; date each page and handouts"
+          },
+          {
+            "id": "B",
+            "text": "Listen carefully for overview of main topics; maintain focus; not write every word; write supporting info, key points, definitions, examples"
+          },
+          {
+            "id": "C",
+            "text": "Review new notes as soon as possible; rewrite if necessary; summarize main points"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        }
+      },
+      {
+        "id": "SSPT210014",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match each of the Five R's of Cornell notes to its action.",
+        "explain": "Record writes notes in the right column. Reduce writes cues in the left. Recite covers the right and recalls from the left. Reflect works with the information in new ways. Review uses immediate and ongoing review.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "1- Record"
+          },
+          {
+            "id": "2",
+            "text": "2- Reduce"
+          },
+          {
+            "id": "3",
+            "text": "3- Recite"
+          },
+          {
+            "id": "4",
+            "text": "4- Reflect"
+          },
+          {
+            "id": "5",
+            "text": "5- Review"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Write headings and numbered notes in the right column"
+          },
+          {
+            "id": "B",
+            "text": "Write key words and questions in the left recall column"
+          },
+          {
+            "id": "C",
+            "text": "Cover the right column and recall from the left column"
+          },
+          {
+            "id": "D",
+            "text": "Think about and work with the information in new ways"
+          },
+          {
+            "id": "E",
+            "text": "Use immediate and ongoing review"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E"
+        }
+      },
+      {
+        "id": "SSPT210015",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match five note-taking options with uses.",
+        "explain": "Systems and when to use.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Cornell"
+          },
+          {
+            "id": "2",
+            "text": "Index Card"
+          },
+          {
+            "id": "3",
+            "text": "Two-Column"
+          },
+          {
+            "id": "4",
+            "text": "Three-Column"
+          },
+          {
+            "id": "5",
+            "text": "Formal Outline"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Organizes notes with main points, details, study cues, and summary in one place"
+          },
+          {
+            "id": "B",
+            "text": "For individual terms or concepts on cards"
+          },
+          {
+            "id": "C",
+            "text": "Terms/questions left, notes right; for terms and definitions, questions and answers, formulas and examples"
+          },
+          {
+            "id": "D",
+            "text": "Modified two-column; left terms/questions, middle and right two kinds of information; for math problem + steps + explanation"
+          },
+          {
+            "id": "E",
+            "text": "Hierarchical structure; begin with main topic bullet, subtopics indented; for clear levels of information"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E"
+        }
+      },
+      {
+        "id": "SSPT210016",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match encoding kinds with alternate names and what transmitted.",
+        "explain": "Four encodings.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Linguistic encoding"
+          },
+          {
+            "id": "2",
+            "text": "Visual encoding"
+          },
+          {
+            "id": "3",
+            "text": "Motor encoding"
+          },
+          {
+            "id": "4",
+            "text": "Semantic encoding"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Transmits verbal information; also known as auditory coding"
+          },
+          {
+            "id": "B",
+            "text": "Transmits visual, image information; also known as imaginal coding"
+          },
+          {
+            "id": "C",
+            "text": "Transmits muscle memory information; also known as physical or kinesthetic coding"
+          },
+          {
+            "id": "D",
+            "text": "Transmits emotional information, experiences and episodic memory"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        }
+      },
+      {
+        "id": "SSPT210017",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match notes on processing information into the memory system.",
+        "explain": "Schemas are saved in long-term memory when information is transferred into them. The rehearsal pathway moves information from short-term to long-term memory. The retrieval pathway regains information from long-term memory.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Schemas"
+          },
+          {
+            "id": "2",
+            "text": "Rehearsal pathway"
+          },
+          {
+            "id": "3",
+            "text": "Retrieval pathway"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Saved in long-term memory once information is transferred into them"
+          },
+          {
+            "id": "B",
+            "text": "Moves information from short-term memory to long-term memory"
+          },
+          {
+            "id": "C",
+            "text": "Regains information from long-term memory"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        }
+      },
+      {
+        "id": "SSPT210018",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match learning styles with how they remember best.",
+        "explain": "Visual, auditory, tactile tips.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Visual learners"
+          },
+          {
+            "id": "2",
+            "text": "Auditory learners"
+          },
+          {
+            "id": "3",
+            "text": "Tactile/kinesthetic learners"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Use notes, diagrams, color, printed materials, charts, study guides, images"
+          },
+          {
+            "id": "B",
+            "text": "Remember best by listening and taking notes, review notes out loud, study partners teaching each other, consider taping"
+          },
+          {
+            "id": "C",
+            "text": "Benefit by touch and feeling; create the notes, charts, hands-on activities, benefit by using manipulatives"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        }
+      },
+      {
+        "id": "SSPT210019",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match all 10 concentration tips with key actions.",
+        "explain": "Full list of tips.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "1. Intend to Concentrate"
+          },
+          {
+            "id": "2",
+            "text": "2. Prepare to Concentrate"
+          },
+          {
+            "id": "3",
+            "text": "3. Use Concentration Promoting Activities"
+          },
+          {
+            "id": "4",
+            "text": "4. Vary Your Study Activities"
+          },
+          {
+            "id": "5",
+            "text": "5. Study in a Non-Distracting Environment"
+          },
+          {
+            "id": "6",
+            "text": "6. Devise a Specific Study Plan"
+          },
+          {
+            "id": "7",
+            "text": "7. Eat Regular Well Balanced Meals"
+          },
+          {
+            "id": "8",
+            "text": "8. Get Plenty of Sleep at Night"
+          },
+          {
+            "id": "9",
+            "text": "9. Set Daily, Weekly, Monthly, and Semester Goals"
+          },
+          {
+            "id": "10",
+            "text": "10. Take Regular Study Breaks"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Specified time for study; consciously tell yourself “I will concentrate for ___ minutes”"
+          },
+          {
+            "id": "B",
+            "text": "Have everything you need: texts, notes, pens, study guides"
+          },
+          {
+            "id": "C",
+            "text": "Rewrite and organize notes; create diagrams, graphs, study guides; summarize the material"
+          },
+          {
+            "id": "D",
+            "text": "If difficulty focusing on one subject long, vary the subjects you study"
+          },
+          {
+            "id": "E",
+            "text": "Find one place, use that place only for studying; remove visual and auditory distractions"
+          },
+          {
+            "id": "F",
+            "text": "Step-by-step plan makes it easier to concentrate; use a textbook reading strategy"
+          },
+          {
+            "id": "G",
+            "text": "Students with healthier diets earn higher grades; avoid too much sugar and caffeine; don’t take stimulants"
+          },
+          {
+            "id": "H",
+            "text": "Fighting off sleepiness negatively affects concentration"
+          },
+          {
+            "id": "I",
+            "text": "Easier to concentrate and self-motivate when you see yourself moving toward your goals"
+          },
+          {
+            "id": "J",
+            "text": "When concentration wanders, take five minutes break"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G",
+          "8": "H",
+          "9": "I",
+          "10": "J"
+        }
+      },
+      {
+        "id": "SSPT210020",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match comprehension definitions and importance.",
+        "explain": "What is comprehension and why important.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Comprehension is"
+          },
+          {
+            "id": "2",
+            "text": "Comprehension is also"
+          },
+          {
+            "id": "3",
+            "text": "Why important"
+          },
+          {
+            "id": "4",
+            "text": "Main problem with comprehension"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "The goal or purpose for reading; process of simultaneously extracting and constructing meaning through interaction with written language"
+          },
+          {
+            "id": "B",
+            "text": "Understanding beyond knowing; not a product of reading but result of active engagement between reader and text"
+          },
+          {
+            "id": "C",
+            "text": "Leads to better achievement; without it unable to fully understand the content"
+          },
+          {
+            "id": "D",
+            "text": "Lack the strategies to actively engage with the text so that they can understand it"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        }
+      },
+      {
+        "id": "SSPT210021",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match essential strategies that improve comprehension.",
+        "explain": "Be patient and do not rush. Stay with a section until it is understood. Learn the terminology. Expand vocabulary. Understand the writer's perspective. Use elaborative rehearsal and active techniques. Become excited about the material.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Pace of reading"
+          },
+          {
+            "id": "2",
+            "text": "Persistence with material"
+          },
+          {
+            "id": "3",
+            "text": "Key terms"
+          },
+          {
+            "id": "4",
+            "text": "Vocabulary growth"
+          },
+          {
+            "id": "5",
+            "text": "Author perspective"
+          },
+          {
+            "id": "6",
+            "text": "Active techniques"
+          },
+          {
+            "id": "7",
+            "text": "Engagement with content"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Be patient and do not rush the reading process"
+          },
+          {
+            "id": "B",
+            "text": "Stay with a paragraph or section until it is comprehended"
+          },
+          {
+            "id": "C",
+            "text": "Learn the terminology"
+          },
+          {
+            "id": "D",
+            "text": "Expand vocabulary"
+          },
+          {
+            "id": "E",
+            "text": "Get into the writer's head"
+          },
+          {
+            "id": "F",
+            "text": "Use elaborative rehearsal and active learning techniques while reading"
+          },
+          {
+            "id": "G",
+            "text": "Become excited about what is learned"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G"
+        }
+      },
+      {
+        "id": "SSPT210022",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match main idea and topic sentence points.",
+        "explain": "Increasing comprehension paragraph by paragraph.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "The topic"
+          },
+          {
+            "id": "2",
+            "text": "The main idea"
+          },
+          {
+            "id": "3",
+            "text": "The topic sentence"
+          },
+          {
+            "id": "4",
+            "text": "Topic sentence like"
+          },
+          {
+            "id": "5",
+            "text": "Most common location of topic sentence"
+          },
+          {
+            "id": "6",
+            "text": "Next most common"
+          },
+          {
+            "id": "7",
+            "text": "Least common"
+          },
+          {
+            "id": "8",
+            "text": "Implied main ideas"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "The subject of a paragraph; ask in one word or phrase what the paragraph is about"
+          },
+          {
+            "id": "B",
+            "text": "Tells the main point the author intends to develop in the paragraph"
+          },
+          {
+            "id": "C",
+            "text": "Expresses the main idea and usually includes the topic"
+          },
+          {
+            "id": "D",
+            "text": "An umbrella broad enough to include supporting details"
+          },
+          {
+            "id": "E",
+            "text": "The first sentence"
+          },
+          {
+            "id": "F",
+            "text": "The last sentence"
+          },
+          {
+            "id": "G",
+            "text": "In the middle of the paragraph"
+          },
+          {
+            "id": "H",
+            "text": "Some paragraphs have implied main ideas; not directly stated in one sentence"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G",
+          "8": "H"
+        }
+      },
+      {
+        "id": "SSPT210023",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match seven organizational patterns.",
+        "explain": "Organizational patterns for comprehension.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "1"
+          },
+          {
+            "id": "2",
+            "text": "2"
+          },
+          {
+            "id": "3",
+            "text": "3"
+          },
+          {
+            "id": "4",
+            "text": "4"
+          },
+          {
+            "id": "5",
+            "text": "5"
+          },
+          {
+            "id": "6",
+            "text": "6"
+          },
+          {
+            "id": "7",
+            "text": "7"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Chronological"
+          },
+          {
+            "id": "B",
+            "text": "Process"
+          },
+          {
+            "id": "C",
+            "text": "Comparison or contrast"
+          },
+          {
+            "id": "D",
+            "text": "Definition"
+          },
+          {
+            "id": "E",
+            "text": "Examples"
+          },
+          {
+            "id": "F",
+            "text": "Cause/Effect"
+          },
+          {
+            "id": "G",
+            "text": "Whole/Parts"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G"
+        }
+      },
+      {
+        "id": "SSPT210024",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match actions readers take to enhance comprehension.",
+        "explain": "Activate background knowledge and make connections. Ask questions before, during and after reading. Use awareness of purpose, text forms and features to decide reading rate.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Prior knowledge"
+          },
+          {
+            "id": "2",
+            "text": "Questioning"
+          },
+          {
+            "id": "3",
+            "text": "Purpose and text features"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Activate background knowledge and make associations or connections with the text"
+          },
+          {
+            "id": "B",
+            "text": "Ask questions before, during and after reading"
+          },
+          {
+            "id": "C",
+            "text": "Use awareness of purpose, text forms and features to decide reading rate"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        }
+      },
+      {
+        "id": "SSPT210025",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match pre-reading survey elements.",
+        "explain": "Pre-reading survey steps.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "First thing in pre-reading survey"
+          },
+          {
+            "id": "2",
+            "text": "Chapter title and subtitles"
+          },
+          {
+            "id": "3",
+            "text": "Focus questions"
+          },
+          {
+            "id": "4",
+            "text": "Chapter introductions and first paragraphs"
+          },
+          {
+            "id": "5",
+            "text": "Last paragraph or summary"
+          },
+          {
+            "id": "6",
+            "text": "End-of-chapter material"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Read the introduction and review the table of contents"
+          },
+          {
+            "id": "B",
+            "text": "Provide overall idea of the topic and reading direction and focus"
+          },
+          {
+            "id": "C",
+            "text": "Help provide focus and indicate what to look for"
+          },
+          {
+            "id": "D",
+            "text": "First paragraph usually provides an introduction to what the chapter will be about"
+          },
+          {
+            "id": "E",
+            "text": "Provides a condensed explanation of what the chapter was about including most important take away"
+          },
+          {
+            "id": "F",
+            "text": "Study questions or other study materials to get better idea of important ideas"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F"
+        }
+      },
+      {
+        "id": "SSPT210026",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match post-reading review actions.",
+        "explain": "Take notes or highlight important concepts. Identify what has been learned and what still needs more review.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "During reading review"
+          },
+          {
+            "id": "2",
+            "text": "After reading review"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Take notes or highlight important concepts"
+          },
+          {
+            "id": "B",
+            "text": "Identify what has been learned and the important take-aways; also identify what is still not fully understood"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B"
+        }
+      },
+      {
+        "id": "SSPT210027",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match study atmosphere tips.",
+        "explain": "Know where you learn best.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Silence or noise"
+          },
+          {
+            "id": "2",
+            "text": "Same place or variety"
+          },
+          {
+            "id": "3",
+            "text": "Position"
+          },
+          {
+            "id": "4",
+            "text": "Avoid bed"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Absolute silence or a bit of noise"
+          },
+          {
+            "id": "B",
+            "text": "Same place every day or variety helps"
+          },
+          {
+            "id": "C",
+            "text": "Sitting at a desk, on the couch, walking around, writing on large white board"
+          },
+          {
+            "id": "D",
+            "text": "Try not to use your bed for studying so you can connect it only with relaxation"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        }
+      },
+      {
+        "id": "SSPT210028",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match the checklist before beginning to study.",
+        "explain": "Have a plan, eat, take a break, manage caffeine, and drink water.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "1- Planning"
+          },
+          {
+            "id": "2",
+            "text": "2- Nutrition"
+          },
+          {
+            "id": "3",
+            "text": "3- Rest interval"
+          },
+          {
+            "id": "4",
+            "text": "4- Stimulant management"
+          },
+          {
+            "id": "5",
+            "text": "5- Fluid intake"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Have a plan"
+          },
+          {
+            "id": "B",
+            "text": "Eat"
+          },
+          {
+            "id": "C",
+            "text": "Take a break"
+          },
+          {
+            "id": "D",
+            "text": "Manage caffeine intake"
+          },
+          {
+            "id": "E",
+            "text": "Drink water"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E"
+        }
+      },
+      {
+        "id": "SSPT210029",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match different forms of small groups.",
+        "explain": "PBL classes, field training, clinical rounds, and research projects.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Problem-based learning stands for"
+          },
+          {
+            "id": "2",
+            "text": "Practical placement"
+          },
+          {
+            "id": "3",
+            "text": "Ward-based teaching"
+          },
+          {
+            "id": "4",
+            "text": "Investigative work"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Groups in PBL (Problem Based Learning) classes"
+          },
+          {
+            "id": "B",
+            "text": "Field training"
+          },
+          {
+            "id": "C",
+            "text": "Clinical rounds"
+          },
+          {
+            "id": "D",
+            "text": "Research projects"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        }
+      },
+      {
+        "id": "SSPT210030",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match sample ground rules for small-group sessions.",
+        "explain": "Start and finish on time, come prepared, listen and understand each other, and share responsibility for the process and aims.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Punctuality"
+          },
+          {
+            "id": "2",
+            "text": "Preparation"
+          },
+          {
+            "id": "3",
+            "text": "Mutual understanding"
+          },
+          {
+            "id": "4",
+            "text": "Shared duty"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Start and finish on time"
+          },
+          {
+            "id": "B",
+            "text": "Come prepared for the discussion"
+          },
+          {
+            "id": "C",
+            "text": "The shared aim is to listen and understand each other"
+          },
+          {
+            "id": "D",
+            "text": "Everyone has some responsibility for the process and the achievement of group aims"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        }
+      },
+      {
+        "id": "SSPT210031",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match IL is / isn’t.",
+        "explain": "Independent learning is and isn’t.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "IL isn’t"
+          },
+          {
+            "id": "2",
+            "text": "IL is"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Simply abandoning responsibility for learning entirely on the students"
+          },
+          {
+            "id": "B",
+            "text": "Supporting students to learn increasingly on their own"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B"
+        }
+      },
+      {
+        "id": "SSPT210032",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match each step in processing information into the memory system to its role.",
+        "explain": "Sensory input receives stimuli. Short-term memory has limited capacity. Rehearsal path transfers information via learning and practice. Feedback loop uses self-quizzing. Long-term memory holds schemas with unlimited capacity. Retrieval path regains information for output.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Sensory Input"
+          },
+          {
+            "id": "2",
+            "text": "Short-Term Memory"
+          },
+          {
+            "id": "3",
+            "text": "Rehearsal Path"
+          },
+          {
+            "id": "4",
+            "text": "Feedback Loop"
+          },
+          {
+            "id": "5",
+            "text": "Long-Term Memory"
+          },
+          {
+            "id": "6",
+            "text": "Long-Term Memory Retrieval Path"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Receives sensory stimuli"
+          },
+          {
+            "id": "B",
+            "text": "Temporary store with limited capacity"
+          },
+          {
+            "id": "C",
+            "text": "Learning and practice path that transfers information"
+          },
+          {
+            "id": "D",
+            "text": "Self-quizzing that strengthens storage"
+          },
+          {
+            "id": "E",
+            "text": "Stores schemas with unlimited capacity and imprinting"
+          },
+          {
+            "id": "F",
+            "text": "Review path that regains information for outcomes"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F"
+        }
+      },
+      {
+        "id": "SSPT210033",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match additional elements in the memory processing system.",
+        "explain": "Inactive path does not lead to storage. Trap door allows exit from short-term memory without transfer. Output produces outcomes. Schemas are the structures saved in long-term memory.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Inactive path"
+          },
+          {
+            "id": "2",
+            "text": "Trap door"
+          },
+          {
+            "id": "3",
+            "text": "Output"
+          },
+          {
+            "id": "4",
+            "text": "Schemas"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Path that does not lead to long-term storage"
+          },
+          {
+            "id": "B",
+            "text": "Exit from short-term memory without transfer"
+          },
+          {
+            "id": "C",
+            "text": "Produces outcomes after retrieval"
+          },
+          {
+            "id": "D",
+            "text": "Structures in which transferred information is saved in long-term memory"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        }
+      },
+      {
+        "id": "SSPT210034",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match the notes on processing information into the memory system.",
+        "explain": "Transferring information into schemas saves it in long-term memory. The rehearsal pathway moves information from short-term to long-term memory. The retrieval pathway regains information from long-term memory.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Information transferred into schemas"
+          },
+          {
+            "id": "2",
+            "text": "Rehearsal pathway"
+          },
+          {
+            "id": "3",
+            "text": "Retrieval pathway"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Saved in long-term memory"
+          },
+          {
+            "id": "B",
+            "text": "Transfers information from short-term to long-term memory"
+          },
+          {
+            "id": "C",
+            "text": "Regains information from the long-term memory"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        }
+      },
+      {
+        "id": "SSPT210035",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match elaboration techniques used for deep processing of information.",
+        "explain": "Techniques to make information meaningful and memorable.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Connect to prior knowledge"
+          },
+          {
+            "id": "2",
+            "text": "Reorganize with visual tools"
+          },
+          {
+            "id": "3",
+            "text": "Create mental pictures"
+          },
+          {
+            "id": "4",
+            "text": "Role-play the use"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Link new information to what is already known so it becomes meaningful"
+          },
+          {
+            "id": "B",
+            "text": "Reorganize using charts, outlines or diagrams"
+          },
+          {
+            "id": "C",
+            "text": "Use vivid visualization of the content"
+          },
+          {
+            "id": "D",
+            "text": "Act out a situation in which the information would be needed"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        }
+      },
+      {
+        "id": "SSPT210036",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match the steps of studying by layering.",
+        "explain": "Order of learning from broad to specific.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "1- Start with overarching ideas"
+          },
+          {
+            "id": "2",
+            "text": "2- Move to major groupings"
+          },
+          {
+            "id": "3",
+            "text": "3- Finish with finer structure"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Learn the major, overarching concepts first"
+          },
+          {
+            "id": "B",
+            "text": "Then learn the big categories under those major concepts"
+          },
+          {
+            "id": "C",
+            "text": "Follow up with the major headings, sub-headings, etc."
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        }
+      },
+      {
+        "id": "SSPT210037",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match how practice exams should guide studying.",
+        "explain": "Using practice questions before the exam night.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Timing of use"
+          },
+          {
+            "id": "2",
+            "text": "What the results reveal"
+          },
+          {
+            "id": "3",
+            "text": "What to examine carefully"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Use them to guide studying rather than saving them until the night before"
+          },
+          {
+            "id": "B",
+            "text": "They show where more reading or watching is needed"
+          },
+          {
+            "id": "C",
+            "text": "Examine both correct and incorrect answers for clues about important points"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        }
+      },
+      {
+        "id": "SSPT210038",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match advice on highlighting while reading.",
+        "explain": "Avoid mindless highlighting.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Preferred timing"
+          },
+          {
+            "id": "2",
+            "text": "Risk of highlighting too early"
+          },
+          {
+            "id": "3",
+            "text": "Post-section action"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Highlight only after finishing a paragraph or section"
+          },
+          {
+            "id": "B",
+            "text": "Highlighting while reading easily becomes mindless"
+          },
+          {
+            "id": "C",
+            "text": "Pause to identify the most important information, then go back and highlight it; also generate possible exam questions"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        }
+      },
+      {
+        "id": "SSPT210039",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match the role of formulating questions during reading.",
+        "explain": "Active reading through self-generated questions.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Main benefit"
+          },
+          {
+            "id": "2",
+            "text": "Memory effect"
+          },
+          {
+            "id": "3",
+            "text": "When questions are written"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Gives purpose, raises curiosity, improves comprehension and keeps focus"
+          },
+          {
+            "id": "B",
+            "text": "The questions together with their answers become memory cues for later recall"
+          },
+          {
+            "id": "C",
+            "text": "Write them before reading, while reading, and after reading"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        }
+      },
+      {
+        "id": "SSPT210040",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match situations suited to two-column notes.",
+        "explain": "Typical pairings used in two-column format.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Vocabulary items"
+          },
+          {
+            "id": "2",
+            "text": "Self-testing prompts"
+          },
+          {
+            "id": "3",
+            "text": "Worked problems"
+          },
+          {
+            "id": "4",
+            "text": "Grouped content"
+          },
+          {
+            "id": "5",
+            "text": "Core ideas with support"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Terms paired with their definitions"
+          },
+          {
+            "id": "B",
+            "text": "Questions paired with their answers"
+          },
+          {
+            "id": "C",
+            "text": "Formulas, steps or equations paired with worked examples"
+          },
+          {
+            "id": "D",
+            "text": "A category paired with the list of items that belong to it"
+          },
+          {
+            "id": "E",
+            "text": "Main concepts paired with facts, explanations or examples"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E"
+        }
+      },
+      {
+        "id": "SSPT210041",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match situations suited to three-column notes.",
+        "explain": "Typical three-part layouts.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Mathematical work"
+          },
+          {
+            "id": "2",
+            "text": "Cross-source topic"
+          },
+          {
+            "id": "3",
+            "text": "Concept with application"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "A math problem, the steps needed to solve it, and the explanation or rule"
+          },
+          {
+            "id": "B",
+            "text": "A topic or concept, the textbook information, and the lecture information"
+          },
+          {
+            "id": "C",
+            "text": "A topic or concept, its definition or description, and its applications or details"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        }
+      },
+      {
+        "id": "SSPT210042",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match steps for building a formal outline.",
+        "explain": "How to structure notes in outline form.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "1- Opening entry"
+          },
+          {
+            "id": "2",
+            "text": "2- Next level down"
+          },
+          {
+            "id": "3",
+            "text": "3- Supporting details"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Start with a single bullet and write the main topic"
+          },
+          {
+            "id": "B",
+            "text": "Place the first subtopic below it, indented slightly to the right"
+          },
+          {
+            "id": "C",
+            "text": "List any details under the heading, indented further to the right"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C"
+        }
+      },
+      {
+        "id": "SSPT210043",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match the process of studying from a formal outline.",
+        "explain": "Active review using an outline.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "1- Initial pass"
+          },
+          {
+            "id": "2",
+            "text": "2- Verification step"
+          },
+          {
+            "id": "3",
+            "text": "3- Enhancement step"
+          },
+          {
+            "id": "4",
+            "text": "4- Repetition"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Read one line or item at a time and explain it by reciting"
+          },
+          {
+            "id": "B",
+            "text": "Check whether the recitation was accurate and complete"
+          },
+          {
+            "id": "C",
+            "text": "Add clue words to the right of the lines or items"
+          },
+          {
+            "id": "D",
+            "text": "Repeat the recitation process from the outline"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D"
+        }
+      },
+      {
+        "id": "SSPT210044",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match what active listening requires.",
+        "explain": "Nature of listening during lectures.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Character of the process"
+          },
+          {
+            "id": "2",
+            "text": "Memory demand"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "An active process that engages multiple mental activities"
+          },
+          {
+            "id": "B",
+            "text": "Holding verbal stimuli in working memory long enough to attach meaning and interpret what is said"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B"
+        }
+      },
+      {
+        "id": "SSPT210045",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match strategies for effective textbook reading.",
+        "explain": "Approaches that improve understanding and retention of textbook material.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Starting mindset"
+          },
+          {
+            "id": "2",
+            "text": "Overall method"
+          },
+          {
+            "id": "3",
+            "text": "Questioning attitude"
+          },
+          {
+            "id": "4",
+            "text": "Connection to existing knowledge"
+          },
+          {
+            "id": "5",
+            "text": "Time control"
+          },
+          {
+            "id": "6",
+            "text": "Spacing of reviews"
+          },
+          {
+            "id": "7",
+            "text": "Feedback element"
+          },
+          {
+            "id": "8",
+            "text": "Encoding step"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Begin with a clear intention to understand what is read"
+          },
+          {
+            "id": "B",
+            "text": "Use an organized system for reading textbook chapters"
+          },
+          {
+            "id": "C",
+            "text": "Remain inquisitive throughout"
+          },
+          {
+            "id": "D",
+            "text": "Relate new information to existing schemas in long-term memory"
+          },
+          {
+            "id": "E",
+            "text": "Manage textbook reading time effectively"
+          },
+          {
+            "id": "F",
+            "text": "Use spaced practice or spaced studying"
+          },
+          {
+            "id": "G",
+            "text": "Include some form of feedback while studying"
+          },
+          {
+            "id": "H",
+            "text": "Encode ordinary words into new sensory codes"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G",
+          "8": "H"
+        }
+      },
+      {
+        "id": "SSPT210046",
+        "type": "matching",
+        "cat": "SSPT2_5-10",
+        "q": "Match advice specific to reading science textbooks.",
+        "explain": "Recommended sequence and actions for science material.",
+        "leftItems": [
+          {
+            "id": "1",
+            "text": "Opening approach"
+          },
+          {
+            "id": "2",
+            "text": "Follow-up approach"
+          },
+          {
+            "id": "3",
+            "text": "Examples"
+          },
+          {
+            "id": "4",
+            "text": "Terminology"
+          },
+          {
+            "id": "5",
+            "text": "Memory aids"
+          },
+          {
+            "id": "6",
+            "text": "Verbal practice"
+          },
+          {
+            "id": "7",
+            "text": "Visuals"
+          },
+          {
+            "id": "8",
+            "text": "Broader links"
+          }
+        ],
+        "rightItems": [
+          {
+            "id": "A",
+            "text": "Begin with overview reading"
+          },
+          {
+            "id": "B",
+            "text": "Then move to thorough reading"
+          },
+          {
+            "id": "C",
+            "text": "Read and examine the examples carefully"
+          },
+          {
+            "id": "D",
+            "text": "Memorize terminology and be able to define the terms"
+          },
+          {
+            "id": "E",
+            "text": "Create mental images that serve as memory cues"
+          },
+          {
+            "id": "F",
+            "text": "Explain the information by reciting it"
+          },
+          {
+            "id": "G",
+            "text": "Study diagrams and charts carefully"
+          },
+          {
+            "id": "H",
+            "text": "Associate the information to larger concepts and schemas"
+          }
+        ],
+        "correct_pairs": {
+          "1": "A",
+          "2": "B",
+          "3": "C",
+          "4": "D",
+          "5": "E",
+          "6": "F",
+          "7": "G",
+          "8": "H"
+        }
+      }
+    ]
+  }
+}
